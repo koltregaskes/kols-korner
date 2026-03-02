@@ -51,9 +51,13 @@ async function generateAudioWaveform(audioPath, outputPath) {
 // Content source folder
 const CONTENT_DIR = process.env.CONTENT_DIR || "content";
 
+// Supabase configuration (injected at build time from GitHub secrets)
+const SUPABASE_URL = process.env.SUPABASE_URL || '';
+const SUPABASE_PUBLISHABLE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY || '';
+
 // Security headers for all pages
 const getSecurityHeaders = () => `
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; frame-src https://buttondown.com https://buttondown.email; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://buttondown.email;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'${SUPABASE_URL ? ` ${SUPABASE_URL}` : ''}; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -1266,18 +1270,11 @@ async function writeSubscribePage() {
     <!-- Subscribe Form Card -->
     <div class="subscribe-form-card">
       <h2>Subscribe to the Newsletter</h2>
-      <p class="coming-soon-badge" style="background: #ff6b35; color: white; padding: 8px 16px; border-radius: 4px; display: inline-block; margin-bottom: 16px; font-weight: 600;">Coming Soon</p>
-      <p style="color: var(--color-text-secondary); margin-bottom: 24px; text-align: center;">Newsletter functionality is currently being set up. Check back soon for AI news and analysis delivered to your inbox.</p>
-      <form
-        action="https://buttondown.email/api/emails/embed-subscribe/koltregaskes"
-        method="post"
-        target="popupwindow"
-        onsubmit="window.open('https://buttondown.email/koltregaskes', 'popupwindow')"
-        style="opacity: 0.5; pointer-events: none;"
-      >
-        <input type="email" name="email" id="bd-email" placeholder="your@email.com" disabled />
-        <button type="submit" disabled>Subscribe (Coming Soon)</button>
+      <form id="subscribe-form">
+        <input type="email" name="email" id="subscribe-email" placeholder="your@email.com" required />
+        <button type="submit" id="subscribe-btn">Subscribe</button>
       </form>
+      <p id="subscribe-message" style="margin-top: 16px; text-align: center; display: none;"></p>
     </div>
 
     <!-- RSS Alternative -->
@@ -1306,6 +1303,54 @@ async function writeSubscribePage() {
     });
     const savedTheme = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', savedTheme);
+
+    // Newsletter subscription
+    const SUPABASE_URL = '${SUPABASE_URL}';
+    const SUPABASE_KEY = '${SUPABASE_PUBLISHABLE_KEY}';
+
+    document.getElementById('subscribe-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('subscribe-email').value.trim();
+      const btn = document.getElementById('subscribe-btn');
+      const msg = document.getElementById('subscribe-message');
+
+      btn.disabled = true;
+      btn.textContent = 'Subscribing...';
+      msg.style.display = 'none';
+
+      try {
+        const res = await fetch(SUPABASE_URL + '/rest/v1/subscribers', {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ email })
+        });
+
+        if (res.ok) {
+          msg.textContent = 'You\\'re subscribed! Thanks for signing up.';
+          msg.style.color = 'var(--color-primary)';
+          msg.style.display = 'block';
+          document.getElementById('subscribe-email').value = '';
+        } else if (res.status === 409) {
+          msg.textContent = 'You\\'re already subscribed!';
+          msg.style.color = 'var(--color-text-secondary)';
+          msg.style.display = 'block';
+        } else {
+          throw new Error('Subscription failed');
+        }
+      } catch (err) {
+        msg.textContent = 'Something went wrong. Please try again.';
+        msg.style.color = '#ef4444';
+        msg.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Subscribe';
+      }
+    });
   </script>
 </body>
 </html>`;
