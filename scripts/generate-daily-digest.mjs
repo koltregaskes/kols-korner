@@ -10,6 +10,7 @@
  */
 
 import fs from 'fs/promises';
+import fsSync from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -17,18 +18,19 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
-// Priority: ENV var > local news/ folder > Agent Workspace (for local dev)
+// Priority: ENV var > local news-digests/ > local news/ > Agent Workspace (for local dev)
 const getNewsSourcePath = () => {
   if (process.env.NEWS_SOURCE_PATH) return process.env.NEWS_SOURCE_PATH;
 
+  const localDigests = path.join(__dirname, '..', 'news-digests');
+  if (fsSync.existsSync(localDigests) && fsSync.readdirSync(localDigests).length > 0) {
+    return localDigests;
+  }
+
   const localNews = path.join(__dirname, '..', 'news');
-  try {
-    // Check if local news folder exists and has content
-    const fs = require('fs');
-    if (fs.existsSync(localNews) && fs.readdirSync(localNews).length > 0) {
-      return localNews;
-    }
-  } catch {}
+  if (fsSync.existsSync(localNews) && fsSync.readdirSync(localNews).length > 0) {
+    return localNews;
+  }
 
   // Fall back to Agent Workspace for local development
   return 'W:/Agent Workspace/Content/News';
@@ -147,11 +149,18 @@ async function readNewsItems(date) {
 // Format: - **Title** ([Source](URL)) _YYYY-MM-DD_
 //           Summary text here.
 function parseNewsGathererDigest(content) {
+  if (
+    /^---\r?\n[\s\S]*?\r?\n---\r?\n/.test(content) &&
+    (/\*\*Summary:\*\*/.test(content) || /\*\*Category:\*\*/.test(content))
+  ) {
+    return parseLegacyDigest(content);
+  }
+
   const items = [];
   let currentCategory = 'Top Stories';
 
   // Split into lines
-  const lines = content.split('\n');
+  const lines = content.split(/\r?\n/);
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -193,6 +202,145 @@ function parseNewsGathererDigest(content) {
   }
 
   return items;
+}
+
+function parseLegacyDigest(content) {
+  const { body } = parseFrontmatter(content);
+  const items = [];
+  let currentCategory = 'Top Stories';
+  const lines = body.split(/\r?\n/);
+
+  for (let i = 0; i < lines.length; i++) {
+    const categoryMatch = lines[i].match(/^##\s+(.+)$/);
+    if (categoryMatch) {
+      currentCategory = normaliseCategory(categoryMatch[1].trim());
+      continue;
+    }
+
+    const itemMatch = lines[i].match(/^###\s+(?:\d+\.\s+)?(.+)$/);
+    if (!itemMatch) {
+      continue;
+    }
+
+    const title = cleanLegacyTitle(itemMatch[1]);
+    const blockLines = [];
+    let j = i + 1;
+
+    while (j < lines.length && !/^##\s+/.test(lines[j]) && !/^###\s+/.test(lines[j])) {
+      blockLines.push(lines[j]);
+      j++;
+    }
+
+    i = j - 1;
+
+    const blockText = blockLines.join('\n');
+    const meta = parseLegacyMeta(blockText);
+    const summary = extractLegacySummary(blockText);
+    const url = extractFirstMarkdownLink(blockText);
+    const category = normaliseCategory(meta.category || currentCategory);
+
+    if (isJunkItem(title, url)) {
+      continue;
+    }
+
+    items.push({
+      title,
+      source: meta.source || 'News Scout',
+      url,
+      summary,
+      category,
+      date: meta.date || null
+    });
+  }
+
+  return items;
+}
+
+function parseLegacyMeta(blockText) {
+  const metaMatch = blockText.match(
+    /\*\*Category:\*\*\s*(.+?)\s*\|\s*\*\*Source:\*\*\s*(.+?)\s*\|\s*\*\*Date:\*\*\s*([^\|\n]+)(?:\s*\|\s*\*\*Verdict:\*\*\s*[^\n]+)?/s
+  );
+
+  if (!metaMatch) {
+    return { category: '', source: '', date: '' };
+  }
+
+  return {
+    category: metaMatch[1].trim(),
+    source: metaMatch[2].trim(),
+    date: metaMatch[3].trim()
+  };
+}
+
+function extractLegacySummary(blockText) {
+  const summaryMatch = blockText.match(
+    /\*\*Summary:\*\*\s*\n([\s\S]*?)(?=\n\*\*[A-Za-z][^:\n]*:\*\*|\n---|\n## |\n### |$)/
+  );
+
+  if (summaryMatch) {
+    return summaryMatch[1].replace(/\s+/g, ' ').trim();
+  }
+
+  const lines = blockText
+    .split('\n')
+    .map(line => line.trim())
+    .filter(Boolean);
+
+  const metaIndex = lines.findIndex(line => line.startsWith('**Category:**'));
+  if (metaIndex === -1) {
+    return '';
+  }
+
+  const summaryLines = [];
+  for (let i = metaIndex + 1; i < lines.length; i++) {
+    const line = lines[i];
+
+    if (line.startsWith('**') || line === '---') {
+      break;
+    }
+
+    summaryLines.push(line);
+  }
+
+  return summaryLines.join(' ').trim();
+}
+
+function extractFirstMarkdownLink(text) {
+  const match = text.match(/\[[^\]]+\]\((https?:\/\/[^)]+)\)/);
+  return match ? match[1].trim() : '';
+}
+
+function cleanLegacyTitle(title) {
+  return title
+    .replace(/\s+[⚡⚠️✅❌]+.*$/u, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+function normaliseCategory(category) {
+  const value = (category || '').toLowerCase();
+
+  if (value.includes('policy') || value.includes('ethic') || value.includes('regulation')) {
+    return 'Policy & Ethics';
+  }
+
+  if (value.includes('research') || value.includes('product') || value.includes('tool') || value.includes('model')) {
+    return 'Research & Products';
+  }
+
+  if (value.includes('industry') || value.includes('business')) {
+    return 'Industry';
+  }
+
+  if (value.includes('video') || value.includes('youtube')) {
+    return 'YouTube Highlights';
+  }
+
+  if (value.includes('breaking') || value.includes('top stories')) {
+    return 'Top Stories';
+  }
+
+  return category || 'General';
 }
 
 // Filter out navigation links and junk items

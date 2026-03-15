@@ -10,13 +10,26 @@ Personal website and publishing system for [koltregaskes.com](https://koltregask
 - Generated, deployable output committed in `site/`
 - GitHub Pages deployment for the production domain `koltregaskes.com`
 
-The news-gathering pipeline is not maintained in this repo. This site only consumes the generated digest files.
+The long-term shared news-gathering pipeline is planned outside this repo. This repo currently includes a local stopgap pipeline so the site can keep publishing daily digest posts.
 
 ## Build
 
 ```bash
 node scripts/build.mjs
 ```
+
+## Daily News
+
+```bash
+node scripts/fetch-news.mjs --date YYYY-MM-DD
+node scripts/generate-daily-digest.mjs --date YYYY-MM-DD --force
+node scripts/backfill-digests.mjs
+```
+
+- Raw digest files live in `news-digests/`
+- Published digest posts live in `content/daily-digest-YYYY-MM-DD.md`
+- `scripts/backfill-digests.mjs` publishes any raw digests that do not yet have a matching post
+- `.github/workflows/daily-digest.yml` refreshes the current day's digest twice a day
 
 Optional environment variables:
 

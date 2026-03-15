@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "news:fetch": "node scripts/fetch-news.mjs",
+    "news:digest": "node scripts/generate-daily-digest.mjs",
+    "news:backfill": "node scripts/backfill-digests.mjs"
   }
 }
