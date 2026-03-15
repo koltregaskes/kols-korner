@@ -11,6 +11,14 @@
 **Stack:** Custom Node.js static site generator, deployed to GitHub Pages
 **Owner:** Kol Tregaskes
 
+## Workspace Context
+
+- The primary working environment is a **Windows mini PC that is on 24/7**
+- The repo is stored on a **NAS that is also on 24/7**
+- Local recurring jobs are allowed and preferred where useful
+- If a recurring job is needed, Codex should create and manage it directly where possible rather than asking the user to hand it off elsewhere
+- Do not create permanent local scheduled tasks until after any local folder rename is complete, otherwise the task path will be wrong
+
 ## Architecture
 
 ### How the site works
@@ -47,7 +55,7 @@
 | Workflow | File | Trigger |
 |----------|------|---------|
 | Build & Deploy | `.github/workflows/pages.yml` | Push to `main` |
-| Daily Digest | `.github/workflows/daily-digest.yml` | Daily at 6am UTC, manual |
+| Daily Digest | `.github/workflows/daily-digest.yml` | Twice daily at 6am and 6pm UTC, plus manual |
 
 ### Build script structure (`build.mjs`)
 
@@ -137,8 +145,21 @@ The subscribe page has a form that posts to Supabase, but there's no actual news
 - Category preference UI on the subscribe page
 - Integration with the daily digest pipeline
 
-### 3. News gathering system (Separate shared tool — handled elsewhere)
-The current `scripts/fetch-news.mjs` uses RSS feeds with only 3 sources. This is wrong — the user has 60-70 curated website URLs. **This work is being handled in a separate local session with Supabase access and is intended to become a shared tool across multiple websites.** See `NEWS-GATHERER-HANDOFF.md` for full context. This repo should consume generated digest outputs, not become the home for the shared news-gatherer logic.
+### 3. News gathering system (Shared tool — now an active local priority)
+The current `scripts/fetch-news.mjs` uses RSS feeds with only 3 sources. This is still only a stopgap. The user wants a **shared news gatherer** covering **60-70 curated website sources**, backed by **Supabase**, and reusable across multiple websites with site-specific filtering or tags.
+
+Current state:
+- The repo-local stopgap pipeline has been repaired enough to keep publishing digests
+- `.github/workflows/daily-digest.yml` now runs twice daily
+- Legacy raw digests were backfilled into publishable posts during the last Codex session
+- The real source list is still missing from this repo
+
+Important direction:
+- This work should now continue in a **local Codex session**, not be treated as out of scope
+- The final gatherer will likely live as a shared local tool or separate repo/service, with this repo consuming its outputs
+- Because the machine is always on, the real gatherer should probably run via a **local Windows Scheduled Task** rather than relying only on GitHub Actions
+
+See `NEWS-GATHERER-HANDOFF.md` for the dedicated brief.
 
 ### 4. Supabase credentials
 The subscribe page has empty Supabase credentials in the committed HTML:
@@ -184,4 +205,4 @@ The footer includes links to: X/Twitter, Bluesky, Threads, Mastodon, Instagram, 
 - **UK English** — always use British spellings.
 - **The `site/` directory is committed** — it's the deployable output, not a build artifact that's gitignored.
 - **Don't over-engineer** — keep solutions simple and focused. The user has been working on this for ~2 months and wants it launched.
-- **The news system is handled separately** — don't touch `scripts/fetch-news.mjs` or the news gathering pipeline.
+- **The news system is becoming a shared local tool** — continue the migration deliberately, but do not assume the repo contains the missing source list or Supabase schema.

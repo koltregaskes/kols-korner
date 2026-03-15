@@ -12,6 +12,8 @@ The repo is at: `https://github.com/koltregaskes/kols-korner`
 
 This news-gatherer is not just for this site. It is intended to become a shared tool used by multiple websites, with this repo acting as one consumer of its generated outputs.
 
+The working environment is a **Windows mini PC that runs 24/7**, with the repo stored on a **NAS that also runs 24/7**. Local scheduling is allowed and preferred when useful, and Codex should set up recurring jobs directly if possible.
+
 ## The News Gatherer / News Scout
 
 I have a news gathering system that needs to be rebuilt properly. Here's what exists and what's wrong:
@@ -20,9 +22,15 @@ I have a news gathering system that needs to be rebuilt properly. Here's what ex
 
 - `scripts/fetch-news.mjs` — An RSS feed fetcher that only has **3 sources** (TechCrunch, AI News, Reuters). This is wrong. I never asked for RSS feeds.
 - `scripts/generate-daily-digest.mjs` — Takes raw digest markdown and converts it into publishable blog posts with YAML frontmatter.
-- `.github/workflows/daily-digest.yml` — Runs daily at 6am UTC, calls fetch-news then generate-daily-digest then builds the site.
+- `.github/workflows/daily-digest.yml` — Now runs twice daily at 6am and 6pm UTC, calls fetch-news then generate-daily-digest then builds the site.
 - `news-digests/` directory — Raw digest markdown files (the intermediate format).
 - `content/daily-digest-*.md` — Published digest posts on the site.
+
+Recent progress from the last Codex session:
+- The stopgap digest pipeline was repaired and tested end to end
+- Older raw digest formats were made parseable again
+- Missing January and early-February 2026 digest posts were backfilled into `content/`
+- This is still only the stopgap version, not the final shared gatherer
 
 ### What I actually want
 
@@ -95,7 +103,7 @@ There's also a client-side news app at `site/news/` with `news-app.js` (33KB) th
 1. **How to fetch from websites** — Since these aren't RSS feeds, we need web scraping. Consider using `fetch` with HTML parsing, or a headwriting approach for sites that block scraping.
 2. **Supabase schema** — Design the tables for articles, sources, and categories.
 3. **Replace `fetch-news.mjs`** — The current RSS-based script needs to be replaced with the proper web scraping approach.
-4. **Running locally vs GitHub Actions** — The scraping may need to run locally or on a server rather than in GitHub Actions (some sites block GitHub's IP ranges).
+4. **Running locally vs GitHub Actions** — The scraping may need to run locally rather than in GitHub Actions (some sites block GitHub's IP ranges). Because this machine is always on, a **local Windows Scheduled Task** is a strong default option.
 
 ### Files to reference in the repo
 
@@ -113,3 +121,4 @@ There's also a client-side news app at `site/news/` with `news-app.js` (33KB) th
 3. Build the news fetcher that scrapes from actual websites
 4. Test with a few sources first, then scale up
 5. Integrate with the existing `generate-daily-digest.mjs` pipeline
+6. Once the local folder rename is complete, set up the recurring local scheduled job on Windows rather than relying only on GitHub Actions
