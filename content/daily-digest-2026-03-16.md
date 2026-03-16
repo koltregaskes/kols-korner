@@ -11,6 +11,38 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### How to watch Jensen Huang’s Nvidia GTC 2026 keynote — and what to expect
+
+GTC is Nvidia's flagship annual event, where the chipmaker typically announces new products, partnerships, and its vision for the future of computing. Huang's keynote will focus on Nvidia's role in the future of computing and AI.
+
+[Read more](https://techcrunch.com/2026/03/16/nvidia-gtc-how-to-watch-jensen-huang-2026-keynote/)
+
+---
+
+### Another deep tech chip startup becomes a unicorn: Frore hits $1.64B
+
+At Nvidia CEO Jensen Huang's urging, Frore developed liquid-cooling tech for chips. That shift helped it raise $143 million.
+
+[Read more](https://techcrunch.com/2026/03/16/another-deep-tech-chip-startup-becomes-a-unicorn-frore-hits-1-64b/)
+
+---
+
+### Fuse raises $25M  to disrupt aging loan origination systems used by US credit unions
+
+The startup also announced a $5 million "rescue fund" to help credit unions ditch legacy software for its AI-native platform.
+
+[Read more](https://techcrunch.com/2026/03/16/fuse-raises-25m-to-disrupt-aging-loan-origination-systems-used-by-u-s-credit-unions/)
+
+---
+
+### The dictionary sues OpenAI
+
+Encyclopedia Britannica and Merriam-Webster say that OpenAI violated the copyright of almost 100,000 articles by using them for LLM training.
+
+[Read more](https://techcrunch.com/2026/03/16/merriam-webster-openai-encyclopedia-brittanica-lawsuit/)
+
+---
+
 ### Google, Accel India accelerator chooses 5 startups and none are 'AI wrappers'
 
 Google and Accel say about 70% of AI startup pitches tied to India were "wrappers" as they reviewed more than 4,000 applications for their Atoms cohort.
@@ -43,6 +75,8 @@ These layoffs could help Facebook's parent company offset its aggressive spendin
 
 ---
 
+## Industry
+
 ### How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber, and others
 
 Learn how to use Spotify, Canva, Figma, Expedia, and other apps directly in ChatGPT.
@@ -66,8 +100,6 @@ At SXSW, Steven Spielberg said AI has uses in many fields, but not when it comes
 [Read more](https://techcrunch.com/2026/03/13/steven-spielberg-says-hes-never-used-ai-in-any-of-his-films/)
 
 ---
-
-## Industry
 
 ### The biggest AI stories of the year (so far)
 
@@ -111,6 +143,22 @@ After selling his AI startup to AMD for $665 million, Peter Sarlin is back with 
 
 ## Research & Products
 
+### NTT DATA and NVIDIA bring enterprise AI factories to production scale
+
+NTT DATA has announced an initiative to deliver NVIDIA-powered platforms designed to give organisations a repeatable, production-ready model for scaling AI. The offering integrates NVIDIA&#8217;s GPU-accelerated computing and high-performance networking with NVIDIA AI Enterprise software, including
+
+[Read more](https://www.artificialintelligence-news.com/news/ntt-data-nvidia-enterprise-ai-factories-production/)
+
+---
+
+### OpenAI's Frontier puts AI agents in a fight SaaS can't afford to lose
+
+When OpenAI launched Frontier in February, the announcement was described as a platform for enterprise AI agents. What it actually signalled was a challenge to the revenue architecture underpinning the software industry. Frontier is designed to act as a semantic layer in an organisation&#8217;s exis
+
+[Read more](https://www.artificialintelligence-news.com/news/openai-frontier-enterprise-ai-agents-saas/)
+
+---
+
 ### 'Not built right the first time' &#8212; Musk's xAI is starting over again, again
 
 The AI lab is revamping its effort to build an AI coding tool, with two new executives joining from Cursor.
@@ -127,15 +175,15 @@ Europe&#8217;s factory floors have a new kind of colleague. BMW Group has deploy
 
 ---
 
-### Truecaller now lets you hang up on scammers — on behalf of your family
+## Policy & Ethics
 
-Caller identity platform Truecaller recently launched a new feature that lets one person become an admin of a family group, get alerts about fraud calls received by other members, and even end a call on their behalf if they suspect a family member might get scammed.
+### US Treasury publishes AI risk Guidebook for financial institutions
 
-[Read more](https://techcrunch.com/2026/03/12/truecallers-now-lets-you-hang-up-on-scammers-on-behalf-of-your-family/)
+The US Treasury has published several documents designed for the US financial services sector that suggest a structured approach to managing AI risks in operations and policy (see subheading &#8216;Resources and Downloads&#8217; towards the bottom of the link). The CRI Financial Services AI Risk Man
+
+[Read more](https://www.artificialintelligence-news.com/news/us-treasury-publishes-ai-risk-governance-guidebook-for-financial-institutions/)
 
 ---
-
-## Policy & Ethics
 
 ### ByteDance reportedly pauses global launch of its Seedance 2.0 video generator
 
