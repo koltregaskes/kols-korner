@@ -1,0 +1,197 @@
+---
+title: "Daily Digest: Tuesday, 17 March 2026"
+date: 2026-03-17
+tags: ["ai", "news", "digest"]
+summary: "AI and technology news digest for Tuesday, 17 March 2026"
+---
+
+# Daily Digest: Tuesday, 17 March 2026
+
+Welcome to today's roundup of the most interesting developments in AI and technology.
+
+## Top Stories
+
+### Jensen Huang just put Nvidia's Blackwell and Vera Rubin sales projections into the $1 trillion stratosphere
+
+Nvidia CEO Jensen Huang said he expects $1 trillion worth of orders for the chips.
+
+[Read more](https://techcrunch.com/2026/03/16/jensen-just-put-nvidias-blackwell-and-vera-rubin-sales-projections-into-the-1-trillion-stratosphere/)
+
+---
+
+### Warren presses Pentagon over decision to grant xAI access to classified networks
+
+Sen. Elizabeth Warren noted that Grok, xAI's controversial chatbot, has created harmful outputs for users and poses a potential national security risk.
+
+[Read more](https://techcrunch.com/2026/03/16/warren-presses-pentagon-over-decision-to-grant-xai-access-to-classified-networks/)
+
+---
+
+### Nvidia’s DLSS 5 uses generative AI to boost photorealism in video games, with ambitions beyond gaming
+
+Nvidia’s new DLSS 5 uses generative AI and structured graphics data to make video games more realistic. CEO Jensen Huang says the approach could eventually spread to other industries.
+
+[Read more](https://techcrunch.com/2026/03/16/nvidias-dlss-5-uses-generative-ai-to-boost-photo-realism-in-video-games-with-ambitions-beyond-gaming/)
+
+---
+
+### How to watch Jensen Huang’s Nvidia GTC 2026 keynote — and what to expect
+
+GTC is Nvidia's flagship annual event, where the chipmaker typically announces new products, partnerships, and its vision for the future of computing. Huang's keynote will focus on Nvidia's role in the future of computing and AI.
+
+[Read more](https://techcrunch.com/2026/03/16/nvidia-gtc-how-to-watch-jensen-huang-2026-keynote/)
+
+---
+
+### Another deep tech chip startup becomes a unicorn: Frore hits $1.64B
+
+At Nvidia CEO Jensen Huang's urging, Frore developed liquid-cooling tech for chips. That shift helped it raise $143 million.
+
+[Read more](https://techcrunch.com/2026/03/16/another-deep-tech-chip-startup-becomes-a-unicorn-frore-hits-1-64b/)
+
+---
+
+### Fuse raises $25M  to disrupt aging loan origination systems used by US credit unions
+
+The startup also announced a $5 million "rescue fund" to help credit unions ditch legacy software for its AI-native platform.
+
+[Read more](https://techcrunch.com/2026/03/16/fuse-raises-25m-to-disrupt-aging-loan-origination-systems-used-by-u-s-credit-unions/)
+
+---
+
+### The dictionary sues OpenAI
+
+Encyclopedia Britannica and Merriam-Webster say that OpenAI violated the copyright of almost 100,000 articles by using them for LLM training.
+
+[Read more](https://techcrunch.com/2026/03/16/merriam-webster-openai-encyclopedia-brittanica-lawsuit/)
+
+---
+
+## Industry
+
+### Google, Accel India accelerator chooses 5 startups and none are 'AI wrappers'
+
+Google and Accel say about 70% of AI startup pitches tied to India were "wrappers" as they reviewed more than 4,000 applications for their Atoms cohort.
+
+[Read more](https://techcrunch.com/2026/03/15/google-and-accel-cut-through-wrappers-in-4000-ai-startup-pitches-to-pick-five-tied-to-india/)
+
+---
+
+### Wiz investor unpacks Google’s $32B acquisition
+
+Shardul Shah of Index Ventures walks us through Google's biggest acquisition ever.
+
+[Read more](https://techcrunch.com/2026/03/15/wiz-investor-unpacks-googles-32b-acquisition/)
+
+---
+
+### US Army announces contract with Anduril worth up to $20B
+
+The Army described this as a single enterprise contract consolidating more than 120 separate "procurement actions."
+
+[Read more](https://techcrunch.com/2026/03/14/us-army-announces-contract-with-anduril-worth-up-to-20b/)
+
+---
+
+### Meta reportedly considering layoffs that could affect 20% of the company
+
+These layoffs could help Facebook's parent company offset its aggressive spending on AI infrastructure, as well as AI-related acquisitions and hiring.
+
+[Read more](https://techcrunch.com/2026/03/14/meta-reportedly-considering-layoffs-that-could-affect-20-of-the-company/)
+
+---
+
+### How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber, and others
+
+Learn how to use Spotify, Canva, Figma, Expedia, and other apps directly in ChatGPT.
+
+[Read more](https://techcrunch.com/2026/03/14/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others/)
+
+---
+
+## Research & Products
+
+### Picsart now allows creators to 'hire' AI assistants through agent marketplace
+
+Picsart's AI agent marketplace will launch with four agents, then add more agents each week.
+
+[Read more](https://techcrunch.com/2026/03/16/picsart-now-allows-creators-to-hire-ai-assistants-through-agent-marketplace/)
+
+---
+
+### Memories AI is building the visual memory layer for wearables and robotics
+
+Memories.ai is building a large visual memory model that can index and retrieve video-recorded memories for physical AI.
+
+[Read more](https://techcrunch.com/2026/03/16/memories-ai-is-building-the-visual-memory-layer-for-wearables-and-robotics/)
+
+---
+
+### NTT DATA and NVIDIA bring enterprise AI factories to production scale
+
+NTT DATA has announced an initiative to deliver NVIDIA-powered platforms designed to give organisations a repeatable, production-ready model for scaling AI. The offering integrates NVIDIA&#8217;s GPU-accelerated computing and high-performance networking with NVIDIA AI Enterprise software, including
+
+[Read more](https://www.artificialintelligence-news.com/news/ntt-data-nvidia-enterprise-ai-factories-production/)
+
+---
+
+### OpenAI's Frontier puts AI agents in a fight SaaS can't afford to lose
+
+When OpenAI launched Frontier in February, the announcement was described as a platform for enterprise AI agents. What it actually signalled was a challenge to the revenue architecture underpinning the software industry. Frontier is designed to act as a semantic layer in an organisation&#8217;s exis
+
+[Read more](https://www.artificialintelligence-news.com/news/openai-frontier-enterprise-ai-agents-saas/)
+
+---
+
+### 'Not built right the first time' &#8212; Musk's xAI is starting over again, again
+
+The AI lab is revamping its effort to build an AI coding tool, with two new executives joining from Cursor.
+
+[Read more](https://techcrunch.com/2026/03/13/not-built-right-the-first-time-musks-xai-is-starting-over-again-again/)
+
+---
+
+## Policy & Ethics
+
+### Nvidia's version of OpenClaw could solve its biggest problem: security
+
+Nvidia announced an open enterprise AI agent platform, called NemoClaw, that is built off of viral OpenClaw.
+
+[Read more](https://techcrunch.com/2026/03/16/nvidias-version-of-openclaw-could-solve-its-biggest-problem-security/)
+
+---
+
+### Elon Musk's xAI faces child porn lawsuit from minors Grok allegedly undressed
+
+The three plaintiffs are seeking to represent anyone who had real images of them as a minor altered into sexual content by Grok.
+
+[Read more](https://techcrunch.com/2026/03/16/elon-musks-xai-faces-child-porn-lawsuit-from-minors-grok-allegedly-undressed/)
+
+---
+
+### US Treasury publishes AI risk Guidebook for financial institutions
+
+The US Treasury has published several documents designed for the US financial services sector that suggest a structured approach to managing AI risks in operations and policy (see subheading &#8216;Resources and Downloads&#8217; towards the bottom of the link). The CRI Financial Services AI Risk Man
+
+[Read more](https://www.artificialintelligence-news.com/news/us-treasury-publishes-ai-risk-governance-guidebook-for-financial-institutions/)
+
+---
+
+### ByteDance reportedly pauses global launch of its Seedance 2.0 video generator
+
+The company is reportedly delaying the launch as its engineers and lawyers work to avert further legal issues.
+
+[Read more](https://techcrunch.com/2026/03/15/bytedance-reportedly-pauses-global-launch-of-its-seedance-2-0-video-generator/)
+
+---
+
+### Lawyer behind AI psychosis cases warns of mass casualty risks
+
+AI chatbots have been linked to suicides for years. Now one lawyer says they are showing up in mass casualty cases too, and the technology is moving faster than the safeguards.
+
+[Read more](https://techcrunch.com/2026/03/15/lawyer-behind-ai-psychosis-cases-warns-of-mass-casualty-risks/)
+
+---
+
+
+*This digest was automatically generated.*

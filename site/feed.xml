@@ -5,9 +5,19 @@
     <link>https://koltregaskes.com</link>
     <description>Tech, AI, Development &amp; More by Kol Tregaskes</description>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 16 Mar 2026 18:58:33 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 07:01:27 GMT</lastBuildDate>
     <atom:link href="https://koltregaskes.com/feed.xml" rel="self" type="application/rss+xml"/>
     
+    <item>
+      <title>Daily Digest: Tuesday, 17 March 2026</title>
+      <link>https://koltregaskes.com/posts/daily-digest-tuesday-17-march-2026/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/daily-digest-tuesday-17-march-2026/</guid>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Tuesday, 17 March 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+    </item>
     <item>
       <title>Daily Digest: Monday, 16 March 2026</title>
       <link>https://koltregaskes.com/posts/daily-digest-monday-16-march-2026/</link>
@@ -206,18 +216,6 @@
       <category>JPMorgan</category>
       <category>infrastructure</category>
       <category>banking</category>
-    </item>
-    <item>
-      <title>AI Can Now Predict Diseases From How You Sleep</title>
-      <link>https://koltregaskes.com/posts/ai-can-now-predict-diseases-from-how-you-sleep/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/ai-can-now-predict-diseases-from-how-you-sleep/</guid>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 GMT</pubDate>
-      <description>New research shows AI can predict neurodegenerative diseases from sleep patterns - but the implications go beyond medical diagnosis.</description>
-      <category>AI</category>
-      <category>health</category>
-      <category>sleep</category>
-      <category>medical</category>
-      <category>prediction</category>
     </item>
   </channel>
 </rss>
