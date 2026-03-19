@@ -5,9 +5,19 @@
     <link>https://koltregaskes.com</link>
     <description>Tech, AI, Development &amp; More by Kol Tregaskes</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 18 Mar 2026 18:56:27 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 06:55:34 GMT</lastBuildDate>
     <atom:link href="https://koltregaskes.com/feed.xml" rel="self" type="application/rss+xml"/>
     
+    <item>
+      <title>Daily Digest: Thursday, 19 March 2026</title>
+      <link>https://koltregaskes.com/posts/daily-digest-thursday-19-march-2026/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/daily-digest-thursday-19-march-2026/</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Thursday, 19 March 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+    </item>
     <item>
       <title>Daily Digest: Wednesday, 18 March 2026</title>
       <link>https://koltregaskes.com/posts/daily-digest-wednesday-18-march-2026/</link>
@@ -202,18 +212,6 @@
       <category>xAI</category>
       <category>Elon Musk</category>
       <category>Mars</category>
-    </item>
-    <item>
-      <title>NASA&#039;s Mars Rover Just Got Smarter Than Its Engineers</title>
-      <link>https://koltregaskes.com/posts/nasas-mars-rover-just-got-smarter-than-its-engineers/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/nasas-mars-rover-just-got-smarter-than-its-engineers/</guid>
-      <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
-      <description>NASA&#039;s latest Mars rover can navigate autonomously using AI - making decisions faster than mission control could ever respond.</description>
-      <category>AI</category>
-      <category>NASA</category>
-      <category>Mars</category>
-      <category>space</category>
-      <category>robotics</category>
     </item>
   </channel>
 </rss>
