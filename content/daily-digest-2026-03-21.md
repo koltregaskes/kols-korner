@@ -11,6 +11,14 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### Why Wall Street wasn't won over by Nvidia's big conference
+
+Despite investor fears of an AI bubble, Nvidia's latest conference shows that most in the industry aren't concerned by that possibility.
+
+[Read more](https://techcrunch.com/2026/03/21/why-wall-street-wasnt-won-over-by-nvidias-big-conference/)
+
+---
+
 ### Microsoft rolls back some of its Copilot AI bloat on Windows
 
 The company is reducing Copilot entry points on Windows, starting with Photos, Widgets, Notepad, and other apps.
@@ -67,6 +75,8 @@ Meta believes these AI systems can detect more violations with greater accuracy,
 
 ---
 
+## Industry
+
 ### TechCrunch Startup Battlefield 200 nominations are still open
 
 Nominate your startup, or one you know, for TechCrunch Startup Battlefield 200 before May 27. Chance to win $100,000 equity-free funding and VC access.
@@ -74,8 +84,6 @@ Nominate your startup, or one you know, for TechCrunch Startup Battlefield 200 b
 [Read more](https://techcrunch.com/2026/03/19/techcrunch-startup-battlefield-200-nominations-are-still-open/)
 
 ---
-
-## Industry
 
 ### Amazon brings Alexa+ to the UK
 
@@ -106,22 +114,6 @@ Altman expresses gratitude for people who knew how to write their code from scra
 Nothing CEO Carl Pei says AI agents will eventually replace apps, shifting smartphones toward systems that understand intent and act on a user's behalf.
 
 [Read more](https://techcrunch.com/2026/03/18/nothing-ceo-carl-pei-says-smartphone-apps-will-disappear-as-ai-agents-take-their-place/)
-
----
-
-### Nvidia is quietly building a multibillion-dollar behemoth to rival its chips business
-
-Nvidia's networking business raked in $11 billion last quarter despite getting significantly less fanfare than chips and gaming.
-
-[Read more](https://techcrunch.com/2026/03/18/nvidia-networking-division-building-a-multibillion-dollar-behemoth-to-rival-its-chips-business/)
-
----
-
-### Patreon CEO calls AI companies' fair use argument 'bogus,' says creators should be paid
-
-Patreon CEO Jack Conte says AI companies should pay creators for training data, arguing their fair use defense falls apart when they license content from major publishers.
-
-[Read more](https://techcrunch.com/2026/03/18/patreon-ceo-calls-ai-companies-fair-use-argument-bogus-says-creators-should-be-paid/)
 
 ---
 
@@ -168,6 +160,14 @@ Mastercard has developed a large tabular model (an LTM as opposed to an LLM) tha
 ---
 
 ## Policy & Ethics
+
+### Delve accused of misleading customers with ‘fake compliance’
+
+An anonymous Substack post accuses compliance startup Delve of “falsely” convincing “hundreds of customers they were compliant” with privacy and security regulations.
+
+[Read more](https://techcrunch.com/2026/03/21/delve-accused-of-misleading-customers-with-fake-compliance/)
+
+---
 
 ### New court filing reveals Pentagon told Anthropic the two sides were nearly aligned — a week after Trump declared the relationship kaput
 
