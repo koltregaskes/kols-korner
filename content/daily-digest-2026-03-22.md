@@ -11,6 +11,22 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### Elon Musk unveils chip manufacturing plans for SpaceX and Tesla
+
+Elon Musk recently outlined ambitious plans for a chip-building collaboration Tesla and SpaceX — but he has a history of overpromising.
+
+[Read more](https://techcrunch.com/2026/03/22/elon-musk-unveils-chip-manufacturing-plans-for-spacex-and-tesla/)
+
+---
+
+### An exclusive tour of Amazon's Trainium lab, the chip that's won over Anthropic, OpenAI, even Apple
+
+Shortly after Amazon announced its $50 billion investment in OpenAI, AWS invited me on a private tour of the chip lab at the heart of the deal.
+
+[Read more](https://techcrunch.com/2026/03/22/an-exclusive-tour-of-amazons-trainium-lab-the-chip-thats-won-over-anthropic-openai-even-apple/)
+
+---
+
 ### Are AI tokens the new signing bonus or just a cost of doing business?
 
 Maybe tokens really will become the fourth pillar of engineering compensation. But engineers might want to hold the line before embracing this as a straightforward win.
@@ -59,6 +75,8 @@ Power has become one of the biggest bottlenecks in rolling out new AI data cente
 
 ---
 
+## Industry
+
 ### These AI notetaking devices can help you record and transcribe your meetings
 
 These physical notetakers transcribe audio and give users summaries and action items of meetings using AI. Some even offer live translation.
@@ -66,16 +84,6 @@ These physical notetakers transcribe audio and give users summaries and action i
 [Read more](https://techcrunch.com/2026/03/20/ai-notetaker-hardware-devices-pins-pendants-record-transcribe/)
 
 ---
-
-### Delve accused of misleading customers with ‘fake compliance’
-
-An anonymous Substack post accuses compliance startup Delve of “falsely” convincing “hundreds of customers they were compliant” with privacy and security regulations.
-
-[Read more](https://techcrunch.com/2026/03/21/delve-accused-of-misleading-customers-with-fake-compliance/)
-
----
-
-## Industry
 
 ### Jeff Bezos reportedly wants $100 billion to buy and transform old manufacturing firms with AI
 
@@ -127,14 +135,6 @@ Delivery couriers will be able to earn money by completing activities like filmi
 
 ---
 
-### Multiverse Computing pushes its compressed AI models into the mainstream
-
-After compressing models from major AI labs, including OpenAI, Meta, DeepSeek, and Mistral AI, Multiverse Computing has launched both an app that showcases the capabilities of its compressed models and an API that makes them more widely available.
-
-[Read more](https://techcrunch.com/2026/03/19/multiverse-computing-pushes-its-compressed-ai-models-into-the-mainstream/)
-
----
-
 ### NVIDIA wants enterprise AI agents safer to deploy
 
 The NVIDIA Agent Toolkit is Jensen Huang&#8217;s answer to the question enterprises keep asking: how do we put AI agents to work without losing control of our data and our liability? Announced at GTC 2026 in San Jose on March 16, the NVIDIA Agent Toolkit is an open-source software stack designed to
@@ -144,6 +144,14 @@ The NVIDIA Agent Toolkit is Jensen Huang&#8217;s answer to the question enterpri
 ---
 
 ## Policy & Ethics
+
+### Delve accused of misleading customers with ‘fake compliance’
+
+An anonymous Substack post accuses compliance startup Delve of “falsely” convincing “hundreds of customers they were compliant” with privacy and security regulations.
+
+[Read more](https://techcrunch.com/2026/03/22/delve-accused-of-misleading-customers-with-fake-compliance/)
+
+---
 
 ### New court filing reveals Pentagon told Anthropic the two sides were nearly aligned — a week after Trump declared the relationship kaput
 
