@@ -11,6 +11,46 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### Reddit takes on the bots with new 'human verification' requirements for fishy behavior
+
+Reddit will require suspected automated accounts to verify they’re human, as it ramps up efforts to curb bot-driven spam and manipulation.
+
+[Read more](https://techcrunch.com/2026/03/25/reddit-bots-new-human-verification-requirements/)
+
+---
+
+### Ocorian: Family offices turn to AI for financial data insights
+
+To gain financial data insights, the majority of family offices now turn to AI, according to new research from Ocorian. The global study reveals 86 percent of these private wealth groups are utilising AI to improve their daily operations and data analysis. Representing a combined wealth of $119.37 b
+
+[Read more](https://www.artificialintelligence-news.com/news/ocorian-family-offices-ai-for-financial-data-insights/)
+
+---
+
+### Granola raises $125M, hits $1.5B valuation as it expands from meeting notetaker to enterprise AI app
+
+Granola's valuation jumped from $250 million to $1.5 billion with this round, and it has added more support for AI agents after users previously complained.
+
+[Read more](https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/)
+
+---
+
+### Meta turns to AI to make shopping easier on Instagram and Facebook
+
+Meta is using generative AI to provide more product and brand information to consumers when they're shopping in its apps.
+
+[Read more](https://techcrunch.com/2026/03/25/meta-turns-to-ai-to-make-shopping-easier-on-instagram-and-facebook/)
+
+---
+
+### Lucid Bots raises $20M to keep up with demand for its window-washing drones
+
+Lucid Bots has seen demand accelerate over the last year for its window-cleaning drones and power-washing robots.
+
+[Read more](https://techcrunch.com/2026/03/25/lucid-bots-raises-20m-to-keep-up-with-demand-for-its-window-washing-drones/)
+
+---
+
 ### Kentucky woman rejects $26M offer to turn her farm into a data center
 
 A "major artificial intelligence company" reportedly offered a Kentucky family $26 million to build a data center on their farm.
@@ -34,6 +74,8 @@ Arm is producing its own CPU for the first time. It developed the CPU with Meta,
 [Read more](https://techcrunch.com/2026/03/24/arm-is-releasing-its-first-in-house-chip-in-its-35-year-history/)
 
 ---
+
+## Industry
 
 ### OpenAI's plans to make ChatGPT more like Amazon aren't going so well
 
@@ -59,53 +101,11 @@ Finance leaders are automating their complex workflows by actively adopting powe
 
 ---
 
-### With $3.5B in fresh capital, Kleiner Perkins is going all in on AI
-
-The fundraise includes $1 billion for investing in early-stage startups, and $2.5 billion for late-stage growth businesses.
-
-[Read more](https://techcrunch.com/2026/03/24/with-3-5b-in-fresh-capital-kleiner-perkins-is-going-all-in-on-ai/)
-
----
-
-### OpenAI’s Sora was the creepiest app on your phone &#8212; now it's shutting down
-
-Though the underlying Sora 2 video- and audio-generation model is scarily impressive, there was not sustained interest in an AI-only social feed.
-
-[Read more](https://techcrunch.com/2026/03/24/openais-sora-was-the-creepiest-app-on-your-phone-now-its-shutting-down/)
-
----
-
-## Industry
-
 ### Securing AI systems under today's and tomorrow's conditions
 
 Evidence cited in an eBook titled &#8220;AI Quantum Resilience&#8221;, published by Utimaco [email wall], shows organisations consider security risks as the leading barrier to effective adoption of AI on data they hold. AI&#8217;s value depends on data amassed by an organisation. However, there are
 
 [Read more](https://www.artificialintelligence-news.com/news/quantum-resilient-ai-needs-migration-and-hardware-protected-data-enclaves/)
-
----
-
-### Bernie Sanders' AI 'gotcha' video flops, but the memes are great
-
-Sen. Bernie Sanders thinks he's tricked Claude into revealing the AI industry's secrets, but he really just exposed how agreeable chatbots can become.
-
-[Read more](https://techcrunch.com/2026/03/23/bernie-sanders-ai-gotcha-video-flops-but-the-memes-are-great/)
-
----
-
-### Vibe-coding startup Lovable is on the hunt for acquisitions
-
-Lovable's founder said the fast-growing vibe-coding startup is looking for startups and teams to join its company.
-
-[Read more](https://techcrunch.com/2026/03/23/vibe-coding-startup-lovable-is-on-the-hunt-for-acquisitions/)
-
----
-
-### Startup Gimlet Labs is solving the AI inference bottleneck in a surprisingly elegant way
-
-Gimlet Labs just raised an $80 million Series A for tech that lets AI run across NVIDIA, AMD, Intel, ARM, Cerebras and d-Matrix chips, simultaneously.
-
-[Read more](https://techcrunch.com/2026/03/23/startup-gimlet-labs-is-solving-the-ai-inference-bottleneck-in-a-surprisingly-elegant-way/)
 
 ---
 
@@ -118,6 +118,46 @@ UK authorities believe improving efficiency across national finance operations r
 ---
 
 ## Research & Products
+
+### Google launches Lyria 3 Pro music generation model
+
+Google is launching Lyria 3 Pro, an upgraded music model that generates longer, more customizable tracks, as it expands AI music tools across Gemini, enterprise products, and other services.
+
+[Read more](https://techcrunch.com/2026/03/25/google-launches-lyria-3-pro-music-generation-model/)
+
+---
+
+### Meta launches new initiative to support entrepreneurship, drive AI adoption
+
+Meta CEO Mark Zuckerberg said in a memo to staff that small businesses have always been a big part of the company's business model, and that while tens of millions of entrepreneurs already use its platforms to grow and connect with customers, the company wants to do more in the space.
+
+[Read more](https://techcrunch.com/2026/03/25/meta-launches-new-initiative-to-support-entrepreneurship-drive-ai-adoption/)
+
+---
+
+### With Sift, two ex-SpaceX engineers are bringing the software that helped launch rockets to the factory floor
+
+Sift is building the data infrastructure for advanced manufacturing.
+
+[Read more](https://techcrunch.com/2026/03/25/with-sift-stack-two-ex-spacex-engineers-are-bringing-the-software-that-helped-launch-rockets-to-the-factory-floor/)
+
+---
+
+### With $3.5B in fresh capital, Kleiner Perkins is going all in on AI
+
+The fundraise includes $1 billion for investing in early-stage startups and $2.5 billion for late-stage growth businesses.
+
+[Read more](https://techcrunch.com/2026/03/24/with-3-5b-in-fresh-capital-kleiner-perkins-is-going-all-in-on-ai/)
+
+---
+
+### OpenAI’s Sora was the creepiest app on your phone &#8212; now it's shutting down
+
+Though the underlying Sora 2 video- and audio-generation model is scarily impressive, there was not sustained interest in an AI-only social feed.
+
+[Read more](https://techcrunch.com/2026/03/24/openais-sora-was-the-creepiest-app-on-your-phone-now-its-shutting-down/)
+
+---
 
 ### Spotify tests new tool to stop AI slop from being attributed to real artists
 
@@ -143,47 +183,23 @@ The subscription-free AI meeting notes app is a local-first twist on notetaking 
 
 ---
 
-### Meet the former Apple designer building a new AI interface at Hark
-
-The company said it would design models, hardware, and interfaces in tandem to deliver a "seamless end-to-end personal intelligence product."
-
-[Read more](https://techcrunch.com/2026/03/24/meet-the-former-apple-designer-building-a-new-ai-interface-at-hark/)
-
----
-
-### Mirage raises $75M to continue building models for its AI video-editing app Captions
-
-Mirage, the maker of video-editing app Captions, has raised $75 million in growth financing from General Catalyst's Customer Value Fund (CVF).
-
-[Read more](https://techcrunch.com/2026/03/24/mirage-raises-75m-to-continue-building-models-for-its-ai-video-editing-app-captions/)
-
----
-
-### Agile Robots becomes the latest robotics company to partner with Google DeepMind
-
-Agile Robots will incorporate Google DeepMind's robotics foundation models into its bots while collecting data for the AI research lab.
-
-[Read more](https://techcrunch.com/2026/03/24/agile-robots-becomes-the-latest-robotics-company-to-partner-with-google-deepmind/)
-
----
-
-### Air Street becomes one of the largest solo VCs in Europe with $232M fund
-
-London’s Air Street Capital has raised a large Fund III with eyes locked on backing early-stage European and North American AI companies.
-
-[Read more](https://techcrunch.com/2026/03/23/air-street-becomes-one-of-the-largest-solo-vcs-in-europe-with-232m-fund/)
-
----
-
-### Apple sets June date for WWDC 2026, teasing 'AI advancements'
-
-Apple will host its next Worldwide Developers Conference the week of June 8. The company is expected to announce major updates to Siri with advanced AI capabilities.
-
-[Read more](https://techcrunch.com/2026/03/23/apple-wwdc-june-8-12-ai-advancements-siri-developers-conference/)
-
----
-
 ## Policy & Ethics
+
+### Bernie Sanders and AOC propose a ban on data center construction
+
+Senator Bernie Sanders and Rep. Alexandria Ocasio-Cortez introduced companion legislation to halt construction on new data centers until Congress passes comprehensive AI regulation.
+
+[Read more](https://techcrunch.com/2026/03/25/bernie-sanders-and-aoc-propose-a-ban-on-data-center-construction/)
+
+---
+
+### AI agents enter banking roles at Bank of America
+
+AI agents are starting to take on a more direct role in how financial advice is delivered, as large banks move into systems that support client interactions. Bank of America is now deploying an internal AI-powered advisory platform to a subset of financial advisers, rolled out to around 1,000 financ
+
+[Read more](https://www.artificialintelligence-news.com/news/ai-agents-enter-banking-roles-at-bank-of-america/)
+
+---
 
 ### Anthropic hands Claude Code more control, but keeps it on a leash
 
