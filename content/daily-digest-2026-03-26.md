@@ -11,6 +11,30 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### Data centers get ready — the Senate wants to see your power bills
+
+Senators Josh Hawley and Elizabeth Warren want the Energy Information Administration to gather more details about how data centers use power — and how that affects the grid.
+
+[Read more](https://techcrunch.com/2026/03/26/data-centers-get-ready-the-senate-wants-to-see-your-power-bills/)
+
+---
+
+### A ‘pound of flesh’ from data centers: One senator's answer to AI job losses
+
+Fears of AI-driven job loss are growing fast, and they’re fueling backlash against data centers. Sen. Mark Warner suggests taxing them to help workers survive the transition.
+
+[Read more](https://techcrunch.com/2026/03/26/a-pound-of-flesh-from-data-centers-one-senators-answer-to-ai-job-losses/)
+
+---
+
+### RPA matters, but AI changes how automation works
+
+RPA (robotic process automation) is a practical and proven way to reduce manual work in business processes without AI systems. By using software bots to follow fixed rules, companies can automate repetitive tasks like data entry and invoice processing, and to a certain extent, report generation. Ado
+
+[Read more](https://www.artificialintelligence-news.com/news/rpa-still-matters-but-ai-is-changing-how-automation-works/)
+
+---
+
 ### The least surprising chapter of the Manus story is what's happening right now
 
 Did anyone think there would not be a reckoning over this tie-up?
@@ -51,6 +75,8 @@ The first lady sees AI and robotics playing a prominent role in the future of Am
 
 ---
 
+## Industry
+
 ### Reddit takes on the bots with new 'human verification' requirements for fishy behavior
 
 Reddit will require suspected automated accounts to verify they’re human, as it ramps up efforts to curb bot-driven spam and manipulation.
@@ -75,8 +101,6 @@ To gain financial data insights, the majority of family offices now turn to AI, 
 
 ---
 
-## Industry
-
 ### Granola raises $125M, hits $1.5B valuation as it expands from meeting notetaker to enterprise AI app
 
 Granola's valuation jumped from $250 million to $1.5 billion with this round, and it has added more support for AI agents after users previously complained.
@@ -90,30 +114,6 @@ Granola's valuation jumped from $250 million to $1.5 billion with this round, an
 Meta is using generative AI to provide more product and brand information to consumers when they're shopping in its apps.
 
 [Read more](https://techcrunch.com/2026/03/25/meta-turns-to-ai-to-make-shopping-easier-on-instagram-and-facebook/)
-
----
-
-### Lucid Bots raises $20M to keep up with demand for its window-washing drones
-
-Lucid Bots has seen demand accelerate over the last year for its window-cleaning drones and power-washing robots.
-
-[Read more](https://techcrunch.com/2026/03/25/lucid-bots-raises-20m-to-keep-up-with-demand-for-its-window-washing-drones/)
-
----
-
-### Kentucky woman rejects $26M offer to turn her farm into a data center
-
-A "major artificial intelligence company" reportedly offered a Kentucky family $26 million to build a data center on their farm.
-
-[Read more](https://techcrunch.com/2026/03/24/kentucky-woman-rejects-26-million-offer-to-turn-her-farm-into-a-data-center/)
-
----
-
-### Databricks bought two startups to underpin its new AI security product
-
-With an overflowing war chest from its recent $5 billion raise, Databricks is buying startups and looking for more. It acquired Antimatter and SiftD.ai.
-
-[Read more](https://techcrunch.com/2026/03/24/databricks-buys-two-startups-lakewatch-antimatter-siftd-ai-security/)
 
 ---
 
@@ -143,6 +143,38 @@ UK authorities believe improving efficiency across national finance operations r
 
 ## Research & Products
 
+### ByteDance's new AI video generation model, Dreamina Seedance 2.0, comes to CapCut
+
+The new model in CapCut will have built-in protections for making video from real faces or unauthorized intellectual property.
+
+[Read more](https://techcrunch.com/2026/03/26/bytedances-new-ai-video-generation-model-dreamina-seedance-2-0-comes-to-capcut/)
+
+---
+
+### Conntour raises $7M from General Catalyst, YC to build an AI search engine for security video systems
+
+Conntour uses AI models to let security teams query camera feeds using natural language to find any object, person, or situation.
+
+[Read more](https://techcrunch.com/2026/03/26/conntour-raises-7m-from-general-catalyst-yc-to-build-an-ai-search-engine-for-security-video-systems/)
+
+---
+
+### Cohere launches an open source voice model specifically for transcription
+
+Relatively light at just 2 billion parameters, the model is meant for use with consumer-grade GPUs for those who want to self-host it. It currently supports 14 languages.
+
+[Read more](https://techcrunch.com/2026/03/26/cohere-launches-an-open-source-voice-model-specifically-for-transcription/)
+
+---
+
+### Mistral releases a new open source model for speech generation
+
+The model, which lets enterprises build voice agents for sales and customer engagement, puts Mistral in direct competition with the likes of ElevenLabs, Deepgram, and OpenAI.
+
+[Read more](https://techcrunch.com/2026/03/26/mistral-releases-a-new-open-source-model-for-speech-generation/)
+
+---
+
 ### Google launches Lyria 3 Pro music generation model
 
 Google is launching Lyria 3 Pro, an upgraded music model that generates longer, more customizable tracks, as it expands AI music tools across Gemini, enterprise products, and other services.
@@ -167,31 +199,15 @@ Sift is building the data infrastructure for advanced manufacturing.
 
 ---
 
-### With $3.5B in fresh capital, Kleiner Perkins is going all in on AI
-
-The fundraise includes $1 billion for investing in early-stage startups and $2.5 billion for late-stage growth businesses.
-
-[Read more](https://techcrunch.com/2026/03/24/with-3-5b-in-fresh-capital-kleiner-perkins-is-going-all-in-on-ai/)
-
----
-
-### OpenAI’s Sora was the creepiest app on your phone &#8212; now it's shutting down
-
-Though the underlying Sora 2 video- and audio-generation model is scarily impressive, there was not sustained interest in an AI-only social feed.
-
-[Read more](https://techcrunch.com/2026/03/24/openais-sora-was-the-creepiest-app-on-your-phone-now-its-shutting-down/)
-
----
-
-### Spotify tests new tool to stop AI slop from being attributed to real artists
-
-The idea behind the new tool is to give artists more control over which tracks are associated with their name on Spotify.
-
-[Read more](https://techcrunch.com/2026/03/24/spotify-tests-new-tool-to-stop-ai-slop-from-being-attributed-to-real-artists/)
-
----
-
 ## Policy & Ethics
+
+### OpenAI abandons yet another side quest: ChatGPT's erotic mode
+
+It's only the latest of several side project that the AI startup has ditched over the past week.
+
+[Read more](https://techcrunch.com/2026/03/26/openai-abandons-yet-another-side-quest-chatgpts-erotic-mode/)
+
+---
 
 ### Bernie Sanders and AOC propose a ban on data center construction
 
@@ -206,14 +222,6 @@ Senator Bernie Sanders and Rep. Alexandria Ocasio-Cortez introduced companion le
 AI agents are starting to take on a more direct role in how financial advice is delivered, as large banks move into systems that support client interactions. Bank of America is now deploying an internal AI-powered advisory platform to a subset of financial advisers, rolled out to around 1,000 financ
 
 [Read more](https://www.artificialintelligence-news.com/news/ai-agents-enter-banking-roles-at-bank-of-america/)
-
----
-
-### Anthropic hands Claude Code more control, but keeps it on a leash
-
-Anthropic’s new auto mode for Claude Code lets AI execute tasks with fewer approvals, reflecting a broader shift toward more autonomous tools that balance speed with safety through built-in safeguards.
-
-[Read more](https://techcrunch.com/2026/03/24/anthropic-hands-claude-code-more-control-but-keeps-it-on-a-leash/)
 
 ---
 
