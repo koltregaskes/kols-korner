@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://gdktukmraxaircugxnls.supabase.co; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -28,12 +28,7 @@
         <span class="logo-icon">K</span>
         <span class="logo-text">Kol's Korner</span>
       </a>
-      <nav class="site-nav">
-        <a href="../../posts/">Posts</a>
-        <a href="../../news/">News</a>
-        <a href="../../tags/">Tags</a>
-        <a href="../../about/">About</a>
-        <a href="../../subscribe/">Newsletter</a>
+      <div class="site-header-actions">
         <button class="theme-toggle" aria-label="Toggle theme">
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
@@ -46,6 +41,18 @@
             <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
           </svg>
         </button>
+        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav-links">
+        <a href="../../posts/" class="active">Posts</a>
+        <a href="../../news/">News</a>
+        <a href="../../tags/">Tags</a>
+        <a href="../../about/">About</a>
+        <a href="../../subscribe/">Newsletter</a>
       </nav>
     </div>
   </header>
@@ -56,7 +63,12 @@
       <header class="digest-header">
         <span class="digest-badge">Daily Digest</span>
         <h1 class="digest-title">Thursday, 19 March 2026</h1>
-        <p class="digest-subtitle">Today's AI news, curated by Kol</p>
+        <p class="digest-subtitle">A quick editorial sweep of the stories shaping AI, tools, research, and the companies building them.</p>
+        <div class="digest-meta">
+          <span>7 min read</span>
+          <span class="meta-sep">â€¢</span>
+          <span>Updated daily</span>
+        </div>
         <div class="beta-notice" style="background: #ff6b35; color: white; padding: 12px 20px; border-radius: 6px; margin: 16px 0; font-size: 0.9rem;">
           <strong>⚠️ Beta:</strong> Daily news digests are in beta. We're refining sources, deduplication, and quality. Expect improvements over time.
         </div>
@@ -69,13 +81,13 @@
         
 <h2 id="daily-digest-thursday-19-march-2026"><span class="hash">#</span> Daily Digest: Thursday, 19 March 2026</h2>
 
-<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>
+<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>
 
 <h3 id="top-stories"><span class="hash">##</span> Top Stories</h3>
 
 <h4 id="meta-rolls-out-new-ai-content-enforcement-systems-while-reducing-reliance-on-thi"><span class="hash">###</span> Meta rolls out new AI content enforcement systems while reducing reliance on third-party vendors</h4>
 
-<p>Meta believes these AI systems can detect more violations with greater accuracy, better prevent scams, respond more quickly to real-world events, and reduce over-enforcement.</p>
+<p>Meta believes these AI systems can detect more violations with greater accuracy, better prevent scams, respond more quickly to real-world events, and reduce over-enforcement.</p>
 
 <a href="https://techcrunch.com/2026/03/19/meta-rolls-out-new-ai-content-enforcement-systems-while-reducing-reliance-on-third-party-vendors/">Read more</a>
 
@@ -83,7 +95,7 @@
 
 <h4 id="techcrunch-startup-battlefield-200-nominations-are-still-open"><span class="hash">###</span> TechCrunch Startup Battlefield 200 nominations are still open</h4>
 
-<p>Nominate your startup, or one you know, for TechCrunch Startup Battlefield 200 before May 27. Chance to win $100,000 equity-free funding and VC access.</p>
+<p>Nominate your startup, or one you know, for TechCrunch Startup Battlefield 200 before May 27. Chance to win $100,000 equity-free funding and VC access.</p>
 
 <a href="https://techcrunch.com/2026/03/19/techcrunch-startup-battlefield-200-nominations-are-still-open/">Read more</a>
 
@@ -91,7 +103,7 @@
 
 <h4 id="amazon-brings-alexa-to-the-uk"><span class="hash">###</span> Amazon brings Alexa+ to the UK</h4>
 
-<p>The company is currently letting users in the U.K. try out Alexa+ for free via an early access program.</p>
+<p>The company is currently letting users in the U.K. try out Alexa+ for free via an early access program.</p>
 
 <a href="https://techcrunch.com/2026/03/19/amazon-brings-alexa-to-the-uk/">Read more</a>
 
@@ -99,7 +111,7 @@
 
 <h4 id="meta-is-having-trouble-with-rogue-ai-agents"><span class="hash">###</span> Meta is having trouble with rogue AI agents</h4>
 
-<p>A rogue AI agent inadvertently exposed Meta company and user data to engineers who didn't have permission to see it.</p>
+<p>A rogue AI agent inadvertently exposed Meta company and user data to engineers who didn't have permission to see it.</p>
 
 <a href="https://techcrunch.com/2026/03/18/meta-is-having-trouble-with-rogue-ai-agents/">Read more</a>
 
@@ -107,7 +119,7 @@
 
 <h4 id="sam-altmans-thank-you-to-coders-draws-the-memes"><span class="hash">###</span> Sam Altman's thank-you to coders draws the memes</h4>
 
-<p>Altman expresses gratitude for people who knew how to write their code from scratch. The internet replies with salty jokes.</p>
+<p>Altman expresses gratitude for people who knew how to write their code from scratch. The internet replies with salty jokes.</p>
 
 <a href="https://techcrunch.com/2026/03/18/sam-altmans-thank-you-to-coders-draws-the-memes/">Read more</a>
 
@@ -115,7 +127,7 @@
 
 <h4 id="nothing-ceo-carl-pei-says-smartphone-apps-will-disappear-as-ai-agents-take-their"><span class="hash">###</span> Nothing CEO Carl Pei says smartphone apps will disappear as AI agents take their place</h4>
 
-<p>Nothing CEO Carl Pei says AI agents will eventually replace apps, shifting smartphones toward systems that understand intent and act on a user's behalf.</p>
+<p>Nothing CEO Carl Pei says AI agents will eventually replace apps, shifting smartphones toward systems that understand intent and act on a user's behalf.</p>
 
 <a href="https://techcrunch.com/2026/03/18/nothing-ceo-carl-pei-says-smartphone-apps-will-disappear-as-ai-agents-take-their-place/">Read more</a>
 
@@ -123,7 +135,7 @@
 
 <h4 id="nvidia-is-quietly-building-a-multibillion-dollar-behemoth-to-rival-its-chips-bus"><span class="hash">###</span> Nvidia is quietly building a multibillion-dollar behemoth to rival its chips business</h4>
 
-<p>Nvidia's networking business raked in $11 billion last quarter despite getting significantly less fanfare than chips and gaming.</p>
+<p>Nvidia's networking business raked in $11 billion last quarter despite getting significantly less fanfare than chips and gaming.</p>
 
 <a href="https://techcrunch.com/2026/03/18/nvidia-networking-division-building-a-multibillion-dollar-behemoth-to-rival-its-chips-business/">Read more</a>
 
@@ -131,7 +143,7 @@
 
 <h4 id="patreon-ceo-calls-ai-companies-fair-use-argument-bogus-says-creators-should-be-p"><span class="hash">###</span> Patreon CEO calls AI companies' fair use argument 'bogus,' says creators should be paid</h4>
 
-<p>Patreon CEO Jack Conte says AI companies should pay creators for training data, arguing their fair use defense falls apart when they license content from major publishers.</p>
+<p>Patreon CEO Jack Conte says AI companies should pay creators for training data, arguing their fair use defense falls apart when they license content from major publishers.</p>
 
 <a href="https://techcrunch.com/2026/03/18/patreon-ceo-calls-ai-companies-fair-use-argument-bogus-says-creators-should-be-paid/">Read more</a>
 
@@ -141,7 +153,7 @@
 
 <h4 id="this-startup-wants-to-make-enterprise-software-look-more-like-a-prompt"><span class="hash">###</span> This startup wants to make enterprise software look more like a prompt</h4>
 
-<p>The company has raised $12 million in seed funding to build an AI operating system for enterprise.</p>
+<p>The company has raised $12 million in seed funding to build an AI operating system for enterprise.</p>
 
 <a href="https://techcrunch.com/2026/03/18/this-startup-wants-to-make-enterprise-software-look-more-like-a-prompt/">Read more</a>
 
@@ -149,7 +161,7 @@
 
 <h4 id="sequen-snags-16m-to-bring-tiktok-style-personalization-tech-to-any-consumer-comp"><span class="hash">###</span> Sequen snags $16M to bring TikTok-style personalization tech to any consumer company</h4>
 
-<p>With its Series A, Sequen is bringing its proprietary AI ranking and personalization technology to large consumer business.</p>
+<p>With its Series A, Sequen is bringing its proprietary AI ranking and personalization technology to large consumer business.</p>
 
 <a href="https://techcrunch.com/2026/03/18/sequen-snags-16m-to-bring-tiktok-style-personalization-tech-to-any-consumer-company/">Read more</a>
 
@@ -157,7 +169,7 @@
 
 <h4 id="microsoft-hires-the-team-of-sequoia-backed-ai-collaboration-platform-cove"><span class="hash">###</span> Microsoft hires the team of Sequoia-backed AI collaboration platform, Cove</h4>
 
-<p>AI collaboration startup Cove is shutting down after its team joined Microsoft, with service ending April 1 and customer data set for deletion.</p>
+<p>AI collaboration startup Cove is shutting down after its team joined Microsoft, with service ending April 1 and customer data set for deletion.</p>
 
 <a href="https://techcrunch.com/2026/03/18/microsoft-hires-the-team-of-sequioa-backed-ai-collaboration-platform-cove/">Read more</a>
 
@@ -165,7 +177,7 @@
 
 <h4 id="for-effective-ai-insurance-needs-to-get-its-data-house-in-order"><span class="hash">###</span> For effective AI, insurance needs to get its data house in order</h4>
 
-<p>A report from Autorek, a provider of AI solutions to the insurance industry has produced a report that describes operational drag in companies&#8217; internal processes that not only affect overall efficiency but cause an impediment to the effective implementation of AI in insurance concerns. Insura</p>
+<p>A report from Autorek, a provider of AI solutions to the insurance industry has produced a report that describes operational drag in companies&#8217; internal processes that not only affect overall efficiency but cause an impediment to the effective implementation of AI in insurance concerns. Insura</p>
 
 <a href="https://www.artificialintelligence-news.com/news/for-effective-ai-insurance-needs-a-better-data-layer-and-integration/">Read more</a>
 
@@ -173,7 +185,7 @@
 
 <h4 id="dod-says-anthropic-s-red-lines-make-it-an-unacceptable-risk-to-national-security"><span class="hash">###</span> DOD says Anthropic’s ‘red lines’ make it an ‘unacceptable risk to national security’</h4>
 
-<p>The Defense Department said concerns that Anthropic might "attempt to disable its technology" during "warfighting operations" validate its decision to label the AI firm a supply-chain risk.</p>
+<p>The Defense Department said concerns that Anthropic might "attempt to disable its technology" during "warfighting operations" validate its decision to label the AI firm a supply-chain risk.</p>
 
 <a href="https://techcrunch.com/2026/03/18/dod-says-anthropics-red-lines-make-it-an-unacceptable-risk-to-national-security/">Read more</a>
 
@@ -181,7 +193,7 @@
 
 <h4 id="why-garry-tans-claude-code-setup-has-gotten-so-much-love-and-hate"><span class="hash">###</span> Why Garry Tan's Claude Code setup has gotten so much love, and hate</h4>
 
-<p>Thousands of people are trying Garry Tan's Claude Code setup, which was shared on GitHub. And everyone has an opinion: even Claude, ChatGPT, and Gemini.</p>
+<p>Thousands of people are trying Garry Tan's Claude Code setup, which was shared on GitHub. And everyone has an opinion: even Claude, ChatGPT, and Gemini.</p>
 
 <a href="https://techcrunch.com/2026/03/17/why-garry-tans-claude-code-setup-has-gotten-so-much-love-and-hate/">Read more</a>
 
@@ -189,7 +201,7 @@
 
 <h4 id="trustpilot-partners-with-ai-companies-as-traditional-search-declines"><span class="hash">###</span> Trustpilot partners with AI companies as traditional search declines</h4>
 
-<p>Trustpilot is reported to be pursuing partnerships with large eCommerce companies as AI-driven shopping gains traction. In an interview with Bloomberg News [paywall], chief executive Adrian Blair said that AI agents acting on behalf of consumers require lots of information about the businesses they&</p>
+<p>Trustpilot is reported to be pursuing partnerships with large eCommerce companies as AI-driven shopping gains traction. In an interview with Bloomberg News [paywall], chief executive Adrian Blair said that AI agents acting on behalf of consumers require lots of information about the businesses they&</p>
 
 <a href="https://www.artificialintelligence-news.com/news/ai-in-ecommerce-trustpilot-partnerships-integration-news-trad-search-declines/">Read more</a>
 
@@ -197,7 +209,7 @@
 
 <h4 id="goldman-sachs-sees-ai-investment-shift-to-data-centres"><span class="hash">###</span> Goldman Sachs sees AI investment shift to data centres</h4>
 
-<p>Artificial intelligence investment is entering a more selective phase as companies and investors look beyond early excitement and focus on the data centre infrastructure required to run AI systems. Recent analysis from Goldman Sachs suggests the market is moving toward what the firm describes as a &</p>
+<p>Artificial intelligence investment is entering a more selective phase as companies and investors look beyond early excitement and focus on the data centre infrastructure required to run AI systems. Recent analysis from Goldman Sachs suggests the market is moving toward what the firm describes as a &</p>
 
 <a href="https://www.artificialintelligence-news.com/news/goldman-sachs-sees-ai-investment-shift-to-data-centres/">Read more</a>
 
@@ -207,7 +219,7 @@
 
 <h4 id="doordash-launches-a-new-tasks-app-that-pays-couriers-to-submit-videos-to-train-a"><span class="hash">###</span> DoorDash launches a new 'Tasks' app that pays couriers to submit videos to train AI</h4>
 
-<p>Delivery couriers will be able to earn money by completing activities like filming everyday tasks or recording themselves speaking in another language.</p>
+<p>Delivery couriers will be able to earn money by completing activities like filming everyday tasks or recording themselves speaking in another language.</p>
 
 <a href="https://techcrunch.com/2026/03/19/doordash-launches-a-new-tasks-app-that-pays-couriers-to-submit-videos-to-train-ai/">Read more</a>
 
@@ -215,7 +227,7 @@
 
 <h4 id="multiverse-computing-pushes-its-compressed-ai-models-into-the-mainstream"><span class="hash">###</span> Multiverse Computing pushes its compressed AI models into the mainstream</h4>
 
-<p>After compressing models from major AI labs, including OpenAI, Meta, DeepSeek, and Mistral AI, Multiverse Computing has launched both an app that showcases the capabilities of its compressed models and an API that makes them more widely available.</p>
+<p>After compressing models from major AI labs, including OpenAI, Meta, DeepSeek, and Mistral AI, Multiverse Computing has launched both an app that showcases the capabilities of its compressed models and an API that makes them more widely available.</p>
 
 <a href="https://techcrunch.com/2026/03/19/multiverse-computing-pushes-its-compressed-ai-models-into-the-mainstream/">Read more</a>
 
@@ -223,7 +235,7 @@
 
 <h4 id="nvidia-wants-enterprise-ai-agents-safer-to-deploy"><span class="hash">###</span> NVIDIA wants enterprise AI agents safer to deploy</h4>
 
-<p>The NVIDIA Agent Toolkit is Jensen Huang&#8217;s answer to the question enterprises keep asking: how do we put AI agents to work without losing control of our data and our liability? Announced at GTC 2026 in San Jose on March 16, the NVIDIA Agent Toolkit is an open-source software stack designed to</p>
+<p>The NVIDIA Agent Toolkit is Jensen Huang&#8217;s answer to the question enterprises keep asking: how do we put AI agents to work without losing control of our data and our liability? Announced at GTC 2026 in San Jose on March 16, the NVIDIA Agent Toolkit is an open-source software stack designed to</p>
 
 <a href="https://www.artificialintelligence-news.com/news/nvidia-agent-toolkit-enterprise-ai-agents/">Read more</a>
 
@@ -231,7 +243,7 @@
 
 <h4 id="rebel-audio-is-a-new-ai-podcasting-tool-aimed-at-first-time-creators"><span class="hash">###</span> Rebel Audio is a new AI podcasting tool aimed at first-time creators</h4>
 
-<p>Rebel Audio is a new all-in-one podcasting tool that allows creators to record podcasts, edit, clip content for social, and publish episodes, all without ever leaving the platform.</p>
+<p>Rebel Audio is a new all-in-one podcasting tool that allows creators to record podcasts, edit, clip content for social, and publish episodes, all without ever leaving the platform.</p>
 
 <a href="https://techcrunch.com/2026/03/18/rebel-audio-is-a-new-ai-podcasting-tool-aimed-at-first-time-creators/">Read more</a>
 
@@ -239,7 +251,7 @@
 
 <h4 id="the-gemini-powered-features-in-google-workspace-that-are-worth-using"><span class="hash">###</span> The Gemini-powered features in Google Workspace that are worth using</h4>
 
-<p>From summarizing emails, drafting content, organizing data, and tracking meetings, here are all the best Gemini features in Google Workspace.</p>
+<p>From summarizing emails, drafting content, organizing data, and tracking meetings, here are all the best Gemini features in Google Workspace.</p>
 
 <a href="https://techcrunch.com/2026/03/18/the-gemini-powered-features-in-google-workspace-that-are-worth-using/">Read more</a>
 
@@ -247,7 +259,7 @@
 
 <h4 id="the-leaderboard-you-cant-game-funded-by-the-companies-it-ranks"><span class="hash">###</span> The leaderboard “you can't game,” funded by the companies it ranks</h4>
 
-<p>Artificial intelligence models are multiplying fast, and competition is stiff. With so many players crowding the space, which one will be the best — and who decides that? Arena, formerly LM Arena, has emerged as the de facto public leaderboard for frontier LLMs, influencing funding, launches, and PR</p>
+<p>Artificial intelligence models are multiplying fast, and competition is stiff. With so many players crowding the space, which one will be the best — and who decides that? Arena, formerly LM Arena, has emerged as the de facto public leaderboard for frontier LLMs, influencing funding, launches, and PR</p>
 
 <a href="https://techcrunch.com/video/the-leaderboard-you-cant-game-funded-by-the-companies-it-ranks/">Read more</a>
 
@@ -255,7 +267,7 @@
 
 <h4 id="mastercard-keeps-tabs-on-fraud-with-new-foundation-model"><span class="hash">###</span> Mastercard keeps tabs on fraud with new foundation model</h4>
 
-<p>Mastercard has developed a large tabular model (an LTM as opposed to an LLM) that&#8217;s trained on transaction data rather than text or images to help it address security and authenticity issues in digital payments. The company has trained a foundation model on billions of card transactions, with</p>
+<p>Mastercard has developed a large tabular model (an LTM as opposed to an LLM) that&#8217;s trained on transaction data rather than text or images to help it address security and authenticity issues in digital payments. The company has trained a foundation model on billions of card transactions, with</p>
 
 <a href="https://www.artificialintelligence-news.com/news/mastercards-ltm-keeps-tabs-on-fraud-with-a-new-foundation-model/">Read more</a>
 
@@ -263,7 +275,7 @@
 
 <h4 id="the-phd-students-who-became-the-judges-of-the-ai-industry"><span class="hash">###</span> The PhD students who became the judges of the AI industry</h4>
 
-<p>Artificial intelligence models are multiplying fast, and competition is stiff. With so many players crowding the space, which one will be the best — and who decides that? Arena, formerly LM Arena, has emerged as the de facto public leaderboard for frontier LLMs, influencing funding, launches, and PR</p>
+<p>Artificial intelligence models are multiplying fast, and competition is stiff. With so many players crowding the space, which one will be the best — and who decides that? Arena, formerly LM Arena, has emerged as the de facto public leaderboard for frontier LLMs, influencing funding, launches, and PR</p>
 
 <a href="https://techcrunch.com/podcast/the-phd-students-who-became-the-judges-of-the-ai-industry/">Read more</a>
 
@@ -271,7 +283,7 @@
 
 <h4 id="mistral-bets-on-build-your-own-ai-as-it-takes-on-openai-anthropic-in-the-enterpr"><span class="hash">###</span> Mistral bets on ‘build-your-own AI’ as it takes on OpenAI, Anthropic in the enterprise</h4>
 
-<p>Mistral Forge lets enterprises train custom AI models from scratch on their own data, challenging rivals that rely on fine-tuning and retrieval-based approaches.</p>
+<p>Mistral Forge lets enterprises train custom AI models from scratch on their own data, challenging rivals that rely on fine-tuning and retrieval-based approaches.</p>
 
 <a href="https://techcrunch.com/2026/03/17/mistral-forge-nvidia-gtc-build-your-own-ai-enterprise/">Read more</a>
 
@@ -279,7 +291,7 @@
 
 <h4 id="ntt-data-and-nvidia-bring-enterprise-ai-factories-to-production-scale"><span class="hash">###</span> NTT DATA and NVIDIA bring enterprise AI factories to production scale</h4>
 
-<p>NTT DATA has announced an initiative to deliver NVIDIA-powered platforms designed to give organisations a repeatable, production-ready model for scaling AI. The offering integrates NVIDIA&#8217;s GPU-accelerated computing and high-performance networking with NVIDIA AI Enterprise software, including</p>
+<p>NTT DATA has announced an initiative to deliver NVIDIA-powered platforms designed to give organisations a repeatable, production-ready model for scaling AI. The offering integrates NVIDIA&#8217;s GPU-accelerated computing and high-performance networking with NVIDIA AI Enterprise software, including</p>
 
 <a href="https://www.artificialintelligence-news.com/news/ntt-data-nvidia-enterprise-ai-factories-production/">Read more</a>
 
@@ -287,7 +299,7 @@
 
 <h4 id="openais-frontier-puts-ai-agents-in-a-fight-saas-cant-afford-to-lose"><span class="hash">###</span> OpenAI's Frontier puts AI agents in a fight SaaS can't afford to lose</h4>
 
-<p>When OpenAI launched Frontier in February, the announcement was described as a platform for enterprise AI agents. What it actually signalled was a challenge to the revenue architecture underpinning the software industry. Frontier is designed to act as a semantic layer in an organisation&#8217;s exis</p>
+<p>When OpenAI launched Frontier in February, the announcement was described as a platform for enterprise AI agents. What it actually signalled was a challenge to the revenue architecture underpinning the software industry. Frontier is designed to act as a semantic layer in an organisation&#8217;s exis</p>
 
 <a href="https://www.artificialintelligence-news.com/news/openai-frontier-enterprise-ai-agents-saas/">Read more</a>
 
@@ -297,7 +309,7 @@
 
 <h4 id="visa-prepares-payment-systems-for-ai-agent-initiated-transactions"><span class="hash">###</span> Visa prepares payment systems for AI agent-initiated transactions</h4>
 
-<p>Payments rely on a simple model: a person decides to buy something, and a bank or card network processes the transaction. That model is starting to change as Visa tests how AI agents can initiate payments. New work in the banking sector suggests that, in some cases, software agents may soon take on</p>
+<p>Payments rely on a simple model: a person decides to buy something, and a bank or card network processes the transaction. That model is starting to change as Visa tests how AI agents can initiate payments. New work in the banking sector suggests that, in some cases, software agents may soon take on</p>
 
 <a href="https://www.artificialintelligence-news.com/news/visa-prepares-payment-systems-for-ai-agent-initiated-transactions/">Read more</a>
 
@@ -305,7 +317,7 @@
 
 <h4 id="us-treasury-publishes-ai-risk-guidebook-for-financial-institutions"><span class="hash">###</span> US Treasury publishes AI risk Guidebook for financial institutions</h4>
 
-<p>The US Treasury has published several documents designed for the US financial services sector that suggest a structured approach to managing AI risks in operations and policy (see subheading &#8216;Resources and Downloads&#8217; towards the bottom of the link). The CRI Financial Services AI Risk Man</p>
+<p>The US Treasury has published several documents designed for the US financial services sector that suggest a structured approach to managing AI risks in operations and policy (see subheading &#8216;Resources and Downloads&#8217; towards the bottom of the link). The CRI Financial Services AI Risk Man</p>
 
 <a href="https://www.artificialintelligence-news.com/news/us-treasury-publishes-ai-risk-governance-guidebook-for-financial-institutions/">Read more</a>
 
@@ -377,16 +389,67 @@
   </footer>
 
   <script>
-    const themeToggle = document.querySelector('.theme-toggle');
+    
     const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
+    const siteHeader = document.querySelector('.site-header');
+    const themeToggle = document.querySelector('.theme-toggle');
+    const navToggle = document.querySelector('.site-nav-toggle');
+    const navLinks = document.getElementById('site-nav-links');
+
+    const applyTheme = (theme) => {
+      html.setAttribute('data-theme', theme);
+      document.body.classList.toggle('dark', theme === 'dark');
+    };
+
     const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
+    applyTheme(savedTheme);
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+
+    if (siteHeader && navToggle && navLinks) {
+      const setNavOpen = (isOpen) => {
+        siteHeader.dataset.navOpen = isOpen ? 'true' : 'false';
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      };
+
+      navToggle.addEventListener('click', () => {
+        const isOpen = siteHeader.dataset.navOpen === 'true';
+        setNavOpen(!isOpen);
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setNavOpen(false));
+      });
+
+      document.addEventListener('click', (event) => {
+        if (siteHeader.dataset.navOpen !== 'true') return;
+        if (siteHeader.contains(event.target)) return;
+        setNavOpen(false);
+      });
+
+      const desktopQuery = window.matchMedia('(min-width: 769px)');
+      const resetNav = (event) => {
+        if (event.matches) {
+          setNavOpen(false);
+        }
+      };
+
+      if (desktopQuery.addEventListener) {
+        desktopQuery.addEventListener('change', resetNav);
+      } else if (desktopQuery.addListener) {
+        desktopQuery.addListener(resetNav);
+      }
+    }
+
+    
+  
   </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://gdktukmraxaircugxnls.supabase.co; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -28,12 +28,7 @@
         <span class="logo-icon">K</span>
         <span class="logo-text">Kol's Korner</span>
       </a>
-      <nav class="site-nav">
-        <a href="../../posts/">Posts</a>
-        <a href="../../news/">News</a>
-        <a href="../../tags/">Tags</a>
-        <a href="../../about/">About</a>
-        <a href="../../subscribe/">Newsletter</a>
+      <div class="site-header-actions">
         <button class="theme-toggle" aria-label="Toggle theme">
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
@@ -46,6 +41,18 @@
             <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
           </svg>
         </button>
+        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav-links">
+        <a href="../../posts/" class="active">Posts</a>
+        <a href="../../news/">News</a>
+        <a href="../../tags/">Tags</a>
+        <a href="../../about/">About</a>
+        <a href="../../subscribe/">Newsletter</a>
       </nav>
     </div>
   </header>
@@ -56,7 +63,12 @@
       <header class="digest-header">
         <span class="digest-badge">Daily Digest</span>
         <h1 class="digest-title">Monday, 23 March 2026</h1>
-        <p class="digest-subtitle">Today's AI news, curated by Kol</p>
+        <p class="digest-subtitle">A quick editorial sweep of the stories shaping AI, tools, research, and the companies building them.</p>
+        <div class="digest-meta">
+          <span>5 min read</span>
+          <span class="meta-sep">â€¢</span>
+          <span>Updated daily</span>
+        </div>
         <div class="beta-notice" style="background: #ff6b35; color: white; padding: 12px 20px; border-radius: 6px; margin: 16px 0; font-size: 0.9rem;">
           <strong>⚠️ Beta:</strong> Daily news digests are in beta. We're refining sources, deduplication, and quality. Expect improvements over time.
         </div>
@@ -69,13 +81,13 @@
         
 <h2 id="daily-digest-monday-23-march-2026"><span class="hash">#</span> Daily Digest: Monday, 23 March 2026</h2>
 
-<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>
+<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>
 
 <h3 id="top-stories"><span class="hash">##</span> Top Stories</h3>
 
 <h4 id="vibe-coding-startup-lovable-is-on-the-hunt-for-acquisitions"><span class="hash">###</span> Vibe-coding startup Lovable is on the hunt for acquisitions</h4>
 
-<p>Lovable's founder said the fast-growing vibe coding startup is looking for startups and teams to join its company.</p>
+<p>Lovable's founder said the fast-growing vibe coding startup is looking for startups and teams to join its company.</p>
 
 <a href="https://techcrunch.com/2026/03/23/vibe-coding-startup-lovable-is-on-the-hunt-for-acquisitions/">Read more</a>
 
@@ -83,7 +95,7 @@
 
 <h4 id="startup-gimlet-labs-is-solving-the-ai-inference-bottleneck-in-a-surprisingly-ele"><span class="hash">###</span> Startup Gimlet Labs is solving the AI inference bottleneck in a surprisingly elegant way</h4>
 
-<p>Gimlet Labs just raised an $80 million Series A for tech that lets AI run across NVIDIA, AMD, Intel, ARM, Cerebras and d-Matrix chips, simultaneously.</p>
+<p>Gimlet Labs just raised an $80 million Series A for tech that lets AI run across NVIDIA, AMD, Intel, ARM, Cerebras and d-Matrix chips, simultaneously.</p>
 
 <a href="https://techcrunch.com/2026/03/23/startup-gimlet-labs-is-solving-the-ai-inference-bottleneck-in-a-surprisingly-elegant-way/">Read more</a>
 
@@ -91,7 +103,7 @@
 
 <h4 id="elizabeth-warren-calls-pentagons-decision-to-bar-anthropic-retaliation"><span class="hash">###</span> Elizabeth Warren calls Pentagon's decision to bar Anthropic 'retaliation'</h4>
 
-<p>In a letter to Defense Secretary Pete Hegseth, Senator Elizabeth Warren (D-MA) equated the DOD's decision to label Anthropic a "supply-chain risk" as retaliation, arguing that the Pentagon could simply have terminated its contract with the AI lab.</p>
+<p>In a letter to Defense Secretary Pete Hegseth, Senator Elizabeth Warren (D-MA) equated the DOD's decision to label Anthropic a "supply-chain risk" as retaliation, arguing that the Pentagon could simply have terminated its contract with the AI lab.</p>
 
 <a href="https://techcrunch.com/2026/03/23/elizabeth-warren-anthropic-pentagon-defense-supply-chain-risk-retaliation/">Read more</a>
 
@@ -99,7 +111,7 @@
 
 <h4 id="sam-altman-backed-fusion-startup-helion-in-talks-to-sell-power-to-openai"><span class="hash">###</span> Sam Altman-backed fusion startup Helion in talks to sell power to OpenAI</h4>
 
-<p>OpenAI CEO Sam Altman is stepping down as board chair of Helion. His departure comes as reports that the two companies are negotiating a deal that would see Helion sell 12.5% of its power output to OpenAI.</p>
+<p>OpenAI CEO Sam Altman is stepping down as board chair of Helion. His departure comes as reports that the two companies are negotiating a deal that would see Helion sell 12.5% of its power output to OpenAI.</p>
 
 <a href="https://techcrunch.com/2026/03/23/sam-altman-openai-fusion-energy-board-helion/">Read more</a>
 
@@ -107,7 +119,7 @@
 
 <h4 id="palantir-ai-to-support-uk-finance-operations"><span class="hash">###</span> Palantir AI to support UK finance operations</h4>
 
-<p>UK authorities believe improving efficiency across national finance operations requires applying AI platforms from vendors like Palantir. The country&#8217;s financial regulator, the FCA, has initiated a project leveraging AI to identify illicit activities. The FCA is currently testing the Foundry p</p>
+<p>UK authorities believe improving efficiency across national finance operations requires applying AI platforms from vendors like Palantir. The country&#8217;s financial regulator, the FCA, has initiated a project leveraging AI to identify illicit activities. The FCA is currently testing the Foundry p</p>
 
 <a href="https://www.artificialintelligence-news.com/news/palantir-ai-to-support-uk-finance-operations/">Read more</a>
 
@@ -115,7 +127,7 @@
 
 <h4 id="do-you-want-to-build-a-robot-snowman"><span class="hash">###</span> Do you want to build a robot snowman?</h4>
 
-<p>On the latest episode of the Equity podcast, we recapped CEO Jensen Huang’s GTC keynote and debated what it means for Nvidia’s future.</p>
+<p>On the latest episode of the Equity podcast, we recapped CEO Jensen Huang’s GTC keynote and debated what it means for Nvidia’s future.</p>
 
 <a href="https://techcrunch.com/2026/03/22/do-you-want-to-build-a-robot-snowman/">Read more</a>
 
@@ -123,7 +135,7 @@
 
 <h4 id="elon-musk-unveils-chip-manufacturing-plans-for-spacex-and-tesla"><span class="hash">###</span> Elon Musk unveils chip manufacturing plans for SpaceX and Tesla</h4>
 
-<p>Elon Musk recently outlined ambitious plans for a chip-building collaboration Tesla and SpaceX — but he has a history of overpromising.</p>
+<p>Elon Musk recently outlined ambitious plans for a chip-building collaboration Tesla and SpaceX — but he has a history of overpromising.</p>
 
 <a href="https://techcrunch.com/2026/03/22/elon-musk-unveils-chip-manufacturing-plans-for-spacex-and-tesla/">Read more</a>
 
@@ -131,7 +143,7 @@
 
 <h4 id="an-exclusive-tour-of-amazons-trainium-lab-the-chip-thats-won-over-anthropic-open"><span class="hash">###</span> An exclusive tour of Amazon's Trainium lab, the chip that's won over Anthropic, OpenAI, even Apple</h4>
 
-<p>Shortly after Amazon announced its $50 billion investment in OpenAI, AWS invited me on a private tour of the chip lab at the heart of the deal.</p>
+<p>Shortly after Amazon announced its $50 billion investment in OpenAI, AWS invited me on a private tour of the chip lab at the heart of the deal.</p>
 
 <a href="https://techcrunch.com/2026/03/22/an-exclusive-tour-of-amazons-trainium-lab-the-chip-thats-won-over-anthropic-openai-even-apple/">Read more</a>
 
@@ -141,7 +153,7 @@
 
 <h4 id="are-ai-tokens-the-new-signing-bonus-or-just-a-cost-of-doing-business"><span class="hash">###</span> Are AI tokens the new signing bonus or just a cost of doing business?</h4>
 
-<p>Maybe tokens really will become the fourth pillar of engineering compensation. But engineers might want to hold the line before embracing this as a straightforward win.</p>
+<p>Maybe tokens really will become the fourth pillar of engineering compensation. But engineers might want to hold the line before embracing this as a straightforward win.</p>
 
 <a href="https://techcrunch.com/2026/03/21/are-ai-tokens-the-new-signing-bonus-or-just-a-cost-of-doing-business/">Read more</a>
 
@@ -149,7 +161,7 @@
 
 <h4 id="publisher-pulls-horror-novel-shy-girl-over-ai-concerns"><span class="hash">###</span> Publisher pulls horror novel ‘Shy Girl’ over AI concerns</h4>
 
-<p>Hachette Book Group said it will not be publishing “Shy Girl” over concerns that artificial intelligence was used to generate the text.</p>
+<p>Hachette Book Group said it will not be publishing “Shy Girl” over concerns that artificial intelligence was used to generate the text.</p>
 
 <a href="https://techcrunch.com/2026/03/21/publisher-pulls-horror-novel-shy-girl-over-ai-concerns/">Read more</a>
 
@@ -157,7 +169,7 @@
 
 <h4 id="why-wall-street-wasnt-won-over-by-nvidias-big-conference"><span class="hash">###</span> Why Wall Street wasn't won over by Nvidia's big conference</h4>
 
-<p>Despite investor fears of an AI bubble, Nvidia's latest conference shows that most in the industry aren't concerned by that possibility.</p>
+<p>Despite investor fears of an AI bubble, Nvidia's latest conference shows that most in the industry aren't concerned by that possibility.</p>
 
 <a href="https://techcrunch.com/2026/03/21/why-wall-street-wasnt-won-over-by-nvidias-big-conference/">Read more</a>
 
@@ -165,7 +177,7 @@
 
 <h4 id="microsoft-rolls-back-some-of-its-copilot-ai-bloat-on-windows"><span class="hash">###</span> Microsoft rolls back some of its Copilot AI bloat on Windows</h4>
 
-<p>The company is reducing Copilot entry points on Windows, starting with Photos, Widgets, Notepad, and other apps.</p>
+<p>The company is reducing Copilot entry points on Windows, starting with Photos, Widgets, Notepad, and other apps.</p>
 
 <a href="https://techcrunch.com/2026/03/20/microsoft-rolls-back-some-of-its-copilot-ai-bloat-on-windows/">Read more</a>
 
@@ -173,7 +185,7 @@
 
 <h4 id="wordpress-com-now-lets-ai-agents-write-and-publish-posts-and-more"><span class="hash">###</span> WordPress.com now lets AI agents write and publish posts, and more</h4>
 
-<p>New AI agents on WordPress.com could lower barriers to publishing while increasing machine-generated content across the web.</p>
+<p>New AI agents on WordPress.com could lower barriers to publishing while increasing machine-generated content across the web.</p>
 
 <a href="https://techcrunch.com/2026/03/20/wordpress-com-now-lets-ai-agents-write-and-publish-posts-and-more/">Read more</a>
 
@@ -183,7 +195,7 @@
 
 <h4 id="apple-sets-june-date-for-wwdc-2026-teasing-ai-advancements"><span class="hash">###</span> Apple sets June date for WWDC 2026, teasing "AI advancements"</h4>
 
-<p>Apple will host its next Worldwide Developers Conference the week of June 8. The company is expected to announce major updates to Siri with advanced AI capabilities.</p>
+<p>Apple will host its next Worldwide Developers Conference the week of June 8. The company is expected to announce major updates to Siri with advanced AI capabilities.</p>
 
 <a href="https://techcrunch.com/2026/03/23/apple-wwdc-june-8-12-ai-advancements-siri-developers-conference/">Read more</a>
 
@@ -191,7 +203,7 @@
 
 <h4 id="littlebird-raises-11m-for-its-ai-assisted-recall-tool-that-reads-your-computer-s"><span class="hash">###</span> Littlebird raises $11M for its AI-assisted ‘recall’ tool that reads your computer screen</h4>
 
-<p>Littlebird is building an AI that reads your screen in real time to capture context, answer questions, and automate tasks, without relying on screenshots.</p>
+<p>Littlebird is building an AI that reads your screen in real time to capture context, answer questions, and automate tasks, without relying on screenshots.</p>
 
 <a href="https://techcrunch.com/2026/03/23/littlebird-raises-11m-to-capture-context-from-your-computer-so-you-can-query-your-data/">Read more</a>
 
@@ -199,7 +211,7 @@
 
 <h4 id="cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ai-s-kimi"><span class="hash">###</span> Cursor admits its new coding model was built on top of Moonshot AI’s Kimi</h4>
 
-<p>Building on top of a Chinese model feels particularly fraught right now.</p>
+<p>Building on top of a Chinese model feels particularly fraught right now.</p>
 
 <a href="https://techcrunch.com/2026/03/22/cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ais-kimi/">Read more</a>
 
@@ -209,7 +221,7 @@
 
 <h4 id="delve-accused-of-misleading-customers-with-fake-compliance"><span class="hash">###</span> Delve accused of misleading customers with ‘fake compliance’</h4>
 
-<p>An anonymous Substack post accuses compliance startup Delve of “falsely” convincing “hundreds of customers they were compliant” with privacy and security regulations.</p>
+<p>An anonymous Substack post accuses compliance startup Delve of “falsely” convincing “hundreds of customers they were compliant” with privacy and security regulations.</p>
 
 <a href="https://techcrunch.com/2026/03/22/delve-accused-of-misleading-customers-with-fake-compliance/">Read more</a>
 
@@ -217,7 +229,7 @@
 
 <h4 id="new-court-filing-reveals-pentagon-told-anthropic-the-two-sides-were-nearly-align"><span class="hash">###</span> New court filing reveals Pentagon told Anthropic the two sides were nearly aligned — a week after Trump declared the relationship kaput</h4>
 
-<p>Anthropic submitted two sworn declarations to a California federal court late Friday afternoon, pushing back on the Pentagon's assertion that the AI company poses an "unacceptable risk to national security" and arguing that the government's case relies on technical misunderstandings and claims that</p>
+<p>Anthropic submitted two sworn declarations to a California federal court late Friday afternoon, pushing back on the Pentagon's assertion that the AI company poses an "unacceptable risk to national security" and arguing that the government's case relies on technical misunderstandings and claims that</p>
 
 <a href="https://techcrunch.com/2026/03/20/new-court-filing-reveals-pentagon-told-anthropic-the-two-sides-were-nearly-aligned-a-week-after-trump-declared-the-relationship-kaput/">Read more</a>
 
@@ -225,7 +237,7 @@
 
 <h4 id="what-happened-at-nvidia-gtc-nemoclaw-robot-olaf-and-a-1-trillion-bet"><span class="hash">###</span> What happened at Nvidia GTC: NemoClaw, Robot Olaf, and a $1 trillion bet</h4>
 
-<p>CEO Jensen Huang took the stage at Nvidia&#8217;s GTC conference this week in his signature leather jacket to deliver a two-and-a-half-hour keynote, projecting $1 trillion in AI chip sales through 2027, declaring that every company needs an “OpenClaw strategy,” and closing with a rambling Olaf robot</p>
+<p>CEO Jensen Huang took the stage at Nvidia&#8217;s GTC conference this week in his signature leather jacket to deliver a two-and-a-half-hour keynote, projecting $1 trillion in AI chip sales through 2027, declaring that every company needs an “OpenClaw strategy,” and closing with a rambling Olaf robot</p>
 
 <a href="https://techcrunch.com/video/what-happened-at-nvidia-gtc-nemoclaw-robot-olaf-and-a-1-trillion-bet/">Read more</a>
 
@@ -233,7 +245,7 @@
 
 <h4 id="nvidia-has-an-openclaw-strategy-do-you"><span class="hash">###</span> Nvidia has an OpenClaw strategy. Do you?</h4>
 
-<p>CEO Jensen Huang took the stage at Nvidia&#8217;s GTC conference this week in his signature leather jacket to deliver a two-and-a-half-hour keynote, projecting $1 trillion in AI chip sales through 2027, declaring that every company needs an “OpenClaw strategy,” and closing with a rambling Olaf robot</p>
+<p>CEO Jensen Huang took the stage at Nvidia&#8217;s GTC conference this week in his signature leather jacket to deliver a two-and-a-half-hour keynote, projecting $1 trillion in AI chip sales through 2027, declaring that every company needs an “OpenClaw strategy,” and closing with a rambling Olaf robot</p>
 
 <a href="https://techcrunch.com/podcast/nvidia-has-an-openclaw-strategy-do-you/">Read more</a>
 
@@ -241,7 +253,7 @@
 
 <h4 id="trumps-ai-framework-targets-state-laws-shifts-child-safety-burden-to-parents"><span class="hash">###</span> Trump's AI framework targets state laws, shifts child safety burden to parents</h4>
 
-<p>Trump’s AI framework pushes federal preemption of state laws, emphasizes innovation, and shifts responsibility for child safety toward parents while laying out lighter-touch rules for tech companies.</p>
+<p>Trump’s AI framework pushes federal preemption of state laws, emphasizes innovation, and shifts responsibility for child safety toward parents while laying out lighter-touch rules for tech companies.</p>
 
 <a href="https://techcrunch.com/2026/03/20/trumps-ai-framework-targets-state-laws-shifts-child-safety-burden-to-parents/">Read more</a>
 
@@ -313,16 +325,67 @@
   </footer>
 
   <script>
-    const themeToggle = document.querySelector('.theme-toggle');
+    
     const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
+    const siteHeader = document.querySelector('.site-header');
+    const themeToggle = document.querySelector('.theme-toggle');
+    const navToggle = document.querySelector('.site-nav-toggle');
+    const navLinks = document.getElementById('site-nav-links');
+
+    const applyTheme = (theme) => {
+      html.setAttribute('data-theme', theme);
+      document.body.classList.toggle('dark', theme === 'dark');
+    };
+
     const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
+    applyTheme(savedTheme);
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+
+    if (siteHeader && navToggle && navLinks) {
+      const setNavOpen = (isOpen) => {
+        siteHeader.dataset.navOpen = isOpen ? 'true' : 'false';
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      };
+
+      navToggle.addEventListener('click', () => {
+        const isOpen = siteHeader.dataset.navOpen === 'true';
+        setNavOpen(!isOpen);
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setNavOpen(false));
+      });
+
+      document.addEventListener('click', (event) => {
+        if (siteHeader.dataset.navOpen !== 'true') return;
+        if (siteHeader.contains(event.target)) return;
+        setNavOpen(false);
+      });
+
+      const desktopQuery = window.matchMedia('(min-width: 769px)');
+      const resetNav = (event) => {
+        if (event.matches) {
+          setNavOpen(false);
+        }
+      };
+
+      if (desktopQuery.addEventListener) {
+        desktopQuery.addEventListener('change', resetNav);
+      } else if (desktopQuery.addListener) {
+        desktopQuery.addListener(resetNav);
+      }
+    }
+
+    
+  
   </script>
 </body>
 </html>

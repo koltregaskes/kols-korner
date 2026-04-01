@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://gdktukmraxaircugxnls.supabase.co; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -28,12 +28,7 @@
         <span class="logo-icon">K</span>
         <span class="logo-text">Kol's Korner</span>
       </a>
-      <nav class="site-nav">
-        <a href="../../posts/">Posts</a>
-        <a href="../../news/">News</a>
-        <a href="../../tags/">Tags</a>
-        <a href="../../about/">About</a>
-        <a href="../../subscribe/">Newsletter</a>
+      <div class="site-header-actions">
         <button class="theme-toggle" aria-label="Toggle theme">
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
@@ -46,6 +41,18 @@
             <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
           </svg>
         </button>
+        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav-links">
+        <a href="../../posts/" class="active">Posts</a>
+        <a href="../../news/">News</a>
+        <a href="../../tags/">Tags</a>
+        <a href="../../about/">About</a>
+        <a href="../../subscribe/">Newsletter</a>
       </nav>
     </div>
   </header>
@@ -56,7 +63,12 @@
       <header class="digest-header">
         <span class="digest-badge">Daily Digest</span>
         <h1 class="digest-title">Tuesday, 17 March 2026</h1>
-        <p class="digest-subtitle">Today's AI news, curated by Kol</p>
+        <p class="digest-subtitle">A quick editorial sweep of the stories shaping AI, tools, research, and the companies building them.</p>
+        <div class="digest-meta">
+          <span>6 min read</span>
+          <span class="meta-sep">â€¢</span>
+          <span>Updated daily</span>
+        </div>
         <div class="beta-notice" style="background: #ff6b35; color: white; padding: 12px 20px; border-radius: 6px; margin: 16px 0; font-size: 0.9rem;">
           <strong>⚠️ Beta:</strong> Daily news digests are in beta. We're refining sources, deduplication, and quality. Expect improvements over time.
         </div>
@@ -69,13 +81,13 @@
         
 <h2 id="daily-digest-tuesday-17-march-2026"><span class="hash">#</span> Daily Digest: Tuesday, 17 March 2026</h2>
 
-<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>
+<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>
 
 <h3 id="top-stories"><span class="hash">##</span> Top Stories</h3>
 
 <h4 id="the-pentagon-is-developing-alternatives-to-anthropic-report-says"><span class="hash">###</span> The Pentagon is developing alternatives to Anthropic, report says</h4>
 
-<p>After their dramatic falling-out, it doesn't seem as though Anthropic and the Pentagon are getting back together.</p>
+<p>After their dramatic falling-out, it doesn't seem as though Anthropic and the Pentagon are getting back together.</p>
 
 <a href="https://techcrunch.com/2026/03/17/the-pentagon-is-developing-alternatives-to-anthropic-report-says/">Read more</a>
 
@@ -83,7 +95,7 @@
 
 <h4 id="buzzfeed-debuts-ai-slop-apps-in-bid-for-new-revenue"><span class="hash">###</span> BuzzFeed debuts AI slop apps in bid for new revenue</h4>
 
-<p>BuzzFeed unveiled new AI-powered social apps at SXSW, but its demos drew muted reactions.</p>
+<p>BuzzFeed unveiled new AI-powered social apps at SXSW, but its demos drew muted reactions.</p>
 
 <a href="https://techcrunch.com/2026/03/17/buzzfeed-ai-slop-apps-sxsw-bf-island-conjure/">Read more</a>
 
@@ -91,7 +103,7 @@
 
 <h4 id="ais-boys-club-could-widen-the-wealth-gap-for-women-says-rana-el-kaliouby"><span class="hash">###</span> AI's 'boys' club' could widen the wealth gap for women, says Rana el Kaliouby</h4>
 
-<p>AI investor Rana el Kaliouby warns that if women are shut out of AI funding and leadership, the consequences will be grim.</p>
+<p>AI investor Rana el Kaliouby warns that if women are shut out of AI funding and leadership, the consequences will be grim.</p>
 
 <a href="https://techcrunch.com/2026/03/17/ais-boys-club-could-widen-the-wealth-gap-for-women-says-rana-el-kaliouby/">Read more</a>
 
@@ -99,7 +111,7 @@
 
 <h4 id="niv-ai-exits-stealth-to-wring-more-power-performance-out-of-gpus"><span class="hash">###</span> Niv-AI exits stealth to wring more power performance out of GPUs</h4>
 
-<p>The company raised $12 million in seed funding to measure and manage GPU power surges.</p>
+<p>The company raised $12 million in seed funding to measure and manage GPU power surges.</p>
 
 <a href="https://techcrunch.com/2026/03/17/niv-ai-exits-stealth-to-wring-more-power-performance-out-of-gpus/">Read more</a>
 
@@ -107,7 +119,7 @@
 
 <h4 id="trustpilot-partners-with-ai-companies-as-traditional-search-declines"><span class="hash">###</span> Trustpilot partners with AI companies as traditional search declines</h4>
 
-<p>Trustpilot is reported to be pursuing partnerships with large eCommerce companies as AI-driven shopping gains traction. In an interview with Bloomberg News [paywall], chief executive Adrian Blair said that AI agents acting on behalf of consumers require lots of information about the businesses they&</p>
+<p>Trustpilot is reported to be pursuing partnerships with large eCommerce companies as AI-driven shopping gains traction. In an interview with Bloomberg News [paywall], chief executive Adrian Blair said that AI agents acting on behalf of consumers require lots of information about the businesses they&</p>
 
 <a href="https://www.artificialintelligence-news.com/news/ai-in-ecommerce-trustpilot-partnerships-integration-news-trad-search-declines/">Read more</a>
 
@@ -115,7 +127,7 @@
 
 <h4 id="goldman-sachs-sees-ai-investment-shift-to-data-centres"><span class="hash">###</span> Goldman Sachs sees AI investment shift to data centres</h4>
 
-<p>Artificial intelligence investment is entering a more selective phase as companies and investors look beyond early excitement and focus on the data centre infrastructure required to run AI systems. Recent analysis from Goldman Sachs suggests the market is moving toward what the firm describes as a &</p>
+<p>Artificial intelligence investment is entering a more selective phase as companies and investors look beyond early excitement and focus on the data centre infrastructure required to run AI systems. Recent analysis from Goldman Sachs suggests the market is moving toward what the firm describes as a &</p>
 
 <a href="https://www.artificialintelligence-news.com/news/goldman-sachs-sees-ai-investment-shift-to-data-centres/">Read more</a>
 
@@ -123,7 +135,7 @@
 
 <h4 id="jensen-huang-just-put-nvidias-blackwell-and-vera-rubin-sales-projections-into-th"><span class="hash">###</span> Jensen Huang just put Nvidia's Blackwell and Vera Rubin sales projections into the $1 trillion stratosphere</h4>
 
-<p>Nvidia CEO Jensen Huang said he expects $1 trillion worth of orders for the chips.</p>
+<p>Nvidia CEO Jensen Huang said he expects $1 trillion worth of orders for the chips.</p>
 
 <a href="https://techcrunch.com/2026/03/16/jensen-just-put-nvidias-blackwell-and-vera-rubin-sales-projections-into-the-1-trillion-stratosphere/">Read more</a>
 
@@ -131,7 +143,7 @@
 
 <h4 id="warren-presses-pentagon-over-decision-to-grant-xai-access-to-classified-networks"><span class="hash">###</span> Warren presses Pentagon over decision to grant xAI access to classified networks</h4>
 
-<p>Sen. Elizabeth Warren noted that Grok, xAI's controversial chatbot, has created harmful outputs for users and poses a potential national security risk.</p>
+<p>Sen. Elizabeth Warren noted that Grok, xAI's controversial chatbot, has created harmful outputs for users and poses a potential national security risk.</p>
 
 <a href="https://techcrunch.com/2026/03/16/warren-presses-pentagon-over-decision-to-grant-xai-access-to-classified-networks/">Read more</a>
 
@@ -141,7 +153,7 @@
 
 <h4 id="nvidia-s-dlss-5-uses-generative-ai-to-boost-photorealism-in-video-games-with-amb"><span class="hash">###</span> Nvidia’s DLSS 5 uses generative AI to boost photorealism in video games, with ambitions beyond gaming</h4>
 
-<p>Nvidia’s new DLSS 5 uses generative AI and structured graphics data to make video games more realistic. CEO Jensen Huang says the approach could eventually spread to other industries.</p>
+<p>Nvidia’s new DLSS 5 uses generative AI and structured graphics data to make video games more realistic. CEO Jensen Huang says the approach could eventually spread to other industries.</p>
 
 <a href="https://techcrunch.com/2026/03/16/nvidias-dlss-5-uses-generative-ai-to-boost-photo-realism-in-video-games-with-ambitions-beyond-gaming/">Read more</a>
 
@@ -149,7 +161,7 @@
 
 <h4 id="how-to-watch-jensen-huang-s-nvidia-gtc-2026-keynote-and-what-to-expect"><span class="hash">###</span> How to watch Jensen Huang’s Nvidia GTC 2026 keynote — and what to expect</h4>
 
-<p>GTC is Nvidia's flagship annual event, where the chipmaker typically announces new products, partnerships, and its vision for the future of computing. Huang's keynote will focus on Nvidia's role in the future of computing and AI.</p>
+<p>GTC is Nvidia's flagship annual event, where the chipmaker typically announces new products, partnerships, and its vision for the future of computing. Huang's keynote will focus on Nvidia's role in the future of computing and AI.</p>
 
 <a href="https://techcrunch.com/2026/03/16/nvidia-gtc-how-to-watch-jensen-huang-2026-keynote/">Read more</a>
 
@@ -157,7 +169,7 @@
 
 <h4 id="another-deep-tech-chip-startup-becomes-a-unicorn-frore-hits-1-64b"><span class="hash">###</span> Another deep tech chip startup becomes a unicorn: Frore hits $1.64B</h4>
 
-<p>At Nvidia CEO Jensen Huang's urging, Frore developed liquid-cooling tech for chips. That shift helped it raise $143 million.</p>
+<p>At Nvidia CEO Jensen Huang's urging, Frore developed liquid-cooling tech for chips. That shift helped it raise $143 million.</p>
 
 <a href="https://techcrunch.com/2026/03/16/another-deep-tech-chip-startup-becomes-a-unicorn-frore-hits-1-64b/">Read more</a>
 
@@ -165,7 +177,7 @@
 
 <h4 id="fuse-raises-25m-to-disrupt-aging-loan-origination-systems-used-by-us-credit-unio"><span class="hash">###</span> Fuse raises $25M  to disrupt aging loan origination systems used by US credit unions</h4>
 
-<p>The startup also announced a $5 million "rescue fund" to help credit unions ditch legacy software for its AI-native platform.</p>
+<p>The startup also announced a $5 million "rescue fund" to help credit unions ditch legacy software for its AI-native platform.</p>
 
 <a href="https://techcrunch.com/2026/03/16/fuse-raises-25m-to-disrupt-aging-loan-origination-systems-used-by-u-s-credit-unions/">Read more</a>
 
@@ -173,7 +185,7 @@
 
 <h4 id="the-dictionary-sues-openai"><span class="hash">###</span> The dictionary sues OpenAI</h4>
 
-<p>Encyclopedia Britannica and Merriam-Webster say that OpenAI violated the copyright of almost 100,000 articles by using them for LLM training.</p>
+<p>Encyclopedia Britannica and Merriam-Webster say that OpenAI violated the copyright of almost 100,000 articles by using them for LLM training.</p>
 
 <a href="https://techcrunch.com/2026/03/16/merriam-webster-openai-encyclopedia-brittanica-lawsuit/">Read more</a>
 
@@ -181,7 +193,7 @@
 
 <h4 id="google-accel-india-accelerator-chooses-5-startups-and-none-are-ai-wrappers"><span class="hash">###</span> Google, Accel India accelerator chooses 5 startups and none are 'AI wrappers'</h4>
 
-<p>Google and Accel say about 70% of AI startup pitches tied to India were "wrappers" as they reviewed more than 4,000 applications for their Atoms cohort.</p>
+<p>Google and Accel say about 70% of AI startup pitches tied to India were "wrappers" as they reviewed more than 4,000 applications for their Atoms cohort.</p>
 
 <a href="https://techcrunch.com/2026/03/15/google-and-accel-cut-through-wrappers-in-4000-ai-startup-pitches-to-pick-five-tied-to-india/">Read more</a>
 
@@ -191,7 +203,7 @@
 
 <h4 id="googles-personal-intelligence-feature-is-expanding-to-all-us-users"><span class="hash">###</span> Google's Personal Intelligence feature is expanding to all US users</h4>
 
-<p>Personal Intelligence allows Google's AI assistant to tap into your Google ecosystem, such as Gmail and Google Photos, to provide more tailored responses.</p>
+<p>Personal Intelligence allows Google's AI assistant to tap into your Google ecosystem, such as Gmail and Google Photos, to provide more tailored responses.</p>
 
 <a href="https://techcrunch.com/2026/03/17/googles-personal-intelligence-feature-is-expanding-to-all-us-users/">Read more</a>
 
@@ -199,7 +211,7 @@
 
 <h4 id="world-launches-tool-to-verify-humans-behind-ai-shopping-agents"><span class="hash">###</span> World launches tool to verify humans behind AI shopping agents</h4>
 
-<p>As AI agents take the reins for online shoppers, Sam Altman's unconventional startup is looking to expand its verification offerings to support agentic commerce.</p>
+<p>As AI agents take the reins for online shoppers, Sam Altman's unconventional startup is looking to expand its verification offerings to support agentic commerce.</p>
 
 <a href="https://techcrunch.com/2026/03/17/world-launches-tool-to-verify-humans-behind-ai-shopping-agents/">Read more</a>
 
@@ -207,7 +219,7 @@
 
 <h4 id="gamma-adds-ai-image-generation-tools-in-bid-to-take-on-canva-and-adobe"><span class="hash">###</span> Gamma adds AI image-generation tools in bid to take on Canva and Adobe</h4>
 
-<p>The company's new product, called Gamma Imagine, will let users employ text prompts to create brand-specific assets like interactive charts and visualizations, marketing collateral, social graphics, and infographics.</p>
+<p>The company's new product, called Gamma Imagine, will let users employ text prompts to create brand-specific assets like interactive charts and visualizations, marketing collateral, social graphics, and infographics.</p>
 
 <a href="https://techcrunch.com/2026/03/17/gamma-adds-ai-image-generation-tools-in-bid-to-take-on-canva-and-adobe/">Read more</a>
 
@@ -215,7 +227,7 @@
 
 <h4 id="picsart-now-allows-creators-to-hire-ai-assistants-through-agent-marketplace"><span class="hash">###</span> Picsart now allows creators to 'hire' AI assistants through agent marketplace</h4>
 
-<p>Picsart's AI agent marketplace will launch with four agents, then add more agents each week.</p>
+<p>Picsart's AI agent marketplace will launch with four agents, then add more agents each week.</p>
 
 <a href="https://techcrunch.com/2026/03/16/picsart-now-allows-creators-to-hire-ai-assistants-through-agent-marketplace/">Read more</a>
 
@@ -223,7 +235,7 @@
 
 <h4 id="memories-ai-is-building-the-visual-memory-layer-for-wearables-and-robotics"><span class="hash">###</span> Memories AI is building the visual memory layer for wearables and robotics</h4>
 
-<p>Memories.ai is building a large visual memory model that can index and retrieve video-recorded memories for physical AI.</p>
+<p>Memories.ai is building a large visual memory model that can index and retrieve video-recorded memories for physical AI.</p>
 
 <a href="https://techcrunch.com/2026/03/16/memories-ai-is-building-the-visual-memory-layer-for-wearables-and-robotics/">Read more</a>
 
@@ -231,7 +243,7 @@
 
 <h4 id="ntt-data-and-nvidia-bring-enterprise-ai-factories-to-production-scale"><span class="hash">###</span> NTT DATA and NVIDIA bring enterprise AI factories to production scale</h4>
 
-<p>NTT DATA has announced an initiative to deliver NVIDIA-powered platforms designed to give organisations a repeatable, production-ready model for scaling AI. The offering integrates NVIDIA&#8217;s GPU-accelerated computing and high-performance networking with NVIDIA AI Enterprise software, including</p>
+<p>NTT DATA has announced an initiative to deliver NVIDIA-powered platforms designed to give organisations a repeatable, production-ready model for scaling AI. The offering integrates NVIDIA&#8217;s GPU-accelerated computing and high-performance networking with NVIDIA AI Enterprise software, including</p>
 
 <a href="https://www.artificialintelligence-news.com/news/ntt-data-nvidia-enterprise-ai-factories-production/">Read more</a>
 
@@ -239,7 +251,7 @@
 
 <h4 id="openais-frontier-puts-ai-agents-in-a-fight-saas-cant-afford-to-lose"><span class="hash">###</span> OpenAI's Frontier puts AI agents in a fight SaaS can't afford to lose</h4>
 
-<p>When OpenAI launched Frontier in February, the announcement was described as a platform for enterprise AI agents. What it actually signalled was a challenge to the revenue architecture underpinning the software industry. Frontier is designed to act as a semantic layer in an organisation&#8217;s exis</p>
+<p>When OpenAI launched Frontier in February, the announcement was described as a platform for enterprise AI agents. What it actually signalled was a challenge to the revenue architecture underpinning the software industry. Frontier is designed to act as a semantic layer in an organisation&#8217;s exis</p>
 
 <a href="https://www.artificialintelligence-news.com/news/openai-frontier-enterprise-ai-agents-saas/">Read more</a>
 
@@ -249,7 +261,7 @@
 
 <h4 id="openai-expands-government-footprint-with-aws-deal-report-says"><span class="hash">###</span> OpenAI expands government footprint with AWS deal, report says</h4>
 
-<p>OpenAI has reportedly signed a partnership with AWS to sell its AI systems to the U.S. government for classified and unclassified work, marking an expansion beyond its Pentagon deal last month.</p>
+<p>OpenAI has reportedly signed a partnership with AWS to sell its AI systems to the U.S. government for classified and unclassified work, marking an expansion beyond its Pentagon deal last month.</p>
 
 <a href="https://techcrunch.com/2026/03/17/openai-expands-government-footprint-with-aws-deal/">Read more</a>
 
@@ -257,7 +269,7 @@
 
 <h4 id="nvidias-version-of-openclaw-could-solve-its-biggest-problem-security"><span class="hash">###</span> Nvidia's version of OpenClaw could solve its biggest problem: security</h4>
 
-<p>Nvidia announced an open enterprise AI agent platform, called NemoClaw, that is built off of viral OpenClaw.</p>
+<p>Nvidia announced an open enterprise AI agent platform, called NemoClaw, that is built off of viral OpenClaw.</p>
 
 <a href="https://techcrunch.com/2026/03/16/nvidias-version-of-openclaw-could-solve-its-biggest-problem-security/">Read more</a>
 
@@ -265,7 +277,7 @@
 
 <h4 id="elon-musks-xai-faces-child-porn-lawsuit-from-minors-grok-allegedly-undressed"><span class="hash">###</span> Elon Musk's xAI faces child porn lawsuit from minors Grok allegedly undressed</h4>
 
-<p>The three plaintiffs are seeking to represent anyone who had real images of them as a minor altered into sexual content by Grok.</p>
+<p>The three plaintiffs are seeking to represent anyone who had real images of them as a minor altered into sexual content by Grok.</p>
 
 <a href="https://techcrunch.com/2026/03/16/elon-musks-xai-faces-child-porn-lawsuit-from-minors-grok-allegedly-undressed/">Read more</a>
 
@@ -273,7 +285,7 @@
 
 <h4 id="us-treasury-publishes-ai-risk-guidebook-for-financial-institutions"><span class="hash">###</span> US Treasury publishes AI risk Guidebook for financial institutions</h4>
 
-<p>The US Treasury has published several documents designed for the US financial services sector that suggest a structured approach to managing AI risks in operations and policy (see subheading &#8216;Resources and Downloads&#8217; towards the bottom of the link). The CRI Financial Services AI Risk Man</p>
+<p>The US Treasury has published several documents designed for the US financial services sector that suggest a structured approach to managing AI risks in operations and policy (see subheading &#8216;Resources and Downloads&#8217; towards the bottom of the link). The CRI Financial Services AI Risk Man</p>
 
 <a href="https://www.artificialintelligence-news.com/news/us-treasury-publishes-ai-risk-governance-guidebook-for-financial-institutions/">Read more</a>
 
@@ -345,16 +357,67 @@
   </footer>
 
   <script>
-    const themeToggle = document.querySelector('.theme-toggle');
+    
     const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
+    const siteHeader = document.querySelector('.site-header');
+    const themeToggle = document.querySelector('.theme-toggle');
+    const navToggle = document.querySelector('.site-nav-toggle');
+    const navLinks = document.getElementById('site-nav-links');
+
+    const applyTheme = (theme) => {
+      html.setAttribute('data-theme', theme);
+      document.body.classList.toggle('dark', theme === 'dark');
+    };
+
     const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
+    applyTheme(savedTheme);
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+
+    if (siteHeader && navToggle && navLinks) {
+      const setNavOpen = (isOpen) => {
+        siteHeader.dataset.navOpen = isOpen ? 'true' : 'false';
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      };
+
+      navToggle.addEventListener('click', () => {
+        const isOpen = siteHeader.dataset.navOpen === 'true';
+        setNavOpen(!isOpen);
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setNavOpen(false));
+      });
+
+      document.addEventListener('click', (event) => {
+        if (siteHeader.dataset.navOpen !== 'true') return;
+        if (siteHeader.contains(event.target)) return;
+        setNavOpen(false);
+      });
+
+      const desktopQuery = window.matchMedia('(min-width: 769px)');
+      const resetNav = (event) => {
+        if (event.matches) {
+          setNavOpen(false);
+        }
+      };
+
+      if (desktopQuery.addEventListener) {
+        desktopQuery.addEventListener('change', resetNav);
+      } else if (desktopQuery.addListener) {
+        desktopQuery.addListener(resetNav);
+      }
+    }
+
+    
+  
   </script>
 </body>
 </html>

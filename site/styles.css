@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
 
 :root {
   /* Primitive Color Tokens */
@@ -91,6 +92,7 @@
   /* Typography - Updated for better readability */
   --font-family-base: "Fira Sans", "Inter", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-serif: "Source Serif 4", Georgia, Cambria, "Times New Roman", Times, serif;
   --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
     Monaco, Consolas, monospace;
   --font-size-xs: 12px;
@@ -219,17 +221,17 @@
   --color-bg-7: rgba(190, 24, 93, 0.15);
   --color-bg-8: rgba(8, 145, 178, 0.15);
 
-  --color-background: var(--color-charcoal-700);
-  --color-surface: var(--color-charcoal-800);
-  --color-text: var(--color-gray-200);
-  --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
-  --color-primary: var(--color-red-400);
-  --color-primary-hover: var(--color-red-300);
-  --color-primary-active: var(--color-red-500);
-  --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
-  --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
-  --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
-  --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+  --color-background: #0C0B0F;
+  --color-surface: #141318;
+  --color-text: #F4F0EA;
+  --color-text-secondary: #A19E98;
+  --color-primary: #C8A87C;
+  --color-primary-hover: #D8B88C;
+  --color-primary-active: #B8986C;
+  --color-secondary: rgba(200, 168, 124, 0.1);
+  --color-secondary-hover: rgba(200, 168, 124, 0.15);
+  --color-secondary-active: rgba(200, 168, 124, 0.2);
+  --color-border: rgba(200, 168, 124, 0.15);
   --color-error: var(--color-red-400);
   --color-success: var(--color-teal-300);
   --color-warning: var(--color-orange-400);
@@ -580,15 +582,14 @@ code, pre {
 }
 
 .intro-title {
+  font-family: var(--font-family-serif);
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-24);
   letter-spacing: var(--letter-spacing-tight);
   line-height: var(--line-height-tight);
-  background: linear-gradient(135deg, var(--color-red-600) 0%, var(--color-red-400) 50%, #fb923c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-text);
+  text-wrap: balance;
 }
 
 .intro-text {
@@ -631,17 +632,17 @@ code, pre {
 }
 
 .page-title {
+  font-family: var(--font-family-serif);
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-32);
   letter-spacing: var(--letter-spacing-tight);
-  background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-text);
+  text-wrap: balance;
 }
 
 .section-title {
+  font-family: var(--font-family-serif);
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-32);
@@ -726,11 +727,13 @@ code, pre {
 }
 
 .post-title {
+  font-family: var(--font-family-serif);
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   margin-bottom: var(--space-16);
   letter-spacing: var(--letter-spacing-tight);
+  text-wrap: balance;
 }
 
 .post-meta {
@@ -786,16 +789,41 @@ a.tag:hover {
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
   color: var(--color-text-secondary);
+  text-wrap: pretty;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  font-family: var(--font-family-serif);
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  text-wrap: balance;
+  margin-bottom: var(--space-8);
 }
 
 .post-content h2 {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-text);
+  margin-top: var(--space-24);
+}
+
+.post-content h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
   margin-top: var(--space-20);
-  margin-bottom: var(--space-8);
-  line-height: var(--line-height-tight);
-  letter-spacing: var(--letter-spacing-tight);
+}
+
+.post-content h4, 
+.post-content h5, 
+.post-content h6 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin-top: var(--space-16);
 }
 
 .post-content h2:first-child {
@@ -2609,11 +2637,12 @@ body {
 
 .home-hero-title {
   margin-bottom: var(--space-18);
-  font-size: clamp(2.7rem, 7vw, 5.4rem);
-  line-height: 0.96;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
   color: var(--color-text);
   text-wrap: balance;
+  font-family: var(--font-family-serif);
 }
 
 .home-hero-text {
@@ -3022,8 +3051,8 @@ body {
   }
 
   .home-hero-title {
-    font-size: clamp(2.15rem, 12vw, 3.5rem);
-    max-width: 11ch;
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    max-width: none;
   }
 
   .home-hero-text {

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://gdktukmraxaircugxnls.supabase.co; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -28,12 +28,7 @@
         <span class="logo-icon">K</span>
         <span class="logo-text">Kol's Korner</span>
       </a>
-      <nav class="site-nav">
-        <a href="../../posts/">Posts</a>
-        <a href="../../news/">News</a>
-        <a href="../../tags/">Tags</a>
-        <a href="../../about/">About</a>
-        <a href="../../subscribe/">Newsletter</a>
+      <div class="site-header-actions">
         <button class="theme-toggle" aria-label="Toggle theme">
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
@@ -46,6 +41,18 @@
             <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
           </svg>
         </button>
+        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav-links">
+        <a href="../../posts/" class="active">Posts</a>
+        <a href="../../news/">News</a>
+        <a href="../../tags/">Tags</a>
+        <a href="../../about/">About</a>
+        <a href="../../subscribe/">Newsletter</a>
       </nav>
     </div>
   </header>
@@ -56,7 +63,12 @@
       <header class="digest-header">
         <span class="digest-badge">Daily Digest</span>
         <h1 class="digest-title">Wednesday, 25 March 2026</h1>
-        <p class="digest-subtitle">Today's AI news, curated by Kol</p>
+        <p class="digest-subtitle">A quick editorial sweep of the stories shaping AI, tools, research, and the companies building them.</p>
+        <div class="digest-meta">
+          <span>6 min read</span>
+          <span class="meta-sep">â€¢</span>
+          <span>Updated daily</span>
+        </div>
         <div class="beta-notice" style="background: #ff6b35; color: white; padding: 12px 20px; border-radius: 6px; margin: 16px 0; font-size: 0.9rem;">
           <strong>⚠️ Beta:</strong> Daily news digests are in beta. We're refining sources, deduplication, and quality. Expect improvements over time.
         </div>
@@ -69,13 +81,13 @@
         
 <h2 id="daily-digest-wednesday-25-march-2026"><span class="hash">#</span> Daily Digest: Wednesday, 25 March 2026</h2>
 
-<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>
+<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>
 
 <h3 id="top-stories"><span class="hash">##</span> Top Stories</h3>
 
 <h4 id="reddit-takes-on-the-bots-with-new-human-verification-requirements-for-fishy-beha"><span class="hash">###</span> Reddit takes on the bots with new 'human verification' requirements for fishy behavior</h4>
 
-<p>Reddit will require suspected automated accounts to verify they’re human, as it ramps up efforts to curb bot-driven spam and manipulation.</p>
+<p>Reddit will require suspected automated accounts to verify they’re human, as it ramps up efforts to curb bot-driven spam and manipulation.</p>
 
 <a href="https://techcrunch.com/2026/03/25/reddit-bots-new-human-verification-requirements/">Read more</a>
 
@@ -83,7 +95,7 @@
 
 <h4 id="ocorian-family-offices-turn-to-ai-for-financial-data-insights"><span class="hash">###</span> Ocorian: Family offices turn to AI for financial data insights</h4>
 
-<p>To gain financial data insights, the majority of family offices now turn to AI, according to new research from Ocorian. The global study reveals 86 percent of these private wealth groups are utilising AI to improve their daily operations and data analysis. Representing a combined wealth of $119.37 b</p>
+<p>To gain financial data insights, the majority of family offices now turn to AI, according to new research from Ocorian. The global study reveals 86 percent of these private wealth groups are utilising AI to improve their daily operations and data analysis. Representing a combined wealth of $119.37 b</p>
 
 <a href="https://www.artificialintelligence-news.com/news/ocorian-family-offices-ai-for-financial-data-insights/">Read more</a>
 
@@ -91,7 +103,7 @@
 
 <h4 id="granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-"><span class="hash">###</span> Granola raises $125M, hits $1.5B valuation as it expands from meeting notetaker to enterprise AI app</h4>
 
-<p>Granola's valuation jumped from $250 million to $1.5 billion with this round, and it has added more support for AI agents after users previously complained.</p>
+<p>Granola's valuation jumped from $250 million to $1.5 billion with this round, and it has added more support for AI agents after users previously complained.</p>
 
 <a href="https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/">Read more</a>
 
@@ -99,7 +111,7 @@
 
 <h4 id="meta-turns-to-ai-to-make-shopping-easier-on-instagram-and-facebook"><span class="hash">###</span> Meta turns to AI to make shopping easier on Instagram and Facebook</h4>
 
-<p>Meta is using generative AI to provide more product and brand information to consumers when they're shopping in its apps.</p>
+<p>Meta is using generative AI to provide more product and brand information to consumers when they're shopping in its apps.</p>
 
 <a href="https://techcrunch.com/2026/03/25/meta-turns-to-ai-to-make-shopping-easier-on-instagram-and-facebook/">Read more</a>
 
@@ -107,7 +119,7 @@
 
 <h4 id="lucid-bots-raises-20m-to-keep-up-with-demand-for-its-window-washing-drones"><span class="hash">###</span> Lucid Bots raises $20M to keep up with demand for its window-washing drones</h4>
 
-<p>Lucid Bots has seen demand accelerate over the last year for its window-cleaning drones and power-washing robots.</p>
+<p>Lucid Bots has seen demand accelerate over the last year for its window-cleaning drones and power-washing robots.</p>
 
 <a href="https://techcrunch.com/2026/03/25/lucid-bots-raises-20m-to-keep-up-with-demand-for-its-window-washing-drones/">Read more</a>
 
@@ -115,7 +127,7 @@
 
 <h4 id="kentucky-woman-rejects-26m-offer-to-turn-her-farm-into-a-data-center"><span class="hash">###</span> Kentucky woman rejects $26M offer to turn her farm into a data center</h4>
 
-<p>A "major artificial intelligence company" reportedly offered a Kentucky family $26 million to build a data center on their farm.</p>
+<p>A "major artificial intelligence company" reportedly offered a Kentucky family $26 million to build a data center on their farm.</p>
 
 <a href="https://techcrunch.com/2026/03/24/kentucky-woman-rejects-26-million-offer-to-turn-her-farm-into-a-data-center/">Read more</a>
 
@@ -123,7 +135,7 @@
 
 <h4 id="databricks-bought-two-startups-to-underpin-its-new-ai-security-product"><span class="hash">###</span> Databricks bought two startups to underpin its new AI security product</h4>
 
-<p>With an overflowing war chest from its recent $5 billion raise, Databricks is buying startups and looking for more. It acquired Antimatter and SiftD.ai.</p>
+<p>With an overflowing war chest from its recent $5 billion raise, Databricks is buying startups and looking for more. It acquired Antimatter and SiftD.ai.</p>
 
 <a href="https://techcrunch.com/2026/03/24/databricks-buys-two-startups-lakewatch-antimatter-siftd-ai-security/">Read more</a>
 
@@ -131,7 +143,7 @@
 
 <h4 id="arm-is-releasing-the-first-in-house-chip-in-its-35-year-history"><span class="hash">###</span> Arm is releasing the first in-house chip in its 35-year history</h4>
 
-<p>Arm is producing its own CPU for the first time. It developed the CPU with Meta, which is also the chip's first customer.</p>
+<p>Arm is producing its own CPU for the first time. It developed the CPU with Meta, which is also the chip's first customer.</p>
 
 <a href="https://techcrunch.com/2026/03/24/arm-is-releasing-its-first-in-house-chip-in-its-35-year-history/">Read more</a>
 
@@ -141,7 +153,7 @@
 
 <h4 id="openais-plans-to-make-chatgpt-more-like-amazon-arent-going-so-well"><span class="hash">###</span> OpenAI's plans to make ChatGPT more like Amazon aren't going so well</h4>
 
-<p>OpenAI says it's moving away from Instant Checkout, which allowed users to buy items directly through the ChatGPT interface.</p>
+<p>OpenAI says it's moving away from Instant Checkout, which allowed users to buy items directly through the ChatGPT interface.</p>
 
 <a href="https://techcrunch.com/2026/03/24/openais-plans-to-make-chatgpt-more-like-amazon-arent-going-so-well/">Read more</a>
 
@@ -149,7 +161,7 @@
 
 <h4 id="doss-raises-55m-for-ai-inventory-management-that-plugs-into-erp"><span class="hash">###</span> Doss raises $55M for AI inventory management that plugs into ERP</h4>
 
-<p>Doss's AI-powered inventory management system integrates with existing ERP systems. The Series B round was co-led by Madrona and Premji Invest.</p>
+<p>Doss's AI-powered inventory management system integrates with existing ERP systems. The Series B round was co-led by Madrona and Premji Invest.</p>
 
 <a href="https://techcrunch.com/2026/03/24/doss-raises-55m-for-ai-inventory-management-that-plugs-into-erp/">Read more</a>
 
@@ -157,7 +169,7 @@
 
 <h4 id="automating-complex-finance-workflows-with-multimodal-ai"><span class="hash">###</span> Automating complex finance workflows with multimodal AI</h4>
 
-<p>Finance leaders are automating their complex workflows by actively adopting powerful new multimodal AI frameworks. Extracting text from unstructured documents presents a frequent headache for developers. Historically, standard optical character recognition systems failed to accurately digitise compl</p>
+<p>Finance leaders are automating their complex workflows by actively adopting powerful new multimodal AI frameworks. Extracting text from unstructured documents presents a frequent headache for developers. Historically, standard optical character recognition systems failed to accurately digitise compl</p>
 
 <a href="https://www.artificialintelligence-news.com/news/automating-complex-finance-workflows-with-multimodal-ai/">Read more</a>
 
@@ -165,7 +177,7 @@
 
 <h4 id="securing-ai-systems-under-todays-and-tomorrows-conditions"><span class="hash">###</span> Securing AI systems under today's and tomorrow's conditions</h4>
 
-<p>Evidence cited in an eBook titled &#8220;AI Quantum Resilience&#8221;, published by Utimaco [email wall], shows organisations consider security risks as the leading barrier to effective adoption of AI on data they hold. AI&#8217;s value depends on data amassed by an organisation. However, there are</p>
+<p>Evidence cited in an eBook titled &#8220;AI Quantum Resilience&#8221;, published by Utimaco [email wall], shows organisations consider security risks as the leading barrier to effective adoption of AI on data they hold. AI&#8217;s value depends on data amassed by an organisation. However, there are</p>
 
 <a href="https://www.artificialintelligence-news.com/news/quantum-resilient-ai-needs-migration-and-hardware-protected-data-enclaves/">Read more</a>
 
@@ -173,7 +185,7 @@
 
 <h4 id="palantir-ai-to-support-uk-finance-operations"><span class="hash">###</span> Palantir AI to support UK finance operations</h4>
 
-<p>UK authorities believe improving efficiency across national finance operations requires applying AI platforms from vendors like Palantir. The country&#8217;s financial regulator, the FCA, has initiated a project leveraging AI to identify illicit activities. The FCA is currently testing the Foundry p</p>
+<p>UK authorities believe improving efficiency across national finance operations requires applying AI platforms from vendors like Palantir. The country&#8217;s financial regulator, the FCA, has initiated a project leveraging AI to identify illicit activities. The FCA is currently testing the Foundry p</p>
 
 <a href="https://www.artificialintelligence-news.com/news/palantir-ai-to-support-uk-finance-operations/">Read more</a>
 
@@ -183,7 +195,7 @@
 
 <h4 id="google-launches-lyria-3-pro-music-generation-model"><span class="hash">###</span> Google launches Lyria 3 Pro music generation model</h4>
 
-<p>Google is launching Lyria 3 Pro, an upgraded music model that generates longer, more customizable tracks, as it expands AI music tools across Gemini, enterprise products, and other services.</p>
+<p>Google is launching Lyria 3 Pro, an upgraded music model that generates longer, more customizable tracks, as it expands AI music tools across Gemini, enterprise products, and other services.</p>
 
 <a href="https://techcrunch.com/2026/03/25/google-launches-lyria-3-pro-music-generation-model/">Read more</a>
 
@@ -191,7 +203,7 @@
 
 <h4 id="meta-launches-new-initiative-to-support-entrepreneurship-drive-ai-adoption"><span class="hash">###</span> Meta launches new initiative to support entrepreneurship, drive AI adoption</h4>
 
-<p>Meta CEO Mark Zuckerberg said in a memo to staff that small businesses have always been a big part of the company's business model, and that while tens of millions of entrepreneurs already use its platforms to grow and connect with customers, the company wants to do more in the space.</p>
+<p>Meta CEO Mark Zuckerberg said in a memo to staff that small businesses have always been a big part of the company's business model, and that while tens of millions of entrepreneurs already use its platforms to grow and connect with customers, the company wants to do more in the space.</p>
 
 <a href="https://techcrunch.com/2026/03/25/meta-launches-new-initiative-to-support-entrepreneurship-drive-ai-adoption/">Read more</a>
 
@@ -199,7 +211,7 @@
 
 <h4 id="with-sift-two-ex-spacex-engineers-are-bringing-the-software-that-helped-launch-r"><span class="hash">###</span> With Sift, two ex-SpaceX engineers are bringing the software that helped launch rockets to the factory floor</h4>
 
-<p>Sift is building the data infrastructure for advanced manufacturing.</p>
+<p>Sift is building the data infrastructure for advanced manufacturing.</p>
 
 <a href="https://techcrunch.com/2026/03/25/with-sift-stack-two-ex-spacex-engineers-are-bringing-the-software-that-helped-launch-rockets-to-the-factory-floor/">Read more</a>
 
@@ -207,7 +219,7 @@
 
 <h4 id="with-3-5b-in-fresh-capital-kleiner-perkins-is-going-all-in-on-ai"><span class="hash">###</span> With $3.5B in fresh capital, Kleiner Perkins is going all in on AI</h4>
 
-<p>The fundraise includes $1 billion for investing in early-stage startups and $2.5 billion for late-stage growth businesses.</p>
+<p>The fundraise includes $1 billion for investing in early-stage startups and $2.5 billion for late-stage growth businesses.</p>
 
 <a href="https://techcrunch.com/2026/03/24/with-3-5b-in-fresh-capital-kleiner-perkins-is-going-all-in-on-ai/">Read more</a>
 
@@ -215,7 +227,7 @@
 
 <h4 id="openai-s-sora-was-the-creepiest-app-on-your-phone-8212-now-its-shutting-down"><span class="hash">###</span> OpenAI’s Sora was the creepiest app on your phone &#8212; now it's shutting down</h4>
 
-<p>Though the underlying Sora 2 video- and audio-generation model is scarily impressive, there was not sustained interest in an AI-only social feed.</p>
+<p>Though the underlying Sora 2 video- and audio-generation model is scarily impressive, there was not sustained interest in an AI-only social feed.</p>
 
 <a href="https://techcrunch.com/2026/03/24/openais-sora-was-the-creepiest-app-on-your-phone-now-its-shutting-down/">Read more</a>
 
@@ -223,7 +235,7 @@
 
 <h4 id="spotify-tests-new-tool-to-stop-ai-slop-from-being-attributed-to-real-artists"><span class="hash">###</span> Spotify tests new tool to stop AI slop from being attributed to real artists</h4>
 
-<p>The idea behind the new tool is to give artists more control over which tracks are associated with their name on Spotify.</p>
+<p>The idea behind the new tool is to give artists more control over which tracks are associated with their name on Spotify.</p>
 
 <a href="https://techcrunch.com/2026/03/24/spotify-tests-new-tool-to-stop-ai-slop-from-being-attributed-to-real-artists/">Read more</a>
 
@@ -231,7 +243,7 @@
 
 <h4 id="google-tvs-new-gemini-features-keep-fans-updated-on-sports-teams-and-more"><span class="hash">###</span> Google TV's new Gemini features keep fans updated on sports teams and more</h4>
 
-<p>Three Gemini-powered features are coming to your Google TV. This includes visual responses, deep dives, and sports briefs.</p>
+<p>Three Gemini-powered features are coming to your Google TV. This includes visual responses, deep dives, and sports briefs.</p>
 
 <a href="https://techcrunch.com/2026/03/24/google-tv-new-gemini-features-keep-fans-updated-on-sports-teams-deep-dives-visual-answers/">Read more</a>
 
@@ -239,7 +251,7 @@
 
 <h4 id="talats-ai-meeting-notes-stay-on-your-machine-not-in-the-cloud"><span class="hash">###</span> Talat's AI meeting notes stay on your machine, not in the cloud</h4>
 
-<p>The subscription-free AI meeting notes app is a local-first twist on notetaking tools like Granola.</p>
+<p>The subscription-free AI meeting notes app is a local-first twist on notetaking tools like Granola.</p>
 
 <a href="https://techcrunch.com/2026/03/24/talats-ai-meeting-notes-stay-on-your-machine-not-in-the-cloud/">Read more</a>
 
@@ -249,7 +261,7 @@
 
 <h4 id="bernie-sanders-and-aoc-propose-a-ban-on-data-center-construction"><span class="hash">###</span> Bernie Sanders and AOC propose a ban on data center construction</h4>
 
-<p>Senator Bernie Sanders and Rep. Alexandria Ocasio-Cortez introduced companion legislation to halt construction on new data centers until Congress passes comprehensive AI regulation.</p>
+<p>Senator Bernie Sanders and Rep. Alexandria Ocasio-Cortez introduced companion legislation to halt construction on new data centers until Congress passes comprehensive AI regulation.</p>
 
 <a href="https://techcrunch.com/2026/03/25/bernie-sanders-and-aoc-propose-a-ban-on-data-center-construction/">Read more</a>
 
@@ -257,7 +269,7 @@
 
 <h4 id="ai-agents-enter-banking-roles-at-bank-of-america"><span class="hash">###</span> AI agents enter banking roles at Bank of America</h4>
 
-<p>AI agents are starting to take on a more direct role in how financial advice is delivered, as large banks move into systems that support client interactions. Bank of America is now deploying an internal AI-powered advisory platform to a subset of financial advisers, rolled out to around 1,000 financ</p>
+<p>AI agents are starting to take on a more direct role in how financial advice is delivered, as large banks move into systems that support client interactions. Bank of America is now deploying an internal AI-powered advisory platform to a subset of financial advisers, rolled out to around 1,000 financ</p>
 
 <a href="https://www.artificialintelligence-news.com/news/ai-agents-enter-banking-roles-at-bank-of-america/">Read more</a>
 
@@ -265,7 +277,7 @@
 
 <h4 id="anthropic-hands-claude-code-more-control-but-keeps-it-on-a-leash"><span class="hash">###</span> Anthropic hands Claude Code more control, but keeps it on a leash</h4>
 
-<p>Anthropic’s new auto mode for Claude Code lets AI execute tasks with fewer approvals, reflecting a broader shift toward more autonomous tools that balance speed with safety through built-in safeguards.</p>
+<p>Anthropic’s new auto mode for Claude Code lets AI execute tasks with fewer approvals, reflecting a broader shift toward more autonomous tools that balance speed with safety through built-in safeguards.</p>
 
 <a href="https://techcrunch.com/2026/03/24/anthropic-hands-claude-code-more-control-but-keeps-it-on-a-leash/">Read more</a>
 
@@ -273,7 +285,7 @@
 
 <h4 id="openai-adds-open-source-tools-to-help-developers-build-for-teen-safety"><span class="hash">###</span> OpenAI adds open source tools to help developers build for teen safety</h4>
 
-<p>Rather than working from scratch to figure out how to make AI safer for teens, developers can use these policies to fortify what they build.</p>
+<p>Rather than working from scratch to figure out how to make AI safer for teens, developers can use these policies to fortify what they build.</p>
 
 <a href="https://techcrunch.com/2026/03/24/openai-adds-open-source-tools-to-help-developers-build-for-teen-safety/">Read more</a>
 
@@ -345,16 +357,67 @@
   </footer>
 
   <script>
-    const themeToggle = document.querySelector('.theme-toggle');
+    
     const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
+    const siteHeader = document.querySelector('.site-header');
+    const themeToggle = document.querySelector('.theme-toggle');
+    const navToggle = document.querySelector('.site-nav-toggle');
+    const navLinks = document.getElementById('site-nav-links');
+
+    const applyTheme = (theme) => {
+      html.setAttribute('data-theme', theme);
+      document.body.classList.toggle('dark', theme === 'dark');
+    };
+
     const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
+    applyTheme(savedTheme);
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+
+    if (siteHeader && navToggle && navLinks) {
+      const setNavOpen = (isOpen) => {
+        siteHeader.dataset.navOpen = isOpen ? 'true' : 'false';
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      };
+
+      navToggle.addEventListener('click', () => {
+        const isOpen = siteHeader.dataset.navOpen === 'true';
+        setNavOpen(!isOpen);
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setNavOpen(false));
+      });
+
+      document.addEventListener('click', (event) => {
+        if (siteHeader.dataset.navOpen !== 'true') return;
+        if (siteHeader.contains(event.target)) return;
+        setNavOpen(false);
+      });
+
+      const desktopQuery = window.matchMedia('(min-width: 769px)');
+      const resetNav = (event) => {
+        if (event.matches) {
+          setNavOpen(false);
+        }
+      };
+
+      if (desktopQuery.addEventListener) {
+        desktopQuery.addEventListener('change', resetNav);
+      } else if (desktopQuery.addListener) {
+        desktopQuery.addListener(resetNav);
+      }
+    }
+
+    
+  
   </script>
 </body>
 </html>
