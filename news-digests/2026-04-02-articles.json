@@ -1,10 +1,52 @@
 {
-  "generatedAt": "2026-04-02T09:14:30.145Z",
+  "generatedAt": "2026-04-02T18:00:38.487Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-04-02",
-  "count": 40,
+  "count": 42,
   "items": [
+    {
+      "id": "techcrunch-ai-microsoft-takes-on-ai-rivals-with-three-new-foundational-models-https-techcrunch-com-2026-04-02-microsoft-takes-on-ai-rivals-with-three-new-foundational-models",
+      "title": "Microsoft takes on AI rivals with three new foundational models",
+      "url": "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-02",
+      "summary": "MAI released models that can transcribe voice into text as well as generate audio and images after the group's formation six months ago.",
+      "tags": [
+        "industry",
+        "ai"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-google-now-lets-you-direct-avatars-through-prompts-in-its-vids-app-https-techcrunch-com-2026-04-02-google-now-lets-you-direct-avatars-through-prompts-in-its-vids-app",
+      "title": "Google now lets you direct avatars through prompts in its Vids app",
+      "url": "https://techcrunch.com/2026/04/02/google-now-lets-you-direct-avatars-through-prompts-in-its-vids-app/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-02",
+      "summary": "Google is adding a way to customize and instruct avatars for video creation in the Vids app.",
+      "tags": [
+        "industry",
+        "ai"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "ars-technica-ai-google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license-https-arstechnica-com-ai-2026-04-google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license",
+      "title": "Google announces Gemma 4 open AI models, switches to Apache 2.0 license",
+      "url": "https://arstechnica.com/ai/2026/04/google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license/",
+      "source": "Ars Technica AI",
+      "sourceId": "ars-technica-ai",
+      "section": "Industry",
+      "publishedAt": "2026-04-02",
+      "summary": "Gemma 4 brings the first major update to Google's open models in a year.",
+      "tags": [],
+      "adapter": "html"
+    },
     {
       "id": "anthropic-news-introducing-sonnet-4-6-https-www-anthropic-com-news-claude-sonnet-4-6",
       "title": "Introducing Sonnet 4.6",
@@ -162,6 +204,18 @@
       "adapter": "html"
     },
     {
+      "id": "hugging-face-blog-welcome-gemma-4-frontier-multimodal-intelligence-on-device-https-huggingface-co-blog-gemma4",
+      "title": "Welcome Gemma 4: Frontier multimodal intelligence on device",
+      "url": "https://huggingface.co/blog/gemma4",
+      "source": "Hugging Face Blog",
+      "sourceId": "hugging-face-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-02",
+      "summary": "",
+      "tags": [],
+      "adapter": "rss"
+    },
+    {
       "id": "arxiv-cs-ai-how-emotion-shapes-the-behavior-of-llms-and-agents-a-mechanistic-study-https-arxiv-org-abs-2604-00005",
       "title": "How Emotion Shapes the Behavior of LLMs and Agents: A Mechanistic Study",
       "url": "https://arxiv.org/abs/2604.00005",
@@ -282,6 +336,18 @@
       "adapter": "rss"
     },
     {
+      "id": "bens-bites-inside-the-leaked-claude-code-files-https-www-bensbites-com-p-inside-the-leaked-claude-code-files",
+      "title": "Inside the leaked Claude Code files",
+      "url": "https://www.bensbites.com/p/inside-the-leaked-claude-code-files",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-02",
+      "summary": "Docs as files, a new markdown editor and April fools",
+      "tags": [],
+      "adapter": "html"
+    },
+    {
       "id": "bens-bites-one-breach-after-another-https-www-bensbites-com-p-one-breach-after-another",
       "title": "One breach after another",
       "url": "https://www.bensbites.com/p/one-breach-after-another",
@@ -290,18 +356,6 @@
       "section": "Industry",
       "publishedAt": "2026-04-02",
       "summary": "separate and sandbox your agent's access",
-      "tags": [],
-      "adapter": "html"
-    },
-    {
-      "id": "bens-bites-a-peek-inside-cli-tools-https-www-bensbites-com-p-a-peek-inside-cli-tools",
-      "title": "A peek inside CLI tools",
-      "url": "https://www.bensbites.com/p/a-peek-inside-cli-tools",
-      "source": "Ben's Bites",
-      "sourceId": "bens-bites",
-      "section": "Industry",
-      "publishedAt": "2026-04-02",
-      "summary": "No more funny videos at OpenAI",
       "tags": [],
       "adapter": "html"
     },
@@ -344,36 +398,6 @@
       "section": "Top Stories",
       "publishedAt": "2026-04-01",
       "summary": "The firm says it can reduce the cost of chip development by more than 75% and cut the timeline by more than half.",
-      "tags": [
-        "industry",
-        "ai"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-less-than-a-month-strictlyvc-san-francisco-brings-leaders-from-tdk-ventures-replit-and-more-together-https-techcrunch-com-2026-04-01-join-the-first-strictlyvc-of-2026-in-sf-with-leaders-from-tdk-ventures-and-replits-co-founder",
-      "title": "Less than a month: StrictlyVC San Francisco brings leaders from TDK Ventures, Replit, and more together",
-      "url": "https://techcrunch.com/2026/04/01/join-the-first-strictlyvc-of-2026-in-sf-with-leaders-from-tdk-ventures-and-replits-co-founder/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-01",
-      "summary": "StrictlyVC San Francisco brings leaders from TDK Ventures, Replit, and more together on April 30. Space is limited. Register here for your pass.",
-      "tags": [
-        "industry",
-        "ai"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-mercor-says-it-was-hit-by-cyberattack-tied-to-compromise-of-open-source-litellm-project-https-techcrunch-com-2026-03-31-mercor-says-it-was-hit-by-cyberattack-tied-to-compromise-of-open-source-litellm-project",
-      "title": "Mercor says it was hit by cyberattack tied to compromise of open source LiteLLM project",
-      "url": "https://techcrunch.com/2026/03/31/mercor-says-it-was-hit-by-cyberattack-tied-to-compromise-of-open-source-litellm-project/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-01",
-      "summary": "The AI recruiting startup confirmed a security incident after an extortion hacking crew took credit for stealing data from the company's systems.",
       "tags": [
         "industry",
         "ai"

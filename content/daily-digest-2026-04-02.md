@@ -11,6 +11,22 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### Microsoft takes on AI rivals with three new foundational models
+
+MAI released models that can transcribe voice into text as well as generate audio and images after the group's formation six months ago.
+
+[Read more](https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/)
+
+---
+
+### Google now lets you direct avatars through prompts in its Vids app
+
+Google is adding a way to customize and instruct avatars for video creation in the Vids app.
+
+[Read more](https://techcrunch.com/2026/04/02/google-now-lets-you-direct-avatars-through-prompts-in-its-vids-app/)
+
+---
+
 ### Introducing Sonnet 4.6
 
 Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.
@@ -75,37 +91,29 @@ The firm says it can reduce the cost of chip development by more than 75% and cu
 
 ---
 
-### Less than a month: StrictlyVC San Francisco brings leaders from TDK Ventures, Replit, and more together
-
-StrictlyVC San Francisco brings leaders from TDK Ventures, Replit, and more together on April 30. Space is limited. Register here for your pass.
-
-[Read more](https://techcrunch.com/2026/04/01/join-the-first-strictlyvc-of-2026-in-sf-with-leaders-from-tdk-ventures-and-replits-co-founder/)
-
----
-
-### Mercor says it was hit by cyberattack tied to compromise of open source LiteLLM project
-
-The AI recruiting startup confirmed a security incident after an extortion hacking crew took credit for stealing data from the company's systems.
-
-[Read more](https://techcrunch.com/2026/03/31/mercor-says-it-was-hit-by-cyberattack-tied-to-compromise-of-open-source-litellm-project/)
-
----
-
 ## Industry
+
+### Google announces Gemma 4 open AI models, switches to Apache 2.0 license
+
+Gemma 4 brings the first major update to Google's open models in a year.
+
+[Read more](https://arstechnica.com/ai/2026/04/google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license/)
+
+---
+
+### Inside the leaked Claude Code files
+
+Docs as files, a new markdown editor and April fools
+
+[Read more](https://www.bensbites.com/p/inside-the-leaked-claude-code-files)
+
+---
 
 ### One breach after another
 
 separate and sandbox your agent's access
 
 [Read more](https://www.bensbites.com/p/one-breach-after-another)
-
----
-
-### A peek inside CLI tools
-
-No more funny videos at OpenAI
-
-[Read more](https://www.bensbites.com/p/a-peek-inside-cli-tools)
 
 ---
 
@@ -220,6 +228,12 @@ Today, in partnership with the World Resources Institute, we’re announcing Can
 Meta's DINOv2 model is enhancing reforestation efforts around the world. Learn how the UK government is using DINO to help reduce costs and increase...
 
 [Read more](https://ai.meta.com/blog/forest-research-dino/)
+
+---
+
+### Welcome Gemma 4: Frontier multimodal intelligence on device
+
+[Read more](https://huggingface.co/blog/gemma4)
 
 ---
 
