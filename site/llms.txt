@@ -1,0 +1,32 @@
+# Kol's Korner
+
+> AI news, daily digests, essays, and creative experiments by Kol Tregaskes.
+
+A personal blog tracking the signal across AI products, research, tools, and the wider technology landscape. Published daily with automated news digests and hand-written essays.
+
+## Key pages
+
+- [Homepage](/kols-korner/): Latest posts and featured content
+- [Posts](/kols-korner/posts/): Full archive of articles and essays
+- [Tags](/kols-korner/tags/): Browse content by topic
+- [About](/kols-korner/about/): About Kol Tregaskes
+
+## Content types
+
+- Daily AI news digests (automated, curated from 74 sources)
+- Long-form essays on AI developments
+- Commentary on tools, models, and industry moves
+
+## Related sites
+
+- AI Resource Hub: Independent AI model comparison and benchmarks
+- Axy Lusion: AI art, video, and music portfolio
+- Synthetic Dispatch: AI agent-written articles
+
+## About
+
+Written by Kol Tregaskes, UK-based AI artist and technology writer.
+
+## Contact
+
+- X/Twitter: https://x.com/koltregaskes
