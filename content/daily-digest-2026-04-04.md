@@ -11,6 +11,14 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### Anthropic is having a moment in the private markets; SpaceX could spoil the party
+
+Glen Anderson, president of Rainmaker Securities, says the secondary market for private shares has never been more active — with Anthropic the hottest trade around, OpenAI losing ground, and SpaceX's looming IPO poised to reshape the landscape for everyone.
+
+[Read more](https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/)
+
+---
+
 ### Introducing Sonnet 4.6
 
 Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.
@@ -80,14 +88,6 @@ With the midterms right around the corner, the new group is positioned to back c
 Meta, Microsoft, and Google are all betting big on new natural gas power plants to run their AI data centers. They may regret it.
 
 [Read more](https://techcrunch.com/2026/04/03/ai-companies-are-building-huge-natural-gas-plants-to-power-data-centers-what-could-go-wrong/)
-
----
-
-### People would rather have an Amazon warehouse in their backyard than a data center
-
-A new poll shows that the debate over data centers is far from settled.
-
-[Read more](https://techcrunch.com/2026/04/03/people-would-rather-have-an-amazon-warehouse-in-their-backyard-than-a-data-center/)
 
 ---
 
@@ -188,86 +188,6 @@ Today, in partnership with the World Resources Institute, we’re announcing Can
 Meta's DINOv2 model is enhancing reforestation efforts around the world. Learn how the UK government is using DINO to help reduce costs and increase...
 
 [Read more](https://ai.meta.com/blog/forest-research-dino/)
-
----
-
-### How Emotion Shapes the Behavior of LLMs and Agents: A Mechanistic Study
-
-arXiv:2604.00005v1 Announce Type: new Abstract: Emotion plays an important role in human cognition and performance. Motivated by this, we investigate whether analogous emotional signals can shape the behavior of large language models (LLMs) and agents. Existing emotion-aware studies mainly treat...
-
-[Read more](https://arxiv.org/abs/2604.00005)
-
----
-
-### One Panel Does Not Fit All: Case-Adaptive Multi-Agent Deliberation for Clinical Prediction
-
-arXiv:2604.00085v1 Announce Type: new Abstract: Large language models applied to clinical prediction exhibit case-level heterogeneity: simple cases yield consistent outputs, while complex cases produce divergent predictions under minor prompt changes. Existing single-agent strategies sample from...
-
-[Read more](https://arxiv.org/abs/2604.00085)
-
----
-
-### Open, Reliable, and Collective: A Community-Driven Framework for Tool-Using AI Agents
-
-arXiv:2604.00137v1 Announce Type: new Abstract: Tool-integrated LLMs can retrieve, compute, and take real-world actions via external tools, but reliability remains a key bottleneck. We argue that failures stem from both tool-use accuracy (how well an agent invokes a tool) and intrinsic tool accur...
-
-[Read more](https://arxiv.org/abs/2604.00137)
-
----
-
-### A Safety-Aware Role-Orchestrated Multi-Agent LLM Framework for Behavioral Health Communication Simulation
-
-arXiv:2604.00249v1 Announce Type: new Abstract: Single-agent large language model (LLM) systems struggle to simultaneously support diverse conversational functions and maintain safety in behavioral health communication. We propose a safety-aware, role-orchestrated multi-agent LLM framework design...
-
-[Read more](https://arxiv.org/abs/2604.00249)
-
----
-
-### Human-in-the-Loop Control of Objective Drift in LLM-Assisted Computer Science Education
-
-arXiv:2604.00281v1 Announce Type: new Abstract: Large language models (LLMs) are increasingly embedded in computer science education through AI-assisted programming tools, yet such workflows often exhibit objective drift, in which locally plausible outputs diverge from stated task specifications....
-
-[Read more](https://arxiv.org/abs/2604.00281)
-
----
-
-### DySCo: Dynamic Semantic Compression for Effective Long-term Time Series Forecasting
-
-arXiv:2604.01261v1 Announce Type: new Abstract: Time series forecasting (TSF) is critical across domains such as finance, meteorology, and energy. While extending the lookback window theoretically provides richer historical context, in practice, it often introduces irrelevant noise and computatio...
-
-[Read more](https://arxiv.org/abs/2604.01261)
-
----
-
-### Sven: Singular Value Descent as a Computationally Efficient Natural Gradient Method
-
-arXiv:2604.01279v1 Announce Type: new Abstract: We introduce Sven (Singular Value dEsceNt), a new optimization algorithm for neural networks that exploits the natural decomposition of loss functions into a sum over individual data points, rather than reducing the full loss to a single scalar befo...
-
-[Read more](https://arxiv.org/abs/2604.01279)
-
----
-
-### Forecasting Supply Chain Disruptions with Foresight Learning
-
-arXiv:2604.01298v1 Announce Type: new Abstract: Anticipating supply chain disruptions before they materialize is a core challenge for firms and policymakers alike. A key difficulty is learning to reason reliably about infrequent, high-impact events from noisy and unstructured inputs - a setting w...
-
-[Read more](https://arxiv.org/abs/2604.01298)
-
----
-
-### UQ-SHRED: uncertainty quantification of shallow recurrent decoder networks for sparse sensing via engression
-
-arXiv:2604.01305v1 Announce Type: new Abstract: Reconstructing high-dimensional spatiotemporal fields from sparse sensor measurements is critical in a wide range of scientific applications. The SHallow REcurrent Decoder (SHRED) architecture is a recent state-of-the-art architecture that reconstru...
-
-[Read more](https://arxiv.org/abs/2604.01305)
-
----
-
-### An Online Machine Learning Multi-resolution Optimization Framework for Energy System Design Limit of Performance Analysis
-
-arXiv:2604.01308v1 Announce Type: new Abstract: Designing reliable integrated energy systems for industrial processes requires optimization and verification models across multiple fidelities, from architecture-level sizing to high-fidelity dynamic operation. However, model mismatch across fidelit...
-
-[Read more](https://arxiv.org/abs/2604.01308)
 
 ---
 

@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-04-04T01:18:23.623Z",
+  "generatedAt": "2026-04-04T06:00:36.596Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-04-04",
-  "count": 35,
+  "count": 25,
   "items": [
+    {
+      "id": "techcrunch-ai-anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party-https-techcrunch-com-2026-04-03-anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party",
+      "title": "Anthropic is having a moment in the private markets; SpaceX could spoil the party",
+      "url": "https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-04",
+      "summary": "Glen Anderson, president of Rainmaker Securities, says the secondary market for private shares has never been more active — with Anthropic the hottest trade around, OpenAI losing ground, and SpaceX's looming IPO poised to reshape the landscape for everyone.",
+      "tags": [
+        "industry",
+        "ai"
+      ],
+      "adapter": "rss"
+    },
     {
       "id": "anthropic-news-introducing-sonnet-4-6-https-www-anthropic-com-news-claude-sonnet-4-6",
       "title": "Introducing Sonnet 4.6",
@@ -243,141 +258,6 @@
         "industry",
         "ai"
       ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-people-would-rather-have-an-amazon-warehouse-in-their-backyard-than-a-data-center-https-techcrunch-com-2026-04-03-people-would-rather-have-an-amazon-warehouse-in-their-backyard-than-a-data-center",
-      "title": "People would rather have an Amazon warehouse in their backyard than a data center",
-      "url": "https://techcrunch.com/2026/04/03/people-would-rather-have-an-amazon-warehouse-in-their-backyard-than-a-data-center/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-03",
-      "summary": "A new poll shows that the debate over data centers is far from settled.",
-      "tags": [
-        "industry",
-        "ai"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-ai-how-emotion-shapes-the-behavior-of-llms-and-agents-a-mechanistic-study-https-arxiv-org-abs-2604-00005",
-      "title": "How Emotion Shapes the Behavior of LLMs and Agents: A Mechanistic Study",
-      "url": "https://arxiv.org/abs/2604.00005",
-      "source": "arXiv cs.AI",
-      "sourceId": "arxiv-cs-ai",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-03",
-      "summary": "arXiv:2604.00005v1 Announce Type: new Abstract: Emotion plays an important role in human cognition and performance. Motivated by this, we investigate whether analogous emotional signals can shape the behavior of large language models (LLMs) and agents. Existing emotion-aware studies mainly treat emotion as a surface-level style factor or a perception target, overlooking its mechanistic role in task processing. To address this limitation, we propose E-STEER, an interpretable emotion steering framework that enables direct representation-level intervention in LLMs and agents. It embeds emotion as a structured, controllable variable in hidden states, and with it, we examine the impact of emotion on objective reasoning, subjective generation, safety, and multi-step agent behaviors. The results reveal non-monotonic emotion-behavior relations consistent with established psychological theories, and show that specific emotions not only enhance LLM capability but also improve safety, and systematically shape multi-step agent behaviors.",
-      "tags": [],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-ai-one-panel-does-not-fit-all-case-adaptive-multi-agent-deliberation-for-clinical-prediction-https-arxiv-org-abs-2604-00085",
-      "title": "One Panel Does Not Fit All: Case-Adaptive Multi-Agent Deliberation for Clinical Prediction",
-      "url": "https://arxiv.org/abs/2604.00085",
-      "source": "arXiv cs.AI",
-      "sourceId": "arxiv-cs-ai",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-03",
-      "summary": "arXiv:2604.00085v1 Announce Type: new Abstract: Large language models applied to clinical prediction exhibit case-level heterogeneity: simple cases yield consistent outputs, while complex cases produce divergent predictions under minor prompt changes. Existing single-agent strategies sample from one role-conditioned distribution, and multi-agent frameworks use fixed roles with flat majority voting, discarding the diagnostic signal in disagreement. We propose CAMP (Case-Adaptive Multi-agent Panel), where an attending-physician agent dynamically assembles a specialist panel tailored to each case's diagnostic uncertainty. Each specialist evaluates candidates via three-valued voting (KEEP/REFUSE/NEUTRAL), enabling principled abstention outside one's expertise. A hybrid router directs each diagnosis through strong consensus, fallback to the attending physician's judgment, or evidence-based arbitration that weighs argument quality over vote counts. On diagnostic prediction and brief hospital course generation from MIMIC-IV across four LLM backbones, CAMP consistently outperforms strong baselines while consuming fewer tokens than most competing multi-agent methods, with voting records and arbitration traces offering transparent decision audits.",
-      "tags": [],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-ai-open-reliable-and-collective-a-community-driven-framework-for-tool-using-ai-agents-https-arxiv-org-abs-2604-00137",
-      "title": "Open, Reliable, and Collective: A Community-Driven Framework for Tool-Using AI Agents",
-      "url": "https://arxiv.org/abs/2604.00137",
-      "source": "arXiv cs.AI",
-      "sourceId": "arxiv-cs-ai",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-03",
-      "summary": "arXiv:2604.00137v1 Announce Type: new Abstract: Tool-integrated LLMs can retrieve, compute, and take real-world actions via external tools, but reliability remains a key bottleneck. We argue that failures stem from both tool-use accuracy (how well an agent invokes a tool) and intrinsic tool accuracy (the tool's own correctness), while most prior work emphasizes the former. We introduce OpenTools, a community-driven toolbox that standardizes tool schemas, provides lightweight plug-and-play wrappers, and evaluates tools with automated test suites and continuous monitoring. We also release a public web demo where users can run predefined agents and tools and contribute test cases, enabling reliability reports to evolve as tools change. OpenTools includes the core framework, an initial tool set, evaluation pipelines, and a contribution protocol. Experiments and evaluations show improved end-to-end reproducibility and task performance; community-contributed, higher-quality task-specific tools deliver 6%-22% relative gains over an existing toolbox across multiple agent architectures on downstream tasks and benchmarks, highlighting the importance of intrinsic tool accuracy.",
-      "tags": [],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-ai-a-safety-aware-role-orchestrated-multi-agent-llm-framework-for-behavioral-health-communication-simulation-https-arxiv-org-abs-2604-00249",
-      "title": "A Safety-Aware Role-Orchestrated Multi-Agent LLM Framework for Behavioral Health Communication Simulation",
-      "url": "https://arxiv.org/abs/2604.00249",
-      "source": "arXiv cs.AI",
-      "sourceId": "arxiv-cs-ai",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-03",
-      "summary": "arXiv:2604.00249v1 Announce Type: new Abstract: Single-agent large language model (LLM) systems struggle to simultaneously support diverse conversational functions and maintain safety in behavioral health communication. We propose a safety-aware, role-orchestrated multi-agent LLM framework designed to simulate supportive behavioral health dialogue through coordinated, role-differentiated agents. Conversational responsibilities are decomposed across specialized agents, including empathy-focused, action-oriented, and supervisory roles, while a prompt-based controller dynamically activates relevant agents and enforces continuous safety auditing. Using semi-structured interview transcripts from the DAIC-WOZ corpus, we evaluate the framework with scalable proxy metrics capturing structural quality, functional diversity, and computational characteristics. Results illustrate clear role differentiation, coherent inter-agent coordination, and predictable trade-offs between modular orchestration, safety oversight, and response latency when compared to a single-agent baseline. This work emphasizes system design, interpretability, and safety, positioning the framework as a simulation and analysis tool for behavioral health informatics and decision-support research rather than a clinical intervention.",
-      "tags": [],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-ai-human-in-the-loop-control-of-objective-drift-in-llm-assisted-computer-science-education-https-arxiv-org-abs-2604-00281",
-      "title": "Human-in-the-Loop Control of Objective Drift in LLM-Assisted Computer Science Education",
-      "url": "https://arxiv.org/abs/2604.00281",
-      "source": "arXiv cs.AI",
-      "sourceId": "arxiv-cs-ai",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-03",
-      "summary": "arXiv:2604.00281v1 Announce Type: new Abstract: Large language models (LLMs) are increasingly embedded in computer science education through AI-assisted programming tools, yet such workflows often exhibit objective drift, in which locally plausible outputs diverge from stated task specifications. Existing instructional responses frequently emphasize tool-specific prompting practices, limiting durability as AI platforms evolve. This paper adopts a human-centered stance, treating human-in-the-loop (HITL) control as a stable educational problem rather than a transitional step toward AI autonomy. Drawing on systems engineering and control-theoretic concepts, we frame objectives and world models as operational artifacts that students configure to stabilize AI-assisted work. We propose a pilot undergraduate CS laboratory curriculum that explicitly separates planning from execution and trains students to specify acceptance criteria and architectural constraints prior to code generation. In selected labs, the curriculum also introduces deliberate, concept-aligned drift to support diagnosis and recovery from specification violations. We report a sensitivity power analysis for a three-arm pilot design comparing unstructured AI use, structured planning, and structured planning with injected drift, establishing detectable effect sizes under realistic section-level constraints. The contribution is a theory-driven, methodologically explicit foundation for HITL pedagogy that renders control competencies teachable across evolving AI tools.",
-      "tags": [],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-lg-dysco-dynamic-semantic-compression-for-effective-long-term-time-series-forecasting-https-arxiv-org-abs-2604-01261",
-      "title": "DySCo: Dynamic Semantic Compression for Effective Long-term Time Series Forecasting",
-      "url": "https://arxiv.org/abs/2604.01261",
-      "source": "arXiv cs.LG",
-      "sourceId": "arxiv-cs-lg",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-03",
-      "summary": "arXiv:2604.01261v1 Announce Type: new Abstract: Time series forecasting (TSF) is critical across domains such as finance, meteorology, and energy. While extending the lookback window theoretically provides richer historical context, in practice, it often introduces irrelevant noise and computational redundancy, preventing models from effectively capturing complex long-term dependencies. To address these challenges, we propose a Dynamic Semantic Compression (DySCo) framework. Unlike traditional methods that rely on fixed heuristics, DySCo introduces an Entropy-Guided Dynamic Sampling (EGDS) mechanism to autonomously identify and retain high-entropy segments while compressing redundant trends. Furthermore, we incorporate a Hierarchical Frequency-Enhanced Decomposition (HFED) strategy to separate high-frequency anomalies from low-frequency patterns, ensuring that critical details are preserved during sparse sampling. Finally, a Cross-Scale Interaction Mixer(CSIM) is designed to dynamically fuse global contexts with local representations, replacing simple linear aggregation. Experimental results demonstrate that DySCo serves as a universal plug-and-play module, significantly enhancing the ability of mainstream models to capture long-term correlations with reduced computational cost.",
-      "tags": [],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-lg-sven-singular-value-descent-as-a-computationally-efficient-natural-gradient-method-https-arxiv-org-abs-2604-01279",
-      "title": "Sven: Singular Value Descent as a Computationally Efficient Natural Gradient Method",
-      "url": "https://arxiv.org/abs/2604.01279",
-      "source": "arXiv cs.LG",
-      "sourceId": "arxiv-cs-lg",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-03",
-      "summary": "arXiv:2604.01279v1 Announce Type: new Abstract: We introduce Sven (Singular Value dEsceNt), a new optimization algorithm for neural networks that exploits the natural decomposition of loss functions into a sum over individual data points, rather than reducing the full loss to a single scalar before computing a parameter update. Sven treats each data point's residual as a separate condition to be satisfied simultaneously, using the Moore-Penrose pseudoinverse of the loss Jacobian to find the minimum-norm parameter update that best satisfies all conditions at once. In practice, this pseudoinverse is approximated via a truncated singular value decomposition, retaining only the $k$ most significant directions and incurring a computational overhead of only a factor of $k$ relative to stochastic gradient descent. This is in comparison to traditional natural gradient methods, which scale as the square of the number of parameters. We show that Sven can be understood as a natural gradient method generalized to the over-parametrized regime, recovering natural gradient descent in the under-parametrized limit. On regression tasks, Sven significantly outperforms standard first-order methods including Adam, converging faster and to a lower final loss, while remaining competitive with LBFGS at a fraction of the wall-time cost. We discuss the primary challenge to scaling, namely memory overhead, and propose mitigation strategies. Beyond standard machine learning benchmarks, we anticipate that Sven will find natural application in scientific computing settings where custom loss functions decompose into several conditions.",
-      "tags": [],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-lg-forecasting-supply-chain-disruptions-with-foresight-learning-https-arxiv-org-abs-2604-01298",
-      "title": "Forecasting Supply Chain Disruptions with Foresight Learning",
-      "url": "https://arxiv.org/abs/2604.01298",
-      "source": "arXiv cs.LG",
-      "sourceId": "arxiv-cs-lg",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-03",
-      "summary": "arXiv:2604.01298v1 Announce Type: new Abstract: Anticipating supply chain disruptions before they materialize is a core challenge for firms and policymakers alike. A key difficulty is learning to reason reliably about infrequent, high-impact events from noisy and unstructured inputs - a setting where general-purpose models struggle without task-specific adaptation. We introduce an end-to-end framework that trains LLMs to produce calibrated probabilistic forecasts using realized disruption outcomes as supervision. The resulting model substantially outperforms strong baselines - including GPT-5 - on accuracy, calibration, and precision. We also show that training induces more structured and reliable probabilistic reasoning without explicit prompting. These results suggest a general pathway for training domain-specific forecasting models that produce decision-ready signals. To support transparency we open-source the evaluation dataset used in this study. Dataset: https://huggingface.co/datasets/LightningRodLabs/supply-chain-predictions",
-      "tags": [],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-lg-uq-shred-uncertainty-quantification-of-shallow-recurrent-decoder-networks-for-sparse-sensing-via-engression-https-arxiv-org-abs-2604-01305",
-      "title": "UQ-SHRED: uncertainty quantification of shallow recurrent decoder networks for sparse sensing via engression",
-      "url": "https://arxiv.org/abs/2604.01305",
-      "source": "arXiv cs.LG",
-      "sourceId": "arxiv-cs-lg",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-03",
-      "summary": "arXiv:2604.01305v1 Announce Type: new Abstract: Reconstructing high-dimensional spatiotemporal fields from sparse sensor measurements is critical in a wide range of scientific applications. The SHallow REcurrent Decoder (SHRED) architecture is a recent state-of-the-art architecture that reconstructs high-quality spatial domain from hyper-sparse sensor measurement streams. An important limitation of SHRED is that in complex, data-scarce, high-frequency, or stochastic systems, portions of the spatiotemporal field must be modeled with valid uncertainty estimation. We introduce UQ-SHRED, a distributional learning framework for sparse sensing problems that provides uncertainty quantification through a neural network-based distributional regression called engression. UQ-SHRED models the uncertainty by learning the predictive distribution of the spatial state conditioned on the sensor history. By injecting stochastic noise into sensor inputs and training with an energy score loss, UQ-SHRED produces predictive distributions with minimal computational overhead, requiring only noise injection at the input and resampling through a single architecture without retraining or additional network structures. On complicated synthetic and real-life datasets including turbulent flow, atmospheric dynamics, neuroscience and astrophysics, UQ-SHRED provides a distributional approximation with well-calibrated confidence intervals. We further conduct ablation studies to understand how each model setting affects the quality of the UQ-SHRED performance, and its validity on uncertainty quantification over a set of different experimental setups.",
-      "tags": [],
-      "adapter": "rss"
-    },
-    {
-      "id": "arxiv-cs-lg-an-online-machine-learning-multi-resolution-optimization-framework-for-energy-system-design-limit-of-performance-analysis-https-arxiv-org-abs-2604-01308",
-      "title": "An Online Machine Learning Multi-resolution Optimization Framework for Energy System Design Limit of Performance Analysis",
-      "url": "https://arxiv.org/abs/2604.01308",
-      "source": "arXiv cs.LG",
-      "sourceId": "arxiv-cs-lg",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-03",
-      "summary": "arXiv:2604.01308v1 Announce Type: new Abstract: Designing reliable integrated energy systems for industrial processes requires optimization and verification models across multiple fidelities, from architecture-level sizing to high-fidelity dynamic operation. However, model mismatch across fidelities obscures the sources of performance loss and complicates the quantification of architecture-to-operation performance gaps. We propose an online, machine-learning-accelerated multi-resolution optimization framework that estimates an architecture-specific upper bound on achievable performance while minimizing expensive high-fidelity model evaluations. We demonstrate the approach on a pilot energy system supplying a 1 MW industrial heat load. First, we solve a multi-objective architecture optimization to select the system configuration and component capacities. We then develop an machine learning (ML)-accelerated multi-resolution, receding-horizon optimal control strategy that approaches the achievable-performance bound for the specified architecture, given the additional controls and dynamics not captured by the architectural optimization model. The ML-guided controller adaptively schedules the optimization resolution based on predictive uncertainty and warm-starts high-fidelity solves using elite low-fidelity solutions. Our results on the pilot case study show that the proposed multi-resolution strategy reduces the architecture-to-operation performance gap by up to 42% relative to a rule-based controller, while reducing required high-fidelity model evaluations by 34% relative to the same multi-fidelity approach without ML guidance, enabling faster and more reliable design verification. Together, these gains make high-fidelity verification tractable, providing a practical upper bound on achievable operational performance.",
-      "tags": [],
       "adapter": "rss"
     },
     {
