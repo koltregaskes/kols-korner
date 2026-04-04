@@ -1,24 +1,25 @@
 {
-  "generatedAt": "2026-04-04T06:00:36.596Z",
+  "generatedAt": "2026-04-04T16:27:37.283Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-04-04",
-  "count": 25,
+  "count": 9,
   "items": [
     {
-      "id": "techcrunch-ai-anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party-https-techcrunch-com-2026-04-03-anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party",
-      "title": "Anthropic is having a moment in the private markets; SpaceX could spoil the party",
-      "url": "https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
+      "id": "meta-ai-blog-mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps-v2-https-ai-meta-com-blog-world-resources-institute-dino-canopy-height-maps-v2",
+      "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
+      "url": "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
       "publishedAt": "2026-04-04",
-      "summary": "Glen Anderson, president of Rainmaker Securities, says the secondary market for private shares has never been more active — with Anthropic the hottest trade around, OpenAI losing ground, and SpaceX's looming IPO poised to reshape the landscape for everyone.",
+      "summary": "Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...",
       "tags": [
-        "industry",
-        "ai"
+        "model_release",
+        "industry_move",
+        "open_source"
       ],
-      "adapter": "rss"
+      "adapter": "html"
     },
     {
       "id": "anthropic-news-introducing-sonnet-4-6-https-www-anthropic-com-news-claude-sonnet-4-6",
@@ -29,7 +30,10 @@
       "section": "Top Stories",
       "publishedAt": "2026-04-04",
       "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
-      "tags": [],
+      "tags": [
+        "tool_use",
+        "reasoning"
+      ],
       "adapter": "html"
     },
     {
@@ -41,19 +45,11 @@
       "section": "Top Stories",
       "publishedAt": "2026-04-04",
       "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
-      "tags": [],
-      "adapter": "html"
-    },
-    {
-      "id": "anthropic-news-claude-is-a-space-to-think-anthropic-https-www-anthropic-com-news-claude-is-a-space-to-think",
-      "title": "Claude is a space to think | Anthropic",
-      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
-      "source": "Anthropic News",
-      "sourceId": "anthropic-news",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-04",
-      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
-      "tags": [],
+      "tags": [
+        "api_update",
+        "ai_agents",
+        "tool_use"
+      ],
       "adapter": "html"
     },
     {
@@ -65,55 +61,10 @@
       "section": "Top Stories",
       "publishedAt": "2026-04-04",
       "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
-      "tags": [],
-      "adapter": "html"
-    },
-    {
-      "id": "anthropic-news-anthropic-invests-100-million-into-the-claude-partner-network-https-www-anthropic-com-news-claude-partner-network",
-      "title": "Anthropic invests $100 million into the Claude Partner Network",
-      "url": "https://www.anthropic.com/news/claude-partner-network",
-      "source": "Anthropic News",
-      "sourceId": "anthropic-news",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-04",
-      "summary": "We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.",
-      "tags": [],
-      "adapter": "html"
-    },
-    {
-      "id": "deepmind-blog-alphagenome-ai-for-better-understanding-the-genome-google-deepmind-https-deepmind-google-blog-alphagenome-ai-for-better-understanding-the-genome",
-      "title": "AlphaGenome: AI for better understanding the genome — Google DeepMind",
-      "url": "https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/",
-      "source": "Google DeepMind Blog",
-      "sourceId": "deepmind-blog",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-04",
-      "summary": "Ziga Avsec and Natasha Latysheva",
-      "tags": [],
-      "adapter": "html"
-    },
-    {
-      "id": "deepmind-blog-a-catalogue-of-genetic-mutations-to-help-pinpoint-the-cause-of-diseases-google-deepmind-https-deepmind-google-blog-a-catalogue-of-genetic-mutations-to-help-pinpoint-the-cause-of-diseases",
-      "title": "A catalogue of genetic mutations to help pinpoint the cause of diseases — Google DeepMind",
-      "url": "https://deepmind.google/blog/a-catalogue-of-genetic-mutations-to-help-pinpoint-the-cause-of-diseases/",
-      "source": "Google DeepMind Blog",
-      "sourceId": "deepmind-blog",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-04",
-      "summary": "New AI tool classifies the effects of 71 million ‘missense’ mutations",
-      "tags": [],
-      "adapter": "html"
-    },
-    {
-      "id": "deepmind-blog-alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail-google-deepmind-https-deepmind-google-blog-alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail",
-      "title": "AlphaEarth Foundations helps map our planet in unprecedented detail — Google DeepMind",
-      "url": "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/",
-      "source": "Google DeepMind Blog",
-      "sourceId": "deepmind-blog",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-04",
-      "summary": "The AlphaEarth Foundations team",
-      "tags": [],
+      "tags": [
+        "research_paper",
+        "ai_safety"
+      ],
       "adapter": "html"
     },
     {
@@ -125,7 +76,9 @@
       "section": "Research & Products",
       "publishedAt": "2026-04-04",
       "summary": "TRIBE v2 reliably predicts high-resolution fMRI brain activity — enabling zero-shot predictions for new subjects, languages, and tasks — and consistently...",
-      "tags": [],
+      "tags": [
+        "model_release"
+      ],
       "adapter": "html"
     },
     {
@@ -137,83 +90,10 @@
       "section": "Research & Products",
       "publishedAt": "2026-04-04",
       "summary": "Update March 27, 2026:",
-      "tags": [],
-      "adapter": "html"
-    },
-    {
-      "id": "meta-ai-blog-four-mtia-chips-in-two-years-scaling-ai-experiences-for-billions-https-ai-meta-com-blog-meta-mtia-scale-ai-chips-for-billions",
-      "title": "Four MTIA Chips in Two Years: Scaling AI Experiences for Billions",
-      "url": "https://ai.meta.com/blog/meta-mtia-scale-ai-chips-for-billions/",
-      "source": "Meta AI Blog",
-      "sourceId": "meta-ai-blog",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-04",
-      "summary": "Serving a wide range of AI models on a global scale, while maintaining the lowest possible costs, is one of the most demanding infrastructure challenges...",
-      "tags": [],
-      "adapter": "html"
-    },
-    {
-      "id": "meta-ai-blog-mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps-v2-https-ai-meta-com-blog-world-resources-institute-dino-canopy-height-maps-v2",
-      "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
-      "url": "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/",
-      "source": "Meta AI Blog",
-      "sourceId": "meta-ai-blog",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-04",
-      "summary": "Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...",
-      "tags": [],
-      "adapter": "html"
-    },
-    {
-      "id": "meta-ai-blog-reducing-government-costs-and-increasing-access-to-greenspaces-in-the-united-kingdom-with-dino-https-ai-meta-com-blog-forest-research-dino",
-      "title": "Reducing Government Costs and Increasing Access to Greenspaces in the United Kingdom with DINO",
-      "url": "https://ai.meta.com/blog/forest-research-dino/",
-      "source": "Meta AI Blog",
-      "sourceId": "meta-ai-blog",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-04",
-      "summary": "Meta's DINOv2 model is enhancing reforestation efforts around the world. Learn how the UK government is using DINO to help reduce costs and increase...",
-      "tags": [],
-      "adapter": "html"
-    },
-    {
-      "id": "bens-bites-inside-the-leaked-claude-code-files-https-www-bensbites-com-p-inside-the-leaked-claude-code-files",
-      "title": "Inside the leaked Claude Code files",
-      "url": "https://www.bensbites.com/p/inside-the-leaked-claude-code-files",
-      "source": "Ben's Bites",
-      "sourceId": "bens-bites",
-      "section": "Industry",
-      "publishedAt": "2026-04-04",
-      "summary": "Docs as files, a new markdown editor and April fools",
-      "tags": [],
-      "adapter": "html"
-    },
-    {
-      "id": "bens-bites-one-breach-after-another-https-www-bensbites-com-p-one-breach-after-another",
-      "title": "One breach after another",
-      "url": "https://www.bensbites.com/p/one-breach-after-another",
-      "source": "Ben's Bites",
-      "sourceId": "bens-bites",
-      "section": "Industry",
-      "publishedAt": "2026-04-04",
-      "summary": "separate and sandbox your agent's access",
-      "tags": [],
-      "adapter": "html"
-    },
-    {
-      "id": "techcrunch-ai-openai-executive-shuffle-includes-new-role-for-coo-brad-lightcap-to-lead-special-projects-https-techcrunch-com-2026-04-03-openai-executive-shuffle-new-roles-coo-brad-lightcap-fidji-simo-kate-rouch",
-      "title": "OpenAI executive shuffle includes new role for COO Brad Lightcap to lead ‘special projects’",
-      "url": "https://techcrunch.com/2026/04/03/openai-executive-shuffle-new-roles-coo-brad-lightcap-fidji-simo-kate-rouch/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-03",
-      "summary": "In addition to Lightcap's new role, OpenAI CMO Kate Rouch will be stepping away from the company to focus on cancer recovery, with a plan to return when her health allows.",
       "tags": [
-        "industry",
-        "ai"
+        "reasoning"
       ],
-      "adapter": "rss"
+      "adapter": "html"
     },
     {
       "id": "techcrunch-ai-anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports-https-techcrunch-com-2026-04-03-anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports",
@@ -226,7 +106,8 @@
       "summary": "Anthropic has purchased the stealth biotech AI startup Coefficient Bio in a $400 million stock deal, according to The Information and Eric Newcomer.",
       "tags": [
         "industry",
-        "ai"
+        "ai",
+        "industry_move"
       ],
       "adapter": "rss"
     },
@@ -241,22 +122,8 @@
       "summary": "With the midterms right around the corner, the new group is positioned to back candidates who support the AI company's policy agenda.",
       "tags": [
         "industry",
-        "ai"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-ai-companies-are-building-huge-natural-gas-plants-to-power-data-centers-what-could-go-wrong-https-techcrunch-com-2026-04-03-ai-companies-are-building-huge-natural-gas-plants-to-power-data-centers-what-could-go-wrong",
-      "title": "AI companies are building huge natural gas plants to power data centers. What could go wrong?",
-      "url": "https://techcrunch.com/2026/04/03/ai-companies-are-building-huge-natural-gas-plants-to-power-data-centers-what-could-go-wrong/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-03",
-      "summary": "Meta, Microsoft, and Google are all betting big on new natural gas power plants to run their AI data centers. They may regret it.",
-      "tags": [
-        "industry",
-        "ai"
+        "ai",
+        "policy"
       ],
       "adapter": "rss"
     },
@@ -269,56 +136,12 @@
       "section": "Industry",
       "publishedAt": "2026-04-02",
       "summary": "Gemma 4 brings the first major update to Google's open models in a year.",
-      "tags": [],
+      "tags": [
+        "product_launch",
+        "announcement",
+        "open_source"
+      ],
       "adapter": "html"
-    },
-    {
-      "id": "hugging-face-blog-welcome-gemma-4-frontier-multimodal-intelligence-on-device-https-huggingface-co-blog-gemma4",
-      "title": "Welcome Gemma 4: Frontier multimodal intelligence on device",
-      "url": "https://huggingface.co/blog/gemma4",
-      "source": "Hugging Face Blog",
-      "sourceId": "hugging-face-blog",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-02",
-      "summary": "",
-      "tags": [],
-      "adapter": "rss"
-    },
-    {
-      "id": "hugging-face-blog-holo3-breaking-the-computer-use-frontier-https-huggingface-co-blog-hcompany-holo3",
-      "title": "Holo3: Breaking the Computer Use Frontier",
-      "url": "https://huggingface.co/blog/Hcompany/holo3",
-      "source": "Hugging Face Blog",
-      "sourceId": "hugging-face-blog",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-01",
-      "summary": "",
-      "tags": [],
-      "adapter": "rss"
-    },
-    {
-      "id": "hugging-face-blog-falcon-perception-https-huggingface-co-blog-tiiuae-falcon-perception",
-      "title": "Falcon Perception",
-      "url": "https://huggingface.co/blog/tiiuae/falcon-perception",
-      "source": "Hugging Face Blog",
-      "sourceId": "hugging-face-blog",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-01",
-      "summary": "",
-      "tags": [],
-      "adapter": "rss"
-    },
-    {
-      "id": "mit-technology-review-ai-the-gig-workers-who-are-training-humanoid-robots-at-home-https-www-technologyreview-com-2026-04-01-1134863-humanoid-data-training-gig-economy-2026-breakthrough-technology",
-      "title": "The gig workers who are training humanoid robots at home",
-      "url": "https://www.technologyreview.com/2026/04/01/1134863/humanoid-data-training-gig-economy-2026-breakthrough-technology/",
-      "source": "MIT Technology Review AI",
-      "sourceId": "mit-technology-review-ai",
-      "section": "Industry",
-      "publishedAt": "2026-04-01",
-      "summary": "When Zeus, a medical student living in a hilltop city in central Nigeria, returns to his studio apartment from a long day at the hospital, he turns on his ring light, straps his iPhone to his forehead, and starts recording himself. He raises his hands in front of him like a sleepwalker and puts a…",
-      "tags": [],
-      "adapter": "rss"
     }
   ]
 }
