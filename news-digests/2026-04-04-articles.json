@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-04-04T00:32:07.130Z",
+  "generatedAt": "2026-04-04T01:18:23.623Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-04-04",
-  "count": 33,
+  "count": 35,
   "items": [
     {
       "id": "anthropic-news-introducing-sonnet-4-6-https-www-anthropic-com-news-claude-sonnet-4-6",
@@ -158,6 +158,30 @@
       "section": "Research & Products",
       "publishedAt": "2026-04-04",
       "summary": "Meta's DINOv2 model is enhancing reforestation efforts around the world. Learn how the UK government is using DINO to help reduce costs and increase...",
+      "tags": [],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-inside-the-leaked-claude-code-files-https-www-bensbites-com-p-inside-the-leaked-claude-code-files",
+      "title": "Inside the leaked Claude Code files",
+      "url": "https://www.bensbites.com/p/inside-the-leaked-claude-code-files",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-04",
+      "summary": "Docs as files, a new markdown editor and April fools",
+      "tags": [],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-one-breach-after-another-https-www-bensbites-com-p-one-breach-after-another",
+      "title": "One breach after another",
+      "url": "https://www.bensbites.com/p/one-breach-after-another",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-04",
+      "summary": "separate and sandbox your agent's access",
       "tags": [],
       "adapter": "html"
     },

@@ -93,6 +93,22 @@ A new poll shows that the debate over data centers is far from settled.
 
 ## Industry
 
+### Inside the leaked Claude Code files
+
+Docs as files, a new markdown editor and April fools
+
+[Read more](https://www.bensbites.com/p/inside-the-leaked-claude-code-files)
+
+---
+
+### One breach after another
+
+separate and sandbox your agent's access
+
+[Read more](https://www.bensbites.com/p/one-breach-after-another)
+
+---
+
 ### Google announces Gemma 4 open AI models, switches to Apache 2.0 license
 
 Gemma 4 brings the first major update to Google's open models in a year.
