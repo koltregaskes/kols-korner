@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-04-03T06:01:10.867Z",
+  "generatedAt": "2026-04-03T18:00:43.615Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-04-03",
   "count": 40,
   "items": [
+    {
+      "id": "techcrunch-ai-the-facebook-insider-building-content-moderation-for-the-ai-era-https-techcrunch-com-2026-04-03-moonbounce-fundraise-content-moderation-for-the-ai-era",
+      "title": "The Facebook insider building content moderation for the AI era",
+      "url": "https://techcrunch.com/2026/04/03/moonbounce-fundraise-content-moderation-for-the-ai-era/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-03",
+      "summary": "Moonbounce has raised $12 million to grow its AI control engine that converts content moderation policies into consistent, predictable AI behavior.",
+      "tags": [
+        "industry",
+        "ai"
+      ],
+      "adapter": "rss"
+    },
     {
       "id": "anthropic-news-introducing-sonnet-4-6-https-www-anthropic-com-news-claude-sonnet-4-6",
       "title": "Introducing Sonnet 4.6",
@@ -383,21 +398,6 @@
       "section": "Top Stories",
       "publishedAt": "2026-04-01",
       "summary": "Anthropic executives said it was an accident and retracted the bulk of the takedown notices.",
-      "tags": [
-        "industry",
-        "ai"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-meta-s-natural-gas-binge-could-power-south-dakota-https-techcrunch-com-2026-04-01-metas-natural-gas-binge-could-power-south-dakota",
-      "title": "Meta’s natural gas binge could power South Dakota",
-      "url": "https://techcrunch.com/2026/04/01/metas-natural-gas-binge-could-power-south-dakota/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-01",
-      "summary": "Meta's upcoming Hyperion AI data center will be powered by 10 new natural gas plants.",
       "tags": [
         "industry",
         "ai"

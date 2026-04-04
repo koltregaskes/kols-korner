@@ -11,6 +11,14 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### The Facebook insider building content moderation for the AI era
+
+Moonbounce has raised $12 million to grow its AI control engine that converts content moderation policies into consistent, predictable AI behavior.
+
+[Read more](https://techcrunch.com/2026/04/03/moonbounce-fundraise-content-moderation-for-the-ai-era/)
+
+---
+
 ### Introducing Sonnet 4.6
 
 Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.
@@ -80,14 +88,6 @@ Google is adding a way to customize and instruct avatars for video creation in t
 Anthropic executives said it was an accident and retracted the bulk of the takedown notices.
 
 [Read more](https://techcrunch.com/2026/04/01/anthropic-took-down-thousands-of-github-repos-trying-to-yank-its-leaked-source-code-a-move-the-company-says-was-an-accident/)
-
----
-
-### Meta’s natural gas binge could power South Dakota
-
-Meta's upcoming Hyperion AI data center will be powered by 10 new natural gas plants.
-
-[Read more](https://techcrunch.com/2026/04/01/metas-natural-gas-binge-could-power-south-dakota/)
 
 ---
 
