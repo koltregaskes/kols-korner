@@ -10,7 +10,7 @@ Personal website and publishing system for [koltregaskes.com](https://koltregask
 - Generated, deployable output committed in `site/`
 - GitHub Pages deployment for the production domain `koltregaskes.com`
 
-The long-term shared news-gathering pipeline is planned outside this repo. This repo currently includes a local stopgap pipeline so the site can keep publishing daily digest posts.
+The shared news-gathering pipeline now runs outside this repo, with this repo consuming the generated digest output and publishing the site.
 
 ## Build
 
@@ -29,7 +29,8 @@ node scripts/backfill-digests.mjs
 - Raw digest files live in `news-digests/`
 - Published digest posts live in `content/daily-digest-YYYY-MM-DD.md`
 - `scripts/backfill-digests.mjs` publishes any raw digests that do not yet have a matching post
-- `.github/workflows/daily-digest.yml` refreshes the current day's digest twice a day
+- `scripts/run-daily-news.ps1` is the primary local Windows scheduled runner for digest refreshes
+- `.github/workflows/daily-digest.yml` is now a manual build-check workflow, not the production scheduler
 
 Optional environment variables:
 
@@ -57,7 +58,7 @@ Push to `main`. GitHub Actions will:
 2. Upload `site/`
 3. Deploy to GitHub Pages
 
-The repo is configured for a custom domain via the committed [`CNAME`](/W:/Websites/sites/koltregaskesdotcom/CNAME) file and can also read `CUSTOM_DOMAIN` from repository variables.
+The repo can publish with a committed [`CNAME`](/W:/Websites/sites/kols-korner/CNAME) file or via the `CUSTOM_DOMAIN` repository variable when the production domain is ready.
 
 ## Content Model
 
@@ -95,7 +96,7 @@ Posts with `publish: false` are excluded from the build.
 - `news-digests/` - Raw digest markdown used by the news section
 - `site/` - Generated output that GitHub Pages deploys
 - `.github/workflows/pages.yml` - Main Pages deploy workflow
-- `.github/workflows/daily-digest.yml` - Digest build workflow
+- `.github/workflows/daily-digest.yml` - Manual digest build-check workflow
 
 ## Notes
 

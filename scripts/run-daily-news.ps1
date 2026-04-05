@@ -88,7 +88,7 @@ Start-Transcript -Path $logPath -Force | Out-Null
 try {
   Push-Location $repoRoot
 
-  $preExistingChanges = @(Get-GitStatusLines -Paths @('news-digests', 'content', 'site'))
+  $preExistingChanges = @(Get-GitStatusLines)
   $preExistingManualChanges = @(
     $preExistingChanges | Where-Object {
       -not (Test-IsGeneratedDigestArtifact -Path (Get-GitStatusPath -StatusLine $_))
@@ -96,9 +96,9 @@ try {
   )
 
   if ($preExistingManualChanges.Count -gt 0) {
-    Write-Warning 'Refusing to run while manually maintained content already has uncommitted changes.'
+    Write-Warning 'Refusing to run while the repository has uncommitted non-generated changes.'
     $preExistingManualChanges | ForEach-Object { Write-Warning $_ }
-    throw 'Clean or commit existing manual content changes before running the scheduled digest job.'
+    throw 'Clean or commit existing non-generated changes before running the scheduled digest job.'
   }
 
   $preExistingGeneratedChanges = @(

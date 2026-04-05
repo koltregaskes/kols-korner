@@ -19,7 +19,7 @@ function getRepoBasePath() {
 }
 
 function joinBase(base, p) {
-  // base like "/kols-korner/"
+  // base like "/repo-name/" on GitHub Pages project sites
   // p like "/posts/slug/" or "posts/slug/"
   const clean = (p || "").replace(/^\//, "");
   return `${base}${clean}`;

@@ -37,11 +37,9 @@ class NewsApp {
     }
 
     async loadArticles() {
-        // Generate file list for digests (YYYY-MM-DD-digest.md format)
-        const fileList = this.generateFileList();
+        const fileList = await this.getDigestFileList();
 
         // Load files in parallel for much faster performance
-        // (Instead of 90 sequential requests, load them all at once)
         const loadPromises = fileList.map(async (filename) => {
             try {
                 const response = await fetch(`../news-digests/${filename}`);
@@ -71,12 +69,53 @@ class NewsApp {
         if (loading) loading.style.display = 'none';
     }
 
-    generateFileList() {
+    async getDigestFileList() {
+        try {
+            const response = await fetch('../data/news-digests.json', { cache: 'no-store' });
+            if (!response.ok) {
+                throw new Error(`Manifest request failed with ${response.status}`);
+            }
+
+            const manifest = await response.json();
+            if (Array.isArray(manifest.files) && manifest.files.length > 0) {
+                const canonicalFiles = Array.from(
+                    new Set(
+                        manifest.files
+                            .map((filename) => this.normaliseDigestFilename(filename))
+                            .filter(Boolean)
+                    )
+                ).sort().reverse();
+
+                if (canonicalFiles.length > 0) {
+                    return canonicalFiles;
+                }
+            }
+        } catch (error) {
+            console.warn('Digest manifest unavailable, falling back to recent digest scan.', error);
+        }
+
+        return this.generateFileList(30);
+    }
+
+    normaliseDigestFilename(filename) {
+        if (typeof filename !== 'string') return null;
+
+        let match = filename.match(/^(\d{4})-(\d{2})-(\d{2})-digest\.md$/);
+        if (!match) {
+            match = filename.match(/^digest-(\d{4})-(\d{2})-(\d{2})\.md$/);
+        }
+
+        if (!match) return null;
+
+        const [, year, month, day] = match;
+        return `${year}-${month}-${day}-digest.md`;
+    }
+
+    generateFileList(days = 90) {
         const files = [];
         const today = new Date();
 
-        // Generate files for the last 90 days
-        for (let i = 0; i < 90; i++) {
+        for (let i = 0; i < days; i++) {
             const date = new Date(today);
             date.setDate(date.getDate() - i);
 

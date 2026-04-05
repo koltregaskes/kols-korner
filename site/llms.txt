@@ -6,14 +6,14 @@ A personal blog tracking the signal across AI products, research, tools, and the
 
 ## Key pages
 
-- [Homepage](/kols-korner/): Latest posts and featured content
-- [Posts](/kols-korner/posts/): Full archive of articles and essays
-- [Tags](/kols-korner/tags/): Browse content by topic
-- [About](/kols-korner/about/): About Kol Tregaskes
+- [Homepage](./): Latest posts and featured content
+- [Posts](./posts/): Full archive of articles and essays
+- [Tags](./tags/): Browse content by topic
+- [About](./about/): About Kol Tregaskes
 
 ## Content types
 
-- Daily AI news digests (automated, curated from 74 sources)
+- Daily AI news digests (automated from a shared source set)
 - Long-form essays on AI developments
 - Commentary on tools, models, and industry moves
 

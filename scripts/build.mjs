@@ -19,17 +19,17 @@ async function generateVideoThumbnail(videoPath, outputPath) {
     // Extract frame at 1 second (or first frame if video is shorter)
     const cmd = `"${FFMPEG_PATH}" -y -i "${videoPath}" -ss 00:00:01 -vframes 1 -vf "scale=640:-1" "${outputPath}"`;
     await execAsync(cmd);
-    console.log(`  ↳ Generated thumbnail: ${path.basename(outputPath)}`);
+    console.log(`  -> Generated thumbnail: ${path.basename(outputPath)}`);
     return true;
   } catch (error) {
     // Try first frame if 1 second fails
     try {
       const cmd = `"${FFMPEG_PATH}" -y -i "${videoPath}" -vframes 1 -vf "scale=640:-1" "${outputPath}"`;
       await execAsync(cmd);
-      console.log(`  ↳ Generated thumbnail (first frame): ${path.basename(outputPath)}`);
+      console.log(`  -> Generated thumbnail (first frame): ${path.basename(outputPath)}`);
       return true;
     } catch (e) {
-      console.warn(`  ↳ Could not generate thumbnail: ${e.message}`);
+      console.warn(`  -> Could not generate thumbnail: ${e.message}`);
       return false;
     }
   }
@@ -41,10 +41,10 @@ async function generateAudioWaveform(audioPath, outputPath) {
     // Create waveform visualization
     const cmd = `"${FFMPEG_PATH}" -y -i "${audioPath}" -filter_complex "showwavespic=s=640x200:colors=#4f46e5|#818cf8" -frames:v 1 "${outputPath}"`;
     await execAsync(cmd);
-    console.log(`  ↳ Generated waveform: ${path.basename(outputPath)}`);
+    console.log(`  -> Generated waveform: ${path.basename(outputPath)}`);
     return true;
   } catch (error) {
-    console.warn(`  ↳ Could not generate waveform: ${error.message}`);
+    console.warn(`  -> Could not generate waveform: ${error.message}`);
     return false;
   }
 }
@@ -73,6 +73,32 @@ const NAV_ITEMS = [
   { key: 'about', label: 'About', path: 'about/' },
   { key: 'subscribe', label: 'Newsletter', path: 'subscribe/' }
 ];
+const CONNECTED_PROJECTS = [
+  {
+    name: 'AI Resource Hub',
+    label: 'Reference',
+    description: 'Independent model comparisons, pricing snapshots, and benchmark notes for the tools worth tracking.',
+    url: 'https://airesourcehub.com/'
+  },
+  {
+    name: 'Axy Lusion',
+    label: 'Creative AI',
+    description: 'AI-generated art, motion, music, and visual experiments collected into one portfolio.',
+    url: 'https://axylusion.com/'
+  },
+  {
+    name: 'Synthetic Dispatch',
+    label: 'Editorial Lab',
+    description: 'A companion publication focused on AI systems, workflows, and agent-driven publishing experiments.',
+    url: 'https://syntheticdispatch.com/'
+  },
+  {
+    name: 'Kol Tregaskes Photography',
+    label: 'Photography',
+    description: 'A quieter portfolio for still images, field notes, and visual work outside the AI feed cycle.',
+    url: 'https://koltregaskesphotography.com/'
+  }
+];
 
 function stripKnownBasePath(urlPath = '') {
   const knownBasePaths = [REPO_NAME, ...LEGACY_REPO_NAMES]
@@ -82,6 +108,18 @@ function stripKnownBasePath(urlPath = '') {
 
   if (!knownBasePaths) return urlPath.replace(/^\/+/, '');
   return urlPath.replace(new RegExp(`^\\/(${knownBasePaths})\\/`), '').replace(/^\/+/, '');
+}
+
+function getDigestDateKey(filename = '') {
+  let match = filename.match(/^(\d{4})-(\d{2})-(\d{2})-digest\.md$/);
+  if (!match) {
+    match = filename.match(/^digest-(\d{4})-(\d{2})-(\d{2})\.md$/);
+  }
+
+  if (!match) return null;
+
+  const [, year, month, day] = match;
+  return `${year}-${month}-${day}`;
 }
 
 // Security headers for all pages
@@ -122,6 +160,13 @@ function getAnimationScript() {
         });
       }, { rootMargin: '0px 0px -40px 0px', threshold: 0.1 });
       document.querySelectorAll('.fade-in-up').forEach(el => fadeObserver.observe(el));
+
+      // Ensure below-the-fold sections never stay hidden if the observer misses them.
+      window.setTimeout(() => {
+        document.querySelectorAll('.fade-in-up:not(.is-visible)').forEach((el) => {
+          el.classList.add('is-visible');
+        });
+      }, 900);
     }`;
 }
 
@@ -129,25 +174,15 @@ function getSiteChromeScript({ animations = false } = {}) {
   return `
     const html = document.documentElement;
     const siteHeader = document.querySelector('.site-header');
-    const themeToggle = document.querySelector('.theme-toggle');
     const navToggle = document.querySelector('.site-nav-toggle');
     const navLinks = document.getElementById('site-nav-links');
 
-    const applyTheme = (theme) => {
-      html.setAttribute('data-theme', theme);
-      document.body.classList.toggle('dark', theme === 'dark');
-    };
-
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    applyTheme(savedTheme);
-
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme') || 'dark';
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        applyTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
+    html.setAttribute('data-theme', 'dark');
+    document.body.classList.add('dark');
+    try {
+      localStorage.removeItem('theme');
+    } catch (error) {
+      // Ignore storage access errors and keep the page in dark mode.
     }
 
     if (siteHeader && navToggle && navLinks) {
@@ -440,18 +475,6 @@ function getHeaderHTML(basePath = '/', activePage = '') {
         <span class="logo-text">${SITE_NAME}</span>
       </a>
       <div class="site-header-actions">
-        <button class="theme-toggle" aria-label="Toggle theme">
-          <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
-            <line x1="10" y1="2" x2="10" y2="4" stroke="currentColor" stroke-width="2"/>
-            <line x1="10" y1="16" x2="10" y2="18" stroke="currentColor" stroke-width="2"/>
-            <line x1="2" y1="10" x2="4" y2="10" stroke="currentColor" stroke-width="2"/>
-            <line x1="16" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="2"/>
-          </svg>
-          <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M17 10.5C16 14.5 12 18 8 18C4 18 2 14.5 2 10.5C2 6.5 4 3 8 3C8.5 3 9 3.1 9.5 3.2C7.5 4.5 6.5 6.5 6.5 9C6.5 12.5 9 15 12.5 15C14.5 15 16.5 14 17.8 12C17.3 11.5 17 11 17 10.5Z" stroke="currentColor" stroke-width="2"/>
-          </svg>
-        </button>
         <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
           <span></span>
           <span></span>
@@ -471,7 +494,7 @@ function getFooterHTML() {
   <footer class="site-footer">
     <div class="footer-content">
       <p>&copy; 2026 ${SITE_OWNER}</p>
-      <p class="footer-credit">Made in the UK by ${SITE_OWNER}. Design inspired by <a href="https://justoffbyone.com" target="_blank" rel="noopener">Off by One</a>.</p>
+      <p class="footer-credit">Built and published from the UK by ${SITE_OWNER}.</p>
     </div>
     <div class="footer-social">
       <a href="https://x.com/koltregaskes" aria-label="X (Twitter)" target="_blank" rel="noopener">
@@ -536,7 +559,7 @@ async function copyMedia(srcPath, title, kind = 'image') {
 
     // Copy file
     await fs.copyFile(srcPath, destPath);
-    console.log(`  ↳ Copied: ${newFilename}`);
+    console.log(`  -> Copied: ${newFilename}`);
 
     const mediaUrl = `./media/${newFilename}`;
     let thumbnailUrl = '';
@@ -562,7 +585,7 @@ async function copyMedia(srcPath, title, kind = 'image') {
 
     return { mediaUrl, thumbnailUrl };
   } catch (error) {
-    console.warn(`  ↳ Error copying media:`, error.message);
+    console.warn(`  -> Error copying media:`, error.message);
     return { mediaUrl: '', thumbnailUrl: '' };
   }
 }
@@ -633,7 +656,7 @@ async function readContentFiles() {
               }
             }
           } catch {
-            console.warn(`  ↳ Media file not found: ${existingPath}`);
+            console.warn(`  -> Media file not found: ${existingPath}`);
           }
         } else {
           // It's a relative path - copy the file
@@ -763,9 +786,9 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
           <h1 class="post-title">${escapeHtml(title)}</h1>
           <div class="post-meta">
           <span class="post-author">${SITE_OWNER}</span>
-            <span class="meta-sep">•</span>
+            <span class="meta-sep">&bull;</span>
             <time class="post-date">${date ? new Date(date).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" }) : ""}</time>
-            <span class="meta-sep">•</span>
+            <span class="meta-sep">&bull;</span>
             <span class="reading-time">${readingTime} min read</span>
           </div>
         </header>
@@ -853,11 +876,11 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
         <p class="digest-subtitle">A quick editorial sweep of the stories shaping AI, tools, research, and the companies building them.</p>
         <div class="digest-meta">
           <span>${readingTime} min read</span>
-          <span class="meta-sep">â€¢</span>
+          <span class="meta-sep">&bull;</span>
           <span>Updated daily</span>
         </div>
         <div class="beta-notice" style="background: #ff6b35; color: white; padding: 12px 20px; border-radius: 6px; margin: 16px 0; font-size: 0.9rem;">
-          <strong>⚠️ Beta:</strong> Daily news digests are in beta. We're refining sources, deduplication, and quality. Expect improvements over time.
+          <strong>Beta:</strong> Daily news digests are in beta. We're refining sources, deduplication, and quality. Expect improvements over time.
         </div>
       </header>
 
@@ -869,7 +892,7 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
       </div>
 
       <footer class="digest-footer">
-        <p>This digest was automatically generated • ${readingTime} min read</p>
+        <p>This digest was automatically generated &bull; ${readingTime} min read</p>
       </footer>
 
       ${tagsHtml}
@@ -1039,6 +1062,28 @@ async function writeHomePage(items) {
     </section>
     ` : ''}
 
+    ${CONNECTED_PROJECTS.length ? `
+    <section class="home-section fade-in-up">
+      <div class="home-shell">
+        <div class="home-section-heading">
+          <div>
+            <p class="section-eyebrow">Connected projects</p>
+            <h2>The wider publishing ecosystem around Kol's Korner</h2>
+          </div>
+        </div>
+        <div class="home-project-grid">
+          ${CONNECTED_PROJECTS.map(project => `
+          <a href="${project.url}" class="home-project-card" target="_blank" rel="noopener">
+            <p class="home-project-label">${escapeHtml(project.label)}</p>
+            <h3>${escapeHtml(project.name)}</h3>
+            <p>${escapeHtml(project.description)}</p>
+            <span>Visit site</span>
+          </a>`).join('')}
+        </div>
+      </div>
+    </section>
+    ` : ''}
+
     ${recentArchive.length ? `
     <section class="home-section fade-in-up">
       <div class="home-shell">
@@ -1076,7 +1121,7 @@ async function writeHomePage(items) {
                 </div>
               ` : `
                 <div class="content-card-media placeholder">
-                  <div class="placeholder-icon">📝</div>
+                  <div class="placeholder-icon">&#128221;</div>
                 </div>
               `}
               <div class="content-card-body">
@@ -1085,7 +1130,7 @@ async function writeHomePage(items) {
                 ${item.readingTime ? `
                   <div class="content-card-meta">
                     <time>${new Date(item.updatedTime).toLocaleDateString("en-GB", { month: "short", day: "numeric", year: "numeric" })}</time>
-                    <span class="meta-sep">•</span>
+                    <span class="meta-sep">&bull;</span>
                     <span>${item.readingTime} min read</span>
                   </div>
                 ` : ''}
@@ -1105,7 +1150,7 @@ async function writeHomePage(items) {
 </body>
 </html>`;
 
-  await fs.writeFile("site/index.html", html, "utf8");
+  await fs.writeFile("site/index.html", html.replace(/[ \t]+$/gm, ''), "utf8");
 }
 
 async function writePostsPage(items) {
@@ -1140,7 +1185,7 @@ async function writePostsPage(items) {
               <p class="post-item-summary">${escapeHtml(item.summary || "")}</p>
               <div class="post-item-meta">
                 <time>${new Date(item.date).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</time>
-                <span class="meta-sep">•</span>
+                <span class="meta-sep">&bull;</span>
                 <span>${item.readingTime} min read</span>
               </div>
             </a>
@@ -1448,15 +1493,15 @@ async function writeSubscribePage() {
     <!-- Benefits -->
     <div class="subscribe-benefits">
       <div class="subscribe-benefit">
-        <span class="subscribe-benefit-icon">📬</span>
+        <span class="subscribe-benefit-icon">&#128236;</span>
         <span>Weekly insights</span>
       </div>
       <div class="subscribe-benefit">
-        <span class="subscribe-benefit-icon">🚫</span>
+        <span class="subscribe-benefit-icon">&#128683;</span>
         <span>No spam, ever</span>
       </div>
       <div class="subscribe-benefit">
-        <span class="subscribe-benefit-icon">🔓</span>
+        <span class="subscribe-benefit-icon">&#128275;</span>
         <span>Unsubscribe anytime</span>
       </div>
     </div>
@@ -1613,27 +1658,53 @@ async function cleanGeneratedOutput() {
   const siteNewsDigestsDir = path.join(process.cwd(), 'site', 'news-digests');
   try {
     await fs.mkdir(siteNewsDigestsDir, { recursive: true });
-    const digestFiles = await fs.readdir(newsDigestsDir);
-    for (const file of digestFiles) {
-      if (file.endsWith('.md')) {
-        await fs.copyFile(
-          path.join(newsDigestsDir, file),
-          path.join(siteNewsDigestsDir, file)
-        );
+    const digestCandidates = await fs.readdir(newsDigestsDir);
+    const digestMap = new Map();
+
+    for (const file of digestCandidates) {
+      const dateKey = getDigestDateKey(file);
+      if (!dateKey) continue;
+
+      const canonicalFile = `${dateKey}-digest.md`;
+      const existing = digestMap.get(dateKey);
+
+      if (!existing || file === canonicalFile) {
+        digestMap.set(dateKey, {
+          sourceFile: file,
+          outputFile: canonicalFile
+        });
       }
     }
-    console.log(`✓ Copied ${digestFiles.filter(f => f.endsWith('.md')).length} news digests`);
+
+    const digestFiles = Array.from(digestMap.entries())
+      .sort((a, b) => b[0].localeCompare(a[0]))
+      .map(([, entry]) => entry);
+
+    for (const digestFile of digestFiles) {
+      await fs.copyFile(
+        path.join(newsDigestsDir, digestFile.sourceFile),
+        path.join(siteNewsDigestsDir, digestFile.outputFile)
+      );
+    }
+
+    await fs.writeFile(
+      path.join(process.cwd(), 'site', 'data', 'news-digests.json'),
+      JSON.stringify({ files: digestFiles.map((entry) => entry.outputFile) }, null, 2),
+      'utf8'
+    );
+
+    console.log(`[ok] Copied ${digestFiles.length} news digests`);
   } catch (err) {
-    console.warn('⚠ Could not copy news-digests:', err.message);
+    console.warn('[warn] Could not copy news-digests:', err.message);
   }
 
-  console.log(`\n✓ Generated ${items.length} items`);
-  console.log(`✓ Home page: site/index.html`);
-  console.log(`✓ Posts page: site/posts/index.html`);
-  console.log(`✓ Tags page: site/tags/index.html`);
-  console.log(`✓ About page: site/about/index.html`);
-  console.log(`✓ Newsletter page: site/subscribe/index.html`);
-  console.log(`✓ RSS feed: site/feed.xml`);
-  console.log(`✓ JSON data: site/data/content.json`);
+  console.log(`\n[ok] Generated ${items.length} items`);
+  console.log(`[ok] Home page: site/index.html`);
+  console.log(`[ok] Posts page: site/posts/index.html`);
+  console.log(`[ok] Tags page: site/tags/index.html`);
+  console.log(`[ok] About page: site/about/index.html`);
+  console.log(`[ok] Newsletter page: site/subscribe/index.html`);
+  console.log(`[ok] RSS feed: site/feed.xml`);
+  console.log(`[ok] JSON data: site/data/content.json`);
   console.log('\nBuild complete!');
 })();
