@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-04-05T06:08:30.646Z",
+  "generatedAt": "2026-04-05T22:03:30.451Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-04-05",
-  "count": 9,
+  "count": 8,
   "items": [
     {
       "id": "meta-ai-blog-mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps-v2-https-ai-meta-com-blog-world-resources-institute-dino-canopy-height-maps-v2",
@@ -20,6 +20,22 @@
         "open_source"
       ],
       "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-can-orbital-data-centers-help-justify-a-massive-valuation-for-spacex-https-techcrunch-com-2026-04-05-can-orbital-data-centers-help-justify-a-massive-valuation-for-spacex",
+      "title": "Can orbital data centers help justify a massive valuation for SpaceX?",
+      "url": "https://techcrunch.com/2026/04/05/can-orbital-data-centers-help-justify-a-massive-valuation-for-spacex/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-05",
+      "summary": "On the latest episode of TechCrunch’s Equity podcast, we debated Elon Musk's vision for data centers in space.",
+      "tags": [
+        "industry",
+        "ai",
+        "funding"
+      ],
+      "adapter": "rss"
     },
     {
       "id": "anthropic-news-introducing-sonnet-4-6-https-www-anthropic-com-news-claude-sonnet-4-6",
@@ -94,38 +110,6 @@
         "reasoning"
       ],
       "adapter": "html"
-    },
-    {
-      "id": "techcrunch-ai-anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports-https-techcrunch-com-2026-04-03-anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports",
-      "title": "Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports",
-      "url": "https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-03",
-      "summary": "Anthropic has purchased the stealth biotech AI startup Coefficient Bio in a $400 million stock deal, according to The Information and Eric Newcomer.",
-      "tags": [
-        "industry",
-        "ai",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-anthropic-ramps-up-its-political-activities-with-a-new-pac-https-techcrunch-com-2026-04-03-anthropic-ramps-up-its-political-activities-with-a-new-pac",
-      "title": "Anthropic ramps up its political activities with a new PAC",
-      "url": "https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-03",
-      "summary": "With the midterms right around the corner, the new group is positioned to back candidates who support the AI company's policy agenda.",
-      "tags": [
-        "industry",
-        "ai",
-        "policy"
-      ],
-      "adapter": "rss"
     },
     {
       "id": "ars-technica-ai-google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license-https-arstechnica-com-ai-2026-04-google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license",

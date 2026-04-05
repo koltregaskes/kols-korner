@@ -11,6 +11,14 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### Can orbital data centers help justify a massive valuation for SpaceX?
+
+On the latest episode of TechCrunch’s Equity podcast, we debated Elon Musk's vision for data centers in space.
+
+[Read more](https://techcrunch.com/2026/04/05/can-orbital-data-centers-help-justify-a-massive-valuation-for-spacex/)
+
+---
+
 ### Introducing Sonnet 4.6
 
 Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.
@@ -32,22 +40,6 @@ We’re upgrading our smartest model. Across agentic coding, computer use, tool 
 Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.
 
 [Read more](https://www.anthropic.com/news/australia-MOU)
-
----
-
-### Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports
-
-Anthropic has purchased the stealth biotech AI startup Coefficient Bio in a $400 million stock deal, according to The Information and Eric Newcomer.
-
-[Read more](https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/)
-
----
-
-### Anthropic ramps up its political activities with a new PAC
-
-With the midterms right around the corner, the new group is positioned to back candidates who support the AI company's policy agenda.
-
-[Read more](https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/)
 
 ---
 
