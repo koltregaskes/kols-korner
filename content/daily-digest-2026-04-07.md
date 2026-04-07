@@ -11,11 +11,43 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
-### AI startup Rocket offers vibe McKinsey-style reports at a fraction of the cost
+### Anthropic ups compute deal with Google and Broadcom amid skyrocketing demand
 
-Rocket's new AI platform combines strategy, product building, and competitive intelligence, aiming to move beyond code generation.
+Anthropic bulked up its compute deal with Google and Broadcom as the company has seen its run-rate revenue surge to $30 billion.
 
-[Read more](https://techcrunch.com/2026/04/06/indian-startup-rocket-wants-its-ai-to-do-mckinsey-style-consulting-at-a-fraction-of-the-cost/)
+[Read more](https://techcrunch.com/2026/04/07/anthropic-compute-deal-google-broadcom-tpus/)
+
+---
+
+### Uber is the latest to be won over by Amazon’s AI chips
+
+Uber is expanding its AWS contract to run more of its ride-sharing features on Amazon's chips. This is a thumb-of-the nose at Oracle and Google.
+
+[Read more](https://techcrunch.com/2026/04/07/uber-is-the-latest-to-be-won-over-by-amazons-ai-chips/)
+
+---
+
+### Google Maps can now write captions for your photos using AI
+
+Google is rolling out new features to make it easier for users to contribute local knowledge to Maps. Most notably, Gemini can now create captions when users are looking to share a photo or video about a place.
+
+[Read more](https://techcrunch.com/2026/04/07/google-maps-can-now-write-captions-for-your-photos-using-ai/)
+
+---
+
+### 4 days left to save close to $500 on TechCrunch Disrupt 2026 passes
+
+Four days left to save up to $482 on your TechCrunch Disrupt 2026 ticket. These low rates will disappear on April 10 at 11:59 p.m. PT. Register now.
+
+[Read more](https://techcrunch.com/2026/04/07/4-days-left-to-save-close-to-500-on-techcrunch-disrupt-2026-passes/)
+
+---
+
+### The AI gold rush is pulling private wealth into riskier, earlier bets
+
+On a recent episode of Equity, we talked to Arena Private Wealth to explore a growing trend: family offices bypassing VCs to gain direct exposure to AI startups, turning them from passive investors into active participants.
+
+[Read more](https://techcrunch.com/2026/04/07/the-ai-gold-rush-is-pulling-private-wealth-into-riskier-earlier-bets/)
 
 ---
 
@@ -59,39 +91,15 @@ Anthropic is an AI safety and research company that's working to build reliable,
 
 ---
 
-### Google quietly launched an AI dictation app that works offline
-
-Google's new offline-first dictation app uses Gemma AI models to take on the apps like Wispr Flow.
-
-[Read more](https://techcrunch.com/2026/04/06/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/)
-
----
-
-### OpenAI alums have been quietly investing from a new, potentially $100M fund
-
-Zero Shot, a new venture capital fund with deep ties to OpenAI, is aiming to raise $100 million for its first fund. It has already written some checks.
-
-[Read more](https://techcrunch.com/2026/04/06/openai-alums-have-been-quietly-investing-from-a-new-potentially-100m-fund/)
-
----
-
-### Iran threatens ‘Stargate’ AI data centers
-
-Iran said it will target U.S.-linked data centers with new missile strikes, as the war between the U.S. and Iran escalates.
-
-[Read more](https://techcrunch.com/2026/04/06/iran-threatens-stargate-ai-data-centers/)
-
----
-
-### OpenAI’s vision for the AI economy: public wealth funds, robot taxes, and a four-day workweek
-
-OpenAI proposes taxes on AI profits, public wealth funds, and expanded safety nets to address job loss and inequality, blending redistribution with capitalism as policymakers debate AI’s economic impact.
-
-[Read more](https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/)
-
----
-
 ## Industry
+
+### No Claude for Claws
+
+in 3 months, Anthropic added $6B ARR
+
+[Read more](https://www.bensbites.com/p/no-claude-for-claws)
+
+---
 
 ### Inside the leaked Claude Code files
 
@@ -101,11 +109,11 @@ Docs as files, a new markdown editor and April fools
 
 ---
 
-### One breach after another
+### Testing suggests Google's AI Overviews tells millions of lies per hour
 
-separate and sandbox your agent's access
+Is 90 percent accuracy good enough for a search robot?
 
-[Read more](https://www.bensbites.com/p/one-breach-after-another)
+[Read more](https://arstechnica.com/google/2026/04/analysis-finds-google-ai-overviews-is-wrong-10-percent-of-the-time/)
 
 ---
 
@@ -124,14 +132,6 @@ Update March 27, 2026:
 Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...
 
 [Read more](https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/)
-
----
-
-### To Throw a Stone with Six Birds: On Agents and Agenthood
-
-arXiv:2604.03239v1 Announce Type: new Abstract: Six Birds Theory (SBT) treats macroscopic objects as induced closures rather than primitives. Empirical discussions of agency often conflate persistence (being an object) with control (making a counterfactual difference), which makes agency claims d...
-
-[Read more](https://arxiv.org/abs/2604.03239)
 
 ---
 
