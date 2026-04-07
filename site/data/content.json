@@ -9878,6 +9878,121 @@
       "localPath": "/posts/daily-digest-monday-6-april-2026/"
     },
     {
+      "title": "Daily Digest: Tuesday, 7 April 2026",
+      "slug": "daily-digest-tuesday-7-april-2026",
+      "kind": "article",
+      "summary": "AI and technology news digest for Tuesday, 7 April 2026",
+      "tags": [
+        "ai",
+        "news",
+        "digest"
+      ],
+      "thumbnailUrl": "",
+      "driveUrl": "",
+      "contentHtml": "\n<h2 id=\"daily-digest-tuesday-7-april-2026\"><span class=\"hash\">#</span> Daily Digest: Tuesday, 7 April 2026</h2>\n\n<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>\n\n<h3 id=\"top-stories\"><span class=\"hash\">##</span> Top Stories</h3>\n\n<h4 id=\"ai-startup-rocket-offers-vibe-mckinsey-style-reports-at-a-fraction-of-the-cost\"><span class=\"hash\">###</span> AI startup Rocket offers vibe McKinsey-style reports at a fraction of the cost</h4>\n\n<p>Rocket's new AI platform combines strategy, product building, and competitive intelligence, aiming to move beyond code generation.</p>\n\n<a href=\"https://techcrunch.com/2026/04/06/indian-startup-rocket-wants-its-ai-to-do-mckinsey-style-consulting-at-a-fraction-of-the-cost/\">Read more</a>\n\n<hr />\n\n<h4 id=\"anthropic-expands-partnership-with-google-and-broadcom-for-multiple-gigawatts-of\"><span class=\"hash\">###</span> Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute</h4>\n\n<p>Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.</p>\n\n<a href=\"https://www.anthropic.com/news/google-broadcom-partnership-compute\">Read more</a>\n\n<hr />\n\n<h4 id=\"introducing-sonnet-4-6\"><span class=\"hash\">###</span> Introducing Sonnet 4.6</h4>\n\n<p>Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.</p>\n\n<a href=\"https://www.anthropic.com/news/claude-sonnet-4-6\">Read more</a>\n\n<hr />\n\n<h4 id=\"claude-opus-4-6\"><span class=\"hash\">###</span> Claude Opus 4.6</h4>\n\n<p>We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.</p>\n\n<a href=\"https://www.anthropic.com/news/claude-opus-4-6\">Read more</a>\n\n<hr />\n\n<h4 id=\"claude-is-a-space-to-think-anthropic\"><span class=\"hash\">###</span> Claude is a space to think | Anthropic</h4>\n\n<p>We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.</p>\n\n<a href=\"https://www.anthropic.com/news/claude-is-a-space-to-think\">Read more</a>\n\n<hr />\n\n<h4 id=\"australian-government-and-anthropic-sign-mou-for-ai-safety-and-research\"><span class=\"hash\">###</span> Australian government and Anthropic sign MOU for AI safety and research</h4>\n\n<p>Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.</p>\n\n<a href=\"https://www.anthropic.com/news/australia-MOU\">Read more</a>\n\n<hr />\n\n<h4 id=\"google-quietly-launched-an-ai-dictation-app-that-works-offline\"><span class=\"hash\">###</span> Google quietly launched an AI dictation app that works offline</h4>\n\n<p>Google's new offline-first dictation app uses Gemma AI models to take on the apps like Wispr Flow.</p>\n\n<a href=\"https://techcrunch.com/2026/04/06/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/\">Read more</a>\n\n<hr />\n\n<h4 id=\"openai-alums-have-been-quietly-investing-from-a-new-potentially-100m-fund\"><span class=\"hash\">###</span> OpenAI alums have been quietly investing from a new, potentially $100M fund</h4>\n\n<p>Zero Shot, a new venture capital fund with deep ties to OpenAI, is aiming to raise $100 million for its first fund. It has already written some checks.</p>\n\n<a href=\"https://techcrunch.com/2026/04/06/openai-alums-have-been-quietly-investing-from-a-new-potentially-100m-fund/\">Read more</a>\n\n<hr />\n\n<h4 id=\"iran-threatens-stargate-ai-data-centers\"><span class=\"hash\">###</span> Iran threatens ‘Stargate’ AI data centers</h4>\n\n<p>Iran said it will target U.S.-linked data centers with new missile strikes, as the war between the U.S. and Iran escalates.</p>\n\n<a href=\"https://techcrunch.com/2026/04/06/iran-threatens-stargate-ai-data-centers/\">Read more</a>\n\n<hr />\n\n<h4 id=\"openai-s-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-da\"><span class=\"hash\">###</span> OpenAI’s vision for the AI economy: public wealth funds, robot taxes, and a four-day workweek</h4>\n\n<p>OpenAI proposes taxes on AI profits, public wealth funds, and expanded safety nets to address job loss and inequality, blending redistribution with capitalism as policymakers debate AI’s economic impact.</p>\n\n<a href=\"https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/\">Read more</a>\n\n<hr />\n\n<h3 id=\"industry\"><span class=\"hash\">##</span> Industry</h3>\n\n<h4 id=\"inside-the-leaked-claude-code-files\"><span class=\"hash\">###</span> Inside the leaked Claude Code files</h4>\n\n<p>Docs as files, a new markdown editor and April fools</p>\n\n<a href=\"https://www.bensbites.com/p/inside-the-leaked-claude-code-files\">Read more</a>\n\n<hr />\n\n<h4 id=\"one-breach-after-another\"><span class=\"hash\">###</span> One breach after another</h4>\n\n<p>separate and sandbox your agent's access</p>\n\n<a href=\"https://www.bensbites.com/p/one-breach-after-another\">Read more</a>\n\n<hr />\n\n<h3 id=\"research-products\"><span class=\"hash\">##</span> Research & Products</h3>\n\n<h4 id=\"sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-m\"><span class=\"hash\">###</span> SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning</h4>\n\n<p>Update March 27, 2026:</p>\n\n<a href=\"https://ai.meta.com/blog/segment-anything-model-3/\">Read more</a>\n\n<hr />\n\n<h4 id=\"mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps\"><span class=\"hash\">###</span> Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2</h4>\n\n<p>Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...</p>\n\n<a href=\"https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/\">Read more</a>\n\n<hr />\n\n<h4 id=\"to-throw-a-stone-with-six-birds-on-agents-and-agenthood\"><span class=\"hash\">###</span> To Throw a Stone with Six Birds: On Agents and Agenthood</h4>\n\n<p>arXiv:2604.03239v1 Announce Type: new Abstract: Six Birds Theory (SBT) treats macroscopic objects as induced closures rather than primitives. Empirical discussions of agency often conflate persistence (being an object) with control (making a counterfactual difference), which makes agency claims d...</p>\n\n<a href=\"https://arxiv.org/abs/2604.03239\">Read more</a>\n\n<hr />\n\n\n<em>This digest was automatically generated.</em>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "daily-digest-tuesday-7-april-2026",
+          "text": "Daily Digest: Tuesday, 7 April 2026"
+        },
+        {
+          "level": 3,
+          "id": "top-stories",
+          "text": "Top Stories"
+        },
+        {
+          "level": 4,
+          "id": "ai-startup-rocket-offers-vibe-mckinsey-style-reports-at-a-fraction-of-the-cost",
+          "text": "AI startup Rocket offers vibe McKinsey-style reports at a fraction of the cost"
+        },
+        {
+          "level": 4,
+          "id": "anthropic-expands-partnership-with-google-and-broadcom-for-multiple-gigawatts-of",
+          "text": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute"
+        },
+        {
+          "level": 4,
+          "id": "introducing-sonnet-4-6",
+          "text": "Introducing Sonnet 4.6"
+        },
+        {
+          "level": 4,
+          "id": "claude-opus-4-6",
+          "text": "Claude Opus 4.6"
+        },
+        {
+          "level": 4,
+          "id": "claude-is-a-space-to-think-anthropic",
+          "text": "Claude is a space to think | Anthropic"
+        },
+        {
+          "level": 4,
+          "id": "australian-government-and-anthropic-sign-mou-for-ai-safety-and-research",
+          "text": "Australian government and Anthropic sign MOU for AI safety and research"
+        },
+        {
+          "level": 4,
+          "id": "google-quietly-launched-an-ai-dictation-app-that-works-offline",
+          "text": "Google quietly launched an AI dictation app that works offline"
+        },
+        {
+          "level": 4,
+          "id": "openai-alums-have-been-quietly-investing-from-a-new-potentially-100m-fund",
+          "text": "OpenAI alums have been quietly investing from a new, potentially $100M fund"
+        },
+        {
+          "level": 4,
+          "id": "iran-threatens-stargate-ai-data-centers",
+          "text": "Iran threatens ‘Stargate’ AI data centers"
+        },
+        {
+          "level": 4,
+          "id": "openai-s-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-da",
+          "text": "OpenAI’s vision for the AI economy: public wealth funds, robot taxes, and a four-day workweek"
+        },
+        {
+          "level": 3,
+          "id": "industry",
+          "text": "Industry"
+        },
+        {
+          "level": 4,
+          "id": "inside-the-leaked-claude-code-files",
+          "text": "Inside the leaked Claude Code files"
+        },
+        {
+          "level": 4,
+          "id": "one-breach-after-another",
+          "text": "One breach after another"
+        },
+        {
+          "level": 3,
+          "id": "research-products",
+          "text": "Research & Products"
+        },
+        {
+          "level": 4,
+          "id": "sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-m",
+          "text": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning"
+        },
+        {
+          "level": 4,
+          "id": "mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps",
+          "text": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2"
+        },
+        {
+          "level": 4,
+          "id": "to-throw-a-stone-with-six-birds-on-agents-and-agenthood",
+          "text": "To Throw a Stone with Six Birds: On Agents and Agenthood"
+        }
+      ],
+      "readingTime": 3,
+      "date": "2026-04-07",
+      "updatedTime": "2026-04-07",
+      "localPath": "/posts/daily-digest-tuesday-7-april-2026/"
+    },
+    {
       "title": "JPMorgan Drops $30 Billion on AI Infrastructure",
       "slug": "jpmorgan-drops-30-billion-on-ai-infrastructure",
       "kind": "article",

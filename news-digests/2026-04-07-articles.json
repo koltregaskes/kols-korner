@@ -1,0 +1,280 @@
+{
+  "generatedAt": "2026-04-07T06:00:57.467Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-04-07",
+  "count": 15,
+  "items": [
+    {
+      "id": "techcrunch-ai-ai-startup-rocket-offers-vibe-mckinsey-style-reports-at-a-fraction-of-the-cost-https-techcrunch-com-2026-04-06-indian-startup-rocket-wants-its-ai-to-do-mckinsey-style-consulting-at-a-fraction-of-the-cost",
+      "title": "AI startup Rocket offers vibe McKinsey-style reports at a fraction of the cost",
+      "url": "https://techcrunch.com/2026/04/06/indian-startup-rocket-wants-its-ai-to-do-mckinsey-style-consulting-at-a-fraction-of-the-cost/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-07",
+      "summary": "Rocket's new AI platform combines strategy, product building, and competitive intelligence, aiming to move beyond code generation.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "anthropic-news-anthropic-expands-partnership-with-google-and-broadcom-for-multiple-gigawatts-of-next-generation-compute-https-www-anthropic-com-news-google-broadcom-partnership-compute",
+      "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
+      "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-07",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "research_paper",
+        "hardware",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-introducing-sonnet-4-6-https-www-anthropic-com-news-claude-sonnet-4-6",
+      "title": "Introducing Sonnet 4.6",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-07",
+      "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-inside-the-leaked-claude-code-files-https-www-bensbites-com-p-inside-the-leaked-claude-code-files",
+      "title": "Inside the leaked Claude Code files",
+      "url": "https://www.bensbites.com/p/inside-the-leaked-claude-code-files",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-07",
+      "summary": "Docs as files, a new markdown editor and April fools",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-one-breach-after-another-https-www-bensbites-com-p-one-breach-after-another",
+      "title": "One breach after another",
+      "url": "https://www.bensbites.com/p/one-breach-after-another",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-07",
+      "summary": "separate and sandbox your agent's access",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-claude-opus-4-6-https-www-anthropic-com-news-claude-opus-4-6",
+      "title": "Claude Opus 4.6",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-07",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "tool_use"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-claude-is-a-space-to-think-anthropic-https-www-anthropic-com-news-claude-is-a-space-to-think",
+      "title": "Claude is a space to think | Anthropic",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-07",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-australian-government-and-anthropic-sign-mou-for-ai-safety-and-research-https-www-anthropic-com-news-australia-mou",
+      "title": "Australian government and Anthropic sign MOU for AI safety and research",
+      "url": "https://www.anthropic.com/news/australia-MOU",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-07",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "research_paper"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-multiplexing-and-global-reasoning-https-ai-meta-com-blog-segment-anything-model-3",
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-07",
+      "summary": "Update March 27, 2026:",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps-v2-https-ai-meta-com-blog-world-resources-institute-dino-canopy-height-maps-v2",
+      "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
+      "url": "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-07",
+      "summary": "Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "arxiv-cs-ai-to-throw-a-stone-with-six-birds-on-agents-and-agenthood-https-arxiv-org-abs-2604-03239",
+      "title": "To Throw a Stone with Six Birds: On Agents and Agenthood",
+      "url": "https://arxiv.org/abs/2604.03239",
+      "source": "arXiv cs.AI",
+      "sourceId": "arxiv-cs-ai",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-07",
+      "summary": "arXiv:2604.03239v1 Announce Type: new Abstract: Six Birds Theory (SBT) treats macroscopic objects as induced closures rather than primitives. Empirical discussions of agency often conflate persistence (being an object) with control (making a counterfactual difference), which makes agency claims difficult to test and easy to spoof. We give a type-correct account of agency within SBT: a theory induces a layer with an explicit interface and ledgered constraints; an agent is a maintained theory object whose feasible interface policies can steer outside futures while remaining viable. We operationalize this contract in finite controlled systems using four checkable components: ledger-gated feasibility, a robust viability kernel computed as a greatest fixed point under successor-support semantics, feasible empowerment (channel capacity) as a proxy for difference-making, and an empirical packaging map whose idempotence defect quantifies objecthood under coarse observation. In a minimal ring-world with toggles for repair, protocol holonomy, identity staging, and operator rewriting, matched-control ablations yield four separations: calibrated null regimes with single actions show zero empowerment and block model-misspecification false positives; enabling repair collapses the idempotence defect; protocols increase empowerment only at horizons of two or more steps; and learning to rewrite operators monotonically increases median empowerment (0.73 to 1.34 bits). These results provide hash-traceable tests that separate agenthood from agency without making claims about goals, consciousness, or biological organisms, and they are accompanied by reproducible, audited artifacts.",
+      "tags": [
+        "research_paper",
+        "evaluation",
+        "reasoning",
+        "ai_agents",
+        "crypto_defi"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-google-quietly-launched-an-ai-dictation-app-that-works-offline-https-techcrunch-com-2026-04-06-google-quietly-releases-an-offline-first-ai-dictation-app-on-ios",
+      "title": "Google quietly launched an AI dictation app that works offline",
+      "url": "https://techcrunch.com/2026/04/06/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-06",
+      "summary": "Google's new offline-first dictation app uses Gemma AI models to take on the apps like Wispr Flow.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "model_release"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-openai-alums-have-been-quietly-investing-from-a-new-potentially-100m-fund-https-techcrunch-com-2026-04-06-openai-alums-have-been-quietly-investing-from-a-new-potentially-100m-fund",
+      "title": "OpenAI alums have been quietly investing from a new, potentially $100M fund",
+      "url": "https://techcrunch.com/2026/04/06/openai-alums-have-been-quietly-investing-from-a-new-potentially-100m-fund/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-06",
+      "summary": "Zero Shot, a new venture capital fund with deep ties to OpenAI, is aiming to raise $100 million for its first fund. It has already written some checks.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-iran-threatens-stargate-ai-data-centers-https-techcrunch-com-2026-04-06-iran-threatens-stargate-ai-data-centers",
+      "title": "Iran threatens ‘Stargate’ AI data centers",
+      "url": "https://techcrunch.com/2026/04/06/iran-threatens-stargate-ai-data-centers/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-06",
+      "summary": "Iran said it will target U.S.-linked data centers with new missile strikes, as the war between the U.S. and Iran escalates.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-openai-s-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-workweek-https-techcrunch-com-2026-04-06-openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week",
+      "title": "OpenAI’s vision for the AI economy: public wealth funds, robot taxes, and a four-day workweek",
+      "url": "https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-06",
+      "summary": "OpenAI proposes taxes on AI profits, public wealth funds, and expanded safety nets to address job loss and inequality, blending redistribution with capitalism as policymakers debate AI’s economic impact.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    }
+  ]
+}
