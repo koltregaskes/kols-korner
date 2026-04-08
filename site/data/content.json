@@ -9993,6 +9993,121 @@
       "localPath": "/posts/daily-digest-tuesday-7-april-2026/"
     },
     {
+      "title": "Daily Digest: Wednesday, 8 April 2026",
+      "slug": "daily-digest-wednesday-8-april-2026",
+      "kind": "article",
+      "summary": "AI and technology news digest for Wednesday, 8 April 2026",
+      "tags": [
+        "ai",
+        "news",
+        "digest"
+      ],
+      "thumbnailUrl": "",
+      "driveUrl": "",
+      "contentHtml": "\n<h2 id=\"daily-digest-wednesday-8-april-2026\"><span class=\"hash\">#</span> Daily Digest: Wednesday, 8 April 2026</h2>\n\n<p>Welcome to today's roundup of the most interesting developments in AI and technology.</p>\n\n<h3 id=\"top-stories\"><span class=\"hash\">##</span> Top Stories</h3>\n\n<h4 id=\"google-quietly-launched-an-ai-dictation-app-that-works-offline\"><span class=\"hash\">###</span> Google quietly launched an AI dictation app that works offline</h4>\n\n<p>Google's new offline-first dictation app uses Gemma AI models to take on the apps like Wispr Flow.</p>\n\n<a href=\"https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/\">Read more</a>\n\n<hr />\n\n<h4 id=\"anthropic-expands-partnership-with-google-and-broadcom-for-multiple-gigawatts-of\"><span class=\"hash\">###</span> Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute</h4>\n\n<p>Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.</p>\n\n<a href=\"https://www.anthropic.com/news/google-broadcom-partnership-compute\">Read more</a>\n\n<hr />\n\n<h4 id=\"introducing-sonnet-4-6\"><span class=\"hash\">###</span> Introducing Sonnet 4.6</h4>\n\n<p>Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.</p>\n\n<a href=\"https://www.anthropic.com/news/claude-sonnet-4-6\">Read more</a>\n\n<hr />\n\n<h4 id=\"claude-opus-4-6\"><span class=\"hash\">###</span> Claude Opus 4.6</h4>\n\n<p>We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.</p>\n\n<a href=\"https://www.anthropic.com/news/claude-opus-4-6\">Read more</a>\n\n<hr />\n\n<h4 id=\"claude-is-a-space-to-think-anthropic\"><span class=\"hash\">###</span> Claude is a space to think | Anthropic</h4>\n\n<p>We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.</p>\n\n<a href=\"https://www.anthropic.com/news/claude-is-a-space-to-think\">Read more</a>\n\n<hr />\n\n<h4 id=\"australian-government-and-anthropic-sign-mou-for-ai-safety-and-research\"><span class=\"hash\">###</span> Australian government and Anthropic sign MOU for AI safety and research</h4>\n\n<p>Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.</p>\n\n<a href=\"https://www.anthropic.com/news/australia-MOU\">Read more</a>\n\n<hr />\n\n<h4 id=\"i-can-t-help-rooting-for-tiny-open-source-ai-model-maker-arcee\"><span class=\"hash\">###</span> I can’t help rooting for tiny open source AI model maker Arcee</h4>\n\n<p>Arcee is a tiny 26-person U.S. startup that built a high-performing, massive, open source LLM. And it's gaining popularity with OpenClaw users.</p>\n\n<a href=\"https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/\">Read more</a>\n\n<hr />\n\n<h4 id=\"firmus-the-southgate-ai-data-center-builder-backed-by-nvidia-hits-5-5b-valuation\"><span class=\"hash\">###</span> Firmus, the ‘Southgate’ AI data center builder backed by Nvidia, hits $5.5B valuation</h4>\n\n<p>Nvidia-backed Asia AI data center provider Firmus has now raised $1.35 billion in six months.</p>\n\n<a href=\"https://techcrunch.com/2026/04/07/firmus-the-southgate-ai-datacenter-builder-backed-by-nvidia-hits-5-5b-valuation/\">Read more</a>\n\n<hr />\n\n<h4 id=\"intel-signs-on-to-elon-musk-s-terafab-chips-project\"><span class=\"hash\">###</span> Intel signs on to Elon Musk’s Terafab chips project</h4>\n\n<p>Intel will join SpaceX and Tesla in an effort to build a new U.S. semiconductor factory in Texas, although the scope of its contributions are unclear.</p>\n\n<a href=\"https://techcrunch.com/2026/04/07/intel-signs-on-to-elon-musks-terafab-chips-project/\">Read more</a>\n\n<hr />\n\n<h4 id=\"anthropic-debuts-preview-of-powerful-new-ai-model-mythos-in-new-cybersecurity-in\"><span class=\"hash\">###</span> Anthropic debuts preview of powerful new AI model Mythos in new cybersecurity initiative</h4>\n\n<p>The new model will be used by a small number of high-profile companies to engage in defensive cybersecurity work.</p>\n\n<a href=\"https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/\">Read more</a>\n\n<hr />\n\n<h3 id=\"industry\"><span class=\"hash\">##</span> Industry</h3>\n\n<h4 id=\"testing-suggests-googles-ai-overviews-tell-millions-of-lies-per-hour\"><span class=\"hash\">###</span> Testing suggests Google's AI Overviews tell millions of lies per hour</h4>\n\n<p>Is 90 percent accuracy good enough for a search robot?</p>\n\n<a href=\"https://arstechnica.com/google/2026/04/analysis-finds-google-ai-overviews-is-wrong-10-percent-of-the-time/\">Read more</a>\n\n<hr />\n\n<h3 id=\"research-products\"><span class=\"hash\">##</span> Research & Products</h3>\n\n<h4 id=\"operational-noncommutativity-in-sequential-metacognitive-judgments\"><span class=\"hash\">###</span> Operational Noncommutativity in Sequential Metacognitive Judgments</h4>\n\n<p>arXiv:2604.04938v1 Announce Type: new Abstract: Metacognition, understood as the monitoring and regulation of one's own cognitive processes, is inherently sequential: an agent evaluates an internal state, updates it, and may then re-evaluate under modified criteria. Order effects in cognition are...</p>\n\n<a href=\"https://arxiv.org/abs/2604.04938\">Read more</a>\n\n<hr />\n\n<h4 id=\"sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-m\"><span class=\"hash\">###</span> SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning</h4>\n\n<p>Update March 27, 2026:</p>\n\n<a href=\"https://ai.meta.com/blog/segment-anything-model-3/\">Read more</a>\n\n<hr />\n\n<h4 id=\"mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps\"><span class=\"hash\">###</span> Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2</h4>\n\n<p>Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...</p>\n\n<a href=\"https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/\">Read more</a>\n\n<hr />\n\n<h4 id=\"proximity-measure-of-information-object-features-for-solving-the-problem-of-thei\"><span class=\"hash\">###</span> Proximity Measure of Information Object Features for Solving the Problem of Their Identification in Information Systems</h4>\n\n<p>arXiv:2604.04939v1 Announce Type: new Abstract: The paper considers a new quantitative-qualitative proximity measure for the features of information objects, where data enters a common information resource from several sources independently. The goal is to determine the possibility of their relat...</p>\n\n<a href=\"https://arxiv.org/abs/2604.04939\">Read more</a>\n\n<hr />\n\n\n<em>This digest was automatically generated.</em>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "daily-digest-wednesday-8-april-2026",
+          "text": "Daily Digest: Wednesday, 8 April 2026"
+        },
+        {
+          "level": 3,
+          "id": "top-stories",
+          "text": "Top Stories"
+        },
+        {
+          "level": 4,
+          "id": "google-quietly-launched-an-ai-dictation-app-that-works-offline",
+          "text": "Google quietly launched an AI dictation app that works offline"
+        },
+        {
+          "level": 4,
+          "id": "anthropic-expands-partnership-with-google-and-broadcom-for-multiple-gigawatts-of",
+          "text": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute"
+        },
+        {
+          "level": 4,
+          "id": "introducing-sonnet-4-6",
+          "text": "Introducing Sonnet 4.6"
+        },
+        {
+          "level": 4,
+          "id": "claude-opus-4-6",
+          "text": "Claude Opus 4.6"
+        },
+        {
+          "level": 4,
+          "id": "claude-is-a-space-to-think-anthropic",
+          "text": "Claude is a space to think | Anthropic"
+        },
+        {
+          "level": 4,
+          "id": "australian-government-and-anthropic-sign-mou-for-ai-safety-and-research",
+          "text": "Australian government and Anthropic sign MOU for AI safety and research"
+        },
+        {
+          "level": 4,
+          "id": "i-can-t-help-rooting-for-tiny-open-source-ai-model-maker-arcee",
+          "text": "I can’t help rooting for tiny open source AI model maker Arcee"
+        },
+        {
+          "level": 4,
+          "id": "firmus-the-southgate-ai-data-center-builder-backed-by-nvidia-hits-5-5b-valuation",
+          "text": "Firmus, the ‘Southgate’ AI data center builder backed by Nvidia, hits $5.5B valuation"
+        },
+        {
+          "level": 4,
+          "id": "intel-signs-on-to-elon-musk-s-terafab-chips-project",
+          "text": "Intel signs on to Elon Musk’s Terafab chips project"
+        },
+        {
+          "level": 4,
+          "id": "anthropic-debuts-preview-of-powerful-new-ai-model-mythos-in-new-cybersecurity-in",
+          "text": "Anthropic debuts preview of powerful new AI model Mythos in new cybersecurity initiative"
+        },
+        {
+          "level": 3,
+          "id": "industry",
+          "text": "Industry"
+        },
+        {
+          "level": 4,
+          "id": "testing-suggests-googles-ai-overviews-tell-millions-of-lies-per-hour",
+          "text": "Testing suggests Google's AI Overviews tell millions of lies per hour"
+        },
+        {
+          "level": 3,
+          "id": "research-products",
+          "text": "Research & Products"
+        },
+        {
+          "level": 4,
+          "id": "operational-noncommutativity-in-sequential-metacognitive-judgments",
+          "text": "Operational Noncommutativity in Sequential Metacognitive Judgments"
+        },
+        {
+          "level": 4,
+          "id": "sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-m",
+          "text": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning"
+        },
+        {
+          "level": 4,
+          "id": "mapping-the-worlds-forests-with-greater-precision-introducing-canopy-height-maps",
+          "text": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2"
+        },
+        {
+          "level": 4,
+          "id": "proximity-measure-of-information-object-features-for-solving-the-problem-of-thei",
+          "text": "Proximity Measure of Information Object Features for Solving the Problem of Their Identification in Information Systems"
+        }
+      ],
+      "readingTime": 3,
+      "date": "2026-04-08",
+      "updatedTime": "2026-04-08",
+      "localPath": "/posts/daily-digest-wednesday-8-april-2026/"
+    },
+    {
       "title": "JPMorgan Drops $30 Billion on AI Infrastructure",
       "slug": "jpmorgan-drops-30-billion-on-ai-infrastructure",
       "kind": "article",
