@@ -11,11 +11,43 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
-### Google quietly launched an AI dictation app that works offline
+### OpenAI releases a new safety blueprint to address the rise in child sexual exploitation
 
-Google's new offline-first dictation app uses Gemma AI models to take on the apps like Wispr Flow.
+OpenAI's new Child Safety Blueprint aims to tackle the alarming rise in child sexual exploitation linked to advancements in AI.
 
-[Read more](https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/)
+[Read more](https://techcrunch.com/2026/04/08/openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation/)
+
+---
+
+### Astropad’s Workbench reimagines remote desktop for AI agents, not IT support
+
+Astropad’s Workbench lets users remotely monitor and control AI agents on Mac Minis from iPhone or iPad, with low-latency streaming and mobile access.
+
+[Read more](https://techcrunch.com/2026/04/08/astropads-workbench-reimagines-remote-desktop-for-ai-agents-not-it-support/)
+
+---
+
+### Databricks co-founder wins prestigious ACM award, says ‘AGI is here already’
+
+Matei Zaharia has won the top honor from the Association for Computing Machinery. Now he's working on AI for research and says AGI is simply misunderstood.
+
+[Read more](https://techcrunch.com/2026/04/08/databricks-matei-zaharia-wins-acm-computing-prize-agi/)
+
+---
+
+### Final 3 days to save up to $500 on your TechCrunch Disrupt 2026 pass
+
+Save up to $500 on your TechCrunch Disrupt 2026 pass until April 10, 11:59 p.m. PT. Secure your spot at the center of the tech ecosystem. Register today.
+
+[Read more](https://techcrunch.com/2026/04/08/final-3-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/)
+
+---
+
+### Atlassian launches visual AI tools and third-party agents in Confluence
+
+Confluence users can now create visual assets within the software in addition to new third-party agents working with Lovable, Replit, and Gamma.
+
+[Read more](https://techcrunch.com/2026/04/08/atlassian-confluence-visual-ai-tools-agents/)
 
 ---
 
@@ -59,49 +91,33 @@ Anthropic is an AI safety and research company that's working to build reliable,
 
 ---
 
-### I can’t help rooting for tiny open source AI model maker Arcee
-
-Arcee is a tiny 26-person U.S. startup that built a high-performing, massive, open source LLM. And it's gaining popularity with OpenClaw users.
-
-[Read more](https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/)
-
----
-
-### Firmus, the ‘Southgate’ AI data center builder backed by Nvidia, hits $5.5B valuation
-
-Nvidia-backed Asia AI data center provider Firmus has now raised $1.35 billion in six months.
-
-[Read more](https://techcrunch.com/2026/04/07/firmus-the-southgate-ai-datacenter-builder-backed-by-nvidia-hits-5-5b-valuation/)
-
----
-
-### Intel signs on to Elon Musk’s Terafab chips project
-
-Intel will join SpaceX and Tesla in an effort to build a new U.S. semiconductor factory in Texas, although the scope of its contributions are unclear.
-
-[Read more](https://techcrunch.com/2026/04/07/intel-signs-on-to-elon-musks-terafab-chips-project/)
-
----
-
-### Anthropic debuts preview of powerful new AI model Mythos in new cybersecurity initiative
-
-The new model will be used by a small number of high-profile companies to engage in defensive cybersecurity work.
-
-[Read more](https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/)
-
----
-
 ## Industry
 
-### Testing suggests Google's AI Overviews tell millions of lies per hour
+### To beat Altman in court, Musk offers to give all damages to OpenAI nonprofit
 
-Is 90 percent accuracy good enough for a search robot?
+Musk won’t seek a “single dollar” in OpenAI suit after asking to pocket up to $134 billion.
 
-[Read more](https://arstechnica.com/google/2026/04/analysis-finds-google-ai-overviews-is-wrong-10-percent-of-the-time/)
+[Read more](https://arstechnica.com/tech-policy/2026/04/to-beat-altman-in-court-musk-offers-to-give-all-damages-to-open-ai-nonprofit/)
+
+---
+
+### Mustafa Suleyman: AI development won’t hit a wall anytime soon—here’s why
+
+We evolved for a linear world. If you walk for an hour, you cover a certain distance. Walk for two hours and you cover double that distance. This intuition served us well on the savannah. But it catastrophically fails when confronting AI and the core exponential trends at its heart. From the time...
+
+[Read more](https://www.technologyreview.com/2026/04/08/1135398/mustafa-suleyman-ai-future/)
 
 ---
 
 ## Research & Products
+
+### Introducing Muse Spark: Scaling Towards Personal Superintelligence
+
+Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.
+
+[Read more](https://ai.meta.com/blog/introducing-muse-spark-msl/)
+
+---
 
 ### Operational Noncommutativity in Sequential Metacognitive Judgments
 
@@ -116,22 +132,6 @@ arXiv:2604.04938v1 Announce Type: new Abstract: Metacognition, understood as the
 Update March 27, 2026:
 
 [Read more](https://ai.meta.com/blog/segment-anything-model-3/)
-
----
-
-### Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2
-
-Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps...
-
-[Read more](https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/)
-
----
-
-### Proximity Measure of Information Object Features for Solving the Problem of Their Identification in Information Systems
-
-arXiv:2604.04939v1 Announce Type: new Abstract: The paper considers a new quantitative-qualitative proximity measure for the features of information objects, where data enters a common information resource from several sources independently. The goal is to determine the possibility of their relat...
-
-[Read more](https://arxiv.org/abs/2604.04939)
 
 ---
 
