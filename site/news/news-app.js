@@ -3,6 +3,28 @@
  * Adapted from daily-news to work with YYYY-MM-DD-digest.md format
  */
 
+const NEWS_TAG_LABELS = {
+    ai: 'AI',
+    news: 'News',
+    agents: 'Agents',
+    models: 'Models',
+    research: 'Research',
+    funding: 'Funding',
+    product: 'Product',
+    'open-source': 'Open Source',
+    safety: 'Safety',
+    robotics: 'Robotics',
+    image: 'Image',
+    video: 'Video',
+    audio: 'Audio',
+    coding: 'Coding',
+    creative: 'Creative',
+    '3d': '3D',
+    design: 'Design'
+};
+
+const NEWS_TAG_ORDER = ['agents', 'models', 'research', 'product', 'open-source', 'coding', 'creative', 'image', 'video', 'audio', 'design', 'robotics', 'safety', 'funding', 'ai', 'news'];
+
 class NewsApp {
     constructor() {
         this.articles = [];
@@ -10,6 +32,8 @@ class NewsApp {
         this.sources = new Set();
         this.dates = new Set();
         this.tags = new Set();
+        this.activeTags = new Set();
+        this.groupBy = 'date';
         this.favorites = new Set(JSON.parse(localStorage.getItem('news-favorites') || '[]'));
         this.flags = JSON.parse(localStorage.getItem('news-flags') || '{}');
 
@@ -417,6 +441,7 @@ class NewsApp {
 
     populateFilters() {
         const archivePicker = document.getElementById('archivePicker');
+        const tagFilters = document.getElementById('tagFilters');
 
         if (!archivePicker) return;
 
@@ -433,6 +458,37 @@ class NewsApp {
             option.textContent = new Date(year, month - 1).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
             archivePicker.appendChild(option);
         });
+
+        if (tagFilters) {
+            tagFilters.innerHTML = '';
+            tagFilters.appendChild(this.createTagButton('all', 'All topics', this.activeTags.size === 0));
+            NEWS_TAG_ORDER
+                .filter((tag) => this.tags.has(tag))
+                .forEach((tag) => {
+                    tagFilters.appendChild(this.createTagButton(tag, NEWS_TAG_LABELS[tag] || tag, this.activeTags.has(tag)));
+                });
+        }
+    }
+
+    createTagButton(tag, label, isActive) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = `tag-filter-btn${isActive ? ' active' : ''}`;
+        button.textContent = label;
+        button.addEventListener('click', () => {
+            if (tag === 'all') {
+                this.activeTags.clear();
+            } else if (this.activeTags.has(tag)) {
+                this.activeTags.delete(tag);
+            } else {
+                this.activeTags.clear();
+                this.activeTags.add(tag);
+            }
+
+            this.populateFilters();
+            this.filterArticles();
+        });
+        return button;
     }
 
     setupEventListeners() {
@@ -445,6 +501,7 @@ class NewsApp {
         const quickAll = document.getElementById('quickAll');
         const highlightOnly = document.getElementById('highlightOnly');
         const hideNotAI = document.getElementById('hideNotAI');
+        const groupBy = document.getElementById('groupBy');
 
         if (searchInput) searchInput.addEventListener('input', () => this.filterArticles());
         if (fromDate) fromDate.addEventListener('change', () => {
@@ -458,6 +515,10 @@ class NewsApp {
         if (archivePicker) archivePicker.addEventListener('change', () => this.filterArticles());
         if (highlightOnly) highlightOnly.addEventListener('change', () => this.filterArticles());
         if (hideNotAI) hideNotAI.addEventListener('change', () => this.filterArticles());
+        if (groupBy) groupBy.addEventListener('change', () => {
+            this.groupBy = groupBy.value === 'topic' ? 'topic' : 'date';
+            this.displayArticles();
+        });
 
         if (quick24h) quick24h.addEventListener('click', () => {
             const today = new Date();
@@ -497,6 +558,10 @@ class NewsApp {
             if (archivePicker) archivePicker.value = '';
             if (highlightOnly) highlightOnly.checked = false;
             if (hideNotAI) hideNotAI.checked = false;
+            if (groupBy) groupBy.value = 'date';
+            this.groupBy = 'date';
+            this.activeTags.clear();
+            this.populateFilters();
             this.updateQuickFilterButtons('all');
             this.filterArticles();
         });
@@ -560,10 +625,13 @@ class NewsApp {
                 matchesArchive = articleDate.getFullYear() === parseInt(year) && (articleDate.getMonth() + 1) === parseInt(month);
             }
 
+            const matchesTags = this.activeTags.size === 0
+                || article.tags.some((tag) => this.activeTags.has(tag));
+
             const isFavorite = this.favorites.has(article.title);
             const flaggedNotAI = (this.flags[article.title] || []).includes('not-ai');
 
-            return matchesSearch && matchesRange && matchesArchive && !article.isNoNews &&
+            return matchesSearch && matchesRange && matchesArchive && matchesTags && !article.isNoNews &&
                 (!highlightOnly || isFavorite) && !(hideNotAI && flaggedNotAI);
         });
 
@@ -607,6 +675,10 @@ class NewsApp {
             const [year, month] = archive.split('-');
             const monthName = new Date(year, month - 1).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
             filters.push(`Archive: ${monthName}`);
+        }
+
+        if (this.activeTags.size > 0) {
+            filters.push(`Topics: ${Array.from(this.activeTags).map((tag) => NEWS_TAG_LABELS[tag] || tag).join(', ')}`);
         }
 
         if (highlightOnly) filters.push('Highlights only');
@@ -671,6 +743,8 @@ class NewsApp {
     }
 
     displayArticles() {
+        const groupByEl = document.getElementById('groupBy');
+        const groupBy = groupByEl ? groupByEl.value : this.groupBy;
         const highlightOnlyEl = document.getElementById('highlightOnly');
         const highlightOnly = highlightOnlyEl ? highlightOnlyEl.checked : false;
         const favoriteArticles = this.filteredArticles.filter(a => this.favorites.has(a.title));
@@ -735,11 +809,17 @@ class NewsApp {
 
             const groups = {};
             archiveArticles.forEach((article) => {
-                groups[article.dateString] = groups[article.dateString] || [];
-                groups[article.dateString].push(article);
+                const key = groupBy === 'topic'
+                    ? this.getPrimaryGroupTag(article)
+                    : article.dateString;
+                groups[key] = groups[key] || [];
+                groups[key].push(article);
             });
 
             const sortedDates = Object.keys(groups).sort((a, b) => {
+                if (groupBy === 'topic') {
+                    return NEWS_TAG_ORDER.indexOf(a) - NEWS_TAG_ORDER.indexOf(b);
+                }
                 const parseDate = (dateString) => {
                     const months = ['January', 'February', 'March', 'April', 'May', 'June',
                         'July', 'August', 'September', 'October', 'November', 'December'];
@@ -753,7 +833,9 @@ class NewsApp {
             sortedDates.forEach((date) => {
                 const heading = document.createElement('h3');
                 heading.className = 'group-title';
-                heading.textContent = this.getRelativeDateLabel(date);
+                heading.textContent = groupBy === 'topic'
+                    ? (NEWS_TAG_LABELS[date] || date)
+                    : this.getRelativeDateLabel(date);
                 allGrid.appendChild(heading);
                 const group = document.createElement('div');
                 group.className = 'news-grid';
@@ -763,12 +845,25 @@ class NewsApp {
         }
     }
 
+    getPrimaryGroupTag(article) {
+        const articleTags = Array.isArray(article.tags) ? article.tags : [];
+
+        if (this.activeTags.size === 1) {
+            const selected = Array.from(this.activeTags)[0];
+            if (articleTags.includes(selected)) {
+                return selected;
+            }
+        }
+
+        return NEWS_TAG_ORDER.find((tag) => articleTags.includes(tag)) || 'news';
+    }
+
     createArticleCard(article, isToday, isFavorite = false) {
         const card = document.createElement('article');
         card.className = `news-card ${isToday ? 'today' : ''} ${article.isNoNews ? 'no-news' : ''} ${isFavorite ? 'highlight' : ''}`;
 
         const tagsHtml = article.tags && article.tags.length > 0
-            ? `<div class="tag-list">${article.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`
+            ? `<div class="tag-list">${article.tags.map(t => `<span class="tag">${NEWS_TAG_LABELS[t] || t}</span>`).join('')}</div>`
             : '';
 
         card.innerHTML = `

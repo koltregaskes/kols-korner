@@ -118,12 +118,35 @@
             <div class="sidebar-section">
               <h3>
                 <svg class="sidebar-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 7h14M5 12h10M5 17h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+                Topics
+              </h3>
+              <div id="tagFilters" class="tag-filter-grid" aria-label="Topic filters"></div>
+            </div>
+
+            <div class="sidebar-section">
+              <h3>
+                <svg class="sidebar-icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M4 6h16l-6 7v5l-4 2v-7L4 6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
                 </svg>
                 Archive
               </h3>
               <select id="archivePicker" class="archive-select">
                 <option value="">All months</option>
+              </select>
+            </div>
+
+            <div class="sidebar-section">
+              <h3>
+                <svg class="sidebar-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+                Group By
+              </h3>
+              <select id="groupBy" class="group-select">
+                <option value="date">Date</option>
+                <option value="topic">Topic</option>
               </select>
             </div>
 

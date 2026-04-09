@@ -435,6 +435,32 @@ body.news-page::before {
   color: var(--color-btn-primary-text);
 }
 
+.tag-filter-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.tag-filter-btn {
+  padding: 0.55rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard), background var(--duration-fast) var(--ease-standard);
+}
+
+.tag-filter-btn:hover,
+.tag-filter-btn.active {
+  transform: translateY(-1px);
+  border-color: var(--color-primary);
+  background: rgba(220, 38, 38, 0.12);
+  color: var(--color-primary);
+}
+
 .date-inputs {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
