@@ -229,6 +229,92 @@ function generateDigestTags(title = '') {
   return tags.slice(0, 4);
 }
 
+async function getImageDimensions(filePath) {
+  const buffer = await fs.readFile(filePath);
+  const ext = path.extname(filePath).toLowerCase();
+
+  if (ext === '.png' && buffer.length >= 24 && buffer.toString('ascii', 1, 4) === 'PNG') {
+    return {
+      width: buffer.readUInt32BE(16),
+      height: buffer.readUInt32BE(20)
+    };
+  }
+
+  if (ext === '.gif' && buffer.length >= 10 && buffer.toString('ascii', 0, 3) === 'GIF') {
+    return {
+      width: buffer.readUInt16LE(6),
+      height: buffer.readUInt16LE(8)
+    };
+  }
+
+  if ((ext === '.jpg' || ext === '.jpeg') && buffer.length >= 4 && buffer[0] === 0xff && buffer[1] === 0xd8) {
+    let offset = 2;
+
+    while (offset + 9 < buffer.length) {
+      if (buffer[offset] !== 0xff) {
+        offset += 1;
+        continue;
+      }
+
+      const marker = buffer[offset + 1];
+      const segmentLength = buffer.readUInt16BE(offset + 2);
+
+      if ([0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf].includes(marker)) {
+        return {
+          width: buffer.readUInt16BE(offset + 7),
+          height: buffer.readUInt16BE(offset + 5)
+        };
+      }
+
+      if (segmentLength < 2) break;
+      offset += 2 + segmentLength;
+    }
+  }
+
+  if (ext === '.webp' && buffer.length >= 30 && buffer.toString('ascii', 0, 4) === 'RIFF' && buffer.toString('ascii', 8, 12) === 'WEBP') {
+    const chunkType = buffer.toString('ascii', 12, 16);
+
+    if (chunkType === 'VP8X') {
+      return {
+        width: 1 + buffer.readUIntLE(24, 3),
+        height: 1 + buffer.readUIntLE(27, 3)
+      };
+    }
+
+    if (chunkType === 'VP8 ' && buffer.length >= 30) {
+      return {
+        width: buffer.readUInt16LE(26) & 0x3fff,
+        height: buffer.readUInt16LE(28) & 0x3fff
+      };
+    }
+
+    if (chunkType === 'VP8L' && buffer.length >= 25) {
+      const bits = buffer.readUInt32LE(21);
+      return {
+        width: (bits & 0x3fff) + 1,
+        height: ((bits >> 14) & 0x3fff) + 1
+      };
+    }
+  }
+
+  return null;
+}
+
+function renderThumbnailImage(item, title) {
+  const attributes = [
+    `src="${escapeHtml(item.thumbnailUrl)}"`,
+    `alt="${title}"`,
+    'loading="lazy"',
+    'decoding="async"'
+  ];
+
+  if (item.thumbnailWidth && item.thumbnailHeight) {
+    attributes.push(`width="${item.thumbnailWidth}"`, `height="${item.thumbnailHeight}"`);
+  }
+
+  return `<img ${attributes.join(' ')} />`;
+}
+
 function parseDigestArticles(content, filename) {
   const dateMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})-digest\.md/);
   if (!dateMatch) return [];
@@ -300,11 +386,18 @@ function parseDigestArticles(content, filename) {
 
 // Security headers for all pages
 const getSecurityHeaders = () => `
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'${SUPABASE_URL ? ` ${SUPABASE_URL}` : ''}; media-src 'self' https: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'${SUPABASE_URL ? ` ${SUPABASE_URL}` : ''}; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">`;
+
+function getSharedHeadAssets(basePath) {
+  return `
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+  <link rel="icon" type="image/svg+xml" href="${basePath}/favicon.svg" />
+  <link rel="stylesheet" href="${basePath}/styles.css" />`;
+}
 
 const slugify = (s) =>
   (s || "")
@@ -721,7 +814,7 @@ function getFooterHTML() {
 
 // Copy media files to site folder and generate thumbnails
 async function copyMedia(srcPath, title, kind = 'image') {
-  if (!srcPath) return { mediaUrl: '', thumbnailUrl: '' };
+  if (!srcPath) return { mediaUrl: '', thumbnailUrl: '', mediaMeta: null, thumbnailMeta: null };
 
   try {
     const filename = path.basename(srcPath);
@@ -739,6 +832,8 @@ async function copyMedia(srcPath, title, kind = 'image') {
 
     const mediaUrl = `./media/${newFilename}`;
     let thumbnailUrl = '';
+    let mediaMeta = null;
+    let thumbnailMeta = null;
 
     // Generate thumbnails for video/audio
     if (kind === 'video' && ['.mp4', '.webm', '.mov'].includes(ext)) {
@@ -747,6 +842,7 @@ async function copyMedia(srcPath, title, kind = 'image') {
       const success = await generateVideoThumbnail(destPath, thumbPath);
       if (success) {
         thumbnailUrl = `./media/${thumbFilename}`;
+        thumbnailMeta = await getImageDimensions(thumbPath);
       }
     } else if (kind === 'music' && ['.mp3', '.wav', '.ogg', '.m4a'].includes(ext)) {
       const waveFilename = `${slugify(title)}-waveform.png`;
@@ -754,15 +850,18 @@ async function copyMedia(srcPath, title, kind = 'image') {
       const success = await generateAudioWaveform(destPath, wavePath);
       if (success) {
         thumbnailUrl = `./media/${waveFilename}`;
+        thumbnailMeta = await getImageDimensions(wavePath);
       }
     } else if (kind === 'image') {
       thumbnailUrl = mediaUrl; // Images are their own thumbnails
+      mediaMeta = await getImageDimensions(destPath);
+      thumbnailMeta = mediaMeta;
     }
 
-    return { mediaUrl, thumbnailUrl };
+    return { mediaUrl, thumbnailUrl, mediaMeta, thumbnailMeta };
   } catch (error) {
     console.warn(`  -> Error copying media:`, error.message);
-    return { mediaUrl: '', thumbnailUrl: '' };
+    return { mediaUrl: '', thumbnailUrl: '', mediaMeta: null, thumbnailMeta: null };
   }
 }
 
@@ -796,6 +895,7 @@ async function readContentFiles() {
       // Handle media files
       let thumbnailUrl = '';
       let mediaUrl = '';
+      let thumbnailMeta = null;
 
       // For images, use the image frontmatter
       if (frontmatter.image) {
@@ -803,6 +903,7 @@ async function readContentFiles() {
         const result = await copyMedia(imagePath, title, 'image');
         thumbnailUrl = result.thumbnailUrl;
         mediaUrl = result.mediaUrl;
+        thumbnailMeta = result.thumbnailMeta;
       }
 
       // For videos/music, use the url frontmatter
@@ -822,6 +923,7 @@ async function readContentFiles() {
               const success = await generateVideoThumbnail(existingPath, thumbPath);
               if (success) {
                 thumbnailUrl = `./media/${thumbFilename}`;
+                thumbnailMeta = await getImageDimensions(thumbPath);
               }
             } else if (kind === 'music') {
               const waveFilename = `${slugify(title)}-waveform.png`;
@@ -829,6 +931,7 @@ async function readContentFiles() {
               const success = await generateAudioWaveform(existingPath, wavePath);
               if (success) {
                 thumbnailUrl = `./media/${waveFilename}`;
+                thumbnailMeta = await getImageDimensions(wavePath);
               }
             }
           } catch {
@@ -840,6 +943,7 @@ async function readContentFiles() {
           const result = await copyMedia(mediaPath, title, kind);
           mediaUrl = result.mediaUrl;
           thumbnailUrl = result.thumbnailUrl || thumbnailUrl;
+          thumbnailMeta = result.thumbnailMeta || thumbnailMeta;
         }
       }
 
@@ -864,6 +968,8 @@ async function readContentFiles() {
         summary: frontmatter.summary || '',
         tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
         thumbnailUrl,
+        thumbnailWidth: thumbnailMeta?.width || null,
+        thumbnailHeight: thumbnailMeta?.height || null,
         driveUrl: mediaUrl || thumbnailUrl,
         contentHtml,
         headings,
@@ -943,8 +1049,7 @@ async function writeArticlePage({ title, slug, contentHtml, tags, date, headings
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
-  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
-  <link rel="stylesheet" href="../../styles.css" />
+  ${getSharedHeadAssets('../../')}
 </head>
 <body>
   ${getHeaderHTML('../../', 'posts')}
@@ -1037,8 +1142,7 @@ async function writeDigestPage({ title, slug, contentHtml, tags, date, readingTi
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
-  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
-  <link rel="stylesheet" href="../../styles.css" />
+  ${getSharedHeadAssets('../../')}
 </head>
 <body>
   ${getHeaderHTML('../../', 'posts')}
@@ -1116,8 +1220,7 @@ async function writeHomePage(items) {
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <link rel="stylesheet" href="./styles.css" />
+  ${getSharedHeadAssets('.')}
 </head>
 <body>
   ${getHeaderHTML('./')}
@@ -1199,7 +1302,7 @@ async function writeHomePage(items) {
               <a href="./posts/${item.slug}/" class="home-feature-link">
                 ${hasImage ? `
                 <div class="home-feature-media">
-                  <img src="${escapeHtml(item.thumbnailUrl)}" alt="${title}" loading="lazy" />
+                  ${renderThumbnailImage(item, title)}
                 </div>` : ''}
                 <div class="home-feature-body">
                   <p class="home-feature-date">${new Date(item.updatedTime).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
@@ -1293,7 +1396,7 @@ async function writeHomePage(items) {
             <a href="${linkUrl}" class="content-card-link">
               ${hasImage ? `
                 <div class="content-card-media">
-                  <img src="${escapeHtml(item.thumbnailUrl)}" alt="${title}" loading="lazy" />
+                  ${renderThumbnailImage(item, title)}
                 </div>
               ` : `
                 <div class="content-card-media placeholder">
@@ -1343,8 +1446,7 @@ async function writePostsPage(items) {
   <title>Posts - ${SITE_NAME}</title>
   <meta name="description" content="Browse all posts by ${SITE_OWNER} - Tech, Software Development & More" />
   <meta name="author" content="${SITE_OWNER}" />
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-  <link rel="stylesheet" href="../styles.css" />
+  ${getSharedHeadAssets('..')}
 </head>
 <body>
   ${getHeaderHTML('../', 'posts')}
@@ -1402,8 +1504,7 @@ async function writeTagsPage(items) {
   ${getSecurityHeaders()}
   <title>Tags - ${SITE_NAME}</title>
   <meta name="description" content="Browse posts by tag - Tech, Software Development & More" />
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-  <link rel="stylesheet" href="../styles.css" />
+  ${getSharedHeadAssets('..')}
 </head>
 <body>
   ${getHeaderHTML('../', 'tags')}
@@ -1514,8 +1615,7 @@ async function writeStaticPage(slug, fallbackTitle, fallbackBody) {
   ${getSecurityHeaders()}
   <title>${escapeHtml(title)} - ${SITE_NAME}</title>
   <meta name="description" content="${escapeHtml(title)} - ${SITE_OWNER}" />
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-  <link rel="stylesheet" href="../styles.css" />
+  ${getSharedHeadAssets('..')}
 </head>
 <body>
   ${getHeaderHTML('../', slug === 'about' ? 'about' : '')}
@@ -1561,8 +1661,7 @@ async function writeAboutPage() {
   ${getSecurityHeaders()}
   <title>About - ${SITE_NAME}</title>
   <meta name="description" content="About ${SITE_OWNER} - news curator, AI artist, AI musician, content maker, and lover of technology" />
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-  <link rel="stylesheet" href="../styles.css" />
+  ${getSharedHeadAssets('..')}
 </head>
 <body>
   ${getHeaderHTML('../', 'about')}
@@ -1640,8 +1739,7 @@ async function writeSubscribePage() {
   ${getSecurityHeaders()}
   <title>Newsletter - ${SITE_NAME}</title>
   <meta name="description" content="Newsletter updates for ${SITE_NAME}. The email list is currently on hold, but the daily digests and news archive are live on-site." />
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-  <link rel="stylesheet" href="../styles.css" />
+  ${getSharedHeadAssets('..')}
 </head>
 <body>
   ${getHeaderHTML('../', 'subscribe')}
