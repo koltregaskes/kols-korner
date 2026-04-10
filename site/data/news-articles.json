@@ -1,6 +1,263 @@
 {
   "articles": [
     {
+      "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "Top Stories",
+      "date": "2026-04-10T00:00:00.000Z",
+      "dateString": "Friday, 10 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "infrastructure"
+      ],
+      "time": "Friday, 10 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Sonnet 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "summary": "Claude Sonnet 4.6 is a full upgrade of the model’s skills across coding, computer use, long-reasoning, agent planning, knowledge work, and design.",
+      "category": "Top Stories",
+      "date": "2026-04-10T00:00:00.000Z",
+      "dateString": "Friday, 10 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Friday, 10 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude Opus 4.6",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.",
+      "category": "Top Stories",
+      "date": "2026-04-10T00:00:00.000Z",
+      "dateString": "Friday, 10 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "models"
+      ],
+      "time": "Friday, 10 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude is a space to think | Anthropic",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "category": "Top Stories",
+      "date": "2026-04-10T00:00:00.000Z",
+      "dateString": "Friday, 10 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "models"
+      ],
+      "time": "Friday, 10 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Australian government and Anthropic sign MOU for AI safety and research",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/australia-MOU",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "Top Stories",
+      "date": "2026-04-10T00:00:00.000Z",
+      "dateString": "Friday, 10 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "research",
+        "safety"
+      ],
+      "time": "Friday, 10 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic built a model too risky to release",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/anthropic-built-a-model-too-risky",
+      "summary": "and Meta makes an unexpected entry",
+      "category": "News",
+      "date": "2026-04-10T00:00:00.000Z",
+      "dateString": "Friday, 10 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "models",
+        "product"
+      ],
+      "time": "Friday, 10 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "No Claude for Claws",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/no-claude-for-claws",
+      "summary": "in 3 months, Anthropic added $6B ARR",
+      "category": "News",
+      "date": "2026-04-10T00:00:00.000Z",
+      "dateString": "Friday, 10 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "models"
+      ],
+      "time": "Friday, 10 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "category": "News",
+      "date": "2026-04-10T00:00:00.000Z",
+      "dateString": "Friday, 10 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Friday, 10 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Blind Refusal: Language Models Refuse to Help Users Evade Unjust, Absurd, and Illegitimate Rules",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.06233",
+      "summary": "arXiv:2604.06233v1 Announce Type: new Abstract: Safety-trained language models routinely refuse requests for help circumventing rules. But not all rules deserve compliance. When users ask for help evading rules imposed by an illegitimate authority, rules that are deeply unjust or absurd in their...",
+      "category": "News",
+      "date": "2026-04-10T00:00:00.000Z",
+      "dateString": "Friday, 10 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Friday, 10 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "summary": "Update March 27, 2026:",
+      "category": "News",
+      "date": "2026-04-10T00:00:00.000Z",
+      "dateString": "Friday, 10 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "vision"
+      ],
+      "time": "Friday, 10 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Meta AI app climbs to No. 5 on the App Store after Muse Spark launch",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/09/meta-ai-app-climbs-to-no-5-on-the-app-store-after-muse-spark-launch/",
+      "summary": "The app was ranking No. 57 on the App Store just before Meta AI's new model launched. Now it's No. 5 — and rising.",
+      "category": "News",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "product"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "ChatGPT finally offers $100/month Pro plan",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/",
+      "summary": "OpenAI announced on Thursday something that power users have been asking for: a $100/month plan. Previously, subscriptions jumped from $20 to $200 per month.",
+      "category": "News",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Florida AG announces investigation into OpenAI over shooting that allegedly involved ChatGPT",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/09/florida-ag-investigation-openai-chatgpt-shooting/",
+      "summary": "ChatGPT had reportedly been used to plan the attack that killed two and injured five at Florida State University last April. The family of one victim has said that they plan to sue OpenAI over the incident.",
+      "category": "News",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "After data breach, $10B-valued startup Mercor is having a month",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/09/after-data-breach-10b-valued-startup-mercor-is-having-a-month/",
+      "summary": "After falling victim to a hacker, Mercor is facing lawsuits and reportedly losing big-name customers.",
+      "category": "News",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "startups"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Is Anthropic limiting the release of Mythos to protect the internet — or Anthropic?",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/09/is-anthropic-limiting-the-release-of-mythos-to-protect-the-internet-or-anthropic/",
+      "summary": "Anthropic said this week that it limited the release of its newest model, dubbed Mythos, because it is too capable of finding security exploits in software relied upon by users around the world. Are real cybersecurity concerns a cover for a bigger problem at the frontier lab?",
+      "category": "News",
+      "date": "2026-04-09T00:00:00.000Z",
+      "dateString": "Thursday, 9 April 2026",
+      "filename": "2026-04-10-digest.md",
+      "tags": [
+        "ai",
+        "product"
+      ],
+      "time": "Thursday, 9 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
       "title": "Amazon CEO takes aim at Nvidia, Intel, Starlink, more in annual shareholder letter",
       "source": "TechCrunch AI",
       "url": "https://techcrunch.com/2026/04/09/amazon-ceo-takes-aim-at-nvidia-intel-starlink-more-in-annual-shareholder-letter/",
