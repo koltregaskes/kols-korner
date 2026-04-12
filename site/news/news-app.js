@@ -24,6 +24,31 @@ const NEWS_TAG_LABELS = {
 };
 
 const NEWS_TAG_ORDER = ['agents', 'models', 'research', 'product', 'open-source', 'coding', 'creative', 'image', 'video', 'audio', 'design', 'robotics', 'safety', 'funding', 'ai', 'news'];
+const KOLS_OFFTOPIC_TAGS = new Set([
+    'photography',
+    'camera',
+    'camera_release',
+    'lens',
+    'photo_editing',
+    'lightroom',
+    'capture_one',
+    'photography_ai',
+    'photography_technique',
+    'photography_business',
+    'crypto',
+    'bitcoin',
+    'ethereum'
+]);
+const KOLS_BLOCKED_SOURCE_PATTERNS = [
+    /^PetaPixel$/i,
+    /^DPReview$/i,
+    /^Fstoppers$/i,
+    /^Digital Camera World$/i,
+    /^Camera Jabber$/i,
+    /^Digital Photography School$/i,
+    /^Photography Life$/i
+];
+const KOLS_OFFTOPIC_TEXT_PATTERN = /\b(camera|lens|mirrorless|dslr|photography|photographer|lightroom|capture one|fstoppers|petapixel|dpreview|digital camera world|camera jabber|photography life|bitcoin|ethereum|crypto)\b/i;
 
 class NewsApp {
     constructor() {
@@ -63,7 +88,9 @@ class NewsApp {
     async loadArticles() {
         const prebuiltArticles = await this.loadPrebuiltArticles();
         if (prebuiltArticles) {
-            this.articles = prebuiltArticles.map((article) => this.hydrateArticle(article));
+            this.articles = prebuiltArticles
+                .map((article) => this.hydrateArticle(article))
+                .filter((article) => this.shouldDisplayArticle(article));
             this.refreshDerivedCollections();
             this.filteredArticles = [...this.articles];
             this.populateFilters();
@@ -94,7 +121,9 @@ class NewsApp {
         results.forEach(articles => this.articles.push(...articles));
 
         // Sort articles by date (newest first)
-        this.articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+        this.articles = this.articles
+            .filter((article) => this.shouldDisplayArticle(article))
+            .sort((a, b) => new Date(b.date) - new Date(a.date));
         this.refreshDerivedCollections();
         this.filteredArticles = [...this.articles];
         this.populateFilters();
@@ -131,6 +160,40 @@ class NewsApp {
             tags: Array.isArray(article.tags) ? article.tags.map((tag) => String(tag).toLowerCase()) : [],
             date: new Date(article.date)
         };
+    }
+
+    normaliseTag(tag) {
+        return String(tag || '')
+            .trim()
+            .toLowerCase()
+            .replace(/[\s-]+/g, '_');
+    }
+
+    shouldDisplayArticle(article) {
+        const source = String(article.source || '').trim();
+        if (KOLS_BLOCKED_SOURCE_PATTERNS.some((pattern) => pattern.test(source))) {
+            return false;
+        }
+
+        const tags = Array.isArray(article.tags)
+            ? article.tags.map((tag) => this.normaliseTag(tag))
+            : [];
+        if (tags.some((tag) => KOLS_OFFTOPIC_TAGS.has(tag))) {
+            return false;
+        }
+
+        const text = [
+            article.title,
+            article.summary,
+            article.source,
+            Array.isArray(article.tags) ? article.tags.join(' ') : ''
+        ].join(' ');
+
+        if (KOLS_OFFTOPIC_TEXT_PATTERN.test(text)) {
+            return false;
+        }
+
+        return true;
     }
 
     fixCommonEncoding(text) {
