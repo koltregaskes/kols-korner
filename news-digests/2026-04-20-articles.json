@@ -1,0 +1,283 @@
+{
+  "generatedAt": "2026-04-20T06:00:50.367Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-04-20",
+  "count": 15,
+  "items": [
+    {
+      "id": "anthropic-news-anthropic-expands-partnership-with-google-and-broadcom-for-multiple-gigawatts-of-next-generation-compute-https-www-anthropic-com-news-google-broadcom-partnership-compute",
+      "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
+      "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-20",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "research_paper",
+        "hardware",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-20",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "arxiv-cs-lg-the-spectral-geometry-of-thought-phase-transitions-instruction-reversal-token-level-dynamics-and-perfect-correctness-prediction-in-how-transformers-reason-https-arxiv-org-abs-2604-15350",
+      "title": "The Spectral Geometry of Thought: Phase Transitions, Instruction Reversal, Token-Level Dynamics, and Perfect Correctness Prediction in How Transformers Reason",
+      "url": "https://arxiv.org/abs/2604.15350",
+      "source": "arXiv cs.LG",
+      "sourceId": "arxiv-cs-lg",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-20",
+      "summary": "arXiv:2604.15350v1 Announce Type: new Abstract: We discover that large language models exhibit \\emph{spectral phase transitions} in their hidden activation spaces when engaging in reasoning versus factual recall. Through systematic spectral analysis across \\textbf{11 models} spanning \\textbf{5 architecture families} (Qwen, Pythia, Phi, Llama, DeepSeek-R1), we identify \\textbf{seven} core phenomena: (1)~\\textbf{Reasoning Spectral Compression} -- 9/11 models show significantly lower $\\alpha$ for reasoning ($p < 0.05$), with larger effects in stronger models; (2)~\\textbf{Instruction Tuning Spectral Reversal} -- base models show reasoning $\\alpha < $ factual $\\alpha$, while instruction-tuned models reverse this relationship; (3)~\\textbf{Architecture-Dependent Generation Taxonomy} -- prompt-to-response shifts partition into expansion, compression, and equilibrium regimes; (4)~\\textbf{Spectral Scaling Law} -- $\\alpha_\\text{reasoning} \\propto -0.074 \\ln N$ across 4 Qwen base models ($R^2 = 0.46$); (5)~\\textbf{Token-Level Spectral Cascade} -- per-token alpha tracking reveals local synchronization that decays exponentially with layer distance, and is weaker for reasoning than factual tasks; (6)~\\textbf{Reasoning Step Spectral Punctuation} -- phase-transition signatures align with reasoning step boundaries; and (7)~\\textbf{Spectral Correctness Prediction} -- spectral $\\alpha$ alone achieves AUC $= 1.000$ (Qwen2.5-7B, late layers) and mean AUC $= 0.893$ across 6 models in predicting correctness \\emph{before} the final answer is generated. Together, these findings establish a comprehensive \\emph{spectral theory of reasoning} in transformers, revealing that the geometry of thought is universal in direction, architecture-specific in dynamics, and predictive of outcome.",
+      "tags": [
+        "research_paper",
+        "training",
+        "architecture",
+        "evaluation",
+        "model_release",
+        "reasoning",
+        "policy",
+        "crypto_defi"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "bens-bites-my-cheatsheet-for-a-clean-context-https-www-bensbites-com-p-my-cheatsheet-for-a-clean-context",
+      "title": "My cheatsheet for a clean context",
+      "url": "https://www.bensbites.com/p/my-cheatsheet-for-a-clean-context",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-20",
+      "summary": "fast intelligence, managed infra and desktop apps",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-big-lab-leaks-https-www-bensbites-com-p-big-lab-leaks",
+      "title": "Big lab leaks",
+      "url": "https://www.bensbites.com/p/big-lab-leaks",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-20",
+      "summary": "Headless software",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-introducing-claude-opus-4-7-https-www-anthropic-com-news-claude-opus-4-7",
+      "title": "Introducing Claude Opus 4.7",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-20",
+      "summary": "Our latest model, Claude Opus 4.7, is now generally available. Opus 4.7 is a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-introducing-claude-design-by-anthropic-labs-https-www-anthropic-com-news-claude-design-anthropic-labs",
+      "title": "Introducing Claude Design by Anthropic Labs",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-20",
+      "summary": "Today, we’re launching Claude Design, a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-claude-is-a-space-to-think-anthropic-https-www-anthropic-com-news-claude-is-a-space-to-think",
+      "title": "Claude is a space to think | Anthropic",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-20",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-anthropic-s-long-term-benefit-trust-appoints-vas-narasimhan-to-board-of-directors-https-www-anthropic-com-news-narasimhan-board",
+      "title": "Anthropic’s Long-Term Benefit Trust appoints Vas Narasimhan to Board of Directors",
+      "url": "https://www.anthropic.com/news/narasimhan-board",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-20",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "research_paper"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-multiplexing-and-global-reasoning-https-ai-meta-com-blog-segment-anything-model-3",
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-20",
+      "summary": "Update March 27, 2026:",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-openai-s-existential-questions-https-techcrunch-com-2026-04-19-openais-existential-questions",
+      "title": "OpenAI’s existential questions",
+      "url": "https://techcrunch.com/2026/04/19/openais-existential-questions/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-19",
+      "summary": "On the latest episode of Equity, we discuss OpenAI's latest acquisitions and whether they address \"two big existential problems\" for the company.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-the-12-month-window-https-techcrunch-com-2026-04-19-the-12-month-window",
+      "title": "The 12-month window",
+      "url": "https://techcrunch.com/2026/04/19/the-12-month-window/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-19",
+      "summary": "A lot of AI startups exist partly because the foundation models haven't expanded into their category yet. As many jokingly acknowledge, that won't last forever.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-palantir-posts-mini-manifesto-denouncing-inclusivity-and-regressive-cultures-https-techcrunch-com-2026-04-19-palantir-posts-mini-manifesto-denouncing-regressive-and-harmful-cultures",
+      "title": "Palantir posts mini-manifesto denouncing inclusivity and ‘regressive’ cultures",
+      "url": "https://techcrunch.com/2026/04/19/palantir-posts-mini-manifesto-denouncing-regressive-and-harmful-cultures/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-19",
+      "summary": "Palantir's ideological bent has come under more scrutiny as it's worked with ICE and positioned itself as a defender of \"the West.\"",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-techcrunch-mobility-uber-enters-its-assetmaxxing-era-https-techcrunch-com-2026-04-19-techcrunch-mobility-uber-enters-its-assetmaxxing-era",
+      "title": "TechCrunch Mobility: Uber enters its assetmaxxing era",
+      "url": "https://techcrunch.com/2026/04/19/techcrunch-mobility-uber-enters-its-assetmaxxing-era/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-19",
+      "summary": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, how AI is playing a part.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-tesla-brings-its-robotaxi-service-to-dallas-and-houston-https-techcrunch-com-2026-04-18-tesla-brings-its-robotaxi-service-to-dallas-and-houston",
+      "title": "Tesla brings its robotaxi service to Dallas and Houston",
+      "url": "https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-18",
+      "summary": "The company now offers robotaxi service in three cities, all of them in Texas, after launching in Austin last year and starting to offer rides without safety drivers in January 2026.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    }
+  ]
+}

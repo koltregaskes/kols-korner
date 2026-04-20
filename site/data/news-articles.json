@@ -1,6 +1,244 @@
 {
   "articles": [
     {
+      "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "Top Stories",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "infrastructure"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Claude Opus 4.7",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "summary": "Our latest model, Claude Opus 4.7, is now generally available. Opus 4.7 is a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks.",
+      "category": "Top Stories",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "models"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Claude Design by Anthropic Labs",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "summary": "Today, we’re launching Claude Design, a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.",
+      "category": "Top Stories",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "models"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude is a space to think | Anthropic",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "category": "Top Stories",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "models"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic’s Long-Term Benefit Trust appoints Vas Narasimhan to Board of Directors",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/narasimhan-board",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "Top Stories",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "My cheatsheet for a clean context",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/my-cheatsheet-for-a-clean-context",
+      "summary": "fast intelligence, managed infra and desktop apps",
+      "category": "News",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Big lab leaks",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/big-lab-leaks",
+      "summary": "Headless software",
+      "category": "News",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "category": "News",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "The Spectral Geometry of Thought: Phase Transitions, Instruction Reversal, Token-Level Dynamics, and Perfect Correctness Prediction in How Transformers Reason",
+      "source": "arXiv cs.LG",
+      "url": "https://arxiv.org/abs/2604.15350",
+      "summary": "arXiv:2604.15350v1 Announce Type: new Abstract: We discover that large language models exhibit \\emph{spectral phase transitions} in their hidden activation spaces when engaging in reasoning versus factual recall. Through systematic spectral analysis across \\textbf{11 models} spanning \\textbf{5 ar...",
+      "category": "News",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "summary": "Update March 27, 2026:",
+      "category": "News",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "vision"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "OpenAI’s existential questions",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/19/openais-existential-questions/",
+      "summary": "On the latest episode of Equity, we discuss OpenAI's latest acquisitions and whether they address \"two big existential problems\" for the company.",
+      "category": "News",
+      "date": "2026-04-19T00:00:00.000Z",
+      "dateString": "Sunday, 19 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Sunday, 19 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "The 12-month window",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/19/the-12-month-window/",
+      "summary": "A lot of AI startups exist partly because the foundation models haven't expanded into their category yet. As many jokingly acknowledge, that won't last forever.",
+      "category": "News",
+      "date": "2026-04-19T00:00:00.000Z",
+      "dateString": "Sunday, 19 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Sunday, 19 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Palantir posts mini-manifesto denouncing inclusivity and ‘regressive’ cultures",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/19/palantir-posts-mini-manifesto-denouncing-regressive-and-harmful-cultures/",
+      "summary": "Palantir's ideological bent has come under more scrutiny as it's worked with ICE and positioned itself as a defender of \"the West.\"",
+      "category": "News",
+      "date": "2026-04-19T00:00:00.000Z",
+      "dateString": "Sunday, 19 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Sunday, 19 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "TechCrunch Mobility: Uber enters its assetmaxxing era",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/19/techcrunch-mobility-uber-enters-its-assetmaxxing-era/",
+      "summary": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, how AI is playing a part.",
+      "category": "News",
+      "date": "2026-04-19T00:00:00.000Z",
+      "dateString": "Sunday, 19 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Sunday, 19 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
       "title": "Palantir posts mini-manifesto denouncing inclusivity and ‘regressive’ cultures",
       "source": "TechCrunch AI",
       "url": "https://techcrunch.com/2026/04/19/palantir-posts-mini-manifesto-denouncing-regressive-and-harmful-cultures/",
@@ -184,6 +422,23 @@
         "vision"
       ],
       "time": "Sunday, 19 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Tesla brings its robotaxi service to Dallas and Houston",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/",
+      "summary": "The company now offers robotaxi service in three cities, all of them in Texas, after launching in Austin last year and starting to offer rides without safety drivers in January 2026.",
+      "category": "News",
+      "date": "2026-04-18T00:00:00.000Z",
+      "dateString": "Saturday, 18 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Saturday, 18 April 2026",
       "imageUrl": null,
       "isNoNews": false
     },
