@@ -11,6 +11,22 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### NSA spies are reportedly using Anthropic’s Mythos, despite Pentagon feud
+
+NSA is said to be using Anthropic's restricted Mythos AI model.
+
+[Read more](https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/)
+
+---
+
+### CEO and CFO suddenly depart AI nuclear power upstart Fermi
+
+The startup, co-founded by former U.S. Energy Secretary Rick Perry, has faced headwinds with its AI campus in Texas.
+
+[Read more](https://techcrunch.com/2026/04/20/fermi-ceo-and-cfo-depart-texas-nuclear-power-ai/)
+
+---
+
 ### Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute
 
 Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.
@@ -75,22 +91,6 @@ Palantir's ideological bent has come under more scrutiny as it's worked with ICE
 
 ---
 
-### TechCrunch Mobility: Uber enters its assetmaxxing era
-
-Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, how AI is playing a part.
-
-[Read more](https://techcrunch.com/2026/04/19/techcrunch-mobility-uber-enters-its-assetmaxxing-era/)
-
----
-
-### Tesla brings its robotaxi service to Dallas and Houston
-
-The company now offers robotaxi service in three cities, all of them in Texas, after launching in Austin last year and starting to offer rides without safety drivers in January 2026.
-
-[Read more](https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/)
-
----
-
 ## Industry
 
 ### My cheatsheet for a clean context
@@ -109,6 +109,14 @@ Headless software
 
 ---
 
+### Deezer says 44% of new music uploads are AI-generated, most streams are fraudulent
+
+AI tracks account for a small fraction of Deezer streams, and most are demonetized for fraud.
+
+[Read more](https://arstechnica.com/ai/2026/04/deezer-says-44-of-new-music-uploads-are-ai-generated-most-streams-are-fraudulent/)
+
+---
+
 ## Research & Products
 
 ### Introducing Muse Spark: Scaling Towards Personal Superintelligence
@@ -124,14 +132,6 @@ Today, we’re excited to introduce Muse Spark, the first in the Muse family of 
 arXiv:2604.15350v1 Announce Type: new Abstract: We discover that large language models exhibit \emph{spectral phase transitions} in their hidden activation spaces when engaging in reasoning versus factual recall. Through systematic spectral analysis across \textbf{11 models} spanning \textbf{5 ar...
 
 [Read more](https://arxiv.org/abs/2604.15350)
-
----
-
-### SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning
-
-Update March 27, 2026:
-
-[Read more](https://ai.meta.com/blog/segment-anything-model-3/)
 
 ---
 

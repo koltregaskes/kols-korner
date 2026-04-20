@@ -1,10 +1,46 @@
 {
-  "generatedAt": "2026-04-20T06:00:50.367Z",
+  "generatedAt": "2026-04-20T18:00:49.979Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-04-20",
   "count": 15,
   "items": [
+    {
+      "id": "techcrunch-ai-nsa-spies-are-reportedly-using-anthropic-s-mythos-despite-pentagon-feud-https-techcrunch-com-2026-04-20-nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud",
+      "title": "NSA spies are reportedly using Anthropic’s Mythos, despite Pentagon feud",
+      "url": "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-20",
+      "summary": "NSA is said to be using Anthropic's restricted Mythos AI model.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-ceo-and-cfo-suddenly-depart-ai-nuclear-power-upstart-fermi-https-techcrunch-com-2026-04-20-fermi-ceo-and-cfo-depart-texas-nuclear-power-ai",
+      "title": "CEO and CFO suddenly depart AI nuclear power upstart Fermi",
+      "url": "https://techcrunch.com/2026/04/20/fermi-ceo-and-cfo-depart-texas-nuclear-power-ai/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-20",
+      "summary": "The startup, co-founded by former U.S. Energy Secretary Rick Perry, has faced headwinds with its AI campus in Texas.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
     {
       "id": "anthropic-news-anthropic-expands-partnership-with-google-and-broadcom-for-multiple-gigawatts-of-next-generation-compute-https-www-anthropic-com-news-google-broadcom-partnership-compute",
       "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
@@ -103,6 +139,23 @@
       "adapter": "html"
     },
     {
+      "id": "ars-technica-ai-deezer-says-44-of-new-music-uploads-are-ai-generated-most-streams-are-fraudulent-https-arstechnica-com-ai-2026-04-deezer-says-44-of-new-music-uploads-are-ai-generated-most-streams-are-fraudulent",
+      "title": "Deezer says 44% of new music uploads are AI-generated, most streams are fraudulent",
+      "url": "https://arstechnica.com/ai/2026/04/deezer-says-44-of-new-music-uploads-are-ai-generated-most-streams-are-fraudulent/",
+      "source": "Ars Technica AI",
+      "sourceId": "ars-technica-ai",
+      "section": "Industry",
+      "publishedAt": "2026-04-20",
+      "summary": "AI tracks account for a small fraction of Deezer streams, and most are demonetized for fraud.",
+      "tags": [
+        "research_paper",
+        "open_source",
+        "hardware",
+        "policy"
+      ],
+      "adapter": "html"
+    },
+    {
       "id": "anthropic-news-introducing-claude-opus-4-7-https-www-anthropic-com-news-claude-opus-4-7",
       "title": "Introducing Claude Opus 4.7",
       "url": "https://www.anthropic.com/news/claude-opus-4-7",
@@ -172,24 +225,6 @@
       "adapter": "html"
     },
     {
-      "id": "meta-ai-blog-sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-multiplexing-and-global-reasoning-https-ai-meta-com-blog-segment-anything-model-3",
-      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
-      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
-      "source": "Meta AI Blog",
-      "sourceId": "meta-ai-blog",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-20",
-      "summary": "Update March 27, 2026:",
-      "tags": [
-        "research_paper",
-        "model_release",
-        "open_source",
-        "architecture",
-        "reasoning"
-      ],
-      "adapter": "html"
-    },
-    {
       "id": "techcrunch-ai-openai-s-existential-questions-https-techcrunch-com-2026-04-19-openais-existential-questions",
       "title": "OpenAI’s existential questions",
       "url": "https://techcrunch.com/2026/04/19/openais-existential-questions/",
@@ -234,42 +269,6 @@
       "section": "Top Stories",
       "publishedAt": "2026-04-19",
       "summary": "Palantir's ideological bent has come under more scrutiny as it's worked with ICE and positioned itself as a defender of \"the West.\"",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-techcrunch-mobility-uber-enters-its-assetmaxxing-era-https-techcrunch-com-2026-04-19-techcrunch-mobility-uber-enters-its-assetmaxxing-era",
-      "title": "TechCrunch Mobility: Uber enters its assetmaxxing era",
-      "url": "https://techcrunch.com/2026/04/19/techcrunch-mobility-uber-enters-its-assetmaxxing-era/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-19",
-      "summary": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, how AI is playing a part.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-tesla-brings-its-robotaxi-service-to-dallas-and-houston-https-techcrunch-com-2026-04-18-tesla-brings-its-robotaxi-service-to-dallas-and-houston",
-      "title": "Tesla brings its robotaxi service to Dallas and Houston",
-      "url": "https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-18",
-      "summary": "The company now offers robotaxi service in three cities, all of them in Texas, after launching in Austin last year and starting to offer rides without safety drivers in January 2026.",
       "tags": [
         "announcement",
         "product_launch",

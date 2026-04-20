@@ -1,6 +1,40 @@
 {
   "articles": [
     {
+      "title": "NSA spies are reportedly using Anthropic’s Mythos, despite Pentagon feud",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/",
+      "summary": "NSA is said to be using Anthropic's restricted Mythos AI model.",
+      "category": "Top Stories",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "CEO and CFO suddenly depart AI nuclear power upstart Fermi",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/20/fermi-ceo-and-cfo-depart-texas-nuclear-power-ai/",
+      "summary": "The startup, co-founded by former U.S. Energy Secretary Rick Perry, has faced headwinds with its AI campus in Texas.",
+      "category": "Top Stories",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
       "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
@@ -56,7 +90,7 @@
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
       "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
-      "category": "Top Stories",
+      "category": "News",
       "date": "2026-04-20T00:00:00.000Z",
       "dateString": "Monday, 20 April 2026",
       "filename": "2026-04-20-digest.md",
@@ -73,7 +107,7 @@
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/narasimhan-board",
       "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
-      "category": "Top Stories",
+      "category": "News",
       "date": "2026-04-20T00:00:00.000Z",
       "dateString": "Monday, 20 April 2026",
       "filename": "2026-04-20-digest.md",
@@ -120,6 +154,24 @@
       "isNoNews": false
     },
     {
+      "title": "Deezer says 44% of new music uploads are AI-generated, most streams are fraudulent",
+      "source": "Ars Technica AI",
+      "url": "https://arstechnica.com/ai/2026/04/deezer-says-44-of-new-music-uploads-are-ai-generated-most-streams-are-fraudulent/",
+      "summary": "AI tracks account for a small fraction of Deezer streams, and most are demonetized for fraud.",
+      "category": "News",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateString": "Monday, 20 April 2026",
+      "filename": "2026-04-20-digest.md",
+      "tags": [
+        "ai",
+        "product",
+        "voice"
+      ],
+      "time": "Monday, 20 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
       "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
       "source": "Meta AI Blog",
       "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
@@ -148,23 +200,6 @@
       "tags": [
         "ai",
         "news"
-      ],
-      "time": "Monday, 20 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
-      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
-      "source": "Meta AI Blog",
-      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
-      "summary": "Update March 27, 2026:",
-      "category": "News",
-      "date": "2026-04-20T00:00:00.000Z",
-      "dateString": "Monday, 20 April 2026",
-      "filename": "2026-04-20-digest.md",
-      "tags": [
-        "ai",
-        "vision"
       ],
       "time": "Monday, 20 April 2026",
       "imageUrl": null,
@@ -222,23 +257,6 @@
       "isNoNews": false
     },
     {
-      "title": "TechCrunch Mobility: Uber enters its assetmaxxing era",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/19/techcrunch-mobility-uber-enters-its-assetmaxxing-era/",
-      "summary": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, how AI is playing a part.",
-      "category": "News",
-      "date": "2026-04-19T00:00:00.000Z",
-      "dateString": "Sunday, 19 April 2026",
-      "filename": "2026-04-20-digest.md",
-      "tags": [
-        "ai",
-        "news"
-      ],
-      "time": "Sunday, 19 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
       "title": "Palantir posts mini-manifesto denouncing inclusivity and ‘regressive’ cultures",
       "source": "TechCrunch AI",
       "url": "https://techcrunch.com/2026/04/19/palantir-posts-mini-manifesto-denouncing-regressive-and-harmful-cultures/",
@@ -422,23 +440,6 @@
         "vision"
       ],
       "time": "Sunday, 19 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
-      "title": "Tesla brings its robotaxi service to Dallas and Houston",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/",
-      "summary": "The company now offers robotaxi service in three cities, all of them in Texas, after launching in Austin last year and starting to offer rides without safety drivers in January 2026.",
-      "category": "News",
-      "date": "2026-04-18T00:00:00.000Z",
-      "dateString": "Saturday, 18 April 2026",
-      "filename": "2026-04-20-digest.md",
-      "tags": [
-        "ai",
-        "news"
-      ],
-      "time": "Saturday, 18 April 2026",
       "imageUrl": null,
       "isNoNews": false
     },
