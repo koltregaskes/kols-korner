@@ -1,10 +1,84 @@
 {
-  "generatedAt": "2026-04-21T06:00:40.744Z",
+  "generatedAt": "2026-04-21T18:01:21.910Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-04-21",
   "count": 15,
   "items": [
+    {
+      "id": "techcrunch-ai-grai-believes-ai-can-make-music-more-social-not-replace-artists-https-techcrunch-com-2026-04-21-grai-believes-ai-can-make-music-more-social-not-replace-artists",
+      "title": "GRAI believes AI can make music more social, not replace artists",
+      "url": "https://techcrunch.com/2026/04/21/grai-believes-ai-can-make-music-more-social-not-replace-artists/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-21",
+      "summary": "AI music startup GRAI says fans want to remix tracks, not generate songs from scratch.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "music_gen",
+        "opinion"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-ai-dungeon-maker-latitude-unveils-voyage-a-platform-for-creating-ai-powered-rpgs-https-techcrunch-com-2026-04-21-voyage-is-an-ai-rpg-platform-for-creating-custom-gaming-worlds-with-ai-generated-npc-interactions",
+      "title": "AI Dungeon maker Latitude unveils Voyage, a platform for creating AI-powered RPGs",
+      "url": "https://techcrunch.com/2026/04/21/voyage-is-an-ai-rpg-platform-for-creating-custom-gaming-worlds-with-ai-generated-npc-interactions/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-21",
+      "summary": "Latitude's new AI-native platform, Voyage, aims to help gamers create their very own role-playing game.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-bond-a-new-social-media-platform-wants-to-use-ai-to-help-you-kick-your-doomscrolling-habit-https-techcrunch-com-2026-04-21-bond-social-media-platform-ai-memories-kick-doomscrolling-habit",
+      "title": "Bond, a new social media platform, wants to use AI to help you kick your doomscrolling habit",
+      "url": "https://techcrunch.com/2026/04/21/bond-social-media-platform-ai-memories-kick-doomscrolling-habit/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-21",
+      "summary": "Bond wants you to get off the couch and get back into the real world, its creator says. The new platform's AI system is designed to motivate users to do things away from the app.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-youtube-expands-its-ai-likeness-detection-technology-to-celebrities-https-techcrunch-com-2026-04-21-youtube-expands-its-ai-likeness-detection-technology-to-celebrities",
+      "title": "YouTube expands its AI likeness detection technology to celebrities",
+      "url": "https://techcrunch.com/2026/04/21/youtube-expands-its-ai-likeness-detection-technology-to-celebrities/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-21",
+      "summary": "YouTube is expanding its AI likeness detection tool to celebrities, giving talent and their reps a way to find and remove deepfakes.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
     {
       "id": "anthropic-news-anthropic-expands-partnership-with-google-and-broadcom-for-multiple-gigawatts-of-next-generation-compute-https-www-anthropic-com-news-google-broadcom-partnership-compute",
       "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
@@ -22,6 +96,24 @@
         "research_paper",
         "hardware",
         "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-thats-my-designer-claude-https-www-bensbites-com-p-thats-my-designer-claude",
+      "title": "That's my designer - Claude",
+      "url": "https://www.bensbites.com/p/thats-my-designer-claude",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-21",
+      "summary": "and it comes with a new model, Opus 4.7",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source",
+        "model_release"
       ],
       "adapter": "html"
     },
@@ -48,6 +140,24 @@
       "adapter": "html"
     },
     {
+      "id": "mit-technology-review-ai-building-agent-first-governance-and-security-https-www-technologyreview-com-2026-04-21-1136158-building-agent-first-governance-and-security",
+      "title": "Building agent-first governance and security",
+      "url": "https://www.technologyreview.com/2026/04/21/1136158/building-agent-first-governance-and-security/",
+      "source": "MIT Technology Review AI",
+      "sourceId": "mit-technology-review-ai",
+      "section": "Industry",
+      "publishedAt": "2026-04-21",
+      "summary": "As AI agents increasingly work alongside humans across organizations, companies could be inadvertently opening a new attack surface. Insecure agents can be manipulated to access sensitive systems and proprietary data, increasing enterprise risk. In some modern enterprises, non-human identities (NHI) are outpacing human identities, and that trend will explode with agentic AI. Solid governance and…",
+      "tags": [
+        "policy",
+        "research_paper",
+        "industry_move",
+        "ai_safety",
+        "ai_agents"
+      ],
+      "adapter": "rss"
+    },
+    {
       "id": "bens-bites-my-cheatsheet-for-a-clean-context-https-www-bensbites-com-p-my-cheatsheet-for-a-clean-context",
       "title": "My cheatsheet for a clean context",
       "url": "https://www.bensbites.com/p/my-cheatsheet-for-a-clean-context",
@@ -56,23 +166,6 @@
       "section": "Industry",
       "publishedAt": "2026-04-21",
       "summary": "fast intelligence, managed infra and desktop apps",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "industry_move",
-        "open_source"
-      ],
-      "adapter": "html"
-    },
-    {
-      "id": "bens-bites-big-lab-leaks-https-www-bensbites-com-p-big-lab-leaks",
-      "title": "Big lab leaks",
-      "url": "https://www.bensbites.com/p/big-lab-leaks",
-      "source": "Ben's Bites",
-      "sourceId": "bens-bites",
-      "section": "Industry",
-      "publishedAt": "2026-04-21",
-      "summary": "Headless software",
       "tags": [
         "announcement",
         "product_launch",
@@ -183,96 +276,6 @@
         "tool_use",
         "agentic_framework",
         "ai_agents"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return-https-techcrunch-com-2026-04-20-anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return",
-      "title": "Anthropic takes $5B from Amazon and pledges $100B in cloud spending in return",
-      "url": "https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-20",
-      "summary": "Amazon has made another circular AI deal: It's investing another $5 billion in Anthropic. Anthropic has agreed to spend $100 billion on AWS in return.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-google-rolls-out-gemini-in-chrome-in-7-new-countries-https-techcrunch-com-2026-04-20-google-rolls-out-gemini-in-chrome-in-seven-new-countries",
-      "title": "Google rolls out Gemini in Chrome in 7 new countries",
-      "url": "https://techcrunch.com/2026/04/20/google-rolls-out-gemini-in-chrome-in-seven-new-countries/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-20",
-      "summary": "Google is rolling out Gemini in Chrome in Australia, Indonesia, Japan, the Philippines, Singapore, South Korea, and Vietnam. The company is rolling this feature out to both desktop and iOS in all of these countries except Japan.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-it-s-not-just-one-thing-it-s-another-thing-https-techcrunch-com-2026-04-20-ai-writing-its-not-just-this-its-that-barrons",
-      "title": "It’s not just one thing — it’s another thing",
-      "url": "https://techcrunch.com/2026/04/20/ai-writing-its-not-just-this-its-that-barrons/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-20",
-      "summary": "This sentence construction (\"It's not just this — it's that\") has become so common in AI-generated writing that it's no longer just a clue that a piece of writing may be synthetic — it's almost a guarantee.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-nsa-spies-are-reportedly-using-anthropic-s-mythos-despite-pentagon-feud-https-techcrunch-com-2026-04-20-nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud",
-      "title": "NSA spies are reportedly using Anthropic’s Mythos, despite Pentagon feud",
-      "url": "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-20",
-      "summary": "NSA is said to be using Anthropic's restricted Mythos AI model.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-ceo-and-cfo-suddenly-depart-ai-nuclear-power-upstart-fermi-https-techcrunch-com-2026-04-20-fermi-ceo-and-cfo-depart-texas-nuclear-power-ai",
-      "title": "CEO and CFO suddenly depart AI nuclear power upstart Fermi",
-      "url": "https://techcrunch.com/2026/04/20/fermi-ceo-and-cfo-depart-texas-nuclear-power-ai/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-20",
-      "summary": "The startup, co-founded by former U.S. Energy Secretary Rick Perry, has faced headwinds with its AI campus in Texas.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
       ],
       "adapter": "rss"
     }

@@ -11,6 +11,38 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### GRAI believes AI can make music more social, not replace artists
+
+AI music startup GRAI says fans want to remix tracks, not generate songs from scratch.
+
+[Read more](https://techcrunch.com/2026/04/21/grai-believes-ai-can-make-music-more-social-not-replace-artists/)
+
+---
+
+### AI Dungeon maker Latitude unveils Voyage, a platform for creating AI-powered RPGs
+
+Latitude's new AI-native platform, Voyage, aims to help gamers create their very own role-playing game.
+
+[Read more](https://techcrunch.com/2026/04/21/voyage-is-an-ai-rpg-platform-for-creating-custom-gaming-worlds-with-ai-generated-npc-interactions/)
+
+---
+
+### Bond, a new social media platform, wants to use AI to help you kick your doomscrolling habit
+
+Bond wants you to get off the couch and get back into the real world, its creator says. The new platform's AI system is designed to motivate users to do things away from the app.
+
+[Read more](https://techcrunch.com/2026/04/21/bond-social-media-platform-ai-memories-kick-doomscrolling-habit/)
+
+---
+
+### YouTube expands its AI likeness detection technology to celebrities
+
+YouTube is expanding its AI likeness detection tool to celebrities, giving talent and their reps a way to find and remove deepfakes.
+
+[Read more](https://techcrunch.com/2026/04/21/youtube-expands-its-ai-likeness-detection-technology-to-celebrities/)
+
+---
+
 ### Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute
 
 Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.
@@ -51,61 +83,29 @@ Anthropic is an AI safety and research company that's working to build reliable,
 
 ---
 
-### Anthropic takes $5B from Amazon and pledges $100B in cloud spending in return
-
-Amazon has made another circular AI deal: It's investing another $5 billion in Anthropic. Anthropic has agreed to spend $100 billion on AWS in return.
-
-[Read more](https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/)
-
----
-
-### Google rolls out Gemini in Chrome in 7 new countries
-
-Google is rolling out Gemini in Chrome in Australia, Indonesia, Japan, the Philippines, Singapore, South Korea, and Vietnam. The company is rolling this feature out to both desktop and iOS in all of these countries except Japan.
-
-[Read more](https://techcrunch.com/2026/04/20/google-rolls-out-gemini-in-chrome-in-seven-new-countries/)
-
----
-
-### It’s not just one thing — it’s another thing
-
-This sentence construction ("It's not just this — it's that") has become so common in AI-generated writing that it's no longer just a clue that a piece of writing may be synthetic — it's almost a guarantee.
-
-[Read more](https://techcrunch.com/2026/04/20/ai-writing-its-not-just-this-its-that-barrons/)
-
----
-
-### NSA spies are reportedly using Anthropic’s Mythos, despite Pentagon feud
-
-NSA is said to be using Anthropic's restricted Mythos AI model.
-
-[Read more](https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/)
-
----
-
-### CEO and CFO suddenly depart AI nuclear power upstart Fermi
-
-The startup, co-founded by former U.S. Energy Secretary Rick Perry, has faced headwinds with its AI campus in Texas.
-
-[Read more](https://techcrunch.com/2026/04/20/fermi-ceo-and-cfo-depart-texas-nuclear-power-ai/)
-
----
-
 ## Industry
+
+### That's my designer - Claude
+
+and it comes with a new model, Opus 4.7
+
+[Read more](https://www.bensbites.com/p/thats-my-designer-claude)
+
+---
+
+### Building agent-first governance and security
+
+As AI agents increasingly work alongside humans across organizations, companies could be inadvertently opening a new attack surface. Insecure agents can be manipulated to access sensitive systems and proprietary data, increasing enterprise risk. In some modern enterprises, non-human identities (N...
+
+[Read more](https://www.technologyreview.com/2026/04/21/1136158/building-agent-first-governance-and-security/)
+
+---
 
 ### My cheatsheet for a clean context
 
 fast intelligence, managed infra and desktop apps
 
 [Read more](https://www.bensbites.com/p/my-cheatsheet-for-a-clean-context)
-
----
-
-### Big lab leaks
-
-Headless software
-
-[Read more](https://www.bensbites.com/p/big-lab-leaks)
 
 ---
 
