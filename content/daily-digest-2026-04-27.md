@@ -11,6 +11,46 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
+### Investors back Skye’s AI home screen app for iPhone ahead of launch
+
+Skye's new AI app attracted investors before it even launched — a sign of interest in a more AI-aware iPhone.
+
+[Read more](https://techcrunch.com/2026/04/27/investors-back-skye-signull-labs-ai-home-screen-app-for-iphone-ahead-of-launch/)
+
+---
+
+### OpenAI ends Microsoft legal peril over its $50B Amazon deal
+
+OpenAI has won major concessions from its largest shareholder, Microsoft, that will allow it to sell products on AWS, while Microsoft get more cash in a revenue-share agreement.
+
+[Read more](https://techcrunch.com/2026/04/27/openai-ends-microsoft-legal-peril-over-its-50b-amazon-deal/)
+
+---
+
+### DeepMind’s David Silver just raised $1.1B to build an AI that learns without human data
+
+Ineffable Intelligence, a British AI lab founded a mere few months ago by former DeepMind researcher David Silver, has raised $1.1 billion in funding at a valuation of $5.1 billion.
+
+[Read more](https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/)
+
+---
+
+### China blocks Meta’s $2B Manus deal after months-long probe
+
+China has ordered Meta to unwind its multibillion-dollar Manus acquisition, dealing a potential setback to Zuckerberg’s push into AI agents.
+
+[Read more](https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/)
+
+---
+
+### OpenAI could be making a phone with AI agents replacing apps
+
+The phone could go into mass production in 2028, an analyst says.
+
+[Read more](https://techcrunch.com/2026/04/27/openai-could-be-making-a-phone-with-ai-agents-replacing-apps/)
+
+---
+
 ### Introducing Claude Opus 4.7
 
 Our latest model, Claude Opus 4.7, is now generally available. Opus 4.7 is a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks.
@@ -51,46 +91,6 @@ NEC will deploy Claude to 30,000 employees and become Anthropic's first Japan-ba
 
 ---
 
-### To buy this Bay Area home, you’ll need Anthropic equity
-
-Someone’s offering an unusual deal for a 13-acre property in Mill Valley, just north of South Francisco.
-
-[Read more](https://techcrunch.com/2026/04/26/to-buy-this-bay-area-home-youll-need-anthropic-equity/)
-
----
-
-### OpenAI CEO apologizes to Tumbler Ridge community
-
-In a letter to the residents of Tumbler Ridge, Canada, OpenAI CEO Sam Altman said he is “deeply sorry” that his company failed to alert law enforcement about the suspect in a recent mass shooting.
-
-[Read more](https://techcrunch.com/2026/04/25/openai-ceo-apologizes-to-tumbler-ridge-community/)
-
----
-
-### Anthropic created a test marketplace for agent-on-agent commerce
-
-In a recent experiment, Anthropic created a classified marketplace where AI agents represented both buyers and sellers, striking real deals for real goods and real money.
-
-[Read more](https://techcrunch.com/2026/04/25/anthropic-created-a-test-marketplace-for-agent-on-agent-commerce/)
-
----
-
-### Maine’s governor vetoes data center moratorium
-
-L.D. 307 would have imposed the country’s first statewide moratorium on new data centers — lasting, in this case, until November 1, 2027.
-
-[Read more](https://techcrunch.com/2026/04/25/maines-governor-vetoes-data-center-moratorium/)
-
----
-
-### Why Cohere is merging with Aleph Alpha
-
-Canadian AI startup Cohere is taking over Germany-based Aleph Alpha with support from Lidl’s owner, Schwarz Group. With the blessing of their governments, the companies intend to offer a sovereign alternative to enterprises in an AI landscape dominated by American players.
-
-[Read more](https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/)
-
----
-
 ## Industry
 
 ### That's my designer - Claude
@@ -111,7 +111,7 @@ testing popular design tools
 
 ### Three reasons why DeepSeek’s new model matters
 
-On Friday, Chinese AI firm DeepSeek released a preview of V4, its long-awaited new flagship model. Notably, the model can process much longer prompts than its last generation, thanks to a new design that helps it handle large amounts of text more efficiently. Like DeepSeek’s previous models, V4 i...
+On April 24, Chinese AI firm DeepSeek released a preview of V4, its long-awaited new flagship model. The model can process much longer prompts than its last generation, thanks to a new design that helps it handle large amounts of text more efficiently. Like DeepSeek’s previous models, V4 is open...
 
 [Read more](https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/)
 

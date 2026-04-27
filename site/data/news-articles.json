@@ -1,11 +1,96 @@
 {
   "articles": [
     {
+      "title": "Investors back Skye’s AI home screen app for iPhone ahead of launch",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/27/investors-back-skye-signull-labs-ai-home-screen-app-for-iphone-ahead-of-launch/",
+      "summary": "Skye's new AI app attracted investors before it even launched — a sign of interest in a more AI-aware iPhone.",
+      "category": "Top Stories",
+      "date": "2026-04-27T00:00:00.000Z",
+      "dateString": "Monday, 27 April 2026",
+      "filename": "2026-04-27-digest.md",
+      "tags": [
+        "ai",
+        "product"
+      ],
+      "time": "Monday, 27 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "OpenAI ends Microsoft legal peril over its $50B Amazon deal",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/27/openai-ends-microsoft-legal-peril-over-its-50b-amazon-deal/",
+      "summary": "OpenAI has won major concessions from its largest shareholder, Microsoft, that will allow it to sell products on AWS, while Microsoft get more cash in a revenue-share agreement.",
+      "category": "Top Stories",
+      "date": "2026-04-27T00:00:00.000Z",
+      "dateString": "Monday, 27 April 2026",
+      "filename": "2026-04-27-digest.md",
+      "tags": [
+        "ai",
+        "regulation"
+      ],
+      "time": "Monday, 27 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "DeepMind’s David Silver just raised $1.1B to build an AI that learns without human data",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/",
+      "summary": "Ineffable Intelligence, a British AI lab founded a mere few months ago by former DeepMind researcher David Silver, has raised $1.1 billion in funding at a valuation of $5.1 billion.",
+      "category": "Top Stories",
+      "date": "2026-04-27T00:00:00.000Z",
+      "dateString": "Monday, 27 April 2026",
+      "filename": "2026-04-27-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Monday, 27 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "China blocks Meta’s $2B Manus deal after months-long probe",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/",
+      "summary": "China has ordered Meta to unwind its multibillion-dollar Manus acquisition, dealing a potential setback to Zuckerberg’s push into AI agents.",
+      "category": "Top Stories",
+      "date": "2026-04-27T00:00:00.000Z",
+      "dateString": "Monday, 27 April 2026",
+      "filename": "2026-04-27-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Monday, 27 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "OpenAI could be making a phone with AI agents replacing apps",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/27/openai-could-be-making-a-phone-with-ai-agents-replacing-apps/",
+      "summary": "The phone could go into mass production in 2028, an analyst says.",
+      "category": "Top Stories",
+      "date": "2026-04-27T00:00:00.000Z",
+      "dateString": "Monday, 27 April 2026",
+      "filename": "2026-04-27-digest.md",
+      "tags": [
+        "ai",
+        "agents"
+      ],
+      "time": "Monday, 27 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
       "title": "Introducing Claude Opus 4.7",
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/claude-opus-4-7",
       "summary": "Our latest model, Claude Opus 4.7, is now generally available. Opus 4.7 is a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks.",
-      "category": "Top Stories",
+      "category": "News",
       "date": "2026-04-27T00:00:00.000Z",
       "dateString": "Monday, 27 April 2026",
       "filename": "2026-04-27-digest.md",
@@ -22,7 +107,7 @@
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
       "summary": "Today, we’re launching Claude Design, a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.",
-      "category": "Top Stories",
+      "category": "News",
       "date": "2026-04-27T00:00:00.000Z",
       "dateString": "Monday, 27 April 2026",
       "filename": "2026-04-27-digest.md",
@@ -39,7 +124,7 @@
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
       "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
-      "category": "Top Stories",
+      "category": "News",
       "date": "2026-04-27T00:00:00.000Z",
       "dateString": "Monday, 27 April 2026",
       "filename": "2026-04-27-digest.md",
@@ -56,7 +141,7 @@
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/election-safeguards-update",
       "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
-      "category": "Top Stories",
+      "category": "News",
       "date": "2026-04-27T00:00:00.000Z",
       "dateString": "Monday, 27 April 2026",
       "filename": "2026-04-27-digest.md",
@@ -73,7 +158,7 @@
       "source": "Anthropic News",
       "url": "https://www.anthropic.com/news/anthropic-nec",
       "summary": "NEC will deploy Claude to 30,000 employees and become Anthropic's first Japan-based global partner, co-developing AI products for finance, manufacturing, and government",
-      "category": "Top Stories",
+      "category": "News",
       "date": "2026-04-27T00:00:00.000Z",
       "dateString": "Monday, 27 April 2026",
       "filename": "2026-04-27-digest.md",
@@ -150,23 +235,6 @@
         "research"
       ],
       "time": "Monday, 27 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
-      "title": "To buy this Bay Area home, you’ll need Anthropic equity",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/26/to-buy-this-bay-area-home-youll-need-anthropic-equity/",
-      "summary": "Someone’s offering an unusual deal for a 13-acre property in Mill Valley, just north of South Francisco.",
-      "category": "News",
-      "date": "2026-04-26T00:00:00.000Z",
-      "dateString": "Sunday, 26 April 2026",
-      "filename": "2026-04-27-digest.md",
-      "tags": [
-        "ai",
-        "news"
-      ],
-      "time": "Sunday, 26 April 2026",
       "imageUrl": null,
       "isNoNews": false
     },
@@ -348,74 +416,6 @@
       "category": "News",
       "date": "2026-04-25T00:00:00.000Z",
       "dateString": "Saturday, 25 April 2026",
-      "filename": "2026-04-27-digest.md",
-      "tags": [
-        "ai",
-        "news"
-      ],
-      "time": "Saturday, 25 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
-      "title": "Anthropic created a test marketplace for agent-on-agent commerce",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/25/anthropic-created-a-test-marketplace-for-agent-on-agent-commerce/",
-      "summary": "In a recent experiment, Anthropic created a classified marketplace where AI agents represented both buyers and sellers, striking real deals for real goods and real money.",
-      "category": "News",
-      "date": "2026-04-25T00:00:00.000Z",
-      "dateString": "Saturday, 25 April 2026",
-      "filename": "2026-04-27-digest.md",
-      "tags": [
-        "ai",
-        "agents"
-      ],
-      "time": "Saturday, 25 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
-      "title": "Maine’s governor vetoes data center moratorium",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/25/maines-governor-vetoes-data-center-moratorium/",
-      "summary": "L.D. 307 would have imposed the country’s first statewide moratorium on new data centers — lasting, in this case, until November 1, 2027.",
-      "category": "News",
-      "date": "2026-04-25T00:00:00.000Z",
-      "dateString": "Saturday, 25 April 2026",
-      "filename": "2026-04-27-digest.md",
-      "tags": [
-        "ai",
-        "infrastructure"
-      ],
-      "time": "Saturday, 25 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
-      "title": "Why Cohere is merging with Aleph Alpha",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/",
-      "summary": "Canadian AI startup Cohere is taking over Germany-based Aleph Alpha with support from Lidl’s owner, Schwarz Group. With the blessing of their governments, the companies intend to offer a sovereign alternative to enterprises in an AI landscape dominated by American players.",
-      "category": "News",
-      "date": "2026-04-25T00:00:00.000Z",
-      "dateString": "Saturday, 25 April 2026",
-      "filename": "2026-04-27-digest.md",
-      "tags": [
-        "ai",
-        "news"
-      ],
-      "time": "Saturday, 25 April 2026",
-      "imageUrl": null,
-      "isNoNews": false
-    },
-    {
-      "title": "OpenAI CEO apologizes to Tumbler Ridge community",
-      "source": "TechCrunch AI",
-      "url": "https://techcrunch.com/2026/04/25/openai-ceo-apologizes-to-tumbler-ridge-community/",
-      "summary": "In a letter to the residents of Tumbler Ridge, Canada, OpenAI CEO Sam Altman said he is “deeply sorry” that his company failed to alert law enforcement about the suspect in a recent mass shooting.",
-      "category": "News",
-      "date": "2026-04-25T00:00:00.000Z",
-      "dateString": "Saturday, 25 April 2026",
       "filename": "2026-04-26-digest.md",
       "tags": [
         "ai",
@@ -480,7 +480,7 @@
       "title": "Three reasons why DeepSeek’s new model matters",
       "source": "MIT Technology Review AI",
       "url": "https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/",
-      "summary": "On Friday, Chinese AI firm DeepSeek released a preview of V4, its long-awaited new flagship model. Notably, the model can process much longer prompts than its last generation, thanks to a new design that helps it handle large amounts of text more efficiently. Like DeepSeek’s previous models, V4 i...",
+      "summary": "On April 24, Chinese AI firm DeepSeek released a preview of V4, its long-awaited new flagship model. The model can process much longer prompts than its last generation, thanks to a new design that helps it handle large amounts of text more efficiently. Like DeepSeek’s previous models, V4 is open...",
       "category": "News",
       "date": "2026-04-24T00:00:00.000Z",
       "dateString": "Friday, 24 April 2026",
