@@ -1,0 +1,280 @@
+{
+  "generatedAt": "2026-04-28T06:02:00.734Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-04-28",
+  "count": 15,
+  "items": [
+    {
+      "id": "bens-bites-thats-my-designer-claude-https-www-bensbites-com-p-thats-my-designer-claude",
+      "title": "That's my designer - Claude",
+      "url": "https://www.bensbites.com/p/thats-my-designer-claude",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-28",
+      "summary": "and it comes with a new model, Opus 4.7",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source",
+        "model_release"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-28",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-chatgpts-nano-banana-https-www-bensbites-com-p-chatgpts-nano-banana",
+      "title": "ChatGPT's Nano Banana",
+      "url": "https://www.bensbites.com/p/chatgpts-nano-banana",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-04-28",
+      "summary": "testing popular design tools",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-introducing-claude-opus-4-7-https-www-anthropic-com-news-claude-opus-4-7",
+      "title": "Introducing Claude Opus 4.7",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-28",
+      "summary": "Our latest model, Claude Opus 4.7, is now generally available. Opus 4.7 is a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-introducing-claude-design-by-anthropic-labs-https-www-anthropic-com-news-claude-design-anthropic-labs",
+      "title": "Introducing Claude Design by Anthropic Labs",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-28",
+      "summary": "Today, we’re launching Claude Design, a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-claude-is-a-space-to-think-anthropic-https-www-anthropic-com-news-claude-is-a-space-to-think",
+      "title": "Claude is a space to think | Anthropic",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-28",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-anthropic-sydney-office-https-www-anthropic-com-news-theo-hourmouzis-general-manager-australia-new-zealand",
+      "title": "Anthropic Sydney office",
+      "url": "https://www.anthropic.com/news/theo-hourmouzis-general-manager-australia-new-zealand",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-28",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "research_paper"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-an-update-on-our-election-safeguards-https-www-anthropic-com-news-election-safeguards-update",
+      "title": "An update on our election safeguards",
+      "url": "https://www.anthropic.com/news/election-safeguards-update",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-28",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "research_paper"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-multiplexing-and-global-reasoning-https-ai-meta-com-blog-segment-anything-model-3",
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-28",
+      "summary": "Update March 27, 2026:",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "arxiv-cs-ai-on-the-existence-of-an-inverse-solution-for-preference-based-reductions-in-argumentation-https-arxiv-org-abs-2604-22958",
+      "title": "On the Existence of an Inverse Solution for Preference-Based Reductions in Argumentation",
+      "url": "https://arxiv.org/abs/2604.22958",
+      "source": "arXiv cs.AI",
+      "sourceId": "arxiv-cs-ai",
+      "section": "Research & Products",
+      "publishedAt": "2026-04-28",
+      "summary": "arXiv:2604.22958v1 Announce Type: new Abstract: Preference-based argumentation frameworks (PAFs) extend Dung's approach to abstract argumentation (AAFs) by encoding preferences over arguments. Such preferences control the transformation of attacks into defeats, and different approaches to doing so result in different reductions from a PAF to an AAF. In this paper we consider a PAF inverse problem which takes an argumentation graph, a labelling and a semantics as an input, and outputs a ``yes\" or ``no\" as to whether there is a preference relation between the arguments which can yield the desired labelling. This inverse problem has applications in areas including preference elicitation and explainability. We consider this problem in the context of the four most widely-used preference based reductions under the complete semantics. We show that in most cases, the problem can be answered in polynomial time.",
+      "tags": [
+        "research_paper",
+        "evaluation",
+        "reasoning",
+        "ai_agents",
+        "crypto_defi"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-investors-back-skye-s-ai-home-screen-app-for-iphone-ahead-of-launch-https-techcrunch-com-2026-04-27-investors-back-skye-signull-labs-ai-home-screen-app-for-iphone-ahead-of-launch",
+      "title": "Investors back Skye’s AI home screen app for iPhone ahead of launch",
+      "url": "https://techcrunch.com/2026/04/27/investors-back-skye-signull-labs-ai-home-screen-app-for-iphone-ahead-of-launch/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-27",
+      "summary": "Skye's new AI app attracted investors before it even launched — a sign of interest in a more AI-aware iPhone.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "model_release"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-openai-ends-microsoft-legal-peril-over-its-50b-amazon-deal-https-techcrunch-com-2026-04-27-openai-ends-microsoft-legal-peril-over-its-50b-amazon-deal",
+      "title": "OpenAI ends Microsoft legal peril over its $50B Amazon deal",
+      "url": "https://techcrunch.com/2026/04/27/openai-ends-microsoft-legal-peril-over-its-50b-amazon-deal/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-27",
+      "summary": "OpenAI has won major concessions from its largest shareholder, Microsoft, that will allow it to sell products on AWS, while Microsoft gets more cash in a revenue-share agreement.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-deepmind-s-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data-https-techcrunch-com-2026-04-27-deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data",
+      "title": "DeepMind’s David Silver just raised $1.1B to build an AI that learns without human data",
+      "url": "https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-27",
+      "summary": "Ineffable Intelligence, a British AI lab founded a mere few months ago by former DeepMind researcher David Silver, has raised $1.1 billion in funding at a valuation of $5.1 billion.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-china-blocks-meta-s-2b-manus-deal-after-months-long-probe-https-techcrunch-com-2026-04-27-china-vetoes-metas-2b-manus-deal-after-months-long-probe",
+      "title": "China blocks Meta’s $2B Manus deal after months-long probe",
+      "url": "https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-27",
+      "summary": "China has ordered Meta to unwind its multibillion-dollar Manus acquisition, dealing a potential setback to Zuckerberg’s push into AI agents.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-openai-could-be-making-a-phone-with-ai-agents-replacing-apps-https-techcrunch-com-2026-04-27-openai-could-be-making-a-phone-with-ai-agents-replacing-apps",
+      "title": "OpenAI could be making a phone with AI agents replacing apps",
+      "url": "https://techcrunch.com/2026/04/27/openai-could-be-making-a-phone-with-ai-agents-replacing-apps/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-27",
+      "summary": "There have been plenty of rumors about OpenAI's hardware plans, which involve launching a pair of earbuds. A new note from industry analyst Ming-Chi Kuo suggests that the AI company might be working on a phone in collaboration with MediaTek, Qualcomm, and Luxshare.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    }
+  ]
+}
