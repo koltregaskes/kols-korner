@@ -1,6 +1,261 @@
 {
   "articles": [
     {
+      "title": "At his OpenAI trial, Musk relitigates an old friendship",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/28/at-his-openai-trial-musk-relitigates-an-old-friendship/",
+      "summary": "It's a story Musk has told before -- in interviews and to author Walter Isaacson for his bestselling biography of Musk -- but Tuesday was the first time he said it under oath.",
+      "category": "Top Stories",
+      "date": "2026-04-29T00:00:00.000Z",
+      "dateString": "Wednesday, 29 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Wednesday, 29 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Claude Opus 4.7",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "summary": "Our latest model, Claude Opus 4.7, is now generally available. Opus 4.7 is a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks.",
+      "category": "Top Stories",
+      "date": "2026-04-29T00:00:00.000Z",
+      "dateString": "Wednesday, 29 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "models"
+      ],
+      "time": "Wednesday, 29 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Claude Design by Anthropic Labs",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "summary": "Today, we’re launching Claude Design, a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.",
+      "category": "Top Stories",
+      "date": "2026-04-29T00:00:00.000Z",
+      "dateString": "Wednesday, 29 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "models"
+      ],
+      "time": "Wednesday, 29 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude is a space to think | Anthropic",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "category": "Top Stories",
+      "date": "2026-04-29T00:00:00.000Z",
+      "dateString": "Wednesday, 29 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "models"
+      ],
+      "time": "Wednesday, 29 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Claude for Creative Work",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/claude-for-creative-work",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "Top Stories",
+      "date": "2026-04-29T00:00:00.000Z",
+      "dateString": "Wednesday, 29 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "models"
+      ],
+      "time": "Wednesday, 29 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Anthropic Sydney office",
+      "source": "Anthropic News",
+      "url": "https://www.anthropic.com/news/theo-hourmouzis-general-manager-australia-new-zealand",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "category": "News",
+      "date": "2026-04-29T00:00:00.000Z",
+      "dateString": "Wednesday, 29 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Wednesday, 29 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Builders",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/builders",
+      "summary": "GPT-5.5 is a good model",
+      "category": "News",
+      "date": "2026-04-29T00:00:00.000Z",
+      "dateString": "Wednesday, 29 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Wednesday, 29 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "ChatGPT's Nano Banana",
+      "source": "Ben's Bites",
+      "url": "https://www.bensbites.com/p/chatgpts-nano-banana",
+      "summary": "testing popular design tools",
+      "category": "News",
+      "date": "2026-04-29T00:00:00.000Z",
+      "dateString": "Wednesday, 29 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Wednesday, 29 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "category": "News",
+      "date": "2026-04-29T00:00:00.000Z",
+      "dateString": "Wednesday, 29 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Wednesday, 29 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "source": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "summary": "Update March 27, 2026:",
+      "category": "News",
+      "date": "2026-04-29T00:00:00.000Z",
+      "dateString": "Wednesday, 29 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "vision"
+      ],
+      "time": "Wednesday, 29 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "On the Existence of an Inverse Solution for Preference-Based Reductions in Argumentation",
+      "source": "arXiv cs.AI",
+      "url": "https://arxiv.org/abs/2604.22958",
+      "summary": "arXiv:2604.22958v1 Announce Type: new Abstract: Preference-based argumentation frameworks (PAFs) extend Dung's approach to abstract argumentation (AAFs) by encoding preferences over arguments. Such preferences control the transformation of attacks into defeats, and different approaches to doing s...",
+      "category": "News",
+      "date": "2026-04-29T00:00:00.000Z",
+      "dateString": "Wednesday, 29 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Wednesday, 29 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Amazon is already offering new OpenAI products on AWS",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/28/amazon-is-already-offering-new-openai-products-on-aws/",
+      "summary": "A day after OpenAI got Microsoft to agree to end exclusive rights, AWS announced a slate of OpenAI model offerings, including a new agent service.",
+      "category": "News",
+      "date": "2026-04-28T00:00:00.000Z",
+      "dateString": "Tuesday, 28 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "product"
+      ],
+      "time": "Tuesday, 28 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Amazon launches an AI-powered audio Q&A experience on product pages",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/28/amazon-launches-an-ai-powered-audio-qa-experience-on-product-pages/",
+      "summary": "Amazon's new \"Join the chat\" feature lets you ask questions about products and receive AI-powered audio responses.",
+      "category": "News",
+      "date": "2026-04-28T00:00:00.000Z",
+      "dateString": "Tuesday, 28 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "voice"
+      ],
+      "time": "Tuesday, 28 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Google expands Pentagon’s access to its AI after Anthropic’s refusal",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/",
+      "summary": "After Anthropic refused to allow the DoD to use its AI for domestic mass surveillance and autonomous weapons, Google has signed a new contract with the department.",
+      "category": "News",
+      "date": "2026-04-28T00:00:00.000Z",
+      "dateString": "Tuesday, 28 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "news"
+      ],
+      "time": "Tuesday, 28 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Lovable launches its vibe-coding app on iOS and Android",
+      "source": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/04/28/lovable-launches-its-vibe-coding-app-on-ios-and-android/",
+      "summary": "The app allows developers to vibe code web apps and websites on the go.",
+      "category": "News",
+      "date": "2026-04-28T00:00:00.000Z",
+      "dateString": "Tuesday, 28 April 2026",
+      "filename": "2026-04-29-digest.md",
+      "tags": [
+        "ai",
+        "coding"
+      ],
+      "time": "Tuesday, 28 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
       "title": "Lovable launches its vibe-coding app on iOS and Android",
       "source": "TechCrunch AI",
       "url": "https://techcrunch.com/2026/04/28/lovable-launches-its-vibe-coding-app-on-ios-and-android/",
