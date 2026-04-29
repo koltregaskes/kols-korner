@@ -11,11 +11,43 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
-### At his OpenAI trial, Musk relitigates an old friendship
+### Google Photos uses AI to make the iconic closet from ‘Clueless’ a reality
 
-It's a story Musk has told before -- in interviews and to author Walter Isaacson for his bestselling biography of Musk -- but Tuesday was the first time he said it under oath.
+Google recreates Cher's closet from "Clueless" with AI.
 
-[Read more](https://techcrunch.com/2026/04/28/at-his-openai-trial-musk-relitigates-an-old-friendship/)
+[Read more](https://techcrunch.com/2026/04/29/google-photos-uses-ai-to-make-the-iconic-closet-from-clueless-a-reality/)
+
+---
+
+### More Gemini features are coming to Google TV
+
+Google TV just got more Gemini features, including the ability to transform photos and videos with tools Nano Banana and Veo.
+
+[Read more](https://techcrunch.com/2026/04/29/more-gemini-features-are-coming-to-google-tv/)
+
+---
+
+### Firestorm Labs raises $82M to take drone factories into the field
+
+A defense startup just raised $82 million to put drone factories inside shipping containers and bring manufacturing to the front lines.
+
+[Read more](https://techcrunch.com/2026/04/29/firestorm-labs-raises-82m-to-take-drone-factories-into-the-field/)
+
+---
+
+### Meet Shapes, the app bringing humans and AI into the same group chats
+
+Think Discord chats, but with AI characters in addition to humans.
+
+[Read more](https://techcrunch.com/2026/04/29/meet-shapes-the-app-bringing-humans-and-ai-into-the-same-group-chats/)
+
+---
+
+### Colby Adcock’s Scout AI raises $100M to train its models for war: We visited its bootcamp
+
+We visited Scout AI's training ground where it's working on AI agents that can help individual soldiers control fleets of autonomous vehicles.
+
+[Read more](https://techcrunch.com/2026/04/29/coby-adcocks-scout-ai-raises-100-million-to-train-models-for-war-we-visited-its-bootcamp/)
 
 ---
 
@@ -59,38 +91,6 @@ Anthropic is an AI safety and research company that's working to build reliable,
 
 ---
 
-### Amazon is already offering new OpenAI products on AWS
-
-A day after OpenAI got Microsoft to agree to end exclusive rights, AWS announced a slate of OpenAI model offerings, including a new agent service.
-
-[Read more](https://techcrunch.com/2026/04/28/amazon-is-already-offering-new-openai-products-on-aws/)
-
----
-
-### Amazon launches an AI-powered audio Q&A experience on product pages
-
-Amazon's new "Join the chat" feature lets you ask questions about products and receive AI-powered audio responses.
-
-[Read more](https://techcrunch.com/2026/04/28/amazon-launches-an-ai-powered-audio-qa-experience-on-product-pages/)
-
----
-
-### Google expands Pentagon’s access to its AI after Anthropic’s refusal
-
-After Anthropic refused to allow the DoD to use its AI for domestic mass surveillance and autonomous weapons, Google has signed a new contract with the department.
-
-[Read more](https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/)
-
----
-
-### Lovable launches its vibe-coding app on iOS and Android
-
-The app allows developers to vibe code web apps and websites on the go.
-
-[Read more](https://techcrunch.com/2026/04/28/lovable-launches-its-vibe-coding-app-on-ios-and-android/)
-
----
-
 ## Industry
 
 ### Builders
@@ -127,11 +127,9 @@ Update March 27, 2026:
 
 ---
 
-### On the Existence of an Inverse Solution for Preference-Based Reductions in Argumentation
+### AI evals are becoming the new compute bottleneck
 
-arXiv:2604.22958v1 Announce Type: new Abstract: Preference-based argumentation frameworks (PAFs) extend Dung's approach to abstract argumentation (AAFs) by encoding preferences over arguments. Such preferences control the transformation of attacks into defeats, and different approaches to doing s...
-
-[Read more](https://arxiv.org/abs/2604.22958)
+[Read more](https://huggingface.co/blog/evaleval/eval-costs-bottleneck)
 
 ---
 

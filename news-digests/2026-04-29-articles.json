@@ -1,25 +1,98 @@
 {
-  "generatedAt": "2026-04-29T06:01:57.535Z",
+  "generatedAt": "2026-04-29T18:01:02.750Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-04-29",
   "count": 15,
   "items": [
     {
-      "id": "techcrunch-ai-at-his-openai-trial-musk-relitigates-an-old-friendship-https-techcrunch-com-2026-04-28-at-his-openai-trial-musk-relitigates-an-old-friendship",
-      "title": "At his OpenAI trial, Musk relitigates an old friendship",
-      "url": "https://techcrunch.com/2026/04/28/at-his-openai-trial-musk-relitigates-an-old-friendship/",
+      "id": "techcrunch-ai-google-photos-uses-ai-to-make-the-iconic-closet-from-clueless-a-reality-https-techcrunch-com-2026-04-29-google-photos-uses-ai-to-make-the-iconic-closet-from-clueless-a-reality",
+      "title": "Google Photos uses AI to make the iconic closet from ‘Clueless’ a reality",
+      "url": "https://techcrunch.com/2026/04/29/google-photos-uses-ai-to-make-the-iconic-closet-from-clueless-a-reality/",
       "source": "TechCrunch AI",
       "sourceId": "techcrunch-ai",
       "section": "Top Stories",
       "publishedAt": "2026-04-29",
-      "summary": "It's a story Musk has told before -- in interviews and to author Walter Isaacson for his bestselling biography of Musk -- but Tuesday was the first time he said it under oath.",
+      "summary": "Google recreates Cher's closet from \"Clueless\" with AI.",
       "tags": [
         "announcement",
         "product_launch",
         "funding",
         "acquisition",
         "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-more-gemini-features-are-coming-to-google-tv-https-techcrunch-com-2026-04-29-more-gemini-features-are-coming-to-google-tv",
+      "title": "More Gemini features are coming to Google TV",
+      "url": "https://techcrunch.com/2026/04/29/more-gemini-features-are-coming-to-google-tv/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-29",
+      "summary": "Google TV just got more Gemini features, including the ability to transform photos and videos with tools Nano Banana and Veo.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-firestorm-labs-raises-82m-to-take-drone-factories-into-the-field-https-techcrunch-com-2026-04-29-firestorm-labs-raises-82m-to-take-drone-factories-into-the-field",
+      "title": "Firestorm Labs raises $82M to take drone factories into the field",
+      "url": "https://techcrunch.com/2026/04/29/firestorm-labs-raises-82m-to-take-drone-factories-into-the-field/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-29",
+      "summary": "A defense startup just raised $82 million to put drone factories inside shipping containers and bring manufacturing to the front lines.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-meet-shapes-the-app-bringing-humans-and-ai-into-the-same-group-chats-https-techcrunch-com-2026-04-29-meet-shapes-the-app-bringing-humans-and-ai-into-the-same-group-chats",
+      "title": "Meet Shapes, the app bringing humans and AI into the same group chats",
+      "url": "https://techcrunch.com/2026/04/29/meet-shapes-the-app-bringing-humans-and-ai-into-the-same-group-chats/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-29",
+      "summary": "Think Discord chats, but with AI characters in addition to humans.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-colby-adcock-s-scout-ai-raises-100m-to-train-its-models-for-war-we-visited-its-bootcamp-https-techcrunch-com-2026-04-29-coby-adcocks-scout-ai-raises-100-million-to-train-models-for-war-we-visited-its-bootcamp",
+      "title": "Colby Adcock’s Scout AI raises $100M to train its models for war: We visited its bootcamp",
+      "url": "https://techcrunch.com/2026/04/29/coby-adcocks-scout-ai-raises-100-million-to-train-models-for-war-we-visited-its-bootcamp/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-29",
+      "summary": "We visited Scout AI's training ground where it's working on AI agents that can help individual soldiers control fleets of autonomous vehicles.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "autonomous_systems"
       ],
       "adapter": "rss"
     },
@@ -187,93 +260,21 @@
       "adapter": "html"
     },
     {
-      "id": "arxiv-cs-ai-on-the-existence-of-an-inverse-solution-for-preference-based-reductions-in-argumentation-https-arxiv-org-abs-2604-22958",
-      "title": "On the Existence of an Inverse Solution for Preference-Based Reductions in Argumentation",
-      "url": "https://arxiv.org/abs/2604.22958",
-      "source": "arXiv cs.AI",
-      "sourceId": "arxiv-cs-ai",
+      "id": "hugging-face-blog-ai-evals-are-becoming-the-new-compute-bottleneck-https-huggingface-co-blog-evaleval-eval-costs-bottleneck",
+      "title": "AI evals are becoming the new compute bottleneck",
+      "url": "https://huggingface.co/blog/evaleval/eval-costs-bottleneck",
+      "source": "Hugging Face Blog",
+      "sourceId": "hugging-face-blog",
       "section": "Research & Products",
       "publishedAt": "2026-04-29",
-      "summary": "arXiv:2604.22958v1 Announce Type: new Abstract: Preference-based argumentation frameworks (PAFs) extend Dung's approach to abstract argumentation (AAFs) by encoding preferences over arguments. Such preferences control the transformation of attacks into defeats, and different approaches to doing so result in different reductions from a PAF to an AAF. In this paper we consider a PAF inverse problem which takes an argumentation graph, a labelling and a semantics as an input, and outputs a ``yes\" or ``no\" as to whether there is a preference relation between the arguments which can yield the desired labelling. This inverse problem has applications in areas including preference elicitation and explainability. We consider this problem in the context of the four most widely-used preference based reductions under the complete semantics. We show that in most cases, the problem can be answered in polynomial time.",
+      "summary": "",
       "tags": [
-        "research_paper",
+        "open_source",
+        "model_release",
+        "tool_use",
+        "agentic_framework",
         "evaluation",
-        "reasoning",
-        "ai_agents",
-        "crypto_defi"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-amazon-is-already-offering-new-openai-products-on-aws-https-techcrunch-com-2026-04-28-amazon-is-already-offering-new-openai-products-on-aws",
-      "title": "Amazon is already offering new OpenAI products on AWS",
-      "url": "https://techcrunch.com/2026/04/28/amazon-is-already-offering-new-openai-products-on-aws/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-28",
-      "summary": "A day after OpenAI got Microsoft to agree to end exclusive rights, AWS announced a slate of OpenAI model offerings, including a new agent service.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-amazon-launches-an-ai-powered-audio-q-a-experience-on-product-pages-https-techcrunch-com-2026-04-28-amazon-launches-an-ai-powered-audio-qa-experience-on-product-pages",
-      "title": "Amazon launches an AI-powered audio Q&A experience on product pages",
-      "url": "https://techcrunch.com/2026/04/28/amazon-launches-an-ai-powered-audio-qa-experience-on-product-pages/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-28",
-      "summary": "Amazon's new \"Join the chat\" feature lets you ask questions about products and receive AI-powered audio responses.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-google-expands-pentagon-s-access-to-its-ai-after-anthropic-s-refusal-https-techcrunch-com-2026-04-28-google-expands-pentagons-access-to-its-ai-after-anthropics-refusal",
-      "title": "Google expands Pentagon’s access to its AI after Anthropic’s refusal",
-      "url": "https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-28",
-      "summary": "After Anthropic refused to allow the DoD to use its AI for domestic mass surveillance and autonomous weapons, Google has signed a new contract with the department.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move",
-        "autonomous_systems"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-lovable-launches-its-vibe-coding-app-on-ios-and-android-https-techcrunch-com-2026-04-28-lovable-launches-its-vibe-coding-app-on-ios-and-android",
-      "title": "Lovable launches its vibe-coding app on iOS and Android",
-      "url": "https://techcrunch.com/2026/04/28/lovable-launches-its-vibe-coding-app-on-ios-and-android/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-28",
-      "summary": "The app allows developers to vibe code web apps and websites on the go.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
+        "hardware"
       ],
       "adapter": "rss"
     }
