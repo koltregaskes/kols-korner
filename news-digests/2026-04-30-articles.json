@@ -1,19 +1,38 @@
 {
-  "generatedAt": "2026-04-30T06:20:46.605Z",
+  "generatedAt": "2026-04-30T18:11:13.730Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-04-30",
   "count": 15,
   "items": [
     {
-      "id": "techcrunch-ai-softbank-is-creating-a-robotics-company-that-builds-data-centers-and-already-eyeing-a-100b-ipo-https-techcrunch-com-2026-04-29-softbank-is-creating-a-robotics-company-that-builds-data-centers-and-already-eyeing-a-100b-ipo",
-      "title": "SoftBank is creating a robotics company that builds data centers — and already eyeing a $100B IPO",
-      "url": "https://techcrunch.com/2026/04/29/softbank-is-creating-a-robotics-company-that-builds-data-centers-and-already-eyeing-a-100b-ipo/",
+      "id": "techcrunch-ai-salesforce-is-crowdsourcing-its-ai-roadmap-with-customers-https-techcrunch-com-2026-04-30-salesforce-is-crowdsourcing-its-ai-roadmap-with-customers",
+      "title": "Salesforce is crowdsourcing its AI roadmap — with customers",
+      "url": "https://techcrunch.com/2026/04/30/salesforce-is-crowdsourcing-its-ai-roadmap-with-customers/",
       "source": "TechCrunch AI",
       "sourceId": "techcrunch-ai",
       "section": "Top Stories",
       "publishedAt": "2026-04-30",
-      "summary": "You need infrastructure to build AI a and robots, but apparently you also need AI and robots to build infrastructure.",
+      "summary": "Salesforce lets its customers lead its product roadmap with the thinking that if one enterprise customer has a problem, the others likely do too.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "reasoning"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-elon-musk-testifies-that-xai-trained-grok-on-openai-models-https-techcrunch-com-2026-04-30-elon-musk-testifies-that-xai-trained-grok-on-openai-models",
+      "title": "Elon Musk testifies that xAI trained Grok on OpenAI models",
+      "url": "https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-30",
+      "summary": "\"Distillation\" is a hot topic as frontier labs try to prevent smaller competitors from copying their models.",
       "tags": [
         "announcement",
         "product_launch",
@@ -24,14 +43,14 @@
       "adapter": "rss"
     },
     {
-      "id": "techcrunch-ai-amazon-s-cloud-business-is-surging-and-so-is-its-capital-spending-https-techcrunch-com-2026-04-29-amazons-cloud-business-is-surging-and-so-is-its-capital-spending",
-      "title": "Amazon’s cloud business is surging — and so is its capital spending",
-      "url": "https://techcrunch.com/2026/04/29/amazons-cloud-business-is-surging-and-so-is-its-capital-spending/",
+      "id": "techcrunch-ai-fda-approval-fundraising-and-the-reality-of-building-in-healthcare-according-to-bioticsai-founder-https-techcrunch-com-2026-04-30-fda-approval-fundraising-and-the-reality-of-building-in-healthcare-according-to-bioticsai-founder",
+      "title": "FDA approval, fundraising, and the reality of building in healthcare according to BioticsAI founder",
+      "url": "https://techcrunch.com/2026/04/30/fda-approval-fundraising-and-the-reality-of-building-in-healthcare-according-to-bioticsai-founder/",
       "source": "TechCrunch AI",
       "sourceId": "techcrunch-ai",
       "section": "Top Stories",
       "publishedAt": "2026-04-30",
-      "summary": "The e-commerce giant is making more money than expected from AWS but it's also spending a lot, and will continue to do so in the near term, its chief executive said.",
+      "summary": "BioticsAI CEO Robhy Bustami joined Isabelle Johannessen on Build Mode to discuss how the company has navigated a highly regulated space and kept the team motivated while cutting through all the red tape.",
       "tags": [
         "announcement",
         "product_launch",
@@ -42,20 +61,39 @@
       "adapter": "rss"
     },
     {
-      "id": "techcrunch-ai-sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b-https-techcrunch-com-2026-04-29-sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b",
-      "title": "Sources: Anthropic could raise a new $50B round at a valuation of $900B",
-      "url": "https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/",
+      "id": "techcrunch-ai-google-s-gemini-ai-assistant-is-hitting-the-road-in-millions-of-vehicles-https-techcrunch-com-2026-04-30-googles-gemini-ai-assistant-is-hitting-the-road-in-millions-of-vehicles",
+      "title": "Google’s Gemini AI assistant is hitting the road in millions of vehicles",
+      "url": "https://techcrunch.com/2026/04/30/googles-gemini-ai-assistant-is-hitting-the-road-in-millions-of-vehicles/",
       "source": "TechCrunch AI",
       "sourceId": "techcrunch-ai",
       "section": "Top Stories",
       "publishedAt": "2026-04-30",
-      "summary": "The maker of Claude has received multiple pre-emptive offers at valuations in the $850 billion to $900 billion range, according to sources familiar with the matter.",
+      "summary": "Google announced on Thursday that it will begin rolling out Gemini to cars with Google built-in, marking a significant upgrade from the current Google Assistant. The move signals Google’s push to bring more advanced, conversational AI into the driving experience. The announcement follows closely behind news from General Motors, which revealed yesterday that Gemini is […]",
       "tags": [
         "announcement",
         "product_launch",
         "funding",
         "acquisition",
         "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-stripe-introduces-link-a-digital-wallet-that-autonomous-ai-agents-can-use-too-https-techcrunch-com-2026-04-30-stripe-link-digital-wallet-ai-agents-shopping",
+      "title": "Stripe introduces Link, a digital wallet that autonomous AI agents can use, too",
+      "url": "https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-04-30",
+      "summary": "Link lets users connect cards, banks, and subscriptions, then authorize AI agents to spend securely via approval flows.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "autonomous_systems"
       ],
       "adapter": "rss"
     },
@@ -121,19 +159,36 @@
       "adapter": "rss"
     },
     {
-      "id": "bens-bites-chatgpts-nano-banana-https-www-bensbites-com-p-chatgpts-nano-banana",
-      "title": "ChatGPT's Nano Banana",
-      "url": "https://www.bensbites.com/p/chatgpts-nano-banana",
+      "id": "bens-bites-building-gets-easier-https-www-bensbites-com-p-building-gets-easier",
+      "title": "Building gets easier",
+      "url": "https://www.bensbites.com/p/building-gets-easier",
       "source": "Ben's Bites",
       "sourceId": "bens-bites",
       "section": "Industry",
       "publishedAt": "2026-04-30",
-      "summary": "testing popular design tools",
+      "summary": "My tool stack is changing",
       "tags": [
         "announcement",
         "product_launch",
         "industry_move",
         "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "ars-technica-ai-the-hidden-cost-of-googles-ai-defaults-and-the-illusion-of-choice-https-arstechnica-com-ai-2026-04-googles-privacy-maze-how-gemini-traps-you-and-your-data",
+      "title": "The hidden cost of Google's AI defaults and the illusion of choice",
+      "url": "https://arstechnica.com/ai/2026/04/googles-privacy-maze-how-gemini-traps-you-and-your-data/",
+      "source": "Ars Technica AI",
+      "sourceId": "ars-technica-ai",
+      "section": "Industry",
+      "publishedAt": "2026-04-30",
+      "summary": "Google says it respects user privacy in AI, but the reality is not so black and white.",
+      "tags": [
+        "research_paper",
+        "open_source",
+        "hardware",
+        "policy"
       ],
       "adapter": "html"
     },
@@ -224,60 +279,6 @@
         "research_paper"
       ],
       "adapter": "html"
-    },
-    {
-      "id": "meta-ai-blog-sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-multiplexing-and-global-reasoning-https-ai-meta-com-blog-segment-anything-model-3",
-      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
-      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
-      "source": "Meta AI Blog",
-      "sourceId": "meta-ai-blog",
-      "section": "Research & Products",
-      "publishedAt": "2026-04-30",
-      "summary": "Update March 27, 2026:",
-      "tags": [
-        "research_paper",
-        "model_release",
-        "open_source",
-        "architecture",
-        "reasoning"
-      ],
-      "adapter": "html"
-    },
-    {
-      "id": "techcrunch-ai-on-the-stand-elon-musk-can-t-escape-his-own-tweets-https-techcrunch-com-2026-04-29-on-the-stand-elon-musk-cant-escape-his-own-tweets",
-      "title": "On the stand, Elon Musk can’t escape his own tweets",
-      "url": "https://techcrunch.com/2026/04/29/on-the-stand-elon-musk-cant-escape-his-own-tweets/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-29",
-      "summary": "Elon Musk took the stand for the second day for his attempt to legally dismantle OpenAI.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-meta-is-still-burning-money-on-ar-vr-https-techcrunch-com-2026-04-29-meta-is-still-burning-money-on-ar-vr",
-      "title": "Meta is still burning money on AR/VR",
-      "url": "https://techcrunch.com/2026/04/29/meta-is-still-burning-money-on-ar-vr/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-04-29",
-      "summary": "Meta is losing billions on Reality Labs each quarter, and its AI expenditures are only going to increase its spending.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
     }
   ]
 }

@@ -11,27 +11,43 @@ Welcome to today's roundup of the most interesting developments in AI and techno
 
 ## Top Stories
 
-### SoftBank is creating a robotics company that builds data centers — and already eyeing a $100B IPO
+### Salesforce is crowdsourcing its AI roadmap — with customers
 
-You need infrastructure to build AI a and robots, but apparently you also need AI and robots to build infrastructure.
+Salesforce lets its customers lead its product roadmap with the thinking that if one enterprise customer has a problem, the others likely do too.
 
-[Read more](https://techcrunch.com/2026/04/29/softbank-is-creating-a-robotics-company-that-builds-data-centers-and-already-eyeing-a-100b-ipo/)
-
----
-
-### Amazon’s cloud business is surging — and so is its capital spending
-
-The e-commerce giant is making more money than expected from AWS but it's also spending a lot, and will continue to do so in the near term, its chief executive said.
-
-[Read more](https://techcrunch.com/2026/04/29/amazons-cloud-business-is-surging-and-so-is-its-capital-spending/)
+[Read more](https://techcrunch.com/2026/04/30/salesforce-is-crowdsourcing-its-ai-roadmap-with-customers/)
 
 ---
 
-### Sources: Anthropic could raise a new $50B round at a valuation of $900B
+### Elon Musk testifies that xAI trained Grok on OpenAI models
 
-The maker of Claude has received multiple pre-emptive offers at valuations in the $850 billion to $900 billion range, according to sources familiar with the matter.
+"Distillation" is a hot topic as frontier labs try to prevent smaller competitors from copying their models.
 
-[Read more](https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/)
+[Read more](https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/)
+
+---
+
+### FDA approval, fundraising, and the reality of building in healthcare according to BioticsAI founder
+
+BioticsAI CEO Robhy Bustami joined Isabelle Johannessen on Build Mode to discuss how the company has navigated a highly regulated space and kept the team motivated while cutting through all the red tape.
+
+[Read more](https://techcrunch.com/2026/04/30/fda-approval-fundraising-and-the-reality-of-building-in-healthcare-according-to-bioticsai-founder/)
+
+---
+
+### Google’s Gemini AI assistant is hitting the road in millions of vehicles
+
+Google announced on Thursday that it will begin rolling out Gemini to cars with Google built-in, marking a significant upgrade from the current Google Assistant. The move signals Google’s push to bring more advanced, conversational AI into the driving experience. The announcement follows closely...
+
+[Read more](https://techcrunch.com/2026/04/30/googles-gemini-ai-assistant-is-hitting-the-road-in-millions-of-vehicles/)
+
+---
+
+### Stripe introduces Link, a digital wallet that autonomous AI agents can use, too
+
+Link lets users connect cards, banks, and subscriptions, then authorize AI agents to spend securely via approval flows.
+
+[Read more](https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping/)
 
 ---
 
@@ -75,22 +91,6 @@ Anthropic is an AI safety and research company that's working to build reliable,
 
 ---
 
-### On the stand, Elon Musk can’t escape his own tweets
-
-Elon Musk took the stand for the second day for his attempt to legally dismantle OpenAI.
-
-[Read more](https://techcrunch.com/2026/04/29/on-the-stand-elon-musk-cant-escape-his-own-tweets/)
-
----
-
-### Meta is still burning money on AR/VR
-
-Meta is losing billions on Reality Labs each quarter, and its AI expenditures are only going to increase its spending.
-
-[Read more](https://techcrunch.com/2026/04/29/meta-is-still-burning-money-on-ar-vr/)
-
----
-
 ## Industry
 
 ### Builders
@@ -101,11 +101,19 @@ GPT-5.5 is a good model
 
 ---
 
-### ChatGPT's Nano Banana
+### Building gets easier
 
-testing popular design tools
+My tool stack is changing
 
-[Read more](https://www.bensbites.com/p/chatgpts-nano-banana)
+[Read more](https://www.bensbites.com/p/building-gets-easier)
+
+---
+
+### The hidden cost of Google's AI defaults and the illusion of choice
+
+Google says it respects user privacy in AI, but the reality is not so black and white.
+
+[Read more](https://arstechnica.com/ai/2026/04/googles-privacy-maze-how-gemini-traps-you-and-your-data/)
 
 ---
 
@@ -124,14 +132,6 @@ Today, we’re excited to introduce Muse Spark, the first in the Muse family of 
 arXiv:2604.26091v1 Announce Type: new Abstract: We study reliability in autonomous language-model agents that translate user mandates into validated tool actions under real capital. The setting is DX Terminal Pro, a 21-day deployment in which 3,505 user-funded agents traded real ETH in a bounded...
 
 [Read more](https://arxiv.org/abs/2604.26091)
-
----
-
-### SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning
-
-Update March 27, 2026:
-
-[Read more](https://ai.meta.com/blog/segment-anything-model-3/)
 
 ---
 
