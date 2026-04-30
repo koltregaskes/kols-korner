@@ -5,9 +5,19 @@
     <link>https://koltregaskes.github.io/kols-korner</link>
     <description>Tech, AI, Development &amp; More by Kol Tregaskes</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 29 Apr 2026 18:01:32 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 06:50:31 GMT</lastBuildDate>
     <atom:link href="https://koltregaskes.github.io/kols-korner/feed.xml" rel="self" type="application/rss+xml"/>
     
+    <item>
+      <title>Daily Digest: Thursday, 30 April 2026</title>
+      <link>https://koltregaskes.github.io/kols-korner/posts/2026-04-30/</link>
+      <guid isPermaLink="true">https://koltregaskes.github.io/kols-korner/posts/2026-04-30/</guid>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Thursday, 30 April 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+    </item>
     <item>
       <title>Daily Digest: Wednesday, 29 April 2026</title>
       <link>https://koltregaskes.github.io/kols-korner/posts/2026-04-29/</link>
@@ -194,16 +204,6 @@
       <guid isPermaLink="true">https://koltregaskes.github.io/kols-korner/posts/2026-03-26/</guid>
       <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
       <description>AI and technology news digest for Thursday, 26 March 2026</description>
-      <category>ai</category>
-      <category>news</category>
-      <category>digest</category>
-    </item>
-    <item>
-      <title>Daily Digest: Wednesday, 25 March 2026</title>
-      <link>https://koltregaskes.github.io/kols-korner/posts/2026-03-25/</link>
-      <guid isPermaLink="true">https://koltregaskes.github.io/kols-korner/posts/2026-03-25/</guid>
-      <pubDate>Wed, 25 Mar 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Wednesday, 25 March 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
