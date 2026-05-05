@@ -14,16 +14,20 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
+  <link rel="canonical" href="https://koltregaskes.com/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+  <link rel="icon" href="./favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="site-header">
     <div class="header-content">
       <a href="./" class="site-logo">
@@ -37,7 +41,7 @@
           <span></span>
         </button>
       </div>
-      <nav class="site-nav" id="site-nav-links">
+      <nav class="site-nav" id="site-nav-links" aria-label="Primary">
         <a href="./posts/">Posts</a>
         <a href="./news/">News</a>
         <a href="./tags/">Tags</a>
@@ -48,43 +52,73 @@
     </div>
   </header>
 
-  <main class="home-main">
-    <section class="home-hero fade-in-up">
-      <div class="home-shell home-hero-grid">
-        <div class="home-hero-copy">
-          <p class="home-kicker">Daily AI creator buddy</p>
-          <h1 class="home-hero-title">A sharper front page for daily AI news, grounded commentary, and the projects behind the work.</h1>
-          <p class="home-hero-text">Kol's Korner is an editorial desk for the signal: quick daily news, proper opinion when it matters, and the wider creative ecosystem around the work.</p>
-          <div class="home-hero-actions">
-            <a href="./news/" class="button-primary">Open today's news</a>
-            <a href="./posts/" class="button-secondary">Read the latest posts</a>
-          </div>
-        </div>
-        <aside class="home-hero-panel">
+  <main class="home-main" id="main-content">
+    <!-- Column-led homepage (DESIGN.md 2026-05-02): latest post in serif on the left,
+         shelf of recent posts on the right. No marketing hero. The latest post IS the hero. -->
+    <section class="home-column-lead">
+      <div class="home-shell home-column-grid">
 
-          <p class="home-panel-label">Lead story</p>
-          <a href="./posts/california-just-told-grok-to-stop-making-deepfake-porn/" class="home-panel-story">
+        <article class="home-lead-column">
+          <p class="home-lead-kicker">
+            <span>24 Feb 2026</span>
+            <span class="meta-sep">&bull;</span>
+            <span>2 min read</span>
+          </p>
+          <h1 class="home-lead-title">
+            <a href="./posts/california-just-told-grok-to-stop-making-deepfake-porn/">California Just Told Grok to Stop Making Deepfake Porn</a>
+          </h1>
+          <p class="home-lead-excerpt"><span class="home-lead-dropcap">C</span>alifornia&#039;s new law targets AI-generated deepfake pornography - and xAI&#039;s Grok is the first major model caught in the crosshairs.</p>
+          <p class="home-lead-readmore">
+            <a href="./posts/california-just-told-grok-to-stop-making-deepfake-porn/">Read the dispatch &rarr;</a>
+          </p>
+        </article>
 
-            <div class="home-panel-media">
-              <img src="./media/california-just-told-grok-to-stop-making-deepfake-porn.png" alt="California Just Told Grok to Stop Making Deepfake Porn" loading="lazy" decoding="async" width="3808" height="1280" />
-            </div>
-            <div class="home-panel-story-copy">
-              <h2>California Just Told Grok to Stop Making Deepfake Porn</h2>
-              <p>California&#039;s new law targets AI-generated deepfake pornography - and xAI&#039;s Grok is the first major model caught in the crosshairs.</p>
-              <div class="home-panel-meta">
-                <span>24 Feb 2026</span>
-                <span class="meta-sep">&bull;</span>
-                <span>2 min read</span>
-              </div>
-            </div>
-          </a>
+        <aside class="home-shelf" aria-label="Recent posts and news">
+          <p class="home-shelf-label">More from the column</p>
+          <ul class="home-shelf-list">
 
+            <li class="home-shelf-item">
+              <a href="./posts/elon-musk-merges-spacex-and-xai-because-of-course-he-does/" class="home-shelf-link">
+                <span class="home-shelf-date">22 Feb</span>
+                <span class="home-shelf-title">Elon Musk Merges SpaceX and xAI Because Of Course He Does</span>
+              </a>
+            </li>
+            <li class="home-shelf-item">
+              <a href="./posts/nasas-mars-rover-just-got-smarter-than-its-engineers/" class="home-shelf-link">
+                <span class="home-shelf-date">20 Feb</span>
+                <span class="home-shelf-title">NASA&#039;s Mars Rover Just Got Smarter Than Its Engineers</span>
+              </a>
+            </li>
+            <li class="home-shelf-item">
+              <a href="./posts/jpmorgan-drops-30-billion-on-ai-infrastructure/" class="home-shelf-link">
+                <span class="home-shelf-date">18 Feb</span>
+                <span class="home-shelf-title">JPMorgan Drops $30 Billion on AI Infrastructure</span>
+              </a>
+            </li>
+            <li class="home-shelf-item">
+              <a href="./posts/ai-can-now-predict-diseases-from-how-you-sleep/" class="home-shelf-link">
+                <span class="home-shelf-date">16 Feb</span>
+                <span class="home-shelf-title">AI Can Now Predict Diseases From How You Sleep</span>
+              </a>
+            </li>
+            <li class="home-shelf-item">
+              <a href="./posts/ais-efficiency-promise-has-a-catch-you/" class="home-shelf-link">
+                <span class="home-shelf-date">12 Feb</span>
+                <span class="home-shelf-title">AI&#039;s Efficiency Promise Has a Catch - You</span>
+              </a>
+            </li>
+            <li class="home-shelf-item">
+              <a href="./posts/welcome-to-kols-korner/" class="home-shelf-link">
+                <span class="home-shelf-date">10 Feb</span>
+                <span class="home-shelf-title">Welcome to Kol&#039;s Korner</span>
+              </a>
+            </li>
+          </ul>
 
-          <div class="home-panel-digest">
-            <p class="home-panel-label">News desk</p>
-            <strong>Freshly updated for Thursday 30 April</strong>
-            <p>5 featured links are ready to browse without trawling the full archive.</p>
-            <a href="./news/">Open the live news page</a>
+          <div class="home-shelf-news">
+            <p class="home-shelf-label">News desk</p>
+            <p class="home-shelf-news-meta">Monday 4 May &bull; 5 stories</p>
+            <a href="./news/" class="home-shelf-news-link">Open the live news page &rarr;</a>
           </div>
 
         </aside>
@@ -96,7 +130,7 @@
       <div class="home-shell">
         <div class="home-section-heading">
           <div>
-            <p class="section-eyebrow">Today's briefing</p>
+            <p class="section-eyebrow">Latest briefing</p>
             <h2>The five stories worth opening first</h2>
           </div>
           <a href="./news/" class="section-link">View the full news archive</a>
@@ -106,51 +140,51 @@
           <article class="home-news-card">
             <a href="./news/" class="home-news-link">
               <div class="home-news-meta">
-                <span>30 Apr</span>
-                <span>TechCrunch AI</span>
+                <span>4 May</span>
+                <span>Aligned News (Scoble)</span>
               </div>
-              <h3>Salesforce is crowdsourcing its AI roadmap — with customers</h3>
-              <p>Salesforce lets its customers lead its product roadmap with the thinking that if one enterprise customer has a problem, the others likely do too.</p>
+              <h3>GPT-6 Is in Alignment at Stargate</h3>
+              <p>GPT-6 completed pre-training at Stargate with 92.5% math reasoning and 96.8% code generation, now in safety alignment as OpenAI renames its division to AGI Deployment.</p>
             </a>
           </article>
           <article class="home-news-card">
             <a href="./news/" class="home-news-link">
               <div class="home-news-meta">
-                <span>30 Apr</span>
-                <span>TechCrunch AI</span>
+                <span>4 May</span>
+                <span>Longevity Technology</span>
               </div>
-              <h3>Elon Musk testifies that xAI trained Grok on OpenAI models</h3>
-              <p>&quot;Distillation&quot; is a hot topic as frontier labs try to prevent smaller competitors from copying their models.</p>
+              <h3>LifespanningRx launches partner program for peptide therapy</h3>
+              <p>LifespanningRx launched a Partner Program that enables clinics, wellness practices, personal trainers, medspas, recovery centers and performance brands to offer clinician-guided peptide programs without managing inventory, prescriptions, fulfillment or regulatory complexity. According to the company, the program provides licensed U.S.-based clinicians for evaluations and prescriptions where appropriate, pharmacy fulfillment with direct-to-patient shipping, no inventory to [&amp;#8230;] The post LifespanningRx launches partner program for peptide therapy appeared first on Longevity.Technology .</p>
             </a>
           </article>
           <article class="home-news-card">
             <a href="./news/" class="home-news-link">
               <div class="home-news-meta">
-                <span>30 Apr</span>
-                <span>TechCrunch AI</span>
+                <span>3 May</span>
+                <span>Aligned News (Scoble)</span>
               </div>
-              <h3>FDA approval, fundraising, and the reality of building in healthcare according to BioticsAI founder</h3>
-              <p>BioticsAI CEO Robhy Bustami joined Isabelle Johannessen on Build Mode to discuss how the company has navigated a highly regulated space and kept the team motivated while cutting through all the red tape.</p>
+              <h3>Hermes Agent Hit 100K GitHub Stars — The Fastest-Growing Open-Source AI Agent Has Won the Community</h3>
+              <p>Braygent argues Hermes Agent&#039;s 100K GitHub stars represent a clear developer community vote for reliability over feature velocity, with implications for how all AI developer tools should prioritize update stability.</p>
             </a>
           </article>
           <article class="home-news-card">
             <a href="./news/" class="home-news-link">
               <div class="home-news-meta">
-                <span>30 Apr</span>
-                <span>TechCrunch AI</span>
+                <span>3 May</span>
+                <span>Reddit r/StableDiffusion</span>
               </div>
-              <h3>Google’s Gemini AI assistant is hitting the road in millions of vehicles</h3>
-              <p>Google announced on Thursday that it will begin rolling out Gemini to cars with Google built-in, marking a significant upgrade from the current Google Assistant. The move signals Google’s push to bring more advanced, conversational AI into the driving experience. The announcement follows closely...</p>
+              <h3>Best Local Vision-Language Models?</h3>
+              <p>What are in your opinion the best local vision models to get a good despription of picture for a 16 GB GPU? At the moment I use qwen3 vl 8b thinking q8 but I wonder, if there is a better model around? Often the models is not really to recognize the right kind of clothes and background.</p>
             </a>
           </article>
           <article class="home-news-card">
             <a href="./news/" class="home-news-link">
               <div class="home-news-meta">
-                <span>30 Apr</span>
-                <span>TechCrunch AI</span>
+                <span>3 May</span>
+                <span>Reddit r/ClaudeAI</span>
               </div>
-              <h3>Stripe introduces Link, a digital wallet that autonomous AI agents can use, too</h3>
-              <p>Link lets users connect cards, banks, and subscriptions, then authorize AI agents to spend securely via approval flows.</p>
+              <h3>How have you used Claude skills and integrations to achieve meaningful productivity increases at a dev org level?</h3>
+              <p>I have been tasked with doing just that.</p>
             </a>
           </article>
         </div>
@@ -225,7 +259,7 @@
         </div>
         <div class="home-project-grid">
 
-          <a href="https://theairesourcehub.com/" class="home-project-card" target="_blank" rel="noopener">
+          <a href="https://airesourcehub.com/" class="home-project-card" target="_blank" rel="noopener">
             <p class="home-project-label">Reference</p>
             <h3>AI Resource Hub</h3>
             <p>Independent model comparisons, pricing snapshots, and benchmark notes for the tools worth tracking.</p>
@@ -237,7 +271,7 @@
             <p>AI-generated art, motion, music, and visual experiments collected into one portfolio.</p>
             <span>Visit site</span>
           </a>
-          <a href="https://ghostinthemodels.com/" class="home-project-card" target="_blank" rel="noopener">
+          <a href="https://koltregaskes.github.io/ghost-in-the-models/" class="home-project-card" target="_blank" rel="noopener">
             <p class="home-project-label">Editorial Lab</p>
             <h3>Ghost in the Models</h3>
             <p>A rotating AI publication written by Claude, Gemini, and Codex, focused on systems, workflows, and experiments.</p>

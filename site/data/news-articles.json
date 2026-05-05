@@ -1,6 +1,379 @@
 {
   "articles": [
     {
+      "title": "GPT-6 Is in Alignment at Stargate",
+      "source": "Aligned News (Scoble)",
+      "url": "https://x.com/thederbiedone/status/2051032485119820064",
+      "summary": "GPT-6 completed pre-training at Stargate with 92.5% math reasoning and 96.8% code generation, now in safety alignment as OpenAI renames its division to AGI Deployment.",
+      "category": "Top Stories",
+      "date": "2026-05-03T23:00:00.000Z",
+      "dateString": "Monday, 4 May 2026",
+      "filename": "2026-05-04-digest.md",
+      "tags": [
+        "ai",
+        "models",
+        "safety",
+        "model_release",
+        "ai_safety"
+      ],
+      "time": "Monday, 4 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "LifespanningRx launches partner program for peptide therapy",
+      "source": "Longevity Technology",
+      "url": "https://longevity.technology/news/lifespanningrx-launches-partner-program-for-peptide-therapy",
+      "summary": "LifespanningRx launched a Partner Program that enables clinics, wellness practices, personal trainers, medspas, recovery centers and performance brands to offer clinician-guided peptide programs without managing inventory, prescriptions, fulfillment or regulatory complexity. According to the company, the program provides licensed U.S.-based clinicians for evaluations and prescriptions where appropriate, pharmacy fulfillment with direct-to-patient shipping, no inventory to [&#8230;] The post LifespanningRx launches partner program for peptide therapy appeared first on Longevity.Technology .",
+      "category": "Top Stories",
+      "date": "2026-05-03T23:00:00.000Z",
+      "dateString": "Monday, 4 May 2026",
+      "filename": "2026-05-04-digest.md",
+      "tags": [
+        "ai",
+        "news",
+        "model_release",
+        "product_launch",
+        "regulation"
+      ],
+      "time": "Monday, 4 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Hermes Agent Hit 100K GitHub Stars — The Fastest-Growing Open-Source AI Agent Has Won the Community",
+      "source": "Aligned News (Scoble)",
+      "url": "https://x.com/Shaughnessy119/status/2042339593647800404",
+      "summary": "Braygent argues Hermes Agent's 100K GitHub stars represent a clear developer community vote for reliability over feature velocity, with implications for how all AI developer tools should prioritize update stability.",
+      "category": "Top Stories",
+      "date": "2026-05-02T23:00:00.000Z",
+      "dateString": "Sunday, 3 May 2026",
+      "filename": "2026-05-04-digest.md",
+      "tags": [
+        "ai",
+        "agents",
+        "open-source",
+        "ai_agents",
+        "opinion"
+      ],
+      "time": "Sunday, 3 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Best Local Vision-Language Models?",
+      "source": "Reddit r/StableDiffusion",
+      "url": "https://reddit.com/r/StableDiffusion/comments/1t2j4lg/best_local_visionlanguage_models",
+      "summary": "What are in your opinion the best local vision models to get a good despription of picture for a 16 GB GPU? At the moment I use qwen3 vl 8b thinking q8 but I wonder, if there is a better model around? Often the models is not really to recognize the right kind of clothes and background.",
+      "category": "Top Stories",
+      "date": "2026-05-02T23:00:00.000Z",
+      "dateString": "Sunday, 3 May 2026",
+      "filename": "2026-05-03-digest.md",
+      "tags": [
+        "ai",
+        "vision",
+        "hardware",
+        "reasoning",
+        "opinion"
+      ],
+      "time": "Sunday, 3 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "How have you used Claude skills and integrations to achieve meaningful productivity increases at a dev org level?",
+      "source": "Reddit r/ClaudeAI",
+      "url": "https://reddit.com/r/ClaudeAI/comments/1t2ov5s/how_have_you_used_claude_skills_and_integrations",
+      "summary": "I have been tasked with doing just that.",
+      "category": "Top Stories",
+      "date": "2026-05-02T23:00:00.000Z",
+      "dateString": "Sunday, 3 May 2026",
+      "filename": "2026-05-03-digest.md",
+      "tags": [
+        "ai",
+        "models",
+        "funding",
+        "crypto_defi"
+      ],
+      "time": "Sunday, 3 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Built a local LLM inference engine on CachyOS — runs faster than llama.cpp on my 9070 XT",
+      "source": "Reddit r/StableDiffusion",
+      "url": "https://reddit.com/r/StableDiffusion/comments/1t2nm4u/built_a_local_llm_inference_engine_on_cachyos",
+      "summary": "Hey folks,",
+      "category": "News",
+      "date": "2026-05-02T23:00:00.000Z",
+      "dateString": "Sunday, 3 May 2026",
+      "filename": "2026-05-03-digest.md",
+      "tags": [
+        "ai",
+        "models",
+        "model_release",
+        "hardware"
+      ],
+      "time": "Sunday, 3 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Side-by-side comparison of Qwen-Image, ERNIE Base/Turbo, and FLUX.2 Dev across 8 custom styles (single RTX 5090)",
+      "source": "Reddit r/StableDiffusion",
+      "url": "https://reddit.com/r/StableDiffusion/comments/1t2nkkt/sidebyside_comparison_of_qwenimage_ernie",
+      "summary": "Hey folks. I've been playing around at home picking which open-source image model to settle on for some prototyping work, and ended up doing a fun little side-by-side that maybe someone else will find useful. Same prompt and same seed across four models, with eight different style presets (AI generated). Completely amateur — no benchmarking rigor, just curiosity and a free weekend.",
+      "category": "News",
+      "date": "2026-05-02T23:00:00.000Z",
+      "dateString": "Sunday, 3 May 2026",
+      "filename": "2026-05-03-digest.md",
+      "tags": [
+        "ai",
+        "vision",
+        "model_release",
+        "open_source"
+      ],
+      "time": "Sunday, 3 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "What if ChatGPT launched in 1998",
+      "source": "Reddit r/ChatGPT",
+      "url": "https://reddit.com/r/ChatGPT/comments/1t2l80n/what_if_chatgpt_launched_in_1998",
+      "summary": "Saw the Wikipedia premium screenshot and it got me thinking… Enjoy ✌️",
+      "category": "News",
+      "date": "2026-05-02T23:00:00.000Z",
+      "dateString": "Sunday, 3 May 2026",
+      "filename": "2026-05-03-digest.md",
+      "tags": [
+        "ai",
+        "news",
+        "model_release",
+        "reasoning"
+      ],
+      "time": "Sunday, 3 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "@WesRoth: Meta Launches Ads MCP — Claude and ChatGPT Can Now Manage Meta Ad Accounts",
+      "source": "Aligned News (Scoble)",
+      "url": "https://x.com/WesRoth/status/2050606311440531809",
+      "summary": "Meta launched its Ads MCP and CLI, creating a direct bridge for frontier AI models like Claude and ChatGPT to access and interact with the Meta Ads ecosystem through natural language.",
+      "category": "Top Stories",
+      "date": "2026-05-01T23:00:00.000Z",
+      "dateString": "Saturday, 2 May 2026",
+      "filename": "2026-05-03-digest.md",
+      "tags": [
+        "ai",
+        "models",
+        "model_release",
+        "product_launch"
+      ],
+      "time": "Saturday, 2 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "xAI Token Processing Collapsed 90% — From 6 Trillion to 0.6 Trillion Per Week",
+      "source": "Aligned News (Scoble)",
+      "url": "https://x.com/ttunguz/status/2046815725285945820",
+      "summary": "Tomasz Tunguz reported that xAI's token processing volume collapsed from 6 trillion tokens per week in late 2025 to 0.6 trillion by April 2026 — a 90% decline that explains the 11% GPU utilization.",
+      "category": "Top Stories",
+      "date": "2026-05-01T23:00:00.000Z",
+      "dateString": "Saturday, 2 May 2026",
+      "filename": "2026-05-03-digest.md",
+      "tags": [
+        "ai",
+        "news",
+        "hardware",
+        "crypto_defi"
+      ],
+      "time": "Saturday, 2 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Clojurists Together – Q2 2026 Open Source Funding Announcement",
+      "source": "Hacker News",
+      "url": "https://www.clojuriststogether.org/news/q2-2026-funding-announcement",
+      "summary": "",
+      "category": "Top Stories",
+      "date": "2026-05-01T23:00:00.000Z",
+      "dateString": "Saturday, 2 May 2026",
+      "filename": "2026-05-03-digest.md",
+      "tags": [
+        "ai",
+        "funding",
+        "open-source",
+        "open_source"
+      ],
+      "time": "Saturday, 2 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Tried running Claude Code with local LLMs via Ollama — ended up subscribing to Pro anyway. But now I can't disconnect from the local server.",
+      "source": "Reddit r/ClaudeAI",
+      "url": "https://reddit.com/r/ClaudeAI/comments/1t1vjd0/tried_running_claude_code_with_local_llms_via",
+      "summary": "I've been experimenting with using Ollama to run Claude Code locally with models like Gemma 4, thinking I could avoid API costs. However, I quickly realised these models aren't really optimised for Claude Code's agentic workflows — they tend to get stuck in thinking loops and don't follow Claude Code's expected output structure well. So I ended up subscribing to Claude Pro anyway.",
+      "category": "News",
+      "date": "2026-05-01T23:00:00.000Z",
+      "dateString": "Saturday, 2 May 2026",
+      "filename": "2026-05-03-digest.md",
+      "tags": [
+        "ai",
+        "models",
+        "coding",
+        "ai_agents",
+        "reasoning"
+      ],
+      "time": "Saturday, 2 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "NVIDIA's Open Source Enterprise AI Agent Security Layer Is More Important Than People Realize",
+      "source": "Aligned News (Scoble)",
+      "url": "https://x.com/NVIDIAAI/status/2050336285428998202",
+      "summary": "Braygent argues NVIDIA's open source OpenShell is the infrastructure unlock for enterprise AI agent deployment, with the open source design being crucial for security team auditability.",
+      "category": "Top Stories",
+      "date": "2026-05-01T23:00:00.000Z",
+      "dateString": "Saturday, 2 May 2026",
+      "filename": "2026-05-02-digest.md",
+      "tags": [
+        "ai",
+        "agents",
+        "enterprise",
+        "open-source",
+        "hardware"
+      ],
+      "time": "Saturday, 2 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "NIST Just Said DeepSeek V4 Equals GPT-5 and Everyone Should Read This Carefully",
+      "source": "Aligned News (Scoble)",
+      "url": "https://x.com/nikostro/status/2050347793487941902",
+      "summary": "Braygent highlights the NIST DeepSeek V4 assessment as carrying unique policy credibility and argues the finding challenges assumptions about export control effectiveness in slowing Chinese AI development.",
+      "category": "Top Stories",
+      "date": "2026-05-01T23:00:00.000Z",
+      "dateString": "Saturday, 2 May 2026",
+      "filename": "2026-05-02-digest.md",
+      "tags": [
+        "ai",
+        "models",
+        "model_release",
+        "policy",
+        "opinion"
+      ],
+      "time": "Saturday, 2 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "OpenAI models are now available on Amazon Bedrock, letting you run GPT-4o and o1 through AWS's managed inference layer. No separate OpenAI account needed, bills through your AWS spend. Worth it if you're already deep in the AWS ecosystem and want unified billing + enterprise",
+      "source": "X / @opensourceaihub",
+      "url": "https://x.com/OpenSourceAIHub/status/2050625627540123871",
+      "summary": "OpenAI models are now available on Amazon Bedrock, letting you run GPT-4o and o1 through AWS's managed inference layer. No separate OpenAI account needed, bills through your AWS spend. Worth it if you're already deep in the AWS ecosystem and want unified billing + enterprise",
+      "category": "Top Stories",
+      "date": "2026-05-01T23:00:00.000Z",
+      "dateString": "Saturday, 2 May 2026",
+      "filename": "2026-05-02-digest.md",
+      "tags": [
+        "ai",
+        "models",
+        "enterprise",
+        "model_release",
+        "reasoning"
+      ],
+      "time": "Saturday, 2 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Exodus (EXOD) Announces Official UFC Deal and Revised, Self-Custody Money App",
+      "source": "Bitcoin Magazine",
+      "url": "https://bitcoinmagazine.com/news/exodus-exod-announces-official-ufc-deal",
+      "summary": "Bitcoin Magazine Exodus (EXOD) Announces Official UFC Deal and Revised, Self-Custody Money App In front of shareholders and customers in Omaha, Exodus dived deep into Exodus Pay and announced a high-profile UFC sponsorship. This post Exodus (EXOD) Announces Official UFC Deal and Revised, Self-Custody Money App first appeared on Bitcoin Magazine and is written by Micah Zimmerman .",
+      "category": "Top Stories",
+      "date": "2026-04-30T23:00:00.000Z",
+      "dateString": "Friday, 1 May 2026",
+      "filename": "2026-05-02-digest.md",
+      "tags": [
+        "ai",
+        "news",
+        "product_launch",
+        "announcement",
+        "industry_move"
+      ],
+      "time": "Friday, 1 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "FeatherlessAI $20M — Serverless Open Model Platform for Enterprise Infrastructure",
+      "source": "Aligned News (Scoble)",
+      "url": "https://x.com/FeatherlessAI",
+      "summary": "FeatherlessAI raised $20M to build a serverless open-model inference platform supporting 30,000+ open-weight models as a vendor-neutral enterprise AI infrastructure layer. AMD Ventures led the round, reflecting AMD's ecosystem investment strategy.",
+      "category": "Top Stories",
+      "date": "2026-04-30T23:00:00.000Z",
+      "dateString": "Friday, 1 May 2026",
+      "filename": "2026-05-02-digest.md",
+      "tags": [
+        "ai",
+        "models",
+        "enterprise",
+        "infrastructure",
+        "hardware"
+      ],
+      "time": "Friday, 1 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "OpenAI announces new advanced security for ChatGPT accounts, including a partnership with Yubico",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/30/openai-announces-new-advanced-security-for-chatgpt-accounts-including-a-partnership-with-yubico",
+      "summary": "",
+      "category": "Top Stories",
+      "date": "2026-04-30T23:00:00.000Z",
+      "dateString": "Friday, 1 May 2026",
+      "filename": "2026-05-01-digest.md",
+      "tags": [
+        "ai",
+        "product",
+        "product_launch",
+        "announcement",
+        "industry_move"
+      ],
+      "time": "Friday, 1 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "China Blocked Meta's $2B Manus Deal After the Money Was Already Transferred",
+      "source": "Aligned News (Scoble)",
+      "url": "https://x.com/MrAhmadAwais/status/2050029331326668827",
+      "summary": "Beijing intervened in Meta's Manus acquisition after funds had already moved. This is a new level of regulatory aggression in US-China tech competition.",
+      "category": "Top Stories",
+      "date": "2026-04-30T23:00:00.000Z",
+      "dateString": "Friday, 1 May 2026",
+      "filename": "2026-05-01-digest.md",
+      "tags": [
+        "ai",
+        "news",
+        "acquisition",
+        "regulation",
+        "industry_move"
+      ],
+      "time": "Friday, 1 May 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
       "title": "Salesforce is crowdsourcing its AI roadmap — with customers",
       "source": "TechCrunch AI",
       "url": "https://techcrunch.com/2026/04/30/salesforce-is-crowdsourcing-its-ai-roadmap-with-customers/",
@@ -771,6 +1144,26 @@
       "isNoNews": false
     },
     {
+      "title": "Xiaomi MiMo-V2.5 is now live!a major step forward in agentic capability and multimodal understanding. 310B params / 15B active. Native vision + audio. Up to 1M token context. And it's open-source. Explore on ModelScope https:// modelscope.cn/collections/Xi aomiMiMo/MiMo-V25 … The numbers back",
+      "source": "X / @modelscope2022",
+      "url": "https://x.com/ModelScope2022/status/2048956565244498182",
+      "summary": "Xiaomi MiMo-V2.5 is now live!a major step forward in agentic capability and multimodal understanding.",
+      "category": "Top Stories",
+      "date": "2026-04-27T23:00:00.000Z",
+      "dateString": "Tuesday, 28 April 2026",
+      "filename": "2026-05-01-digest.md",
+      "tags": [
+        "ai",
+        "agents",
+        "open-source",
+        "vision",
+        "voice"
+      ],
+      "time": "Tuesday, 28 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
       "title": "Investors back Skye’s AI home screen app for iPhone ahead of launch",
       "source": "TechCrunch AI",
       "url": "https://techcrunch.com/2026/04/27/investors-back-skye-signull-labs-ai-home-screen-app-for-iphone-ahead-of-launch/",
@@ -1279,6 +1672,86 @@
         "product"
       ],
       "time": "Friday, 24 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Crush v0.62.0 released",
+      "source": "GitHub Releases · Crush",
+      "url": "https://github.com/charmbracelet/crush/releases/tag/v0.62.0",
+      "summary": "# 98% reduction in token usage",
+      "category": "Top Stories",
+      "date": "2026-04-21T23:00:00.000Z",
+      "dateString": "Wednesday, 22 April 2026",
+      "filename": "2026-04-23-digest.md",
+      "tags": [
+        "ai",
+        "news",
+        "model_release",
+        "product_launch",
+        "announcement"
+      ],
+      "time": "Wednesday, 22 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SpaceX Just Bought the Right to Own the Coding Internet",
+      "source": "Aligned News (Scoble)",
+      "url": "https://x.com/cursor_ai/status/2046726224266043533",
+      "summary": "Braygent wants to post about the SpaceX-Cursor deal structure as a call option rather than an acquisition. The compute-for-equity model is a new and underappreciated form of AI industry consolidation.",
+      "category": "Top Stories",
+      "date": "2026-04-21T23:00:00.000Z",
+      "dateString": "Wednesday, 22 April 2026",
+      "filename": "2026-04-23-digest.md",
+      "tags": [
+        "ai",
+        "coding",
+        "hardware",
+        "acquisition",
+        "industry_move"
+      ],
+      "time": "Wednesday, 22 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SpaceX Just Bought the Right to Own the Coding Internet",
+      "source": "Aligned News (Scoble)",
+      "url": "https://x.com/cursor_ai/status/2046726224266043533",
+      "summary": "Braygent wants to post about the SpaceX-Cursor deal structure as a call option rather than an acquisition. The compute-for-equity model is a new and underappreciated form of AI industry consolidation.",
+      "category": "Top Stories",
+      "date": "2026-04-21T23:00:00.000Z",
+      "dateString": "Wednesday, 22 April 2026",
+      "filename": "2026-04-22-digest.md",
+      "tags": [
+        "ai",
+        "coding",
+        "hardware",
+        "acquisition",
+        "industry_move"
+      ],
+      "time": "Wednesday, 22 April 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SpaceX secured the right to buy Cursor for $60B. For context, Twitter sold for $44B and had 250M users.",
+      "source": "Reddit r/ChatGPT",
+      "url": "https://reddit.com/r/ChatGPT/comments/1ssp44u/spacex_secured_the_right_to_buy_cursor_for_60b",
+      "summary": "Yesterday SpaceX announced it has obtained the right to acquire Cursor - the AI coding assistant - for $60 billion later this year. The alternative structure is $10 billion for the \"work together\" the companies are already doing. Cursor's CEO confirmed the partnership, writing that it's \"a meaningful step on our path to build the best place to code with AI.\"",
+      "category": "Top Stories",
+      "date": "2026-04-21T23:00:00.000Z",
+      "dateString": "Wednesday, 22 April 2026",
+      "filename": "2026-04-22-digest.md",
+      "tags": [
+        "ai",
+        "news",
+        "announcement",
+        "funding",
+        "industry_move"
+      ],
+      "time": "Wednesday, 22 April 2026",
       "imageUrl": null,
       "isNoNews": false
     },

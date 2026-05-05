@@ -113,6 +113,7 @@ async function readNewsItems(date) {
   // 4. YYYY-MM-DD.md
   const possiblePaths = [
     path.join(CONFIG.newsSourcePath, `${date}-digest.md`),  // Curated digest first!
+    path.join(CONFIG.newsSourcePath, `digest-${date}.md`),
     path.join(CONFIG.newsSourcePath, date),
     path.join(CONFIG.newsSourcePath, 'daily', date),
     path.join(CONFIG.newsSourcePath, `${date}.json`),
@@ -125,7 +126,7 @@ async function readNewsItems(date) {
 
       if (stats.isDirectory()) {
         return await readNewsFromDirectory(newsPath);
-      } else if (newsPath.endsWith('-digest.md')) {
+      } else if (/\d{4}-\d{2}-\d{2}-digest\.md$/.test(newsPath) || /digest-\d{4}-\d{2}-\d{2}\.md$/.test(newsPath)) {
         // Parse curated digest format from /news-gatherer
         const content = await fs.readFile(newsPath, 'utf-8');
         return parseNewsGathererDigest(content);
@@ -199,6 +200,49 @@ function parseNewsGathererDigest(content) {
         date: date ? date.trim() : null
       });
     }
+  }
+
+  if (items.length > 0) {
+    return items;
+  }
+
+  return parseHeadingDigest(content);
+}
+
+function parseHeadingDigest(content) {
+  const items = [];
+  const blocks = content.split(/\r?\n---\r?\n/);
+
+  for (const block of blocks) {
+    const itemMatch = block.match(/^##\s+\[([\s\S]+?)\]\((https?:\/\/[^\s)]+(?:\)[^\s)]*)?)\)/m);
+    if (!itemMatch) continue;
+
+    const title = cleanDigestTitle(itemMatch[1]);
+    const url = itemMatch[2].trim();
+    const blockLines = block.split(/\r?\n/);
+    const metaLine = blockLines.find((line) => /^\*.+?\*\s+\|/.test(line.trim())) || '';
+    const metaMatch = metaLine.trim().match(/^\*(.+?)\*\s+\|\s+([^|]+)\|/);
+    const tagLine = blockLines.find((line) => /^Tags:/i.test(line.trim())) || '';
+    const summaryLines = blockLines
+      .map((line) => line.trim())
+      .filter((line) => line.startsWith('>'))
+      .map((line) => line.replace(/^>\s*/, '').trim());
+
+    if (isJunkItem(title, url)) {
+      continue;
+    }
+
+    items.push({
+      title,
+      source: metaMatch ? metaMatch[1].trim() : '',
+      url: url.trim(),
+      summary: summaryLines.join(' ').replace(/\s+/g, ' ').trim(),
+      category: normaliseCategory(tagLine || 'Top Stories'),
+      tags: tagLine
+        ? tagLine.replace(/^Tags:\s*/i, '').split(',').map((tag) => tag.trim()).filter(Boolean)
+        : [],
+      date: metaMatch ? metaMatch[2].trim() : null
+    });
   }
 
   return items;
@@ -358,13 +402,30 @@ function isJunkItem(title, url) {
     /\/sustainability\/?$/,
     /\/sponsored\/?$/,
     /events\.reutersevents\.com/,
-    /artificial-intelligence-news\/?$/
+    /artificial-intelligence-news\/?$/,
+    /cointelegraph\.com/i,
+    /coindesk\.com/i,
+    /theblock\.co/i,
+    /beincrypto\.com/i,
+    /bitcoinmagazine\.com/i,
+    /bankless\.com/i
   ];
 
   if (junkTitles.some(t => title.includes(t))) return true;
   if (junkUrlPatterns.some(p => p.test(url))) return true;
+  if (/\b(crypto|bitcoin|ethereum|xrp|stablecoin|defi|coinbase|bakkt|bitbank|clarity act|self-custody|onchain|microstrategy)\b/i.test(`${title} ${url}`)) return true;
 
   return false;
+}
+
+function cleanDigestTitle(title) {
+  return title
+    .replace(/\s+/g, ' ')
+    .replace(/\blive!a\b/i, 'live: a')
+    .replace(/\s+Explore on .*$/i, '')
+    .replace(/\s+The numbers.*$/i, '')
+    .replace(/\s+No separate OpenAI account needed.*$/i, '')
+    .trim();
 }
 
 // Read news from a directory of markdown/json files
@@ -447,7 +508,7 @@ function generateDigestMarkdown(newsItems, date) {
   const allTags = [...new Set([
     ...CONFIG.defaultTags,
     ...newsItems.flatMap(item => Array.isArray(item.tags) ? item.tags : [])
-  ])];
+  ])].filter(tag => !/^crypto/i.test(String(tag)));
 
   let markdown = `---
 title: "Daily Digest: ${displayDate}"

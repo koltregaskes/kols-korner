@@ -1,7 +1,7 @@
 # Kol's Korner - LLM Onboarding
 
 **Version:** 3.0.0
-**Last Updated:** 5 April 2026
+**Last Updated:** 2 May 2026
 **Type:** Custom Node.js static site generator with local digest automation and GitHub Pages deployment
 
 ---
@@ -11,10 +11,10 @@
 Kol's Korner is a personal publishing site for essays, commentary, and daily AI news digests.
 
 Current URLs:
-- GitHub Pages: https://koltregaskes.github.io/kols-korner/
-- Intended production domain: https://koltregaskes.com/
+- Canonical production domain: https://koltregaskes.com/
+- GitHub Pages fallback: https://koltregaskes.github.io/kols-korner/
 
-Important: as of 5 April 2026, the custom domain has not yet been cut over to this GitHub Pages deployment. Treat the GitHub Pages URL as the canonical live site until DNS and GitHub Pages domain verification are complete. The build only switches canonical URLs to the custom domain when `CUSTOM_DOMAIN` is set in the environment.
+Important: the custom domain is now the canonical public site. Build output should use `https://koltregaskes.com/` for sitemap, robots, feeds, and canonical metadata.
 
 ---
 
@@ -118,26 +118,15 @@ Visit `http://localhost:8080/` for a local preview.
 
 ---
 
-## Verified State On 5 April 2026
+## Verified State On 2 May 2026
 
-- The repo was clean after the latest automated digest refresh
-- The local scheduled task `KolsKorner Daily News Refresh` last returned `0`
-- The next scheduled run was `6 April 2026 07:00 BST`
-- Recent GitHub Pages deploy workflows succeeded after the launch-hardening pass
-- The GitHub Pages site was live and matched the current build
-
----
-
-## Remaining External Blocker
-
-The only launch blocker left is outside the repo:
-
-- `koltregaskes.com` still needs DNS pointed at GitHub Pages
-- GitHub Pages still needs the custom domain to be configured and verified for this repository
-- Final HTTPS and browser checks on the custom domain can only happen after that cutover
+- The production domain is `https://koltregaskes.com/`
+- The local scheduled task `KolsKorner Daily News Refresh` is the primary digest runner
+- Draft content with `publish: false` may exist in `content/`; it must not be staged by the scheduled digest job
+- Generated SEO files should use the custom domain
 
 ---
 
 ## Best Next Step
 
-If the domain has not yet been cut over, keep the site stable and avoid reopening already-fixed launch bugs. If the domain has been cut over, run full post-cutover QA immediately.
+Keep the mobile navigation compact, ensure the latest available digest is published, and verify `/news/` never opens to an unexplained empty state.

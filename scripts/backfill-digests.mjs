@@ -40,7 +40,7 @@ function isWithinRange(date, from, to) {
 
 async function getPendingDates(newsDir, contentDir, from, to) {
   const digestFiles = (await fs.readdir(newsDir))
-    .map(name => /^(\d{4}-\d{2}-\d{2})-digest\.md$/.exec(name))
+    .map(name => /^(\d{4}-\d{2}-\d{2})-digest\.md$/.exec(name) || /^digest-(\d{4}-\d{2}-\d{2})\.md$/.exec(name))
     .filter(Boolean)
     .map(match => match[1])
     .filter(date => isWithinRange(date, from, to))

@@ -1,0 +1,3 @@
+Contact: https://x.com/koltregaskes
+Preferred-Languages: en-GB
+Canonical: https://koltregaskes.com/.well-known/security.txt

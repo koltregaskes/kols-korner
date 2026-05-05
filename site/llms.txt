@@ -2,18 +2,18 @@
 
 > AI news, daily digests, essays, and creative experiments by Kol Tregaskes.
 
-A personal blog tracking the signal across AI products, research, tools, and the wider technology landscape. Published daily with automated news digests and hand-written essays.
+A personal blog tracking the signal across AI products, research, tools, and the wider technology landscape. The site publishes automated news digests when the pipeline has verified source material, alongside hand-written essays.
 
 ## Key pages
 
-- [Homepage](./): Latest posts and featured content
+- [Homepage](./): Featured posts and latest available news
 - [Posts](./posts/): Full archive of articles and essays
 - [Tags](./tags/): Browse content by topic
 - [About](./about/): About Kol Tregaskes
 
 ## Content types
 
-- Daily AI news digests (automated from a shared source set)
+- AI news digests automated from a shared source set
 - Long-form essays on AI developments
 - Commentary on tools, models, and industry moves
 

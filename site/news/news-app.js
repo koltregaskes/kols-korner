@@ -61,6 +61,7 @@ class NewsApp {
         this.groupBy = 'date';
         this.favorites = new Set(JSON.parse(localStorage.getItem('news-favorites') || '[]'));
         this.flags = JSON.parse(localStorage.getItem('news-flags') || '{}');
+        this.latestArticleDate = null;
 
         this.init();
     }
@@ -69,18 +70,17 @@ class NewsApp {
         await this.loadArticles();
         this.setupEventListeners();
 
-        // Default to Last 24 Hours (yesterday's date to today)
-        // This works better than "Today" since news may not have been gathered yet today
-        const today = new Date();
-        const yesterday = new Date();
-        yesterday.setDate(today.getDate() - 1);
-
         const fromDate = document.getElementById('fromDate');
         const toDate = document.getElementById('toDate');
-        if (fromDate) fromDate.value = yesterday.toISOString().split('T')[0];
-        if (toDate) toDate.value = today.toISOString().split('T')[0];
 
-        this.updateQuickFilterButtons('24h');
+        this.latestArticleDate = this.getLatestArticleDate();
+        if (this.latestArticleDate) {
+            const latestDateValue = this.formatDateInput(this.latestArticleDate);
+            if (fromDate) fromDate.value = latestDateValue;
+            if (toDate) toDate.value = latestDateValue;
+        }
+
+        this.updateQuickFilterButtons();
         this.filterArticles();
         this.renderFeaturedNow();
     }
@@ -648,6 +648,34 @@ class NewsApp {
         }
     }
 
+    getLatestArticleDate() {
+        const dates = this.articles
+            .map((article) => article.date instanceof Date ? article.date : new Date(article.date))
+            .filter((date) => !Number.isNaN(date.getTime()));
+
+        if (!dates.length) return null;
+
+        const latest = new Date(Math.max(...dates.map((date) => date.getTime())));
+        latest.setHours(0, 0, 0, 0);
+        return latest;
+    }
+
+    formatDateInput(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
+    formatLongDate(date) {
+        return date.toLocaleDateString('en-GB', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+    }
+
     filterArticles() {
         const searchInput = document.getElementById('searchInput');
         const fromDateEl = document.getElementById('fromDate');
@@ -748,11 +776,15 @@ class NewsApp {
         if (hideNotAI) filters.push('Hide "Not AI"');
 
         if (filterSummary && filterSummaryText) {
+            const latestLabel = this.latestArticleDate
+                ? `Latest available issue: ${this.formatLongDate(this.latestArticleDate)}`
+                : '';
+
             if (filters.length > 0) {
-                filterSummaryText.textContent = `Showing ${this.filteredArticles.length} articles - ${filters.join(' - ')}`;
+                filterSummaryText.textContent = `Showing ${this.filteredArticles.length} articles - ${filters.join(' - ')}${latestLabel ? ` - ${latestLabel}` : ''}`;
                 filterSummary.style.display = 'block';
             } else {
-                filterSummaryText.textContent = `Showing ${this.filteredArticles.length} articles`;
+                filterSummaryText.textContent = `Showing ${this.filteredArticles.length} articles${latestLabel ? ` - ${latestLabel}` : ''}`;
                 filterSummary.style.display = this.filteredArticles.length > 0 ? 'block' : 'none';
             }
         }
@@ -796,8 +828,8 @@ class NewsApp {
         }
 
         const latestLabel = this.getRelativeDateLabel(featuredArticles[0].dateString);
-        featuredTitle.textContent = `Start with ${latestLabel.toLowerCase()}'s biggest stories`;
-        featuredIntro.textContent = 'A quick top rail for the links most worth opening first.';
+        featuredTitle.textContent = `Start with ${latestLabel}`;
+        featuredIntro.textContent = 'The newest available briefing, pulled to the top before the full archive.';
         featuredList.innerHTML = featuredArticles.map((article) => `
             <a href="${article.url}" class="news-featured-link" target="_blank" rel="noopener noreferrer">
                 <strong>${article.title}</strong>
@@ -862,7 +894,7 @@ class NewsApp {
                 todaysGrid.appendChild(this.createArticleCard(article, true));
             });
             if (todaysLabel) {
-                todaysLabel.textContent = `Freshly filed under ${this.getRelativeDateLabel(leadDate)}`;
+                todaysLabel.textContent = `Latest available issue: ${this.getRelativeDateLabel(leadDate)}`;
             }
         }
 

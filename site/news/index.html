@@ -14,11 +14,14 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
+  <link rel="canonical" href="https://koltregaskes.com/news/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+  <link rel="icon" href="../favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="news-styles.css?v=20260323a" />
 </head>
@@ -51,10 +54,10 @@
   <main class="news-page-shell">
     <section class="news-hero" aria-labelledby="newsHeroTitle">
       <div class="news-hero-copy">
-        <p class="news-kicker">Daily AI briefing</p>
-        <h1 id="newsHeroTitle">The latest AI stories, without the dashboard nonsense.</h1>
+        <p class="news-kicker">AI briefing archive</p>
+        <h1 id="newsHeroTitle">The newest available AI stories, without the dashboard nonsense.</h1>
         <p class="news-deck">
-          Freshly curated AI and technology coverage, refreshed twice daily and arranged so you can open the important stories first.
+          Curated AI and technology coverage arranged so you can open the important stories first, with the latest available issue surfaced automatically.
         </p>
         <div class="news-hero-actions">
           <a href="#todaysNews" class="news-primary-link">Jump to featured stories</a>
@@ -222,8 +225,7 @@
 
         <div id="noResults" class="no-results" style="display: none;">
           <span class="empty-state-icon" aria-hidden="true">⌕</span>
-          <p>No articles found matching your filters.</p>
-          <button onclick="document.getElementById('clearFilters').click()">Clear filters</button>
+          <p>No articles found matching those filters. Clear the controls above or open the latest available issue.</p>
         </div>
       </section>
     </div>

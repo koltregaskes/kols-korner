@@ -337,3 +337,215 @@ body {
     font-size: 24px;
   }
 }
+
+/* ============================================================
+   Column-Led Homepage (added 2026-05-04 per DESIGN.md revision)
+   The latest post IS the hero. No marketing block.
+   ============================================================ */
+
+.home-column-lead {
+  padding: 32px 0 56px;
+  border-bottom: 1px solid var(--border);
+}
+
+.home-column-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.8fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.home-lead-column {
+  font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.home-lead-kicker {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem;
+}
+
+.home-lead-kicker .meta-sep {
+  opacity: 0.5;
+}
+
+.home-lead-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0 0 1.25rem;
+}
+
+.home-lead-title a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.home-lead-title a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.home-lead-excerpt {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0 0 1.5rem;
+}
+
+.home-lead-dropcap {
+  float: left;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  font-size: 4.2rem;
+  line-height: 0.9;
+  margin: 0.2rem 0.6rem 0 0;
+  color: var(--accent);
+}
+
+.home-lead-readmore {
+  margin: 0;
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.home-lead-readmore a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.home-lead-readmore a:hover {
+  opacity: 0.75;
+}
+
+/* ── Shelf ─────────────────────────────────────────────────── */
+
+.home-shelf {
+  position: sticky;
+  top: 88px;
+  padding-left: 24px;
+  border-left: 1px solid var(--border);
+}
+
+.home-shelf-label {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.85rem;
+}
+
+.home-shelf-list {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+.home-shelf-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.home-shelf-item:last-child {
+  border-bottom: 0;
+}
+
+.home-shelf-link {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.home-shelf-link:hover .home-shelf-title {
+  color: var(--accent);
+}
+
+.home-shelf-date {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  padding-top: 0.18rem;
+}
+
+.home-shelf-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.18s ease;
+}
+
+.home-shelf-news {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.home-shelf-news-meta {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 0 0 0.4rem;
+}
+
+.home-shelf-news-link {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
+}
+
+.home-shelf-news-link:hover {
+  opacity: 0.75;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .home-column-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .home-shelf {
+    position: static;
+    padding-left: 0;
+    border-left: 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-column-lead {
+    padding: 20px 0 36px;
+  }
+  .home-lead-dropcap {
+    font-size: 3.4rem;
+  }
+}

@@ -56,6 +56,24 @@ function Test-IsGeneratedDigestArtifact {
   )
 }
 
+function Test-IsAllowedUnpublishedDraft {
+  param(
+    [string]$Path
+  )
+
+  if ($Path -notlike 'content/*.md' -or $Path -like 'content/daily-digest-*.md') {
+    return $false
+  }
+
+  $absolutePath = Join-Path $repoRoot $Path
+  if (-not (Test-Path -LiteralPath $absolutePath)) {
+    return $false
+  }
+
+  $head = (Get-Content -LiteralPath $absolutePath -TotalCount 40 -ErrorAction Stop) -join "`n"
+  return $head -match '(?ms)^---\s+.*?^publish:\s*false\s*$.*?^---\s*$'
+}
+
 function Invoke-NativeStep {
   param(
     [Parameter(Mandatory = $true)]
@@ -91,7 +109,9 @@ try {
   $preExistingChanges = @(Get-GitStatusLines)
   $preExistingManualChanges = @(
     $preExistingChanges | Where-Object {
-      -not (Test-IsGeneratedDigestArtifact -Path (Get-GitStatusPath -StatusLine $_))
+      $statusPath = Get-GitStatusPath -StatusLine $_
+      -not (Test-IsGeneratedDigestArtifact -Path $statusPath) -and
+      -not (Test-IsAllowedUnpublishedDraft -Path $statusPath)
     }
   )
 
@@ -123,7 +143,7 @@ try {
   Invoke-NativeStep -FilePath 'node' -ArgumentList @('scripts/build.mjs') -FailureLabel 'build'
 
   $generatedChanges = @(
-    Get-GitStatusLines -Paths @('news-digests', 'content', 'site') | Where-Object {
+    Get-GitStatusLines -Paths @('news-digests', ':(glob)content/daily-digest-*.md', 'site') | Where-Object {
       Test-IsGeneratedDigestArtifact -Path (Get-GitStatusPath -StatusLine $_)
     }
   )
@@ -133,7 +153,7 @@ try {
     return
   }
 
-  $pathsToStage = @('news-digests', 'site', 'content')
+  $pathsToStage = @('news-digests', 'site', ':(glob)content/daily-digest-*.md')
   Invoke-NativeStep -FilePath 'git' -ArgumentList (@('add', '--all', '--') + $pathsToStage) -FailureLabel 'git add'
 
   & git diff --cached --quiet --

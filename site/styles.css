@@ -3210,7 +3210,32 @@ body {
    ======================================== */
 
 body {
-  font-family: var(--font-family-base);
+    font-family: var(--font-family-base);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-16);
+  top: 0;
+  z-index: 120;
+  padding: var(--space-10) var(--space-14);
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(var(--space-12));
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(var(--color-red-400-rgb), 0.95);
+  outline-offset: 3px;
 }
 
 p,
@@ -3844,5 +3869,80 @@ strong {
   .about-panel,
   .subscribe-launch-note {
     padding: var(--space-16);
+  }
+}
+
+/* KK-001: mobile nav is collapsed by default so content owns the first viewport. */
+@media (max-width: 768px) {
+  .site-header {
+    padding: var(--space-8) 0;
+  }
+
+  .header-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--space-8) var(--space-12);
+    padding: 0 var(--space-16);
+  }
+
+  .site-logo {
+    min-width: 0;
+  }
+
+  .logo-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .site-header-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .site-nav-toggle {
+    display: inline-grid;
+    color: var(--color-text);
+  }
+
+  .site-nav {
+    grid-column: 1 / -1;
+    order: initial;
+    width: 100%;
+    display: grid;
+    gap: var(--space-6);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-4px);
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+    pointer-events: none;
+    transition:
+      max-height var(--duration-normal) var(--ease-standard),
+      opacity var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard),
+      margin-top var(--duration-fast) var(--ease-standard);
+  }
+
+  .site-header[data-nav-open="true"] .site-nav {
+    max-height: 360px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: var(--space-8);
+    padding-top: var(--space-8);
+    border-top: 1px solid rgba(var(--color-slate-500-rgb), 0.18);
+    pointer-events: auto;
+  }
+
+  .site-nav a {
+    width: 100%;
+    justify-content: flex-start;
+    padding: var(--space-10) var(--space-12);
+    border: 1px solid rgba(var(--color-slate-500-rgb), 0.14);
+    border-radius: var(--radius-base);
+    background: rgba(255, 255, 255, 0.03);
   }
 }

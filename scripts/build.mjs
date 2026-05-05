@@ -63,9 +63,10 @@ const ROOT_CNAME = fsSync.existsSync('CNAME') ? fsSync.readFileSync('CNAME', 'ut
 const CUSTOM_DOMAIN = (process.env.CUSTOM_DOMAIN || '').trim().replace(/^https?:\/\//, '').replace(/\/+$/, '');
 const DEPLOY_CNAME = (CUSTOM_DOMAIN || ROOT_CNAME || '').trim().replace(/^https?:\/\//, '').replace(/\/+$/, '');
 const LEGACY_REPO_NAMES = ['koltregaskesdotcom', 'notion-site-test'];
-const SITE_BASE_PATH = CUSTOM_DOMAIN ? '' : `/${REPO_NAME}`;
-const SITE_URL = CUSTOM_DOMAIN
-  ? `https://${CUSTOM_DOMAIN}`
+const CANONICAL_DOMAIN = DEPLOY_CNAME;
+const SITE_BASE_PATH = CANONICAL_DOMAIN ? '' : `/${REPO_NAME}`;
+const SITE_URL = CANONICAL_DOMAIN
+  ? `https://${CANONICAL_DOMAIN}`
   : `https://${GITHUB_OWNER}.github.io${SITE_BASE_PATH}`;
 const NAV_ITEMS = [
   { key: 'posts', label: 'Posts', path: 'posts/' },
@@ -410,11 +411,16 @@ function isJunkDigestItem(title = '', url = '') {
     /\/sponsored\/?$/i,
     /events\.reutersevents\.com/i,
     /artificial-intelligence-news\/?$/i,
-    /techcrunch\.com\/\d{4}\/\d{2}\/\d{2}\/.*disrupt.*ticket/i
+    /techcrunch\.com\/\d{4}\/\d{2}\/\d{2}\/.*disrupt.*ticket/i,
+    /cointelegraph\.com/i,
+    /coindesk\.com/i,
+    /theblock\.co/i,
+    /beincrypto\.com/i
   ];
 
   if (junkTitles.some((junkTitle) => title.includes(junkTitle))) return true;
   if (junkUrlPatterns.some((pattern) => pattern.test(url))) return true;
+  if (/\b(crypto|bitcoin|ethereum|xrp|stablecoin|defi|coinbase|bakkt|bitbank|clarity act)\b/i.test(`${title} ${url}`)) return true;
 
   return false;
 }
@@ -693,6 +699,71 @@ function parseDigestArticles(content, filename) {
     i = nextLineIndex - 1;
   }
 
+  if (articles.length === 0) {
+    const blocks = content.split(/\r?\n---\r?\n/);
+
+    for (const block of blocks) {
+      const sectionMatch = block.match(/^##\s+\[([\s\S]+?)\]\((https?:\/\/[^\s)]+(?:\)[^\s)]*)?)\)/m);
+      if (!sectionMatch) continue;
+
+      const rawTitle = sectionMatch[1].replace(/\s+/g, ' ').trim();
+      const rawUrl = sectionMatch[2].trim();
+      const title = fixCommonEncoding(rawTitle).trim();
+      const url = normaliseNewsUrl(rawUrl);
+
+      if (isJunkDigestItem(title, url)) {
+        continue;
+      }
+
+      let source = extractDigestSource(url);
+      let summary = '';
+      let articleDate = fileDate;
+      let dateString = fallbackDateString;
+      let tags = generateDigestTags(title);
+      const blockLines = block.split(/\r?\n/);
+
+      for (const blockLine of blockLines) {
+        const trimmed = blockLine.trim();
+        const metaMatch = trimmed.match(/^\*(.+?)\*\s+\|\s+(\d{2}\/\d{2}\/\d{4})/);
+        const tagMatch = trimmed.match(/^Tags:\s*(.+)$/i);
+
+        if (metaMatch) {
+          source = fixCommonEncoding(metaMatch[1]).trim();
+          const [dayPart, monthPart, yearPart] = metaMatch[2].split('/');
+          const parsedDate = new Date(Number(yearPart), Number(monthPart) - 1, Number(dayPart));
+          if (!Number.isNaN(parsedDate.getTime())) {
+            articleDate = parsedDate;
+            dateString = formatDisplayDate(parsedDate);
+          }
+        } else if (tagMatch) {
+          tags = Array.from(new Set([
+            ...tags,
+            ...tagMatch[1].split(',').map(normaliseTag).filter(Boolean)
+          ])).slice(0, 5);
+        } else if (trimmed.startsWith('>')) {
+          summary += `${fixCommonEncoding(trimmed.replace(/^>\s*/, '')).trim()} `;
+        }
+      }
+
+      articleCountInDigest += 1;
+
+      articles.push({
+        title,
+        source,
+        url,
+        summary: summary.trim(),
+        category: articleCountInDigest <= topStoriesLimit ? 'Top Stories' : 'News',
+        date: articleDate.toISOString(),
+        dateString,
+        filename,
+        tags,
+        time: dateString,
+        imageUrl: null,
+        isNoNews: false
+      });
+    }
+  }
+
   return articles;
 }
 
@@ -701,13 +772,24 @@ const getSecurityHeaders = () => `
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'${SUPABASE_URL ? ` ${SUPABASE_URL}` : ''}; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">`;
 
+function getCanonicalUrl(pathname = '/') {
+  const cleanPath = `/${String(pathname || '/').replace(/^\/+/, '')}`;
+  return `${SITE_URL}${cleanPath === '//' ? '/' : cleanPath}`;
+}
+
+function getCanonicalTag(pathname = '/') {
+  return `<link rel="canonical" href="${getCanonicalUrl(pathname)}" />`;
+}
+
 function getSharedHeadAssets(basePath) {
   return `
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+  <link rel="icon" href="${basePath}/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="${basePath}/favicon.svg" />
+  <link rel="apple-touch-icon" href="${basePath}/apple-touch-icon.png" />
   <link rel="stylesheet" href="${basePath}/styles.css" />`;
 }
 
@@ -1199,6 +1281,7 @@ function parseDigestMarkdown(body = '') {
 // Reusable header/navigation HTML (blog-only navigation)
 function getHeaderHTML(basePath = '/', activePage = '') {
   return `
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="site-header">
     <div class="header-content">
       <a href="${basePath}" class="site-logo">
@@ -1212,7 +1295,7 @@ function getHeaderHTML(basePath = '/', activePage = '') {
           <span></span>
         </button>
       </div>
-      <nav class="site-nav" id="site-nav-links">
+      <nav class="site-nav" id="site-nav-links" aria-label="Primary">
         ${NAV_ITEMS.map((item) => `<a href="${basePath}${item.path}"${item.key === activePage ? ' class="active"' : ''}>${item.label}</a>`).join('\n        ')}
       </nav>
     </div>
@@ -1556,6 +1639,7 @@ async function writeArticlePage({
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
+  ${getCanonicalTag(`/posts/${slug}/`)}
   ${getSharedHeadAssets('../../')}
 </head>
 <body>
@@ -1568,7 +1652,7 @@ async function writeArticlePage({
       </div>
     </aside>` : ""}
 
-    <main class="post-main">
+  <main class="post-main" id="main-content">
       <article class="post">
         <header class="post-header">
           <h1 class="post-title">${escapeHtml(title)}</h1>
@@ -1670,7 +1754,9 @@ async function writeDigestPage({ title, slug, bodyMarkdown, tags, date, readingT
   const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="../../tags/#${slugify(t)}" class="tag" data-color="${tagColorIndex(t)}">${escapeHtml(t)}</a>`).join("")}</div>` : "";
   const digestContent = parseDigestMarkdown(bodyMarkdown);
   const digestIntro = digestContent.intro || summary || "A quick editorial sweep of the stories shaping AI, tools, research, and the companies building them.";
-  const digestSectionsHtml = digestContent.sections.map((section) => `
+  const digestSectionsHtml = digestContent.sections
+    .filter((section) => section.items.length > 0)
+    .map((section) => `
         <section class="digest-section">
           <div class="digest-section-head">
             <h2>${escapeHtml(section.title)}</h2>
@@ -1704,12 +1790,13 @@ async function writeDigestPage({ title, slug, bodyMarkdown, tags, date, readingT
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
+  ${getCanonicalTag(`/posts/${slug}/`)}
   ${getSharedHeadAssets('../../')}
 </head>
 <body>
   ${getHeaderHTML('../../', 'posts')}
 
-  <main class="content-main">
+  <main class="content-main" id="main-content">
     <article class="post">
       <header class="digest-header">
         <span class="digest-badge">Daily Digest</span>
@@ -1718,7 +1805,7 @@ async function writeDigestPage({ title, slug, bodyMarkdown, tags, date, readingT
         <div class="digest-meta">
           <span>${readingTime} min read</span>
           <span class="meta-sep">&bull;</span>
-          <span>Updated daily</span>
+          <span>Published from the latest available digest</span>
         </div>
       </header>
 
@@ -1795,48 +1882,49 @@ async function writeHomePage(items, newsArticles = []) {
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
+  ${getCanonicalTag('/')}
   ${getSharedHeadAssets('.')}
 </head>
 <body>
   ${getHeaderHTML('./')}
 
-  <main class="home-main">
-    <section class="home-hero fade-in-up">
-      <div class="home-shell home-hero-grid">
-        <div class="home-hero-copy">
-          <p class="home-kicker">Daily AI creator buddy</p>
-          <h1 class="home-hero-title">A sharper front page for daily AI news, grounded commentary, and the projects behind the work.</h1>
-          <p class="home-hero-text">Kol's Korner is an editorial desk for the signal: quick daily news, proper opinion when it matters, and the wider creative ecosystem around the work.</p>
-          <div class="home-hero-actions">
-            <a href="./news/" class="button-primary">Open today's news</a>
-            <a href="./posts/" class="button-secondary">Read the latest posts</a>
-          </div>
-        </div>
-        <aside class="home-hero-panel">
-          ${leadStory ? `
-          <p class="home-panel-label">Lead story</p>
-          <a href="./posts/${leadStory.slug}/" class="home-panel-story">
-            ${leadStory.thumbnailUrl && leadStory.thumbnailUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i) ? `
-            <div class="home-panel-media">
-              ${renderThumbnailImage(leadStory, escapeHtml(leadStory.title))}
-            </div>` : ''}
-            <div class="home-panel-story-copy">
-              <h2>${escapeHtml(leadStory.title)}</h2>
-              <p>${escapeHtml(leadStory.summary || 'Latest writing from Kol on AI, tools, and building with new technology.')}</p>
-              <div class="home-panel-meta">
-                <span>${new Date(leadStory.updatedTime).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
-                <span class="meta-sep">&bull;</span>
-                <span>${leadStory.readingTime || 3} min read</span>
-              </div>
-            </div>
-          </a>
-          ` : ''}
+  <main class="home-main" id="main-content">
+    <!-- Column-led homepage (DESIGN.md 2026-05-02): latest post in serif on the left,
+         shelf of recent posts on the right. No marketing hero. The latest post IS the hero. -->
+    <section class="home-column-lead">
+      <div class="home-shell home-column-grid">
+        ${leadStory ? `
+        <article class="home-lead-column">
+          <p class="home-lead-kicker">
+            <span>${new Date(leadStory.updatedTime).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+            <span class="meta-sep">&bull;</span>
+            <span>${leadStory.readingTime || 3} min read</span>
+          </p>
+          <h1 class="home-lead-title">
+            <a href="./posts/${leadStory.slug}/">${escapeHtml(leadStory.title)}</a>
+          </h1>
+          <p class="home-lead-excerpt"><span class="home-lead-dropcap">${escapeHtml((leadStory.summary || '').charAt(0) || 'T')}</span>${escapeHtml((leadStory.summary || 'Latest writing from Kol on AI, tools, and building with new technology.').slice(1))}</p>
+          <p class="home-lead-readmore">
+            <a href="./posts/${leadStory.slug}/">Read the dispatch &rarr;</a>
+          </p>
+        </article>
+        ` : ''}
+        <aside class="home-shelf" aria-label="Recent posts and news">
+          <p class="home-shelf-label">More from the column</p>
+          <ul class="home-shelf-list">
+            ${featurePosts.slice(1, 9).map(post => `
+            <li class="home-shelf-item">
+              <a href="./posts/${post.slug}/" class="home-shelf-link">
+                <span class="home-shelf-date">${new Date(post.updatedTime).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</span>
+                <span class="home-shelf-title">${escapeHtml(post.title)}</span>
+              </a>
+            </li>`).join('')}
+          </ul>
           ${latestNews.length ? `
-          <div class="home-panel-digest">
-            <p class="home-panel-label">News desk</p>
-            <strong>Freshly updated for ${escapeHtml(latestNewsDate)}</strong>
-            <p>${latestNews.length} featured links are ready to browse without trawling the full archive.</p>
-            <a href="./news/">Open the live news page</a>
+          <div class="home-shelf-news">
+            <p class="home-shelf-label">News desk</p>
+            <p class="home-shelf-news-meta">${escapeHtml(latestNewsDate)} &bull; ${latestNews.length} stories</p>
+            <a href="./news/" class="home-shelf-news-link">Open the live news page &rarr;</a>
           </div>
           ` : ''}
         </aside>
@@ -1848,7 +1936,7 @@ async function writeHomePage(items, newsArticles = []) {
       <div class="home-shell">
         <div class="home-section-heading">
           <div>
-            <p class="section-eyebrow">Today's briefing</p>
+            <p class="section-eyebrow">Latest briefing</p>
             <h2>The five stories worth opening first</h2>
           </div>
           <a href="./news/" class="section-link">View the full news archive</a>
@@ -1980,12 +2068,13 @@ async function writePostsPage(items) {
   <title>Posts - ${SITE_NAME}</title>
   <meta name="description" content="Browse all posts by ${SITE_OWNER} - Tech, Software Development & More" />
   <meta name="author" content="${SITE_OWNER}" />
+  ${getCanonicalTag('/posts/')}
   ${getSharedHeadAssets('..')}
 </head>
 <body>
   ${getHeaderHTML('../', 'posts')}
 
-  <main class="content-main posts-main">
+  <main class="content-main posts-main" id="main-content">
     <section class="posts-shell">
       <div class="home-section-heading posts-heading">
         <div>
@@ -2074,12 +2163,13 @@ async function writeTagsPage(items, newsArticles = []) {
   ${getSecurityHeaders()}
   <title>Tags - ${SITE_NAME}</title>
   <meta name="description" content="Browse posts by tag - Tech, Software Development & More" />
+  ${getCanonicalTag('/tags/')}
   ${getSharedHeadAssets('..')}
 </head>
 <body>
   ${getHeaderHTML('../', 'tags')}
 
-  <main class="content-main tags-main">
+  <main class="content-main tags-main" id="main-content">
     <section class="tags-shell">
       <div class="home-section-heading">
         <div>
@@ -2205,12 +2295,13 @@ async function writeStaticPage(slug, fallbackTitle, fallbackBody) {
   ${getSecurityHeaders()}
   <title>${escapeHtml(title)} - ${SITE_NAME}</title>
   <meta name="description" content="${escapeHtml(title)} - ${SITE_OWNER}" />
+  ${getCanonicalTag(`/${slug}/`)}
   ${getSharedHeadAssets('..')}
 </head>
 <body>
   ${getHeaderHTML('../', slug === 'about' ? 'about' : '')}
 
-  <main class="content-main">
+  <main class="content-main" id="main-content">
     <article class="about-content">
       <div class="about-body">
         ${bodyHtml}
@@ -2240,12 +2331,13 @@ async function writeAboutPage() {
   ${getSecurityHeaders()}
   <title>About - ${SITE_NAME}</title>
   <meta name="description" content="About ${SITE_OWNER} - news curator, AI artist, AI musician, content maker, and lover of technology" />
+  ${getCanonicalTag('/about/')}
   ${getSharedHeadAssets('..')}
 </head>
 <body>
   ${getHeaderHTML('../', 'about')}
 
-  <main class="content-main about-page">
+  <main class="content-main about-page" id="main-content">
     <section class="about-shell">
       <section class="about-intro-card fade-in-up">
         <div class="about-avatar">
@@ -2259,7 +2351,7 @@ async function writeAboutPage() {
             <a href="../news/" class="about-start-card">
               <span>Start with</span>
               <strong>AI news</strong>
-              <p>The live archive is the fastest way to catch up on what matters today.</p>
+              <p>The live archive is the fastest way to catch up on the latest published briefing.</p>
             </a>
             <a href="../posts/" class="about-start-card">
               <span>Then read</span>
@@ -2275,7 +2367,7 @@ async function writeAboutPage() {
           <h2>What this site is for</h2>
           <p>Kol's Korner is built to be useful first: a cleaner front page for AI news, grounded writing when the hype needs cutting down, and a home for the systems that keep the whole thing moving every day.</p>
           <ul>
-            <li>Daily AI and technology coverage surfaced from the shared source set</li>
+            <li>AI and technology coverage surfaced from the shared source set</li>
             <li>Opinion and analysis when a story needs more than aggregation</li>
             <li>Creative work, experiments, and connected publishing projects</li>
           </ul>
@@ -2332,12 +2424,13 @@ async function writeSubscribePage() {
   ${getSecurityHeaders()}
   <title>Newsletter - ${SITE_NAME}</title>
   <meta name="description" content="Newsletter updates for ${SITE_NAME}. The email edition has not launched yet, but the live news archive and published posts are already available on-site." />
+  ${getCanonicalTag('/subscribe/')}
   ${getSharedHeadAssets('..')}
 </head>
 <body>
   ${getHeaderHTML('../', 'subscribe')}
 
-  <main class="content-main subscribe-main">
+  <main class="content-main subscribe-main" id="main-content">
     <section class="subscribe-launch-note">
       <span class="subscribe-status-badge">Launching soon</span>
       <h1 class="page-title">The newsletter has not launched yet.</h1>
@@ -2375,12 +2468,13 @@ async function writeContactPage() {
   ${getSecurityHeaders()}
   <title>Contact - ${SITE_NAME}</title>
   <meta name="description" content="Contact and social links for ${SITE_OWNER}." />
+  ${getCanonicalTag('/contact/')}
   ${getSharedHeadAssets('..')}
 </head>
 <body>
   ${getHeaderHTML('../', 'contact')}
 
-  <main class="content-main contact-main">
+  <main class="content-main contact-main" id="main-content">
     <section class="contact-shell">
       <section class="subscribe-launch-note fade-in-up">
         <span class="subscribe-status-badge">Contact</span>
@@ -2475,6 +2569,14 @@ async function writeRobotsTxt() {
   await fs.writeFile('site/robots.txt', robots, 'utf8');
 }
 
+async function writeSecurityTxt() {
+  const securityDir = path.join('site', '.well-known');
+  await fs.mkdir(securityDir, { recursive: true });
+
+  const security = `Contact: https://x.com/koltregaskes\nPreferred-Languages: en-GB\nCanonical: ${SITE_URL}/.well-known/security.txt\n`;
+  await fs.writeFile(path.join(securityDir, 'security.txt'), security, 'utf8');
+}
+
 async function writeSitemap(items) {
   const urls = [
     { loc: '/', changefreq: 'daily', priority: '1.0' },
@@ -2521,6 +2623,7 @@ async function cleanGeneratedOutput() {
     'site/subscribe',
     'site/tags',
     'site/videos',
+    'site/.well-known',
     'site/news-digests'
   ];
   const generatedFiles = [
@@ -2611,6 +2714,7 @@ async function cleanGeneratedOutput() {
   await writeRssFeed(items);
   await writeSitemap(items);
   await writeRobotsTxt();
+  await writeSecurityTxt();
   await writeCnameFile();
 
   // Copy news-digests to site folder for the /news page
@@ -2652,6 +2756,7 @@ async function cleanGeneratedOutput() {
   console.log(`[ok] RSS feed: site/feed.xml`);
   console.log(`[ok] Sitemap: site/sitemap.xml`);
   console.log(`[ok] Robots: site/robots.txt`);
+  console.log(`[ok] Security contact: site/.well-known/security.txt`);
   console.log(`[ok] News data: site/data/news-articles.json`);
   console.log('\nBuild complete!');
 })();
