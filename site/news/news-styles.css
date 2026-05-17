@@ -870,7 +870,6 @@ body.news-page::before {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.72);
-  backdrop-filter: blur(10px);
   z-index: 1000;
   padding: var(--space-24);
 }

@@ -174,7 +174,7 @@ Build script (`scripts/build.mjs`) should regenerate sitemap at every build. Cod
 
 **Unaudited at draft time.** Codex needs to:
 
-- Grep `site/*.html` and `site/**/*.html` for `<div onclick=...>`, `<span class="btn">`, etc.
+- Grep `site/*.html` and `site/**/*.html` for inline click handlers, fake button spans, and similar non-semantic controls.
 - Verify CSS for `cursor: pointer` on actionables
 - Confirm forms (search box on home? Contact form?) have `<label for=...>` or `aria-label`
 - Test CLS with `cross-site-nav.js` injecting at end of body
@@ -185,7 +185,7 @@ Note: the site's home + post styles are split into `home-styles.css` + `post-sty
 
 ## 4. Content cadence — editorial guardrails
 
-Kol's Korner is Kol-authored (with AI-curation help on digests). Google's "non-commodity" requirement should be easier to satisfy than for the AI-authored Synthetic Dispatch.
+Kol's Korner is Kol-authored (with AI-curation help on digests). Google's "non-commodity" requirement should be easier to satisfy than for an AI-authored publication.
 
 Watch-outs Codex should flag (not fix — content is Kol's editorial domain):
 

@@ -1,0 +1,285 @@
+{
+  "generatedAt": "2026-05-10T18:00:47.158Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-05-10",
+  "count": 15,
+  "items": [
+    {
+      "id": "anthropic-news-higher-usage-limits-for-claude-and-a-compute-deal-with-spacex-https-www-anthropic-com-news-higher-limits-spacex",
+      "title": "Higher usage limits for Claude and a compute deal with SpaceX",
+      "url": "https://www.anthropic.com/news/higher-limits-spacex",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-10",
+      "summary": "We’ve raised Claude's usage limits and agreed a new compute partnership with SpaceX that will substantially increase our capacity in the near term.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "hardware",
+        "funding",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-we-re-feeling-cynical-about-xai-s-big-deal-with-anthropic-https-techcrunch-com-2026-05-10-were-feeling-cynical-about-xais-big-deal-with-anthropic",
+      "title": "We’re feeling cynical about xAI’s big deal with Anthropic",
+      "url": "https://techcrunch.com/2026/05/10/were-feeling-cynical-about-xais-big-deal-with-anthropic/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-10",
+      "summary": "On the latest episode of the Equity podcast, we discussed what xAI's deal with Anthropic might mean for parent company SpaceX.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-voice-ai-in-india-is-hard-wispr-flow-is-betting-on-it-anyway-https-techcrunch-com-2026-05-09-voice-ai-in-india-is-hard-wispr-flow-is-betting-on-it-anyway",
+      "title": "Voice AI in India is hard. Wispr Flow is betting on it anyway.",
+      "url": "https://techcrunch.com/2026/05/09/voice-ai-in-india-is-hard-wispr-flow-is-betting-on-it-anyway/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-10",
+      "summary": "Wispr Flow says growth accelerated in India after its Hinglish rollout, even as voice AI products continue to face challenges.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "voice_synthesis"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-10",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-introducing-claude-opus-4-7-https-www-anthropic-com-news-claude-opus-4-7",
+      "title": "Introducing Claude Opus 4.7",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-10",
+      "summary": "Our latest model, Claude Opus 4.7, is now generally available. Opus 4.7 is a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-introducing-claude-design-by-anthropic-labs-https-www-anthropic-com-news-claude-design-anthropic-labs",
+      "title": "Introducing Claude Design by Anthropic Labs",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-10",
+      "summary": "Today, we’re launching Claude Design, a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-claude-is-a-space-to-think-anthropic-https-www-anthropic-com-news-claude-is-a-space-to-think",
+      "title": "Claude is a space to think | Anthropic",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-10",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-agents-for-financial-services-https-www-anthropic-com-news-finance-agents",
+      "title": "Agents for financial services",
+      "url": "https://www.anthropic.com/news/finance-agents",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-10",
+      "summary": "We're releasing ten new Cowork and Claude Code plugins, integrations with the Microsoft 365 suite, new connectors, and an MCP app for financial services and insurance organizations.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "tool_use",
+        "mcp"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-multiplexing-and-global-reasoning-https-ai-meta-com-blog-segment-anything-model-3",
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-10",
+      "summary": "Update March 27, 2026:",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-nvidia-has-already-committed-40b-to-equity-ai-deals-this-year-https-techcrunch-com-2026-05-09-nvidia-has-already-committed-40b-to-equity-ai-deals-this-year",
+      "title": "Nvidia has already committed $40B to equity AI deals this year",
+      "url": "https://techcrunch.com/2026/05/09/nvidia-has-already-committed-40b-to-equity-ai-deals-this-year/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-09",
+      "summary": "Nvidia continues to be a big investor in the AI ecosystem.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "hardware"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-so-you-ve-heard-these-ai-terms-and-nodded-along-let-s-fix-that-https-techcrunch-com-2026-05-09-artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms",
+      "title": "So you’ve heard these AI terms and nodded along; let’s fix that",
+      "url": "https://techcrunch.com/2026/05/09/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-09",
+      "summary": "The rise of AI has brought an avalanche of new terms and slang. Here is a glossary with definitions of some of the most important words and phrases you might encounter.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "hugging-face-blog-oncoagent-a-dual-tier-multi-agent-framework-for-privacy-preserving-oncology-clinical-decision-support-https-huggingface-co-blog-lablab-ai-amd-developer-hackathon-oncoagent-official-paper",
+      "title": "\"OncoAgent: A Dual-Tier Multi-Agent Framework for Privacy-Preserving Oncology Clinical Decision Support\"",
+      "url": "https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/oncoagent-official-paper",
+      "source": "Hugging Face Blog",
+      "sourceId": "hugging-face-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-09",
+      "summary": "",
+      "tags": [
+        "open_source",
+        "model_release",
+        "tool_use",
+        "agentic_framework",
+        "ai_agents",
+        "multi_agent"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-laid-off-oracle-workers-tried-to-negotiate-better-severance-oracle-said-no-https-techcrunch-com-2026-05-08-laid-off-oracle-workers-tried-to-negotiate-better-severance-oracle-said-no",
+      "title": "Laid-off Oracle workers tried to negotiate better severance. Oracle said no.",
+      "url": "https://techcrunch.com/2026/05/08/laid-off-oracle-workers-tried-to-negotiate-better-severance-oracle-said-no/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-08",
+      "summary": "Some found out they didn't qualify for WARN Act protections like two-months notice because the company had classified them as remote workers.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "ars-technica-ai-course-correction-google-to-link-more-sources-in-ai-overviews-https-arstechnica-com-google-2026-05-google-will-put-more-links-to-websites-in-ai-overviews",
+      "title": "Course correction: Google to link more sources in AI Overviews",
+      "url": "https://arstechnica.com/google/2026/05/google-will-put-more-links-to-websites-in-ai-overviews/",
+      "source": "Ars Technica AI",
+      "sourceId": "ars-technica-ai",
+      "section": "Industry",
+      "publishedAt": "2026-05-08",
+      "summary": "Google's AI search will start citing its sources in several new ways.",
+      "tags": [
+        "research_paper",
+        "open_source",
+        "hardware",
+        "policy"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "ars-technica-ai-google-unveils-screenless-fitbit-air-and-google-health-app-to-replace-fitbit-https-arstechnica-com-gadgets-2026-05-google-unveils-screenless-fitbit-air-and-google-health-app-to-replace-fitbit",
+      "title": "Google unveils screenless Fitbit Air and Google Health app to replace Fitbit",
+      "url": "https://arstechnica.com/gadgets/2026/05/google-unveils-screenless-fitbit-air-and-google-health-app-to-replace-fitbit/",
+      "source": "Ars Technica AI",
+      "sourceId": "ars-technica-ai",
+      "section": "Industry",
+      "publishedAt": "2026-05-07",
+      "summary": "The $100 Fitbit Air is available for preorder today.",
+      "tags": [
+        "research_paper",
+        "open_source",
+        "hardware",
+        "policy",
+        "product_launch"
+      ],
+      "adapter": "html"
+    }
+  ]
+}

@@ -519,7 +519,7 @@ summary: "AI and technology news digest for ${displayDate}"
 
 # Daily Digest: ${displayDate}
 
-Welcome to today's roundup of the most interesting developments in AI and technology.
+This dated roundup collects the most interesting AI and technology developments found for ${displayDate}.
 
 `;
 
@@ -563,7 +563,7 @@ publish: false
 
 # Daily Digest: ${displayDate}
 
-No news items were available for today's digest. Check back tomorrow!
+No publishable news items were available for this dated digest.
 `;
 
   return { markdown, slug };

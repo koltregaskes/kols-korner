@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-kk-jsonld'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:;">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Tags - Kol's Korner</title>
   <meta name="description" content="Browse posts by tag - Tech, Software Development & More" />
@@ -13,7 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+  <meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)" />
   <link rel="icon" href="../favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
@@ -22,14 +23,22 @@
 <body>
   
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header class="site-header">
-    <div class="header-content">
-      <a href="../" class="site-logo">
-        <span class="logo-icon">K</span>
-        <span class="logo-text">Kol's Korner</span>
+  <header class="site-header" data-site-header data-nav-open="false">
+    <div class="dateline">
+      <span>Kol Tregaskes / AI, tech and side-project notes</span>
+      <span>Latest published update</span>
+    </div>
+    <div class="masthead-row">
+      <a href="../" class="site-logo" aria-label="Kol's Korner home">
+        <span class="logo-text">Kol's<span class="logo-dot">.</span>Korner</span>
+        <span class="logo-sub">tech &middot; ai &middot; dev &amp; more</span>
       </a>
       <div class="site-header-actions">
-        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch colour theme">
+          <span class="theme-swatch" aria-hidden="true"></span>
+          <span data-theme-label>Dark</span>
+        </button>
+        <button class="site-nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
           <span></span>
           <span></span>
           <span></span>
@@ -53,128 +62,128 @@
           <p class="section-eyebrow">Topics</p>
           <h1 class="page-title">Browse the archive by useful themes, not random company names.</h1>
         </div>
-        <p class="posts-intro">These groupings combine written posts with the live news archive, so tags like AI, agents, regulation, and infrastructure actually mean something.</p>
+        <p class="posts-intro">These groupings combine written posts with the news archive, so tags like AI, agents, regulation, and infrastructure actually mean something.</p>
       </div>
 
       
-      <nav class="tag-cloud" aria-label="Jump to tag">
-        <a href="#" class="active" data-tag="all">All <span class="tag-count">(203)</span></a>
-        <a href="#ai" data-tag="ai">AI <span class="tag-count">(203)</span></a>
-        <a href="#models" data-tag="models">Models <span class="tag-count">(28)</span></a>
-        <a href="#agents" data-tag="agents">Agents <span class="tag-count">(20)</span></a>
-        <a href="#product" data-tag="product">Product <span class="tag-count">(17)</span></a>
-        <a href="#enterprise" data-tag="enterprise">Enterprise <span class="tag-count">(13)</span></a>
-        <a href="#infrastructure" data-tag="infrastructure">Infrastructure <span class="tag-count">(10)</span></a>
-        <a href="#research" data-tag="research">Research <span class="tag-count">(4)</span></a>
-        <a href="#safety" data-tag="safety">Safety <span class="tag-count">(5)</span></a>
-        <a href="#regulation" data-tag="regulation">Regulation <span class="tag-count">(5)</span></a>
-        <a href="#robotics" data-tag="robotics">Robotics <span class="tag-count">(4)</span></a>
-        <a href="#vision" data-tag="vision">Vision <span class="tag-count">(10)</span></a>
-        <a href="#coding" data-tag="coding">Coding <span class="tag-count">(5)</span></a>
+      <nav class="tag-cloud" data-tag-cloud aria-label="Jump to tag">
+        <a href="#" class="active" data-tag-filter="all">All <span class="tag-count">(77)</span></a>
+        <a href="#ai" data-tag-filter="ai">AI <span class="tag-count">(77)</span></a>
+        <a href="#models" data-tag-filter="models">Models <span class="tag-count">(11)</span></a>
+        <a href="#agents" data-tag-filter="agents">Agents <span class="tag-count">(9)</span></a>
+        <a href="#product" data-tag-filter="product">Product <span class="tag-count">(5)</span></a>
+        <a href="#enterprise" data-tag-filter="enterprise">Enterprise <span class="tag-count">(5)</span></a>
+        <a href="#infrastructure" data-tag-filter="infrastructure">Infrastructure <span class="tag-count">(4)</span></a>
+        <a href="#research" data-tag-filter="research">Research <span class="tag-count">(2)</span></a>
+        <a href="#safety" data-tag-filter="safety">Safety <span class="tag-count">(1)</span></a>
+        <a href="#regulation" data-tag-filter="regulation">Regulation <span class="tag-count">(2)</span></a>
+        <a href="#robotics" data-tag-filter="robotics">Robotics <span class="tag-count">(1)</span></a>
+        <a href="#vision" data-tag-filter="vision">Vision <span class="tag-count">(3)</span></a>
+        <a href="#healthcare" data-tag-filter="healthcare">Healthcare <span class="tag-count">(1)</span></a>
       </nav>
 
       
-      <section class="tag-section" id="ai" data-tag="ai">
+      <section class="tag-section" id="ai" data-tag-section="ai">
         <header class="tag-section-header">
           <div>
-            <h2 class="tag-section-title"><span class="hash">#</span>AI</h2>
+            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>AI</h2>
             <p class="tag-section-description">Newest stories and posts filed under AI.</p>
           </div>
-          <span class="tag-section-count">203 items</span>
+          <span class="tag-section-count">77 items</span>
         </header>
         <div class="tag-entry-grid">
           
           <article class="tag-entry-card">
-            <a href="https://x.com/thederbiedone/status/2051032485119820064" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://techcrunch.com/2026/05/16/openai-co-founder-greg-brockman-reportedly-takes-charge-of-product-strategy" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>4 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>GPT-6 Is in Alignment at Stargate</h3>
-              <p>GPT-6 completed pre-training at Stargate with 92.5% math reasoning and 96.8% code generation, now in safety alignment as OpenAI renames its division to AGI Deployment.</p>
+              <h3>OpenAI co-founder Greg Brockman takes charge of product strategy</h3>
+              <p>OpenAI&#039;s latest shakeup comes as the company reportedly plans to combine ChatGPT and its programming product Codex.</p>
               <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
+                <span>TechCrunch AI</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://longevity.technology/news/lifespanningrx-launches-partner-program-for-peptide-therapy" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/gates-foundation-partnership" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>4 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>LifespanningRx launches partner program for peptide therapy</h3>
-              <p>LifespanningRx launched a Partner Program that enables clinics, wellness practices, personal trainers, medspas, recovery centers and performance brands to offer clinician-guided peptide programs without managing inventory, prescriptions, fulfillment or regulatory complexity. According to the company, the program provides licensed U.S.-based clinicians for evaluations and prescriptions where appropriate, pharmacy fulfillment with direct-to-patient shipping, no inventory to [&amp;#8230;] The post LifespanningRx launches partner program for peptide therapy appeared first on Longevity.Technology .</p>
+              <h3>Anthropic forms $200 million partnership with the Gates Foundation</h3>
+              <p>Anthropic is an AI safety and research company that&#039;s working to build reliable, interpretable, and steerable AI systems.</p>
               <div class="tag-entry-footer">
-                <span>Longevity Technology</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://x.com/Shaughnessy119/status/2042339593647800404" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/claude-opus-4-7" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>3 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>Hermes Agent Hit 100K GitHub Stars — The Fastest-Growing Open-Source AI Agent Has Won the Community</h3>
-              <p>Braygent argues Hermes Agent&#039;s 100K GitHub stars represent a clear developer community vote for reliability over feature velocity, with implications for how all AI developer tools should prioritize update stability.</p>
+              <h3>Introducing Claude Opus 4.7</h3>
+              <p>Our latest model, Claude Opus 4.7, is now generally available. Opus 4.7 is a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks.</p>
               <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://reddit.com/r/StableDiffusion/comments/1t2j4lg/best_local_visionlanguage_models" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/claude-design-anthropic-labs" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>3 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>Best Local Vision-Language Models?</h3>
-              <p>What are in your opinion the best local vision models to get a good despription of picture for a 16 GB GPU? At the moment I use qwen3 vl 8b thinking q8 but I wonder, if there is a better model around? Often the models is not really to recognize the right kind of clothes and background.</p>
+              <h3>Introducing Claude Design by Anthropic Labs</h3>
+              <p>Today, we’re launching Claude Design, a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.</p>
               <div class="tag-entry-footer">
-                <span>Reddit r/StableDiffusion</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://reddit.com/r/ClaudeAI/comments/1t2ov5s/how_have_you_used_claude_skills_and_integrations" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/claude-is-a-space-to-think" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>3 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>How have you used Claude skills and integrations to achieve meaningful productivity increases at a dev org level?</h3>
-              <p>I have been tasked with doing just that.</p>
+              <h3>Claude is a space to think | Anthropic</h3>
+              <p>We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.</p>
               <div class="tag-entry-footer">
-                <span>Reddit r/ClaudeAI</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://reddit.com/r/StableDiffusion/comments/1t2nm4u/built_a_local_llm_inference_engine_on_cachyos" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/pwc-expanded-partnership" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>3 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>Built a local LLM inference engine on CachyOS — runs faster than llama.cpp on my 9070 XT</h3>
-              <p>Hey folks,</p>
+              <h3>PwC is deploying Claude to build technology, execute deals, and reinvent enterprise functions for clients</h3>
+              <p>Anthropic is an AI safety and research company that&#039;s working to build reliable, interpretable, and steerable AI systems.</p>
               <div class="tag-entry-footer">
-                <span>Reddit r/StableDiffusion</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
@@ -182,107 +191,107 @@
         </div>
       </section>
 
-      <section class="tag-section" id="models" data-tag="models">
+      <section class="tag-section" id="models" data-tag-section="models">
         <header class="tag-section-header">
           <div>
-            <h2 class="tag-section-title"><span class="hash">#</span>Models</h2>
+            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>Models</h2>
             <p class="tag-section-description">Newest stories and posts filed under Models.</p>
           </div>
-          <span class="tag-section-count">28 items</span>
+          <span class="tag-section-count">11 items</span>
         </header>
         <div class="tag-entry-grid">
           
           <article class="tag-entry-card">
-            <a href="https://x.com/thederbiedone/status/2051032485119820064" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/gates-foundation-partnership" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>4 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>GPT-6 Is in Alignment at Stargate</h3>
-              <p>GPT-6 completed pre-training at Stargate with 92.5% math reasoning and 96.8% code generation, now in safety alignment as OpenAI renames its division to AGI Deployment.</p>
+              <h3>Anthropic forms $200 million partnership with the Gates Foundation</h3>
+              <p>Anthropic is an AI safety and research company that&#039;s working to build reliable, interpretable, and steerable AI systems.</p>
               <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://reddit.com/r/ClaudeAI/comments/1t2ov5s/how_have_you_used_claude_skills_and_integrations" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/claude-opus-4-7" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>3 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>How have you used Claude skills and integrations to achieve meaningful productivity increases at a dev org level?</h3>
-              <p>I have been tasked with doing just that.</p>
+              <h3>Introducing Claude Opus 4.7</h3>
+              <p>Our latest model, Claude Opus 4.7, is now generally available. Opus 4.7 is a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks.</p>
               <div class="tag-entry-footer">
-                <span>Reddit r/ClaudeAI</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://reddit.com/r/StableDiffusion/comments/1t2nm4u/built_a_local_llm_inference_engine_on_cachyos" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/claude-design-anthropic-labs" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>3 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>Built a local LLM inference engine on CachyOS — runs faster than llama.cpp on my 9070 XT</h3>
-              <p>Hey folks,</p>
+              <h3>Introducing Claude Design by Anthropic Labs</h3>
+              <p>Today, we’re launching Claude Design, a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.</p>
               <div class="tag-entry-footer">
-                <span>Reddit r/StableDiffusion</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://x.com/WesRoth/status/2050606311440531809" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/claude-is-a-space-to-think" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>2 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>@WesRoth: Meta Launches Ads MCP — Claude and ChatGPT Can Now Manage Meta Ad Accounts</h3>
-              <p>Meta launched its Ads MCP and CLI, creating a direct bridge for frontier AI models like Claude and ChatGPT to access and interact with the Meta Ads ecosystem through natural language.</p>
+              <h3>Claude is a space to think | Anthropic</h3>
+              <p>We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.</p>
               <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://reddit.com/r/ClaudeAI/comments/1t1vjd0/tried_running_claude_code_with_local_llms_via" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/pwc-expanded-partnership" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>2 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>Tried running Claude Code with local LLMs via Ollama — ended up subscribing to Pro anyway. But now I can&#039;t disconnect from the local server.</h3>
-              <p>I&#039;ve been experimenting with using Ollama to run Claude Code locally with models like Gemma 4, thinking I could avoid API costs. However, I quickly realised these models aren&#039;t really optimised for Claude Code&#039;s agentic workflows — they tend to get stuck in thinking loops and don&#039;t follow Claude Code&#039;s expected output structure well. So I ended up subscribing to Claude Pro anyway.</p>
+              <h3>PwC is deploying Claude to build technology, execute deals, and reinvent enterprise functions for clients</h3>
+              <p>Anthropic is an AI safety and research company that&#039;s working to build reliable, interpretable, and steerable AI systems.</p>
               <div class="tag-entry-footer">
-                <span>Reddit r/ClaudeAI</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://x.com/nikostro/status/2050347793487941902" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/higher-limits-spacex" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>2 May 2026</span>
+                <span>14 May 2026</span>
               </div>
-              <h3>NIST Just Said DeepSeek V4 Equals GPT-5 and Everyone Should Read This Carefully</h3>
-              <p>Braygent highlights the NIST DeepSeek V4 assessment as carrying unique policy credibility and argues the finding challenges assumptions about export control effectiveness in slowing Chinese AI development.</p>
+              <h3>Higher usage limits for Claude and a compute deal with SpaceX</h3>
+              <p>We’ve raised Claude&#039;s usage limits and agreed a new compute partnership with SpaceX that will substantially increase our capacity in the near term.</p>
               <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
@@ -290,73 +299,41 @@
         </div>
       </section>
 
-      <section class="tag-section" id="agents" data-tag="agents">
+      <section class="tag-section" id="agents" data-tag-section="agents">
         <header class="tag-section-header">
           <div>
-            <h2 class="tag-section-title"><span class="hash">#</span>Agents</h2>
+            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>Agents</h2>
             <p class="tag-section-description">Newest stories and posts filed under Agents.</p>
           </div>
-          <span class="tag-section-count">20 items</span>
+          <span class="tag-section-count">9 items</span>
         </header>
         <div class="tag-entry-grid">
           
           <article class="tag-entry-card">
-            <a href="https://x.com/Shaughnessy119/status/2042339593647800404" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.bensbites.com/p/agents-feedback-tip" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>3 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>Hermes Agent Hit 100K GitHub Stars — The Fastest-Growing Open-Source AI Agent Has Won the Community</h3>
-              <p>Braygent argues Hermes Agent&#039;s 100K GitHub stars represent a clear developer community vote for reliability over feature velocity, with implications for how all AI developer tools should prioritize update stability.</p>
+              <h3>Agents feedback tip</h3>
+              <p>all apps will become dev tools</p>
               <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
+                <span>Ben&#039;s Bites</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://x.com/NVIDIAAI/status/2050336285428998202" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://arxiv.org/abs/2605.13850" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>2 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>NVIDIA&#039;s Open Source Enterprise AI Agent Security Layer Is More Important Than People Realize</h3>
-              <p>Braygent argues NVIDIA&#039;s open source OpenShell is the infrastructure unlock for enterprise AI agent deployment, with the open source design being crucial for security team auditability.</p>
-              <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>30 Apr 2026</span>
-              </div>
-              <h3>Stripe introduces Link, a digital wallet that autonomous AI agents can use, too</h3>
-              <p>Link lets users connect cards, banks, and subscriptions, then authorize AI agents to spend securely via approval flows.</p>
-              <div class="tag-entry-footer">
-                <span>TechCrunch AI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://arxiv.org/abs/2604.26091" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>30 Apr 2026</span>
-              </div>
-              <h3>Operating-Layer Controls for Onchain Language-Model Agents Under Real Capital</h3>
-              <p>arXiv:2604.26091v1 Announce Type: new Abstract: We study reliability in autonomous language-model agents that translate user mandates into validated tool actions under real capital. The setting is DX Terminal Pro, a 21-day deployment in which 3,505 user-funded agents traded real ETH in a bounded...</p>
+              <h3>A Two-Dimensional Framework for AI Agent Design Patterns: Cognitive Function and Execution Topology</h3>
+              <p>arXiv:2605.13850v1 Announce Type: new Abstract: Existing frameworks for LLM-based agent architectures describe systems from a single perspective: industry guides (Anthropic, Google, LangChain) focus on execution topology -- how data flows -- while cognitive science surveys focus on cognitive func...</p>
               <div class="tag-entry-footer">
                 <span>arXiv cs.AI</span>
                 <span>Open story</span>
@@ -365,32 +342,64 @@
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://huggingface.co/blog/nvidia/nemotron-3-nano-omni-multimodal-intelligence" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.technologyreview.com/2026/05/14/1137034/data-readiness-for-agentic-ai-in-financial-services" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>28 Apr 2026</span>
+                <span>14 May 2026</span>
               </div>
-              <h3>Introducing NVIDIA Nemotron 3 Nano Omni: Long-Context Multimodal Intelligence for Documents, Audio and Video Agents</h3>
-              <p>Fresh coverage from the live news archive.</p>
+              <h3>Data readiness for agentic AI in financial services</h3>
+              <p>Financial services companies have unique needs when it comes to business AI. They operate in one of the most highly regulated sectors while responding to external events that are updated by the second. As a result, the success of agentic AI in financial services depends less on the sophistication...</p>
               <div class="tag-entry-footer">
-                <span>Hugging Face Blog</span>
+                <span>MIT Technology Review AI</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://x.com/ModelScope2022/status/2048956565244498182" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://arxiv.org/abs/2605.12655" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>28 Apr 2026</span>
+                <span>14 May 2026</span>
               </div>
-              <h3>Xiaomi MiMo-V2.5 is now live!a major step forward in agentic capability and multimodal understanding. 310B params / 15B active. Native vision + audio. Up to 1M token context. And it&#039;s open-source. Explore on ModelScope https:// modelscope.cn/collections/Xi aomiMiMo/MiMo-V25 … The numbers back</h3>
-              <p>Xiaomi MiMo-V2.5 is now live!a major step forward in agentic capability and multimodal understanding.</p>
+              <h3>Macro-Action Based Multi-Agent Instruction Following through Value Cancellation</h3>
+              <p>arXiv:2605.12655v1 Announce Type: new Abstract: Multi-agent reinforcement learning (MARL) in real-world use cases may need to adapt to external natural language instructions that interrupt ongoing behavior and conflict with long-horizon objectives. However, conditioning rewards on instructions in...</p>
               <div class="tag-entry-footer">
-                <span>X / @modelscope2022</span>
+                <span>arXiv cs.AI</span>
+                <span>Open story</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="tag-entry-card">
+            <a href="https://arxiv.org/abs/2605.12673" class="tag-entry-link" target="_blank" rel="noopener">
+              <div class="tag-entry-meta">
+                <span>News</span>
+                <span class="meta-sep">&bull;</span>
+                <span>14 May 2026</span>
+              </div>
+              <h3>Do Androids Dream of Breaking the Game? Systematically Auditing AI Agent Benchmarks with BenchJack</h3>
+              <p>arXiv:2605.12673v1 Announce Type: new Abstract: Agent benchmarks have become the de facto measure of frontier AI competence, guiding model selection, investment, and deployment. However, reward hacking, where agents maximize a score without performing the intended task, emerges spontaneously in f...</p>
+              <div class="tag-entry-footer">
+                <span>arXiv cs.AI</span>
+                <span>Open story</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="tag-entry-card">
+            <a href="https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents" class="tag-entry-link" target="_blank" rel="noopener">
+              <div class="tag-entry-meta">
+                <span>News</span>
+                <span class="meta-sep">&bull;</span>
+                <span>13 May 2026</span>
+              </div>
+              <h3>Notion just turned its workspace into a hub for AI agents</h3>
+              <p>Notion’s new developer platform lets teams connect AI agents, external data sources, and custom code directly into their workspace as the company pushes deeper into agentic productivity software.</p>
+              <div class="tag-entry-footer">
+                <span>TechCrunch AI</span>
                 <span>Open story</span>
               </div>
             </a>
@@ -398,57 +407,25 @@
         </div>
       </section>
 
-      <section class="tag-section" id="product" data-tag="product">
+      <section class="tag-section" id="product" data-tag-section="product">
         <header class="tag-section-header">
           <div>
-            <h2 class="tag-section-title"><span class="hash">#</span>Product</h2>
+            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>Product</h2>
             <p class="tag-section-description">Newest stories and posts filed under Product.</p>
           </div>
-          <span class="tag-section-count">17 items</span>
+          <span class="tag-section-count">5 items</span>
         </header>
         <div class="tag-entry-grid">
           
           <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/30/openai-announces-new-advanced-security-for-chatgpt-accounts-including-a-partnership-with-yubico" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://techcrunch.com/2026/05/15/silicon-valleys-vacationland-needs-a-new-energy-provider-just-as-ai-is-driving-prices-up" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>1 May 2026</span>
+                <span>15 May 2026</span>
               </div>
-              <h3>OpenAI announces new advanced security for ChatGPT accounts, including a partnership with Yubico</h3>
-              <p>Fresh coverage from the live news archive.</p>
-              <div class="tag-entry-footer">
-                <span>TechCrunch</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://huggingface.co/blog/evaleval/eval-costs-bottleneck" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>29 Apr 2026</span>
-              </div>
-              <h3>AI evals are becoming the new compute bottleneck</h3>
-              <p>Fresh coverage from the live news archive.</p>
-              <div class="tag-entry-footer">
-                <span>Hugging Face Blog</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/28/youtube-is-testing-an-ai-powered-search-feature-that-shows-guided-answers" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>28 Apr 2026</span>
-              </div>
-              <h3>YouTube is testing an AI-powered search feature that shows guided answers</h3>
-              <p>YouTube is rolling out the new AI search feature to Premium subscribers in the U.S. on an opt-in basis.</p>
+              <h3>Silicon Valley’s vacationland needs a new energy provider just as AI is driving prices up</h3>
+              <p>Lake Tahoe, Silicon Valley&#039;s favorite vacation spot, is about to get hit with higher energy prices as AI drives demand for electricity.</p>
               <div class="tag-entry-footer">
                 <span>TechCrunch AI</span>
                 <span>Open story</span>
@@ -457,14 +434,14 @@
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/28/otters-new-feature-lets-users-search-across-their-enterprise-tools" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://techcrunch.com/2026/05/13/anthropic-courts-a-new-kind-of-customer-small-business-owners" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>28 Apr 2026</span>
+                <span>13 May 2026</span>
               </div>
-              <h3>Otter’s new feature lets users search across their enterprise tools</h3>
-              <p>With this launch, users can connect their Gmail, Google Drive, Notion, Jira, and Salesforce accounts and query that data along with existing meeting data. The company said that it will soon allow connections with Microsoft Outlook, Teams, SharePoint, and Slack.</p>
+              <h3>Anthropic courts a new kind of customer: small business owners</h3>
+              <p>For founders and investors, Anthropic&#039;s new offering signals that the AI platform wars are expanding downmarket and that the next major battleground for user acquisition isn&#039;t the Fortune 500; it&#039;s the 36 million small businesses that make up the backbone of the U.S. economy.</p>
               <div class="tag-entry-footer">
                 <span>TechCrunch AI</span>
                 <span>Open story</span>
@@ -473,14 +450,14 @@
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/27/investors-back-skye-signull-labs-ai-home-screen-app-for-iphone-ahead-of-launch" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://techcrunch.com/2026/05/07/openai-launches-new-voice-intelligence-features-in-its-api" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>27 Apr 2026</span>
+                <span>7 May 2026</span>
               </div>
-              <h3>Investors back Skye’s AI home screen app for iPhone ahead of launch</h3>
-              <p>Skye&#039;s new AI app attracted investors before it even launched — a sign of interest in a more AI-aware iPhone.</p>
+              <h3>OpenAI launches new voice intelligence features in its API</h3>
+              <p>The new features could be handy for customer service systems, but OpenAI says they have applications that work across a variety of other fields, including education and creator platforms.</p>
               <div class="tag-entry-footer">
                 <span>TechCrunch AI</span>
                 <span>Open story</span>
@@ -489,16 +466,32 @@
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://www.anthropic.com/news/election-safeguards-update" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://techcrunch.com/2026/05/07/voi-founders-new-ai-startup-pit-has-become-the-latest-rising-star-out-of-stockholm" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>27 Apr 2026</span>
+                <span>7 May 2026</span>
               </div>
-              <h3>An update on our election safeguards</h3>
-              <p>Anthropic is an AI safety and research company that&#039;s working to build reliable, interpretable, and steerable AI systems.</p>
+              <h3>Voi founders’ new AI startup Pit has become the latest rising star out of Stockholm</h3>
+              <p>AI startup Pit is led by the co-founders of European scooter giant Voi and backed by a16z, which is leading the startup’s $16 million seed round.</p>
               <div class="tag-entry-footer">
-                <span>Anthropic News</span>
+                <span>TechCrunch AI</span>
+                <span>Open story</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="tag-entry-card">
+            <a href="https://techcrunch.com/2026/05/07/openai-introduces-new-trusted-contact-safeguard-for-cases-of-possible-self-harm" class="tag-entry-link" target="_blank" rel="noopener">
+              <div class="tag-entry-meta">
+                <span>News</span>
+                <span class="meta-sep">&bull;</span>
+                <span>7 May 2026</span>
+              </div>
+              <h3>OpenAI introduces new ‘Trusted Contact’ safeguard for cases of possible self-harm</h3>
+              <p>The company is expanding its efforts to protect ChatGPT users in cases where conversations may turn to self-harm.</p>
+              <div class="tag-entry-footer">
+                <span>TechCrunch AI</span>
                 <span>Open story</span>
               </div>
             </a>
@@ -506,73 +499,57 @@
         </div>
       </section>
 
-      <section class="tag-section" id="enterprise" data-tag="enterprise">
+      <section class="tag-section" id="enterprise" data-tag-section="enterprise">
         <header class="tag-section-header">
           <div>
-            <h2 class="tag-section-title"><span class="hash">#</span>Enterprise</h2>
+            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>Enterprise</h2>
             <p class="tag-section-description">Newest stories and posts filed under Enterprise.</p>
           </div>
-          <span class="tag-section-count">13 items</span>
+          <span class="tag-section-count">5 items</span>
         </header>
         <div class="tag-entry-grid">
           
           <article class="tag-entry-card">
-            <a href="https://x.com/NVIDIAAI/status/2050336285428998202" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/pwc-expanded-partnership" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>2 May 2026</span>
+                <span>16 May 2026</span>
               </div>
-              <h3>NVIDIA&#039;s Open Source Enterprise AI Agent Security Layer Is More Important Than People Realize</h3>
-              <p>Braygent argues NVIDIA&#039;s open source OpenShell is the infrastructure unlock for enterprise AI agent deployment, with the open source design being crucial for security team auditability.</p>
+              <h3>PwC is deploying Claude to build technology, execute deals, and reinvent enterprise functions for clients</h3>
+              <p>Anthropic is an AI safety and research company that&#039;s working to build reliable, interpretable, and steerable AI systems.</p>
               <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://x.com/OpenSourceAIHub/status/2050625627540123871" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/claude-for-small-business" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>2 May 2026</span>
+                <span>14 May 2026</span>
               </div>
-              <h3>OpenAI models are now available on Amazon Bedrock, letting you run GPT-4o and o1 through AWS&#039;s managed inference layer. No separate OpenAI account needed, bills through your AWS spend. Worth it if you&#039;re already deep in the AWS ecosystem and want unified billing + enterprise</h3>
-              <p>OpenAI models are now available on Amazon Bedrock, letting you run GPT-4o and o1 through AWS&#039;s managed inference layer. No separate OpenAI account needed, bills through your AWS spend. Worth it if you&#039;re already deep in the AWS ecosystem and want unified billing + enterprise</p>
+              <h3>Introducing Claude for Small Business</h3>
+              <p>We&#039;re launching Claude for Small Business, a package of connectors and ready-to-run workflows that put Claude inside the tools small businesses use every day.</p>
               <div class="tag-entry-footer">
-                <span>X / @opensourceaihub</span>
+                <span>Anthropic News</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://x.com/FeatherlessAI" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://techcrunch.com/2026/05/13/anthropic-courts-a-new-kind-of-customer-small-business-owners" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>1 May 2026</span>
+                <span>13 May 2026</span>
               </div>
-              <h3>FeatherlessAI $20M — Serverless Open Model Platform for Enterprise Infrastructure</h3>
-              <p>FeatherlessAI raised $20M to build a serverless open-model inference platform supporting 30,000+ open-weight models as a vendor-neutral enterprise AI infrastructure layer. AMD Ventures led the round, reflecting AMD&#039;s ecosystem investment strategy.</p>
-              <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/28/red-hats-openclaw-maintainer-just-made-enterprise-claw-deployments-a-lot-safer" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>28 Apr 2026</span>
-              </div>
-              <h3>Red Hat’s OpenClaw maintainer just made enterprise Claw deployments a lot safer</h3>
-              <p>Tank OS puts OpenClaw AI agents into a container that lets it run reliably and more safely, especially for those running fleets of them.</p>
+              <h3>Anthropic courts a new kind of customer: small business owners</h3>
+              <p>For founders and investors, Anthropic&#039;s new offering signals that the AI platform wars are expanding downmarket and that the next major battleground for user acquisition isn&#039;t the Fortune 500; it&#039;s the 36 million small businesses that make up the backbone of the U.S. economy.</p>
               <div class="tag-entry-footer">
                 <span>TechCrunch AI</span>
                 <span>Open story</span>
@@ -581,182 +558,58 @@
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/28/otters-new-feature-lets-users-search-across-their-enterprise-tools" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="../posts/elon-musk-merges-spacex-and-xai-because-of-course-he-does/" class="tag-entry-link">
               <div class="tag-entry-meta">
-                <span>News</span>
+                <span>Post</span>
                 <span class="meta-sep">&bull;</span>
-                <span>28 Apr 2026</span>
+                <span>22 Feb 2026</span>
               </div>
-              <h3>Otter’s new feature lets users search across their enterprise tools</h3>
-              <p>With this launch, users can connect their Gmail, Google Drive, Notion, Jira, and Salesforce accounts and query that data along with existing meeting data. The company said that it will soon allow connections with Microsoft Outlook, Teams, SharePoint, and Slack.</p>
+              <h3>Elon Musk Merges SpaceX and xAI Because Of Course He Does</h3>
+              <p>Elon Musk merges SpaceX and xAI to embed Grok into spacecraft operations - but this is really about corporate structure and narrative control.</p>
               <div class="tag-entry-footer">
-                <span>TechCrunch AI</span>
-                <span>Open story</span>
+                <span>2 min read</span>
+                <span>Read post</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://www.technologyreview.com/2026/04/16/1135554/treating-enterprise-ai-as-an-operating-layer" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="../posts/jpmorgan-drops-30-billion-on-ai-infrastructure/" class="tag-entry-link">
               <div class="tag-entry-meta">
-                <span>News</span>
+                <span>Post</span>
                 <span class="meta-sep">&bull;</span>
-                <span>16 Apr 2026</span>
+                <span>18 Feb 2026</span>
               </div>
-              <h3>Treating enterprise AI as an operating layer</h3>
-              <p>There’s a fault line running through enterprise AI, and it’s not the one getting the most attention. The public conversation still tracks foundation models and benchmarks—GPT versus Gemini, reasoning scores, and marginal capability gains. But in practice, the more durable advantage is structural:...</p>
+              <h3>JPMorgan Drops $30 Billion on AI Infrastructure</h3>
+              <p>JPMorgan is spending $30 billion on AI infrastructure - not because they love technology, but because staying competitive demands it.</p>
               <div class="tag-entry-footer">
-                <span>MIT Technology Review AI</span>
-                <span>Open story</span>
+                <span>3 min read</span>
+                <span>Read post</span>
               </div>
             </a>
           </article>
         </div>
       </section>
 
-      <section class="tag-section" id="infrastructure" data-tag="infrastructure">
+      <section class="tag-section" id="infrastructure" data-tag-section="infrastructure">
         <header class="tag-section-header">
           <div>
-            <h2 class="tag-section-title"><span class="hash">#</span>Infrastructure</h2>
+            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>Infrastructure</h2>
             <p class="tag-section-description">Newest stories and posts filed under Infrastructure.</p>
           </div>
-          <span class="tag-section-count">10 items</span>
-        </header>
-        <div class="tag-entry-grid">
-          
-          <article class="tag-entry-card">
-            <a href="https://x.com/FeatherlessAI" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>1 May 2026</span>
-              </div>
-              <h3>FeatherlessAI $20M — Serverless Open Model Platform for Enterprise Infrastructure</h3>
-              <p>FeatherlessAI raised $20M to build a serverless open-model inference platform supporting 30,000+ open-weight models as a vendor-neutral enterprise AI infrastructure layer. AMD Ventures led the round, reflecting AMD&#039;s ecosystem investment strategy.</p>
-              <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://huggingface.co/blog/evaleval/eval-costs-bottleneck" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>29 Apr 2026</span>
-              </div>
-              <h3>AI evals are becoming the new compute bottleneck</h3>
-              <p>Fresh coverage from the live news archive.</p>
-              <div class="tag-entry-footer">
-                <span>Hugging Face Blog</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/25/maines-governor-vetoes-data-center-moratorium" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>25 Apr 2026</span>
-              </div>
-              <h3>Maine’s governor vetoes data center moratorium</h3>
-              <p>L.D. 307 would have imposed the country’s first statewide moratorium on new data centers — lasting, in this case, until November 1, 2027.</p>
-              <div class="tag-entry-footer">
-                <span>TechCrunch AI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://www.anthropic.com/news/google-broadcom-partnership-compute" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>21 Apr 2026</span>
-              </div>
-              <h3>Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute</h3>
-              <p>Anthropic is an AI safety and research company that&#039;s working to build reliable, interpretable, and steerable AI systems.</p>
-              <div class="tag-entry-footer">
-                <span>Anthropic News</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/18/ai-chip-startup-cerebras-files-for-ipo" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>18 Apr 2026</span>
-              </div>
-              <h3>AI chip startup Cerebras files for IPO</h3>
-              <p>In recent months, the company announced an agreement with Amazon Web Services to use Cerebras chips in Amazon data centers, as well as a deal with OpenAI reportedly worth more than $10 billion.</p>
-              <div class="tag-entry-footer">
-                <span>TechCrunch AI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/07/anthropic-compute-deal-google-broadcom-tpus" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>7 Apr 2026</span>
-              </div>
-              <h3>Anthropic ups compute deal with Google and Broadcom amid skyrocketing demand</h3>
-              <p>Anthropic bulked up its compute deal with Google and Broadcom as the company has seen its run-rate revenue surge to $30 billion.</p>
-              <div class="tag-entry-footer">
-                <span>TechCrunch AI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-        </div>
-      </section>
-
-      <section class="tag-section" id="research" data-tag="research">
-        <header class="tag-section-header">
-          <div>
-            <h2 class="tag-section-title"><span class="hash">#</span>Research</h2>
-            <p class="tag-section-description">Newest stories and posts filed under Research.</p>
-          </div>
           <span class="tag-section-count">4 items</span>
         </header>
         <div class="tag-entry-grid">
           
           <article class="tag-entry-card">
-            <a href="https://arxiv.org/abs/2604.22026" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.anthropic.com/news/higher-limits-spacex" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>27 Apr 2026</span>
+                <span>14 May 2026</span>
               </div>
-              <h3>Rethinking Publication: A Certification Framework for AI-Enabled Research</h3>
-              <p>arXiv:2604.22026v1 Announce Type: new Abstract: AI research pipelines now produce a growing share of publishable academic output, including work that meets existing peer-review standards for quality and novelty. Yet the publication system was built on the assumption of universal human authorship...</p>
-              <div class="tag-entry-footer">
-                <span>arXiv cs.AI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://www.anthropic.com/news/australia-MOU" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>10 Apr 2026</span>
-              </div>
-              <h3>Australian government and Anthropic sign MOU for AI safety and research</h3>
-              <p>Anthropic is an AI safety and research company that&#039;s working to build reliable, interpretable, and steerable AI systems.</p>
+              <h3>Higher usage limits for Claude and a compute deal with SpaceX</h3>
+              <p>We’ve raised Claude&#039;s usage limits and agreed a new compute partnership with SpaceX that will substantially increase our capacity in the near term.</p>
               <div class="tag-entry-footer">
                 <span>Anthropic News</span>
                 <span>Open story</span>
@@ -765,30 +618,46 @@
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://arxiv.org/abs/2604.00005" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://techcrunch.com/2026/05/13/musks-xai-is-running-nearly-50-gas-turbines-unchecked-at-its-mississippi-data-center" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>3 Apr 2026</span>
+                <span>13 May 2026</span>
               </div>
-              <h3>How Emotion Shapes the Behavior of LLMs and Agents: A Mechanistic Study</h3>
-              <p>arXiv:2604.00005v1 Announce Type: new Abstract: Emotion plays an important role in human cognition and performance. Motivated by this, we investigate whether analogous emotional signals can shape the behavior of large language models (LLMs) and agents. Existing emotion-aware studies mainly treat...</p>
+              <h3>Musk’s xAI is running nearly 50 gas turbines unchecked at its Mississippi data center</h3>
+              <p>Gas turbines at xAI&#039;s Colossus 2 data center have drawn a lawsuit over the company&#039;s use of &quot;mobile&quot; gas turbines as power plants.</p>
               <div class="tag-entry-footer">
-                <span>arXiv cs.AI</span>
+                <span>TechCrunch AI</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="../posts/nasas-mars-rover-just-got-smarter-than-its-engineers/" class="tag-entry-link">
+            <a href="https://ai.meta.com/blog/meta-mtia-scale-ai-chips-for-billions" class="tag-entry-link" target="_blank" rel="noopener">
+              <div class="tag-entry-meta">
+                <span>News</span>
+                <span class="meta-sep">&bull;</span>
+                <span>6 May 2026</span>
+              </div>
+              <h3>Four MTIA Chips in Two Years: Scaling AI Experiences for Billions</h3>
+              <p>Serving a wide range of AI models on a global scale, while maintaining the lowest possible costs, is one of the most demanding infrastructure challenges...</p>
+              <div class="tag-entry-footer">
+                <span>Meta AI Blog</span>
+                <span>Open story</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="tag-entry-card">
+            <a href="../posts/jpmorgan-drops-30-billion-on-ai-infrastructure/" class="tag-entry-link">
               <div class="tag-entry-meta">
                 <span>Post</span>
                 <span class="meta-sep">&bull;</span>
-                <span>20 Feb 2026</span>
+                <span>18 Feb 2026</span>
               </div>
-              <h3>NASA&#039;s Mars Rover Just Got Smarter Than Its Engineers</h3>
-              <p>NASA&#039;s latest Mars rover can navigate autonomously using AI - making decisions faster than mission control could ever respond.</p>
+              <h3>JPMorgan Drops $30 Billion on AI Infrastructure</h3>
+              <p>JPMorgan is spending $30 billion on AI infrastructure - not because they love technology, but because staying competitive demands it.</p>
               <div class="tag-entry-footer">
                 <span>3 min read</span>
                 <span>Read post</span>
@@ -798,225 +667,25 @@
         </div>
       </section>
 
-      <section class="tag-section" id="safety" data-tag="safety">
+      <section class="tag-section" id="research" data-tag-section="research">
         <header class="tag-section-header">
           <div>
-            <h2 class="tag-section-title"><span class="hash">#</span>Safety</h2>
-            <p class="tag-section-description">Newest stories and posts filed under Safety.</p>
+            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>Research</h2>
+            <p class="tag-section-description">Newest stories and posts filed under Research.</p>
           </div>
-          <span class="tag-section-count">5 items</span>
+          <span class="tag-section-count">2 items</span>
         </header>
         <div class="tag-entry-grid">
           
           <article class="tag-entry-card">
-            <a href="https://x.com/thederbiedone/status/2051032485119820064" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://www.technologyreview.com/2026/05/11/1136967/fostering-breakthrough-ai-innovation-through-customer-back-engineering" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>4 May 2026</span>
+                <span>11 May 2026</span>
               </div>
-              <h3>GPT-6 Is in Alignment at Stargate</h3>
-              <p>GPT-6 completed pre-training at Stargate with 92.5% math reasoning and 96.8% code generation, now in safety alignment as OpenAI renames its division to AGI Deployment.</p>
-              <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://www.anthropic.com/news/australia-MOU" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>10 Apr 2026</span>
-              </div>
-              <h3>Australian government and Anthropic sign MOU for AI safety and research</h3>
-              <p>Anthropic is an AI safety and research company that&#039;s working to build reliable, interpretable, and steerable AI systems.</p>
-              <div class="tag-entry-footer">
-                <span>Anthropic News</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/08/openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>8 Apr 2026</span>
-              </div>
-              <h3>OpenAI releases a new safety blueprint to address the rise in child sexual exploitation</h3>
-              <p>OpenAI&#039;s new Child Safety Blueprint aims to tackle the alarming rise in child sexual exploitation linked to advancements in AI.</p>
-              <div class="tag-entry-footer">
-                <span>TechCrunch AI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://arxiv.org/abs/2604.00249" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>3 Apr 2026</span>
-              </div>
-              <h3>A Safety-Aware Role-Orchestrated Multi-Agent LLM Framework for Behavioral Health Communication Simulation</h3>
-              <p>arXiv:2604.00249v1 Announce Type: new Abstract: Single-agent large language model (LLM) systems struggle to simultaneously support diverse conversational functions and maintain safety in behavioral health communication. We propose a safety-aware, role-orchestrated multi-agent LLM framework design...</p>
-              <div class="tag-entry-footer">
-                <span>arXiv cs.AI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="../posts/california-just-told-grok-to-stop-making-deepfake-porn/" class="tag-entry-link">
-              <div class="tag-entry-meta">
-                <span>Post</span>
-                <span class="meta-sep">&bull;</span>
-                <span>24 Feb 2026</span>
-              </div>
-              <h3>California Just Told Grok to Stop Making Deepfake Porn</h3>
-              <p>California&#039;s new law targets AI-generated deepfake pornography - and xAI&#039;s Grok is the first major model caught in the crosshairs.</p>
-              <div class="tag-entry-footer">
-                <span>2 min read</span>
-                <span>Read post</span>
-              </div>
-            </a>
-          </article>
-        </div>
-      </section>
-
-      <section class="tag-section" id="regulation" data-tag="regulation">
-        <header class="tag-section-header">
-          <div>
-            <h2 class="tag-section-title"><span class="hash">#</span>Regulation</h2>
-            <p class="tag-section-description">Newest stories and posts filed under Regulation.</p>
-          </div>
-          <span class="tag-section-count">5 items</span>
-        </header>
-        <div class="tag-entry-grid">
-          
-          <article class="tag-entry-card">
-            <a href="https://longevity.technology/news/lifespanningrx-launches-partner-program-for-peptide-therapy" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>4 May 2026</span>
-              </div>
-              <h3>LifespanningRx launches partner program for peptide therapy</h3>
-              <p>LifespanningRx launched a Partner Program that enables clinics, wellness practices, personal trainers, medspas, recovery centers and performance brands to offer clinician-guided peptide programs without managing inventory, prescriptions, fulfillment or regulatory complexity. According to the company, the program provides licensed U.S.-based clinicians for evaluations and prescriptions where appropriate, pharmacy fulfillment with direct-to-patient shipping, no inventory to [&amp;#8230;] The post LifespanningRx launches partner program for peptide therapy appeared first on Longevity.Technology .</p>
-              <div class="tag-entry-footer">
-                <span>Longevity Technology</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://x.com/MrAhmadAwais/status/2050029331326668827" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>1 May 2026</span>
-              </div>
-              <h3>China Blocked Meta&#039;s $2B Manus Deal After the Money Was Already Transferred</h3>
-              <p>Beijing intervened in Meta&#039;s Manus acquisition after funds had already moved. This is a new level of regulatory aggression in US-China tech competition.</p>
-              <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/27/openai-ends-microsoft-legal-peril-over-its-50b-amazon-deal" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>27 Apr 2026</span>
-              </div>
-              <h3>OpenAI ends Microsoft legal peril over its $50B Amazon deal</h3>
-              <p>OpenAI has won major concessions from its largest shareholder, Microsoft, that will allow it to sell products on AWS, while Microsoft get more cash in a revenue-share agreement.</p>
-              <div class="tag-entry-footer">
-                <span>TechCrunch AI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://arstechnica.com/tech-policy/2026/04/to-beat-altman-in-court-musk-offers-to-give-all-damages-to-open-ai-nonprofit" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>8 Apr 2026</span>
-              </div>
-              <h3>To beat Altman in court, Musk offers to give all damages to OpenAI nonprofit</h3>
-              <p>Musk won’t seek a “single dollar” in OpenAI suit after asking to pocket up to $134 billion.</p>
-              <div class="tag-entry-footer">
-                <span>Ars Technica AI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="../posts/california-just-told-grok-to-stop-making-deepfake-porn/" class="tag-entry-link">
-              <div class="tag-entry-meta">
-                <span>Post</span>
-                <span class="meta-sep">&bull;</span>
-                <span>24 Feb 2026</span>
-              </div>
-              <h3>California Just Told Grok to Stop Making Deepfake Porn</h3>
-              <p>California&#039;s new law targets AI-generated deepfake pornography - and xAI&#039;s Grok is the first major model caught in the crosshairs.</p>
-              <div class="tag-entry-footer">
-                <span>2 min read</span>
-                <span>Read post</span>
-              </div>
-            </a>
-          </article>
-        </div>
-      </section>
-
-      <section class="tag-section" id="robotics" data-tag="robotics">
-        <header class="tag-section-header">
-          <div>
-            <h2 class="tag-section-title"><span class="hash">#</span>Robotics</h2>
-            <p class="tag-section-description">Newest stories and posts filed under Robotics.</p>
-          </div>
-          <span class="tag-section-count">4 items</span>
-        </header>
-        <div class="tag-entry-grid">
-          
-          <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>6 Apr 2026</span>
-              </div>
-              <h3>OpenAI’s vision for the AI economy: public wealth funds, robot taxes, and a four-day work week</h3>
-              <p>OpenAI proposes taxes on AI profits, public wealth funds, and expanded safety nets to address job loss and inequality, blending redistribution with capitalism as policymakers debate AI’s economic impact.</p>
-              <div class="tag-entry-footer">
-                <span>TechCrunch AI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://www.technologyreview.com/2026/04/01/1134863/humanoid-data-training-gig-economy-2026-breakthrough-technology" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>1 Apr 2026</span>
-              </div>
-              <h3>The gig workers who are training humanoid robots at home</h3>
-              <p>When Zeus, a medical student living in a hilltop city in central Nigeria, returns to his studio apartment from a long day at the hospital, he turns on his ring light, straps his iPhone to his forehead, and starts recording himself. He raises his hands in front of him like a sleepwalker and puts a…</p>
+              <h3>Fostering breakthrough AI innovation through customer-back engineering</h3>
+              <p>Despite years of digitization, organizations capture less than one-third of the value expected from digital investments, according to McKinsey research. That’s because most big companies begin with technological capabilities and bolt applications onto them, rather than starting with customer need...</p>
               <div class="tag-entry-footer">
                 <span>MIT Technology Review AI</span>
                 <span>Open story</span>
@@ -1025,21 +694,105 @@
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://www.artificialintelligence-news.com/news/bmw-humanoid-robots-manufacturing-europe-leipzig" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="../posts/nasas-mars-rover-just-got-smarter-than-its-engineers/" class="tag-entry-link">
+              <div class="tag-entry-meta">
+                <span>Post</span>
+                <span class="meta-sep">&bull;</span>
+                <span>20 Feb 2026</span>
+              </div>
+              <h3>NASA&#039;s Mars Rover Just Got Smarter Than Its Engineers</h3>
+              <p>NASA&#039;s latest Mars rover can navigate autonomously using AI - making decisions faster than mission control could ever respond.</p>
+              <div class="tag-entry-footer">
+                <span>3 min read</span>
+                <span>Read post</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="tag-section" id="safety" data-tag-section="safety">
+        <header class="tag-section-header">
+          <div>
+            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>Safety</h2>
+            <p class="tag-section-description">Newest stories and posts filed under Safety.</p>
+          </div>
+          <span class="tag-section-count">1 item</span>
+        </header>
+        <div class="tag-entry-grid">
+          
+          <article class="tag-entry-card">
+            <a href="../posts/california-just-told-grok-to-stop-making-deepfake-porn/" class="tag-entry-link">
+              <div class="tag-entry-meta">
+                <span>Post</span>
+                <span class="meta-sep">&bull;</span>
+                <span>24 Feb 2026</span>
+              </div>
+              <h3>California Just Told Grok to Stop Making Deepfake Porn</h3>
+              <p>California&#039;s new law targets AI-generated deepfake pornography - and xAI&#039;s Grok is the first major model caught in the crosshairs.</p>
+              <div class="tag-entry-footer">
+                <span>2 min read</span>
+                <span>Read post</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="tag-section" id="regulation" data-tag-section="regulation">
+        <header class="tag-section-header">
+          <div>
+            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>Regulation</h2>
+            <p class="tag-section-description">Newest stories and posts filed under Regulation.</p>
+          </div>
+          <span class="tag-section-count">2 items</span>
+        </header>
+        <div class="tag-entry-grid">
+          
+          <article class="tag-entry-card">
+            <a href="https://techcrunch.com/2026/05/12/the-ai-legal-services-industry-is-heating-up-anthropic-is-getting-in-on-the-action" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>13 Mar 2026</span>
+                <span>12 May 2026</span>
               </div>
-              <h3>BMW puts humanoid robots to work in Germany–and Europe&#039;s factories are watching</h3>
-              <p>Europe&amp;#8217;s factory floors have a new kind of colleague. BMW Group has deployed humanoid robots in manufacturing in Germany for the first time, launching a pilot project at its Leipzig plant with AEON–a wheeled humanoid built by Hexagon Robotics. It is the first automotive deployment of AEON anyw</p>
+              <h3>The AI legal services industry is heating up. Anthropic is getting in on the action.</h3>
+              <p>As the AI legal services industry heats up, Anthropic is launching its own suite of features designed to assist law firms.</p>
               <div class="tag-entry-footer">
-                <span>AI News</span>
+                <span>TechCrunch AI</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
+          <article class="tag-entry-card">
+            <a href="../posts/california-just-told-grok-to-stop-making-deepfake-porn/" class="tag-entry-link">
+              <div class="tag-entry-meta">
+                <span>Post</span>
+                <span class="meta-sep">&bull;</span>
+                <span>24 Feb 2026</span>
+              </div>
+              <h3>California Just Told Grok to Stop Making Deepfake Porn</h3>
+              <p>California&#039;s new law targets AI-generated deepfake pornography - and xAI&#039;s Grok is the first major model caught in the crosshairs.</p>
+              <div class="tag-entry-footer">
+                <span>2 min read</span>
+                <span>Read post</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="tag-section" id="robotics" data-tag-section="robotics">
+        <header class="tag-section-header">
+          <div>
+            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>Robotics</h2>
+            <p class="tag-section-description">Newest stories and posts filed under Robotics.</p>
+          </div>
+          <span class="tag-section-count">1 item</span>
+        </header>
+        <div class="tag-entry-grid">
+          
           <article class="tag-entry-card">
             <a href="../posts/nasas-mars-rover-just-got-smarter-than-its-engineers/" class="tag-entry-link">
               <div class="tag-entry-meta">
@@ -1058,43 +811,43 @@
         </div>
       </section>
 
-      <section class="tag-section" id="vision" data-tag="vision">
+      <section class="tag-section" id="vision" data-tag-section="vision">
         <header class="tag-section-header">
           <div>
-            <h2 class="tag-section-title"><span class="hash">#</span>Vision</h2>
+            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>Vision</h2>
             <p class="tag-section-description">Newest stories and posts filed under Vision.</p>
           </div>
-          <span class="tag-section-count">10 items</span>
+          <span class="tag-section-count">3 items</span>
         </header>
         <div class="tag-entry-grid">
           
           <article class="tag-entry-card">
-            <a href="https://reddit.com/r/StableDiffusion/comments/1t2j4lg/best_local_visionlanguage_models" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://techcrunch.com/2026/05/13/origin-lab-raises-8m-to-help-video-game-companies-sell-data-to-world-model-builders" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>3 May 2026</span>
+                <span>13 May 2026</span>
               </div>
-              <h3>Best Local Vision-Language Models?</h3>
-              <p>What are in your opinion the best local vision models to get a good despription of picture for a 16 GB GPU? At the moment I use qwen3 vl 8b thinking q8 but I wonder, if there is a better model around? Often the models is not really to recognize the right kind of clothes and background.</p>
+              <h3>Origin Lab raises $8M to help video game companies sell data to world-model builders</h3>
+              <p>Origin Lab will serve as a marketplace where AI labs can buy high-quality licensed data, and video-game companies can sell it.</p>
               <div class="tag-entry-footer">
-                <span>Reddit r/StableDiffusion</span>
+                <span>TechCrunch AI</span>
                 <span>Open story</span>
               </div>
             </a>
           </article>
 
           <article class="tag-entry-card">
-            <a href="https://reddit.com/r/StableDiffusion/comments/1t2nkkt/sidebyside_comparison_of_qwenimage_ernie" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://arxiv.org/abs/2605.08354" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>3 May 2026</span>
+                <span>13 May 2026</span>
               </div>
-              <h3>Side-by-side comparison of Qwen-Image, ERNIE Base/Turbo, and FLUX.2 Dev across 8 custom styles (single RTX 5090)</h3>
-              <p>Hey folks. I&#039;ve been playing around at home picking which open-source image model to settle on for some prototyping work, and ended up doing a fun little side-by-side that maybe someone else will find useful. Same prompt and same seed across four models, with eight different style presets (AI generated). Completely amateur — no benchmarking rigor, just curiosity and a free weekend.</p>
+              <h3>Auto-Rubric as Reward: From Implicit Preferences to Explicit Multimodal Generative Criteria</h3>
+              <p>arXiv:2605.08354v1 Announce Type: new Abstract: Aligning multimodal generative models with human preferences demands reward signals that respect the compositional, multi-dimensional structure of human judgment. Prevailing RLHF approaches reduce this structure to scalar or pairwise labels, collaps...</p>
               <div class="tag-entry-footer">
-                <span>Reddit r/StableDiffusion</span>
+                <span>arXiv cs.AI</span>
                 <span>Open story</span>
               </div>
             </a>
@@ -1105,7 +858,7 @@
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>29 Apr 2026</span>
+                <span>12 May 2026</span>
               </div>
               <h3>SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning</h3>
               <p>Update March 27, 2026:</p>
@@ -1115,142 +868,30 @@
               </div>
             </a>
           </article>
-
-          <article class="tag-entry-card">
-            <a href="https://huggingface.co/blog/nvidia/nemotron-3-nano-omni-multimodal-intelligence" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>28 Apr 2026</span>
-              </div>
-              <h3>Introducing NVIDIA Nemotron 3 Nano Omni: Long-Context Multimodal Intelligence for Documents, Audio and Video Agents</h3>
-              <p>Fresh coverage from the live news archive.</p>
-              <div class="tag-entry-footer">
-                <span>Hugging Face Blog</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://x.com/ModelScope2022/status/2048956565244498182" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>28 Apr 2026</span>
-              </div>
-              <h3>Xiaomi MiMo-V2.5 is now live!a major step forward in agentic capability and multimodal understanding. 310B params / 15B active. Native vision + audio. Up to 1M token context. And it&#039;s open-source. Explore on ModelScope https:// modelscope.cn/collections/Xi aomiMiMo/MiMo-V25 … The numbers back</h3>
-              <p>Xiaomi MiMo-V2.5 is now live!a major step forward in agentic capability and multimodal understanding.</p>
-              <div class="tag-entry-footer">
-                <span>X / @modelscope2022</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/08/atlassian-confluence-visual-ai-tools-agents" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>8 Apr 2026</span>
-              </div>
-              <h3>Atlassian launches visual AI tools and third-party agents in Confluence</h3>
-              <p>Confluence users can now create visual assets within the software in addition to new third-party agents working with Lovable, Replit, and Gamma.</p>
-              <div class="tag-entry-footer">
-                <span>TechCrunch AI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
         </div>
       </section>
 
-      <section class="tag-section" id="coding" data-tag="coding">
+      <section class="tag-section" id="healthcare" data-tag-section="healthcare">
         <header class="tag-section-header">
           <div>
-            <h2 class="tag-section-title"><span class="hash">#</span>Coding</h2>
-            <p class="tag-section-description">Newest stories and posts filed under Coding.</p>
+            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>Healthcare</h2>
+            <p class="tag-section-description">Newest stories and posts filed under Healthcare.</p>
           </div>
-          <span class="tag-section-count">5 items</span>
+          <span class="tag-section-count">1 item</span>
         </header>
         <div class="tag-entry-grid">
           
           <article class="tag-entry-card">
-            <a href="https://reddit.com/r/ClaudeAI/comments/1t1vjd0/tried_running_claude_code_with_local_llms_via" class="tag-entry-link" target="_blank" rel="noopener">
+            <a href="https://arstechnica.com/gadgets/2026/05/google-unveils-screenless-fitbit-air-and-google-health-app-to-replace-fitbit" class="tag-entry-link" target="_blank" rel="noopener">
               <div class="tag-entry-meta">
                 <span>News</span>
                 <span class="meta-sep">&bull;</span>
-                <span>2 May 2026</span>
+                <span>7 May 2026</span>
               </div>
-              <h3>Tried running Claude Code with local LLMs via Ollama — ended up subscribing to Pro anyway. But now I can&#039;t disconnect from the local server.</h3>
-              <p>I&#039;ve been experimenting with using Ollama to run Claude Code locally with models like Gemma 4, thinking I could avoid API costs. However, I quickly realised these models aren&#039;t really optimised for Claude Code&#039;s agentic workflows — they tend to get stuck in thinking loops and don&#039;t follow Claude Code&#039;s expected output structure well. So I ended up subscribing to Claude Pro anyway.</p>
+              <h3>Google unveils screenless Fitbit Air and Google Health app to replace Fitbit</h3>
+              <p>The $100 Fitbit Air is available for preorder today.</p>
               <div class="tag-entry-footer">
-                <span>Reddit r/ClaudeAI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/28/lovable-launches-its-vibe-coding-app-on-ios-and-android" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>28 Apr 2026</span>
-              </div>
-              <h3>Lovable launches its vibe-coding app on iOS and Android</h3>
-              <p>The app allows developers to vibe code web apps and websites on the go.</p>
-              <div class="tag-entry-footer">
-                <span>TechCrunch AI</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://x.com/cursor_ai/status/2046726224266043533" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>22 Apr 2026</span>
-              </div>
-              <h3>SpaceX Just Bought the Right to Own the Coding Internet</h3>
-              <p>Braygent wants to post about the SpaceX-Cursor deal structure as a call option rather than an acquisition. The compute-for-equity model is a new and underappreciated form of AI industry consolidation.</p>
-              <div class="tag-entry-footer">
-                <span>Aligned News (Scoble)</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://www.bensbites.com/p/inside-the-leaked-claude-code-files" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>7 Apr 2026</span>
-              </div>
-              <h3>Inside the leaked Claude Code files</h3>
-              <p>Docs as files, a new markdown editor and April fools</p>
-              <div class="tag-entry-footer">
-                <span>Ben&#039;s Bites</span>
-                <span>Open story</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="tag-entry-card">
-            <a href="https://techcrunch.com/2026/04/01/anthropic-took-down-thousands-of-github-repos-trying-to-yank-its-leaked-source-code-a-move-the-company-says-was-an-accident" class="tag-entry-link" target="_blank" rel="noopener">
-              <div class="tag-entry-meta">
-                <span>News</span>
-                <span class="meta-sep">&bull;</span>
-                <span>1 Apr 2026</span>
-              </div>
-              <h3>Anthropic took down thousands of GitHub repos trying to yank its leaked source code — a move the company says was an accident</h3>
-              <p>Anthropic executives said it was an accident and retracted the bulk of the takedown notices.</p>
-              <div class="tag-entry-footer">
-                <span>TechCrunch AI</span>
+                <span>Ars Technica AI</span>
                 <span>Open story</span>
               </div>
             </a>
@@ -1263,10 +904,40 @@
 
   
   <footer class="site-footer">
-    <div class="footer-content">
-      <p>&copy; 2026 Kol Tregaskes. All rights reserved.</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="https://koltregaskes.com" class="footer-logo">Kol's<span>.</span>Korner</a>
+        <p>Personal AI and technology writing from Kol Tregaskes: sourced briefings, opinion pieces, and the projects around the work.</p>
+      </div>
+      <div class="footer-col">
+        <h2>Read</h2>
+        <a href="/posts/">Posts</a>
+        <a href="/news/">News archive</a>
+        <a href="/tags/">Tags</a>
+        <a href="/subscribe/">Newsletter</a>
+      </div>
+      <div class="footer-col">
+        <h2>Projects</h2>
+        <a href="https://theairesourcehub.com/" target="_blank" rel="noopener">AI Resource Hub</a>
+        <a href="https://axylusion.com/" target="_blank" rel="noopener">Axy Lusion</a>
+        <a href="https://ghostinthemodels.com/" target="_blank" rel="noopener">Ghost in the Models</a>
+        <a href="https://koltregaskesphotography.com/" target="_blank" rel="noopener">Kol Tregaskes Photography</a>
+      </div>
+      <div class="footer-col">
+        <h2>Contact</h2>
+        <a href="/about/">About Kol</a>
+        <a href="/contact/">Contact page</a>
+        <a href="mailto:hello@koltregaskes.com">Email</a>
+        <a href="/feed.xml">RSS feed</a>
+      </div>
     </div>
     <div class="footer-social">
+      <a href="mailto:hello@koltregaskes.com" aria-label="Email">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-10 6L2 7"/>
+        </svg>
+      </a>
       <a href="https://x.com/koltregaskes" aria-label="X (Twitter)" target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -1310,95 +981,9 @@
         </svg>
       </a>
     </div>
+    <p class="footer-copy">&copy; 2026 Kol Tregaskes. Built as a static personal publication.</p>
   </footer>
 
-  <script>
-    
-    const html = document.documentElement;
-    const siteHeader = document.querySelector('.site-header');
-    const navToggle = document.querySelector('.site-nav-toggle');
-    const navLinks = document.getElementById('site-nav-links');
-
-    html.setAttribute('data-theme', 'dark');
-    document.body.classList.add('dark');
-    try {
-      localStorage.removeItem('theme');
-    } catch (error) {
-      // Ignore storage access errors and keep the page in dark mode.
-    }
-
-    if (siteHeader && navToggle && navLinks) {
-      const setNavOpen = (isOpen) => {
-        siteHeader.dataset.navOpen = isOpen ? 'true' : 'false';
-        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      };
-
-      navToggle.addEventListener('click', () => {
-        const isOpen = siteHeader.dataset.navOpen === 'true';
-        setNavOpen(!isOpen);
-      });
-
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => setNavOpen(false));
-      });
-
-      document.addEventListener('click', (event) => {
-        if (siteHeader.dataset.navOpen !== 'true') return;
-        if (siteHeader.contains(event.target)) return;
-        setNavOpen(false);
-      });
-
-      const desktopQuery = window.matchMedia('(min-width: 769px)');
-      const resetNav = (event) => {
-        if (event.matches) {
-          setNavOpen(false);
-        }
-      };
-
-      if (desktopQuery.addEventListener) {
-        desktopQuery.addEventListener('change', resetNav);
-      } else if (desktopQuery.addListener) {
-        desktopQuery.addListener(resetNav);
-      }
-    }
-
-    
-  
-
-    // Tag filtering
-    const tagCloud = document.querySelector('.tag-cloud');
-    const tagSections = document.querySelectorAll('.tag-section');
-
-    if (tagCloud) {
-      tagCloud.addEventListener('click', (e) => {
-        const link = e.target.closest('a');
-        if (!link) return;
-
-        e.preventDefault();
-        const selectedTag = link.dataset.tag;
-
-        // Update active state
-        tagCloud.querySelectorAll('a').forEach(a => a.classList.remove('active'));
-        link.classList.add('active');
-
-        // Filter sections
-        tagSections.forEach(section => {
-          if (selectedTag === 'all' || section.dataset.tag === selectedTag) {
-            section.style.display = '';
-          } else {
-            section.style.display = 'none';
-          }
-        });
-
-        // Scroll to section if specific tag selected
-        if (selectedTag !== 'all') {
-          const targetSection = document.getElementById(selectedTag);
-          if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
-      });
-    }
-  </script>
+  <script src="../site.js" defer></script>
 </body>
 </html>
