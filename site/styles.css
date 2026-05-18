@@ -29,10 +29,11 @@
   --color-gray-400-rgb: 119, 124, 124;
   --color-gray-300-rgb: 167, 169, 169;
   --font-sans: "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --font-family-base: var(--font-sans);
   --font-family-sans: var(--font-sans);
-  --font-family-serif: var(--font-sans);
+  --font-family-serif: var(--font-serif);
   --font-family-mono: var(--font-mono);
   --font-size-xs: 12px;
   --font-size-sm: 14px;
@@ -175,7 +176,14 @@ img {
   transform: translateY(0.8rem);
 }
 
-.hash,
+.hash {
+  color: var(--red);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: -0.08em;
+  margin-right: 0.18em;
+}
+
 .logo-dot {
   color: var(--red);
   letter-spacing: -0.08em;
@@ -226,6 +234,7 @@ img {
 .logo-text,
 .footer-logo {
   font-size: clamp(1.45rem, 2.5vw, 2.25rem);
+  font-family: var(--font-serif);
   font-weight: 700;
   font-style: italic;
   letter-spacing: -0.04em;
@@ -393,7 +402,7 @@ img {
 .subscribe-note h2 {
   margin: 0;
   color: var(--ink);
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.04;
@@ -410,6 +419,8 @@ img {
   max-width: 64ch;
   margin: 0 0 1.25rem;
   color: var(--ink-soft);
+  font-family: var(--font-serif);
+  font-style: italic;
   font-size: clamp(1.05rem, 1.7vw, 1.28rem);
   line-height: 1.55;
   overflow-wrap: anywhere;
@@ -800,6 +811,7 @@ img {
 .post-content {
   margin-top: 2rem;
   color: var(--ink);
+  font-family: var(--font-serif);
   font-size: clamp(1.02rem, 1.2vw, 1.12rem);
   line-height: 1.78;
 }
@@ -818,20 +830,22 @@ img {
 .post-content h4 {
   margin: 2rem 0 0.75rem;
   color: var(--ink);
+  font-family: var(--font-serif);
   font-weight: 700;
   line-height: 1.1;
 }
 
-.post-content h2::before,
-.post-content h3::before,
-.post-content h4::before {
-  content: "";
+.post-content h2::before {
+  content: "##";
   display: inline-block;
-  width: 0.7em;
-  height: 0.12em;
-  margin-right: 0.45em;
-  background: var(--red);
-  vertical-align: 0.22em;
+  margin-right: 0.48em;
+  color: var(--red);
+  background: none;
+  font-family: var(--font-mono);
+  font-size: 0.74em;
+  font-weight: 600;
+  letter-spacing: -0.08em;
+  vertical-align: 0.04em;
 }
 
 .tag-section-title .hash {

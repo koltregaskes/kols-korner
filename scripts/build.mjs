@@ -793,7 +793,7 @@ function getSharedHeadAssets(basePath) {
   return `
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,700&display=swap">
   <meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)" />
   <link rel="icon" href="${basePath}/favicon.ico" sizes="any" />
@@ -853,13 +853,13 @@ function getSiteChromeScript({ animations = false } = {}) {
     const navToggle = document.querySelector('.site-nav-toggle');
     const navLinks = document.getElementById('site-nav-links');
 
-    html.setAttribute('data-theme', 'dark');
-    document.body.classList.add('dark');
+    let storedTheme = 'dark';
     try {
-      localStorage.removeItem('theme');
+      storedTheme = localStorage.getItem('kk-theme') || 'dark';
     } catch (error) {
       // Ignore storage access errors and keep the page in dark mode.
     }
+    html.setAttribute('data-theme', storedTheme === 'light' ? 'light' : 'dark');
 
     if (siteHeader && navToggle && navLinks) {
       const setNavOpen = (isOpen) => {
@@ -2517,29 +2517,16 @@ async function writeNewsIndexPage() {
   ${getHeaderHTML('../', 'news')}
 
   <main class="news-page-shell" id="main-content">
-    <section class="news-hero" aria-labelledby="newsHeroTitle">
-      <div class="news-hero-copy">
+    <section class="news-band" aria-labelledby="newsHeroTitle">
+      <div>
         <p class="news-kicker"><span class="hash" aria-hidden="true">##</span> AI briefing archive</p>
-        <h1 id="newsHeroTitle">The newest available AI stories, without the dashboard nonsense.</h1>
-        <p class="news-deck">Curated AI and technology coverage arranged so you can open the important stories first, with the latest available published issue surfaced automatically.</p>
-        <div class="news-hero-actions">
-          <a href="#featuredNews" class="news-primary-link">Jump to featured stories</a>
-          <a href="#newsControls" class="news-secondary-link">Open filters</a>
-        </div>
+        <h1 id="newsHeroTitle">Browse sourced AI stories by date, topic and signal.</h1>
       </div>
-
-      <div class="news-hero-panel" aria-label="Featured coverage">
-        <div class="news-hero-card news-hero-card--accent">
-          <span class="news-hero-label">Featured issue</span>
-          <strong id="featuredNowTitle">Loading the latest published briefing...</strong>
-          <p id="featuredNowIntro">Pulling the newest available stories into the top rail.</p>
-        </div>
-        <div id="featuredNowList" class="news-featured-list"></div>
-      </div>
+      <p class="news-deck" id="featuredNowIntro">Newest available issue first. Filters stay close to the archive, and every story opens its source.</p>
     </section>
 
     <div class="news-layout">
-      <aside class="news-sidebar">
+      <section class="news-sidebar news-filter-row" aria-label="News controls">
         <details class="news-filter-panel" id="newsControls" open>
           <summary>
             <span class="news-filter-summary-copy">
@@ -2609,7 +2596,7 @@ async function writeNewsIndexPage() {
             <button id="clearFilters" class="clear-btn" type="button">Clear filters</button>
           </div>
         </details>
-      </aside>
+      </section>
 
       <section class="news-main">
         <div class="news-feed-header">
