@@ -45,3 +45,31 @@ public/media/library/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.code-workspace
+
+# Local dev servers / tooling
+.serve.log
+.serve.err.log
+.playwright-cli/
+*.log
+local-hub/
+
+# Local-only planning and scratch docs
+docs/local/
+planning-local/
+review-local/
+scratch/
+todo.local.md
+tasks.local.md
+working-notes.md
+WORKING-NOTES.md
+review-notes.md
+REVIEW-NOTES.md
+session-notes.md
+SESSION-NOTES.md
