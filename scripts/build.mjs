@@ -2648,7 +2648,12 @@ async function cleanGeneratedOutput() {
     'site/app.js',
     'site/CNAME',
     'site/feed.xml',
-    'site/index.html',
+    // 2026-05-20 — site/index.html intentionally NOT cleaned: it holds the
+    // hand-committed Hi-Fi broadsheet design (DESIGN.md). The old generator
+    // template doesn't match the design, so we keep the committed file and
+    // let the writeHomePage guard skip regeneration. Re-add this entry once
+    // the broadsheet template is ported into writeHomePage.
+    // 'site/index.html',
     'site/robots.txt',
     'site/sitemap.xml'
   ];
@@ -2720,12 +2725,10 @@ async function cleanGeneratedOutput() {
   }
 
   // Write all pages
-  // 2026-05-20 — home page intentionally not regenerated; the committed
-  // site/index.html is the Hi-Fi broadsheet design and must survive deploys.
-  // The internal writeHomePage guard wasn't firing in CI (cause TBD), so the
-  // call site is the safer place to gate. TODO: port the broadsheet template
-  // into writeHomePage and re-enable.
-  // await writeHomePage(items, newsArticles);
+  // 2026-05-20 — writeHomePage call restored now that cleanGeneratedOutput
+  // no longer deletes site/index.html. The internal guard sees the broadsheet
+  // markers and skips, leaving the committed broadsheet file untouched.
+  await writeHomePage(items, newsArticles);
   await writePostsPage(items);
   await writeTagsPage(items, newsArticles);
   await writeAboutPage();
