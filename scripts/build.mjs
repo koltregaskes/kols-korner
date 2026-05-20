@@ -2720,7 +2720,12 @@ async function cleanGeneratedOutput() {
   }
 
   // Write all pages
-  await writeHomePage(items, newsArticles);
+  // 2026-05-20 — home page intentionally not regenerated; the committed
+  // site/index.html is the Hi-Fi broadsheet design and must survive deploys.
+  // The internal writeHomePage guard wasn't firing in CI (cause TBD), so the
+  // call site is the safer place to gate. TODO: port the broadsheet template
+  // into writeHomePage and re-enable.
+  // await writeHomePage(items, newsArticles);
   await writePostsPage(items);
   await writeTagsPage(items, newsArticles);
   await writeAboutPage();
