@@ -1857,6 +1857,23 @@ async function writeLegacyRedirectPage(fromSlug, toSlug) {
 }
 
 async function writeHomePage(items, newsArticles = []) {
+  // 2026-05-20 — broadsheet preservation guard.
+  // The committed site/index.html is the Hi-Fi broadsheet design (DESIGN.md). The
+  // legacy template below regenerates the old "home-feature-grid" chrome on every
+  // CI deploy, which is why koltregaskes.com kept reverting to the pre-redesign
+  // look despite the new HTML landing on main. Until the broadsheet template is
+  // ported into this function (TODO: Linear ticket), skip the regeneration when
+  // the broadsheet design is already in place on disk.
+  try {
+    const existing = await fs.readFile("site/index.html", "utf8");
+    if (existing.includes('class="dateline"') && existing.includes('class="hash"')) {
+      console.log('[skip] site/index.html already in broadsheet design — preserving committed file.');
+      return;
+    }
+  } catch {
+    // No existing file; proceed with normal generation below.
+  }
+
   const sortedItems = [...items].sort((a, b) => new Date(b.updatedTime) - new Date(a.updatedTime));
   const articles = sortedItems.filter(item => (item.kind || 'article').toLowerCase() === 'article');
   const featurePosts = articles.filter(item => !isDigestPost(item));
