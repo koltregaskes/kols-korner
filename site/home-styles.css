@@ -356,7 +356,7 @@ body {
 }
 
 .home-lead-column {
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: var(--font-family-base);
 }
 
 .home-lead-kicker {
@@ -376,7 +376,7 @@ body {
 }
 
 .home-lead-title {
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: var(--font-family-base);
   font-weight: 600;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.12;
@@ -397,7 +397,7 @@ body {
 }
 
 .home-lead-excerpt {
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: var(--font-family-base);
   font-size: 1.125rem;
   line-height: 1.7;
   color: var(--text);
@@ -406,7 +406,7 @@ body {
 
 .home-lead-dropcap {
   float: left;
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: var(--font-family-base);
   font-weight: 600;
   font-size: 4.2rem;
   line-height: 0.9;
@@ -489,7 +489,7 @@ body {
 }
 
 .home-shelf-title {
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: var(--font-family-base);
   font-size: 0.95rem;
   line-height: 1.4;
   color: var(--text);

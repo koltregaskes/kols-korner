@@ -1,0 +1,276 @@
+{
+  "generatedAt": "2026-05-08T11:51:39.821Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-05-06",
+  "count": 15,
+  "items": [
+    {
+      "id": "anthropic-news-higher-usage-limits-for-claude-and-a-compute-deal-with-spacex-https-www-anthropic-com-news-higher-limits-spacex",
+      "title": "Higher usage limits for Claude and a compute deal with SpaceX",
+      "url": "https://www.anthropic.com/news/higher-limits-spacex",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-06",
+      "summary": "We’ve raised Claude's usage limits and agreed a new compute partnership with SpaceX that will substantially increase our capacity in the near term.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "hardware",
+        "funding",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-06",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-elon-doubled-limits-https-www-bensbites-com-p-elon-doubled-limits",
+      "title": "Elon doubled limits",
+      "url": "https://www.bensbites.com/p/elon-doubled-limits",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-05-06",
+      "summary": "Free ChatGPT got instantly better.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-codex-is-gaining-steam-https-www-bensbites-com-p-codex-is-gaining-steam",
+      "title": "Codex is gaining steam",
+      "url": "https://www.bensbites.com/p/codex-is-gaining-steam",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-05-06",
+      "summary": "but I wish it had this",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "ars-technica-ai-googles-gemma-4-ai-models-get-3x-speed-boost-by-predicting-future-tokens-https-arstechnica-com-ai-2026-05-googles-gemma-4-open-ai-models-use-speculative-decoding-to-get-up-to-3x-faster",
+      "title": "Google's Gemma 4 AI models get 3x speed boost by predicting future tokens",
+      "url": "https://arstechnica.com/ai/2026/05/googles-gemma-4-open-ai-models-use-speculative-decoding-to-get-up-to-3x-faster/",
+      "source": "Ars Technica AI",
+      "sourceId": "ars-technica-ai",
+      "section": "Industry",
+      "publishedAt": "2026-05-06",
+      "summary": "Up to 3x the speed with no loss of quality—is it too good to be true?",
+      "tags": [
+        "research_paper",
+        "open_source",
+        "hardware",
+        "policy",
+        "inference"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-introducing-claude-opus-4-7-https-www-anthropic-com-news-claude-opus-4-7",
+      "title": "Introducing Claude Opus 4.7",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-06",
+      "summary": "Our latest model, Claude Opus 4.7, is now generally available. Opus 4.7 is a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-introducing-claude-design-by-anthropic-labs-https-www-anthropic-com-news-claude-design-anthropic-labs",
+      "title": "Introducing Claude Design by Anthropic Labs",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-06",
+      "summary": "Today, we’re launching Claude Design, a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-claude-is-a-space-to-think-anthropic-https-www-anthropic-com-news-claude-is-a-space-to-think",
+      "title": "Claude is a space to think | Anthropic",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-06",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-agents-for-financial-services-https-www-anthropic-com-news-finance-agents",
+      "title": "Agents for financial services",
+      "url": "https://www.anthropic.com/news/finance-agents",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-06",
+      "summary": "We're releasing ten new Cowork and Claude Code plugins, integrations with the Microsoft 365 suite, new connectors, and an MCP app for financial services and insurance organizations.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "tool_use",
+        "mcp"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-sam-3-1-faster-and-more-accessible-real-time-video-detection-and-tracking-with-multiplexing-and-global-reasoning-https-ai-meta-com-blog-segment-anything-model-3",
+      "title": "SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning",
+      "url": "https://ai.meta.com/blog/segment-anything-model-3/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-06",
+      "summary": "Update March 27, 2026:",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-scaling-how-we-build-and-test-our-most-advanced-ai-https-ai-meta-com-blog-scaling-how-we-build-test-advanced-ai",
+      "title": "Scaling How We Build and Test Our Most Advanced AI",
+      "url": "https://ai.meta.com/blog/scaling-how-we-build-test-advanced-ai/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-06",
+      "summary": "As we build more capable, personalized AI, reliability, security, and user protections are more important than ever.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-how-alta-daily-uses-meta-s-segment-anything-to-reimagine-the-digital-closet-https-ai-meta-com-blog-alta-daily-fashion-app-segment-anything",
+      "title": "How Alta Daily Uses Meta’s Segment Anything to Reimagine the Digital Closet",
+      "url": "https://ai.meta.com/blog/alta-daily-fashion-app-segment-anything/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-06",
+      "summary": "Most people wear only an estimated 20% of the clothes in their closets, but the rest isn’t useless. It's untapped potential: combinations that never quite come together because remembering what you own, let alone imagining how it all fits together, is harder than it sounds.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-four-mtia-chips-in-two-years-scaling-ai-experiences-for-billions-https-ai-meta-com-blog-meta-mtia-scale-ai-chips-for-billions",
+      "title": "Four MTIA Chips in Two Years: Scaling AI Experiences for Billions",
+      "url": "https://ai.meta.com/blog/meta-mtia-scale-ai-chips-for-billions/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-06",
+      "summary": "Serving a wide range of AI models on a global scale, while maintaining the lowest possible costs, is one of the most demanding infrastructure challenges...",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "mit-technology-review-ai-a-blueprint-for-using-ai-to-strengthen-democracy-https-www-technologyreview-com-2026-05-05-1136843-ai-democracy-blueprint",
+      "title": "A blueprint for using AI to strengthen democracy",
+      "url": "https://www.technologyreview.com/2026/05/05/1136843/ai-democracy-blueprint/",
+      "source": "MIT Technology Review AI",
+      "sourceId": "mit-technology-review-ai",
+      "section": "Industry",
+      "publishedAt": "2026-05-05",
+      "summary": "Every few centuries, changes in how information moves reshape how societies govern themselves. The printing press spread vernacular literacy, helping give rise to the Reformation and, eventually, representative government. The telegraph made it possible to administer vast nations like the US, accelerating the growth of the modern bureaucratic state. Broadcast media created shared national audiences,…",
+      "tags": [
+        "policy",
+        "research_paper",
+        "industry_move",
+        "ai_safety"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "mit-technology-review-ai-week-one-of-the-musk-v-altman-trial-what-it-was-like-in-the-room-https-www-technologyreview-com-2026-05-04-1136826-week-one-of-the-musk-v-altman-trial-what-it-was-like-in-the-room",
+      "title": "Week one of the Musk v. Altman trial: What it was like in the room",
+      "url": "https://www.technologyreview.com/2026/05/04/1136826/week-one-of-the-musk-v-altman-trial-what-it-was-like-in-the-room/",
+      "source": "MIT Technology Review AI",
+      "sourceId": "mit-technology-review-ai",
+      "section": "Industry",
+      "publishedAt": "2026-05-04",
+      "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Two of the most powerful people in AI—Sam Altman and Elon Musk—began their face-off in court in Oakland, California, last week. Musk is suing OpenAI, alleging that the millions he spent to…",
+      "tags": [
+        "policy",
+        "research_paper",
+        "industry_move",
+        "ai_safety"
+      ],
+      "adapter": "rss"
+    }
+  ]
+}

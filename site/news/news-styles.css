@@ -870,7 +870,6 @@ body.news-page::before {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.72);
-  backdrop-filter: blur(10px);
   z-index: 1000;
   padding: var(--space-24);
 }
@@ -1011,5 +1010,331 @@ body.news-page::before {
 
   .card-actions {
     opacity: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Hi-fi broadsheet pass
+   The Claude handoff removes the large marketing hero and turns controls into
+   a compact sticky archive bar. Keep these overrides last so older generated
+   news styles cannot reintroduce the previous dashboard layout.
+   -------------------------------------------------------------------------- */
+
+body.news-page {
+  background: var(--bg);
+}
+
+body.news-page::before {
+  display: none;
+}
+
+.news-page-shell {
+  width: var(--content);
+  margin: 0 auto;
+  padding: clamp(22px, 3vw, 42px) 0 clamp(48px, 7vw, 86px);
+}
+
+.news-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+  gap: clamp(20px, 4vw, 64px);
+  align-items: end;
+  padding: 0 0 clamp(18px, 3vw, 28px);
+  border-bottom: 2px solid var(--line);
+}
+
+.news-band .news-kicker {
+  margin: 0 0 10px;
+  color: var(--red);
+  font-family: var(--font-mono);
+}
+
+.news-band .news-kicker::before {
+  display: none;
+}
+
+.news-band h1 {
+  max-width: 940px;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 4.85rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.news-band .news-deck {
+  margin: 0;
+  color: var(--ink-soft);
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.news-layout {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.news-sidebar.news-filter-row {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  margin: 0 0 clamp(24px, 4vw, 40px);
+  padding: 14px 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.news-filter-panel {
+  border-radius: 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: none;
+  overflow: visible;
+}
+
+.news-filter-panel summary {
+  min-height: 48px;
+  padding: 12px 16px;
+  border-bottom-color: var(--line-soft);
+  color: var(--ink);
+}
+
+.news-filter-summary-kicker,
+.sidebar-section h2,
+.news-feed-label,
+.section-subtitle,
+.card-source,
+.card-date,
+.tag-filter-btn,
+.quick-btn,
+.clear-btn,
+.archive-select,
+.group-select,
+.search-input,
+.date-input {
+  font-family: var(--font-mono);
+}
+
+.news-filter-summary-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+.news-filter-body {
+  grid-template-columns: minmax(180px, 1fr) minmax(210px, 1.1fr) minmax(220px, 1.35fr) minmax(150px, 0.75fr) minmax(130px, 0.65fr) minmax(165px, 0.8fr) auto;
+  gap: 12px;
+  align-items: end;
+  padding: 14px;
+}
+
+.sidebar-section {
+  min-width: 0;
+  gap: 8px;
+}
+
+.sidebar-section h2 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.search-input,
+.date-input,
+.archive-select,
+.group-select {
+  min-height: 38px;
+  border-radius: 0;
+  border-color: var(--line-soft);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.quick-filters {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.quick-btn,
+.tag-filter-btn,
+.clear-btn {
+  min-height: 38px;
+  border-radius: 0;
+  transition:
+    opacity var(--duration-normal) var(--ease-standard),
+    border-color var(--duration-normal) var(--ease-standard),
+    color var(--duration-normal) var(--ease-standard),
+    background var(--duration-normal) var(--ease-standard),
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.tag-filter-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 88px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.tag-filter-grid:has(.tag-filter-btn.active:not(:first-child)) .tag-filter-btn:not(.active) {
+  opacity: 0.35;
+}
+
+.tag-filter-btn.active,
+.quick-btn.active {
+  background: var(--red);
+  border-color: var(--red);
+  color: #ffffff;
+}
+
+.tag-filter-btn:hover,
+.quick-btn:hover,
+.clear-btn:hover {
+  transform: none;
+}
+
+.clear-btn {
+  align-self: end;
+  width: auto;
+  padding-inline: 14px;
+  background: transparent;
+  color: var(--red);
+}
+
+.news-main {
+  gap: 24px;
+}
+
+.news-feed-header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1fr);
+  gap: 12px 24px;
+  align-items: end;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.news-feed-label {
+  color: var(--red);
+  font-size: 11px;
+}
+
+.news-feed-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  line-height: 1.05;
+}
+
+.news-feed-copy {
+  grid-column: 2;
+  margin: 0;
+  max-width: 58ch;
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.news-section {
+  display: grid;
+  gap: 18px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+}
+
+.news-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.news-card {
+  border-top: 0;
+  border-left: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--surface);
+  box-shadow: none;
+}
+
+.news-card:hover {
+  transform: none;
+  border-color: var(--line);
+  box-shadow: inset 0 0 0 2px var(--red);
+}
+
+.card-image {
+  display: none;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.02rem, 1.5vw, 1.25rem);
+  line-height: 1.18;
+}
+
+.filter-summary {
+  border-radius: 0;
+}
+
+@media (max-width: 1180px) {
+  .news-filter-body {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .news-page-shell {
+    width: min(100% - 32px, 760px);
+  }
+
+  .news-band,
+  .news-feed-header {
+    grid-template-columns: 1fr;
+  }
+
+  .news-feed-copy {
+    grid-column: auto;
+  }
+
+  .news-sidebar.news-filter-row {
+    position: relative;
+    top: auto;
+  }
+
+  .news-filter-body {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-filters,
+  .date-inputs,
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .news-page-shell {
+    width: min(100% - 24px, 760px);
+  }
+
+  .news-band h1 {
+    font-size: clamp(2rem, 14vw, 3.2rem);
+  }
+
+  .news-filter-panel summary {
+    align-items: flex-start;
   }
 }

@@ -68,6 +68,8 @@ class NewsApp {
 
     async init() {
         await this.loadArticles();
+        this.applyTagFromUrl();
+        this.populateFilters();
         this.setupEventListeners();
 
         const fromDate = document.getElementById('fromDate');
@@ -83,6 +85,31 @@ class NewsApp {
         this.updateQuickFilterButtons();
         this.filterArticles();
         this.renderFeaturedNow();
+    }
+
+    applyTagFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const requestedTag = String(params.get('tag') || '')
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g, '-');
+
+        if (requestedTag && this.tags.has(requestedTag)) {
+            this.activeTags.clear();
+            this.activeTags.add(requestedTag);
+        }
+    }
+
+    syncTagQuery() {
+        const url = new URL(window.location.href);
+
+        if (this.activeTags.size === 1) {
+            url.searchParams.set('tag', Array.from(this.activeTags)[0]);
+        } else {
+            url.searchParams.delete('tag');
+        }
+
+        window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
     }
 
     async loadArticles() {
@@ -537,6 +564,8 @@ class NewsApp {
         const button = document.createElement('button');
         button.type = 'button';
         button.className = `tag-filter-btn${isActive ? ' active' : ''}`;
+        button.dataset.tag = tag;
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
         button.textContent = label;
         button.addEventListener('click', () => {
             if (tag === 'all') {
@@ -548,6 +577,7 @@ class NewsApp {
                 this.activeTags.add(tag);
             }
 
+            this.syncTagQuery();
             this.populateFilters();
             this.filterArticles();
         });
@@ -624,6 +654,7 @@ class NewsApp {
             if (groupBy) groupBy.value = 'date';
             this.groupBy = 'date';
             this.activeTags.clear();
+            this.syncTagQuery();
             this.populateFilters();
             this.updateQuickFilterButtons('all');
             this.filterArticles();
@@ -815,26 +846,19 @@ class NewsApp {
     renderFeaturedNow() {
         const featuredTitle = document.getElementById('featuredNowTitle');
         const featuredIntro = document.getElementById('featuredNowIntro');
-        const featuredList = document.getElementById('featuredNowList');
 
-        if (!featuredTitle || !featuredIntro || !featuredList) return;
+        if (!featuredTitle || !featuredIntro) return;
 
         const featuredArticles = this.articles.slice(0, 4);
         if (!featuredArticles.length) {
             featuredTitle.textContent = 'No featured stories available yet';
             featuredIntro.textContent = 'The archive is waiting for the next refresh.';
-            featuredList.innerHTML = '';
             return;
         }
 
         const latestLabel = this.getRelativeDateLabel(featuredArticles[0].dateString);
         featuredTitle.textContent = `Start with ${latestLabel}`;
         featuredIntro.textContent = 'The newest available briefing, pulled to the top before the full archive.';
-        featuredList.innerHTML = featuredArticles.map((article) => `
-            <a href="${article.url}" class="news-featured-link" target="_blank" rel="noopener noreferrer">
-                <strong>${article.title}</strong>
-            </a>
-        `).join('');
     }
 
     displayArticles() {

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-kk-jsonld'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:;">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Daily Digest: Friday, 13 March 2026 - Kol's Korner</title>
   <meta name="description" content="AI and technology news digest for Friday, 13 March 2026" />
@@ -15,27 +15,36 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
   <link rel="canonical" href="https://koltregaskes.com/posts/2026-03-13/" />
+  <script type="application/ld+json" nonce="kk-jsonld">{"@context":"https://schema.org","@type":"Article","headline":"Daily Digest: Friday, 13 March 2026","description":"This dated roundup collects the most interesting AI and technology developments found for Friday, 13 March 2026.","datePublished":"2026-03-13","dateModified":"2026-03-13","author":{"@id":"https://koltregaskes.com/#person-kol"},"publisher":{"@id":"https://koltregaskes.com/#organization"},"inLanguage":"en-GB","mainEntityOfPage":"https://koltregaskes.com/posts/2026-03-13/","isPartOf":{"@id":"https://koltregaskes.com/#website"},"articleSection":"Daily Digest"}</script>
+  <script type="application/ld+json" nonce="kk-jsonld">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://koltregaskes.com"},{"@type":"ListItem","position":2,"name":"Posts","item":"https://koltregaskes.com/posts/"},{"@type":"ListItem","position":3,"name":"Daily Digest: Friday, 13 March 2026","item":"https://koltregaskes.com/posts/2026-03-13/"}]}</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
-  <link rel="icon" href="../..//favicon.ico" sizes="any" />
-  <link rel="icon" type="image/svg+xml" href="../..//favicon.svg" />
-  <link rel="apple-touch-icon" href="../..//apple-touch-icon.png" />
-  <link rel="stylesheet" href="../..//styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,700&display=swap">
+  <meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../styles.css" />
 </head>
 <body>
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header class="site-header">
-    <div class="header-content">
-      <a href="../../" class="site-logo">
-        <span class="logo-icon">K</span>
-        <span class="logo-text">Kol's Korner</span>
+  <header class="site-header" data-site-header data-nav-open="false">
+    <div class="dateline">
+      <span>Kol Tregaskes / AI, tech and side-project notes</span>
+      <span>Latest published update</span>
+    </div>
+    <div class="masthead-row">
+      <a href="../../" class="site-logo" aria-label="Kol's Korner home">
+        <span class="logo-text">Kol's<span class="logo-dot">.</span>Korner</span>
+        <span class="logo-sub">tech &middot; ai &middot; dev &amp; more</span>
       </a>
       <div class="site-header-actions">
-        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch colour theme">
+          <span class="theme-swatch" aria-hidden="true"></span>
+          <span data-theme-label>Dark</span>
+        </button>
+        <button class="site-nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
           <span></span>
           <span></span>
           <span></span>
@@ -57,7 +66,7 @@
       <header class="digest-header">
         <span class="digest-badge">Daily Digest</span>
         <h1 class="digest-title">Friday, 13 March 2026</h1>
-        <p class="digest-subtitle">Welcome to today&#039;s roundup of the most interesting developments in AI and technology.</p>
+        <p class="digest-subtitle">This dated roundup collects the most interesting AI and technology developments found for Friday, 13 March 2026.</p>
         <div class="digest-meta">
           <span>7 min read</span>
           <span class="meta-sep">&bull;</span>
@@ -351,10 +360,40 @@
 
 
   <footer class="site-footer">
-    <div class="footer-content">
-      <p>&copy; 2026 Kol Tregaskes. All rights reserved.</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="https://koltregaskes.com" class="footer-logo">Kol's<span>.</span>Korner</a>
+        <p>Personal AI and technology writing from Kol Tregaskes: sourced briefings, opinion pieces, and the projects around the work.</p>
+      </div>
+      <div class="footer-col">
+        <h2>Read</h2>
+        <a href="/posts/">Posts</a>
+        <a href="/news/">News archive</a>
+        <a href="/tags/">Tags</a>
+        <a href="/subscribe/">Newsletter</a>
+      </div>
+      <div class="footer-col">
+        <h2>Projects</h2>
+        <a href="https://theairesourcehub.com/" target="_blank" rel="noopener">AI Resource Hub</a>
+        <a href="https://axylusion.com/" target="_blank" rel="noopener">Axy Lusion</a>
+        <a href="https://ghostinthemodels.com/" target="_blank" rel="noopener">Ghost in the Models</a>
+        <a href="https://koltregaskesphotography.com/" target="_blank" rel="noopener">Kol Tregaskes Photography</a>
+      </div>
+      <div class="footer-col">
+        <h2>Contact</h2>
+        <a href="/about/">About Kol</a>
+        <a href="/contact/">Contact page</a>
+        <a href="mailto:hello@koltregaskes.com">Email</a>
+        <a href="/feed.xml">RSS feed</a>
+      </div>
     </div>
     <div class="footer-social">
+      <a href="mailto:hello@koltregaskes.com" aria-label="Email">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-10 6L2 7"/>
+        </svg>
+      </a>
       <a href="https://x.com/koltregaskes" aria-label="X (Twitter)" target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -398,60 +437,9 @@
         </svg>
       </a>
     </div>
+    <p class="footer-copy">&copy; 2026 Kol Tregaskes. Built as a static personal publication.</p>
   </footer>
 
-  <script>
-
-    const html = document.documentElement;
-    const siteHeader = document.querySelector('.site-header');
-    const navToggle = document.querySelector('.site-nav-toggle');
-    const navLinks = document.getElementById('site-nav-links');
-
-    html.setAttribute('data-theme', 'dark');
-    document.body.classList.add('dark');
-    try {
-      localStorage.removeItem('theme');
-    } catch (error) {
-      // Ignore storage access errors and keep the page in dark mode.
-    }
-
-    if (siteHeader && navToggle && navLinks) {
-      const setNavOpen = (isOpen) => {
-        siteHeader.dataset.navOpen = isOpen ? 'true' : 'false';
-        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      };
-
-      navToggle.addEventListener('click', () => {
-        const isOpen = siteHeader.dataset.navOpen === 'true';
-        setNavOpen(!isOpen);
-      });
-
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => setNavOpen(false));
-      });
-
-      document.addEventListener('click', (event) => {
-        if (siteHeader.dataset.navOpen !== 'true') return;
-        if (siteHeader.contains(event.target)) return;
-        setNavOpen(false);
-      });
-
-      const desktopQuery = window.matchMedia('(min-width: 769px)');
-      const resetNav = (event) => {
-        if (event.matches) {
-          setNavOpen(false);
-        }
-      };
-
-      if (desktopQuery.addEventListener) {
-        desktopQuery.addEventListener('change', resetNav);
-      } else if (desktopQuery.addListener) {
-        desktopQuery.addListener(resetNav);
-      }
-    }
-
-
-
-  </script>
+  <script src="../../site.js" defer></script>
 </body>
 </html>

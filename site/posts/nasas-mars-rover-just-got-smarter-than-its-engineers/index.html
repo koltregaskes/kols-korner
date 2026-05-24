@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-kk-jsonld'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:;">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>NASA&#039;s Mars Rover Just Got Smarter Than Its Engineers - Kol's Korner</title>
   <meta name="description" content="NASA&#039;s latest Mars rover can navigate autonomously using AI - making decisions faster than mission control could ever respond." />
@@ -15,27 +15,37 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
   <link rel="canonical" href="https://koltregaskes.com/posts/nasas-mars-rover-just-got-smarter-than-its-engineers/" />
+  <script type="application/ld+json" nonce="kk-jsonld">{"@context":"https://schema.org","@type":"Article","headline":"NASA's Mars Rover Just Got Smarter Than Its Engineers","description":"NASA's latest Mars rover can navigate autonomously using AI - making decisions faster than mission control could ever respond.","datePublished":"2026-02-20","dateModified":"2026-02-20","author":{"@id":"https://koltregaskes.com/#person-kol"},"publisher":{"@id":"https://koltregaskes.com/#organization"},"inLanguage":"en-GB","mainEntityOfPage":"https://koltregaskes.com/posts/nasas-mars-rover-just-got-smarter-than-its-engineers/","isPartOf":{"@id":"https://koltregaskes.com/#website"},"image":"https://koltregaskes.com/media/nasas-mars-rover-just-got-smarter-than-its-engineers.png"}</script>
+  <script type="application/ld+json" nonce="kk-jsonld">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://koltregaskes.com"},{"@type":"ListItem","position":2,"name":"Posts","item":"https://koltregaskes.com/posts/"},{"@type":"ListItem","position":3,"name":"NASA's Mars Rover Just Got Smarter Than Its Engineers","item":"https://koltregaskes.com/posts/nasas-mars-rover-just-got-smarter-than-its-engineers/"}]}</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
-  <link rel="icon" href="../..//favicon.ico" sizes="any" />
-  <link rel="icon" type="image/svg+xml" href="../..//favicon.svg" />
-  <link rel="apple-touch-icon" href="../..//apple-touch-icon.png" />
-  <link rel="stylesheet" href="../..//styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,700&display=swap">
+  <meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../styles.css" />
 </head>
 <body>
+  <div class="reading-progress" data-reading-progress aria-hidden="true"></div>
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header class="site-header">
-    <div class="header-content">
-      <a href="../../" class="site-logo">
-        <span class="logo-icon">K</span>
-        <span class="logo-text">Kol's Korner</span>
+  <header class="site-header" data-site-header data-nav-open="false">
+    <div class="dateline">
+      <span>Kol Tregaskes / AI, tech and side-project notes</span>
+      <span>Latest published update</span>
+    </div>
+    <div class="masthead-row">
+      <a href="../../" class="site-logo" aria-label="Kol's Korner home">
+        <span class="logo-text">Kol's<span class="logo-dot">.</span>Korner</span>
+        <span class="logo-sub">tech &middot; ai &middot; dev &amp; more</span>
       </a>
       <div class="site-header-actions">
-        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch colour theme">
+          <span class="theme-swatch" aria-hidden="true"></span>
+          <span data-theme-label>Dark</span>
+        </button>
+        <button class="site-nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
           <span></span>
           <span></span>
           <span></span>
@@ -69,7 +79,8 @@
   <main class="post-main" id="main-content">
       <article class="post">
         <header class="post-header">
-          <h1 class="post-title">NASA&#039;s Mars Rover Just Got Smarter Than Its Engineers</h1>
+          <p class="post-kicker"><span class="hash" aria-hidden="true">##</span> Essay</p>
+          <h1 class="post-title"><span class="hash" aria-hidden="true">##</span>NASA&#039;s Mars Rover Just Got Smarter Than Its Engineers</h1>
           <div class="post-meta">
           <span class="post-author">Kol Tregaskes</span>
             <span class="meta-sep">&bull;</span>
@@ -83,23 +94,23 @@
       </figure>
         </header>
         <div class="post-content">
-          <p>NASA's latest Mars rover has <a href="https://www.crescendo.ai/news/latest-ai-news-and-updates">achieved autonomous navigation</a> using onboard AI. It can now plan routes, avoid obstacles, and make real-time decisions without waiting for commands from Earth.</p>
+          <p>NASA's latest Mars rover has <a href="https://www.crescendo.ai/news/latest-ai-news-and-updates">achieved autonomous navigation</a> using onboard AI. It can now plan routes, avoid obstacles, and make real-time decisions without waiting for commands from Earth.</p>
 
-<p>This is a bigger deal than it sounds.</p>
+<p>This is a bigger deal than it sounds.</p>
 
 <h3 id="the-light-speed-problem">The Light-Speed Problem</h3>
 
-<p>Mars is far away. Depending on orbital positions, radio signals take between 4 and 24 minutes to travel between Earth and Mars. That means every command sent to a rover has a minimum 8-minute round-trip delay.</p>
+<p>Mars is far away. Depending on orbital positions, radio signals take between 4 and 24 minutes to travel between Earth and Mars. That means every command sent to a rover has a minimum 8-minute round-trip delay.</p>
 
-<p>If the rover encounters an unexpected obstacle, it can't just ask mission control what to do. By the time the question reaches Earth and the answer comes back, the rover could have driven off a cliff (or at minimum, wasted precious operational time sitting idle).</p>
+<p>If the rover encounters an unexpected obstacle, it can't just ask mission control what to do. By the time the question reaches Earth and the answer comes back, the rover could have driven off a cliff (or at minimum, wasted precious operational time sitting idle).</p>
 
-<p>Previous rovers dealt with this through extreme caution. Move slowly. Stop frequently. Send images back to Earth. Wait for human analysis. Proceed conservatively.</p>
+<p>Previous rovers dealt with this through extreme caution. Move slowly. Stop frequently. Send images back to Earth. Wait for human analysis. Proceed conservatively.</p>
 
-<p>It worked, but it was painfully slow.</p>
+<p>It worked, but it was painfully slow.</p>
 
 <h3 id="the-ai-solution">The AI Solution</h3>
 
-<p>The new system uses computer vision and pathfinding AI trained on Martian terrain data. The rover can:</p>
+<p>The new system uses computer vision and pathfinding AI trained on Martian terrain data. The rover can:</p>
 
 <ul>
 <li>Identify obstacles (rocks, slopes, soft sand) in real-time</li>
@@ -108,13 +119,13 @@
 <li>Adjust plans based on what it encounters</li>
 </ul>
 
-<p>Humans still set high-level goals ("investigate that crater"), but the rover handles tactical execution itself.</p>
+<p>Humans still set high-level goals ("investigate that crater"), but the rover handles tactical execution itself.</p>
 
-<p>Result? Faster exploration, more ground covered, better science return per mission day.</p>
+<p>Result? Faster exploration, more ground covered, better science return per mission day.</p>
 
 <h3 id="why-this-matters-beyond-mars">Why This Matters Beyond Mars</h3>
 
-<p>Autonomous navigation under communication constraints isn't just a Mars problem. It's relevant for:</p>
+<p>Autonomous navigation under communication constraints isn't just a Mars problem. It's relevant for:</p>
 
 <strong>Deep space missions.</strong> Once you get past Mars, communication delays get even worse. Missions to Jupiter or Saturn moons need full autonomy.
 
@@ -124,15 +135,15 @@
 
 <h3 id="the-trust-problem">The Trust Problem</h3>
 
-<p>Here's the uncomfortable question: at what point does "autonomous decision-making" become "we're not really in control anymore"?</p>
+<p>Here's the uncomfortable question: at what point does "autonomous decision-making" become "we're not really in control anymore"?</p>
 
-<p>NASA's rover operates in an environment where the stakes are relatively low. If it makes a bad call, you lose some science data and possibly a multi-billion-dollar robot. Not ideal, but not catastrophic.</p>
+<p>NASA's rover operates in an environment where the stakes are relatively low. If it makes a bad call, you lose some science data and possibly a multi-billion-dollar robot. Not ideal, but not catastrophic.</p>
 
-<p>But the same AI principles - operate independently, make real-time decisions, adapt to unforeseen circumstances - scale to systems where mistakes have much higher costs.</p>
+<p>But the same AI principles - operate independently, make real-time decisions, adapt to unforeseen circumstances - scale to systems where mistakes have much higher costs.</p>
 
-<p>Self-driving cars. Autonomous weapons. Critical infrastructure management. We're building systems that are too fast and too complex for meaningful human oversight, and we're doing it because the alternative (slow, manual control) isn't competitive.</p>
+<p>Self-driving cars. Autonomous weapons. Critical infrastructure management. We're building systems that are too fast and too complex for meaningful human oversight, and we're doing it because the alternative (slow, manual control) isn't competitive.</p>
 
-<p>The Mars rover is a proof of concept. The question isn't whether the tech works - it clearly does. The question is where else we deploy it, and what happens when it makes a decision we wouldn't have made.</p>
+<p>The Mars rover is a proof of concept. The question isn't whether the tech works - it clearly does. The question is where else we deploy it, and what happens when it makes a decision we wouldn't have made.</p>
 
         </div>
         <div class="post-tags"><a href="../../tags/#ai" class="tag" data-color="1">AI</a><a href="../../tags/#robotics" class="tag" data-color="2">robotics</a><a href="../../tags/#autonomy" class="tag" data-color="5">autonomy</a><a href="../../tags/#space" class="tag" data-color="7">space</a><a href="../../tags/#research" class="tag" data-color="6">research</a></div>
@@ -154,10 +165,40 @@
 
 
   <footer class="site-footer">
-    <div class="footer-content">
-      <p>&copy; 2026 Kol Tregaskes. All rights reserved.</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="https://koltregaskes.com" class="footer-logo">Kol's<span>.</span>Korner</a>
+        <p>Personal AI and technology writing from Kol Tregaskes: sourced briefings, opinion pieces, and the projects around the work.</p>
+      </div>
+      <div class="footer-col">
+        <h2>Read</h2>
+        <a href="/posts/">Posts</a>
+        <a href="/news/">News archive</a>
+        <a href="/tags/">Tags</a>
+        <a href="/subscribe/">Newsletter</a>
+      </div>
+      <div class="footer-col">
+        <h2>Projects</h2>
+        <a href="https://theairesourcehub.com/" target="_blank" rel="noopener">AI Resource Hub</a>
+        <a href="https://axylusion.com/" target="_blank" rel="noopener">Axy Lusion</a>
+        <a href="https://ghostinthemodels.com/" target="_blank" rel="noopener">Ghost in the Models</a>
+        <a href="https://koltregaskesphotography.com/" target="_blank" rel="noopener">Kol Tregaskes Photography</a>
+      </div>
+      <div class="footer-col">
+        <h2>Contact</h2>
+        <a href="/about/">About Kol</a>
+        <a href="/contact/">Contact page</a>
+        <a href="mailto:hello@koltregaskes.com">Email</a>
+        <a href="/feed.xml">RSS feed</a>
+      </div>
     </div>
     <div class="footer-social">
+      <a href="mailto:hello@koltregaskes.com" aria-label="Email">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-10 6L2 7"/>
+        </svg>
+      </a>
       <a href="https://x.com/koltregaskes" aria-label="X (Twitter)" target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -201,112 +242,9 @@
         </svg>
       </a>
     </div>
+    <p class="footer-copy">&copy; 2026 Kol Tregaskes. Built as a static personal publication.</p>
   </footer>
 
-  <script>
-
-    const html = document.documentElement;
-    const siteHeader = document.querySelector('.site-header');
-    const navToggle = document.querySelector('.site-nav-toggle');
-    const navLinks = document.getElementById('site-nav-links');
-
-    html.setAttribute('data-theme', 'dark');
-    document.body.classList.add('dark');
-    try {
-      localStorage.removeItem('theme');
-    } catch (error) {
-      // Ignore storage access errors and keep the page in dark mode.
-    }
-
-    if (siteHeader && navToggle && navLinks) {
-      const setNavOpen = (isOpen) => {
-        siteHeader.dataset.navOpen = isOpen ? 'true' : 'false';
-        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      };
-
-      navToggle.addEventListener('click', () => {
-        const isOpen = siteHeader.dataset.navOpen === 'true';
-        setNavOpen(!isOpen);
-      });
-
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => setNavOpen(false));
-      });
-
-      document.addEventListener('click', (event) => {
-        if (siteHeader.dataset.navOpen !== 'true') return;
-        if (siteHeader.contains(event.target)) return;
-        setNavOpen(false);
-      });
-
-      const desktopQuery = window.matchMedia('(min-width: 769px)');
-      const resetNav = (event) => {
-        if (event.matches) {
-          setNavOpen(false);
-        }
-      };
-
-      if (desktopQuery.addEventListener) {
-        desktopQuery.addEventListener('change', resetNav);
-      } else if (desktopQuery.addListener) {
-        desktopQuery.addListener(resetNav);
-      }
-    }
-
-
-
-
-    const tocLinks = Array.from(document.querySelectorAll('.toc a'));
-    const headings = tocLinks
-      .map((link) => document.getElementById(link.getAttribute('href').slice(1)))
-      .filter(Boolean);
-
-    const setActiveHeading = (id) => {
-      tocLinks.forEach((link) => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-      });
-    };
-
-    const updateActiveHeading = () => {
-      if (!tocLinks.length || !headings.length) return;
-
-      const threshold = window.innerHeight * 0.24;
-      let activeHeading = headings[0];
-      const nearPageEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80;
-
-      if (nearPageEnd) {
-        activeHeading = headings[headings.length - 1];
-      }
-
-      if (!nearPageEnd) {
-        for (const heading of headings) {
-          if (heading.getBoundingClientRect().top - threshold <= 0) {
-            activeHeading = heading;
-          } else {
-            break;
-          }
-        }
-      }
-
-      if (activeHeading) {
-        setActiveHeading(activeHeading.id);
-      }
-    };
-
-    let ticking = false;
-    const requestUpdate = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        updateActiveHeading();
-        ticking = false;
-      });
-    };
-
-    updateActiveHeading();
-    document.addEventListener('scroll', requestUpdate, { passive: true });
-    window.addEventListener('scroll', requestUpdate, { passive: true });
-    window.addEventListener('resize', requestUpdate);
-  </script>
+  <script src="../../site.js" defer></script>
 </body>
 </html>
