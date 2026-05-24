@@ -790,20 +790,20 @@ function getPublicPath(pathname = '/') {
 }
 
 function getSharedHeadAssets(basePath) {
+  const assetBase = String(basePath || '.').replace(/\/$/, '');
   return `
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,700&display=swap">
   <meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)" />
-  <link rel="icon" href="${basePath}/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/svg+xml" href="${basePath}/favicon.svg" />
-  <link rel="apple-touch-icon" href="${basePath}/apple-touch-icon.png" />
-  <link rel="stylesheet" href="${basePath}/styles.css" />`;
+  <link rel="icon" type="image/svg+xml" href="${assetBase}/favicon.svg" />
+  <link rel="stylesheet" href="${assetBase}/styles.css" />`;
 }
 
 function getSharedScriptTags(basePath) {
-  return `<script src="${basePath}/site.js" defer></script>`;
+  const assetBase = String(basePath || '.').replace(/\/$/, '');
+  return `<script src="${assetBase}/site.js" defer></script>`;
 }
 
 const slugify = (s) =>
@@ -2111,9 +2111,10 @@ async function writeHomePage(items, newsArticles = []) {
   const sortedItems = [...items].sort((a, b) => new Date(b.updatedTime || b.date) - new Date(a.updatedTime || a.date));
   const articles = sortedItems.filter(item => (item.kind || 'article').toLowerCase() === 'article' || isDigestPost(item));
   const featurePosts = articles.filter(item => !isDigestPost(item));
-  const leadStory = articles[0] || featurePosts[0] || null;
+  const leadStory = featurePosts[0] || articles[0] || null;
   const leadStoryIsDigest = leadStory ? isDigestPost(leadStory) : false;
-  const railStories = articles
+  const leadStoryHasImage = Boolean(leadStory?.thumbnailUrl?.match(/\.(jpg|jpeg|png|gif|webp)$/i));
+  const railStories = featurePosts
     .filter((item) => item.slug !== leadStory?.slug)
     .slice(0, 4);
   const featuredWriting = featurePosts.slice(0, 3);
@@ -2163,7 +2164,8 @@ async function writeHomePage(items, newsArticles = []) {
             <a href="./posts/${leadStory.slug}/">${escapeHtml(leadStory.title)}</a>
           </h1>
           <p class="lead-deck">${escapeHtml(leadStory.summary || (leadStoryIsDigest ? 'The newest available AI and technology briefing from the published archive.' : 'Kol writing on AI, tools, and the work around them.'))}</p>
-          <a href="./posts/${leadStory.slug}/" class="lead-photo" aria-label="${escapeHtml(leadStory.title)}">
+          <a href="./posts/${leadStory.slug}/" class="lead-photo${leadStoryHasImage ? ' has-media' : ''}" aria-label="${escapeHtml(leadStory.title)}">
+            ${leadStoryHasImage ? renderThumbnailImage(leadStory, escapeHtml(leadStory.title)) : ''}
             <span class="img-tag"><span>IMG-01</span> lead slot</span>
             <span class="img-cap">${leadStoryIsDigest ? 'Briefing card' : 'Editorial image slot'} · ${leadStory.readingTime || 3} min read</span>
           </a>
@@ -2179,7 +2181,10 @@ async function writeHomePage(items, newsArticles = []) {
           <div class="rail-list">
             ${railStories.map((post, index) => `
             <a href="./posts/${post.slug}/" class="rail-item">
-              <span class="rail-thumb" aria-hidden="true"><span class="img-tag">IMG-0${index + 2}</span></span>
+              <span class="rail-thumb${post.thumbnailUrl?.match(/\.(jpg|jpeg|png|gif|webp)$/i) ? ' has-media' : ''}" aria-hidden="true">
+                ${post.thumbnailUrl?.match(/\.(jpg|jpeg|png|gif|webp)$/i) ? renderThumbnailImage(post, escapeHtml(post.title)) : ''}
+                <span class="img-tag">IMG-0${index + 2}</span>
+              </span>
               <span>
                 <span class="rail-date">${new Date(post.updatedTime || post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</span>
                 <strong class="rail-title">${escapeHtml(post.title)}</strong>

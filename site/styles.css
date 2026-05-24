@@ -445,6 +445,27 @@ img {
   margin: 0 0 1rem;
 }
 
+.lead-photo img,
+.rail-thumb img,
+.home-feature-media img,
+.posts-lead-media img,
+.posts-stream-media img,
+.post-hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lead-photo.has-media,
+.rail-thumb.has-media,
+.home-feature-media:has(img),
+.posts-lead-media:has(img),
+.posts-stream-media:has(img),
+.post-hero-media:has(img) {
+  background: var(--surface);
+}
+
 .img-tag {
   position: absolute;
   left: 0.75rem;
