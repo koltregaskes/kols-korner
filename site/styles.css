@@ -815,6 +815,12 @@ img {
   border-bottom: 1px solid var(--line-soft);
 }
 
+.posts-heading .page-title {
+  max-width: 18ch;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
 .post-title,
 .digest-title,
 .page-title {
@@ -945,7 +951,6 @@ img {
 
 .digest-content,
 .digest-story-list,
-.posts-stream,
 .about-shell,
 .contact-shell {
   display: grid;
@@ -1004,7 +1009,6 @@ img {
 }
 
 .posts-lead-link,
-.posts-stream-link,
 .about-intro-card {
   display: grid;
   grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
@@ -1021,13 +1025,38 @@ img {
 }
 
 .posts-stream-link {
-  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr) auto;
-  align-items: stretch;
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: auto 1fr auto;
 }
 
 .posts-stream-cta {
-  align-self: center;
-  padding-right: 1rem;
+  align-self: end;
+  padding: 0 1rem 1rem;
+}
+
+.posts-stream {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  background: var(--line-soft);
+}
+
+.posts-stream-item {
+  min-width: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.posts-stream-copy {
+  align-content: start;
+}
+
+.posts-stream-copy h3,
+.posts-stream-copy p {
+  overflow-wrap: anywhere;
 }
 
 .tag-cloud {
@@ -1319,6 +1348,10 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .posts-stream {
+    grid-template-columns: 1fr;
+  }
+
   .lead-main {
     border-right: 0;
     border-bottom: 1px solid var(--line-soft);
@@ -1380,6 +1413,11 @@ img {
   .digest-title,
   .page-title {
     font-size: clamp(2rem, 12vw, 3.2rem);
+  }
+
+  .posts-heading .page-title {
+    max-width: 13ch;
+    font-size: clamp(2rem, 10.5vw, 2.85rem);
   }
 
   .lead-photo {

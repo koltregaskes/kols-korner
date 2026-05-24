@@ -581,11 +581,12 @@ function resolveAssetPath(assetPath = '', basePath = '.') {
   return `${basePath.replace(/\/$/, '')}/${cleanedPath}`;
 }
 
-function renderThumbnailImage(item, title, basePath = '.') {
+function renderThumbnailImage(item, title, basePath = '.', options = {}) {
+  const loading = options.loading || 'lazy';
   const attributes = [
     `src="${escapeHtml(resolveAssetPath(item.thumbnailUrl, basePath))}"`,
     `alt="${title}"`,
-    'loading="lazy"',
+    `loading="${loading}"`,
     'decoding="async"'
   ];
 
@@ -2353,7 +2354,7 @@ async function writePostsPage(items) {
         <a href="./${leadPost.slug}/" class="posts-lead-link">
           ${leadPost.thumbnailUrl && leadPost.thumbnailUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i) ? `
           <div class="posts-lead-media">
-            ${renderThumbnailImage(leadPost, escapeHtml(leadPost.title), '..')}
+            ${renderThumbnailImage(leadPost, escapeHtml(leadPost.title), '..', { loading: 'eager' })}
           </div>` : ''}
           <div class="posts-lead-copy">
             <p class="home-feature-date">${new Date(leadPost.updatedTime || leadPost.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
@@ -2368,7 +2369,7 @@ async function writePostsPage(items) {
 
       ${archivePosts.length ? `
       <section class="posts-stream fade-in-up" aria-label="Latest posts">
-        ${archivePosts.map((item) => {
+        ${archivePosts.map((item, index) => {
           const title = escapeHtml(item.title);
           const summary = escapeHtml(item.summary || '');
           const hasImage = item.thumbnailUrl && item.thumbnailUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i);
@@ -2378,7 +2379,7 @@ async function writePostsPage(items) {
             <a href="./${item.slug}/" class="posts-stream-link">
               ${hasImage ? `
               <div class="posts-stream-media">
-                ${renderThumbnailImage(item, title, '..')}
+                ${renderThumbnailImage(item, title, '..', { loading: index < 4 ? 'eager' : 'lazy' })}
               </div>` : ''}
               <div class="posts-stream-copy">
                 <p class="home-feature-date">${new Date(item.updatedTime || item.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
