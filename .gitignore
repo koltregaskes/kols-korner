@@ -17,6 +17,7 @@ logs/
 .agents/
 .antigravity/
 .local/
+design/
 AGENTS.md
 CLAUDE.md
 CODEX-HANDOFF.md
@@ -59,6 +60,7 @@ Thumbs.db
 .playwright-cli/
 *.log
 local-hub/
+test-results/
 
 # Local-only planning and scratch docs
 docs/local/
