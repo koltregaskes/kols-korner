@@ -12,7 +12,8 @@ function parseArgs(args) {
   const result = {
     from: null,
     to: null,
-    force: false
+    force: false,
+    allowEmpty: false
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -26,6 +27,8 @@ function parseArgs(args) {
       result.to = args[i].split('=')[1];
     } else if (args[i] === '--force') {
       result.force = true;
+    } else if (args[i] === '--allow-empty') {
+      result.allowEmpty = true;
     }
   }
 
@@ -56,12 +59,16 @@ async function getPendingDates(newsDir, contentDir, from, to) {
   return digestFiles.filter(date => !contentFiles.has(date));
 }
 
-function runDigestGenerator(date, force) {
+function runDigestGenerator(date, { force, allowEmpty }) {
   const scriptPath = path.join(__dirname, 'generate-daily-digest.mjs');
   const args = [scriptPath, '--date', date];
 
   if (force) {
     args.push('--force');
+  }
+
+  if (allowEmpty) {
+    args.push('--allow-empty');
   }
 
   const result = spawnSync(process.execPath, args, {
@@ -92,7 +99,7 @@ async function main() {
 
   for (const date of pendingDates) {
     console.log(`\nGenerating post for ${date}`);
-    runDigestGenerator(date, args.force);
+    runDigestGenerator(date, { force: args.force, allowEmpty: args.allowEmpty });
   }
 
   console.log('\nBackfill complete.');

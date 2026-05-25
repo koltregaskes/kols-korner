@@ -1,0 +1,295 @@
+{
+  "generatedAt": "2026-05-24T18:01:15.237Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-05-24",
+  "count": 15,
+  "items": [
+    {
+      "id": "digg-ai-box-ceo-aaron-levie-argues-ceos-overestimate-ai-readiness-because-they-only-see-prototypes-and-ignore-implementation-work-digg-https-www-digg-com-ai-f4ws471q-rank-2",
+      "title": "Box CEO Aaron Levie argues CEOs overestimate AI readiness because they only see prototypes and ignore implementation work · Digg",
+      "url": "https://www.digg.com/ai/f4ws471q?rank=2",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-24",
+      "summary": "Steven Sinofsky compared the gap to 1990s office software.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "opinion"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-emad-mostaque-says-a-single-researcher-can-now-manage-several-thousand-gpus-for-ai-training-with-modern-automation-digg-https-www-digg-com-ai-2uz3vny4-rank-3",
+      "title": "Emad Mostaque says a single researcher can now manage several thousand GPUs for AI training with modern automation · Digg",
+      "url": "https://www.digg.com/ai/2uz3vny4?rank=3",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-24",
+      "summary": "Historically, one researcher managed 1,000 A100 GPUs.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "hardware"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-chinese-creator-cuimao-releases-the-final-video-in-a-series-detailing-the-origin-story-of-anthropic-ceo-dario-amodei-digg-https-www-digg-com-ai-vz785dra-rank-5",
+      "title": "Chinese creator CuiMao releases the final video in a series detailing the origin story of Anthropic CEO Dario Amodei · Digg",
+      "url": "https://www.digg.com/ai/vz785dra?rank=5",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-24",
+      "summary": "The seedance2 collaboration features a hidden Easter egg.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "product_launch"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-i-tried-amazon-s-bee-wearable-and-am-both-intrigued-and-slightly-creeped-out-https-techcrunch-com-2026-05-24-i-tried-amazons-bee-wearable-and-am-both-intrigued-and-slightly-creeped-out",
+      "title": "I tried Amazon’s Bee wearable and am both intrigued and slightly creeped out",
+      "url": "https://techcrunch.com/2026/05/24/i-tried-amazons-bee-wearable-and-am-both-intrigued-and-slightly-creeped-out/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-24",
+      "summary": "Like other AI wearables, Amazon's Bee offers an odd combination of convenience and privacy anxiety.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-andrej-karpathy-joining-anthropic-sparks-industry-debate-over-the-prestige-of-member-of-technical-staff-titles-digg-https-www-digg-com-ai-dzxn82lm-rank-1",
+      "title": "Andrej Karpathy joining Anthropic sparks industry debate over the prestige of Member of Technical Staff titles · Digg",
+      "url": "https://www.digg.com/ai/dzxn82lm?rank=1",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-24",
+      "summary": "Yi Tay says AI research and engineering roles are merging",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-nomad-list-founder-pieter-levels-reports-a-claude-code-cli-bug-that-resets-his-effort-setting-to-medium-daily-digg-https-www-digg-com-ai-jryhwh3j-rank-4",
+      "title": "Nomad List founder Pieter Levels reports a Claude Code CLI bug that resets his effort setting to medium daily · Digg",
+      "url": "https://www.digg.com/ai/jryhwh3j?rank=4",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-24",
+      "summary": "A research engineer suggests the issue affects outdated CLI versions.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-github-manaflow-ai-cmux-ghostty-based-macos-terminal-with-vertical-tabs-and-notifications-for-ai-coding-agents-https-github-com-manaflow-ai-cmux",
+      "title": "GitHub - manaflow-ai/cmux: Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents",
+      "url": "https://github.com/manaflow-ai/cmux",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-24",
+      "summary": "Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents - manaflow-ai/cmux",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-github-earendil-works-pi-ai-agent-toolkit-coding-agent-cli-unified-llm-api-tui-web-ui-libraries-slack-bot-vllm-pods-https-github-com-earendil-works-pi",
+      "title": "GitHub - earendil-works/pi: AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods",
+      "url": "https://github.com/earendil-works/pi",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-24",
+      "summary": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods - earendil-works/pi",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "api_update"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-24",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-googles-take-on-openclaw-https-www-bensbites-com-p-googles-take-on-openclaw",
+      "title": "Google's take on openclaw",
+      "url": "https://www.bensbites.com/p/googles-take-on-openclaw",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-05-24",
+      "summary": "it's Anthropic's time for the mandate of heaven",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-ferrari-is-using-ibm-s-ai-to-create-f1-superfans-https-techcrunch-com-2026-05-23-ferrari-is-using-ai-to-create-f1-superfans",
+      "title": "Ferrari is using IBM’s AI to create F1 superfans",
+      "url": "https://techcrunch.com/2026/05/23/ferrari-is-using-ai-to-create-f1-superfans/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-23",
+      "summary": "IBM and Scuderia Ferrari HP take TechCrunch inside how they are redefining the fan experience.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-elon-musk-has-given-up-on-solar-power-on-earth-https-techcrunch-com-2026-05-23-elon-musk-has-given-up-on-solar-power-on-earth",
+      "title": "Elon Musk has given up on solar power (on Earth)",
+      "url": "https://techcrunch.com/2026/05/23/elon-musk-has-given-up-on-solar-power-on-earth/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-23",
+      "summary": "Elon Muks's xAI has gone all in on natural gas, while SpaceX is obsessed with orbital data centers. What happened to the \"solar-electric economy\" he promised?",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-trump-administration-reinstates-policy-requiring-o-1-visa-holders-to-leave-the-us-when-applying-for-green-cards-affecting-researchers-at-openai-digg-https-www-digg-com-ai-74d77886-d16f-4acf-a886-5503426b105a",
+      "title": "Trump administration reinstates policy requiring O-1 visa holders to leave the US when applying for green cards, affecting researchers at OpenAI · Digg",
+      "url": "https://www.digg.com/ai/74d77886-d16f-4acf-a886-5503426b105a",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-22",
+      "summary": "Up to half of OpenAI researchers on O-1 visas could be impacted.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "policy"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-ai-is-being-used-to-resurrect-the-voices-of-dead-pilots-https-techcrunch-com-2026-05-22-ai-is-being-used-to-resurrect-the-voices-of-dead-pilots",
+      "title": "AI is being used to resurrect the voices of dead pilots",
+      "url": "https://techcrunch.com/2026/05/22/ai-is-being-used-to-resurrect-the-voices-of-dead-pilots/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-22",
+      "summary": "People used AI on a spectrogram image of cockpit recordings to reconstruct them, forcing the NTSB to temporarily block access to its docket system.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-google-goes-for-the-glitter-with-disco-ball-icons-are-y-all-sure-you-still-want-this-https-techcrunch-com-2026-05-22-google-goes-for-the-glitter-with-disco-ball-icons-are-yall-sure-you-still-want-this",
+      "title": "Google goes for the glitter with disco-ball icons: ‘Are y’all sure you still want this?’",
+      "url": "https://techcrunch.com/2026/05/22/google-goes-for-the-glitter-with-disco-ball-icons-are-yall-sure-you-still-want-this/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-22",
+      "summary": "You can now disco ball-ify your entire Pixel home screen, says Google.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    }
+  ]
+}

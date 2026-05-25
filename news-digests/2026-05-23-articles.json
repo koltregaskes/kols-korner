@@ -1,0 +1,293 @@
+{
+  "generatedAt": "2026-05-23T18:01:07.109Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-05-23",
+  "count": 15,
+  "items": [
+    {
+      "id": "digg-ai-ai-systems-solve-erd-s-problems-via-hours-long-reasoning-processes-and-generate-functional-code-autonomously-as-gradient-descent-on-neural-networks-continues-improving-without-plateau-digg-https-www-digg-com-ai-pvdy5b3f-rank-5",
+      "title": "AI systems solve Erdős problems via hours-long reasoning processes and generate functional code autonomously as gradient descent on neural networks continues improving without plateau · Digg",
+      "url": "https://www.digg.com/ai/pvdy5b3f?rank=5",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-23",
+      "summary": "Observers note computers are programming themselves amid bubble debate.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-ferrari-is-using-ibm-s-ai-to-create-f1-superfans-https-techcrunch-com-2026-05-23-ferrari-is-using-ai-to-create-f1-superfans",
+      "title": "Ferrari is using IBM’s AI to create F1 superfans",
+      "url": "https://techcrunch.com/2026/05/23/ferrari-is-using-ai-to-create-f1-superfans/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-23",
+      "summary": "IBM and Scuderia Ferrari HP take TechCrunch inside how they are redefining the fan experience.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-elon-musk-has-given-up-on-solar-power-on-earth-https-techcrunch-com-2026-05-23-elon-musk-has-given-up-on-solar-power-on-earth",
+      "title": "Elon Musk has given up on solar power (on Earth)",
+      "url": "https://techcrunch.com/2026/05/23/elon-musk-has-given-up-on-solar-power-on-earth/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-23",
+      "summary": "Elon Muks's xAI has gone all in on natural gas, while SpaceX is obsessed with orbital data centers. What happened to the \"solar-electric economy\" he promised?",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-matthew-barnett-posts-analysis-of-eliezer-yudkowskys-calibration-on-ai-doom-predictions-centered-on-a-2016-statement-about-turing-test-timelines-before-the-end-of-the-world-digg-https-www-digg-com-ai-y26pwq3o-rank-1",
+      "title": "Matthew Barnett posts analysis of Eliezer Yudkowsky's calibration on AI doom predictions centered on a 2016 statement about Turing test timelines before the end of the world · Digg",
+      "url": "https://www.digg.com/ai/y26pwq3o?rank=1",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-23",
+      "summary": "NathanpmYoung replies that the statement offers limited evidence on timelines.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-pieter-levels-says-skills-features-in-ai-coding-agents-are-overrated-and-equivalent-to-basic-text-files-preferring-direct-instructions-on-tasks-and-methods-instead-digg-https-www-digg-com-ai-9carryi2-rank-2",
+      "title": "Pieter Levels says skills features in AI coding agents are overrated and equivalent to basic text files, preferring direct instructions on tasks and methods instead · Digg",
+      "url": "https://www.digg.com/ai/9carryi2?rank=2",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-23",
+      "summary": "Austen Allred countered that skills enable reuse across sessions.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-niloofar-mireshghallah-overhears-discussion-of-world-models-and-grounded-video-generation-while-resting-in-a-copenhagen-park-during-burnout-recovery-digg-https-www-digg-com-ai-2imvfocn-rank-3",
+      "title": "Niloofar Mireshghallah overhears discussion of world models and grounded video generation while resting in a Copenhagen park during burnout recovery · Digg",
+      "url": "https://www.digg.com/ai/2imvfocn?rank=3",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-23",
+      "summary": "Nathan Lambert replies with support for her trip.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "video_gen"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-pieter-levels-dutch-indie-hacker-and-serial-entrepreneur-behind-remote-ok-and-nomad-list-says-he-has-not-written-code-in-six-months-digg-https-www-digg-com-ai-zj8pykmk-rank-4",
+      "title": "Pieter Levels, Dutch indie hacker and serial entrepreneur behind Remote OK and Nomad List, says he has not written code in six months · Digg",
+      "url": "https://www.digg.com/ai/zj8pykmk?rank=4",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-23",
+      "summary": "Nick Dobos reports staying hands-off from coding for months.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-github-earendil-works-pi-ai-agent-toolkit-coding-agent-cli-unified-llm-api-tui-web-ui-libraries-slack-bot-vllm-pods-https-github-com-earendil-works-pi",
+      "title": "GitHub - earendil-works/pi: AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods",
+      "url": "https://github.com/earendil-works/pi",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-23",
+      "summary": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods - earendil-works/pi",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "api_update"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-github-manaflow-ai-cmux-ghostty-based-macos-terminal-with-vertical-tabs-and-notifications-for-ai-coding-agents-https-github-com-manaflow-ai-cmux",
+      "title": "GitHub - manaflow-ai/cmux: Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents",
+      "url": "https://github.com/manaflow-ai/cmux",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-23",
+      "summary": "Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents - manaflow-ai/cmux",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-23",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-googles-take-on-openclaw-https-www-bensbites-com-p-googles-take-on-openclaw",
+      "title": "Google's take on openclaw",
+      "url": "https://www.bensbites.com/p/googles-take-on-openclaw",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-05-23",
+      "summary": "it's Anthropic's time for the mandate of heaven",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-ai-is-being-used-to-resurrect-the-voices-of-dead-pilots-https-techcrunch-com-2026-05-22-ai-is-being-used-to-resurrect-the-voices-of-dead-pilots",
+      "title": "AI is being used to resurrect the voices of dead pilots",
+      "url": "https://techcrunch.com/2026/05/22/ai-is-being-used-to-resurrect-the-voices-of-dead-pilots/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-22",
+      "summary": "People used AI on a spectrogram image of cockpit recordings to reconstruct them, forcing the NTSB to temporarily block access to its docket system.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-google-goes-for-the-glitter-with-disco-ball-icons-are-y-all-sure-you-still-want-this-https-techcrunch-com-2026-05-22-google-goes-for-the-glitter-with-disco-ball-icons-are-yall-sure-you-still-want-this",
+      "title": "Google goes for the glitter with disco-ball icons: ‘Are y’all sure you still want this?’",
+      "url": "https://techcrunch.com/2026/05/22/google-goes-for-the-glitter-with-disco-ball-icons-are-yall-sure-you-still-want-this/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-22",
+      "summary": "You can now disco ball-ify your entire Pixel home screen, says Google.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-how-vcs-and-founders-use-inflated-arr-to-crown-ai-startups-https-techcrunch-com-2026-05-22-how-vcs-and-founders-use-inflated-arr-to-kingmake-ai-startups",
+      "title": "How VCs and founders use inflated ‘ARR’ to crown AI startups",
+      "url": "https://techcrunch.com/2026/05/22/how-vcs-and-founders-use-inflated-arr-to-kingmake-ai-startups/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-22",
+      "summary": "Some AI startups are stretching traditional revenue metrics when talking about progress publicly. And their investors are fully aware.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-elizabeth-barnes-metr-founder-and-ceo-says-ai-experts-lack-control-over-frontier-ai-risks-after-the-frontier-risk-report-evaluated-agents-at-anthropic-google-meta-and-openai-digg-https-www-digg-com-ai-0b299e51-847f-428e-a466-5a7221e5030e",
+      "title": "Elizabeth Barnes, METR founder and CEO, says AI experts lack control over frontier AI risks after the Frontier Risk Report evaluated agents at Anthropic, Google, Meta, and OpenAI · Digg",
+      "url": "https://www.digg.com/ai/0b299e51-847f-428e-a466-5a7221e5030e",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-22",
+      "summary": "METR had direct access inside the four labs for the pilot.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    }
+  ]
+}

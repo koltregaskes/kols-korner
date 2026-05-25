@@ -1,0 +1,305 @@
+{
+  "generatedAt": "2026-05-18T18:08:06.419Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-05-18",
+  "count": 15,
+  "items": [
+    {
+      "id": "digg-ai-cursor-releases-composer-2-5-as-its-most-powerful-model-with-gains-in-intelligence-and-reliability-digg-https-www-digg-com-ai-jwouuhjx",
+      "title": "Cursor releases Composer 2.5 as its most powerful model with gains in intelligence and reliability · Digg",
+      "url": "https://www.digg.com/ai/jwouuhjx",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-18",
+      "summary": "Cursor announced Composer 2.5 as its most powerful model to date. The update improves intelligence, sustained performance on long-running tasks, and reliability with complex…",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "evaluation",
+        "product_launch"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-leopold-s-situational-awareness-discloses-new-long-positions-in-te-hive-shaz-intc-amd-and-other-semiconductor-names-digg-https-www-digg-com-ai-bcy72fi4",
+      "title": "Leopold’s Situational Awareness discloses new long positions in TE, HIVE, SHAZ, INTC, AMD, and other semiconductor names · Digg",
+      "url": "https://www.digg.com/ai/bcy72fi4",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-18",
+      "summary": "Leopold's Situational Awareness disclosed its latest 13F filing. The fund opened fresh long positions in TE, HIVE, SHAZ, INTC, AMD, SMH, TSM, MU, GLW, ASML, and NVDA while…",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "hardware"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai-https-techcrunch-com-2026-05-18-elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai",
+      "title": "Elon Musk has lost his lawsuit against Sam Altman and OpenAI",
+      "url": "https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-18",
+      "summary": "Elon Musk's claim that he was mistreated by his OpenAI cofounders failed after nine California jurors decided in a unanimous verdict that his lawsuits had been filed too late.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-amazon-s-new-alexa-powered-feature-can-generate-podcast-episodes-https-techcrunch-com-2026-05-18-amazons-new-alexa-powered-feature-can-generate-podcast-episodes",
+      "title": "Amazon’s new Alexa+ powered feature can generate podcast episodes",
+      "url": "https://techcrunch.com/2026/05/18/amazons-new-alexa-powered-feature-can-generate-podcast-episodes/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-18",
+      "summary": "Amazon’s Alexa+ can now generate custom AI podcasts on demand, as the company expands its assistant into a personalized AI content platform.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "arxiv-cs-ai-sdof-taming-the-alignment-tax-in-multi-agent-orchestration-with-state-constrained-dispatch-https-arxiv-org-abs-2605-15204",
+      "title": "SDOF: Taming the Alignment Tax in Multi-Agent Orchestration with State-Constrained Dispatch",
+      "url": "https://arxiv.org/abs/2605.15204",
+      "source": "arXiv cs.AI",
+      "sourceId": "arxiv-cs-ai",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-18",
+      "summary": "arXiv:2605.15204v1 Announce Type: new Abstract: Multi-agent orchestration frameworks such as LangChain, LangGraph, and CrewAI route tasks through graph-based pipelines but do not enforce the stage constraints that govern real business processes. We present SDOF, a framework that treats multi-agent execution as a constrained state machine. SDOF operates through two primary defensive layers, implemented by three components: (1) an Online-RLHF Specialized Intent Router trained via Generative Reward Modeling (GRPO) and (2) a StateAwareDispatcher with GoalStage finite-automaton checks and precondition/postcondition SkillRegistry validation for auditable execution control. On a recruitment system backed by the Beisen iTalent platform (6000+ enterprises), 185 expert-curated scenarios trigger 1671 live API calls. Our GSPO-aligned 7B Intent Router achieves higher joint accuracy than zero-shot GPT-4o on this FSM-constrained adversarial routing benchmark (80.9% versus 48.9%). In end-to-end execution, SDOF reaches 86.5% task completion (95% confidence interval 80.8 to 90.7) and blocks all 22 operations in the injection, illegal HR subset. Under a broader message-level blocking audit, SDOF attains precision 100% and recall 88%, expert agreement kappa=0.94. A separate evaluation on 960 SGD-derived dialogues spanning 8 service domains surfaces 201 stage-order conflicts under our FSM mapping, 41 of which arise in the normal split. This arXiv version reports the current validated scope; extended multi-seed training comparisons and deeper workflow evaluations will be released in a subsequent update.",
+      "tags": [
+        "research_paper",
+        "evaluation",
+        "reasoning",
+        "ai_agents",
+        "model_release",
+        "benchmark",
+        "api_update",
+        "dataset",
+        "training",
+        "creative_workflow",
+        "multi_agent",
+        "ai_safety",
+        "agentic_framework",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-github-stars-https-www-digg-com-ai-github-stars",
+      "title": "GitHub stars",
+      "url": "https://www.digg.com/ai/github/stars",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-18",
+      "summary": "Projects most-endorsed by AI 2K members in the past 7 days.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-digg-ai-news-before-it-trends-https-www-digg-com-ai-x-rankings",
+      "title": "Digg - AI news, before it trends",
+      "url": "https://www.digg.com/ai/x/rankings",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-18",
+      "summary": "People actively involved in AI across research, startups, investing, engineering, and media, ranked from the X social graph.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-xai-adds-native-image-and-video-generation-to-its-grok-build-cli-tool-digg-https-www-digg-com-ai-m1subx0e",
+      "title": "xAI adds native image and video generation to its Grok Build CLI tool · Digg",
+      "url": "https://www.digg.com/ai/m1subx0e",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-18",
+      "summary": "xAI added native image and video generation to its Grok Build CLI tool, introducing commands such as /imagine and /imagine-video that enable direct creation from the command…",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "video_gen"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-richard-sutton-university-of-alberta-professor-posts-26-word-distillation-of-bitter-lesson-in-ai-digg-https-www-digg-com-ai-cmu2i8z7",
+      "title": "Richard Sutton, University of Alberta professor, posts 26-word distillation of bitter lesson in AI · Digg",
+      "url": "https://www.digg.com/ai/cmu2i8z7",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-18",
+      "summary": "Richard Sutton posted a 26-word summary of the bitter lesson urging researchers to favor scalable search and learning methods over embedded human knowledge. Aviv Tamar…",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-jason-liu-from-openai-questions-why-ai-labs-have-not-addressed-water-consumption-claims-digg-https-www-digg-com-ai-kqn8clj7",
+      "title": "Jason Liu from OpenAI questions why AI labs have not addressed water consumption claims · Digg",
+      "url": "https://www.digg.com/ai/kqn8clj7",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-18",
+      "summary": "Jason Liu, Developer Experience Engineer at OpenAI on the Codex team, posted questioning why AI labs have not addressed claims about water consumption tied to model training and…",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-anthropic-acquires-stainless-https-www-anthropic-com-news-anthropic-acquires-stainless",
+      "title": "Anthropic acquires Stainless",
+      "url": "https://www.anthropic.com/news/anthropic-acquires-stainless",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-18",
+      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "research_paper",
+        "acquisition"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-18",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-apple-s-siri-revamp-could-include-auto-deleting-chats-https-techcrunch-com-2026-05-17-apples-siri-revamp-could-include-auto-deleting-chats",
+      "title": "Apple’s Siri revamp could include auto-deleting chats",
+      "url": "https://techcrunch.com/2026/05/17/apples-siri-revamp-could-include-auto-deleting-chats/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-17",
+      "summary": "Privacy will be a major theme when Apple unveils a new version of Siri.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-why-trust-is-a-big-question-at-the-elon-musk-openai-trial-https-techcrunch-com-2026-05-17-why-trust-is-a-big-question-at-the-elon-musk-openai-trial",
+      "title": "Why trust is a big question at the Elon Musk-OpenAI trial",
+      "url": "https://techcrunch.com/2026/05/17/why-trust-is-a-big-question-at-the-elon-musk-openai-trial/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-17",
+      "summary": "A big theme in the trial’s final days was whether OpenAI CEO Sam Altman is trustworthy.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-dwarkesh-patel-separates-intelligence-from-goal-achievement-digg-https-www-digg-com-ai-1734ea80-6d61-418c-b325-b60a1fa42db9",
+      "title": "Dwarkesh Patel separates intelligence from goal achievement · Digg",
+      "url": "https://www.digg.com/ai/1734ea80-6d61-418c-b325-b60a1fa42db9",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-17",
+      "summary": "Dwarkesh Patel posted an analysis that distinguishes abstract conceptual manipulation from the ability to achieve goals across domains. He observed that political leaders such as…",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    }
+  ]
+}

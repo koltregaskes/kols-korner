@@ -1,0 +1,313 @@
+{
+  "generatedAt": "2026-05-19T19:46:21.557Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-05-19",
+  "count": 15,
+  "items": [
+    {
+      "id": "digg-ai-google-releases-gemini-3-5-flash-for-complex-agentic-workflows-coding-and-reasoning-at-289-tokens-per-second-and-higher-scores-than-gemini-3-1-pro-on-terminal-bench-2-1-gdpval-aa-and-mcp-atlas-digg-https-www-digg-com-ai-9p5cqkyn-rank-2",
+      "title": "Google releases Gemini 3.5 Flash for complex agentic workflows, coding, and reasoning at 289 tokens per second and higher scores than Gemini 3.1 Pro on Terminal-Bench 2.1, GDPval-AA, and MCP Atlas · Digg",
+      "url": "https://www.digg.com/ai/9p5cqkyn?rank=2",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "Large token quotas appeared in Google Cloud Console before wider rollout.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "evaluation",
+        "inference",
+        "tool_use",
+        "mcp",
+        "reasoning",
+        "product_launch",
+        "crypto_defi"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots-https-techcrunch-com-2026-05-19-with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots",
+      "title": "With Gemini 3.5 Flash, Google bets its next AI wave on agents, not chatbots",
+      "url": "https://techcrunch.com/2026/05/19/with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "Google launched Gemini 3.5 Flash, its most powerful coding and agentic AI model yet, at the company's annual developer conference. It is capable of autonomously executing complex tasks and building software from scratch.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "model_release",
+        "ai_agents"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "venturebeat-ai-google-just-redesigned-the-search-box-for-the-first-time-in-25-years-here-s-why-it-matters-more-than-you-think-https-venturebeat-com-technology-google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "title": "Google just redesigned the search box for the first time in 25 years — here’s why it matters more than you think.",
+      "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "source": "VentureBeat AI",
+      "sourceId": "venturebeat-ai",
+      "section": "Industry",
+      "publishedAt": "2026-05-19",
+      "summary": "For a quarter century, the Google search box has been one of the most recognizable interfaces in computing: a thin white rectangle, a blinking cursor, a few typed words, and a list of blue links. On Tuesday, Google will formally retire that paradigm. At its annual I/O developer conference , Google announced a sweeping redesign of the search box itself — the literal text field where billions of queries begin every day — transforming it from a simple keyword input into a dynamic, AI-driven conversation starter that can accept text, images, PDFs, videos, and even open Chrome tabs as inputs. The company is also merging its AI Overviews and AI Mode features into a single, seamless search flow, eliminating the friction that previously forced users to choose between a traditional results page and an AI-forward experience. Liz Reid, Google's vice president and head of Search, called it \"the biggest upgrade to our iconic search box since its debut over 25 years ago\" during a press briefing on Monday. The announcement arrived alongside a blizzard of other news — new Gemini models , a personal AI agent called Spark , an intelligent shopping cart , a reimagined developer platform — but the search box redesign may prove to be the most consequential. It is the clearest signal yet that Google views the future of its flagship product not as a place where users type fragmented keywords, but as an interface where they hold open-ended, multimodal conversations with an AI system backed by the entire web. The new search box expands, accepts files, and coaches you on what to ask The changes show a fundamental shift in how Google expects people to interact with the product that generates the vast majority of Alphabet's revenue. The box itself now dynamically expands to accommodate longer, more conversational queries. Where the old interface subtly encouraged brevity — a narrow field suited to two- or three-word keyword strings — the new design invites users to fully articulate complex questions in granular detail. It also now supports multimodal inputs directly. Users can upload images, PDFs, files, and videos, or drag in content from Chrome tabs, right from the main search interface. Previously, some of these capabilities existed in AI Mode, but reaching them required extra steps. Now they sit at the primary entry point. Google is also deploying what it describes as an AI-powered query suggestion system that \"goes beyond autocomplete.\" Rather than simply predicting the next word a user might type based on popular searches, the system helps users formulate complex, nuanced queries — essentially coaching them toward the kind of detailed questions that AI Mode handles best. The new search box is starting to roll out immediately in all countries and languages where AI Mode is available. Google is merging AI overviews and AI mode into one seamless experience Perhaps more significant than the box itself is the architectural change happening behind it. Google is unifying AI Overviews — the AI-generated summary panels that appear atop traditional search results — with AI Mode , the more immersive conversational search experience the company launched at I/O one year ago. Starting Tuesday, this merged experience will be live across mobile and desktop worldwide. A user can type a question, receive an AI Overview alongside traditional results, and then continue directly into a back-and-forth AI Mode conversation to ask follow-up questions — all without navigating to a separate interface. Reid explained the logic during the press briefing: the new AI search box is \"an upgrade of our traditional search box, and so the results take you directly to main search rather than AI mode.\" She noted that while some power users actively sought out AI Mode, \"for most users, they don't actually want to have to think about, do they want more of a traditional page or an AI-forward search experience.\" The goal, she said, was to ensure that \"for most users, they don't have to think about where to go, they can just go to the search box they're familiar with, and it feels like they get the best experience afterwards.\" One billion users and doubling queries reveal how fast search behavior is shifting Google's decision to redesign the foundational interface of its most important product did not happen in a vacuum. The company shared a set of usage statistics during the briefing that reveal just how rapidly user behavior is already changing. AI Mode , which launched in the United States at I/O 2025, has surpassed one billion monthly users in its first year. AI Mode queries have been doubling every quarter since launch. AI Overviews, the lighter-weight AI summaries, now reach more than 2.5 billion monthly users. And overall search query volume hit an all-time high last quarter — a data point the company had previously disclosed on its earnings call. Sundar Pichai, Google's CEO, framed these figures as evidence that AI features are additive, not cannibalistic, to search usage. \"When people use our AI-powered features in search, they use search more,\" he said. He added that he loves \"how search has become less about individual queries and feels more like an ongoing conversation, giving users deeper insights and connecting you with the vastness of the web.\" Reid reinforced the point: \"It's not just that people are searching more, it's that they're searching differently. They're fully expressing their questions in granular detail, asking those follow-up questions and searching across modalities.\" Gemini 3.5 Flash gives Google's AI search the speed it needs to work at scale Under the hood, the new search experience runs on Gemini 3.5 Flash , Google's newest AI model, which the company also introduced at I/O. Google upgraded AI Mode's underlying model to 3.5 Flash to deliver what Reid described as \"an even more powerful AI search experience.\" Gemini 3.5 Flash is the workhorse of this year's announcements. Google claims it outperforms its previous frontier model, Gemini 3.1 Pro , on nearly all benchmarks while running four times faster in output tokens per second than comparable frontier models. Pichai described it as being \"in a league of its own in the top right quadrant\" of the Artificial Analysis index , which plots intelligence against speed — meaning it delivers near-frontier quality at dramatically lower latency. That speed matters enormously for search. A conversational AI search experience that feels sluggish would be dead on arrival for a product that serves billions of queries daily. By coupling the redesigned interface with a model optimized for both quality and throughput, Google is attempting to make AI-powered search feel as instantaneous as the old keyword experience — while being dramatically more capable. Search can now build interactive visuals and custom mini apps on the fly The redesigned search box is also the gateway to a set of new capabilities that push search far beyond text-based answers. Google announced what it calls \" generative UI \" — the ability for search to dynamically build custom widgets, interactive visualizations, and even mini applications in real time, tailored to a user's specific question. Reid offered a concrete example during the briefing: a user could ask \"How do black holes affect space time?\" and receive an interactive visual in an AI Overview that brings the concept to life. Follow-up questions would trigger the system to dynamically generate entirely new visuals in real time. This is possible, she explained, because of \"a novel real-time code generation system we built in partnership with the Google DeepMind team\" that runs on Gemini 3.5 Flash. Generative UI capabilities will roll out to everyone this summer, free of charge. But Google is going further still. For ongoing tasks — planning a wedding, organizing a move, tracking a fitness routine — users will be able to build what the company describes as customizable, stateful experiences within search, powered by its Antigravity development platform . These require no coding expertise. Users simply describe what they want in natural language, and search builds it. Those experiences will be available in coming months, starting with Google AI Pro and Ultra subscribers in the United States. AI agents that monitor the web around the clock are coming to search results The redesign also opens the door to what Google calls \" information agents \" — AI agents that users can configure directly within search to monitor the web 24/7 for specific conditions and deliver synthesized updates when those conditions are met. A user could, for example, set up an agent to track market movements in a particular sector with specific parameters. The agent would create a monitoring plan, tap into real-time finance data, and proactively notify the user when conditions are met — complete with links and context for further research. Other use cases include apartment hunting, tracking sneaker drops, or monitoring any topic a user cares about. Information agents will launch first for Google AI Pro and Ultra subscribers this summer. These agents sit within a much larger strategic pivot that Google articulated throughout the briefing: the company is going all-in on AI systems that don't just answer questions but proactively take actions on users' behalf. Beyond search, Google introduced Gemini Spark , a 24/7 personal AI agent that runs on dedicated virtual machines in Google Cloud. It unveiled the Universal Cart , an intelligent cross-merchant shopping cart. It announced the Agent Payments Protocol for agents to make secure purchases. And it expanded its Antigravity developer platform into a full ecosystem for building autonomous AI agents. Publishers, advertisers, and SEO professionals face a new reality The redesign raises profound questions for the sprawling ecosystem — publishers, advertisers, SEO professionals — that has been built around the old model of keyword search and blue links. If users increasingly express their needs as full, conversational sentences rather than fragmented keywords, the entire discipline of search engine optimization will need to evolve. Keyword-density strategies become less relevant when the AI is parsing natural language intent rather than matching strings. Content that answers deep, nuanced questions in authoritative ways becomes more valuable; content engineered to rank for two-word keyword fragments becomes less so. For publishers, the stakes are existential . AI Overviews already synthesize information from across the web and present it directly in search results, reducing the need for users to click through to source material. The new seamless AI Mode integration deepens that dynamic: users can now get an AI-generated answer and ask multiple follow-up questions without ever leaving the search page. Google has consistently maintained that its AI features drive more traffic to publishers, but the redesign puts that claim under renewed scrutiny as the search results page becomes more self-contained. For advertisers — who fund the vast majority of Google's revenue — the shift from keywords to conversations changes the calculus of ad targeting. Conversational queries contain richer intent signals, which could make ad targeting more precise and valuable. But they also create new ambiguities: when a user is in the middle of a multi-turn conversation with AI Mode, where does an ad naturally fit? Google did not detail changes to its advertising model during the briefing, but the structural shift in the interface will inevitably reshape how ads are surfaced and measured. The search box was always more than a product — it was a habit for billions of people There is a reason Google chose to redesign the search box rather than simply adding new features behind it. The search box is not just a product element at this point; it is a cultural artifact — one of the few pieces of digital infrastructure used by essentially the entire internet-connected world. Changing it sends an unmistakable message about where the company believes computing is headed. For 25 years, the search box trained billions of people to think in keywords — to compress their curiosity into the shortest possible string of words. The new box invites them to do the opposite: to think out loud, to upload what they're looking at, to ask follow-up questions, to let an AI system handle the compression. Pichai tied the company's broader ambitions to a striking statistic: Google's surfaces now process over 3.2 quadrillion tokens per month, up seven-fold from a year ago. The company expects capital expenditures of approximately $180 to $190 billion in 2026 — roughly six times the $31 billion it spent four years ago — largely to support the infrastructure required for this AI transformation. When asked about the future of traditional search, he was direct. \"Search is the most used AI product in the world,\" he said. The blinking cursor in Google's search box still invites you to type. But after 25 years of teaching the world to speak in keywords, Google is now asking it to speak in sentences — and betting roughly $190 billion that it will.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "ai_agents",
+        "model_release",
+        "research_paper",
+        "inference",
+        "autonomous_systems",
+        "opinion",
+        "crypto_defi"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "arxiv-cs-ai-agentwall-a-runtime-safety-layer-for-local-ai-agents-https-arxiv-org-abs-2605-16265",
+      "title": "AgentWall: A Runtime Safety Layer for Local AI Agents",
+      "url": "https://arxiv.org/abs/2605.16265",
+      "source": "arXiv cs.AI",
+      "sourceId": "arxiv-cs-ai",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-19",
+      "summary": "arXiv:2605.16265v1 Announce Type: new Abstract: The safety of autonomous AI agents is increasingly recognized as a critical open problem. As agents transition from passive text generators to active actors capable of executing shell commands, modifying files, calling APIs, and browsing the web, the consequences of unsafe or adversarially manipulated behavior become immediate and tangible. Existing AI safety work has focused primarily on model alignment and input filtering, but these approaches do not address what happens at the moment an agent's intent becomes a real action on a real machine. This gap is especially acute in local environments, where developers run agents against their own filesystems, credentials, and infrastructure with little runtime control. This paper introduces AgentWall, a runtime safety and observability layer for local AI agents. AgentWall intercepts every proposed agent action before it reaches the host environment, evaluates it against an explicit declarative policy, requires human approval for sensitive operations, and records a complete execution trail for audit and replay. It is implemented as a policy-enforcing MCP proxy and native OpenClaw plugin, working across Claude Desktop, Cursor, Windsurf, Claude Code, and OpenClaw with a single install command. We present the design, architecture, threat model, and policy model of AgentWall, and demonstrate 92.9% policy enforcement accuracy with sub-millisecond overhead across 14 benchmark tests. AgentWall is open-source at https://github.com/agentwall/Agentwall.",
+      "tags": [
+        "research_paper",
+        "evaluation",
+        "reasoning",
+        "ai_agents",
+        "benchmark",
+        "architecture",
+        "tool_use",
+        "autonomous_systems",
+        "ai_safety",
+        "mcp",
+        "product_launch",
+        "policy",
+        "open_source"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-a-fabricated-x-post-impersonating-pope-leo-xiv-claims-he-joined-anthropic-to-work-on-frontier-large-language-models-and-has-circulated-among-ai-researchers-digg-https-www-digg-com-ai-0aeiof5t",
+      "title": "A fabricated X post impersonating Pope Leo XIV claims he joined Anthropic to work on frontier large language models and has circulated among AI researchers · Digg",
+      "url": "https://www.digg.com/ai/0aeiof5t",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "The meme spread amid commentary on Anthropic's recent hiring activity.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "opinion"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-google-showcases-synthid-watermarking-system-at-i-o-with-logos-of-openai-nvidia-kakao-and-elevenlabs-signaling-partner-adoption-digg-https-www-digg-com-ai-tpxz6a9o",
+      "title": "Google showcases SynthID watermarking system at I/O with logos of OpenAI, Nvidia, Kakao and ElevenLabs signaling partner adoption · Digg",
+      "url": "https://www.digg.com/ai/tpxz6a9o",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "Sundar Pichai also presented Gemini 3.5 Flash benchmarks at the session.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "hardware",
+        "voice_synthesis"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-google-takes-a-page-out-of-meta-s-book-announces-new-audio-powered-smart-glasses-https-techcrunch-com-2026-05-19-google-takes-a-page-out-of-metas-book-announces-new-audio-powered-smart-glasses",
+      "title": "Google takes a page out of Meta’s book, announces new audio-powered smart glasses",
+      "url": "https://techcrunch.com/2026/05/19/google-takes-a-page-out-of-metas-book-announces-new-audio-powered-smart-glasses/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "Google is calling the new devices \"audio glasses,\" in that users will be able to issue verbal commands to them and get things done via its ecosystem of apps and services, including Gemini.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-google-s-genie-world-model-can-now-simulate-real-streets-with-street-view-https-techcrunch-com-2026-05-19-googles-genie-world-model-can-now-simulate-real-streets-with-street-view",
+      "title": "Google’s Genie world model can now simulate real streets with Street View",
+      "url": "https://techcrunch.com/2026/05/19/googles-genie-world-model-can-now-simulate-real-streets-with-street-view/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "Google DeepMind is integrating Street View with Project Genie to create immersive, interactive world simulations for robotics, gaming, and travel, allowing users to explore environments, weather changes, and rare scenarios.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-how-to-use-google-s-new-information-agents-https-techcrunch-com-2026-05-19-how-to-use-googles-new-information-agents",
+      "title": "How to use Google’s new information agents",
+      "url": "https://techcrunch.com/2026/05/19/how-to-use-googles-new-information-agents/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "Google is launching AI-powered “information agents” that can monitor topics in the background and proactively alert users to updates and changes.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-google-search-as-you-know-it-is-over-https-techcrunch-com-2026-05-19-google-search-as-you-know-it-is-over",
+      "title": "Google Search as you know it is over",
+      "url": "https://techcrunch.com/2026/05/19/google-search-as-you-know-it-is-over/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "Google is transforming Search from a list of links into an AI-powered experience filled with conversational answers, autonomous agents, and interactive interfaces — a shift that could further reduce traffic to publishers across the web.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "autonomous_systems"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-github-stars-https-www-digg-com-ai-github-stars",
+      "title": "GitHub stars",
+      "url": "https://www.digg.com/ai/github/stars",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "Projects most-endorsed by AI 2K members in the past 7 days.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-digg-ai-news-before-it-trends-https-www-digg-com-ai-x-rankings",
+      "title": "Digg - AI news, before it trends",
+      "url": "https://www.digg.com/ai/x/rankings",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "People actively involved in AI across research, startups, investing, engineering, and media, ranked from the X social graph.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-andrej-karpathy-the-ai-researcher-and-educator-known-for-prior-roles-at-openai-and-tesla-joins-anthropic-to-work-on-large-language-models-at-the-research-frontier-digg-https-www-digg-com-ai-axyiki3j",
+      "title": "Andrej Karpathy, the AI researcher and educator known for prior roles at OpenAI and Tesla, joins Anthropic to work on large language models at the research frontier · Digg",
+      "url": "https://www.digg.com/ai/axyiki3j",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "He described the next few years as especially formative for frontier models.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-sam-altman-openai-co-founder-and-ceo-says-tibo-will-reset-codex-rate-limits-if-his-tweet-receives-one-like-digg-https-www-digg-com-ai-g3568836",
+      "title": "Sam Altman, OpenAI co-founder and CEO, says Tibo will reset Codex rate limits if his tweet receives one like · Digg",
+      "url": "https://www.digg.com/ai/g3568836",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "Replies suggest automating likes for perpetual resets.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-andrej-karpathy-the-ai-researcher-and-educator-known-for-prior-roles-at-openai-and-tesla-joins-anthropic-to-work-on-large-language-models-at-the-research-frontier-digg-https-www-digg-com-ai-axyiki3j-rank-1",
+      "title": "Andrej Karpathy, the AI researcher and educator known for prior roles at OpenAI and Tesla, joins Anthropic to work on large language models at the research frontier · Digg",
+      "url": "https://www.digg.com/ai/axyiki3j?rank=1",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-19",
+      "summary": "He described the next few years as especially formative for frontier models.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    }
+  ]
+}

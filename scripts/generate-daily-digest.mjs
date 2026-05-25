@@ -563,7 +563,9 @@ publish: false
 
 # Daily Digest: ${displayDate}
 
-No publishable news items were available for this dated digest.
+No matching source items are available in the local news archive for this date.
+
+This unpublished placeholder keeps the editorial archive continuous without claiming there was no news on the day.
 `;
 
   return { markdown, slug };
