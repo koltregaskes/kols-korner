@@ -93,7 +93,7 @@ const CONNECTED_PROJECTS = [
     name: 'Ghost in the Models',
     label: 'Editorial Lab',
     description: 'A rotating AI publication written by Claude, Gemini, and Codex, focused on systems, workflows, and experiments.',
-    url: 'https://ghostinthemodels.com/'
+    url: 'https://koltregaskes.github.io/ghost-in-the-models/'
   },
   {
     name: 'Kol Tregaskes Photography',
@@ -581,12 +581,11 @@ function resolveAssetPath(assetPath = '', basePath = '.') {
   return `${basePath.replace(/\/$/, '')}/${cleanedPath}`;
 }
 
-function renderThumbnailImage(item, title, basePath = '.', options = {}) {
-  const loading = options.loading || 'lazy';
+function renderThumbnailImage(item, title, basePath = '.') {
   const attributes = [
     `src="${escapeHtml(resolveAssetPath(item.thumbnailUrl, basePath))}"`,
     `alt="${title}"`,
-    `loading="${loading}"`,
+    'loading="lazy"',
     'decoding="async"'
   ];
 
@@ -769,10 +768,8 @@ function parseDigestArticles(content, filename) {
 }
 
 // Security headers for all pages
-const JSON_LD_NONCE = 'kk-jsonld';
-
 const getSecurityHeaders = () => `
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-${JSON_LD_NONCE}'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'${SUPABASE_URL ? ` ${SUPABASE_URL}` : ''}; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'${SUPABASE_URL ? ` ${SUPABASE_URL}` : ''}; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">`;
 
 function getCanonicalUrl(pathname = '/') {
@@ -784,27 +781,16 @@ function getCanonicalTag(pathname = '/') {
   return `<link rel="canonical" href="${getCanonicalUrl(pathname)}" />`;
 }
 
-function getPublicPath(pathname = '/') {
-  const cleanPath = `/${String(pathname || '/').replace(/^\/+/, '')}`;
-  const normalised = cleanPath === '//' ? '/' : cleanPath;
-  return `${SITE_BASE_PATH}${normalised}` || '/';
-}
-
 function getSharedHeadAssets(basePath) {
-  const assetBase = String(basePath || '.').replace(/\/$/, '');
   return `
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,700&display=swap">
-  <meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)" />
-  <link rel="icon" type="image/svg+xml" href="${assetBase}/favicon.svg" />
-  <link rel="stylesheet" href="${assetBase}/styles.css" />`;
-}
-
-function getSharedScriptTags(basePath) {
-  const assetBase = String(basePath || '.').replace(/\/$/, '');
-  return `<script src="${assetBase}/site.js" defer></script>`;
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+  <link rel="icon" href="${basePath}/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="${basePath}/favicon.svg" />
+  <link rel="apple-touch-icon" href="${basePath}/apple-touch-icon.png" />
+  <link rel="stylesheet" href="${basePath}/styles.css" />`;
 }
 
 const slugify = (s) =>
@@ -854,13 +840,13 @@ function getSiteChromeScript({ animations = false } = {}) {
     const navToggle = document.querySelector('.site-nav-toggle');
     const navLinks = document.getElementById('site-nav-links');
 
-    let storedTheme = 'dark';
+    html.setAttribute('data-theme', 'dark');
+    document.body.classList.add('dark');
     try {
-      storedTheme = localStorage.getItem('kk-theme') || 'dark';
+      localStorage.removeItem('theme');
     } catch (error) {
       // Ignore storage access errors and keep the page in dark mode.
     }
-    html.setAttribute('data-theme', storedTheme === 'light' ? 'light' : 'dark');
 
     if (siteHeader && navToggle && navLinks) {
       const setNavOpen = (isOpen) => {
@@ -901,138 +887,6 @@ function getSiteChromeScript({ animations = false } = {}) {
   `;
 }
 
-function getSiteJs() {
-  return `(() => {
-  const root = document.documentElement;
-  const storageKey = 'kk-theme';
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const applyTheme = (theme) => {
-    const safeTheme = theme === 'light' ? 'light' : 'dark';
-    root.setAttribute('data-theme', safeTheme);
-    document.body.classList.toggle('theme-light', safeTheme === 'light');
-    document.body.classList.toggle('theme-dark', safeTheme !== 'light');
-    document.querySelectorAll('[data-theme-label]').forEach((label) => {
-      label.textContent = safeTheme === 'light' ? 'Light' : 'Dark';
-    });
-  };
-
-  let savedTheme = 'dark';
-  try {
-    savedTheme = localStorage.getItem(storageKey) || 'dark';
-  } catch {
-    savedTheme = 'dark';
-  }
-  applyTheme(savedTheme);
-
-  document.addEventListener('click', (event) => {
-    const themeButton = event.target.closest('[data-theme-toggle]');
-    if (themeButton) {
-      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      applyTheme(next);
-      try {
-        localStorage.setItem(storageKey, next);
-      } catch {
-        // Storage may be unavailable in private contexts.
-      }
-      return;
-    }
-
-    const navButton = event.target.closest('[data-nav-toggle]');
-    if (navButton) {
-      const header = navButton.closest('[data-site-header]');
-      const isOpen = header?.dataset.navOpen === 'true';
-      if (header) header.dataset.navOpen = isOpen ? 'false' : 'true';
-      navButton.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      return;
-    }
-
-    const tagButton = event.target.closest('[data-tag-filter]');
-    if (tagButton) {
-      event.preventDefault();
-      const cloud = tagButton.closest('[data-tag-cloud]');
-      const tag = tagButton.dataset.tagFilter;
-      document.querySelectorAll('[data-tag-section]').forEach((section) => {
-        section.hidden = tag !== 'all' && section.dataset.tagSection !== tag;
-      });
-      cloud?.querySelectorAll('[data-tag-filter]').forEach((button) => {
-        button.classList.toggle('active', button === tagButton);
-      });
-      if (tag !== 'all') {
-        document.getElementById(tag)?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-      }
-    }
-  });
-
-  document.querySelectorAll('[data-site-header]').forEach((header) => {
-    const navButton = header.querySelector('[data-nav-toggle]');
-    header.querySelectorAll('.site-nav a').forEach((link) => {
-      link.addEventListener('click', () => {
-        header.dataset.navOpen = 'false';
-        navButton?.setAttribute('aria-expanded', 'false');
-      });
-    });
-  });
-
-  if (!reduceMotion) {
-    const fadeObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        fadeObserver.unobserve(entry.target);
-      });
-    }, { rootMargin: '0px 0px -40px 0px', threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in-up').forEach((element) => fadeObserver.observe(element));
-    window.setTimeout(() => {
-      document.querySelectorAll('.fade-in-up:not(.is-visible)').forEach((element) => element.classList.add('is-visible'));
-    }, 900);
-  } else {
-    document.querySelectorAll('.fade-in-up').forEach((element) => element.classList.add('is-visible'));
-  }
-
-  const progress = document.querySelector('[data-reading-progress]');
-  const tocLinks = Array.from(document.querySelectorAll('.toc a[href^="#"]'));
-  const headings = tocLinks
-    .map((link) => document.getElementById(link.getAttribute('href').slice(1)))
-    .filter(Boolean);
-
-  const updateArticleChrome = () => {
-    if (progress) {
-      const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-      progress.style.transform = \`scaleX(\${Math.min(1, window.scrollY / max)})\`;
-    }
-
-    if (!headings.length) return;
-    const threshold = window.innerHeight * 0.24;
-    let active = headings[0];
-    for (const heading of headings) {
-      if (heading.getBoundingClientRect().top - threshold <= 0) active = heading;
-      else break;
-    }
-    tocLinks.forEach((link) => link.classList.toggle('active', link.hash === \`#\${active.id}\`));
-  };
-
-  let ticking = false;
-  const requestUpdate = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      updateArticleChrome();
-      ticking = false;
-    });
-  };
-
-  updateArticleChrome();
-  document.addEventListener('scroll', requestUpdate, { passive: true });
-  window.addEventListener('resize', requestUpdate);
-})();`;
-}
-
-async function writeSiteScript() {
-  await fs.writeFile('site/site.js', getSiteJs(), 'utf8');
-}
-
 function escapeHtml(s) {
   return (s || "")
     .replaceAll("&", "&amp;")
@@ -1040,102 +894,6 @@ function escapeHtml(s) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
-}
-
-function stripHtml(html = '') {
-  return fixCommonEncoding(String(html || ''))
-    .replace(/<[^>]*>/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function compactDescription(value = '', fallback = '') {
-  const clean = stripHtml(value || fallback);
-  return clean.length > 180 ? `${clean.slice(0, 177).trim()}...` : clean;
-}
-
-function jsonLdScript(payload) {
-  return `<script type="application/ld+json" nonce="${JSON_LD_NONCE}">${JSON.stringify(payload)}</script>`;
-}
-
-function personSchema() {
-  return {
-    '@type': 'Person',
-    '@id': `${SITE_URL}/#person-kol`,
-    name: SITE_OWNER,
-    url: SITE_URL,
-    description: 'UK-based creator and builder writing about AI, technology, creative tools, automation, and publishing systems.',
-    knowsAbout: ['AI', 'AI agents', 'creative tools', 'automation', 'software development', 'photography'],
-    sameAs: PROFILE_LINKS.map((link) => link.url)
-  };
-}
-
-function organizationSchema() {
-  return {
-    '@type': 'Organization',
-    '@id': `${SITE_URL}/#organization`,
-    name: SITE_NAME,
-    url: SITE_URL,
-    founder: { '@id': `${SITE_URL}/#person-kol` },
-    sameAs: PROFILE_LINKS.map((link) => link.url)
-  };
-}
-
-function websiteSchema() {
-  return {
-    '@type': 'WebSite',
-    '@id': `${SITE_URL}/#website`,
-    name: SITE_NAME,
-    url: SITE_URL,
-    publisher: { '@id': `${SITE_URL}/#organization` },
-    inLanguage: 'en-GB'
-  };
-}
-
-function breadcrumbSchema(entries = []) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: entries.map((entry, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: entry.name,
-      item: entry.url
-    }))
-  };
-}
-
-function pageSchema(type, name, pathname, extra = {}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': type,
-    name,
-    url: getCanonicalUrl(pathname),
-    isPartOf: { '@id': `${SITE_URL}/#website` },
-    inLanguage: 'en-GB',
-    ...extra
-  };
-}
-
-function articleSchema({ type = 'Article', title, summary, date, slug, section, imageUrl }) {
-  const canonical = getCanonicalUrl(`/posts/${slug}/`);
-  const payload = {
-    '@context': 'https://schema.org',
-    '@type': type,
-    headline: title,
-    description: compactDescription(summary, title),
-    datePublished: date,
-    dateModified: date,
-    author: { '@id': `${SITE_URL}/#person-kol` },
-    publisher: { '@id': `${SITE_URL}/#organization` },
-    inLanguage: 'en-GB',
-    mainEntityOfPage: canonical,
-    isPartOf: { '@id': `${SITE_URL}/#website` }
-  };
-
-  if (section) payload.articleSection = section;
-  if (imageUrl) payload.image = imageUrl.startsWith('http') ? imageUrl : `${SITE_URL}/${imageUrl.replace(/^\.?\//, '')}`;
-  return payload;
 }
 
 // Parse YAML frontmatter from markdown
@@ -1178,7 +936,7 @@ function parseFrontmatter(content) {
 
 // Convert markdown to HTML (improved implementation)
 function markdownToHtml(md) {
-  let html = String(md || '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  let html = md;
 
   // Step 1: Extract and protect code blocks first (before any other processing)
   const codeBlocks = [];
@@ -1520,36 +1278,18 @@ function parseDigestMarkdown(body = '') {
   };
 }
 
-function getPublicDigestIntro(intro = '', summary = '', displayDate = '') {
-  const fallback = 'A dated editorial sweep of the stories shaping AI, tools, research, and the companies building them.';
-  const candidate = intro || summary || fallback;
-
-  return candidate
-    .replace(/^Welcome to today['’]s roundup of the most interesting developments in AI and technology\.?$/i, `This dated roundup collects the most interesting AI and technology developments found for ${displayDate}.`)
-    .replace(/^No news items were available for today['’]s digest\. Check back tomorrow!?$/i, 'No publishable news items were available for this dated digest.')
-    .trim();
-}
-
 // Reusable header/navigation HTML (blog-only navigation)
 function getHeaderHTML(basePath = '/', activePage = '') {
   return `
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header class="site-header" data-site-header data-nav-open="false">
-    <div class="dateline">
-      <span>Kol Tregaskes / AI, tech and side-project notes</span>
-      <span>Latest published update</span>
-    </div>
-    <div class="masthead-row">
-      <a href="${basePath}" class="site-logo" aria-label="${SITE_NAME} home">
-        <span class="logo-text">Kol's<span class="logo-dot">.</span>Korner</span>
-        <span class="logo-sub">tech &middot; ai &middot; dev &amp; more</span>
+  <header class="site-header">
+    <div class="header-content">
+      <a href="${basePath}" class="site-logo">
+        <span class="logo-icon">K</span>
+        <span class="logo-text">${SITE_NAME}</span>
       </a>
       <div class="site-header-actions">
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch colour theme">
-          <span class="theme-swatch" aria-hidden="true"></span>
-          <span data-theme-label>Dark</span>
-        </button>
-        <button class="site-nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
+        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Toggle navigation">
           <span></span>
           <span></span>
           <span></span>
@@ -1564,83 +1304,55 @@ function getHeaderHTML(basePath = '/', activePage = '') {
 
 // Reusable footer HTML
 function getFooterHTML() {
+  const mainLinks = NAV_ITEMS.map((item) => (
+    `<a href="https://koltregaskes.com/${item.path}">${item.label}</a>`
+  )).join('\n        ');
+  const projectLinks = CONNECTED_PROJECTS.map((project) => (
+    `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.name}</a>`
+  )).join('\n        ');
+  const socialLinks = PROFILE_LINKS.map((profile) => (
+    `<a href="${profile.url}" aria-label="${profile.name}" title="${profile.name}" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          ${profile.icon}
+        </svg>
+      </a>`
+  )).join('\n      ');
+
   return `
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="${SITE_URL}" class="footer-logo">Kol's<span>.</span>Korner</a>
-        <p>Personal AI and technology writing from Kol Tregaskes: sourced briefings, opinion pieces, and the projects around the work.</p>
+        <a class="footer-logo" href="https://koltregaskes.com/">${SITE_NAME.replace('.', '<span>.</span>')}</a>
+        <p>Tech, AI, dev culture, daily news, and the connected projects by ${SITE_OWNER}.</p>
       </div>
-      <div class="footer-col">
-        <h2>Read</h2>
-        <a href="${getPublicPath('/posts/')}">Posts</a>
-        <a href="${getPublicPath('/news/')}">News archive</a>
-        <a href="${getPublicPath('/tags/')}">Tags</a>
-        <a href="${getPublicPath('/subscribe/')}">Newsletter</a>
-      </div>
-      <div class="footer-col">
+      <nav class="footer-col" aria-label="Footer main pages">
+        <h2>Main</h2>
+        ${mainLinks}
+      </nav>
+      <nav class="footer-col" aria-label="Footer projects">
         <h2>Projects</h2>
-        ${CONNECTED_PROJECTS.map((project) => `<a href="${project.url}" target="_blank" rel="noopener">${escapeHtml(project.name)}</a>`).join('\n        ')}
-      </div>
-      <div class="footer-col">
+        ${projectLinks}
+      </nav>
+      <nav class="footer-col" aria-label="Footer contact">
         <h2>Contact</h2>
-        <a href="${getPublicPath('/about/')}">About Kol</a>
-        <a href="${getPublicPath('/contact/')}">Contact page</a>
-        <a href="mailto:hello@koltregaskes.com">Email</a>
-        <a href="${getPublicPath('/feed.xml')}">RSS feed</a>
+        <a href="https://koltregaskes.com/contact/">Contact</a>
+        <a href="https://koltregaskes.com/subscribe/">Newsletter</a>
+        <a href="https://koltregaskes.com/feed.xml">RSS feed</a>
+        <a href="https://github.com/koltregaskes" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+    <section class="footer-estate-panel" aria-label="Elusion Works umbrella">
+      <div>
+        <p class="footer-estate-kicker">Umbrella home</p>
+        <a class="footer-estate-title" href="https://elusionworks.com/" target="_blank" rel="noopener noreferrer">Elusion Works</a>
       </div>
-    </div>
+      <p class="footer-estate-summary">The showcase for Kol's websites, tools, games, and web experiments.</p>
+      <a class="footer-estate-cta" href="https://elusionworks.com/" target="_blank" rel="noopener noreferrer">Visit Elusion Works -&gt;</a>
+    </section>
     <div class="footer-social">
-      <a href="mailto:hello@koltregaskes.com" aria-label="Email">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="2" y="4" width="20" height="16" rx="2"/>
-          <path d="m22 7-10 6L2 7"/>
-        </svg>
-      </a>
-      <a href="https://x.com/koltregaskes" aria-label="X (Twitter)" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-        </svg>
-      </a>
-      <a href="https://bsky.app/profile/koltregaskes.bsky.social" aria-label="Bluesky" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/>
-        </svg>
-      </a>
-      <a href="https://www.threads.com/@koltregaskes" aria-label="Threads" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.182.408-2.256 1.332-3.023.88-.73 2.123-1.149 3.503-1.18 1.016-.023 1.97.092 2.862.345-.034-1.466-.383-2.417-1.25-3.058-.707-.521-1.675-.79-2.878-.8h-.015c-1.124.01-2.038.267-2.716.764l-1.085-1.768c1.02-.749 2.326-1.128 3.887-1.128h.02c3.295.02 5.266 1.88 5.482 5.175.125.084.247.172.364.266 1.378 1.103 2.084 2.605 2.042 4.348-.06 2.467-1.217 4.381-3.255 5.381-1.456.714-3.282 1.075-5.434 1.075z"/>
-        </svg>
-      </a>
-      <a href="https://mastodon.social/@koltregaskes" aria-label="Mastodon" target="_blank" rel="noopener me">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.668 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/>
-        </svg>
-      </a>
-      <a href="https://www.instagram.com/koltregaskes/" aria-label="Instagram" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-        </svg>
-      </a>
-      <a href="https://www.youtube.com/koltregaskes" aria-label="YouTube" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
-      </a>
-      <a href="https://www.tiktok.com/@koltregaskes" aria-label="TikTok" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-        </svg>
-      </a>
-      <a href="https://github.com/koltregaskes" aria-label="GitHub" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-        </svg>
-      </a>
+      ${socialLinks}
     </div>
-    <p class="footer-copy">&copy; 2026 ${SITE_OWNER}. Built as a static personal publication.</p>
+    <p class="footer-copyright">&copy; 2026 ${SITE_OWNER}. All rights reserved.</p>
   </footer>`;
 }
 
@@ -1912,14 +1624,6 @@ async function writeArticlePage({
         </a>` : '<span class="post-pagination-spacer" aria-hidden="true"></span>'}
       </nav>`
     : '';
-  const schema = [
-    articleSchema({ title, summary, date, slug, imageUrl: thumbnailUrl }),
-    breadcrumbSchema([
-      { name: 'Home', url: SITE_URL },
-      { name: 'Posts', url: getCanonicalUrl('/posts/') },
-      { name: title, url: getCanonicalUrl(`/posts/${slug}/`) }
-    ])
-  ];
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -1936,11 +1640,9 @@ async function writeArticlePage({
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
   ${getCanonicalTag(`/posts/${slug}/`)}
-  ${schema.map(jsonLdScript).join('\n  ')}
   ${getSharedHeadAssets('../../')}
 </head>
 <body>
-  <div class="reading-progress" data-reading-progress aria-hidden="true"></div>
   ${getHeaderHTML('../../', 'posts')}
 
   <div class="page-container">
@@ -1953,8 +1655,7 @@ async function writeArticlePage({
   <main class="post-main" id="main-content">
       <article class="post">
         <header class="post-header">
-          <p class="post-kicker"><span class="hash" aria-hidden="true">##</span> Essay</p>
-          <h1 class="post-title"><span class="hash" aria-hidden="true">##</span>${escapeHtml(title)}</h1>
+          <h1 class="post-title">${escapeHtml(title)}</h1>
           <div class="post-meta">
           <span class="post-author">${SITE_OWNER}</span>
             <span class="meta-sep">&bull;</span>
@@ -1976,7 +1677,61 @@ async function writeArticlePage({
 
   ${getFooterHTML()}
 
-  ${getSharedScriptTags('../..')}
+  <script>
+    ${getSiteChromeScript()}
+
+    const tocLinks = Array.from(document.querySelectorAll('.toc a'));
+    const headings = tocLinks
+      .map((link) => document.getElementById(link.getAttribute('href').slice(1)))
+      .filter(Boolean);
+
+    const setActiveHeading = (id) => {
+      tocLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === \`#\${id}\`);
+      });
+    };
+
+    const updateActiveHeading = () => {
+      if (!tocLinks.length || !headings.length) return;
+
+      const threshold = window.innerHeight * 0.24;
+      let activeHeading = headings[0];
+      const nearPageEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80;
+
+      if (nearPageEnd) {
+        activeHeading = headings[headings.length - 1];
+      }
+
+      if (!nearPageEnd) {
+        for (const heading of headings) {
+          if (heading.getBoundingClientRect().top - threshold <= 0) {
+            activeHeading = heading;
+          } else {
+            break;
+          }
+        }
+      }
+
+      if (activeHeading) {
+        setActiveHeading(activeHeading.id);
+      }
+    };
+
+    let ticking = false;
+    const requestUpdate = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateActiveHeading();
+        ticking = false;
+      });
+    };
+
+    updateActiveHeading();
+    document.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
+  </script>
 </body>
 </html>`;
 
@@ -1998,15 +1753,7 @@ async function writeDigestPage({ title, slug, bodyMarkdown, tags, date, readingT
 
   const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="../../tags/#${slugify(t)}" class="tag" data-color="${tagColorIndex(t)}">${escapeHtml(t)}</a>`).join("")}</div>` : "";
   const digestContent = parseDigestMarkdown(bodyMarkdown);
-  const digestIntro = getPublicDigestIntro(digestContent.intro, summary, displayDate);
-  const digestSchema = [
-    articleSchema({ type: 'Article', title, summary: digestIntro, date, slug, section: 'Daily Digest' }),
-    breadcrumbSchema([
-      { name: 'Home', url: SITE_URL },
-      { name: 'Posts', url: getCanonicalUrl('/posts/') },
-      { name: title, url: getCanonicalUrl(`/posts/${slug}/`) }
-    ])
-  ];
+  const digestIntro = digestContent.intro || summary || "A quick editorial sweep of the stories shaping AI, tools, research, and the companies building them.";
   const digestSectionsHtml = digestContent.sections
     .filter((section) => section.items.length > 0)
     .map((section) => `
@@ -2044,7 +1791,6 @@ async function writeDigestPage({ title, slug, bodyMarkdown, tags, date, readingT
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
   ${getCanonicalTag(`/posts/${slug}/`)}
-  ${digestSchema.map(jsonLdScript).join('\n  ')}
   ${getSharedHeadAssets('../../')}
 </head>
 <body>
@@ -2077,7 +1823,9 @@ async function writeDigestPage({ title, slug, bodyMarkdown, tags, date, readingT
 
   ${getFooterHTML()}
 
-  ${getSharedScriptTags('../..')}
+  <script>
+    ${getSiteChromeScript()}
+  </script>
 </body>
 </html>`;
 
@@ -2109,25 +1857,33 @@ async function writeLegacyRedirectPage(fromSlug, toSlug) {
 }
 
 async function writeHomePage(items, newsArticles = []) {
-  const sortedItems = [...items].sort((a, b) => new Date(b.updatedTime || b.date) - new Date(a.updatedTime || a.date));
-  const articles = sortedItems.filter(item => (item.kind || 'article').toLowerCase() === 'article' || isDigestPost(item));
+  // 2026-05-20 — broadsheet preservation guard.
+  // The committed site/index.html is the Hi-Fi broadsheet design (DESIGN.md). The
+  // legacy template below regenerates the old "home-feature-grid" chrome on every
+  // CI deploy, which is why koltregaskes.com kept reverting to the pre-redesign
+  // look despite the new HTML landing on main. Until the broadsheet template is
+  // ported into this function (TODO: Linear ticket), skip the regeneration when
+  // the broadsheet design is already in place on disk.
+  try {
+    const existing = await fs.readFile("site/index.html", "utf8");
+    if (existing.includes('class="dateline"') && existing.includes('class="hash"')) {
+      console.log('[skip] site/index.html already in broadsheet design — preserving committed file.');
+      return;
+    }
+  } catch {
+    // No existing file; proceed with normal generation below.
+  }
+
+  const sortedItems = [...items].sort((a, b) => new Date(b.updatedTime) - new Date(a.updatedTime));
+  const articles = sortedItems.filter(item => (item.kind || 'article').toLowerCase() === 'article');
   const featurePosts = articles.filter(item => !isDigestPost(item));
-  const leadStory = featurePosts[0] || articles[0] || null;
-  const leadStoryIsDigest = leadStory ? isDigestPost(leadStory) : false;
-  const leadStoryHasImage = Boolean(leadStory?.thumbnailUrl?.match(/\.(jpg|jpeg|png|gif|webp)$/i));
-  const railStories = featurePosts
-    .filter((item) => item.slug !== leadStory?.slug)
-    .slice(0, 4);
+  const leadStory = featurePosts[0] || articles[0];
   const featuredWriting = featurePosts.slice(0, 3);
   const recentWriting = featurePosts.slice(3, 7);
   const latestNews = newsArticles.slice(0, 5);
   const latestNewsDate = latestNews[0]?.date
     ? new Date(latestNews[0].date).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' })
-    : 'Latest published issue';
-  const homeSchema = {
-    '@context': 'https://schema.org',
-    '@graph': [personSchema(), organizationSchema(), websiteSchema()]
-  };
+    : 'today';
 
   const html = `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -2141,61 +1897,51 @@ async function writeHomePage(items, newsArticles = []) {
   <meta property="og:title" content="${SITE_NAME}" />
   <meta property="og:description" content="Tech, AI, Development & More" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
   ${getCanonicalTag('/')}
-  ${jsonLdScript(homeSchema)}
   ${getSharedHeadAssets('.')}
 </head>
 <body>
   ${getHeaderHTML('./')}
 
-  <main class="home-main broadsheet" id="main-content">
-    <section class="front-page" aria-labelledby="frontPageTitle">
-      <div class="lead-row">
+  <main class="home-main" id="main-content">
+    <!-- Column-led homepage (DESIGN.md 2026-05-02): latest post in serif on the left,
+         shelf of recent posts on the right. No marketing hero. The latest post IS the hero. -->
+    <section class="home-column-lead">
+      <div class="home-shell home-column-grid">
         ${leadStory ? `
-        <article class="lead-main">
-          <p class="lead-kicker">
-            <span>${leadStoryIsDigest ? 'Latest published briefing' : 'Latest published essay'}</span>
+        <article class="home-lead-column">
+          <p class="home-lead-kicker">
+            <span>${new Date(leadStory.updatedTime).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
             <span class="meta-sep">&bull;</span>
-            <time>${new Date(leadStory.updatedTime || leadStory.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</time>
+            <span>${leadStory.readingTime || 3} min read</span>
           </p>
-          <h1 class="lead-headline" id="frontPageTitle">
-            <span class="hash" aria-hidden="true">##</span>
+          <h1 class="home-lead-title">
             <a href="./posts/${leadStory.slug}/">${escapeHtml(leadStory.title)}</a>
           </h1>
-          <p class="lead-deck">${escapeHtml(leadStory.summary || (leadStoryIsDigest ? 'The newest available AI and technology briefing from the published archive.' : 'Kol writing on AI, tools, and the work around them.'))}</p>
-          <a href="./posts/${leadStory.slug}/" class="lead-photo${leadStoryHasImage ? ' has-media' : ''}" aria-label="${escapeHtml(leadStory.title)}">
-            ${leadStoryHasImage ? renderThumbnailImage(leadStory, escapeHtml(leadStory.title)) : ''}
-            <span class="img-tag"><span>IMG-01</span> lead slot</span>
-            <span class="img-cap">${leadStoryIsDigest ? 'Briefing card' : 'Editorial image slot'} · ${leadStory.readingTime || 3} min read</span>
-          </a>
-          <div class="lead-meta">
-            <span>${leadStoryIsDigest ? 'Generated briefing' : `${leadStory.readingTime || 3} min read`}</span>
-            ${(leadStory.tags || []).slice(0, 3).map((tag) => `<a href="./tags/#${slugify(tag)}" class="tag">${escapeHtml(formatTagLabel(tag))}</a>`).join('')}
-          </div>
-          <a href="./posts/${leadStory.slug}/" class="read-on">${leadStoryIsDigest ? 'Open the briefing' : 'Read the dispatch'} &rarr;</a>
+          <p class="home-lead-excerpt"><span class="home-lead-dropcap">${escapeHtml((leadStory.summary || '').charAt(0) || 'T')}</span>${escapeHtml((leadStory.summary || 'Latest writing from Kol on AI, tools, and building with new technology.').slice(1))}</p>
+          <p class="home-lead-readmore">
+            <a href="./posts/${leadStory.slug}/">Read the dispatch &rarr;</a>
+          </p>
         </article>
         ` : ''}
-        <aside class="rail" aria-label="Also on the desk">
-          <p class="rail-label"><span class="hash" aria-hidden="true">##</span>Also on the desk</p>
-          <div class="rail-list">
-            ${railStories.map((post, index) => `
-            <a href="./posts/${post.slug}/" class="rail-item">
-              <span class="rail-thumb${post.thumbnailUrl?.match(/\.(jpg|jpeg|png|gif|webp)$/i) ? ' has-media' : ''}" aria-hidden="true">
-                ${post.thumbnailUrl?.match(/\.(jpg|jpeg|png|gif|webp)$/i) ? renderThumbnailImage(post, escapeHtml(post.title)) : ''}
-                <span class="img-tag">IMG-0${index + 2}</span>
-              </span>
-              <span>
-                <span class="rail-date">${new Date(post.updatedTime || post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</span>
-                <strong class="rail-title">${escapeHtml(post.title)}</strong>
-              </span>
-            </a>`).join('')}
-          </div>
+        <aside class="home-shelf" aria-label="Recent posts and news">
+          <p class="home-shelf-label">More from the column</p>
+          <ul class="home-shelf-list">
+            ${featurePosts.slice(1, 9).map(post => `
+            <li class="home-shelf-item">
+              <a href="./posts/${post.slug}/" class="home-shelf-link">
+                <span class="home-shelf-date">${new Date(post.updatedTime).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</span>
+                <span class="home-shelf-title">${escapeHtml(post.title)}</span>
+              </a>
+            </li>`).join('')}
+          </ul>
           ${latestNews.length ? `
-          <div class="rail-foot">
-            <span>${escapeHtml(latestNewsDate)} &bull; ${latestNews.length} sourced stories</span>
-            <a href="./news/">News archive &rarr;</a>
+          <div class="home-shelf-news">
+            <p class="home-shelf-label">News desk</p>
+            <p class="home-shelf-news-meta">${escapeHtml(latestNewsDate)} &bull; ${latestNews.length} stories</p>
+            <a href="./news/" class="home-shelf-news-link">Open the live news page &rarr;</a>
           </div>
           ` : ''}
         </aside>
@@ -2203,39 +1949,38 @@ async function writeHomePage(items, newsArticles = []) {
     </section>
 
     ${latestNews.length ? `
-    <section class="section fade-in-up">
+    <section class="home-section fade-in-up">
+      <div class="home-shell">
         <div class="home-section-heading">
           <div>
-            <p class="section-eyebrow"><span class="hash" aria-hidden="true">##</span>News desk</p>
+            <p class="section-eyebrow">Latest briefing</p>
             <h2>The five stories worth opening first</h2>
           </div>
-          <a href="./news/" class="section-link">View the news archive</a>
+          <a href="./news/" class="section-link">View the full news archive</a>
         </div>
         <div class="home-news-grid">
-          ${latestNews.map(article => {
-            const articleHref = normaliseNewsUrl(article.url);
-            const articleAttrs = articleHref ? `href="${articleHref}" target="_blank" rel="noopener"` : 'href="./news/"';
-            return `
+          ${latestNews.map(article => `
           <article class="home-news-card">
-            <a ${articleAttrs} class="home-news-link">
+            <a href="./news/" class="home-news-link">
               <div class="home-news-meta">
                 <span>${new Date(article.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</span>
                 <span>${escapeHtml(article.source || 'Source')}</span>
               </div>
               <h3>${escapeHtml(article.title)}</h3>
-              <p>${escapeHtml(article.summary || 'Available AI and technology coverage from the news archive.')}</p>
+              <p>${escapeHtml(article.summary || 'Latest AI and technology coverage from the live archive.')}</p>
             </a>
-          </article>`;
-          }).join('')}
+          </article>`).join('')}
         </div>
+      </div>
     </section>
     ` : ''}
 
     ${featuredWriting.length ? `
-    <section class="section fade-in-up">
+    <section class="home-section fade-in-up">
+      <div class="home-shell">
         <div class="home-section-heading">
           <div>
-            <p class="section-eyebrow"><span class="hash" aria-hidden="true">##</span>Writing archive</p>
+            <p class="section-eyebrow">Latest writing</p>
             <h2>Essays and opinion pieces with a point of view</h2>
           </div>
           <a href="./posts/" class="section-link">View all posts</a>
@@ -2262,14 +2007,16 @@ async function writeHomePage(items, newsArticles = []) {
             </article>`;
           }).join('')}
         </div>
+      </div>
     </section>
     ` : ''}
 
     ${CONNECTED_PROJECTS.length ? `
-    <section class="section fade-in-up">
+    <section class="home-section fade-in-up">
+      <div class="home-shell">
         <div class="home-section-heading">
           <div>
-            <p class="section-eyebrow"><span class="hash" aria-hidden="true">##</span>Connected projects</p>
+            <p class="section-eyebrow">Connected projects</p>
             <h2>The wider publishing ecosystem around Kol's Korner</h2>
           </div>
         </div>
@@ -2282,14 +2029,16 @@ async function writeHomePage(items, newsArticles = []) {
             <span>Visit site</span>
           </a>`).join('')}
         </div>
+      </div>
     </section>
     ` : ''}
 
     ${recentWriting.length ? `
-    <section class="section fade-in-up">
+    <section class="home-section fade-in-up">
+      <div class="home-shell">
         <div class="home-section-heading">
           <div>
-            <p class="section-eyebrow"><span class="hash" aria-hidden="true">##</span>More from the archive</p>
+            <p class="section-eyebrow">More from the archive</p>
             <h2>Recent pieces beyond the front row</h2>
           </div>
         </div>
@@ -2301,13 +2050,16 @@ async function writeHomePage(items, newsArticles = []) {
             <p>${escapeHtml(item.summary || "Commentary, analysis, and experiments from Kol's Korner.")}</p>
           </a>`).join('')}
         </div>
+      </div>
     </section>
     ` : ''}
   </main>
 
   ${getFooterHTML()}
 
-  ${getSharedScriptTags('.')}
+  <script>
+    ${getSiteChromeScript({ animations: true })}
+  </script>
 </body>
 </html>`;
 
@@ -2319,8 +2071,30 @@ async function writePostsPage(items) {
     .filter((item) => (item.kind || 'article').toLowerCase() === 'article')
     .sort((a, b) => new Date(b.updatedTime || b.date) - new Date(a.updatedTime || a.date));
   const editorialPosts = articles.filter((item) => !isDigestPost(item));
-  const leadPost = editorialPosts[0] || articles[0] || null;
-  const archivePosts = editorialPosts.slice(1);
+  const tagCounts = new Map();
+  for (const item of editorialPosts) {
+    const tags = Array.isArray(item.tags) ? item.tags : [];
+    for (const tag of tags) {
+      if (!tag) continue;
+      tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    }
+  }
+  const featuredTags = Array.from(tagCounts.entries())
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, 7);
+  const postDataAttrs = (item) => {
+    const tags = Array.isArray(item.tags) ? item.tags : [];
+    return [
+      `data-post-card`,
+      `data-post-tags="${escapeHtml(tags.map((tag) => tag.toLowerCase()).join('|'))}"`,
+      `data-post-text="${escapeHtml(`${item.title || ''} ${item.summary || ''} ${tags.join(' ')}`.toLowerCase())}"`
+    ].join(' ');
+  };
+  const renderTagMarks = (item) => {
+    const tags = Array.isArray(item.tags) ? item.tags.slice(0, 3) : [];
+    if (!tags.length) return '';
+    return `<div class="posts-tag-marks">${tags.map((tag) => `<span>${escapeHtml(formatTagLabel(tag))}</span>`).join('')}</div>`;
+  };
 
   await fs.mkdir("site/posts", { recursive: true });
 
@@ -2340,51 +2114,52 @@ async function writePostsPage(items) {
   ${getHeaderHTML('../', 'posts')}
 
   <main class="content-main posts-main" id="main-content">
-    <section class="posts-shell">
-      <div class="home-section-heading posts-heading">
+    <section class="posts-shell" data-posts-page>
+      <header class="posts-compact-head fade-in-up">
         <div>
           <p class="section-eyebrow">Posts</p>
-          <h1 class="page-title">Essays, commentary, and practical takes with proper room to breathe.</h1>
+          <h1 class="page-title">Writing archive</h1>
         </div>
-        <p class="posts-intro">This is the writing archive: longer pieces, sharper opinion, and a calmer read than the news feed.</p>
+        <p class="posts-intro">Longer pieces, sharper opinion, and a calmer read than the news feed.</p>
+      </header>
+
+      <div class="posts-control-deck fade-in-up">
+        <div class="posts-control-row" data-posts-controls>
+          <button type="button" class="posts-filter-chip active" data-posts-filter="all" aria-pressed="true">
+            All <span>${editorialPosts.length}</span>
+          </button>
+          ${featuredTags.map(([tag, count]) => `
+          <button type="button" class="posts-filter-chip" data-posts-filter="${escapeHtml(tag.toLowerCase())}" aria-pressed="false">
+            ${escapeHtml(formatTagLabel(tag))} <span>${count}</span>
+          </button>`).join('')}
+        </div>
+        <label class="posts-search">
+          <span>Search the stack</span>
+          <input type="search" data-posts-search placeholder="Try Grok, Mars, infrastructure..." autocomplete="off" />
+        </label>
+        <p class="posts-count" data-posts-count>${editorialPosts.length} posts showing</p>
       </div>
 
-      ${leadPost ? `
-      <article class="posts-lead-card fade-in-up">
-        <a href="./${leadPost.slug}/" class="posts-lead-link">
-          ${leadPost.thumbnailUrl && leadPost.thumbnailUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i) ? `
-          <div class="posts-lead-media">
-            ${renderThumbnailImage(leadPost, escapeHtml(leadPost.title), '..', { loading: 'eager' })}
-          </div>` : ''}
-          <div class="posts-lead-copy">
-            <p class="home-feature-date">${new Date(leadPost.updatedTime || leadPost.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
-            <h2>${escapeHtml(leadPost.title)}</h2>
-            <p>${escapeHtml(leadPost.summary || 'The latest published commentary from Kol on AI, tools, and what matters underneath the headlines.')}</p>
-            <div class="post-item-meta">
-              <span>${leadPost.readingTime || 3} min read</span>
-            </div>
-          </div>
-        </a>
-      </article>` : ''}
-
-      ${archivePosts.length ? `
-      <section class="posts-stream fade-in-up" aria-label="Latest posts">
-        ${archivePosts.map((item, index) => {
+      ${editorialPosts.length ? `
+      <section class="posts-stream" aria-label="Latest posts">
+        ${editorialPosts.map((item, index) => {
           const title = escapeHtml(item.title);
           const summary = escapeHtml(item.summary || '');
           const hasImage = item.thumbnailUrl && item.thumbnailUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i);
 
           return `
-          <article class="posts-stream-item">
+          <article class="posts-stream-item" ${postDataAttrs(item)}>
             <a href="./${item.slug}/" class="posts-stream-link">
+              <span class="posts-stream-number">${String(index + 1).padStart(2, '0')}</span>
               ${hasImage ? `
               <div class="posts-stream-media">
-                ${renderThumbnailImage(item, title, '..', { loading: index < 4 ? 'eager' : 'lazy' })}
+                ${renderThumbnailImage(item, title, '..')}
               </div>` : ''}
               <div class="posts-stream-copy">
                 <p class="home-feature-date">${new Date(item.updatedTime || item.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
                 <h3>${title}</h3>
                 ${summary ? `<p>${summary}</p>` : ''}
+                ${renderTagMarks(item)}
                 <div class="post-item-meta">
                   <span>${item.readingTime || 3} min read</span>
                 </div>
@@ -2393,13 +2168,58 @@ async function writePostsPage(items) {
             </a>
           </article>`;
         }).join('')}
-      </section>` : ''}
+      </section>` : '<p class="posts-empty-state">No posts are published yet.</p>'}
     </section>
   </main>
 
   ${getFooterHTML()}
 
-  ${getSharedScriptTags('..')}
+  <script>
+    ${getSiteChromeScript({ animations: true })}
+    (() => {
+      const page = document.querySelector('[data-posts-page]');
+      if (!page) return;
+
+      const cards = Array.from(page.querySelectorAll('[data-post-card]'));
+      const buttons = Array.from(page.querySelectorAll('[data-posts-filter]'));
+      const search = page.querySelector('[data-posts-search]');
+      const count = page.querySelector('[data-posts-count]');
+      let activeTag = 'all';
+
+      const applyFilters = () => {
+        const query = (search?.value || '').trim().toLowerCase();
+        let visible = 0;
+
+        cards.forEach((card) => {
+          const tags = (card.dataset.postTags || '').split('|').filter(Boolean);
+          const text = card.dataset.postText || '';
+          const tagMatch = activeTag === 'all' || tags.includes(activeTag);
+          const searchMatch = !query || text.includes(query);
+          const show = tagMatch && searchMatch;
+          card.hidden = !show;
+          if (show) visible += 1;
+        });
+
+        if (count) {
+          count.textContent = visible === 1 ? '1 post showing' : visible + ' posts showing';
+        }
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          activeTag = button.dataset.postsFilter || 'all';
+          buttons.forEach((item) => {
+            const isActive = item === button;
+            item.classList.toggle('active', isActive);
+            item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+          });
+          applyFilters();
+        });
+      });
+
+      search?.addEventListener('input', applyFilters);
+    })();
+  </script>
 </body>
 </html>`;
 
@@ -2439,15 +2259,15 @@ async function writeTagsPage(items, newsArticles = []) {
           <p class="section-eyebrow">Topics</p>
           <h1 class="page-title">Browse the archive by useful themes, not random company names.</h1>
         </div>
-        <p class="posts-intro">These groupings combine written posts with the news archive, so tags like AI, agents, regulation, and infrastructure actually mean something.</p>
+        <p class="posts-intro">These groupings combine written posts with the live news archive, so tags like AI, agents, regulation, and infrastructure actually mean something.</p>
       </div>
 
       ${tagCollections.length === 0 ? '<p class="empty-message">No tags yet. Add tags to your posts!</p>' : `
-      <nav class="tag-cloud" data-tag-cloud aria-label="Jump to tag">
-        <a href="#" class="active" data-tag-filter="all">All <span class="tag-count">(${totalEntries})</span></a>
+      <nav class="tag-cloud" aria-label="Jump to tag">
+        <a href="#" class="active" data-tag="all">All <span class="tag-count">(${totalEntries})</span></a>
         ${tagCollections.map(({ tag, label, count }) => {
           const tagId = slugify(tag);
-          return `<a href="#${tagId}" data-tag-filter="${tagId}">${escapeHtml(label)} <span class="tag-count">(${count})</span></a>`;
+          return `<a href="#${tagId}" data-tag="${tagId}">${escapeHtml(label)} <span class="tag-count">(${count})</span></a>`;
         }).join("\n        ")}
       </nav>
 
@@ -2456,10 +2276,10 @@ async function writeTagsPage(items, newsArticles = []) {
         const featuredEntries = entries.slice(0, 6);
 
         return `
-      <section class="tag-section" id="${tagId}" data-tag-section="${tagId}">
+      <section class="tag-section" id="${tagId}" data-tag="${tagId}">
         <header class="tag-section-header">
           <div>
-            <h2 class="tag-section-title"><span class="hash" aria-hidden="true">#</span>${escapeHtml(label)}</h2>
+            <h2 class="tag-section-title"><span class="hash">#</span>${escapeHtml(label)}</h2>
             <p class="tag-section-description">Newest stories and posts filed under ${escapeHtml(label)}.</p>
           </div>
           <span class="tag-section-count">${count} item${count !== 1 ? 's' : ''}</span>
@@ -2474,7 +2294,7 @@ async function writeTagsPage(items, newsArticles = []) {
                 <span>${new Date(entry.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
               </div>
               <h3>${escapeHtml(entry.title)}</h3>
-              <p>${escapeHtml(entry.summary || (entry.entryType === 'news' ? 'Available coverage from the news archive.' : 'Published commentary from Kol\'s Korner.'))}</p>
+              <p>${escapeHtml(entry.summary || (entry.entryType === 'news' ? 'Fresh coverage from the live news archive.' : 'Published commentary from Kol\'s Korner.'))}</p>
               <div class="tag-entry-footer">
                 <span>${escapeHtml(entry.meta)}</span>
                 <span>${entry.entryType === 'news' ? 'Open story' : 'Read post'}</span>
@@ -2490,179 +2310,48 @@ async function writeTagsPage(items, newsArticles = []) {
 
   ${getFooterHTML()}
 
-  ${getSharedScriptTags('..')}
+  <script>
+    ${getSiteChromeScript()}
+
+    // Tag filtering
+    const tagCloud = document.querySelector('.tag-cloud');
+    const tagSections = document.querySelectorAll('.tag-section');
+
+    if (tagCloud) {
+      tagCloud.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+
+        e.preventDefault();
+        const selectedTag = link.dataset.tag;
+
+        // Update active state
+        tagCloud.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+
+        // Filter sections
+        tagSections.forEach(section => {
+          if (selectedTag === 'all' || section.dataset.tag === selectedTag) {
+            section.style.display = '';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+
+        // Scroll to section if specific tag selected
+        if (selectedTag !== 'all') {
+          const targetSection = document.getElementById(selectedTag);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    }
+  </script>
 </body>
 </html>`;
 
-  await fs.writeFile("site/tags/index.html", html, "utf8");
-}
-
-async function writeNewsIndexPage() {
-  await fs.mkdir("site/news", { recursive: true });
-
-  const html = `<!doctype html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  ${getSecurityHeaders()}
-  <title>AI News - ${SITE_NAME}</title>
-  <meta name="description" content="Curated AI and technology news from the shared source set, with searchable archive browsing and date-led discovery." />
-  <meta name="author" content="${SITE_OWNER}" />
-  <meta property="og:title" content="AI News - ${SITE_NAME}" />
-  <meta property="og:description" content="Curated AI and technology news from the shared source set." />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:creator" content="@koltregaskes" />
-  ${getCanonicalTag('/news/')}
-  ${jsonLdScript(pageSchema('CollectionPage', `${SITE_NAME} AI News`, '/news/'))}
-  ${getSharedHeadAssets('..')}
-  <link rel="stylesheet" href="news-styles.css?v=20260517a" />
-</head>
-<body class="news-page">
-  ${getHeaderHTML('../', 'news')}
-
-  <main class="news-page-shell" id="main-content">
-    <section class="news-band" aria-labelledby="newsHeroTitle">
-      <div>
-        <p class="news-kicker"><span class="hash" aria-hidden="true">##</span> AI briefing archive</p>
-        <h1 id="newsHeroTitle">Browse sourced AI stories by date, topic and signal.</h1>
-      </div>
-      <p class="news-deck" id="featuredNowIntro">Newest available issue first. Filters stay close to the archive, and every story opens its source.</p>
-    </section>
-
-    <div class="news-layout">
-      <section class="news-sidebar news-filter-row" aria-label="News controls">
-        <details class="news-filter-panel" id="newsControls" open>
-          <summary>
-            <span class="news-filter-summary-copy">
-              <span class="news-filter-summary-kicker">Controls</span>
-              <span class="news-filter-summary-title">Filters and archive</span>
-            </span>
-            <span class="news-filter-summary-hint">Tap to expand</span>
-          </summary>
-
-          <div class="news-filter-body">
-            <div class="sidebar-section">
-              <h2>Search</h2>
-              <label class="sr-only" for="searchInput">Search articles</label>
-              <input type="text" id="searchInput" placeholder="Search articles..." class="search-input">
-            </div>
-
-            <div class="sidebar-section">
-              <h2>Date range</h2>
-              <div class="quick-filters">
-                <button id="quick24h" class="quick-btn active" type="button">Latest issue</button>
-                <button id="quickLastWeek" class="quick-btn" type="button">Last 7 days</button>
-                <button id="quickAll" class="quick-btn" type="button">All</button>
-              </div>
-              <div class="date-inputs">
-                <label class="sr-only" for="fromDate">From date</label>
-                <input type="date" id="fromDate" class="date-input">
-                <span>to</span>
-                <label class="sr-only" for="toDate">To date</label>
-                <input type="date" id="toDate" class="date-input">
-              </div>
-            </div>
-
-            <div class="sidebar-section">
-              <h2>Topics</h2>
-              <div id="tagFilters" class="tag-filter-grid" aria-label="Topic filters"></div>
-            </div>
-
-            <div class="sidebar-section">
-              <h2>Archive</h2>
-              <label class="sr-only" for="archivePicker">Archive month</label>
-              <select id="archivePicker" class="archive-select">
-                <option value="">All months</option>
-              </select>
-            </div>
-
-            <div class="sidebar-section">
-              <h2>Group by</h2>
-              <label class="sr-only" for="groupBy">Group news by</label>
-              <select id="groupBy" class="group-select">
-                <option value="date">Date</option>
-                <option value="topic">Topic</option>
-              </select>
-            </div>
-
-            <div class="sidebar-section">
-              <h2>Options</h2>
-              <label class="checkbox-label" for="highlightOnly">
-                <input type="checkbox" id="highlightOnly">
-                <span>Highlights only</span>
-              </label>
-              <label class="checkbox-label" for="hideNotAI">
-                <input type="checkbox" id="hideNotAI">
-                <span>Hide stories marked not AI</span>
-              </label>
-            </div>
-
-            <button id="clearFilters" class="clear-btn" type="button">Clear filters</button>
-          </div>
-        </details>
-      </section>
-
-      <section class="news-main">
-        <div class="news-feed-header">
-          <span class="news-feed-label">Published archive</span>
-          <h2 class="news-feed-title">Browse the newest available stories</h2>
-          <p class="news-feed-copy">Search the archive, narrow by date, or skim the featured stories at the top before you dive deeper.</p>
-        </div>
-
-        <div id="filterSummary" class="filter-summary" style="display: none;">
-          <span id="filterSummaryText"></span>
-        </div>
-
-        <div id="loading" class="loading-state">
-          <span class="news-spinner" aria-hidden="true"></span>
-          <p>Loading articles...</p>
-        </div>
-
-        <section id="favoriteNews" class="news-section" style="display: none;">
-          <h2 class="section-title">Highlights</h2>
-          <div id="favoriteGrid" class="news-grid"></div>
-        </section>
-
-        <section id="todaysNews" class="news-section" style="display: none;">
-          <div class="section-title-wrap">
-            <h2 class="section-title" id="featuredNews">Featured issue</h2>
-            <p id="todaysNewsLabel" class="section-subtitle"></p>
-          </div>
-          <div id="todaysGrid" class="news-grid"></div>
-        </section>
-
-        <section id="allNews" class="news-section" style="display: none;">
-          <div id="allGrid"></div>
-        </section>
-
-        <div id="noResults" class="no-results" style="display: none;">
-          <span class="empty-state-icon" aria-hidden="true">?</span>
-          <p>No articles found matching those filters. Clear the controls above or open the latest available issue.</p>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <div id="duplicateDialog" class="modal" style="display: none;">
-    <div class="modal-content dialog-content">
-      <h2>Mark as duplicate</h2>
-      <label class="sr-only" for="duplicateSearch">Search for original article</label>
-      <input type="text" id="duplicateSearch" placeholder="Search for original article...">
-      <ul id="duplicateResults"></ul>
-      <button id="closeDuplicateDialog" class="close-dialog-btn" type="button">Cancel</button>
-    </div>
-  </div>
-
-  ${getFooterHTML()}
-
-  ${getSharedScriptTags('..')}
-  <script src="news-app.js?v=20260517a" defer></script>
-</body>
-</html>`;
-
-  await fs.writeFile("site/news/index.html", html.replace(/[ \t]+$/gm, ''), "utf8");
+  await fs.writeFile("site/tags/index.html", html.replace(/[ \t]+$/gm, ''), "utf8");
 }
 
 async function writeStaticPage(slug, fallbackTitle, fallbackBody) {
@@ -2690,7 +2379,6 @@ async function writeStaticPage(slug, fallbackTitle, fallbackBody) {
   <title>${escapeHtml(title)} - ${SITE_NAME}</title>
   <meta name="description" content="${escapeHtml(title)} - ${SITE_OWNER}" />
   ${getCanonicalTag(`/${slug}/`)}
-  ${jsonLdScript(pageSchema(slug === 'about' ? 'AboutPage' : 'WebPage', title, `/${slug}/`))}
   ${getSharedHeadAssets('..')}
 </head>
 <body>
@@ -2706,11 +2394,13 @@ async function writeStaticPage(slug, fallbackTitle, fallbackBody) {
 
   ${getFooterHTML()}
 
-  ${getSharedScriptTags('..')}
+  <script>
+    ${getSiteChromeScript()}
+  </script>
 </body>
 </html>`;
 
-  await fs.writeFile(`site/${slug}/index.html`, html, "utf8");
+  await fs.writeFile(`site/${slug}/index.html`, html.replace(/[ \t]+$/gm, ''), "utf8");
 }
 
 async function writeAboutPage() {
@@ -2725,7 +2415,6 @@ async function writeAboutPage() {
   <title>About - ${SITE_NAME}</title>
   <meta name="description" content="About ${SITE_OWNER} - news curator, AI artist, AI musician, content maker, and lover of technology" />
   ${getCanonicalTag('/about/')}
-  ${jsonLdScript(pageSchema('AboutPage', `About ${SITE_OWNER}`, '/about/', { mainEntity: { '@id': `${SITE_URL}/#person-kol` } }))}
   ${getSharedHeadAssets('..')}
 </head>
 <body>
@@ -2738,14 +2427,14 @@ async function writeAboutPage() {
           <img src="../media/kol-profile.png" alt="${SITE_OWNER}" width="120" height="120" />
         </div>
         <div class="about-intro-copy">
-          <p class="section-eyebrow"><span class="hash" aria-hidden="true">##</span>About / Colophon</p>
-          <h1 class="page-title"><span class="hash" aria-hidden="true">##</span>Hi, I'm Kol.</h1>
-          <p class="about-intro">I am a UK-based creator and builder working across AI news, creative experiments, automation, and publishing systems. Kol's Korner is where the useful signal lives: the stories worth opening, the commentary worth reading, and the projects that sit around the work.</p>
+          <p class="section-eyebrow">About</p>
+          <h1 class="page-title">${SITE_OWNER}</h1>
+          <p class="about-intro">I am a UK-based creator and builder working across AI news, creative experiments, automation, and publishing systems. Kol's Korner is where the daily signal lives: the stories worth opening, the commentary worth reading, and the projects that sit around the work.</p>
           <div class="about-start-grid">
             <a href="../news/" class="about-start-card">
               <span>Start with</span>
               <strong>AI news</strong>
-              <p>The news archive is the fastest way to catch up on the latest available briefing.</p>
+              <p>The live archive is the fastest way to catch up on the latest published briefing.</p>
             </a>
             <a href="../posts/" class="about-start-card">
               <span>Then read</span>
@@ -2798,11 +2487,13 @@ async function writeAboutPage() {
 
   ${getFooterHTML()}
 
-  ${getSharedScriptTags('..')}
+  <script>
+    ${getSiteChromeScript()}
+  </script>
 </body>
 </html>`;
 
-  await fs.writeFile("site/about/index.html", html, "utf8");
+  await fs.writeFile("site/about/index.html", html.replace(/[ \t]+$/gm, ''), "utf8");
 }
 
 async function writeSubscribePage() {
@@ -2815,9 +2506,8 @@ async function writeSubscribePage() {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
   <title>Newsletter - ${SITE_NAME}</title>
-  <meta name="description" content="Newsletter updates for ${SITE_NAME}. The email edition has not launched yet, but the news archive and published posts are already available on-site." />
+  <meta name="description" content="Newsletter updates for ${SITE_NAME}. The email edition has not launched yet, but the live news archive and published posts are already available on-site." />
   ${getCanonicalTag('/subscribe/')}
-  ${jsonLdScript(pageSchema('WebPage', `${SITE_NAME} Newsletter`, '/subscribe/'))}
   ${getSharedHeadAssets('..')}
 </head>
 <body>
@@ -2827,25 +2517,27 @@ async function writeSubscribePage() {
     <section class="subscribe-launch-note">
       <span class="subscribe-status-badge">Launching soon</span>
       <h1 class="page-title">The newsletter has not launched yet.</h1>
-      <p class="subscribe-hero-text">The inbox version is still being prepared. Until it opens, the fastest way to keep up is the on-site news archive and the published posts.</p>
+      <p class="subscribe-hero-text">The inbox version is still being prepared. Until it goes live, the fastest way to keep up is the on-site news archive and the published posts.</p>
       <div class="subscribe-actions">
         <a href="../news/" class="button-primary">Open AI news</a>
         <a href="../posts/" class="button-secondary">Read the latest posts</a>
       </div>
       <div class="subscribe-note">
         <h2>What to expect when it opens</h2>
-        <p>A tighter email digest of the best stories, the sharper takes, and the publishing projects around the site. Until then, the news archive is the front door.</p>
+        <p>A tighter email digest of the best stories, the sharper takes, and the publishing projects around the site. Until then, the live news page is the front door.</p>
       </div>
     </section>
   </main>
 
   ${getFooterHTML()}
 
-  ${getSharedScriptTags('..')}
+  <script>
+    ${getSiteChromeScript()}
+  </script>
 </body>
 </html>`;
 
-  await fs.writeFile("site/subscribe/index.html", html, "utf8");
+  await fs.writeFile("site/subscribe/index.html", html.replace(/[ \t]+$/gm, ''), "utf8");
 }
 
 async function writeContactPage() {
@@ -2860,7 +2552,6 @@ async function writeContactPage() {
   <title>Contact - ${SITE_NAME}</title>
   <meta name="description" content="Contact and social links for ${SITE_OWNER}." />
   ${getCanonicalTag('/contact/')}
-  ${jsonLdScript(pageSchema('ContactPage', `Contact ${SITE_OWNER}`, '/contact/', { mainEntity: { '@id': `${SITE_URL}/#person-kol` } }))}
   ${getSharedHeadAssets('..')}
 </head>
 <body>
@@ -2898,11 +2589,13 @@ async function writeContactPage() {
 
   ${getFooterHTML()}
 
-  ${getSharedScriptTags('..')}
+  <script>
+    ${getSiteChromeScript({ animations: true })}
+  </script>
 </body>
 </html>`;
 
-  await fs.writeFile("site/contact/index.html", html, "utf8");
+  await fs.writeFile("site/contact/index.html", html.replace(/[ \t]+$/gm, ''), "utf8");
 }
 
 // Generate RSS feed
@@ -3021,9 +2714,13 @@ async function cleanGeneratedOutput() {
     'site/app.js',
     'site/CNAME',
     'site/feed.xml',
-    'site/index.html',
+    // 2026-05-20 — site/index.html intentionally NOT cleaned: it holds the
+    // hand-committed Hi-Fi broadsheet design (DESIGN.md). The old generator
+    // template doesn't match the design, so we keep the committed file and
+    // let the writeHomePage guard skip regeneration. Re-add this entry once
+    // the broadsheet template is ported into writeHomePage.
+    // 'site/index.html',
     'site/robots.txt',
-    'site/site.js',
     'site/sitemap.xml'
   ];
 
@@ -3094,14 +2791,15 @@ async function cleanGeneratedOutput() {
   }
 
   // Write all pages
+  // 2026-05-20 — writeHomePage call restored now that cleanGeneratedOutput
+  // no longer deletes site/index.html. The internal guard sees the broadsheet
+  // markers and skips, leaving the committed broadsheet file untouched.
   await writeHomePage(items, newsArticles);
   await writePostsPage(items);
   await writeTagsPage(items, newsArticles);
-  await writeNewsIndexPage();
   await writeAboutPage();
   await writeSubscribePage();
   await writeContactPage();
-  await writeSiteScript();
   // Write machine-readable data, feed, and crawl files
   await fs.mkdir("site/data", { recursive: true });
   await writeRssFeed(items);
