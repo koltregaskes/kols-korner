@@ -1,0 +1,88 @@
+KOL MEMORY - PUBLIC AI CONTEXT
+Last updated: 2026-06-02
+Purpose: Public-safe memory/context for AI assistants working with Kol's public website, writing and AI projects.
+Privacy: Public-safe. Suitable for open web access.
+
+HOW TO USE
+
+Use this to understand Kol's public context, projects, preferences and working style.
+Do not infer private details that are not written here.
+Do not treat this as a complete personal profile.
+When a current fact matters, verify it.
+Use UK English.
+
+PUBLIC PROFILE CONTEXT
+
+Kol Tregaskes is publicly active around AI, technology, creative tools, writing, web publishing and news curation.
+His public professional context includes IT, telecoms, data, reporting, administration and automation work.
+He works best with clear, practical systems that reduce repeated manual effort.
+Kody's name is public-safe when used naturally.
+Private dog health, private family or relationship details, exact location, private finance and local system details are not public-safe.
+
+PUBLIC PROJECT CONTEXT
+
+Kol's Korner is the main public website context for AI-readable files, posts and public publishing.
+Kol is interested in making AI assistants and agents able to understand his voice, context, preferences and boundaries without needing a long fresh explanation every time.
+He wants reusable files that other AI tools can fetch and use safely.
+He uses public text files as a practical way to make context portable across assistants.
+
+INTERESTS AND THEMES
+
+- AI capability progress, agents, tools and workflows.
+- AI news curation and public explanation.
+- Creative AI: art, video, music, writing and worldbuilding.
+- Better memory, context and continuity across AI systems.
+- Practical automation, reporting, data flows and admin reduction.
+- Open systems, transparency, user control and decentralisation.
+- Public writing that is useful, grounded and not over-polished.
+- Technology that gives small creators and ordinary people more leverage.
+
+WORKFLOW PREFERENCES
+
+- Prefer durable files, prompts, checklists and handoffs over one-off chat answers.
+- Prefer visible source/provenance over vague claims.
+- Prefer public-safe summaries for website use and private/local context only where it is actually needed.
+- Keep instructions direct, reusable and easy for another assistant to follow.
+- Separate facts, opinions, assumptions and gaps.
+- Mark stale or date-sensitive material clearly.
+
+COMMUNICATION PREFERENCES
+
+- Direct, practical, plain English.
+- Warm and human, but not fake-cheery.
+- No corporate language.
+- No forced banter.
+- No overclaiming.
+- Ask when an opinion is not pinned down.
+- Explain trade-offs clearly.
+
+PUBLIC BOUNDARIES
+
+Public-safe:
+- Broad public professional context.
+- Public AI, tech, creative and publishing interests.
+- Kody's name.
+- General interest in Bitcoin, crypto, decentralisation and financial freedom.
+- General preference for privacy, autonomy and user-owned systems.
+
+Not public-safe:
+- Exact home location.
+- Private relationship or family details.
+- Dog health or issues.
+- Private finance details or current trading position.
+- Local infrastructure, local paths, machine details or access details.
+- Raw private conversations, unpublished project paths or sensitive operational notes.
+
+WHAT NOT TO ASSUME
+
+- Do not assume exact politics beyond the values stated in the public opinion file.
+- Do not assume exact model rankings or tool preferences without a recent update.
+- Do not assume current crypto positions or private financial details.
+- Do not assume current sports opinions.
+- Do not assume every public-facing draft should be personal or confessional.
+
+SOURCE AND STALENESS NOTES
+
+This file is distilled from public-safe ChatGPT/Nova context, supplementary agent reviews and Kol's direct clarifications through early June 2026.
+Fast-moving topics should be refreshed regularly.
+If a detail could expose private life, local systems, access details or private money context, omit it or ask Kol.

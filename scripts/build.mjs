@@ -76,6 +76,7 @@ const NAV_ITEMS = [
   { key: 'about', label: 'About', path: 'about/' },
   { key: 'contact', label: 'Contact', path: 'contact/' }
 ];
+const AI_CONTEXT_FILES = ['opinions.txt', 'memories.txt'];
 const CONNECTED_PROJECTS = [
   {
     name: 'AI Resource Hub',
@@ -2647,6 +2648,21 @@ async function writeCnameFile() {
   await fs.writeFile('site/CNAME', `${configuredDomain}\n`, 'utf8');
 }
 
+async function copyAiContextFiles() {
+  await fs.mkdir('site', { recursive: true });
+
+  for (const file of AI_CONTEXT_FILES) {
+    const source = path.join(process.cwd(), file);
+    const destination = path.join(process.cwd(), 'site', file);
+
+    if (fsSync.existsSync(source)) {
+      await fs.copyFile(source, destination);
+    } else {
+      await fs.rm(destination, { force: true }).catch(() => {});
+    }
+  }
+}
+
 async function writeRobotsTxt() {
   const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
   await fs.writeFile('site/robots.txt', robots, 'utf8');
@@ -2720,6 +2736,7 @@ async function cleanGeneratedOutput() {
     // let the writeHomePage guard skip regeneration. Re-add this entry once
     // the broadsheet template is ported into writeHomePage.
     // 'site/index.html',
+    ...AI_CONTEXT_FILES.map((file) => `site/${file}`),
     'site/robots.txt',
     'site/sitemap.xml'
   ];
@@ -2807,6 +2824,7 @@ async function cleanGeneratedOutput() {
   await writeRobotsTxt();
   await writeSecurityTxt();
   await writeCnameFile();
+  await copyAiContextFiles();
 
   // Copy news-digests to site folder for the /news page
   const newsDigestsDir = path.join(process.cwd(), 'news-digests');
@@ -2849,5 +2867,6 @@ async function cleanGeneratedOutput() {
   console.log(`[ok] Robots: site/robots.txt`);
   console.log(`[ok] Security contact: site/.well-known/security.txt`);
   console.log(`[ok] News data: site/data/news-articles.json`);
+  console.log(`[ok] AI context files: ${AI_CONTEXT_FILES.map((file) => `site/${file}`).join(', ')}`);
   console.log('\nBuild complete!');
 })();

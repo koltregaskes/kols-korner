@@ -4,6 +4,11 @@
 
 A personal blog tracking the signal across AI products, research, tools, and the wider technology landscape. The site publishes automated news digests when the pipeline has verified source material, alongside hand-written essays.
 
+## Public AI context
+
+- [Opinions](https://koltregaskes.com/opinions.txt): Public-safe opinion, voice, writing-style and red-line context for AI assistants.
+- [Memories](https://koltregaskes.com/memories.txt): Public-safe memory, project and working-style context for AI assistants.
+
 ## Key pages
 
 - [Homepage](./): Featured posts and latest available news
