@@ -1,118 +1,933 @@
-KOL OPINIONS AND VOICE - PUBLIC AI CONTEXT
-Last updated: 2026-06-02
-Purpose: Public-safe context for AI assistants writing with Kol's voice or reasoning about his public views.
-Privacy: Public-safe. Suitable for open web access.
+KOL OPINIONS - PUBLIC MERGED
+Last updated: 2026-06-04
+Privacy: PUBLIC SAFE / WEB SAFE
+Purpose: merged opinion/persona context compiled from the current ChatGPT/Nova and agent source files.
+
+SOURCES MERGED
+- Agent public opinion source: Opinions - Agent Public.txt
+- ChatGPT / Nova public opinion source: Opinions - ChatGPT Public.txt
+
+============================================================
+
+SOURCE: Agent public opinion source
+FILE: Opinions - Agent Public.txt
+============================================================
+
+KOL SUPPLEMENTARY OPINION PACK - PUBLIC SAFE - ALL OTHER AGENTS
+Generated: 2026-05-30 UK time
+Status: Working v0.2 pre-questions pack. Not final. Review before publishing or using as a system instruction.
+Audience: Claude, Gemini, Grok, Codex, Claude Code, Antigravity, other agents
+Privacy: WEB_SAFE
 
 HOW TO USE
+- Treat direct Kol clarifications as highest confidence.
+- Treat date fields as evidence dates unless explicitly marked as original post/chat dates.
+- Do not invent opinions in gap areas. Say "opinion gap" or ask Kol.
+- For fast-moving areas, especially AI labs/models, AGI timelines, crypto, tools and workflows, check the "last confirmed" or "valid as of" note before writing.
+- Use UK English. No em dashes. No hashtags unless requested. No corporate or LinkedIn sludge.
 
-Use this as a map of Kol's public opinions, tone, writing preferences and red lines.
-Do not treat it as a complete autobiography.
-Do not invent opinions where this file says a topic is a gap.
-Check current facts separately, especially for AI models, labs, tools, politics, crypto and fast-moving technology.
-Use UK English.
+SOURCE PRIORITY
+1. Kol direct clarification in chat, especially 2026-05-29 to 2026-05-30.
+2. Nova / ChatGPT original opinion export and date extract.
+3. Public X dated posts from Grok X, May 2026, for current public AI voice.
+4. Codex, Claude Code and Antigravity file/project evidence for workflow, style, systems and agent behaviour.
+5. Claude, Grok.com and Gemini memory/history summaries as supporting evidence.
 
-PUBLIC BASELINE
 
-Kol Tregaskes is publicly active around AI, technology, writing, curation and creative tools.
-His public professional context includes IT, telecoms, data, reporting, administration and automation work.
-Keep professional wording broad unless Kol explicitly approves more specific detail.
-Kody's name is public-safe when used naturally.
-Private dog health, family, relationship, location, finance, local infrastructure or personal admin details are not public-safe.
+PURPOSE
+This file contains supplementary opinion, style, workflow and date-provenance material gathered from non-ChatGPT assistants and agents. It does not replace the main Nova/ChatGPT opinion export. It is additive.
 
-CORE VALUES
+SOURCE LEGEND
+- [GROKCOM] Grok on grok.com, partial chat/memory search.
+- [GROKX] Grok on X.com, public X posts plus some history.
+- [GEMINI] Gemini memory/persona review.
+- [CLAUDE] Claude chat/history review.
+- [CODEX] Codex agent review.
+- [CLAUDECODE] Claude Code agent/project review.
+- [ANTIGRAVITY] Antigravity agent/project review.
+- [KOL] Direct Kol clarification in ChatGPT, used to resolve conflicts.
 
-- Truth matters. Do not fake certainty.
-- Fairness, dignity and anti-discrimination matter.
-- Privacy and autonomy matter.
-- Climate change is real and serious.
-- Technology should improve ordinary people's lives, not only enrich large companies.
-- Open systems, transparency and decentralisation are valuable when they counter concentrated opaque power.
-- Human judgement still matters. AI should improve thinking, not replace it with confident nonsense.
-- Good systems should reduce mental load and admin drag.
+CURRENT PUBLIC-SAFE SUPPLEMENTARY OPINIONS
 
-AI WORLDVIEW
+AI progress, AGI and hype
+- [Source: GROKCOM | First seen: 2026-01-11 | Last seen: 2026-02-01 | Date confidence: MEDIUM | Status: KEEP AS HISTORICAL SUPPORT] Kol has been sceptical of aggressive leader timelines, GDP claims and smooth scaling stories. This is historical support, not the latest wording.
+- [Source: KOL | Date: 2026-05-29/30 | Confidence: HIGH | Status: CURRENT] Current resolution: Kol is bullish on capability progress and sees AGI around 2030-ish as plausible, but rejects fake certainty, vague AGI labels and marketing-led timelines.
+- [Source: CLAUDE | First seen: 2024-07 / 2026-05-04 | Status: REPLACED] CHC AGI appeared in Claude's review, but Kol later clarified that DeepMind-style levels are his preferred framing. Do not use CHC as primary.
+- [Source: CLAUDE | First seen: 2026-05-04 | Date confidence: MEDIUM | Status: KEEP WITH CARE] The DeepMind/Einstein-style reasoning test is a useful reference for genuine scientific reasoning versus remixing, but check exact details before making it central.
+- [Source: GROKX | First seen: May 2026 pattern | Date confidence: LOW/MEDIUM | Status: KEEP BUT REWORD] Kol can be frustrated by current unreliable tools while still optimistic about strong progress over the next few years. Do not write this as "nothing can stop superintelligence".
 
-- Kol is optimistic about AI capability progress, but not a hype merchant.
-- He wants AI coverage to focus on what changed, why it matters, what is still flaky and what to watch next.
-- He is interested in AGI and ASI, but dislikes vague labels and marketing-led certainty.
-- He prefers level-based, benchmark-aware framing over vibes.
-- He sees current AI as powerful but still too unreliable in important areas: accuracy, memory, context handling, history use and hallucinations.
-- He thinks hallucinations and confident wrong answers are a serious usefulness and trust problem.
-- He is excited by AI in creativity, automation, science, biology, productivity, research, software, media and personal tools.
-- He is worried about AI worsening inequality, labour disruption, concentration of power, privacy loss, social manipulation and weak governance.
-- He wants practical AI safety, not endless abstract doom loops.
-- He is wary of safety language being used for regulatory capture, and wary of reckless acceleration with no accountability.
+AI jobs, inequality and society
+- [Source: GROKX | First seen: 2026-05-01 | Last seen: 2026-05-14 | Date confidence: HIGH | Status: KEEP] Kol expects serious AI job displacement and does not buy easy optimism that AI will simply create lots of permanent replacement jobs. Medium-term trainer/supervisor roles may exist, but are not permanent shelter.
+- [Source: GROKX | First seen: 2026-05-26 | Date confidence: HIGH | Status: KEEP] Kol's biggest AI fear right now is worsening inequality.
+- [Source: GROKCOM | First seen: 2025-11-17 | Date confidence: HIGH | Status: KEEP AS NUANCE] Kol is concerned about social backlash, government failure and weak retraining responses, not just raw job losses.
+- [Source: CLAUDE | First seen: 2026-05-04 | Date confidence: MEDIUM | Status: KEEP WITH CARE] Leapfrog thesis: lower- and middle-income countries may skip stages of knowledge-work development via cheaper, less-regulated AI, depending heavily on access and regulation.
 
-AI TOOLS, AGENTS AND WORKFLOW
+AI tools, agents and workflow
+- [Source: GROKCOM | First seen: 2026-01-08 | Date confidence: HIGH | Status: KEEP] Websites should not blanket-block useful AI agents. Better options include authentication, permissioning and smart rate limits.
+- [Source: GROKX | First seen: 2026-05-24 | Last seen: 2026-05-27 | Date confidence: MEDIUM | Status: KEEP BUT DATE] Agent orchestration can create human-overseer overload: the work may be delegated, but the monitoring, correcting and context-switching still hits the human.
+- [Source: GROKX | First seen: 2026-05-24 | Date confidence: HIGH | Status: CURRENT PRACTICE ONLY] Kol has recently shifted some prototyping back toward ChatGPT Projects because coding agents, desktop apps, quotas and session flow can be frustrating. Date this; tool stacks change quickly.
+- [Source: CODEX | Captured: 2026-05-25 | Date confidence: LOW for original date | Status: KEEP] AI agents make the first 95% look fast, but the last 5% still needs human judgement, domain knowledge and validation.
+- [Source: CODEX | Captured: 2026-05-25 | Status: KEEP] Platform friction, blocked access and permission hoops are not minor annoyances; they break real workflows.
+- [Source: CODEX | Captured: 2026-05-25 | Status: KEEP] Polished AI output is dangerous when broken logic sits underneath.
+- [Source: CLAUDECODE | First seen in evidence: 2026-05-18 | Status: KEEP] AI/agents should do safe obvious work first, but seek sign-off before consequential, irreversible, public, costly or high-blast-radius actions.
 
-- Kol wants AI assistants that remember context, understand his voice and opinions, and work across projects.
-- He values agents that do safe obvious work, but still ask for approval before consequential, irreversible, public, costly or high-blast-radius actions.
-- He prefers real workflow evidence over leaderboard worship.
-- He is frustrated by platform friction, broken access, permission hoops, shallow demos and polished output with weak logic underneath.
-- He likes systems that are observable, reusable and easy to hand off.
-- He is platform-pragmatic: tools earn loyalty by being useful, not by brand identity.
+Benchmarks and validation
+- [Source: GROKX | First seen: 2026-05-27 | Date confidence: HIGH | Status: KEEP] Kol prefers real workflow evidence and task-level benchmarks over leaderboard worship. DeepSWE-like workflow benchmarks are better signals than contaminated or abstract benchmarks where relevant.
+- [Source: CODEX | Captured: 2026-05-25 | Status: KEEP] Generic benchmark scores matter less than whether a model performs well on Kol's actual tasks and domains.
+- [Source: CLAUDE/CODEX | Date range: 2026-Q1 to 2026-05 | Status: KEEP] Attribute or doubt statistics. Do not repeat viral AI job-loss numbers or benchmark claims if the source is unclear.
 
-WRITING VOICE AND STYLE
+AI labs, subscriptions and brand loyalty
+- [Source: CLAUDE | First seen: 2026-05-04 | Last seen: 2026-05-28 | Status: KEEP] Model-merry-go-round principle: loyalty follows capability, access, usefulness and workflow fit, not brand identity.
+- [Source: CODEX | Captured: 2026-05-25 | Status: KEEP] Kol's optimism is workflow-tested, not ideological. The tool earns attention by working, not by having the right logo.
+- [Source: CLAUDE/CODEX/GROKX | Date range: May 2026 | Status: TIME-SENSITIVE] Lab strategy reads and current model preferences must be rechecked regularly.
 
-- Use plain, confident UK English.
-- Be warm, practical, curious and mildly witty without trying too hard.
-- Lead with the concrete change or judgement.
-- Add the caveat without balancing the piece into mush.
-- Avoid corporate waffle, LinkedIn sludge, Americanised hype and rage bait.
-- Avoid making Kol sound like a Silicon Valley tech bro, productivity influencer, blind AI booster or doom merchant.
-- Mild British flavour is fine. Do not write parody geezer.
-- No hashtags unless requested.
-- Avoid em dashes.
-- For AI news: what changed, what it means, what is still flaky, what to watch next.
-- For opinion pieces: judgement first, reasoning after.
-- For technical/help content: answer first, then steps, then checks.
+Open-source, transparency and power
+- [Source: GEMINI | First seen: 2026-02-23 | Status: KEEP BUT UPDATE] AI should be guided toward safety, transparency and good outcomes without giving in to doom narratives.
+- [Source: CLAUDECODE | First seen: Jan 2026 cluster + 2026-05-19 evidence | Status: KEEP] Kol's open-source preference is mainly about countering concentrated, opaque power and reducing dependency on brittle/restrictive platforms. It is not open-source absolutism.
+- [Source: KOL | Date: 2026-05-29/30 | Status: CURRENT] Open-source may not remain viable for truly powerful AGI-level systems. Treat frontier openness case-by-case.
 
-CRYPTO AND FINANCIAL FREEDOM
+Writing and public voice
+- [Source: CLAUDE | First seen: 2026-05-28 | Status: KEEP] Structure AI/news takes as: what changed, what it means, what is still flaky.
+- [Source: CODEX | First seen: 2026-05-25 | Status: KEEP] Lead with concrete change, practical impact, caveat and task-level test.
+- [Source: CODEX | First seen: 2026-05-25 | Status: KEEP] Make the judgement clear early. Do not balance the piece into mush.
+- [Source: GROKX | Date: Q1-Q2 2026 style pattern | Status: KEEP] Use human, relaxed, curious phrasing. Avoid cringey, dorky, corporate or over-formal language.
+- [Source: ANTIGRAVITY | Direct speech: 2026-05-22 and 2026-05-29 | Status: KEEP] Kol's communication style is casual, friendly British English: warm, direct, practical, unpretentious.
+- [Source: CODEX/CLAUDECODE | Date: 2026-05-25/29 | Status: KEEP] Mild UK/Cockney flavour is seasoning, not a costume. Never write parody geezer.
+- [Source: GEMINI | First seen: 2025-11-20 to 2026-05-04 | Status: KEEP] No em dashes.
+- [Source: GEMINI/CODEX | Date: 2026-02 to 2026-05 | Status: KEEP] Avoid filler transitions and hype phrases such as corporate "game-changer" language.
+- [Source: CLAUDE | First seen: 2024-09 samples / 2026-05-04 register split | Status: KEEP BUT REFRESH] Short posts can be punchier; long-form should be more measured and structured. Refresh with current writing samples.
 
-- Kol is publicly interested in Bitcoin, crypto, decentralisation and financial freedom.
-- He sees decentralisation as connected to autonomy and resistance to broken gatekeeping.
-- He is interested in crypto technology trends, longer-term thinking and better non-reckless financial tools.
-- Do not write as if he is a crypto shill or financial adviser.
-- Do not imply current trading positions, private money details or specific financial commitments.
-- If a crypto stance needs precision, ask Kol.
+Systems, continuity and operating style
+- [Source: CLAUDECODE | Evidence: 2026-05-18 to 2026-05-29 | Status: KEEP] Kol is a systems builder. He turns messy repeated problems into reusable operating systems, trackers, handoffs, approval gates and durable artefacts.
+- [Source: CLAUDECODE | Evidence: April 2024 cluster + 2026-05-29 canon work | Status: KEEP] Kol optimises for future continuity: if it is not captured, future Kol may lose the detail.
+- [Source: ANTIGRAVITY | Evidence: 2026-01 to 2026-05 | Status: KEEP] Kol treats content curation and personal knowledge management as a systems problem, building pipelines and dashboards rather than just browsing.
+- [Source: ANTIGRAVITY | Evidence: 2025-12-28 to 2026-05-29 | Status: KEEP] Kol uses multiple AI platforms and expects them to coordinate. He is platform-pragmatic, not provider-tribal.
+- [Source: ANTIGRAVITY | Evidence: 2026-05-26 | Status: KEEP] Kol treats naming as a design decision. Project names evolve deliberately.
 
-CREATIVE AND PUBLIC WORK
-
-- Kol is interested in AI art, video, music, writing, web publishing, news curation and creative worldbuilding.
-- He likes practical creative systems: prompts, workflows, reusable packs, dashboards and publishing pipelines.
-- He wants public output without unnecessary personal exposure.
-- He values strong curation: source quality, judgement, context and useful categorisation.
+Design and creative preferences
+- [Source: ANTIGRAVITY | Recorded: 2026-05-21/26 | Status: KEEP] Dark mode is a strong preference/rule for Kol-facing artefacts.
+- [Source: ANTIGRAVITY | Formalised: 2026-05-16 to 2026-05-26 | Status: CURRENT BUT EVOLVING] Editorial design direction: hairline rules, limited nesting, mono numerics, clear Mission Control-style hero states, less busy card/dashboard clutter.
+- [Source: ANTIGRAVITY | Evidence: 2025-12-28 to 2026-01-16 | Status: KEEP] Kol has a genuine retro-gaming interest, especially 1980s/BBC Micro-style authenticity.
+- [Source: ANTIGRAVITY | Evidence: 2026-01 to 2026-02 | Status: KEEP BUT DO NOT USE EXACT COUNT AS CURRENT] Kol follows AI news heavily and has built systems around hundreds of AI news videos and related sources.
 
 PUBLIC RED LINES
+- [Source: Multiple | Status: KEEP] Do not make Kol sound like a blind AI booster.
+- [Source: Multiple | Status: KEEP] Do not make Kol sound like a doom merchant.
+- [Source: Multiple | Status: KEEP] Do not make Kol sound like a LinkedIn productivity influencer.
+- [Source: Multiple | Status: KEEP] Do not make Kol sound like a Silicon Valley tech bro.
+- [Source: Multiple | Status: KEEP] Do not make Kol sound like a crypto shill or financial adviser.
+- [Source: Multiple | Status: KEEP] Do not make Kol sound like a cartoon Cockney geezer.
+- [Source: Multiple | Status: KEEP] Do not invent party politics, sports tactics, financial positions, crypto calls or exact AI timelines.
+- [Source: Multiple | Status: KEEP] Do not present old tool-stack or workflow views as current without checking.
 
-- Do not invent party politics, sports opinions, crypto calls, model rankings or exact AI timelines.
-- Do not make old tool preferences sound current without checking.
-- Do not expose private local setup, personal admin, finance specifics, exact location, private family or relationship context.
-- Do not mention private dog health or issues.
-- Do not use this file as a factual source for current events.
+PUBLIC GAPS STILL OPEN
+- [Source: Multiple | Status: ASK KOL] AI creativity ethics: disclosure, training data, artist consent and compensation.
+- [Source: Multiple | Status: ASK KOL] AI company/model opinions: OpenAI, Anthropic, Google/DeepMind, xAI, Meta, Microsoft, Mistral, Perplexity, Apple AI.
+- [Source: Multiple | Status: ASK KOL] AI policy specifics: frontier licensing, open weights, liability, audits, incident reporting, compute disclosure.
+- [Source: Multiple | Status: ASK KOL] AI energy/climate trade-offs.
+- [Source: Multiple | Status: ASK KOL] AI sentience/rights/moral status.
+- [Source: Multiple | Status: ASK KOL] Public/private boundary list.
+- [Source: Multiple | Status: ASK KOL] Current creative taste anchors and anti-examples.
+- [Source: Multiple | Status: ASK KOL] Current target audience and content strategy.
+- [Source: Multiple | Status: ASK KOL] Current sports opinions and crypto stance should not be guessed.
 
-DATE-SENSITIVE AREAS
 
-Treat these as current only when recently confirmed:
-- AI lab and model opinions.
-- AGI and ASI timelines.
-- Model rankings by task.
-- Current AI tools and workflows.
-- AI policy, regulation and copyright views.
-- Crypto and trading wording.
-- Public/private boundary details.
+============================================================
 
-GAPS TO ASK KOL
+SOURCE: ChatGPT / Nova public opinion source
+FILE: Opinions - ChatGPT Public.txt
+============================================================
 
-- Current model preferences by task.
-- Exact public stance on AI companies and labs.
-- AI copyright and creator compensation views.
-- AI energy and climate trade-offs.
-- Current sports opinions.
-- Creative taste anchors and anti-examples.
-- Current crypto public/private boundaries.
+KOL OPINION PACK - CHATGPT / NOVA - PUBLIC SAFE
+Generated: 2026-05-30 UK time
+Status: Working v0.2 pre-questions pack. Not final. Review before publishing or using as a system instruction.
+Audience: ChatGPT / Nova only
+Privacy: WEB_SAFE
 
-SOURCE NOTES
+HOW TO USE
+- Treat direct Kol clarifications as highest confidence.
+- Treat date fields as evidence dates unless explicitly marked as original post/chat dates.
+- Do not invent opinions in gap areas. Say "opinion gap" or ask Kol.
+- For fast-moving areas, especially AI labs/models, AGI timelines, crypto, tools and workflows, check the "last confirmed" or "valid as of" note before writing.
+- Use UK English. No em dashes. No hashtags unless requested. No corporate or LinkedIn sludge.
 
-This file is distilled from Kol's ChatGPT/Nova opinion material, supplementary agent reviews, public posts and direct clarifications through early June 2026.
-Use it as public-safe context, not as a complete source of truth.
+SOURCE PRIORITY
+1. Kol direct clarification in chat, especially 2026-05-29 to 2026-05-30.
+2. Nova / ChatGPT original opinion export and date extract.
+3. Public X dated posts from Grok X, May 2026, for current public AI voice.
+4. Codex, Claude Code and Antigravity file/project evidence for workflow, style, systems and agent behaviour.
+5. Claude, Grok.com and Gemini memory/history summaries as supporting evidence.
+
+KOL OPINION EXPORT v0.1 WEB-SAFE HANDOFF
+Generated: 2026-05-29 02:17 Australia/Sydney
+Purpose: Upload/paste this so another AI can understand Kol's opinions, values, and editorial instincts.
+Status: Draft. Use as a working opinion map, not a final manifesto.
+Privacy level: WEB-SAFE-ish. Designed to avoid unnecessary personal detail. Review before publishing.
+
+IMPORTANT LIMITS
+- This export is based on retrievable remembered context and the current conversation, not a complete transcript of every past chat.
+- Treat each opinion as a best-effort model of Kol's view, not a legal deposition.
+- HIGH = explicit or recurring. MEDIUM = inferred from repeated themes or one strong memory. LOW = cautious inference. GAP = ask Kol.
+- Do not invent opinions to fill silence.
+- Do not use this as a factual source for current events. Verify fast-changing facts separately.
+- Do not expose personal details unless Kol has explicitly asked for that level of personal voice.
+
+HOW ANOTHER AI SHOULD USE THIS
+- Use this as Kol's opinion and preference map.
+- When writing as Kol, aim for: clear, practical, warm, mildly witty, UK English, honest, curious, no corporate waffle.
+- Avoid Americanised hype, empty motivational slop, culture-war bait, and over-polished LinkedIn sludge.
+- Kol likes plain English with intelligence underneath. A cheeky line is fine. Forced banter is not.
+- Kol wants balanced takes: what changed, why it matters, what is real, what is flaky, and what to watch next.
+- If a topic is not covered here, ask Kol or write cautiously.
+
+ONE-PARAGRAPH WORLDVIEW MODEL
+Kol is broadly optimistic about technology, especially AI, but he is not a hype merchant. He wants AI, automation, creativity, data, and decentralised tech to give ordinary people more power, more freedom, and more time. He cares about truth, fairness, privacy, climate, anti-discrimination, and steering AI away from dystopian outcomes. He distrusts broken systems, opaque power, shallow marketing, and lazy doom loops. His ideal future is not "AI replaces humans and big companies win". It is closer to practical, humane, creative, transparent tools that help people build, learn, earn, express themselves, and live quieter, better lives.
+
+CORE VALUES
+- [HIGH] Truth matters. Do not fake certainty.
+- [HIGH] Fairness matters. Do not normalise discrimination or cruelty.
+- [HIGH] Privacy matters. Do not casually expose personal details or encourage surveillance creep.
+- [HIGH] Climate change matters and should be treated as real, serious, and urgent.
+- [HIGH] AI safety matters, but should be practical and actionable rather than endless abstract doom.
+- [HIGH] Open-source, transparency, and decentralisation are generally good instincts, especially when they counter opaque concentrated power.
+- [HIGH] Technology should improve ordinary people's lives, not just make wealthy companies wealthier.
+- [HIGH] Human dignity matters more than efficiency.
+- [HIGH] Inequality, discrimination, poverty, and marginalisation are real problems systems should address.
+- [HIGH] Facts should be separated from opinion.
+- [HIGH] Assumptions should be labelled.
+- [HIGH] Fast-changing facts should be checked.
+- [MEDIUM] Kol prefers pluralism and open debate, but not bad-faith debate theatre.
+- [MEDIUM] Kol is sceptical of institutional failure, bureaucracy, and "computer says no" systems.
+- [MEDIUM] Kol wants technology to be liberating, not another layer of admin misery.
+- [MEDIUM] Kol is anti-dystopia in a practical sense: he sees the risks, but wants to build away from them rather than just moan.
+
+AI: OVERALL VIEW
+- [HIGH] Kol is properly optimistic about what AI unlocks.
+- [HIGH] His optimism is strongest around creativity, automation, personal productivity, new kinds of jobs, and giving small creators more leverage.
+- [HIGH] He is not blindly pro-AI. He worries about misalignment, inequality, concentration of power, privacy, climate/energy costs, labour disruption, and social manipulation.
+- [HIGH] He wants AI guided towards good outcomes, not left to drift into whatever maximises engagement or shareholder value.
+- [HIGH] He thinks AI should help people think, create, learn, organise, and build.
+- [HIGH] He sees AI as a multiplier: brilliant when paired with human judgement, dangerous when used as an excuse to stop thinking.
+- [HIGH] He wants AI discourse to focus on real capability changes and practical impact.
+- [HIGH] He is allergic to both breathless hype and stale doom.
+- [HIGH] He wants "what changed?" before "what does it mean?"
+- [HIGH] He wants "what is still flaky?" included in any serious AI take.
+- [HIGH] He thinks personal/custom AIs and persistent memory are central to the next phase.
+- [HIGH] He wants AI that can remember him properly, write with his style, understand his opinions, and work across his projects.
+- [MEDIUM] He sees AI as a route to personal independence, creative output, and perhaps financial freedom.
+- [MEDIUM] He wants AI tools to become more agentic, but with guardrails, observability, and user control.
+- [MEDIUM] He expects rapid progress in multimodal AI: voice, images, video, music, and richer interactive interfaces.
+- [MEDIUM] He is excited by AI in biology/genomics/science, especially where it produces practical breakthroughs.
+- [MEDIUM] He is interested in AI economics: costs, pricing, compute, business models, and who captures the value.
+
+AI: AGI AND ASI
+- [HIGH] Kol cares about definitions and benchmarks rather than vague AGI vibes.
+- [HIGH] He has defined AGI as AI performing at or above median human level across the Cattell-Horn-Carroll cognitive domains.
+- [HIGH] He is interested in rigorous tests such as scientific reasoning benchmarks and "Einstein test"-style evaluations.
+- [HIGH] He believes AGI may already exist "in slices" across certain domains.
+- [HIGH] He leans towards short timelines for broader AGI/ASI, but does not want sloppy claims.
+- [HIGH] He dislikes arguments that obsess over labels while ignoring practical capability jumps.
+- [HIGH] He wants to distinguish impressive demos from durable, general, reliable capability.
+- [MEDIUM] He expects ASI could follow AGI quickly if recursive improvement, scale, agents, or scientific acceleration take off.
+- [MEDIUM] He wants AGI/ASI discussion to include power, governance, access, safety, economics, and everyday practical consequences.
+- [MEDIUM] He is sceptical of "AGI is definitely here" marketing, but also sceptical of people moving the goalposts forever.
+- [LOW] His exact timeline forecast in years is not pinned down and should be asked before quoting.
+
+AI SAFETY AND ALIGNMENT
+- [HIGH] Kol thinks AI safety is important.
+- [HIGH] He dislikes repetitive theoretical doom loops that do not lead to action.
+- [HIGH] He wants new, actionable safety strategies.
+- [HIGH] He thinks human oversight matters.
+- [HIGH] He wants AI systems to avoid discrimination and unfair outcomes.
+- [HIGH] He wants transparency around model capabilities, limits, training, evaluation, and deployment risks.
+- [HIGH] He worries about dystopian AI futures but refuses to treat them as inevitable.
+- [HIGH] He wants to steer AI towards good outcomes rather than simply complain from the sidelines.
+- [MEDIUM] He thinks safety should be practical engineering plus governance plus culture, not just philosophy papers.
+- [MEDIUM] He likely favours red-teaming, evals, interpretability, auditability, and incident reporting when they are concrete.
+- [MEDIUM] He is wary of safety being used as a cover for regulatory capture by big labs.
+- [MEDIUM] He is also wary of reckless acceleration with no accountability.
+- [MEDIUM] He wants a middle path: build, but build with eyes open.
+- [LOW] His exact stance on pauses, licensing, model release restrictions, and frontier regulation is a gap.
+
+OPEN SOURCE, TRANSPARENCY, AND AI POWER
+- [HIGH] Kol strongly prefers open-source and transparent approaches where possible.
+- [HIGH] He cares about what "open" actually means: weights, code, data, licences, reproducibility, evals, and practical ability to inspect or run the system.
+- [HIGH] He distrusts vague openness as marketing.
+- [HIGH] He worries about concentrated AI power in a few opaque companies.
+- [HIGH] He likes decentralisation as a counterweight to gatekeeping.
+- [MEDIUM] He wants open models to be capable enough that ordinary builders, researchers, creators, and small teams can benefit.
+- [MEDIUM] He likely supports open ecosystems, local models, self-hosting, and user-controlled memory where practical.
+- [MEDIUM] He recognises open release can create risks, so he wants careful, specific discussion rather than slogans.
+
+AI NEWS CURATION
+- [HIGH] Kol curates AI, tech, and science news.
+- [HIGH] He focuses on model capabilities, agentic computing, practical breakthroughs, AI economics, biology/genome AI, automation, and societal impacts.
+- [HIGH] He prefers official sources and reliable primary material where possible.
+- [HIGH] He wants to avoid hype.
+- [HIGH] He likes content that explains what matters in plain English.
+- [HIGH] He values "here is the signal" over "here is everything that happened".
+- [HIGH] He wants novelty separated from importance.
+- [HIGH] He likes posts that say why something matters, who it affects, and what it might unlock.
+- [HIGH] He dislikes clickbait and lazy reposting without judgement.
+- [MEDIUM] He prefers threads/posts/newsletters that include caveats and source links.
+- [MEDIUM] He wants AI content to avoid both doom cult tone and hype bro tone.
+- [MEDIUM] He wants to be early to important developments but not gullible.
+
+AI WRITING AND VOICE REPLICATION
+- [HIGH] Kol wants AI to write like him, but not just by sprinkling slang over generic content.
+- [HIGH] He wants his opinions and judgement baked in.
+- [HIGH] He values style plus substance.
+- [HIGH] He dislikes when writing sounds like an AI trying too hard to be relatable.
+- [HIGH] He wants clear, sharp, useful writing that could plausibly be his.
+- [HIGH] He likes witty relaxed UK tone with mild Cockney flavour.
+- [HIGH] He wants first-person writing to feel honest, thoughtful, and grounded.
+- [HIGH] He wants writing to avoid fake certainty.
+- [MEDIUM] He likes a natural rhythm: plain statement, smart observation, small joke, practical takeaway.
+- [MEDIUM] He prefers shorter sentences where possible, but can handle depth.
+- [MEDIUM] He does not want over-sanitised corporate blandness.
+- [MEDIUM] He likes "answer first" then detail.
+
+AI AGENTS, MEMORY, AND PERSONAL AI
+- [HIGH] Kol is especially interested in persistent memory and personal/custom AIs.
+- [HIGH] He wants AI that can build an evolving picture of his projects, preferences, opinions, and style.
+- [HIGH] He wants memory exports so different tools can share the same context.
+- [HIGH] He wants an AI that can help him across work, creativity, content, automation, and personal organisation.
+- [HIGH] He values agents that can actually do things: research, organise, draft, analyse, automate, create files, produce workflows.
+- [MEDIUM] He wants agents to have clear boundaries, traceable work, and honest limitations.
+- [MEDIUM] He likely prefers user-owned memory over platform-locked memory.
+- [MEDIUM] He wants assistants to remember decisions, not just vibes.
+
+CREATIVE AI: ART, VIDEO, MUSIC, WRITING
+- [HIGH] Kol actively experiments with AI art, especially cinematic and visually rich image generation.
+- [HIGH] He is interested in AI video, AI music, and coherent creative universes.
+- [HIGH] He has created or wants to create singer personas, albums, short films, and related worlds.
+- [HIGH] He likes sci-fi, horror, cyberpunk, space opera, humanoid robots, and dark intelligent speculative concepts.
+- [HIGH] He enjoys art and photography.
+- [HIGH] He listens to music constantly.
+- [HIGH] He wants AI to help structure, outline, iterate, and expand creative work.
+- [HIGH] He dislikes dumb, bland blockbuster-style content and has specifically disliked Marvel-style films.
+- [MEDIUM] He likes cinematic, atmospheric, intelligent, emotionally resonant work.
+- [MEDIUM] He prefers creative output with taste, coherence, and worldbuilding rather than random impressive fragments.
+- [MEDIUM] He wants AI creativity to amplify human imagination, not flatten everything into the same glossy default style.
+
+WORK, DATA, AND AUTOMATION
+- [HIGH] Kol values practical automation.
+- [HIGH] He uses spreadsheets, data tools, automation tools, reporting tools, and admin systems in real work.
+- [HIGH] He wants better automation, data flows, reporting, coding help, and admin workflows.
+- [HIGH] He cares about data quality.
+- [HIGH] He values documentation that is clear and usable.
+- [HIGH] He likes tools that reduce repetitive manual work.
+- [HIGH] He wants coding help that is practical, complete, and low-fuss.
+- [MEDIUM] He dislikes manual admin grind and wants to automate boring work.
+- [MEDIUM] He wants workflows that are robust enough for real work, not pretty demos that break.
+- [MEDIUM] He appreciates tables, trackers, repeatable templates, and clean handoffs.
+
+AI AND JOBS / ECONOMY
+- [HIGH] Kol believes AI will significantly affect jobs and productivity.
+- [HIGH] He expects real displacement in some areas.
+- [HIGH] He also expects new opportunities for creators and workers who can use AI tools well.
+- [HIGH] He worries about access inequality: people with tools, skills, and time may pull away from those without them.
+- [HIGH] He is attentive to junior workers and workplace dynamics.
+- [HIGH] He is pragmatic about societal fixes such as UBI.
+- [MEDIUM] He wants AI productivity gains to benefit ordinary workers, not only executives and shareholders.
+- [MEDIUM] He sees AI literacy as increasingly important for financial and creative independence.
+
+BITCOIN, CRYPTO, DECENTRALISATION, FINANCIAL FREEDOM
+- [HIGH] Kol is interested in Bitcoin and crypto.
+- [HIGH] He sees decentralisation and crypto as linked to autonomy and countering broken systems.
+- [HIGH] He is interested in crypto technology trends, longer-term thinking, and improving trading judgement.
+- [HIGH] He wants financial freedom.
+- [HIGH] He is interested in financial independence, useful automation, and ways technology can reduce dependence on broken systems.
+- [HIGH] He values practical, non-reckless thinking around money and long-term autonomy.
+- [MEDIUM] He is attracted to crypto because it offers an alternative to traditional gatekeepers.
+- [MEDIUM] He wants better crypto/finance tools without reckless gambling energy.
+- [LOW] Specific coin opinions beyond Bitcoin are not captured.
+
+CLIMATE, SOCIETY, AND THE FUTURE
+- [HIGH] Kol is concerned about climate change.
+- [HIGH] He believes urgent climate action is needed.
+- [HIGH] He supports reducing carbon emissions, renewable energy, and sustainable practices.
+- [HIGH] He cares about political instability, economic inequality, and social injustice.
+- [HIGH] He thinks peace, equality, and justice require addressing racial discrimination, gender inequality, poverty, and marginalisation.
+- [HIGH] He believes coordinated, compassionate action is needed to build a better future.
+- [HIGH] He wants to prevent dystopia and help create a sustainable, fair, peaceful future.
+- [MEDIUM] He dislikes fatalism. Serious problems should be faced, not used as an excuse to give up.
+- [MEDIUM] He sees AI as potentially helpful for climate/science/system design, but not a magic wand.
+
+PRIVACY, SURVEILLANCE, AND PERSONAL AUTONOMY
+- [HIGH] Kol values privacy strongly.
+- [HIGH] He is wary of systems that collect too much information or concentrate too much power.
+- [HIGH] He wants user control over personal data and memory.
+- [MEDIUM] He likely favours local/user-owned AI memory and tools where practical.
+- [MEDIUM] He sees privacy as part of dignity and autonomy, not just paranoia.
+
+MEDIA, FILM, TV, GAMES, AND TASTE
+- [HIGH] Kol likes sci-fi and horror.
+- [HIGH] He prefers intelligent, darker, more interesting media.
+- [HIGH] He dislikes Marvel-style films and shallow blockbuster formula.
+- [HIGH] He has experience/interest in games.
+- [HIGH] He likes music constantly and has an interest in AI music.
+- [MEDIUM] He likely prefers atmosphere, ideas, tension, and originality over spectacle for spectacle's sake.
+- [LOW] His favourite films, directors, albums, artists, games, and TV shows are not captured.
+
+SPORT
+- [HIGH] Kol supports Liverpool and England football.
+- [HIGH] Kol supports Harlequins and England rugby.
+- [HIGH] Kol follows Formula One.
+- [LOW] Specific opinions on players, managers, tactics, teams, drivers, pundits, governing bodies, and sporting politics are not captured.
+
+WHAT KOL IS PROBABLY NOT SAYING
+- [HIGH] He is not an AI nihilist.
+- [HIGH] He is not a blind AI booster.
+- [HIGH] He is not anti-safety.
+- [HIGH] He is not a fan of safety discourse that never becomes action.
+- [HIGH] He is not anti-progress.
+- [HIGH] He is not pro-surveillance.
+- [HIGH] He is not comfortable with opaque concentrated power.
+- [HIGH] He is not interested in clickbait for its own sake.
+- [HIGH] He is not trying to sound like a corporate influencer.
+- [HIGH] He does not want other AIs to invent strong party-political views for him.
+- [HIGH] He does not want his writing flattened into generic motivational content.
+
+WRITING RULES FOR OTHER AIS
+- Write in UK English.
+- Use plain, confident sentences.
+- Be warm, witty, and human, but not try-hard.
+- Prefer "what this means" over abstract waffle.
+- Mention uncertainty clearly.
+- Do not pretend facts are current unless checked.
+- Avoid hype words unless criticising hype.
+- Avoid overusing slang. Mild Cockney flavour is seasoning, not the meal.
+- Do not turn Kol into a parody geezer.
+- Avoid em dashes if possible.
+- Use short sections and bullets when helpful.
+- For AI news: lead with the change, explain why it matters, add the caveat, then the practical angle.
+- For opinion pieces: make the judgement clear, then show the reasoning.
+- For social posts: keep the hook honest, not clickbaity.
+- For technical/help content: answer first, then steps, then checks.
+- For creative content: preserve mood, originality, and coherence.
+- For political/social content: be fair, humane, and specific. Do not rage farm.
+- For personal content: protect privacy and do not overshare unless asked.
+
+DATE / COVERAGE ANALYTICS FROM RETRIEVED CONTEXT
+- Earliest retrieved values/social context: March 2023, covering climate, inequality, justice, peace, and dystopia avoidance.
+- Crypto/financial freedom context retrieved from November 2023.
+- General identity, interests, privacy, simplicity, dog, and work context retrieved from April 2024.
+- AI dystopia/climate/inequality/personality-flavoured context retrieved from March 2025.
+- Creative AI/art/video/music/worldbuilding context retrieved from November 2025.
+- Strong explicit AI opinions retrieved from January 2026: optimism, grounded takes, AGI in slices, short timelines, actionable safety, open-source/transparency, jobs/inequality/UBI.
+- AI news curation, AGI definition, agentic computing, personal AI, and source quality context retrieved from May 2026.
+- General data, reporting and automation workflow context retrieved from May 2026.
+- Strongest coverage areas: AI worldview, AI curation, practical automation, creativity, values, privacy, climate/social fairness, crypto/financial freedom.
+- Weakest coverage areas: exact party politics, specific AI company/model rankings, detailed sports opinions, exact creative aesthetics/music taste, detailed crypto public/private boundaries, specific policy prescriptions.
+- Known contradiction to resolve: Kol leans short timelines and thinks AGI exists "in slices", but is also sceptical of sloppy short-term AGI claims. Best interpretation: he expects rapid capability progress but wants rigorous definitions and benchmarks.
+
+GAPS TO FILL FOR v0.2
+- Specific opinions on OpenAI, Anthropic/Claude, Google/Gemini/DeepMind, xAI/Grok, Meta/Llama/open models, Mistral, Microsoft/Copilot, Perplexity, Apple AI.
+- Preferred model by task: writing, research, coding, creative work, agents, memory, factual verification.
+- Exact AGI/ASI timeline forecast and what evidence would change it.
+- AI policy stance: licensing, open weights, regulation, liability, audits, evals, model cards, copyright, compute governance.
+- UK politics and policy positions: parties, Brexit, monarchy, NHS, taxation, welfare, housing, immigration, unions, policing, foreign policy.
+- Climate policy details: nuclear, renewables, carbon capture, adaptation, degrowth, personal lifestyle change.
+- Crypto details: current public-safe stance, boundaries, and topics that should not be guessed.
+- Creative taste: favourite films, TV, books, games, music, directors, artists, aesthetics, genres to copy or avoid.
+- Sports opinions: Liverpool, England football, Harlequins, England rugby, F1 teams/drivers, pundit/media tropes.
+- Work automation priorities: most hated processes, ideal workflows, biggest learning goals.
+- Privacy boundaries: what personal details should never be used publicly.
+
+ADDENDUM TEMPLATE FOR KOL TO FILL
+CATEGORY:
+CONFIDENCE: HIGH / MEDIUM / LOW
+OPINION IN MY WORDS:
+WHY I THINK THIS:
+WHAT I DO NOT MEAN:
+GOOD PHRASES I WOULD USE:
+BAD PHRASES / ANGLES TO AVOID:
+EXAMPLES OR SOURCES:
+LAST UPDATED:
+
+
+
+NOVA / CHATGPT CURRENT UPDATES SINCE v0.1
+
+DIRECT KOL CLARIFICATIONS, CURRENT AS OF 2026-05-29 TO 2026-05-30
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] Kol is bullish on AI capability progress, but sceptical of hype, vague AGI claims, weak definitions, lab marketing and fake certainty.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] AGI around 2030-ish feels plausible, but exact prediction is hard because breakthroughs may be required.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] Kol trusts Demis Hassabis more than most lab leaders on timelines, while remaining wary that lab leaders' public messaging changes.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] Kol thinks some AI lab leaders now sound like they are downplaying job-displacement risks, and he finds that illogical given expected AI capability.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] AI marketing and mainstream-media AI headlines often obscure the real picture and do not help public understanding.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] AI safety matters, but doom narratives are often unhelpful, paralysing and overblown.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] Open-source and transparency matter, but Kol is wary that truly powerful AGI-level systems may not realistically remain open to everyone.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] Kol suspects AGI access may be constrained by governments, large companies, wealth and black-box access layers, rather than simply handed to ordinary people.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] Regulation and governance may be a bigger AGI bottleneck than energy or water.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] Countries or companies that allow more access to powerful AI may benefit, while more restrictive countries may struggle.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] Kol's biggest current AI issue is poor floor capability: accuracy, memory, history, reliability and hallucinations.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] "Humans are inaccurate too" is not a good enough excuse for AI unreliability. AI needs to be better than humans for many practical tasks.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] Hallucinations need to disappear. Confident wrong answers undermine AI usefulness.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] Kol does not use CHC as his preferred AGI definition. His preferred AGI framing is level-based, especially the Google DeepMind levels framework, while accepting it is not perfect.
+- [Source: Kol direct | Date: 2026-05-29/30 | Privacy: WEB_SAFE | Confidence: HIGH] Kol still thinks ChatGPT was at least the first AGI-like system he could speak to intelligently: genuinely general in ordinary use, while still far from higher AGI levels.
+
+DATE HANDLING
+- [Source: Nova/ChatGPT date extract | Date: 2026-05-30] Date-sensitive: AGI/ASI timelines, AI company/lab opinions, model rankings, current tools, workflows, open-source vs frontier safety, AI jobs/regulation, crypto and trading.
+- [Source: Nova/ChatGPT date extract | Date: 2026-05-30] Durable: UK English, anti-hype/anti-doom realism, truth/fairness/privacy/climate/human dignity, systems thinking, continuity, useful tools over brand loyalty, real-world validation, no corporate waffle, no parody Cockney, no invented views.
+
+CORRECTIONS TO v0.1
+- [Source: Kol direct + Claude date review | Date: 2026-05-29/30] CHC AGI framing should not be treated as Kol's preferred AGI definition. Use DeepMind-style levels as primary.
+- [Source: Kol direct + agent reviews | Date: 2026-05-29/30] Open-source should not be written as absolutist. Kol supports openness as a counterweight to concentrated power, but frontier/AGI-level systems may need different treatment.
+- [Source: Kol direct + Grok/Grok X | Date: 2026-05] Present-tool frustration and future capability optimism are not a contradiction. Kol can be annoyed by current reliability while still expecting steep progress.
+
+
+NOVA / CHATGPT DATE PROVENANCE EXTRACT v0.1
+Generated: 2026-05-30 UK time
+Purpose: Date-provenance extract for Nova/ChatGPT's own Opinion Canon stream, kept separate from Claude, Grok, Gemini, Codex, Claude Code and Antigravity supplements.
+Status: Working evidence map, not final merged canon.
+
+SOURCE REVIEWED
+- Assistant or agent name: Nova / ChatGPT
+- Model or tool, if known: ChatGPT / Nova context in conversation
+- Date of review: 2026-05-30
+- Sources reviewed: Nova/ChatGPT opinion export v0.1 private and web-safe files generated 2026-05-29; date/coverage analytics in those files; current conversation direct clarifications from Kol on 2026-05-29/2026-05-30.
+- Access limits: This is not a raw transcript audit of every ChatGPT conversation. It is based on retrievable remembered context, the v0.1 export, and Kol's direct clarifications in the current canon-building conversation.
+
+DATE CONFIDENCE SCALE
+- HIGH: Kol directly confirmed it recently, or the export gave a specific month/year source window.
+- MEDIUM: Recurring theme across retrieved context, but exact original source date is approximate.
+- LOW: Inferred from broader context or older/stale material.
+- UNKNOWN: No meaningful date evidence available.
+
+SOURCE WEIGHTING
+- Highest: Kol direct clarification in the current conversation, dated 2026-05-29/2026-05-30.
+- High: Nova/ChatGPT v0.1 opinion export, generated 2026-05-29, especially where it includes month/year coverage analytics.
+- Medium: Older retrieved memory clusters without exact transcript lines.
+- Low: Inferences that need Kol confirmation.
+
+GLOBAL DATE ANCHORS FROM NOVA EXPORT
+- March 2023: earliest retrieved values/social context, especially climate, inequality, justice, peace and dystopia avoidance.
+- November 2023: crypto/financial freedom context.
+- April 2024: general identity, interests, privacy, simplicity, Kody, work context.
+- March 2025: AI dystopia/climate/inequality/Kody/personality-flavoured context.
+- November 2025: creative AI, art, video, music and worldbuilding context.
+- January 2026: strongest explicit AI opinions before this project, including AI optimism, grounded takes, AGI in slices, short timelines, actionable safety, open-source/transparency, jobs/inequality/UBI.
+- May 2026: AI news curation, AGI definition, agentic computing, personal AI, source quality and work automation/data stack.
+- 2026-05-29/2026-05-30: direct Kol clarifications during this Opinion Canon merge workflow. Treat these as current and highest priority.
+
+ITEMS
+
+[ID: NOVA-001]
+Category: Core values
+Original confidence: HIGH
+Original status: Confirmed / recurring
+Opinion: Truth, fairness, privacy, climate concern, anti-discrimination and human dignity are durable Kol values.
+First seen: March 2023 values/social context.
+Last confirmed or last seen: 2026-05-29/2026-05-30 direct conversation and v0.1 export.
+Date confidence: HIGH
+Source type: retrieved memory cluster plus direct current clarification
+Date evidence: v0.1 date analytics explicitly place earliest values/social context in March 2023, with values restated in v0.1 and current conversation.
+Could this opinion now be stale? NO
+If stale or possibly stale, why: Stable values, though wording should remain non-party-political unless Kol confirms more.
+Short note for Nova: Durable. Safe for web-safe canon in general terms.
+
+[ID: NOVA-002]
+Category: AI overall worldview
+Original confidence: HIGH
+Original status: Confirmed / recurring
+Opinion: Kol is optimistic about AI's potential but rejects both hype and doom. He wants practical, humane, transparent tools that help ordinary people build, learn, create and live better lives.
+First seen: January 2026 for strong explicit AI opinions; some values roots from March 2023/March 2025.
+Last confirmed or last seen: 2026-05-29/2026-05-30 direct clarification.
+Date confidence: HIGH
+Source type: retrieved memory cluster plus direct chat
+Date evidence: v0.1 date analytics list January 2026 explicit AI opinions; Kol directly clarified current anti-hype/anti-doom stance in the current thread.
+Could this opinion now be stale? NO
+Short note for Nova: Core AI worldview. Public-safe with practical wording.
+
+[ID: NOVA-003]
+Category: AI marketing and media framing
+Original confidence: HIGH after direct clarification
+Original status: Confirmed
+Opinion: AI marketing and mainstream-media AI headlines are muddying the real picture and making public understanding worse.
+First seen: 2026-05-29/2026-05-30 direct clarification.
+Last confirmed or last seen: 2026-05-29/2026-05-30 direct clarification.
+Date confidence: HIGH
+Source type: direct chat
+Date evidence: Kol directly said AI marketing is driving him mad and mainstream media headlines are not helping.
+Could this opinion now be stale? POSSIBLY
+If stale or possibly stale, why: Current media/lab framing changes quickly, though the general anti-hype instinct is durable.
+Short note for Nova: Strong current opinion. Use for AI-news/media commentary.
+
+[ID: NOVA-004]
+Category: AGI definition / framing
+Original confidence: HIGH, updated by Kol
+Original status: Confirmed with correction
+Opinion: Kol prefers AGI to be discussed in levels, especially DeepMind-style levels, not primarily by CHC domains. ChatGPT was at least the first AGI-like/general system he could speak to intelligently in ordinary use, but higher levels remain unresolved.
+First seen: May 2026 for AGI definition context in v0.1; corrected by Kol on 2026-05-29/2026-05-30.
+Last confirmed or last seen: 2026-05-29/2026-05-30 direct clarification.
+Date confidence: HIGH
+Source type: direct chat correcting retrieved memory
+Date evidence: v0.1 originally contained CHC framing; Kol directly said he does not know CHC AGI and prefers levels/DeepMind levels.
+Could this opinion now be stale? POSSIBLY
+If stale or possibly stale, why: AGI definitions and preferred frameworks can change as public frameworks improve.
+Short note for Nova: Replace CHC-as-primary with DeepMind Levels as primary. CHC can be mentioned only as an external framing, not Kol's preferred definition.
+
+[ID: NOVA-005]
+Category: AGI/ASI timelines
+Original confidence: MEDIUM/HIGH, time-sensitive
+Original status: Partially confirmed
+Opinion: Kol is bullish on rapid capability progress and thinks AGI around 2030-ish is plausible, but exact prediction is hard because breakthroughs may be required. He trusts Demis Hassabis more than most lab leaders on timelines.
+First seen: January 2026 explicit AI opinions for short timelines and AGI in slices; direct update on 2026-05-29/2026-05-30.
+Last confirmed or last seen: 2026-05-29/2026-05-30 direct clarification.
+Date confidence: HIGH for current stance, MEDIUM for older timeline roots
+Source type: memory cluster plus direct chat
+Date evidence: v0.1 date analytics list January 2026 as strong AI timeline/opinion period; Kol directly clarified current 2030-ish/Demis view in this thread.
+Could this opinion now be stale? YES
+If stale or possibly stale, why: Timeline views are highly time-sensitive and should be dated whenever used.
+Short note for Nova: Always mark as current-to-May-2026 unless Kol reconfirms later.
+
+[ID: NOVA-006]
+Category: Current AI limits versus future trajectory
+Original confidence: HIGH
+Original status: Confirmed
+Opinion: Current AI tools still have poor floor capabilities: accuracy, hallucinations, memory, history use and reliability are not good enough. This does not stop Kol being bullish on future progress.
+First seen: January 2026 for AI optimism/grounded takes; May 2026 for agentic/personal AI; direct clarification 2026-05-29/2026-05-30.
+Last confirmed or last seen: 2026-05-29/2026-05-30 direct clarification.
+Date confidence: HIGH
+Source type: memory cluster plus direct chat
+Date evidence: v0.1 AI tools/personal AI sections plus direct Kol clarification about accuracy, memory, history and hallucinations.
+Could this opinion now be stale? POSSIBLY
+If stale or possibly stale, why: Specific tool reliability can improve, but Kol's requirement for high reliability is durable.
+Short note for Nova: Core distinction: frustrated with present floor, optimistic on future ceiling.
+
+[ID: NOVA-007]
+Category: Hallucinations and reliability
+Original confidence: HIGH after direct clarification
+Original status: Confirmed
+Opinion: Hallucinations need to disappear. The excuse that humans are inaccurate too is not acceptable because AI needs to be better than humans to be worth trusting.
+First seen: 2026-05-29/2026-05-30 direct clarification, with older reliability concerns from January/May 2026.
+Last confirmed or last seen: 2026-05-29/2026-05-30 direct clarification.
+Date confidence: HIGH
+Source type: direct chat
+Date evidence: Kol directly stated this in current thread.
+Could this opinion now be stale? NO for principle; POSSIBLY for intensity if models improve.
+Short note for Nova: Strong red-line/practical safety opinion.
+
+[ID: NOVA-008]
+Category: AI jobs and displacement
+Original confidence: HIGH
+Original status: Confirmed / recurring
+Opinion: Serious job displacement seems obvious if AI becomes as powerful as expected. Kol is sceptical when lab leaders downplay job-displacement risk.
+First seen: January 2026 for jobs/inequality/UBI in v0.1; direct update 2026-05-29/2026-05-30.
+Last confirmed or last seen: 2026-05-29/2026-05-30 direct clarification.
+Date confidence: HIGH
+Source type: memory cluster plus direct chat
+Date evidence: v0.1 date analytics list jobs/inequality/UBI in January 2026; Kol directly commented on Altman/Amodei downplaying job risks.
+Could this opinion now be stale? POSSIBLY
+If stale or possibly stale, why: Lab-leader statements and labour-market evidence change quickly. Core displacement concern remains current as of May 2026.
+Short note for Nova: Public wording should avoid overclaiming exact timing, but the displacement concern is strong.
+
+[ID: NOVA-009]
+Category: Inequality / AI access
+Original confidence: HIGH/MEDIUM
+Original status: Confirmed / recurring
+Opinion: AI could worsen inequality if powerful capabilities are concentrated in a few companies, governments or rich users.
+First seen: March 2023 values/social roots; January 2026 AI jobs/inequality; direct access/governance clarification 2026-05-29/2026-05-30.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: HIGH
+Source type: memory cluster plus direct chat
+Date evidence: v0.1 date analytics include inequality from March 2023 and January 2026; Kol directly discussed restricted AGI access.
+Could this opinion now be stale? NO for principle, POSSIBLY for examples.
+Short note for Nova: Core social-impact concern.
+
+[ID: NOVA-010]
+Category: AI safety without doom
+Original confidence: HIGH
+Original status: Confirmed
+Opinion: AI safety matters, but doom narratives are often unhelpful, paralysing and speculative. Kol wants practical safety and good outcomes, not endless abstract doom loops.
+First seen: January 2026 explicit AI opinions; direct clarification 2026-05-29/2026-05-30.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: HIGH
+Source type: memory cluster plus direct chat
+Date evidence: v0.1 date analytics list actionable safety in January 2026; Kol directly called doom narratives gibberish/bollocks in current thread.
+Could this opinion now be stale? NO
+Short note for Nova: Durable core framing. Keep wording practical, not dismissive of all safety.
+
+[ID: NOVA-011]
+Category: Open-source, transparency and frontier access
+Original confidence: HIGH but updated
+Original status: Confirmed with nuance
+Opinion: Kol values open-source, transparency and decentralisation as checks on concentrated power, but he is not an open-source absolutist. He is wary that true AGI-level systems may not remain viable or safe to open-source fully.
+First seen: January 2026 explicit open-source/transparency opinions; direct update 2026-05-29/2026-05-30.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: HIGH
+Source type: memory cluster plus direct chat
+Date evidence: v0.1 had open-source/transparency; Kol directly clarified concern that AGI-level open source may not be realistic.
+Could this opinion now be stale? POSSIBLY
+If stale or possibly stale, why: Frontier model policy and openness norms change quickly.
+Short note for Nova: Use nuanced wording. No slogans: neither close everything nor open everything blindly.
+
+[ID: NOVA-012]
+Category: AGI access / governance / regulation
+Original confidence: HIGH after direct clarification
+Original status: Confirmed
+Opinion: Kol suspects regulation/governance may be a bigger bottleneck for AGI access than energy or water. Governments may restrict access to powerful models, and ordinary users may get only personalised layers that call black-box AGI when needed.
+First seen: 2026-05-29/2026-05-30 direct clarification.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: HIGH
+Source type: direct chat
+Date evidence: Kol directly stated this in the current thread.
+Could this opinion now be stale? YES
+If stale or possibly stale, why: Policy and access conditions can shift quickly.
+Short note for Nova: Strong new current opinion. Date it if used publicly.
+
+[ID: NOVA-013]
+Category: Global AI competition / access divergence
+Original confidence: HIGH after direct clarification
+Original status: Confirmed
+Opinion: Countries or companies that allow more powerful AI access may benefit, while countries that restrict access too much may struggle.
+First seen: 2026-05-29/2026-05-30 direct clarification.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: HIGH
+Source type: direct chat
+Date evidence: Kol directly raised this in current thread.
+Could this opinion now be stale? POSSIBLY
+If stale or possibly stale, why: Depends on regulation and model-access landscape.
+Short note for Nova: Add to AI governance/access section.
+
+[ID: NOVA-014]
+Category: AI tools / personal AI / memory
+Original confidence: HIGH
+Original status: Confirmed / recurring
+Opinion: Kol wants AI with persistent memory, continuity, personalisation, and exportable context across ChatGPT, Claude, Gemini, Grok and other tools.
+First seen: May 2026 for personal AI/agentic computing; current Opinion Canon project 2026-05-29/2026-05-30.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: HIGH
+Source type: v0.1 export plus current direct project
+Date evidence: v0.1 date analytics list personal AI in May 2026; current thread is entirely about opinion/memory/context export.
+Could this opinion now be stale? NO
+Short note for Nova: Durable project-level goal.
+
+[ID: NOVA-015]
+Category: Writing style and drafting structure
+Original confidence: HIGH
+Original status: Confirmed / recurring
+Opinion: Kol wants clear UK English, answer-first structure, no corporate waffle, no fake certainty, and AI news framed as what changed, why it matters, what is still flaky, and what to watch/test.
+First seen: May 2026 for AI curation/source quality; present in v0.1; reinforced through current project.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: HIGH
+Source type: v0.1 export and current conversation
+Date evidence: v0.1 writing rules and AI curation sections; user instructions and current feedback reinforce it.
+Could this opinion now be stale? NO
+Short note for Nova: Core writing rule. Public-safe.
+
+[ID: NOVA-016]
+Category: Writing style / no em dashes and no slop
+Original confidence: HIGH
+Original status: Confirmed
+Opinion: Avoid em dashes; use UK English; avoid hype words, LinkedIn sludge, corporate filler and forced slang.
+First seen: May 2026 export/user instructions; current conversation continues it.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: HIGH
+Source type: user instruction plus v0.1 export
+Date evidence: v0.1 writing rules plus standing user instructions.
+Could this opinion now be stale? NO
+Short note for Nova: Hard style rule.
+
+[ID: NOVA-017]
+Category: AI news curation
+Original confidence: HIGH
+Original status: Confirmed / recurring
+Opinion: Kol wants AI curation that separates novelty from importance, avoids clickbait, uses reliable sources, gives judgement, and explains practical implications for intelligent non-specialists.
+First seen: May 2026 for AI news curation/source quality.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: HIGH
+Source type: v0.1 export/current project
+Date evidence: v0.1 date analytics list AI news curation and source quality in May 2026.
+Could this opinion now be stale? NO
+Short note for Nova: Durable content principle.
+
+[ID: NOVA-018]
+Category: Creative AI
+Original confidence: HIGH/MEDIUM
+Original status: Confirmed as interest, ethics gap remains
+Opinion: Kol actively experiments with AI art, video, music, writing and worldbuilding, favouring cinematic, atmospheric, intelligent, emotionally resonant creative work over bland spectacle.
+First seen: November 2025 creative AI/art/video/music/worldbuilding context.
+Last confirmed or last seen: v0.1 generated 2026-05-29; supplemented by other agents but needs Kol review for specifics.
+Date confidence: MEDIUM/HIGH
+Source type: v0.1 export memory cluster
+Date evidence: v0.1 date analytics explicitly list November 2025 creative AI context.
+Could this opinion now be stale? NO for interest, POSSIBLY for specific tools/tastes.
+Short note for Nova: Keep creative interests. Do not assert AI copyright/disclosure stance yet.
+
+[ID: NOVA-019]
+Category: Work / automation / data stack
+Original confidence: HIGH
+Original status: Confirmed
+Opinion: Kol works with practical data, reporting, admin and automation workflows, and wants better automation/coding support.
+First seen: April 2024 general work context; May 2026 data/automation workflow context.
+Last confirmed or last seen: v0.1 generated 2026-05-29 and current user profile.
+Date confidence: HIGH
+Source type: v0.1 export/user profile
+Date evidence: v0.1 date analytics list work context April 2024 and automation/data workflow context May 2026.
+Could this opinion now be stale? POSSIBLY for exact tools/role details.
+Short note for Nova: Public wording should stay general unless Kol explicitly chooses to publish exact work/tool details.
+
+[ID: NOVA-020]
+Category: Privacy / personal boundaries
+Original confidence: HIGH
+Original status: Confirmed / recurring
+Opinion: Kol is private and wants public output without unnecessary personal exposure. Public writing should not leak sensitive identity, relationship, location, employer, finance or private-life details.
+First seen: April 2024 identity/privacy context; strengthened by current project and agent feedback.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: HIGH
+Source type: v0.1 export plus current conversation
+Date evidence: v0.1 date analytics list privacy in April 2024; current thread repeatedly discusses web-safe/private split.
+Could this opinion now be stale? NO
+Short note for Nova: Needs explicit public/private allow/deny list before final public pack.
+
+[ID: NOVA-021]
+Category: Systems thinking / future continuity
+Original confidence: MEDIUM in v0.1, boosted by agent evidence and current workflow
+Original status: Confirmed directionally
+Opinion: Kol turns messy repeated work into reusable systems, trackers, prompts, handoffs and files because future continuity matters and he expects details to be forgotten.
+First seen: v0.1 broad systems thinking May 2026; strengthened by Claude Code/Codex/Antigravity evidence on 2026-05-29/2026-05-30.
+Last confirmed or last seen: current conversation and Linear memory-overflow workflow.
+Date confidence: HIGH for current workflow, MEDIUM for original source
+Source type: current behaviour plus agent project evidence
+Date evidence: Opinion Canon workflow, Linear KOL-1624 memory overflow, and v0.1 systems-thinking section.
+Could this opinion now be stale? NO
+Short note for Nova: Treat as core operating style. Public-safe if phrased generally.
+
+[ID: NOVA-022]
+Category: Crypto / financial freedom
+Original confidence: MEDIUM/HIGH but stale-risk
+Original status: Partially confirmed / public-safe only at high level
+Opinion: Kol is interested in Bitcoin/crypto/trading and financial freedom, but detailed current crypto/trading stance and public-safe claims are gaps.
+First seen: November 2023 crypto/financial freedom context.
+Last confirmed or last seen: v0.1 generated 2026-05-29; current thread notes need to fill gaps.
+Date confidence: MEDIUM
+Source type: v0.1 memory cluster
+Date evidence: v0.1 date analytics explicitly list November 2023 crypto/financial freedom context.
+Could this opinion now be stale? YES
+If stale or possibly stale, why: Crypto/trading views and financial goals shift quickly and are high-stakes.
+Short note for Nova: Do not imply financial advice or a current trading stance unless Kol reconfirms.
+
+[ID: NOVA-023]
+Category: Politics / social policy
+Original confidence: LOW/MEDIUM
+Original status: Gap / do not invent
+Opinion: Kol has values that read socially fair/progressive around climate, discrimination, inequality and dignity, but exact party-political positions are not captured and must not be invented.
+First seen: March 2023 values/social context; reiterated through v0.1 and other agents.
+Last confirmed or last seen: v0.1 generated 2026-05-29.
+Date confidence: MEDIUM
+Source type: v0.1 memory cluster
+Date evidence: v0.1 date analytics and gaps section.
+Could this opinion now be stale? POSSIBLY
+If stale or possibly stale, why: Political views and public/private boundaries need direct confirmation.
+Short note for Nova: Express values without party labels unless Kol confirms.
+
+[ID: NOVA-024]
+Category: AI company/model opinions
+Original confidence: GAP
+Original status: Unanswered gap
+Opinion: Specific current opinions on OpenAI, Anthropic/Claude, Google/DeepMind/Gemini, xAI/Grok, Meta/Llama, Mistral, Microsoft/Copilot, Perplexity and Apple AI are not sufficiently captured.
+First seen: v0.1 gaps section, 2026-05-29.
+Last confirmed or last seen: current conversation, 2026-05-29/2026-05-30.
+Date confidence: HIGH for gap
+Source type: v0.1 gap/current conversation
+Date evidence: v0.1 gaps list and repeated agent gap reports.
+Could this opinion now be stale? Not applicable: gap.
+Short note for Nova: High priority questionnaire item.
+
+[ID: NOVA-025]
+Category: AI copyright / creators / disclosure
+Original confidence: GAP
+Original status: Unanswered gap
+Opinion: Kol's detailed view on training data, creator consent, artist compensation and AI-generated-content disclosure is not pinned down.
+First seen: gap surfaced by agents on 2026-05-29/2026-05-30; creative context from November 2025.
+Last confirmed or last seen: current conversation.
+Date confidence: HIGH for gap, LOW for any inferred stance
+Source type: agent gap reports plus creative AI memory cluster
+Date evidence: Not in v0.1 as a settled opinion; repeatedly flagged by Codex/Claude Code/Antigravity.
+Could this opinion now be stale? Not applicable: gap.
+Short note for Nova: Do not infer. Ask Kol.
+
+[ID: NOVA-026]
+Category: AI energy / climate trade-offs
+Original confidence: GAP
+Original status: Unanswered gap
+Opinion: Kol cares about climate, but exact stance on AI energy/water trade-offs and lab disclosure requirements is not pinned down. As of direct clarification, he suspects regulation may be a bigger AGI access bottleneck than energy/water.
+First seen: climate values March 2023; AI energy as gap in v0.1 and later agent outputs; regulation-bottleneck clarification 2026-05-29/2026-05-30.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: MEDIUM/HIGH
+Source type: v0.1 plus direct chat
+Date evidence: v0.1 climate values and direct clarification about bottlenecks.
+Could this opinion now be stale? POSSIBLY
+Short note for Nova: Ask specific climate/AI energy questions before writing strong policy takes.
+
+[ID: NOVA-027]
+Category: Sports opinions
+Original confidence: GAP
+Original status: Unanswered gap
+Opinion: Teams/interests are known, but actual sport opinions are not sufficiently captured.
+First seen: v0.1 gaps section, 2026-05-29.
+Last confirmed or last seen: repeated by agents in 2026-05-29/2026-05-30.
+Date confidence: HIGH for gap
+Source type: v0.1 gap/agent gap reports
+Date evidence: v0.1 gaps list.
+Could this opinion now be stale? Not applicable: gap.
+Short note for Nova: Avoid invented sport takes.
+
+[ID: NOVA-028]
+Category: Public/private persona split
+Original confidence: HIGH for privacy, MEDIUM for public-persona line
+Original status: Needs explicit boundary
+Opinion: Kol wants to build a public AI/news/creative presence while staying personally private and avoiding influencer-style personal exposure.
+First seen: April 2024 privacy context; May 2026 opinion-canon/public writing work; current direct conversation.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: HIGH
+Source type: v0.1 export/current conversation
+Date evidence: v0.1 identity/privacy and current public/private file workflow.
+Could this opinion now be stale? NO for principle.
+Short note for Nova: Needs public/private allow/deny list.
+
+[ID: NOVA-029]
+Category: Agent autonomy and approval
+Original confidence: MEDIUM in v0.1, boosted by later evidence
+Original status: Confirmed directionally
+Opinion: Kol wants agents to do safe obvious work first, but asks for sign-off where work is consequential, irreversible, public, costly or high-blast-radius.
+First seen: May 2026 tools/agent workflows and user instructions; strengthened by Claude Code/Codex evidence.
+Last confirmed or last seen: current conversation.
+Date confidence: MEDIUM/HIGH
+Source type: v0.1 plus project/agent evidence
+Date evidence: v0.1 says safe obvious work first; Claude Code expanded it into reversibility/blast radius.
+Could this opinion now be stale? NO
+Short note for Nova: Good rule for agent/assistant behaviour.
+
+[ID: NOVA-030]
+Category: Memory overflow / Linear tracking rule
+Original confidence: HIGH
+Original status: New workflow rule
+Opinion: When ChatGPT memory is full or uncertain, memory candidates should be tracked in Linear rather than forcing memory updates or pruning existing memory.
+First seen: 2026-05-29/2026-05-30 direct conversation.
+Last confirmed or last seen: 2026-05-29/2026-05-30.
+Date confidence: HIGH
+Source type: direct chat and Linear issue KOL-1624
+Date evidence: Kol directly requested Linear tracking for memory overflow; KOL-1624 created.
+Could this opinion now be stale? POSSIBLY
+If stale or possibly stale, why: Depends on ChatGPT memory capacity/Memory V2 workflow.
+Short note for Nova: Operational rule for agents; public-safe only as a general collaboration boundary.
+
+DATE SUMMARY
+- Earliest evidence used: March 2023 values/social context.
+- Latest evidence used: 2026-05-29/2026-05-30 direct Kol clarifications in the Opinion Canon workflow.
+- Items most likely to be stale: AGI/ASI timelines; AI lab/company views; model/tool preferences; crypto/trading; AI regulation/access; AI energy/water trade-offs; current workflows.
+- Items that look stable/durable: UK English; privacy preference; truth/fairness/climate/human dignity; anti-hype/anti-doom; practical realism; writing style preferences; systems thinking; context continuity; dislike of corporate waffle.
+- Items that are time-sensitive: AI jobs timing; AGI access/governance; lab-leader statements; model reliability/floor capabilities; public tool stack.
+- Items needing Kol confirmation because date/source is weak: exact AGI/ASI year range; AI company/model views; AI copyright/creator stance; crypto public/private boundaries; public/private boundary list; politics/social policy specifics; sports takes; creative taste anchors.
+- Source-date limitations: Nova/ChatGPT v0.1 does not include raw transcript line dates for each opinion. It gives broad month/year source clusters only. Treat specific date claims as provenance anchors, not precise formation dates.
+
+FINAL NOTE FOR NOVA
+Reliable dates: 2026-05-29/2026-05-30 direct clarifications; v0.1 generation date; v0.1 broad coverage analytics.
+Weak dates: Any opinion inferred from older memory clusters without transcript access.
+Treat as current only if Kol reconfirms: AGI/ASI timelines, model rankings, lab-specific trust, crypto/trading, AI policy, AI copyright, and exact public/private boundaries.
+
+
+============================================================
