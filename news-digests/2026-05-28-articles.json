@@ -1,0 +1,301 @@
+{
+  "generatedAt": "2026-05-28T16:25:15.593Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-05-28",
+  "count": 15,
+  "items": [
+    {
+      "id": "techcrunch-ai-how-long-is-anthropic-s-lease-with-spacex-opinions-vary-https-techcrunch-com-2026-05-28-how-long-is-anthropics-lease-with-spacex-opinions-vary",
+      "title": "How long is Anthropic’s lease with SpaceX? Opinions vary.",
+      "url": "https://techcrunch.com/2026/05/28/how-long-is-anthropics-lease-with-spacex-opinions-vary/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "Elon Musk is publicly reframing xAI’s massive Anthropic compute deal as short-term and cancellable, despite SpaceX’s own S-1 filing describing payments through May 2029.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "hardware"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-robin-hanson-argues-current-ai-models-show-little-indication-of-suffering-despite-debates-over-machine-consciousness-digg-https-www-digg-com-ai-j9avgwv7",
+      "title": "Robin Hanson argues current AI models show little indication of suffering despite debates over machine consciousness · Digg",
+      "url": "https://www.digg.com/ai/j9avgwv7",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "Millions of Claude instances are generated and terminated daily.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "opinion"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-analysis-argues-ai-advancements-accelerate-human-problem-solving-citing-post-alphago-go-performance-and-combinatorics-breakthroughs-digg-https-www-digg-com-ai-upwvtvsx",
+      "title": "Analysis argues AI advancements accelerate human problem-solving, citing post-AlphaGo Go performance and combinatorics breakthroughs · Digg",
+      "url": "https://www.digg.com/ai/upwvtvsx",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "Humans used AI-derived techniques to solve unit distance problems.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "evaluation",
+        "opinion"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-lindsay-m-smith-and-matt-wiemann-launch-discoverphysics-to-evaluate-llm-agents-on-scientific-experimentation-and-physical-law-discovery-digg-https-www-digg-com-ai-2n3m6j29",
+      "title": "Lindsay M. Smith and Matt Wiemann launch DiscoverPhysics to evaluate LLM agents on scientific experimentation and physical law discovery · Digg",
+      "url": "https://www.digg.com/ai/2n3m6j29",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "The pipeline tests if LLMs can design scientific experiments.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "creative_workflow",
+        "policy"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app-https-techcrunch-com-2026-05-28-sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app",
+      "title": "Sesame, the conversational AI startup from Oculus founders, launches its iOS app",
+      "url": "https://techcrunch.com/2026/05/28/sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "Sesame’s new iOS app brings its conversational AI agents to the public, offering more natural back-and-forth interactions designed to feel less like traditional chatbots and more like talking to a person.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-sneak-peek-at-new-siri-app-reveals-apple-s-plans-to-take-on-chatgpt-and-more-https-techcrunch-com-2026-05-28-sneak-peek-at-new-siri-app-reveals-apples-plans-to-take-on-chatgpt-and-more",
+      "title": "Sneak peek at new Siri app reveals Apple’s plans to take on ChatGPT and more",
+      "url": "https://techcrunch.com/2026/05/28/sneak-peek-at-new-siri-app-reveals-apples-plans-to-take-on-chatgpt-and-more/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "New renders offer a closer look at Apple’s planned AI overhaul for iOS 27, including a redesigned Siri experience powered and standalone Siri app.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-rsi-is-the-new-agi-and-it-s-just-as-hard-to-pin-down-https-techcrunch-com-2026-05-28-rsi-is-the-new-agi-and-its-just-as-hard-to-pin-down",
+      "title": "RSI is the new AGI — and it’s just as hard to pin down",
+      "url": "https://techcrunch.com/2026/05/28/rsi-is-the-new-agi-and-its-just-as-hard-to-pin-down/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "A new crop of AI labs are focused on recursive self-improvement — but the goal is proving elusive.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "autonomous_systems"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-at-techcrunch-disrupt-2026-databricks-co-founder-on-what-kills-enterprise-ai-deals-https-techcrunch-com-2026-05-28-techcrunch-disrupt-2026-databricks-co-founder-on-what-kills-enterprise-ai-deals",
+      "title": "At TechCrunch Disrupt 2026: Databricks’ co-founder on what kills enterprise AI deals",
+      "url": "https://techcrunch.com/2026/05/28/techcrunch-disrupt-2026-databricks-co-founder-on-what-kills-enterprise-ai-deals/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "Enterprise AI is entering a different phase now, one where enterprises are no longer evaluating whether AI is exciting. They are evaluating whether it is safe to deploy broadly.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-anthropic-stages-unreleased-claude-opus-4-8-model-in-its-desktop-applications-model-selector-digg-https-www-digg-com-ai-m3jmc7de",
+      "title": "Anthropic stages unreleased Claude Opus 4.8 model in its desktop application's model selector · Digg",
+      "url": "https://www.digg.com/ai/m3jmc7de",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "The staging suggests an imminent official product launch",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-elon-musk-claims-spacexs-custom-c-based-ai-training-framework-is-10x-faster-than-jax-on-220-000-gb300-gpus-digg-https-www-digg-com-ai-vs4vf5ly",
+      "title": "Elon Musk claims SpaceX's custom C-based AI training framework is 10x faster than JAX on 220,000 GB300 GPUs · Digg",
+      "url": "https://www.digg.com/ai/vs4vf5ly",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "Critics questioned the JAX benchmark and choice of C.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "benchmark"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-mathematicians-disprove-the-sum-product-conjecture-for-real-numbers-using-insights-from-openais-unit-distance-conjecture-counterexample-digg-https-www-digg-com-ai-abcqzhhx",
+      "title": "Mathematicians disprove the sum-product conjecture for real numbers using insights from OpenAI's unit distance conjecture counterexample · Digg",
+      "url": "https://www.digg.com/ai/abcqzhhx",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "The discovery validates Timothy Gowers' prediction of human-AI math collaboration",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-github-self-evolving-repo-https-github-com-self-evolving-repo",
+      "title": "GitHub - self-evolving/repo",
+      "url": "https://github.com/self-evolving/repo",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "Contribute to self-evolving/repo development by creating an account on GitHub.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-28",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "arxiv-cs-ai-soro-a-lightweight-foundation-model-and-chatbot-for-tajik-https-arxiv-org-abs-2605-27379",
+      "title": "Soro: A Lightweight Foundation Model and Chatbot for Tajik",
+      "url": "https://arxiv.org/abs/2605.27379",
+      "source": "arXiv cs.AI",
+      "sourceId": "arxiv-cs-ai",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-28",
+      "summary": "arXiv:2605.27379v1 Announce Type: new Abstract: We present Soro, a family of Tajik-specialized conversational large language models (LLMs) designed for real-world deployment under tight compute and connectivity constraints in Tajikistan. Starting from open-weight Gemma 3 checkpoints, we perform Tajik-only continual pretraining on a curated 1.9-billion-token corpus spanning filtered web text, PDF documents, and curriculum-aligned educational materials, followed by supervised instruction tuning on 40K Tajik teacher-style examples. To enable rigorous evaluation despite the limited coverage of Tajik in standard benchmarks, we introduce a suite of Tajik benchmarks covering general knowledge, linguistic competence, and school- and university entrance-exam domains, and we open-source them on Hugging Face. Across these Tajik benchmarks, Soro substantially outperforms same-size Gemma 3 baselines while retaining strong English performance on standard datasets. We further show that FP8 and INT4 quantization of Soro preserves most Tajik-language gains while reducing memory requirements for edge deployment, supporting an ongoing education-sector pilot and planned scale-out across schools in Tajikistan.",
+      "tags": [
+        "research_paper",
+        "evaluation",
+        "reasoning",
+        "ai_agents",
+        "hardware",
+        "open_source"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-cognition-creator-of-devin-raises-1-billion-at-a-26-billion-valuation-with-492-million-run-rate-digg-https-www-digg-com-ai-f7cadbb7-cb1c-4d7e-9198-ae695263e377",
+      "title": "Cognition, creator of Devin, raises $1 billion at a $26 billion valuation with $492 million run-rate · Digg",
+      "url": "https://www.digg.com/ai/f7cadbb7-cb1c-4d7e-9198-ae695263e377",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "Weekly Devin sessions spiked at Citi and Mercedes-Benz",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "funding"
+      ],
+      "adapter": "html"
+    }
+  ]
+}

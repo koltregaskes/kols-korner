@@ -74,6 +74,20 @@ function Test-IsAllowedUnpublishedDraft {
   return $head -match '(?ms)^---\s+.*?^publish:\s*false\s*$.*?^---\s*$'
 }
 
+function Test-IsPipelineScript {
+  param(
+    [string]$Path
+  )
+
+  return @(
+    'scripts/build.mjs',
+    'scripts/fetch-news.mjs',
+    'scripts/generate-daily-digest.mjs',
+    'scripts/run-daily-news.ps1',
+    'scripts/run-local-news-refresh.ps1'
+  ) -contains $Path
+}
+
 function Invoke-NativeStep {
   param(
     [Parameter(Mandatory = $true)]
@@ -89,6 +103,25 @@ function Invoke-NativeStep {
   if ($exitCode -ne 0) {
     throw "$FailureLabel failed with exit code $exitCode"
   }
+}
+
+function Invoke-LocalRefreshFallback {
+  param(
+    [Parameter(Mandatory = $true)]
+    [string]$TargetDate
+  )
+
+  Write-Warning 'Repository has non-generated changes. Falling back to local-only news refresh without git pull, commit, or push.'
+  $powerShellHost = (Get-Process -Id $PID).Path
+  Invoke-NativeStep -FilePath $powerShellHost -ArgumentList @(
+    '-NoProfile',
+    '-ExecutionPolicy',
+    'Bypass',
+    '-File',
+    (Join-Path $PSScriptRoot 'run-local-news-refresh.ps1'),
+    '-TargetDate',
+    $TargetDate
+  ) -FailureLabel 'local-news-refresh'
 }
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
@@ -118,7 +151,17 @@ try {
   if ($preExistingManualChanges.Count -gt 0) {
     Write-Warning 'Refusing to run while the repository has uncommitted non-generated changes.'
     $preExistingManualChanges | ForEach-Object { Write-Warning $_ }
-    throw 'Clean or commit existing non-generated changes before running the scheduled digest job.'
+    $dirtyPipelineScripts = @(
+      $preExistingManualChanges | Where-Object {
+        Test-IsPipelineScript -Path (Get-GitStatusPath -StatusLine $_)
+      }
+    )
+    if ($dirtyPipelineScripts.Count -gt 0) {
+      $dirtyPipelineScripts | ForEach-Object { Write-Warning "Dirty pipeline script blocks fallback: $_" }
+      throw 'Production digest publish and local fallback are blocked by uncommitted pipeline script changes.'
+    }
+    Invoke-LocalRefreshFallback -TargetDate $TargetDate
+    throw 'Local-only refresh completed, but production digest publish is blocked by uncommitted non-generated changes.'
   }
 
   $preExistingGeneratedChanges = @(

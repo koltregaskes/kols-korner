@@ -1,0 +1,294 @@
+{
+  "generatedAt": "2026-05-31T16:24:48.373Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-05-31",
+  "count": 15,
+  "items": [
+    {
+      "id": "digg-ai-openai-launches-a-robotics-division-to-co-design-hardware-and-machine-learning-models-starting-with-infrastructure-robots-digg-https-www-digg-com-ai-jhms4h0l",
+      "title": "OpenAI launches a robotics division to co-design hardware and machine learning models, starting with infrastructure robots · Digg",
+      "url": "https://www.digg.com/ai/jhms4h0l",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-31",
+      "summary": "The division transitioned from Aditya Ramesh's world simulation program.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "product_launch"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-goldman-sachs-forecasts-semiconductor-memory-undersupply-through-2028-as-ai-demands-squeeze-hbm-wafer-capacity-digg-https-www-digg-com-ai-upz5q9gz",
+      "title": "Goldman Sachs forecasts semiconductor memory undersupply through 2028 as AI demands squeeze HBM wafer capacity · Digg",
+      "url": "https://www.digg.com/ai/upz5q9gz",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-31",
+      "summary": "The bank raised price targets for key memory manufacturers.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "pricing_change",
+        "funding"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-making-sense-of-the-debate-over-ai-psychosis-https-techcrunch-com-2026-05-31-making-sense-of-the-debate-over-ai-psychosis",
+      "title": "Making sense of the debate over AI psychosis",
+      "url": "https://techcrunch.com/2026/05/31/making-sense-of-the-debate-over-ai-psychosis/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-31",
+      "summary": "On the latest episode of Equity, we debate whether tech CEOs are \"uniquely prone to AI psychosis.\"",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-figma-founder-dylan-field-solves-a-kindergarten-math-puzzle-that-stumped-mock-gpt-5-5-and-claude-opus-models-digg-https-www-digg-com-ai-4rahhrzp",
+      "title": "Figma founder Dylan Field solves a kindergarten math puzzle that stumped mock GPT-5.5 and Claude Opus models · Digg",
+      "url": "https://www.digg.com/ai/4rahhrzp",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-31",
+      "summary": "Not Boring founder Packy McCormick originally shared the puzzle.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-chamath-palihapitiya-compares-llms-to-refrigeration-says-killer-app-yet-to-emerge-digg-https-www-digg-com-ai-tdnvrryt",
+      "title": "Chamath Palihapitiya Compares LLMs to Refrigeration, Says Killer App Yet to Emerge · Digg",
+      "url": "https://www.digg.com/ai/tdnvrryt",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-31",
+      "summary": "Chamath Palihapitiya Compares LLMs to Refrigeration, Says Killer App Yet to Emerge - tracked by 1 author on X.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-cerebras-lands-20b-openai-deal-after-decade-building-ai-chips-digg-https-www-digg-com-ai-i84xixe7",
+      "title": "Cerebras Lands $20B OpenAI Deal After Decade Building AI Chips · Digg",
+      "url": "https://www.digg.com/ai/i84xixe7",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-31",
+      "summary": "Cerebras Lands $20B OpenAI Deal After Decade Building AI Chips - tracked by 1 author on X.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-chamath-predicts-private-data-will-become-key-ai-advantage-digg-https-www-digg-com-ai-7tu8wyp6",
+      "title": "Chamath Predicts Private Data Will Become Key AI Advantage · Digg",
+      "url": "https://www.digg.com/ai/7tu8wyp6",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-31",
+      "summary": "Chamath Predicts Private Data Will Become Key AI Advantage - tracked by 1 author on X.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-anthropic-raises-65b-in-series-h-funding-at-965b-post-money-valuation-https-www-anthropic-com-news-series-h",
+      "title": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
+      "url": "https://www.anthropic.com/news/series-h",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-31",
+      "summary": "Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "funding"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-31",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-softbank-says-it-will-invest-up-to-75-billion-to-build-french-data-centers-https-techcrunch-com-2026-05-30-softbank-says-it-will-invest-up-to-e75-billion-to-build-french-data-centers",
+      "title": "SoftBank says it will invest up to €75 billion to build French data centers",
+      "url": "https://techcrunch.com/2026/05/30/softbank-says-it-will-invest-up-to-e75-billion-to-build-french-data-centers/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "The goal, the firm said, is to develop and operate up to 5 gigawatts of additional data center capacity.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-what-a-joke-github-copilot-s-new-token-based-billing-spurs-consternation-among-devs-https-techcrunch-com-2026-05-30-what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs",
+      "title": "‘What a joke’: Github Copilot’s new token-based billing spurs consternation among devs",
+      "url": "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "The golden age of Microsoft's Github Copilot appears to be at an end.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-meta-is-reportedly-developing-an-ai-pendant-https-techcrunch-com-2026-05-30-meta-is-reportedly-developing-an-ai-pendant",
+      "title": "Meta is reportedly developing an AI pendant",
+      "url": "https://techcrunch.com/2026/05/30/meta-is-reportedly-developing-an-ai-pendant/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "Meta seems to be making big bets on AI-powered hardware.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-i-put-google-s-24-7-ai-assistant-gemini-spark-to-work-and-it-s-actually-pretty-useful-https-techcrunch-com-2026-05-30-i-put-googles-24-7-ai-assistant-gemini-spark-to-work-and-its-actually-pretty-useful",
+      "title": "I put Google’s 24/7 AI assistant Gemini Spark to work, and it’s actually pretty useful",
+      "url": "https://techcrunch.com/2026/05/30/i-put-googles-24-7-ai-assistant-gemini-spark-to-work-and-its-actually-pretty-useful/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "Gemini Spark helps automate everyday tasks, from inbox summaries to local event planning, but it’s unclear why Google made it a separate product.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-mart-n-casado-a16z-general-partner-warns-open-source-ai-faces-2-billion-training-and-distillation-bottlenecks-drawing-developer-pushback-digg-https-www-digg-com-ai-b93199bb-bf27-4e2c-b467-ef1aa2823ec4",
+      "title": "Martín Casado, a16z general partner, warns open-source AI faces $2 billion training and distillation bottlenecks, drawing developer pushback · Digg",
+      "url": "https://www.digg.com/ai/b93199bb-bf27-4e2c-b467-ef1aa2823ec4",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "Critics argue frontier model training costs under $1 billion.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-beff-jezos-visits-lighthaven-to-debate-machine-consciousness-at-cimcai-digg-https-www-digg-com-ai-2draqjir",
+      "title": "Beff Jezos Visits Lighthaven To Debate Machine Consciousness At CIMCAI · Digg",
+      "url": "https://www.digg.com/ai/2draqjir",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "Beff Jezos Visits Lighthaven To Debate Machine Consciousness At CIMCAI - tracked by 1 author on X.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    }
+  ]
+}

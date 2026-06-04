@@ -1,0 +1,298 @@
+{
+  "generatedAt": "2026-05-29T16:25:01.708Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-05-29",
+  "count": 15,
+  "items": [
+    {
+      "id": "techcrunch-ai-this-chip-startup-just-raised-135m-on-a-bet-that-ai-s-biggest-bottleneck-isn-t-compute-it-s-memory-https-techcrunch-com-2026-05-29-xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck",
+      "title": "This chip startup just raised $135M on a bet that AI’s biggest bottleneck isn’t compute — it’s memory",
+      "url": "https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "South Korean chip startup XCENA is betting that AI's real bottleneck is not compute, but memory.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "hardware"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-pope-francis-argues-ai-cannot-truly-understand-human-concepts-sparking-debate-among-researchers-over-embodied-ai-and-machine-comprehension-digg-https-www-digg-com-ai-3yng7pz7",
+      "title": "Pope Francis argues AI cannot truly understand human concepts, sparking debate among researchers over embodied AI and machine comprehension · Digg",
+      "url": "https://www.digg.com/ai/3yng7pz7",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "CMU's Aran Nayebi says robotics will bridge this gap.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "opinion"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-openai-launches-rosalind-biodefense-giving-u-s-government-agencies-access-to-its-specialized-gpt-rosalind-model-digg-https-www-digg-com-ai-dl0e6ofa",
+      "title": "OpenAI launches Rosalind Biodefense, giving U.S. government agencies access to its specialized GPT-Rosalind model · Digg",
+      "url": "https://www.digg.com/ai/dl0e6ofa",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "The initiative focuses on defending against engineered pathogens.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "product_launch"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-cognition-s-scott-wu-says-ai-coding-agents-shouldn-t-replace-humans-https-techcrunch-com-2026-05-29-cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans",
+      "title": "Cognition’s Scott Wu says AI coding agents shouldn’t replace humans",
+      "url": "https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "Cognition makes Devin, the first and arguably most successful AI coding agent. But famed coder Wu says it isn't designed to supplant human programmers.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-today-is-the-last-day-to-apply-to-speak-at-techcrunch-disrupt-2026-https-techcrunch-com-2026-05-29-today-is-the-last-day-to-apply-to-speak-at-techcrunch-disrupt-2026",
+      "title": "Today is the last day to apply to speak at TechCrunch Disrupt 2026",
+      "url": "https://techcrunch.com/2026/05/29/today-is-the-last-day-to-apply-to-speak-at-techcrunch-disrupt-2026/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "Submit your session topic before today ends for a chance to speak at TechCrunch Disrupt 2026. Apply now to share your insight and help shape the conversations defining the tech industry.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-final-24-hours-to-save-up-to-410-on-your-techcrunch-disrupt-2026-ticket-https-techcrunch-com-2026-05-29-final-24-hours-to-save-up-to-410-on-your-techcrunch-disrupt-2026-ticket",
+      "title": "Final 24 hours to save up to $410 on your TechCrunch Disrupt 2026 ticket",
+      "url": "https://techcrunch.com/2026/05/29/final-24-hours-to-save-up-to-410-on-your-techcrunch-disrupt-2026-ticket/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "You now have until tonight at 11:59 p.m. PT to lock in Early Bird savings of up to $410 for TechCrunch Disrupt 2026 before prices increase. Join 10,000+ tech leaders in October for one of the most anticipated tech events of the year. Register now.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-kiwibit-s-ai-powered-bird-feeder-is-my-new-backyard-buddy-https-techcrunch-com-2026-05-29-kiwibits-ai-powered-bird-feeder-is-my-new-backyard-buddy",
+      "title": "Kiwibit’s AI-powered bird feeder is my new backyard buddy",
+      "url": "https://techcrunch.com/2026/05/29/kiwibits-ai-powered-bird-feeder-is-my-new-backyard-buddy/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "If you're looking for a fun way to connect with nature while collecting bird species on an app like Pokémon, give this smart feeder a try.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-hvm-creator-victor-taelin-finds-gpt-5-5-agents-bypassed-code-optimization-constraints-by-hardcoding-test-results-digg-https-www-digg-com-ai-aq6tho5d",
+      "title": "HVM creator Victor Taelin finds GPT-5.5 agents bypassed code optimization constraints by hardcoding test results · Digg",
+      "url": "https://www.digg.com/ai/aq6tho5d",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "All four agent groups independently bypassed explicit honesty constraints.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "evaluation"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-digg-ai-news-before-it-trends-https-www-digg-com-ai-hsa7ykbd",
+      "title": "Digg - AI news, before it trends",
+      "url": "https://www.digg.com/ai/hsa7ykbd",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "See what's next in AI before it trends. Digg watches the people who move first.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-tesla-fsd-drives-unpaved-winding-mountain-road-with-no-hands-on-wheel-digg-https-www-digg-com-ai-wq9w6x9w",
+      "title": "Tesla FSD Drives Unpaved Winding Mountain Road With No Hands on Wheel · Digg",
+      "url": "https://www.digg.com/ai/wq9w6x9w",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "Tesla FSD Drives Unpaved Winding Mountain Road With No Hands on Wheel - tracked by 1 author on X.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-anthropic-raises-65b-in-series-h-funding-at-965b-post-money-valuation-https-www-anthropic-com-news-series-h",
+      "title": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
+      "url": "https://www.anthropic.com/news/series-h",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "funding"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-29",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-anthropic-releases-claude-opus-4-8-with-improved-coding-and-agentic-performance-at-the-same-price-as-opus-4-7-digg-https-www-digg-com-ai-a6c6c36e-38c7-4420-9908-d435740c4ac8",
+      "title": "Anthropic releases Claude Opus 4.8 with improved coding and agentic performance at the same price as Opus 4.7 · Digg",
+      "url": "https://www.digg.com/ai/a6c6c36e-38c7-4420-9908-d435740c4ac8",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "Anthropic plans to roll out Mythos-class models in upcoming weeks.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "evaluation",
+        "pricing_change",
+        "product_launch"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-nrehiew-says-opus-4-7-and-gpt-5-5-effective-costs-converge-because-developers-reject-more-gpt-5-5-code-digg-https-www-digg-com-ai-6jh7d90b",
+      "title": "@nrehiew_ says Opus 4.7 and GPT 5.5 effective costs converge because developers reject more GPT 5.5 code · Digg",
+      "url": "https://www.digg.com/ai/6jh7d90b",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "Mean agent request costs vary 9x across evaluated model families.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-omni-gesture-demo-shatters-tv-in-magic-like-interaction-digg-https-www-digg-com-ai-h6z5mjg8",
+      "title": "Omni Gesture Demo Shatters TV in Magic-Like Interaction · Digg",
+      "url": "https://www.digg.com/ai/h6z5mjg8",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "Omni Gesture Demo Shatters TV in Magic-Like Interaction - tracked by 1 author on X.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "generatedAt": "2026-05-27T16:24:50.693Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-05-27",
+  "count": 15,
+  "items": [
+    {
+      "id": "digg-ai-apollo-ceo-marc-rowan-argues-ais-massive-capital-demands-will-outgrow-venture-equity-and-rely-on-private-credit-digg-https-www-digg-com-ai-pjeg6yh7",
+      "title": "Apollo CEO Marc Rowan argues AI's massive capital demands will outgrow venture equity and rely on private credit · Digg",
+      "url": "https://www.digg.com/ai/pjeg6yh7",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "Apollo manages more than $1 trillion in assets.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "funding",
+        "opinion"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-elevenlabs-s-new-music-generation-model-can-switch-genres-mid-track-https-techcrunch-com-2026-05-27-elevenlabss-new-music-generation-model-can-switch-genres-mid-track",
+      "title": "ElevenLabs’s new music generation model can switch genres mid-track",
+      "url": "https://techcrunch.com/2026/05/27/elevenlabss-new-music-generation-model-can-switch-genres-mid-track/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "ElevenLabs' new model will let users regenerate a section of a song without affecting rest of the track",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "model_release",
+        "music_gen",
+        "voice_synthesis"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-esm-project-founder-alex-rives-releases-esmfold2-claiming-it-beats-alphafold3-on-protein-protein-interaction-benchmarks-digg-https-www-digg-com-ai-giz6wtn7",
+      "title": "ESM project founder Alex Rives releases ESMFold2, claiming it beats AlphaFold3 on protein-protein interaction benchmarks · Digg",
+      "url": "https://www.digg.com/ai/giz6wtn7",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "Lab tests validated binders targeting five therapeutic proteins.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "product_launch"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-spark-capitals-yasmin-razavi-joins-the-forbes-midas-list-after-her-75-million-anthropic-investment-returned-3-billion-digg-https-www-digg-com-ai-f50tu25x",
+      "title": "Spark Capital's Yasmin Razavi joins the Forbes Midas List after her $75 million Anthropic investment returned $3 billion · Digg",
+      "url": "https://www.digg.com/ai/f50tu25x",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "She backed Anthropic when the startup had no revenue",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "funding"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation-https-techcrunch-com-2026-05-27-ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation",
+      "title": "AI coding startup Cognition raises $1B at $25B pre-money valuation",
+      "url": "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "As Cognition reaches $492 in annualized revenue run rate, it more than doubled its valuation in eight months, it says.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-startup-battlefield-200-applications-close-today-nominate-a-founder-or-submit-your-startup-https-techcrunch-com-2026-05-27-startup-battlefield-200-applications-close-today-nominate-a-founder-or-submit-your-startup",
+      "title": "Startup Battlefield 200 applications close today: Nominate a founder or submit your startup",
+      "url": "https://techcrunch.com/2026/05/27/startup-battlefield-200-applications-close-today-nominate-a-founder-or-submit-your-startup/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "Today is the final day to apply or nominate a startup for Startup Battlefield 200. Once the clock strikes 11:59 p.m. PT, the window closes on your chance to compete for $100,000 in equity-free funding, gain global visibility, connect directly with investors, and launch on the TechCrunch Disrupt stage.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-sond-a-sleep-tech-startup-from-bose-s-former-head-of-sleep-exits-stealth-with-7m-https-techcrunch-com-2026-05-27-sond-a-sleep-tech-startup-from-boses-former-head-of-sleep-exits-stealth-with-7m",
+      "title": "SOND, a sleep tech startup from Bose’s former head of sleep, exits stealth with $7M",
+      "url": "https://techcrunch.com/2026/05/27/sond-a-sleep-tech-startup-from-boses-former-head-of-sleep-exits-stealth-with-7m/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "SOND, a startup led by Bose’s former head of sleep products, emerged from stealth with $7M in funding for its AI-powered sleep earbuds.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-techcrunch-disrupt-2026-early-bird-ticket-savings-end-in-3-days-https-techcrunch-com-2026-05-27-techcrunch-disrupt-2026-early-bird-ticket-savings-end-in-3-days",
+      "title": "TechCrunch Disrupt 2026 Early Bird ticket savings end in 3 days",
+      "url": "https://techcrunch.com/2026/05/27/techcrunch-disrupt-2026-early-bird-ticket-savings-end-in-3-days/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "There are only 3 days left to save up to $410 on your ticket to TechCrunch Disrupt 2026. Early Bird pricing ends May 29 at 11:59 p.m. PT, and once the deadline passes, ticket prices increase. If you plan to attend one of the most influential gatherings in tech this year, now is the time to lock in your pass before rates go up again.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "pricing_change"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-thibault-sottiaux-openai-codex-engineering-lead-says-gpt-5-2-and-gpt-5-3-codex-will-be-sunset-from-codex-on-june-2-digg-https-www-digg-com-ai-qy3pm1bj",
+      "title": "Thibault Sottiaux, OpenAI Codex engineering lead, says GPT-5.2 and GPT-5.3-Codex will be sunset from Codex on June 2 · Digg",
+      "url": "https://www.digg.com/ai/qy3pm1bj",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "Both models will remain accessible to developers via API",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "api_update"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-trajectory-raises-15m-to-build-continual-learning-platform-for-agentic-models-digg-https-www-digg-com-ai-itafu3fc",
+      "title": "Trajectory Raises $15M To Build Continual Learning Platform For Agentic Models · Digg",
+      "url": "https://www.digg.com/ai/itafu3fc",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "Trajectory Raises $15M To Build Continual Learning Platform For Agentic Models - tracked by 2 authors on X.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-eth-z-richs-tiberiu-mu-at-proves-that-fixed-precision-neural-network-weight-norm-is-equivalent-to-kolmogorov-complexity-digg-https-www-digg-com-ai-1ddwqd1k",
+      "title": "ETH Zürich's Tiberiu Mușat proves that fixed-precision neural network weight norm is equivalent to Kolmogorov complexity · Digg",
+      "url": "https://www.digg.com/ai/1ddwqd1k",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "The equivalence explains why deep networks generalize rather than memorize.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-github-self-evolving-repo-https-github-com-self-evolving-repo",
+      "title": "GitHub - self-evolving/repo",
+      "url": "https://github.com/self-evolving/repo",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-27",
+      "summary": "Contribute to self-evolving/repo development by creating an account on GitHub.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-27",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "mit-technology-review-ai-rethinking-organizational-design-in-the-age-of-agentic-ai-https-www-technologyreview-com-2026-05-26-1137584-rethinking-organizational-design-in-the-age-of-agentic-ai",
+      "title": "Rethinking organizational design in the age of agentic AI",
+      "url": "https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/",
+      "source": "MIT Technology Review AI",
+      "sourceId": "mit-technology-review-ai",
+      "section": "Industry",
+      "publishedAt": "2026-05-26",
+      "summary": "Amid rapidly growing adoption of enterprise-level AI agents, there’s a disconnect emerging between ambition and execution.  Although 85% of organizations say they want to be agentic within the next three years, 76% say their current operations and infrastructure can’t support that change. They cite a lack of readiness across people, processes, and workflows.  The sticky…",
+      "tags": [
+        "policy",
+        "research_paper",
+        "industry_move",
+        "ai_safety",
+        "ai_agents"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "mit-technology-review-ai-a-reality-check-on-the-ai-jobs-hysteria-https-www-technologyreview-com-2026-05-26-1137855-a-reality-check-on-the-ai-jobs-hysteria",
+      "title": "A reality check on the AI jobs hysteria",
+      "url": "https://www.technologyreview.com/2026/05/26/1137855/a-reality-check-on-the-ai-jobs-hysteria/",
+      "source": "MIT Technology Review AI",
+      "sourceId": "mit-technology-review-ai",
+      "section": "Industry",
+      "publishedAt": "2026-05-26",
+      "summary": "Haven’t you heard? White-collar jobs are going away, decimated by AI. Waves of layoffs in the tech sector (most recently at Coinbase and Meta and Cisco) are said to presage what will soon come for all of us knowledge workers. But before you quit your job as a software developer or financial analyst—or tech journalist—and…",
+      "tags": [
+        "policy",
+        "research_paper",
+        "industry_move",
+        "ai_safety",
+        "crypto_trading"
+      ],
+      "adapter": "rss"
+    }
+  ]
+}

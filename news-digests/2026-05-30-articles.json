@@ -1,0 +1,297 @@
+{
+  "generatedAt": "2026-05-30T16:25:16.209Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-05-30",
+  "count": 15,
+  "items": [
+    {
+      "id": "techcrunch-ai-meta-is-reportedly-developing-an-ai-pendant-https-techcrunch-com-2026-05-30-meta-is-reportedly-developing-an-ai-pendant",
+      "title": "Meta is reportedly developing an AI pendant",
+      "url": "https://techcrunch.com/2026/05/30/meta-is-reportedly-developing-an-ai-pendant/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "Meta seems to be making big bets on AI-powered hardware.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-i-put-google-s-24-7-ai-assistant-gemini-spark-to-work-and-it-s-actually-pretty-useful-https-techcrunch-com-2026-05-30-i-put-googles-24-7-ai-assistant-gemini-spark-to-work-and-its-actually-pretty-useful",
+      "title": "I put Google’s 24/7 AI assistant Gemini Spark to work, and it’s actually pretty useful",
+      "url": "https://techcrunch.com/2026/05/30/i-put-googles-24-7-ai-assistant-gemini-spark-to-work-and-its-actually-pretty-useful/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "Gemini Spark helps automate everyday tasks, from inbox summaries to local event planning, but it’s unclear why Google made it a separate product.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-as-the-browser-wars-heat-up-here-are-the-hottest-alternatives-to-chrome-and-safari-in-2026-https-techcrunch-com-2026-05-30-as-the-browser-wars-heat-up-here-are-the-hottest-alternatives-to-chrome-and-safari-in-2026",
+      "title": "As the browser wars heat up, here are the hottest alternatives to Chrome and Safari in 2026",
+      "url": "https://techcrunch.com/2026/05/30/as-the-browser-wars-heat-up-here-are-the-hottest-alternatives-to-chrome-and-safari-in-2026/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "We’ve compiled an overview of some of the top alternative browsers available today aiming to challenge Chrome and Safari.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-openais-thibault-sottiaux-teases-a-gpt-5-roadmap-where-sequential-decimal-increments-through-gpt-5-5-deliver-efficiency-and-speed-gains-digg-https-www-digg-com-ai-yfzp64xh",
+      "title": "OpenAI's Thibault Sottiaux teases a GPT-5 roadmap where sequential decimal increments through GPT-5.5 deliver efficiency and speed gains · Digg",
+      "url": "https://www.digg.com/ai/yfzp64xh",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "The efficiency gains target costs in long-running agentic workflows",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "inference"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-peter-steinberger-openclaw-project-steward-details-a-workflow-using-gpt-5-5-and-crabbox-to-scale-agent-execution-up-to-ten-hours-digg-https-www-digg-com-ai-ulblmgru",
+      "title": "Peter Steinberger, OpenClaw project steward, details a workflow using GPT-5.5 and Crabbox to scale agent execution up to ten hours · Digg",
+      "url": "https://www.digg.com/ai/ulblmgru",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "The multi-hour runs significantly increase confidence in production-ready output.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "creative_workflow"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-an-overheard-anecdote-claims-an-incoming-professor-plans-to-spend-her-1-5-million-fund-on-chatgpt-tokens-and-undergraduates-digg-https-www-digg-com-ai-0ia0agsk",
+      "title": "An overheard anecdote claims an incoming professor plans to spend her $1.5 million fund on ChatGPT tokens and undergraduates · Digg",
+      "url": "https://www.digg.com/ai/0ia0agsk",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "The strategy aims to outperform traditional graduate-led research workflows",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-meme-video-pleads-with-dario-amodei-for-codex-over-claude-opus-digg-https-www-digg-com-ai-5b33gfcg",
+      "title": "Meme Video Pleads With Dario Amodei For Codex Over Claude Opus · Digg",
+      "url": "https://www.digg.com/ai/5b33gfcg",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "Meme Video Pleads With Dario Amodei For Codex Over Claude Opus - tracked by 1 author on X.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "anthropic-news-anthropic-raises-65b-in-series-h-funding-at-965b-post-money-valuation-https-www-anthropic-com-news-series-h",
+      "title": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
+      "url": "https://www.anthropic.com/news/series-h",
+      "source": "Anthropic News",
+      "sourceId": "anthropic-news",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-30",
+      "summary": "Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.",
+      "tags": [
+        "model_release",
+        "api_update",
+        "ai_agents",
+        "ai_safety",
+        "funding"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-05-30",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-pope-francis-argues-ai-cannot-truly-understand-human-concepts-sparking-debate-among-researchers-over-embodied-ai-and-machine-comprehension-digg-https-www-digg-com-ai-bc51d143-0399-440d-a5a6-3dfdd4dd94af",
+      "title": "Pope Francis argues AI cannot truly understand human concepts, sparking debate among researchers over embodied AI and machine comprehension · Digg",
+      "url": "https://www.digg.com/ai/bc51d143-0399-440d-a5a6-3dfdd4dd94af",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "CMU's Aran Nayebi says robotics will bridge this gap.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "opinion"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them-https-techcrunch-com-2026-05-29-coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them",
+      "title": "Coders are refusing to work without AI — and that could come back to bite them",
+      "url": "https://techcrunch.com/2026/05/29/coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "While AI is helping coders produce code faster, it may not be producing better code, researchers warn. And that could cause problems down the road for them.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-so-you-ve-heard-these-ai-terms-and-nodded-along-let-s-fix-that-https-techcrunch-com-2026-05-29-artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms",
+      "title": "So you’ve heard these AI terms and nodded along; let’s fix that",
+      "url": "https://techcrunch.com/2026/05/29/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "The rise of AI has brought an avalanche of new terms and slang. Here is a glossary with definitions of some of the most important words and phrases you might encounter.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-hermes-agent-adds-tool-search-for-efficient-large-scale-tool-loading-digg-https-www-digg-com-ai-zmfputm2",
+      "title": "Hermes Agent Adds Tool Search For Efficient Large-Scale Tool Loading · Digg",
+      "url": "https://www.digg.com/ai/zmfputm2",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "Hermes Agent Adds Tool Search For Efficient Large-Scale Tool Loading - tracked by 1 author on X.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-drafted-raises-16-million-seed-to-develop-multimodal-generative-ai-models-for-residential-architecture-digg-https-www-digg-com-ai-qgoe42xi",
+      "title": "Drafted raises $16 million seed to develop multimodal generative AI models for residential architecture · Digg",
+      "url": "https://www.digg.com/ai/qgoe42xi",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-29",
+      "summary": "Over 120,000 users generated 325,000 home designs last month.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "architecture"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-kevin-li-launches-jo-an-autonomous-ai-assistant-that-runs-in-the-background-to-anticipate-and-complete-tasks-digg-https-www-digg-com-ai-7lmffrpm",
+      "title": "Kevin Li launches Jo, an autonomous AI assistant that runs in the background to anticipate and complete tasks · Digg",
+      "url": "https://www.digg.com/ai/7lmffrpm",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-28",
+      "summary": "The assistant runs on GBrain technology under the hood.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "autonomous_systems",
+        "product_launch"
+      ],
+      "adapter": "html"
+    }
+  ]
+}

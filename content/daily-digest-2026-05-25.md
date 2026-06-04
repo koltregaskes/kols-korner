@@ -7,31 +7,79 @@ summary: "AI and technology news digest for Monday, 25 May 2026"
 
 # Daily Digest: Monday, 25 May 2026
 
-Welcome to today's roundup of the most interesting developments in AI and technology.
+This dated roundup collects the most interesting AI and technology developments found for Monday, 25 May 2026.
 
 ## Top Stories
 
-### xAI releases Grok Build 0.1.219, fixing kitty terminal layout issues and paste-related data loss · Digg
+### Pope XIV announces partnership with Anthropic to address the ethical and moral implications of advanced AI · Digg
 
-Elon Musk highlighted the team's seven-day-a-week development schedule.
+The Pope formally accepted Anthropic's invitation to collaborate
 
-[Read more](https://www.digg.com/ai/hlcz47lw)
-
----
-
-### Box CEO Aaron Levie argues CEOs overestimate AI readiness because they only see prototypes and ignore implementation work · Digg
-
-Steven Sinofsky compared the gap to 1990s office software.
-
-[Read more](https://www.digg.com/ai/f4ws471q?rank=1)
+[Read more](https://www.digg.com/ai/n1vur1h6?rank=1)
 
 ---
 
-### Box CEO Aaron Levie argues CEOs overestimate AI readiness because they only see prototypes and ignore implementation work · Digg
+### Startup Battlefield 200 applications close in days: Apply before May 27
 
-Steven Sinofsky compared the gap to 1990s office software.
+The deadline to apply or nominate for Startup Battlefield 200 is May 27. This is your shot at VC access, global visibility, TechCrunch coverage, and $100,000. Apply now.
 
-[Read more](https://www.digg.com/ai/f4ws471q)
+[Read more](https://techcrunch.com/2026/05/25/startup-battlefield-200-applications-close-in-days-apply-before-may-27/)
+
+---
+
+### 5 days left: Save up to $410 on TechCrunch Disrupt 2026 passes before prices increase
+
+Early Bird savings for TechCrunch Disrupt 2026 in San Francisco end May 29 at 11:59 p.m. PT. Register now to save up to $410 before prices increase.
+
+[Read more](https://techcrunch.com/2026/05/25/5-days-left-save-up-to-410-on-techcrunch-disrupt-2026-passes-before-prices-increase/)
+
+---
+
+### Sakana AI urges Japan to combine foreign frontier models with domestic tech to protect national data sovereignty · Digg
+
+Prime Minister Sanae Takaichi hosted the deep-tech strategy roundtable.
+
+[Read more](https://www.digg.com/ai/nl9736o9?rank=2)
+
+---
+
+### Y Combinator's Paul Graham warns that AI-generated emails from startup founders lose all impact once detected · Digg
+
+Graham noted a telltale journalistic tone exposes these drafts
+
+[Read more](https://www.digg.com/ai/lctleprk?rank=3)
+
+---
+
+### Tanishq Mathew Abraham, SophontAI founder, explains how his Ph.D. in deep learning-based virtual staining supports his medical AI workflow · Digg
+
+He completed his UC Davis Ph.D. at age 19.
+
+[Read more](https://www.digg.com/ai/jwd7kkro?rank=4)
+
+---
+
+### Andy Masley finds ChatGPT's water usage is 50 to 250 times lower than the viral 'bottle of water' claim · Digg
+
+Simon Willison urges OpenAI to release retired GPT-4 specs.
+
+[Read more](https://www.digg.com/ai/3ou4p4wo?rank=5)
+
+---
+
+### Leonardo.AI co-founder Ethan Smith warns that 10x training speedup claims in recent diffusion papers may rely on flawed metrics · Digg
+
+Prior studies confirm similar speedup overestimations in Transformer pre-training
+
+[Read more](https://www.digg.com/ai/uq4slyzc?rank=6)
+
+---
+
+### GitHub - manaflow-ai/cmux: Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents
+
+Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents - manaflow-ai/cmux
+
+[Read more](https://github.com/manaflow-ai/cmux)
 
 ---
 
@@ -51,67 +99,29 @@ Like other AI wearables, Amazon's Bee offers an odd combination of convenience a
 
 ---
 
-### DAIR.AI's Elvis Saravia and Beff argue AI raises developer ROI, driving higher demand for software engineers · Digg
+### Google DeepMind's LLM-Lean agent loop resolves 9 open Erdős math problems and proves 44 OEIS conjectures · Digg
 
-Beff says output remains proportional to total engineering headcount.
+Each proof cost a few hundred dollars to generate
 
-[Read more](https://www.digg.com/ai/9vrsju8k)
-
----
-
-### Andrej Karpathy joining Anthropic sparks industry debate over the prestige of Member of Technical Staff titles · Digg
-
-Yi Tay says AI research and engineering roles are merging
-
-[Read more](https://www.digg.com/ai/dzxn82lm)
+[Read more](https://www.digg.com/ai/6c6fdaa3-97c8-46e6-8538-00d10e229d92)
 
 ---
 
-### Nathan Lambert, AI2 post-training lead, clarifies his upcoming book covers all post-training methodologies and secures posttrainingbook.com · Digg
+## Industry
 
-The new domain redirects to his ongoing writing at rlhfbook.com
+### Google's take on openclaw
 
-[Read more](https://www.digg.com/ai/etkut4gd?rank=2)
+it's Anthropic's time for the mandate of heaven
 
----
-
-### DAIR.AI's Elvis Saravia and Beff argue AI raises developer ROI, driving higher demand for software engineers · Digg
-
-Beff says output remains proportional to total engineering headcount.
-
-[Read more](https://www.digg.com/ai/9vrsju8k?rank=3)
+[Read more](https://www.bensbites.com/p/googles-take-on-openclaw)
 
 ---
 
-### Ferrari is using IBM’s AI to create F1 superfans
+### Can I get my agents on the phone?
 
-IBM and Scuderia Ferrari HP take TechCrunch inside how they are redefining the fan experience.
+I haven’t used OpenClaw in weeks
 
-[Read more](https://techcrunch.com/2026/05/23/ferrari-is-using-ai-to-create-f1-superfans/)
-
----
-
-### Elon Musk has given up on solar power (on Earth)
-
-Elon Muks's xAI has gone all in on natural gas, while SpaceX is obsessed with orbital data centers. What happened to the "solar-electric economy" he promised?
-
-[Read more](https://techcrunch.com/2026/05/23/elon-musk-has-given-up-on-solar-power-on-earth/)
-
----
-
-### Trump administration reinstates policy requiring O-1 visa holders to leave the US when applying for green cards, affecting researchers at OpenAI · Digg
-
-Up to half of OpenAI researchers on O-1 visas could be impacted.
-
-[Read more](https://www.digg.com/ai/74d77886-d16f-4acf-a886-5503426b105a)
-
----
-
-### AI is being used to resurrect the voices of dead pilots
-
-People used AI on a spectrogram image of cockpit recordings to reconstruct them, forcing the NTSB to temporarily block access to its docket system.
-
-[Read more](https://techcrunch.com/2026/05/22/ai-is-being-used-to-resurrect-the-voices-of-dead-pilots/)
+[Read more](https://www.bensbites.com/p/can-i-get-my-agents-on-the-phone)
 
 ---
 
@@ -122,14 +132,6 @@ People used AI on a spectrogram image of cockpit recordings to reconstruct them,
 Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.
 
 [Read more](https://ai.meta.com/blog/introducing-muse-spark-msl/)
-
----
-
-### Energy per Successful Goal: Goal-Level Energy Accounting for Agentic AI Systems
-
-arXiv:2605.22883v1 Announce Type: new Abstract: Current AI energy benchmarks measure consumption at the granularity of a single model invocation or training run. For classical single-turn workloads this unit remains coherent. For agentic systems - where a single user goal may trigger multi-step o...
-
-[Read more](https://arxiv.org/abs/2605.22883)
 
 ---
 

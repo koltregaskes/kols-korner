@@ -1,0 +1,306 @@
+{
+  "generatedAt": "2026-06-03T16:29:42.338Z",
+  "generatedBy": "Website Tools News Gatherer",
+  "site": "kols-korner",
+  "date": "2026-06-03",
+  "count": 15,
+  "items": [
+    {
+      "id": "techcrunch-ai-publishers-will-be-able-to-opt-out-of-ai-search-thanks-to-new-regulation-https-techcrunch-com-2026-06-03-publishers-will-be-able-to-opt-out-of-ai-search-thanks-to-new-regulation",
+      "title": "Publishers will be able to opt out of AI Search, thanks to new regulation",
+      "url": "https://techcrunch.com/2026/06/03/publishers-will-be-able-to-opt-out-of-ai-search-thanks-to-new-regulation/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-03",
+      "summary": "U.K. regulators are requiring Google offer a tool allowing website publishers to opt-out of generative AI search features. The option will be tested in the U.K. then rolled out globally.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "policy",
+        "regulation"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-town-launches-its-contextual-ai-assistant-townai-out-of-beta-alongside-a-55-million-series-a-led-by-a16z-digg-https-www-digg-com-ai-8180m4ih",
+      "title": "Town launches its contextual AI assistant TownAI out of beta alongside a $55 million Series A led by a16z · Digg",
+      "url": "https://www.digg.com/ai/8180m4ih",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-03",
+      "summary": "The assistant requires explicit user approval before executing tasks",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "product_launch",
+        "funding"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-meta-s-ai-agent-for-whatsapp-business-is-now-available-globally-https-techcrunch-com-2026-06-03-metas-ai-agent-for-whatsapp-business-is-now-available-globally",
+      "title": "Meta’s AI agent for WhatsApp Business is now available globally",
+      "url": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-03",
+      "summary": "WhatsApp will charge businesses for using its AI agent based on token usage",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "ai_agents"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-google-releases-gemma-4-12b-a-unified-open-multimodal-model-that-outperforms-the-larger-gemma-3-27b-digg-https-www-digg-com-ai-9ycprcp3",
+      "title": "Google releases Gemma 4 12B, a unified open multimodal model that outperforms the larger Gemma 3 27B · Digg",
+      "url": "https://www.digg.com/ai/9ycprcp3",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-03",
+      "summary": "It powers a new macOS app for local audio transcription.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "product_launch"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-town-exits-beta-and-raises-55-million-series-a-led-by-a16z-for-its-administrative-ai-assistant-digg-https-www-digg-com-ai-egi8avkp",
+      "title": "Town exits beta and raises $55 million Series A led by a16z for its administrative AI assistant · Digg",
+      "url": "https://www.digg.com/ai/egi8avkp",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-03",
+      "summary": "The assistant requires explicit user approval before executing workflows",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "funding"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-google-releases-gemma-4-12b-and-26b-which-beat-the-larger-gemma-3-27b-on-gpqa-and-coding-benchmarks-digg-https-www-digg-com-ai-s8wbn2oy",
+      "title": "Google releases Gemma 4 12B and 26B, which beat the larger Gemma 3 27B on GPQA and coding benchmarks · Digg",
+      "url": "https://www.digg.com/ai/s8wbn2oy",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-03",
+      "summary": "The 12B variant features a novel, memory-efficient architecture.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "architecture",
+        "product_launch"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-ideogram-releases-ideogram-4-0-an-open-weight-text-to-image-model-that-users-can-download-run-locally-and-fine-tune-digg-https-www-digg-com-ai-uqogdfs4",
+      "title": "Ideogram releases Ideogram 4.0, an open-weight text-to-image model that users can download, run locally, and fine-tune · Digg",
+      "url": "https://www.digg.com/ai/uqogdfs4",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-03",
+      "summary": "Bounding boxes and structured prompts helped accelerate model training.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "image_gen",
+        "product_launch"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-ramp-ceo-eric-glyman-launches-stack-an-ai-operating-system-to-automate-month-end-closes-and-journal-entries-for-accounting-firms-digg-https-www-digg-com-ai-tj7b8tv0",
+      "title": "Ramp CEO Eric Glyman launches Stack, an AI operating system to automate month-end closes and journal entries for accounting firms · Digg",
+      "url": "https://www.digg.com/ai/tj7b8tv0",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-03",
+      "summary": "The system provides an alternative to traditional firm roll-up strategies.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "product_launch"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-amazon-will-show-ai-product-images-when-you-search-for-some-reason-https-techcrunch-com-2026-06-03-amazon-will-show-ai-product-images-when-you-search-for-some-reason",
+      "title": "Amazon will show AI product images when you search for some reason",
+      "url": "https://techcrunch.com/2026/06/03/amazon-will-show-ai-product-images-when-you-search-for-some-reason/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-03",
+      "summary": "Amazon will use visual search and AI to show AI generated product images that match your search queries. The retailer says it will help guide users to products.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-these-two-founders-left-goldman-and-meta-to-build-voice-ai-for-markets-everyone-else-overlooked-https-techcrunch-com-2026-06-03-these-two-founders-left-goldman-and-meta-to-build-voice-ai-for-markets-everyone-else-overlooked",
+      "title": "These two founders left Goldman and Meta to build voice AI for markets everyone else overlooked",
+      "url": "https://techcrunch.com/2026/06/03/these-two-founders-left-goldman-and-meta-to-build-voice-ai-for-markets-everyone-else-overlooked/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-03",
+      "summary": "The startup's own stack for Africa and Middle East is now handling more than 17,000 calls per day.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move",
+        "voice_synthesis"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-coralogix-raises-200m-on-bet-that-someone-needs-to-watch-the-ai-agents-https-techcrunch-com-2026-06-03-coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents",
+      "title": "Coralogix raises $200M on bet that someone needs to watch the AI agents",
+      "url": "https://techcrunch.com/2026/06/03/coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-03",
+      "summary": "The Series F round values Coralogix at $1.6 billion and comes less than a year after its previous raise.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-playabl-ai-hits-1m-plays-with-ai-powered-tiktok-for-user-games-digg-https-www-digg-com-ai-xasviw90",
+      "title": "Playabl.ai Hits 1M Plays With AI-Powered TikTok For User Games · Digg",
+      "url": "https://www.digg.com/ai/xasviw90",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-03",
+      "summary": "Playabl.ai Hits 1M Plays With AI-Powered TikTok For User Games - tracked by 1 author on X.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "meta-ai-blog-introducing-muse-spark-scaling-towards-personal-superintelligence-https-ai-meta-com-blog-introducing-muse-spark-msl",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "source": "Meta AI Blog",
+      "sourceId": "meta-ai-blog",
+      "section": "Research & Products",
+      "publishedAt": "2026-06-03",
+      "summary": "Today, we’re excited to introduce Muse Spark, the first in the Muse family of models developed by Meta Superintelligence Labs. Muse Spark is a natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration.",
+      "tags": [
+        "research_paper",
+        "model_release",
+        "open_source",
+        "architecture",
+        "api_update",
+        "ai_agents",
+        "multi_agent",
+        "tool_use",
+        "reasoning"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-microsoft-ai-announces-mai-thinking-1-and-mai-code-1-flash-claiming-they-outperform-claude-on-coding-and-reasoning-benchmarks-digg-https-www-digg-com-ai-03f0413a-40cb-42dd-a733-6924a6dda8f9",
+      "title": "Microsoft AI announces MAI-Thinking-1 and MAI-Code-1-Flash, claiming they outperform Claude on coding and reasoning benchmarks · Digg",
+      "url": "https://www.digg.com/ai/03f0413a-40cb-42dd-a733-6924a6dda8f9",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-06-02",
+      "summary": "MAI-Code-1-Flash will integrate exclusively inside GitHub Copilot.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "reasoning",
+        "product_launch"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "bens-bites-opus-4-8-https-www-bensbites-com-p-opus-48",
+      "title": "Opus 4.8",
+      "url": "https://www.bensbites.com/p/opus-48",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-06-02",
+      "summary": "NVIDIA and Microsoft birthed a new computer",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "industry_move",
+        "open_source",
+        "hardware"
+      ],
+      "adapter": "html"
+    }
+  ]
+}

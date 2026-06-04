@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-05-25T06:00:51.687Z",
+  "generatedAt": "2026-05-25T16:24:48.470Z",
   "generatedBy": "Website Tools News Gatherer",
   "site": "kols-korner",
   "date": "2026-05-25",
   "count": 15,
   "items": [
     {
-      "id": "digg-ai-xai-releases-grok-build-0-1-219-fixing-kitty-terminal-layout-issues-and-paste-related-data-loss-digg-https-www-digg-com-ai-hlcz47lw",
-      "title": "xAI releases Grok Build 0.1.219, fixing kitty terminal layout issues and paste-related data loss · Digg",
-      "url": "https://www.digg.com/ai/hlcz47lw",
+      "id": "digg-ai-pope-xiv-announces-partnership-with-anthropic-to-address-the-ethical-and-moral-implications-of-advanced-ai-digg-https-www-digg-com-ai-n1vur1h6-rank-1",
+      "title": "Pope XIV announces partnership with Anthropic to address the ethical and moral implications of advanced AI · Digg",
+      "url": "https://www.digg.com/ai/n1vur1h6?rank=1",
       "source": "Digg AI",
       "sourceId": "digg-ai",
       "section": "Top Stories",
       "publishedAt": "2026-05-25",
-      "summary": "Elon Musk highlighted the team's seven-day-a-week development schedule.",
+      "summary": "The Pope formally accepted Anthropic's invitation to collaborate",
       "tags": [
         "announcement",
         "model_release",
@@ -22,6 +22,159 @@
         "research_paper",
         "industry_move",
         "product_launch"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "techcrunch-ai-startup-battlefield-200-applications-close-in-days-apply-before-may-27-https-techcrunch-com-2026-05-25-startup-battlefield-200-applications-close-in-days-apply-before-may-27",
+      "title": "Startup Battlefield 200 applications close in days: Apply before May 27",
+      "url": "https://techcrunch.com/2026/05/25/startup-battlefield-200-applications-close-in-days-apply-before-may-27/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-25",
+      "summary": "The deadline to apply or nominate for Startup Battlefield 200 is May 27. This is your shot at VC access, global visibility, TechCrunch coverage, and $100,000. Apply now.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "techcrunch-ai-5-days-left-save-up-to-410-on-techcrunch-disrupt-2026-passes-before-prices-increase-https-techcrunch-com-2026-05-25-5-days-left-save-up-to-410-on-techcrunch-disrupt-2026-passes-before-prices-increase",
+      "title": "5 days left: Save up to $410 on TechCrunch Disrupt 2026 passes before prices increase",
+      "url": "https://techcrunch.com/2026/05/25/5-days-left-save-up-to-410-on-techcrunch-disrupt-2026-passes-before-prices-increase/",
+      "source": "TechCrunch AI",
+      "sourceId": "techcrunch-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-25",
+      "summary": "Early Bird savings for TechCrunch Disrupt 2026 in San Francisco end May 29 at 11:59 p.m. PT. Register now to save up to $410 before prices increase.",
+      "tags": [
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
+      ],
+      "adapter": "rss"
+    },
+    {
+      "id": "digg-ai-sakana-ai-urges-japan-to-combine-foreign-frontier-models-with-domestic-tech-to-protect-national-data-sovereignty-digg-https-www-digg-com-ai-nl9736o9-rank-2",
+      "title": "Sakana AI urges Japan to combine foreign frontier models with domestic tech to protect national data sovereignty · Digg",
+      "url": "https://www.digg.com/ai/nl9736o9?rank=2",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-25",
+      "summary": "Prime Minister Sanae Takaichi hosted the deep-tech strategy roundtable.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-y-combinators-paul-graham-warns-that-ai-generated-emails-from-startup-founders-lose-all-impact-once-detected-digg-https-www-digg-com-ai-lctleprk-rank-3",
+      "title": "Y Combinator's Paul Graham warns that AI-generated emails from startup founders lose all impact once detected · Digg",
+      "url": "https://www.digg.com/ai/lctleprk?rank=3",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-25",
+      "summary": "Graham noted a telltale journalistic tone exposes these drafts",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-tanishq-mathew-abraham-sophontai-founder-explains-how-his-ph-d-in-deep-learning-based-virtual-staining-supports-his-medical-ai-workflow-digg-https-www-digg-com-ai-jwd7kkro-rank-4",
+      "title": "Tanishq Mathew Abraham, SophontAI founder, explains how his Ph.D. in deep learning-based virtual staining supports his medical AI workflow · Digg",
+      "url": "https://www.digg.com/ai/jwd7kkro?rank=4",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-25",
+      "summary": "He completed his UC Davis Ph.D. at age 19.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "creative_workflow"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-andy-masley-finds-chatgpts-water-usage-is-50-to-250-times-lower-than-the-viral-bottle-of-water-claim-digg-https-www-digg-com-ai-3ou4p4wo-rank-5",
+      "title": "Andy Masley finds ChatGPT's water usage is 50 to 250 times lower than the viral 'bottle of water' claim · Digg",
+      "url": "https://www.digg.com/ai/3ou4p4wo?rank=5",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-25",
+      "summary": "Simon Willison urges OpenAI to release retired GPT-4 specs.",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-leonardo-ai-co-founder-ethan-smith-warns-that-10x-training-speedup-claims-in-recent-diffusion-papers-may-rely-on-flawed-metrics-digg-https-www-digg-com-ai-uq4slyzc-rank-6",
+      "title": "Leonardo.AI co-founder Ethan Smith warns that 10x training speedup claims in recent diffusion papers may rely on flawed metrics · Digg",
+      "url": "https://www.digg.com/ai/uq4slyzc?rank=6",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-25",
+      "summary": "Prior studies confirm similar speedup overestimations in Transformer pre-training",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move",
+        "architecture",
+        "training"
+      ],
+      "adapter": "html"
+    },
+    {
+      "id": "digg-ai-github-manaflow-ai-cmux-ghostty-based-macos-terminal-with-vertical-tabs-and-notifications-for-ai-coding-agents-https-github-com-manaflow-ai-cmux",
+      "title": "GitHub - manaflow-ai/cmux: Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents",
+      "url": "https://github.com/manaflow-ai/cmux",
+      "source": "Digg AI",
+      "sourceId": "digg-ai",
+      "section": "Top Stories",
+      "publishedAt": "2026-05-25",
+      "summary": "Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents - manaflow-ai/cmux",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
       ],
       "adapter": "html"
     },
@@ -48,65 +201,36 @@
       "adapter": "html"
     },
     {
-      "id": "arxiv-cs-ai-energy-per-successful-goal-goal-level-energy-accounting-for-agentic-ai-systems-https-arxiv-org-abs-2605-22883",
-      "title": "Energy per Successful Goal: Goal-Level Energy Accounting for Agentic AI Systems",
-      "url": "https://arxiv.org/abs/2605.22883",
-      "source": "arXiv cs.AI",
-      "sourceId": "arxiv-cs-ai",
-      "section": "Research & Products",
+      "id": "bens-bites-googles-take-on-openclaw-https-www-bensbites-com-p-googles-take-on-openclaw",
+      "title": "Google's take on openclaw",
+      "url": "https://www.bensbites.com/p/googles-take-on-openclaw",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
       "publishedAt": "2026-05-25",
-      "summary": "arXiv:2605.22883v1 Announce Type: new Abstract: Current AI energy benchmarks measure consumption at the granularity of a single model invocation or training run. For classical single-turn workloads this unit remains coherent. For agentic systems - where a single user goal may trigger multi-step orchestration, tool calls, retries, and failure-recovery cycles - the invocation count is an implementation artifact rather than a task property, and inference-level normalization misrepresents the energy cost of goal completion. We present A-LEMS (Agentic LLM Energy Measurement System), a cross-layer measurement framework that redefines the unit of AI energy accounting from energy per inference to Energy per Successful Goal (EpG). EpG aggregates total workflow energy across all execution attempts, including failures and retries, normalized by successfully completed goals. A-LEMS formalizes energy attribution through a temporal boundary model, a five-layer observation pipeline mapping RAPL signals to workflow-level energy, and a reproducibility protocol binding every measurement to hardware and runtime configuration. Building on EpG, we define the Orchestration Overhead Index (OOI), isolating the energy cost of orchestration relative to linear execution under identical task criteria. Across five reasoning and three tool-augmented task families, agentic workflows consume 4.33x higher mean energy per successful goal than linear baselines (888.1 J vs 205.3 J). This overhead is driven by orchestration structure, not inference compute. For tool-augmented tasks, OOI inverts below 1.0x: agentic execution is cheaper than linear, confirming the metric captures orchestration structure rather than a fixed upward bias. These findings establish that energy-per-inference is insufficient for agentic AI. EpG and OOI provide the measurement foundation for accurate benchmarking, where orchestration structure is the primary determinant of energy cost.",
-      "tags": [
-        "research_paper",
-        "evaluation",
-        "reasoning",
-        "ai_agents",
-        "pricing_change",
-        "training",
-        "inference",
-        "hardware",
-        "creative_workflow",
-        "crypto_defi"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "digg-ai-box-ceo-aaron-levie-argues-ceos-overestimate-ai-readiness-because-they-only-see-prototypes-and-ignore-implementation-work-digg-https-www-digg-com-ai-f4ws471q-rank-1",
-      "title": "Box CEO Aaron Levie argues CEOs overestimate AI readiness because they only see prototypes and ignore implementation work · Digg",
-      "url": "https://www.digg.com/ai/f4ws471q?rank=1",
-      "source": "Digg AI",
-      "sourceId": "digg-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-05-24",
-      "summary": "Steven Sinofsky compared the gap to 1990s office software.",
+      "summary": "it's Anthropic's time for the mandate of heaven",
       "tags": [
         "announcement",
-        "model_release",
-        "open_source",
-        "ai_agents",
-        "research_paper",
+        "product_launch",
         "industry_move",
-        "opinion"
+        "open_source"
       ],
       "adapter": "html"
     },
     {
-      "id": "digg-ai-box-ceo-aaron-levie-argues-ceos-overestimate-ai-readiness-because-they-only-see-prototypes-and-ignore-implementation-work-digg-https-www-digg-com-ai-f4ws471q",
-      "title": "Box CEO Aaron Levie argues CEOs overestimate AI readiness because they only see prototypes and ignore implementation work · Digg",
-      "url": "https://www.digg.com/ai/f4ws471q",
-      "source": "Digg AI",
-      "sourceId": "digg-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-05-24",
-      "summary": "Steven Sinofsky compared the gap to 1990s office software.",
+      "id": "bens-bites-can-i-get-my-agents-on-the-phone-https-www-bensbites-com-p-can-i-get-my-agents-on-the-phone",
+      "title": "Can I get my agents on the phone?",
+      "url": "https://www.bensbites.com/p/can-i-get-my-agents-on-the-phone",
+      "source": "Ben's Bites",
+      "sourceId": "bens-bites",
+      "section": "Industry",
+      "publishedAt": "2026-05-25",
+      "summary": "I haven’t used OpenClaw in weeks",
       "tags": [
         "announcement",
-        "model_release",
-        "open_source",
-        "ai_agents",
-        "research_paper",
+        "product_launch",
         "industry_move",
-        "opinion"
+        "open_source"
       ],
       "adapter": "html"
     },
@@ -147,14 +271,14 @@
       "adapter": "rss"
     },
     {
-      "id": "digg-ai-dair-ais-elvis-saravia-and-beff-argue-ai-raises-developer-roi-driving-higher-demand-for-software-engineers-digg-https-www-digg-com-ai-9vrsju8k",
-      "title": "DAIR.AI's Elvis Saravia and Beff argue AI raises developer ROI, driving higher demand for software engineers · Digg",
-      "url": "https://www.digg.com/ai/9vrsju8k",
+      "id": "digg-ai-google-deepminds-llm-lean-agent-loop-resolves-9-open-erd-s-math-problems-and-proves-44-oeis-conjectures-digg-https-www-digg-com-ai-6c6fdaa3-97c8-46e6-8538-00d10e229d92",
+      "title": "Google DeepMind's LLM-Lean agent loop resolves 9 open Erdős math problems and proves 44 OEIS conjectures · Digg",
+      "url": "https://www.digg.com/ai/6c6fdaa3-97c8-46e6-8538-00d10e229d92",
       "source": "Digg AI",
       "sourceId": "digg-ai",
       "section": "Top Stories",
       "publishedAt": "2026-05-24",
-      "summary": "Beff says output remains proportional to total engineering headcount.",
+      "summary": "Each proof cost a few hundred dollars to generate",
       "tags": [
         "announcement",
         "model_release",
@@ -164,137 +288,6 @@
         "industry_move"
       ],
       "adapter": "html"
-    },
-    {
-      "id": "digg-ai-andrej-karpathy-joining-anthropic-sparks-industry-debate-over-the-prestige-of-member-of-technical-staff-titles-digg-https-www-digg-com-ai-dzxn82lm",
-      "title": "Andrej Karpathy joining Anthropic sparks industry debate over the prestige of Member of Technical Staff titles · Digg",
-      "url": "https://www.digg.com/ai/dzxn82lm",
-      "source": "Digg AI",
-      "sourceId": "digg-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-05-24",
-      "summary": "Yi Tay says AI research and engineering roles are merging",
-      "tags": [
-        "announcement",
-        "model_release",
-        "open_source",
-        "ai_agents",
-        "research_paper",
-        "industry_move"
-      ],
-      "adapter": "html"
-    },
-    {
-      "id": "digg-ai-nathan-lambert-ai2-post-training-lead-clarifies-his-upcoming-book-covers-all-post-training-methodologies-and-secures-posttrainingbook-com-digg-https-www-digg-com-ai-etkut4gd-rank-2",
-      "title": "Nathan Lambert, AI2 post-training lead, clarifies his upcoming book covers all post-training methodologies and secures posttrainingbook.com · Digg",
-      "url": "https://www.digg.com/ai/etkut4gd?rank=2",
-      "source": "Digg AI",
-      "sourceId": "digg-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-05-24",
-      "summary": "The new domain redirects to his ongoing writing at rlhfbook.com",
-      "tags": [
-        "announcement",
-        "model_release",
-        "open_source",
-        "ai_agents",
-        "research_paper",
-        "industry_move"
-      ],
-      "adapter": "html"
-    },
-    {
-      "id": "digg-ai-dair-ais-elvis-saravia-and-beff-argue-ai-raises-developer-roi-driving-higher-demand-for-software-engineers-digg-https-www-digg-com-ai-9vrsju8k-rank-3",
-      "title": "DAIR.AI's Elvis Saravia and Beff argue AI raises developer ROI, driving higher demand for software engineers · Digg",
-      "url": "https://www.digg.com/ai/9vrsju8k?rank=3",
-      "source": "Digg AI",
-      "sourceId": "digg-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-05-24",
-      "summary": "Beff says output remains proportional to total engineering headcount.",
-      "tags": [
-        "announcement",
-        "model_release",
-        "open_source",
-        "ai_agents",
-        "research_paper",
-        "industry_move"
-      ],
-      "adapter": "html"
-    },
-    {
-      "id": "techcrunch-ai-ferrari-is-using-ibm-s-ai-to-create-f1-superfans-https-techcrunch-com-2026-05-23-ferrari-is-using-ai-to-create-f1-superfans",
-      "title": "Ferrari is using IBM’s AI to create F1 superfans",
-      "url": "https://techcrunch.com/2026/05/23/ferrari-is-using-ai-to-create-f1-superfans/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-05-23",
-      "summary": "IBM and Scuderia Ferrari HP take TechCrunch inside how they are redefining the fan experience.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "techcrunch-ai-elon-musk-has-given-up-on-solar-power-on-earth-https-techcrunch-com-2026-05-23-elon-musk-has-given-up-on-solar-power-on-earth",
-      "title": "Elon Musk has given up on solar power (on Earth)",
-      "url": "https://techcrunch.com/2026/05/23/elon-musk-has-given-up-on-solar-power-on-earth/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-05-23",
-      "summary": "Elon Muks's xAI has gone all in on natural gas, while SpaceX is obsessed with orbital data centers. What happened to the \"solar-electric economy\" he promised?",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
-    },
-    {
-      "id": "digg-ai-trump-administration-reinstates-policy-requiring-o-1-visa-holders-to-leave-the-us-when-applying-for-green-cards-affecting-researchers-at-openai-digg-https-www-digg-com-ai-74d77886-d16f-4acf-a886-5503426b105a",
-      "title": "Trump administration reinstates policy requiring O-1 visa holders to leave the US when applying for green cards, affecting researchers at OpenAI · Digg",
-      "url": "https://www.digg.com/ai/74d77886-d16f-4acf-a886-5503426b105a",
-      "source": "Digg AI",
-      "sourceId": "digg-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-05-22",
-      "summary": "Up to half of OpenAI researchers on O-1 visas could be impacted.",
-      "tags": [
-        "announcement",
-        "model_release",
-        "open_source",
-        "ai_agents",
-        "research_paper",
-        "industry_move",
-        "policy"
-      ],
-      "adapter": "html"
-    },
-    {
-      "id": "techcrunch-ai-ai-is-being-used-to-resurrect-the-voices-of-dead-pilots-https-techcrunch-com-2026-05-22-ai-is-being-used-to-resurrect-the-voices-of-dead-pilots",
-      "title": "AI is being used to resurrect the voices of dead pilots",
-      "url": "https://techcrunch.com/2026/05/22/ai-is-being-used-to-resurrect-the-voices-of-dead-pilots/",
-      "source": "TechCrunch AI",
-      "sourceId": "techcrunch-ai",
-      "section": "Top Stories",
-      "publishedAt": "2026-05-22",
-      "summary": "People used AI on a spectrogram image of cockpit recordings to reconstruct them, forcing the NTSB to temporarily block access to its docket system.",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "adapter": "rss"
     }
   ]
 }

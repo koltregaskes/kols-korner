@@ -30,7 +30,7 @@
   --color-gray-300-rgb: 167, 169, 169;
   --font-sans: "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-mono: "Inconsolata", "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --font-family-base: var(--font-sans);
   --font-family-sans: var(--font-sans);
   --font-family-serif: var(--font-serif);
@@ -829,7 +829,7 @@ img {
 .post-content {
   margin-top: 2rem;
   color: var(--ink);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.02rem, 1.2vw, 1.12rem);
   line-height: 1.78;
 }
@@ -848,7 +848,7 @@ img {
 .post-content h4 {
   margin: 2rem 0 0.75rem;
   color: var(--ink);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   line-height: 1.1;
 }
@@ -1593,6 +1593,7 @@ img {
   .header-content {
     grid-template-columns: minmax(0, 1fr) auto;
     min-height: 66px;
+    row-gap: 0;
   }
 
   .site-logo {

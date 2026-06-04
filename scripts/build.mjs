@@ -640,7 +640,7 @@ function parseDigestArticles(content, filename) {
   const fileDate = new Date(Number(year), Number(month) - 1, Number(day));
   const fallbackDateString = formatDisplayDate(fileDate);
   const articles = [];
-  const lines = content.split('\n');
+  const lines = content.split(/\r?\n/);
   let articleCountInDigest = 0;
   const topStoriesLimit = 5;
 
@@ -786,7 +786,7 @@ function getSharedHeadAssets(basePath) {
   return `
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Inconsolata:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
   <link rel="icon" href="${basePath}/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="${basePath}/favicon.svg" />
@@ -2833,9 +2833,17 @@ async function cleanGeneratedOutput() {
     await fs.mkdir(siteNewsDigestsDir, { recursive: true });
     for (const digestFile of digestFiles) {
       const sourcePath = path.join(newsDigestsDir, digestFile.sourceFile);
-      await fs.copyFile(
-        sourcePath,
-        path.join(siteNewsDigestsDir, digestFile.outputFile)
+      const sourceContent = await fs.readFile(sourcePath, 'utf8');
+      const normalisedContent = `${sourceContent
+        .split(/\r?\n/)
+        .map((line) => line.trimEnd())
+        .join('\n')
+        .replace(/\n+$/, '')}\n`;
+
+      await fs.writeFile(
+        path.join(siteNewsDigestsDir, digestFile.outputFile),
+        normalisedContent,
+        'utf8'
       );
     }
 
