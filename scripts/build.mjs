@@ -253,6 +253,35 @@ function fixCommonEncoding(text = '') {
     .replace(/\u00c2/g, '');
 }
 
+const RSS_LAST_BUILD_DATE_PLACEHOLDER = '__LAST_BUILD_DATE__';
+const RSS_LAST_BUILD_DATE_PATTERN = /<lastBuildDate>.*?<\/lastBuildDate>/;
+
+function normaliseRssLastBuildDate(feed = '') {
+  return feed
+    .replace(/\r\n/g, '\n')
+    .replace(
+      RSS_LAST_BUILD_DATE_PATTERN,
+      `<lastBuildDate>${RSS_LAST_BUILD_DATE_PLACEHOLDER}</lastBuildDate>`
+    )
+    .replace(/\s+/g, ' ')
+    .trimEnd();
+}
+
+async function readExistingRssFeed() {
+  const feedPath = 'site/feed.xml';
+
+  try {
+    return await fs.readFile(feedPath, 'utf8');
+  } catch {
+    try {
+      const { stdout } = await execAsync(`git show HEAD:${feedPath}`);
+      return stdout;
+    } catch {
+      return '';
+    }
+  }
+}
+
 function normaliseNewsUrl(url = '') {
   try {
     const parsed = new URL(String(url || '').trim());
@@ -2621,18 +2650,26 @@ async function writeRssFeed(items) {
     </item>`;
   }).join('');
 
-  const rss = `<?xml version="1.0" encoding="UTF-8"?>
+  const rssTemplate = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${SITE_NAME}</title>
     <link>${SITE_URL}</link>
     <description>Tech, AI, Development &amp; More by ${SITE_OWNER}</description>
     <language>en-gb</language>
-    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <lastBuildDate>${RSS_LAST_BUILD_DATE_PLACEHOLDER}</lastBuildDate>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
     ${rssItems}
   </channel>
 </rss>`;
+
+  const existingRss = await readExistingRssFeed();
+  const lastBuildDate = new Date();
+  let rss = rssTemplate.replace(RSS_LAST_BUILD_DATE_PLACEHOLDER, lastBuildDate.toUTCString());
+
+  if (existingRss && normaliseRssLastBuildDate(existingRss) === normaliseRssLastBuildDate(rss)) {
+    rss = existingRss;
+  }
 
   await fs.writeFile('site/feed.xml', rss, 'utf8');
 }
@@ -2729,7 +2766,8 @@ async function cleanGeneratedOutput() {
     'site/admin.html',
     'site/app.js',
     'site/CNAME',
-    'site/feed.xml',
+    // RSS is rewritten by writeRssFeed(); keep the previous copy available so
+    // unchanged feed content can preserve its existing lastBuildDate.
     // 2026-05-20 — site/index.html intentionally NOT cleaned: it holds the
     // hand-committed Hi-Fi broadsheet design (DESIGN.md). The old generator
     // template doesn't match the design, so we keep the committed file and
