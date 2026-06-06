@@ -1,6 +1,85 @@
 {
   "articles": [
     {
+      "title": "Cardano founder floats splitting his own blockchain after warning more apps will die",
+      "source": "CryptoSlate",
+      "url": "https://cryptoslate.com/cardano-founder-floats-splitting-his-own-blockchain-after-warning-more-apps-will-die",
+      "summary": "Charles Hoskinson raised the possibility of splitting Cardano after the collapse of one of its best-known ecosystem tools exposed a deeper fight over money, governance, and who has the power to keep builders alive on the network. This week, the Cardano founder floated what he called a “nuclear option,” saying a new Cardano could be [&#8230;] The post Cardano founder floats splitting his own blockchain after warning more apps will die appeared first on CryptoSlate .",
+      "category": "Top Stories",
+      "date": "2026-06-04T23:00:00.000Z",
+      "dateString": "Friday, 5 June 2026",
+      "filename": "2026-06-06-digest.md",
+      "tags": [
+        "ai",
+        "startups",
+        "crypto",
+        "funding"
+      ],
+      "time": "Friday, 5 June 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "SpaceX IPO access now available via xStocks",
+      "source": "Kraken Blog",
+      "url": "https://blog.kraken.com/product/xstocks/spacex-ipo-access",
+      "summary": "Kraken customers in over 110 countries, including the EEA, can now register their interest in participating in the SpaceX IPO through xStocks, bringing one of the world's most anticipated public listings to a global audience. The post SpaceX IPO access now available via xStocks appeared first on Kraken Blog .",
+      "category": "Top Stories",
+      "date": "2026-06-04T23:00:00.000Z",
+      "dateString": "Friday, 5 June 2026",
+      "filename": "2026-06-05-digest.md",
+      "tags": [
+        "ai",
+        "news",
+        "crypto",
+        "product_launch",
+        "crypto_trading"
+      ],
+      "time": "Friday, 5 June 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "YOM is available for trading!",
+      "source": "Kraken Blog",
+      "url": "https://blog.kraken.com/product/asset-listings/yom-is-available-for-trading",
+      "summary": "We’re thrilled to announce that YOM is available for trading on Kraken! Funding and trading YOM trading is live as of June 5, 2026. To add an asset to your Kraken account, navigate to Funding, select the asset you’re after, and hit ‘Deposit’.&#160; Make sure to deposit your tokens into networks supported by Kraken. Deposits [&#8230;] The post YOM is available for trading! appeared first on Kraken Blog .",
+      "category": "Top Stories",
+      "date": "2026-06-04T23:00:00.000Z",
+      "dateString": "Friday, 5 June 2026",
+      "filename": "2026-06-05-digest.md",
+      "tags": [
+        "ai",
+        "news",
+        "crypto",
+        "funding",
+        "crypto_trading"
+      ],
+      "time": "Friday, 5 June 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
+      "title": "Winona launches research initiative to boost menopause studies",
+      "source": "Longevity Technology",
+      "url": "https://longevity.technology/news/winona-launches-research-initiative-to-boost-menopause-studies",
+      "summary": "Winona has launched the Winona Research Initiative, a national program designed to expand menopause and women’s health research by supporting early-career clinicians, trainees and early faculty. The company claims selected Winona Scholars will receive a $3,000 scholarship stipend, additional conference funding, mentorship, data and publication support, media visibility and networking to complete six-to-eight-week, rapid-cycle projects [&#8230;] The post Winona launches research initiative to boost menopause studies appeared first on Longevity.Technology .",
+      "category": "Top Stories",
+      "date": "2026-06-03T23:00:00.000Z",
+      "dateString": "Thursday, 4 June 2026",
+      "filename": "2026-06-04-digest.md",
+      "tags": [
+        "ai",
+        "research",
+        "model_release",
+        "product_launch",
+        "funding"
+      ],
+      "time": "Thursday, 4 June 2026",
+      "imageUrl": null,
+      "isNoNews": false
+    },
+    {
       "title": "Publishers will be able to opt out of AI Search, thanks to new regulation",
       "source": "TechCrunch AI",
       "url": "https://techcrunch.com/2026/06/03/publishers-will-be-able-to-opt-out-of-ai-search-thanks-to-new-regulation/",
