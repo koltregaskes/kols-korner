@@ -17,9 +17,6 @@ content/*.md + content/pages/*.md + news-digests/*.md
                     |
                     v
             GitHub Pages deployment
-                    |
-                    v
-             GitHub Pages deployment
 ```
 
 ## Source of Truth

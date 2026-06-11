@@ -4,9 +4,9 @@ Personal website and publishing system for Kol Tregaskes.
 
 ## Deployment State
 
-- Live GitHub Pages URL: https://koltregaskes.github.io/kols-korner/
-- Intended production domain: https://koltregaskes.com/
-- Custom-domain cutover still depends on external DNS changes and GitHub Pages domain verification
+- Live production site: https://koltregaskes.com/ (custom domain on GitHub Pages)
+- GitHub Pages origin URL: https://koltregaskes.github.io/kols-korner/
+- The custom-domain cutover is complete; treat the live site and current Pages configuration as the source of truth
 
 ## What This Repo Is
 

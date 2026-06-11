@@ -24,6 +24,24 @@ const NEWS_TAG_LABELS = {
 };
 
 const NEWS_TAG_ORDER = ['agents', 'models', 'research', 'product', 'open-source', 'coding', 'creative', 'image', 'video', 'audio', 'design', 'robotics', 'safety', 'funding', 'ai', 'news'];
+
+// Article fields come from external feeds via news-articles.json, so they are
+// untrusted input. Escape anything interpolated into innerHTML, and only allow
+// http(s) URLs into href attributes.
+function escapeHtml(value) {
+    return String(value ?? '').replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    }[char]));
+}
+
+function safeExternalUrl(value) {
+    const url = String(value ?? '').trim();
+    return /^https?:\/\//i.test(url) ? url : '';
+}
 const KOLS_OFFTOPIC_TAGS = new Set([
     'photography',
     'camera',
@@ -982,29 +1000,35 @@ class NewsApp {
         card.className = `news-card ${isToday ? 'today' : ''} ${article.isNoNews ? 'no-news' : ''} ${isFavorite ? 'highlight' : ''}`;
 
         const tagsHtml = article.tags && article.tags.length > 0
-            ? `<div class="tag-list">${article.tags.map(t => `<span class="tag">${NEWS_TAG_LABELS[t] || t}</span>`).join('')}</div>`
+            ? `<div class="tag-list">${article.tags.map(t => `<span class="tag">${escapeHtml(NEWS_TAG_LABELS[t] || t)}</span>`).join('')}</div>`
             : '';
+
+        const safeUrl = safeExternalUrl(article.url);
+        const titleHtml = escapeHtml(article.title);
+        const titleLinkHtml = safeUrl
+            ? `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer">
+                        ${titleHtml}
+                    </a>`
+            : titleHtml;
 
         card.innerHTML = `
             <div class="card-content">
                 <div class="card-header">
-                    <span class="card-date">${article.dateString}</span>
+                    <span class="card-date">${escapeHtml(article.dateString)}</span>
                 </div>
                 <div class="card-actions">
                     <button class="news-action-btn flag-btn" type="button">Report</button>
                     <button class="news-action-btn fav-btn ${isFavorite ? 'active' : ''}" type="button">${isFavorite ? 'Saved' : 'Save'}</button>
                 </div>
                 <h3 class="card-title">
-                    <a href="${article.url}" target="_blank" rel="noopener noreferrer">
-                        ${article.title}
-                    </a>
+                    ${titleLinkHtml}
                 </h3>
-                ${article.summary ? `<p class="card-summary">${article.summary.slice(0, 180)}${article.summary.length > 180 ? '...' : ''}</p>` : ''}
+                ${article.summary ? `<p class="card-summary">${escapeHtml(article.summary.slice(0, 180))}${article.summary.length > 180 ? '...' : ''}</p>` : ''}
                 <div class="card-meta">
-                    <span class="card-time">${article.category || 'News'}</span>
-                    <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="external-link">
+                    <span class="card-time">${escapeHtml(article.category || 'News')}</span>
+                    ${safeUrl ? `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer" class="external-link">
                         Open story
-                    </a>
+                    </a>` : ''}
                 </div>
                 ${tagsHtml}
             </div>
@@ -1074,7 +1098,7 @@ class NewsApp {
         const updateResults = () => {
             const term = searchInput.value.toLowerCase();
             const matches = this.articles.filter(a => a !== article && a.title.toLowerCase().includes(term));
-            results.innerHTML = matches.slice(0, 10).map(m => `<li>${m.title}</li>`).join('');
+            results.innerHTML = matches.slice(0, 10).map(m => `<li>${escapeHtml(m.title)}</li>`).join('');
         };
         searchInput.addEventListener('input', updateResults);
         updateResults();
