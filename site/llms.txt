@@ -1,37 +1,139 @@
-# Kol's Korner
+# Kol's Korner - LLM Onboarding
 
-> AI news, daily digests, essays, and creative experiments by Kol Tregaskes.
+**Version:** 3.0.0
+**Last Updated:** 2 May 2026
+**Type:** Custom Node.js static site generator with local digest automation and GitHub Pages deployment
 
-A personal blog tracking the signal across AI products, research, tools, and the wider technology landscape. The site publishes automated news digests when the pipeline has verified source material, alongside hand-written essays.
+---
 
-## Public AI context
+## What This Project Does
+
+Kol's Korner is a personal publishing site for essays, commentary, and daily AI news digests.
+
+Current URLs:
+- Canonical production domain: https://koltregaskes.com/
+- GitHub Pages fallback: https://koltregaskes.github.io/kols-korner/
+
+Important: the custom domain is now the canonical public site. Build output should use `https://koltregaskes.com/` for sitemap, robots, feeds, and canonical metadata.
+
+---
+
+## Public AI Context
 
 - [Opinions](https://koltregaskes.com/opinions.txt): Public-safe opinion, voice, writing-style and red-line context for AI assistants.
 - [Memories](https://koltregaskes.com/memories.txt): Public-safe memory, project and working-style context for AI assistants.
 
-## Key pages
+---
 
-- [Homepage](./): Featured posts and latest available news
-- [Posts](./posts/): Full archive of articles and essays
-- [Tags](./tags/): Browse content by topic
-- [About](./about/): About Kol Tregaskes
+## Quick Start Commands
 
-## Content types
+```powershell
+# Build the site
+node scripts/build.mjs
 
-- AI news digests automated from a shared source set
-- Long-form essays on AI developments
-- Commentary on tools, models, and industry moves
+# Run the production digest pipeline manually for a date
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts\run-daily-news.ps1 -TargetDate 2026-04-05
 
-## Related sites
+# Preview locally
+cd site
+npx http-server -p 8080
+```
 
-- AI Resource Hub: Independent AI model comparison and benchmarks
-- Axy Lusion: AI art, video, and music portfolio
-- Ghost in the Models: AI agent-written articles
+Visit `http://localhost:8080/` for a local preview.
 
-## About
+---
 
-Written by Kol Tregaskes, UK-based AI artist and technology writer.
+## Core Architecture
 
-## Contact
+### Build and publish flow
 
-- X/Twitter: https://x.com/koltregaskes
+1. Markdown content lives in `content/`
+2. Raw digest markdown lives in `news-digests/`
+3. `scripts/build.mjs` converts source content into static output in `site/`
+4. `site/` is committed and deployed via GitHub Pages
+5. On push to `main`, `.github/workflows/pages.yml` rebuilds and deploys the site
+
+### Daily digest flow
+
+1. Shared upstream news collection runs outside this repo
+2. `scripts/fetch-news.mjs` pulls the prepared inputs into this repo
+3. `scripts/generate-daily-digest.mjs` creates or refreshes digest content
+4. `scripts/run-daily-news.ps1` orchestrates fetch, generate, build, commit, and push
+5. A local Windows scheduled task runs the digest flow at 07:00 and 19:00 Europe/London
+6. `.github/workflows/daily-digest.yml` is manual build verification only
+
+### Generated artifacts
+
+- `site/` - deployable static output
+- `site/data/news-digests.json` - generated manifest for the news browser
+- `site/data/news-articles.json` - generated article payload for the news browser
+- `site/feed.xml` - generated RSS feed
+- `site/sitemap.xml` - generated sitemap
+- `site/robots.txt` - generated robots file
+
+---
+
+## Key Files
+
+### Main generator
+- `scripts/build.mjs`
+  - Main build script for homepage, posts, tags, about page, support pages, RSS feed, sitemap, robots file, and the news browser data files
+  - Reusable page chrome comes from `getHeaderHTML(basePath)` and `getFooterHTML()`
+
+### Digest operations
+- `scripts/run-daily-news.ps1`
+  - Production digest runner with safety guards
+  - Refuses to publish if the repo has unexpected uncommitted changes
+- `scripts/fetch-news.mjs`
+  - Wrapper around the shared upstream news collector
+- `scripts/generate-daily-digest.mjs`
+  - Turns raw digest inputs into publishable content
+
+### Frontend
+- `site/styles.css`
+  - Global styling and homepage layout
+- `site/news/news-app.js`
+  - Client-side news browser using the generated prebuilt article payload, with raw-digest fallback
+
+### Content
+- `content/`
+  - Posts and pages in markdown with frontmatter
+- `news-digests/`
+  - Raw digest markdown files used to generate published digest posts
+
+---
+
+## Conventions
+
+- UK English throughout
+- Dark mode only in the current product direction
+- Primary accent colour remains red
+- Base body typography uses Fira Sans with a 17px base size and 1.7 line height
+- `site/` is intentionally committed
+- Prefer changing generator logic over hand-editing generated output
+- The root support pages must stay safe for both GitHub Pages and future custom-domain use
+
+---
+
+## Do Not Assume
+
+- No Notion CMS in the current architecture
+- No `fetch-notion.mjs` production dependency
+- No hourly GitHub Actions rebuild schedule
+- No light and dark theme toggle
+- No active Off by One footer credit
+
+---
+
+## Verified State On 2 May 2026
+
+- The production domain is `https://koltregaskes.com/`
+- The local scheduled task `KolsKorner Daily News Refresh` is the primary digest runner
+- Draft content with `publish: false` may exist in `content/`; it must not be staged by the scheduled digest job
+- Generated SEO files should use the custom domain
+
+---
+
+## Best Next Step
+
+Keep the mobile navigation compact, ensure the latest available digest is published, and verify `/news/` never opens to an unexplained empty state.

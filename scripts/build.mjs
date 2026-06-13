@@ -76,7 +76,7 @@ const NAV_ITEMS = [
   { key: 'about', label: 'About', path: 'about/' },
   { key: 'contact', label: 'Contact', path: 'contact/' }
 ];
-const AI_CONTEXT_FILES = ['opinions.txt', 'memories.txt'];
+const AI_CONTEXT_FILES = ['llms.txt', 'opinions.txt', 'memories.txt'];
 const CONNECTED_PROJECTS = [
   {
     name: 'AI Resource Hub',
