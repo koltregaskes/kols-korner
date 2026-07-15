@@ -20,6 +20,7 @@ Important: the custom domain is now the canonical public site. Build output shou
 
 ## Public AI Context
 
+- [Writing style](https://koltregaskes.com/writing-style.txt): Public-safe voice, structure, editorial checks and accepted examples for AI-assisted writing.
 - [Opinions](https://koltregaskes.com/opinions.txt): Public-safe opinion, voice, writing-style and red-line context for AI assistants.
 - [Memories](https://koltregaskes.com/memories.txt): Public-safe memory, project and working-style context for AI assistants.
 

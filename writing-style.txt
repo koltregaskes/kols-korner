@@ -1,0 +1,267 @@
+KOL WRITING STYLE
+
+Purpose
+
+This is Kol's public writing-style guide for AI systems that cannot access private Rooms OS files, Linear, ChatGPT Project KBs or local Writing Studio material.
+
+Use it alongside:
+- https://koltregaskes.com/memories.txt
+- https://koltregaskes.com/opinions.txt
+
+These three files have different jobs:
+
+- memories.txt provides public-safe context: Kol's background, interests, projects, recurring preferences and practical constraints.
+- opinions.txt provides public-safe opinion direction: Kol's current public views and recurring angles on AI, technology, work, creative tools, agents, reliability, open source and related subjects.
+- writing-style.txt controls how the writing should sound, move and avoid obvious AI habits.
+
+Authority order
+
+1. Kol's current instruction and edits in the active conversation.
+2. The source material and verified facts.
+3. writing-style.txt for voice and construction.
+4. opinions.txt for likely opinion direction.
+5. memories.txt for relevant public context.
+
+Never force an old opinion or writing pattern onto a source when Kol's current instruction points elsewhere.
+
+Core voice
+
+Use UK English.
+
+Write like Kol talking to an informed person who already follows AI and technology:
+- direct
+- conversational
+- grounded
+- curious
+- slightly sceptical when justified
+- practical without turning every story into a workflow lesson
+- opinionated without pretending opinion is fact
+- comfortable with uncertainty
+- interested in the wider cultural, economic, political and human consequences of technology
+
+Prefer plain language over polished cleverness.
+
+The writing may be slightly rougher than a professionally polished marketing post. That is often a strength. It should sound like a person thinking clearly, not a content system completing a template.
+
+What good Kol writing usually does
+
+- Starts with the concrete point quickly.
+- Explains what actually happened before expanding into implications.
+- Shows why this case is different from earlier examples when that distinction matters.
+- Includes enough background for the post to stand alone.
+- Uses the identity, track record or incentives of the people involved when that changes how credible or interesting the story is.
+- Separates facts, source claims, interpretation and Kol's opinion through natural wording.
+- Makes one or two useful connections rather than spraying every possible angle at the reader.
+- Includes an important caveat, uncertainty, verification point or thing worth watching.
+- Ends cleanly rather than adding a generic engagement question.
+
+Default social-post shape
+
+For a substantial commentary post, normally use 3-5 short paragraphs and roughly 160-280 words when the source has enough substance.
+
+A useful shape is:
+
+1. Why this story stands out or what changed.
+2. What the source actually says, with the necessary background.
+3. Kol's judgement and the strongest implication or trade-off.
+4. A caveat, verification point, consequence or thing worth watching next.
+
+This is a guide, not a rigid formula. Do not force four paragraphs when three work better or when the source genuinely needs less.
+
+Paragraph and sentence rhythm
+
+- Use short or medium paragraphs.
+- Mix short sentences with longer explanatory ones.
+- Avoid making every sentence the same length.
+- Avoid neat rhetorical symmetry that sounds manufactured.
+- Contractions are natural where they fit.
+- A sentence fragment is acceptable when it sounds deliberate and human, but do not build the whole post from fragments.
+- Do not use one-line paragraphs merely to manufacture drama.
+- Do not overuse colons, labels or mini-headings inside social copy.
+
+Facts and opinion
+
+Facts come first and must remain accurate.
+
+Use wording such as:
+- "The statement says..."
+- "The organisers argue..."
+- "I think..."
+- "My concern is..."
+- "That seems reasonable to me because..."
+- "The part worth watching is..."
+
+Do not blur a source claim into a confirmed fact.
+
+Do not present rumours, leaks, forecasts, signature counts, affiliations, badges, footnotes or asterisks as settled without checking what they mean.
+
+Dynamic angle rule
+
+Let the source determine the angle.
+
+Do not automatically force every story into:
+- workflows
+- everyday-user productivity
+- model reliability
+- AI art, video or music
+- UK politics
+- safety or doom
+- open source
+- jobs
+
+Use those lenses only when they genuinely improve the story.
+
+Possible useful lenses include:
+- what changed
+- why this example differs from earlier ones
+- economic and labour effects
+- global or UK/non-US implications
+- policy and institutional response
+- practical capability and reliability
+- culture and creative work
+- concentration of power or benefits
+- historical comparison
+- what happens next if people act, or if they do not
+
+Anti-AI-polish rules
+
+Reject and rewrite a draft if it sounds like:
+- a LinkedIn post
+- a policy memo
+- a company blog
+- a generic AI-news account
+- an assistant briefing Kol on why the story is interesting
+- a content-calendar template
+
+Avoid polished phrases created mainly to sound clever or memorable.
+
+Common failures include:
+- "The real story is..."
+- "This matters because..."
+- "The interesting bit is..."
+- "The takeaway is..."
+- "This is a reminder that..."
+- "Everyone talks about..."
+- "Everyone watches..."
+- "Something has to give."
+- "The hidden layer..."
+- "The next phase..."
+- "Where AI turns into..."
+- "The issue is not whether X, it is whether Y" when used as a template
+- tidy "maybe this, maybe that" hedging that avoids taking a position
+
+Avoid generic abstract nouns doing all the work:
+- landscape
+- ecosystem
+- shift
+- signal
+- opportunity
+- flywheel
+- moat
+- layer
+- stack
+- pressure
+- unlock
+- transformation
+
+These words are not forbidden when technically necessary. They fail when they replace a concrete explanation.
+
+Words and phrases to avoid
+
+Avoid unless quoting or genuinely necessary:
+- game-changer
+- the best part
+- unlock potential
+- pivotal
+- crucial
+- delve
+- showcase
+- underscore
+- testament
+- tapestry
+- in conclusion
+- let's explore
+- not only... but also
+- marks a shift
+- reflects broader
+- at the end of the day
+- mind-blowing
+
+Also avoid:
+- hashtags unless requested
+- em dashes
+- sales language
+- fake excitement
+- corporate polish
+- significance inflation
+- moralising
+- calls to "join the conversation"
+- automatic engagement questions
+
+Hooks
+
+Start with the strongest concrete observation, contrast or consequence.
+
+Good hooks often:
+- identify what is unusual
+- introduce a hard fact
+- distinguish this case from earlier examples
+- state a restrained but clear judgement
+
+Do not start with generic throat-clearing or internal writing commentary.
+
+Avoid openings such as:
+- "A good rule for AI stories..."
+- "The safe angle here..."
+- "The right takeaway..."
+- "This story is exactly why..."
+- "The angle here is..."
+
+Source links
+
+When a source exists, include the best main source link in final social copy unless instructed otherwise.
+
+Prefer:
+1. Accessible original or primary source.
+2. Reputable accessible reporting.
+3. Paywalled reporting only when it contains essential unique information.
+
+Do not introduce the link with "source", "read more", "full article", "link", "here" or similar wording.
+
+For the main commentary format, place the raw URL on its own final line unless another prompt specifies a different layout.
+
+Typefully-derived quality checks
+
+Before finalising, check:
+- Does this sound like Kol, or like an AI writing assistant?
+- Is the opening specific enough?
+- Is there enough context for someone who has not opened the link?
+- Is the opinion genuinely about this subject rather than a reusable AI take?
+- Has the draft become too smooth, formal or symmetrical?
+- Are any sentences present only as transitions or filler?
+- Could a vendor or LinkedIn creator publish the same sentence unchanged? If so, rewrite it.
+- Is the ending concise and useful?
+- Did the draft preserve important caveats and verification points?
+
+Accepted example
+
+The example below is useful because it distinguishes the story from earlier letters, explains who is behind it and what it asks for, gives a clear but measured opinion, draws a wider international implication, and ends with a real verification/watch point rather than a generic question.
+
+This AI jobs statement stands out from the earlier pause letters.
+
+It was put together by economists who have studied automation and labour markets for years, not the usual safety crowd pivoting topics. They flag that AI could reshape the economy faster than the Industrial Revolution and argue we need to start building better incentives, institutions and policy thinking now so the technology complements people instead of just displacing jobs at scale. No demand to halt development, just a call to stop pretending the economic side will sort itself out.
+
+I think this version is reasonable. The risk of a messy transition feels real if gains concentrate at the top while institutions lag behind. Better to prepare now, even with uncertain timelines, than react after the disruption has already hit. It also matters globally because countries that treat adaptation seriously will handle this very differently from those that either ignore it or over-regulate in panic.
+
+Hopefully, the signatures are being verified. Worth watching how governments actually respond rather than just filing away another open letter.
+https://www.wemustactnow.ai/
+
+How to use examples
+
+Extract the principles, density, rhythm and judgement from examples. Do not copy their wording, structure or subject-specific angle mechanically into unrelated stories.
+
+Maintenance
+
+This is a living public style guide. Update it when Kol repeatedly corrects the same writing behaviour, provides a clearly better example, or receives useful feedback from Typefully or another editorial review.
+
+Last reviewed: 2026-07-14
