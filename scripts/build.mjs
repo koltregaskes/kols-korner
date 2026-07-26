@@ -285,6 +285,9 @@ async function readExistingRssFeed() {
 function normaliseNewsUrl(url = '') {
   try {
     const parsed = new URL(String(url || '').trim());
+    if (!['http:', 'https:'].includes(parsed.protocol)) {
+      return '';
+    }
     parsed.hash = '';
     parsed.searchParams.delete('utm_source');
     parsed.searchParams.delete('utm_medium');
@@ -1170,6 +1173,9 @@ function stripLeadingArticleHeading(html = '', title = '') {
 
 function stripMarkdownFormatting(text = '') {
   return fixCommonEncoding(String(text || ''))
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
     .replace(/^>\s*/gm, '')
     .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '$1')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
@@ -1799,9 +1805,9 @@ async function writeDigestPage({ title, slug, bodyMarkdown, tags, date, readingT
               <div class="digest-story-meta">
                 <span>${escapeHtml(item.source || 'Digest item')}</span>
               </div>
-              <h3>${item.url ? `<a href="${item.url}" target="_blank" rel="noopener">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h3>
+              <h3>${item.url ? `<a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h3>
               <p>${escapeHtml(item.summary)}</p>
-              ${item.url ? `<a class="digest-story-link" href="${item.url}" target="_blank" rel="noopener">Read more</a>` : ''}
+              ${item.url ? `<a class="digest-story-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">Read more</a>` : ''}
             </article>`).join('')}
           </div>` : ''}
         </section>`).join('');

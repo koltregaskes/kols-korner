@@ -41,7 +41,7 @@ jobs:
         run: |
           echo "## Daily Digest Workflow" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "This repository now generates digests on the always-on Windows mini PC via Task Scheduler and \`scripts/run-daily-news.ps1\`." >> $GITHUB_STEP_SUMMARY
+          echo "The shared Rooms OS news cycle creates routed source digests. The isolated \`scripts/publish-routed-news.ps1\` helper validates one date and remains non-publishing unless its explicit live gate is supplied." >> $GITHUB_STEP_SUMMARY
           echo "This manual workflow only verifies that the site still builds from the content already committed to the repository." >> $GITHUB_STEP_SUMMARY
           if [ -n "${{ inputs.note }}" ]; then
             echo "" >> $GITHUB_STEP_SUMMARY
