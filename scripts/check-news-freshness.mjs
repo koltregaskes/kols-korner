@@ -97,7 +97,7 @@ async function main() {
 
   const latestDateKey = formatDate(latestDate);
   if (latestDate < requiredDate) {
-    throw new Error(`News freshness failed: latest generated article is ${latestDateKey}, but previous workday is ${requiredDateKey}`);
+    throw new Error(`News freshness failed: latest generated article is ${latestDateKey}, but required date is ${requiredDateKey}`);
   }
 
   const contentPath = path.join(repoRoot, 'content', `daily-digest-${requiredDateKey}.md`);

@@ -666,7 +666,7 @@ function parseDigestArticles(content, filename) {
   if (!dateMatch) return [];
 
   const [, year, month, day] = dateMatch;
-  const fileDate = new Date(Number(year), Number(month) - 1, Number(day));
+  const fileDate = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)));
   const fallbackDateString = formatDisplayDate(fileDate);
   const articles = [];
   const lines = content.split(/\r?\n/);
@@ -760,7 +760,7 @@ function parseDigestArticles(content, filename) {
         if (metaMatch) {
           source = fixCommonEncoding(metaMatch[1]).trim();
           const [dayPart, monthPart, yearPart] = metaMatch[2].split('/');
-          const parsedDate = new Date(Number(yearPart), Number(monthPart) - 1, Number(dayPart));
+          const parsedDate = new Date(Date.UTC(Number(yearPart), Number(monthPart) - 1, Number(dayPart)));
           if (!Number.isNaN(parsedDate.getTime())) {
             articleDate = parsedDate;
             dateString = formatDisplayDate(parsedDate);
