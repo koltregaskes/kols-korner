@@ -181,7 +181,8 @@ function formatDisplayDate(date) {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
+    timeZone: 'UTC'
   });
 }
 
@@ -285,6 +286,9 @@ async function readExistingRssFeed() {
 function normaliseNewsUrl(url = '') {
   try {
     const parsed = new URL(String(url || '').trim());
+    if (!['http:', 'https:'].includes(parsed.protocol)) {
+      return '';
+    }
     parsed.hash = '';
     parsed.searchParams.delete('utm_source');
     parsed.searchParams.delete('utm_medium');
@@ -666,7 +670,7 @@ function parseDigestArticles(content, filename) {
   if (!dateMatch) return [];
 
   const [, year, month, day] = dateMatch;
-  const fileDate = new Date(Number(year), Number(month) - 1, Number(day));
+  const fileDate = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)));
   const fallbackDateString = formatDisplayDate(fileDate);
   const articles = [];
   const lines = content.split(/\r?\n/);
@@ -760,7 +764,7 @@ function parseDigestArticles(content, filename) {
         if (metaMatch) {
           source = fixCommonEncoding(metaMatch[1]).trim();
           const [dayPart, monthPart, yearPart] = metaMatch[2].split('/');
-          const parsedDate = new Date(Number(yearPart), Number(monthPart) - 1, Number(dayPart));
+          const parsedDate = new Date(Date.UTC(Number(yearPart), Number(monthPart) - 1, Number(dayPart)));
           if (!Number.isNaN(parsedDate.getTime())) {
             articleDate = parsedDate;
             dateString = formatDisplayDate(parsedDate);
@@ -1170,6 +1174,9 @@ function stripLeadingArticleHeading(html = '', title = '') {
 
 function stripMarkdownFormatting(text = '') {
   return fixCommonEncoding(String(text || ''))
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
     .replace(/^>\s*/gm, '')
     .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '$1')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
@@ -1799,9 +1806,9 @@ async function writeDigestPage({ title, slug, bodyMarkdown, tags, date, readingT
               <div class="digest-story-meta">
                 <span>${escapeHtml(item.source || 'Digest item')}</span>
               </div>
-              <h3>${item.url ? `<a href="${item.url}" target="_blank" rel="noopener">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h3>
+              <h3>${item.url ? `<a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h3>
               <p>${escapeHtml(item.summary)}</p>
-              ${item.url ? `<a class="digest-story-link" href="${item.url}" target="_blank" rel="noopener">Read more</a>` : ''}
+              ${item.url ? `<a class="digest-story-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">Read more</a>` : ''}
             </article>`).join('')}
           </div>` : ''}
         </section>`).join('');

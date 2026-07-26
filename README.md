@@ -15,7 +15,7 @@ Personal website and publishing system for Kol Tregaskes.
 - Daily digests in `news-digests/`
 - Generated, deployable output committed in `site/`
 - GitHub Actions deployment to GitHub Pages on push to `main`
-- Local Windows Task Scheduler automation for the twice-daily digest refresh
+- Shared Rooms OS news routing plus a collision-safe, isolated publish helper
 
 The shared news-gathering pipeline runs outside this repo. This repo consumes the generated digest inputs, publishes digest posts, builds the site, and deploys the finished static output.
 
@@ -31,13 +31,19 @@ node scripts/build.mjs
 node scripts/fetch-news.mjs --date YYYY-MM-DD
 node scripts/generate-daily-digest.mjs --date YYYY-MM-DD --allow-empty --force
 node scripts/backfill-digests.mjs
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/publish-routed-news.ps1 `
+  -TargetDate YYYY-MM-DD `
+  -SourceDigestDirectory W:\websites\sites\kols-korner\news-digests
 ```
 
 - Raw digest files live in `news-digests/`
 - Published digest posts live in `content/daily-digest-YYYY-MM-DD.md`
 - `scripts/backfill-digests.mjs` publishes any raw digests that do not yet have a matching post
-- `scripts/run-daily-news.ps1` is the primary production runner for digest refreshes
-- The Windows scheduled task runs at 07:00 and 19:00 Europe/London
+- The shared Rooms OS website-news cycle and routing classifier own source ingestion and per-site digest generation
+- `scripts/publish-routed-news.ps1` validates one routed date in a fresh temporary clone, normalises the shared local-only `digest-YYYY-MM-DD.md` filename into the tracked `YYYY-MM-DD-digest.md` contract, and prevents unrelated worktree changes leaking into a news commit
+- The publisher stages only the routed digest and generated digest post. GitHub Pages rebuilds the deployment from those committed sources, so unrelated historical `site/` drift cannot leak into the news commit
+- The publisher is validation-only by default. `-Publish` is an explicit live gate that commits and fast-forward pushes the verified date to `main`
+- The retired dirty-checkout task must stay disabled until its replacement schedule is approved and proven
 - `.github/workflows/daily-digest.yml` is a manual build-check workflow only
 - `site/data/news-articles.json` is generated during build so the news page can load from one prebuilt payload instead of fetching every raw digest separately
 
@@ -101,7 +107,8 @@ Posts with `publish: false` are excluded from the build.
 ## Key Paths
 
 - `scripts/build.mjs` - Main build script
-- `scripts/run-daily-news.ps1` - Production digest runner
+- `scripts/run-daily-news.ps1` - Retired dirty-checkout runner retained for history and manual diagnosis
+- `scripts/publish-routed-news.ps1` - Isolated, one-date shared-news publisher; validation-only unless `-Publish` is supplied
 - `content/` - Source articles and static page markdown
 - `news-digests/` - Raw digest markdown used by the news section
 - `site/` - Generated output that GitHub Pages deploys
