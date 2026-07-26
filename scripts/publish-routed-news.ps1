@@ -157,7 +157,9 @@ try {
   Push-Location $clonePath
   $pushedLocation = $true
 
-  $digestFileName = Split-Path -Leaf $sourceDigest
+  # The shared classifier writes digest-YYYY-MM-DD.md, which is a local-only
+  # ignored filename in this repo. Normalise it into the tracked site contract.
+  $digestFileName = "$TargetDate-digest.md"
   Copy-Item -LiteralPath $sourceDigest -Destination (Join-Path $clonePath "news-digests\$digestFileName") -Force
 
   Invoke-NativeStep -FilePath 'node' -ArgumentList @(

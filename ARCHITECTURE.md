@@ -46,7 +46,7 @@ GitHub Actions runs the build on pushes to `main`.
 
 - [`.github/workflows/pages.yml`](/W:/Websites/sites/kols-korner/.github/workflows/pages.yml) builds and deploys the site
 - [`.github/workflows/daily-digest.yml`](/W:/Websites/sites/kols-korner/.github/workflows/daily-digest.yml) is a manual build-check workflow
-- [`scripts/publish-routed-news.ps1`](/W:/Websites/sites/kols-korner/scripts/publish-routed-news.ps1) clones current `main` into a temporary directory, imports one routed digest date, builds, verifies and rejects out-of-scope source changes. It stages only the routed digest and digest post, leaving temporary `site/` build drift out of the commit. It does not commit or push unless `-Publish` is explicitly supplied.
+- [`scripts/publish-routed-news.ps1`](/W:/Websites/sites/kols-korner/scripts/publish-routed-news.ps1) clones current `main` into a temporary directory, normalises one routed `digest-YYYY-MM-DD.md` input into the tracked `YYYY-MM-DD-digest.md` contract, builds, verifies and rejects out-of-scope source changes. It stages only the routed digest and digest post, leaving temporary `site/` build drift out of the commit. It does not commit or push unless `-Publish` is explicitly supplied.
 
 The build can derive its canonical URL from:
 

@@ -40,7 +40,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/publish-routed-n
 - Published digest posts live in `content/daily-digest-YYYY-MM-DD.md`
 - `scripts/backfill-digests.mjs` publishes any raw digests that do not yet have a matching post
 - The shared Rooms OS website-news cycle and routing classifier own source ingestion and per-site digest generation
-- `scripts/publish-routed-news.ps1` validates one routed date in a fresh temporary clone, so unrelated worktree changes cannot leak into a news commit
+- `scripts/publish-routed-news.ps1` validates one routed date in a fresh temporary clone, normalises the shared local-only `digest-YYYY-MM-DD.md` filename into the tracked `YYYY-MM-DD-digest.md` contract, and prevents unrelated worktree changes leaking into a news commit
 - The publisher stages only the routed digest and generated digest post. GitHub Pages rebuilds the deployment from those committed sources, so unrelated historical `site/` drift cannot leak into the news commit
 - The publisher is validation-only by default. `-Publish` is an explicit live gate that commits and fast-forward pushes the verified date to `main`
 - The retired dirty-checkout task must stay disabled until its replacement schedule is approved and proven
