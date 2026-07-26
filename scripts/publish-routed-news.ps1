@@ -109,8 +109,10 @@ if (-not (Test-Path -LiteralPath $SourceDigestDirectory -PathType Container)) {
 }
 
 $sourceCandidates = @(
-  (Join-Path $SourceDigestDirectory "$TargetDate-digest.md"),
-  (Join-Path $SourceDigestDirectory "digest-$TargetDate.md")
+  # The shared classifier writes this ignored local filename. Prefer it when a
+  # previously published canonical digest for the same day is also present.
+  (Join-Path $SourceDigestDirectory "digest-$TargetDate.md"),
+  (Join-Path $SourceDigestDirectory "$TargetDate-digest.md")
 )
 $sourceDigest = $sourceCandidates |
   Where-Object { Test-Path -LiteralPath $_ -PathType Leaf } |
@@ -123,9 +125,13 @@ if (-not $sourceDigest) {
 if ([string]::IsNullOrWhiteSpace($RepositoryUrl)) {
   Push-Location $repoRoot
   try {
-    $RepositoryUrl = (
+    $repositoryUrlLines = @(
       Get-NativeOutput -FilePath 'git' -ArgumentList @('remote', 'get-url', 'origin') -FailureLabel 'git remote lookup'
-    )[0]
+    )
+    if ($repositoryUrlLines.Count -ne 1) {
+      throw "Expected one origin URL, found $($repositoryUrlLines.Count)."
+    }
+    $RepositoryUrl = [string]$repositoryUrlLines[0]
   }
   finally {
     Pop-Location
@@ -252,16 +258,25 @@ try {
     'HEAD:main'
   ) -FailureLabel 'git push'
 
-  $pushedCommit = (
+  $pushedCommitLines = @(
     Get-NativeOutput -FilePath 'git' -ArgumentList @('rev-parse', 'HEAD') -FailureLabel 'published commit readback'
-  )[0]
-  $remoteLine = (
+  )
+  if ($pushedCommitLines.Count -ne 1) {
+    throw "Expected one published commit hash, found $($pushedCommitLines.Count)."
+  }
+  $pushedCommit = [string]$pushedCommitLines[0]
+
+  $remoteLines = @(
     Get-NativeOutput -FilePath 'git' -ArgumentList @(
       'ls-remote',
       'origin',
       'refs/heads/main'
     ) -FailureLabel 'remote main readback'
-  )[0]
+  )
+  if ($remoteLines.Count -ne 1) {
+    throw "Expected one remote main ref, found $($remoteLines.Count)."
+  }
+  $remoteLine = [string]$remoteLines[0]
   $remoteCommit = ($remoteLine -split '\s+')[0]
   if ($remoteCommit -ne $pushedCommit) {
     throw "Remote main readback mismatch: expected $pushedCommit, found $remoteCommit"
