@@ -15,10 +15,15 @@ function Invoke-NativeStep {
     [string]$FilePath,
     [string[]]$ArgumentList = @(),
     [Parameter(Mandatory = $true)]
-    [string]$FailureLabel
+    [string]$FailureLabel,
+    [switch]$HideArguments
   )
 
-  Write-Host ">> $FilePath $($ArgumentList -join ' ')"
+  if ($HideArguments) {
+    Write-Host ">> $FilePath [arguments hidden]"
+  } else {
+    Write-Host ">> $FilePath $($ArgumentList -join ' ')"
+  }
   & $FilePath @ArgumentList
   $exitCode = $LASTEXITCODE
   if ($exitCode -ne 0) {
@@ -152,7 +157,7 @@ try {
     '--',
     $RepositoryUrl,
     $clonePath
-  ) -FailureLabel 'git clone'
+  ) -FailureLabel 'git clone' -HideArguments
 
   Push-Location $clonePath
   $pushedLocation = $true
