@@ -30,3 +30,6 @@ jobs:
           CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+
+      - name: Verify fixed-date news artefacts
+        run: node scripts/check-news-freshness.mjs --required-date 2026-06-03

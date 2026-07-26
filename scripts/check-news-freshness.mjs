@@ -6,6 +6,21 @@ import process from 'node:process';
 
 const repoRoot = process.cwd();
 
+function parseArgs(argv) {
+  const args = { requiredDate: '' };
+
+  for (let i = 0; i < argv.length; i += 1) {
+    const value = argv[i];
+    if (value === '--required-date' && argv[i + 1]) {
+      args.requiredDate = argv[++i];
+    } else if (value.startsWith('--required-date=')) {
+      args.requiredDate = value.slice('--required-date='.length);
+    }
+  }
+
+  return args;
+}
+
 function parseIsoDate(value) {
   if (!value) return null;
   const date = new Date(value);
@@ -54,8 +69,14 @@ async function pathExists(filePath) {
 }
 
 async function main() {
+  const args = parseArgs(process.argv.slice(2));
   const today = getToday();
-  const requiredDate = getPreviousWorkday(today);
+  const requiredDate = args.requiredDate
+    ? parseIsoDate(args.requiredDate)
+    : getPreviousWorkday(today);
+  if (!requiredDate) {
+    throw new Error(`Invalid --required-date value: ${args.requiredDate}`);
+  }
   const requiredDateKey = formatDate(requiredDate);
   const dataPath = path.join(repoRoot, 'site', 'data', 'news-articles.json');
   const payload = await readJson(dataPath);
@@ -80,17 +101,23 @@ async function main() {
   }
 
   const contentPath = path.join(repoRoot, 'content', `daily-digest-${requiredDateKey}.md`);
-  const digestPath = path.join(repoRoot, 'news-digests', `${requiredDateKey}-digest.md`);
+  const digestPaths = [
+    path.join(repoRoot, 'news-digests', `${requiredDateKey}-digest.md`),
+    path.join(repoRoot, 'news-digests', `digest-${requiredDateKey}.md`)
+  ];
 
   const missing = [];
   if (!(await pathExists(contentPath))) missing.push(path.relative(repoRoot, contentPath));
-  if (!(await pathExists(digestPath))) missing.push(path.relative(repoRoot, digestPath));
-
-  if (missing.length > 0) {
-    throw new Error(`News freshness failed: missing previous-workday artefact(s): ${missing.join(', ')}`);
+  const digestExists = (await Promise.all(digestPaths.map(pathExists))).some(Boolean);
+  if (!digestExists) {
+    missing.push(`news-digests/{${requiredDateKey}-digest.md,digest-${requiredDateKey}.md}`);
   }
 
-  console.log(`News freshness OK: latest generated article ${latestDateKey}; previous workday ${requiredDateKey}; ${articles.length} generated articles.`);
+  if (missing.length > 0) {
+    throw new Error(`News freshness failed: missing required-date artefact(s): ${missing.join(', ')}`);
+  }
+
+  console.log(`News freshness OK: latest generated article ${latestDateKey}; required date ${requiredDateKey}; ${articles.length} generated articles.`);
 }
 
 main().catch((error) => {
