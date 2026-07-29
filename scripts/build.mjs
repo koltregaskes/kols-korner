@@ -1893,6 +1893,73 @@ async function writeLegacyRedirectPage(fromSlug, toSlug) {
   await fs.writeFile(path.join(outDir, "index.html"), html.replace(/[ \t]+$/gm, ''), "utf8");
 }
 
+function refreshBroadsheetHomepageNews(existingHtml, newsArticles = []) {
+  const latestNews = newsArticles.slice(0, 5);
+  if (!latestNews.length) return existingHtml;
+
+  const latestNewsDate = new Date(latestNews[0].date)
+    .toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+  const latestNewsShortDate = new Date(latestNews[0].date)
+    .toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+
+  const newsCards = latestNews.map((article) => {
+    const summary = stripMarkdownFormatting(
+      article.summary || 'Available AI and technology coverage from the news archive.'
+    ).slice(0, 360);
+
+    return `
+          <article class="home-news-card">
+            <a href="${escapeHtml(article.url || './news/')}" target="_blank" rel="noopener" class="home-news-link">
+              <div class="home-news-meta">
+                <span>${escapeHtml(new Date(article.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }))}</span>
+                <span>${escapeHtml(article.source || 'Source')}</span>
+              </div>
+              <h3>${escapeHtml(article.title)}</h3>
+              <p>${escapeHtml(summary)}</p>
+            </a>
+          </article>`;
+  }).join('');
+
+  const newsSection = `
+    <section class="section fade-in-up">
+        <div class="home-section-heading">
+          <div>
+            <p class="section-eyebrow"><span class="hash" aria-hidden="true">##</span>News desk</p>
+            <h2>The five stories worth opening first</h2>
+          </div>
+          <a href="./news/" class="section-link">View the news archive</a>
+        </div>
+        <div class="home-news-grid">
+${newsCards}
+        </div>
+    </section>`;
+
+  let refreshed = existingHtml.replace(
+    /<div class="rail-foot">[\s\S]*?<\/div>/,
+    `<div class="rail-foot">
+            <span>${escapeHtml(latestNewsDate)} &bull; ${latestNews.length} sourced stories</span>
+            <a href="./news/">News archive &rarr;</a>
+          </div>`
+  );
+
+  const newsMarker = '<p class="section-eyebrow"><span class="hash" aria-hidden="true">##</span>News desk</p>';
+  const markerIndex = refreshed.indexOf(newsMarker);
+  const sectionStart = markerIndex >= 0 ? refreshed.lastIndexOf('<section', markerIndex) : -1;
+  const sectionEnd = markerIndex >= 0 ? refreshed.indexOf('</section>', markerIndex) : -1;
+
+  if (sectionStart < 0 || sectionEnd < 0) {
+    throw new Error('Broadsheet homepage news section marker was not found.');
+  }
+
+  refreshed = `${refreshed.slice(0, sectionStart)}${newsSection}${refreshed.slice(sectionEnd + '</section>'.length)}`;
+
+  if (!refreshed.includes(latestNews[0].title) || !refreshed.includes(latestNewsShortDate)) {
+    throw new Error('Broadsheet homepage news refresh did not write the latest article and date.');
+  }
+
+  return refreshed;
+}
+
 async function writeHomePage(items, newsArticles = []) {
   // 2026-05-20 — broadsheet preservation guard.
   // The committed site/index.html is the Hi-Fi broadsheet design (DESIGN.md). The
@@ -1904,7 +1971,9 @@ async function writeHomePage(items, newsArticles = []) {
   try {
     const existing = await fs.readFile("site/index.html", "utf8");
     if (existing.includes('class="dateline"') && existing.includes('class="hash"')) {
-      console.log('[skip] site/index.html already in broadsheet design — preserving committed file.');
+      const refreshed = refreshBroadsheetHomepageNews(existing, newsArticles);
+      await fs.writeFile("site/index.html", refreshed.replace(/[ \t]+$/gm, ''), "utf8");
+      console.log('[refresh] Preserved the broadsheet homepage and refreshed its live news desk.');
       return;
     }
   } catch {
