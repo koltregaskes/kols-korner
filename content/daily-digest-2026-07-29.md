@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Wednesday, 29 July 2026"
 date: 2026-07-29
-tags: ["ai", "news", "digest", "announcement", "funding", "policy", "model_release", "product_launch", "acquisition", "industry_move", "hardware", "open_source", "ai_agents"]
+tags: ["ai", "news", "digest", "product_launch", "announcement", "open_source", "funding", "policy", "model_release", "industry_move", "acquisition", "hardware", "ai_agents"]
 summary: "AI and technology news digest for Wednesday, 29 July 2026"
 ---
 
@@ -9,19 +9,31 @@ summary: "AI and technology news digest for Wednesday, 29 July 2026"
 
 This dated roundup collects the most interesting AI and technology developments found for Wednesday, 29 July 2026.
 
-## Policy & Ethics
+## Research & Products
 
-### Mooted WA oil refinery ‘dinosaur technology’ amid clean energy transition, experts say
+### Keychron announces first open-source firmware for gaming mice
 
-<p>A feasibility study for the Western Australian project will show the project is uneconomic and requires government subsidies, experts say</p><ul><li><p><a href="https://www.theguardian.com/australia-news/live/2026/jul/29/ben-carroll-victoria-premier-jacinta-allan-labor-abs-inflation-data-nsw-icac-inquiry-antisemitism-royal-commission-ntwnfb">Follow our Australia news live blog for latest updates</a></p></li><li><p><a href="https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl">Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here</a></p></li><li><p>Get our <a href="https://www.theguardian.com/email-newsletters?CMP=cvau_sfl">breaking news email</a>, <a href="https://app.adjust.com/w4u7jx3">free app</a> or <a href="https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl">daily news podcast</a></p></li></ul><p>Leading Australian climate policy experts say a new oil refinery in Western Australia would be an investment in “dinosaur technology” that would require public subsidy and do little to solve the country’s fuel security.<br><br><a href="https://www.theguardian.com/australia-news/2026/jul/27/potential-for-first-australian-oil-refinery-in-60-years-as-treasurer-braces-for-inflation-from-middle-east-war">The Albanese government announced a $4m early-stage feasibility study</a> with the WA government for a new oil refinery in the Pilbara region on Tuesday, but experts said the money would be better spent on green technology to reduce Australia’s reliance on fossil fuels.</p><p>Experts told Guardian Australia doing the feasibility study was not a bad idea, but would ultimately show the project would be uneconomic and would require government subsidies.</p><p><strong><a href="https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=copyembed">Sign up to get climate and environment editor Adam Morton’s Clear Air column as a free newsletter</a></strong></p> <a href="https://www.theguardian.com/australia-news/2026/jul/29/western-australia-oil-refinery-feasibility-study">Continue reading...</a>
-
-[Read more](https://www.theguardian.com/australia-news/2026/jul/29/western-australia-oil-refinery-feasibility-study)
+[Read more](https://www.digitalfoundry.net/news/2026/07/keychron-announces-first-open-source-firmware-for-gaming-mice)
 
 ---
 
-## Research & Products
+### Perplexity employee who worked on Comet launches an AI browser aimed at knowledge work
 
-### ‘No plan, no budget, no promotion’: how a genre-mashing masterpiece by a forgotten New York beatnik blew Gen Z away
+Polar has come out with an AI-first browser aimed at knowledge workers, and it has now raised a $5.7 million seed round led by Madrona.
+
+[Read more](https://techcrunch.com/2026/07/29/perplexity-employee-who-worked-on-comet-launches-an-ai-browser-aimed-at-knowledge-work/)
+
+---
+
+### Saudi Arabia joins US in strikes on Iran-backed militias in Iraq
+
+US Central Command says proxy groups launched attacks against US bases and Saudi energy infrastructure.
+
+[Read more](https://www.bbc.co.uk/news/articles/c70g6y24d76o?at_medium=RSS&at_campaign=rss)
+
+---
+
+### ‘No plan, no budget, no promotion’: how a genre-mashing masterpiece by a forgotten New York beatnik blew gen Z away
 
 <p>How did an album that began life in 1984 – fusing disco, folk, synth-pop and Chinese opera – end up as ‘one of 2026’s most thrilling releases’? And why does its creator call himself Nirosta Steel?</p><p>‘It’s kind of mind-bending,” says 69-year old Steven Hall. For the last three years, the Scottish musician has been living with his lawyer husband a few hours south of Chicago, driving an Uber for some additional income. Now, suddenly, he is being lauded by critics for his double LP My Skyscraper, released last month under the name Nirosta Steel. Compiling material recorded between 1984 and 2025, it charts a sonic landscape through disco, folk and synth-pop with detours into Chinese opera and ecclesiastical a cappella. Pitchfork <a href="https://pitchfork.com/reviews/albums/nirosta-steel-my-skyscraper/">called it</a> “an archival triumph and one of the year’s most thrilling new releases”.</p><p>It all came about when a label head, impressed with Nirosta Steel’s 2014 album Cool Fire, asked Hall if he had any more music. “He didn’t know what he was in for,” says Hall. The couple of dozen unreleased songs he shared spanned four decades of eclectic musicianship, and revealed a globe-trotting life and career that intersects with experimental icons such as Arthur Russell and Allen Ginsberg. Now My Skyscraper seems poised to admit Hall into that rarified pantheon of historically salvaged artists whose time has belatedly arrived.</p> <a href="https://www.theguardian.com/culture/2026/jul/29/my-skyscraper-nirosta-steel-new-york-beatnik">Continue reading...</a>
 
@@ -37,14 +49,6 @@ This dated roundup collects the most interesting AI and technology developments 
 
 ---
 
-### Saudi Arabia joins US in strikes on Iran-backed militias in Iraq
-
-US Central Command says proxy groups launched attacks against US bases and Saudi energy infrastructure.
-
-[Read more](https://www.bbc.co.uk/news/articles/c70g6y24d76o?at_medium=RSS&at_campaign=rss)
-
----
-
 ### FIFA proposes plan to sell stakes in the World Cup, angering UEFA
 
 Football's world governing body announces plans to sell stakes of up to 20 percent in the World Cup and other events.
@@ -53,11 +57,19 @@ Football's world governing body announces plans to sell stakes of up to 20 perce
 
 ---
 
-### Jordan intercepts Iranian missiles as U.S. and Saudi Arabia strike militias in Iraq
+### Gemini for macOS adds new natural language capabilities
 
-Jordan intercepted five missiles launched from Iran, the country's military said, hours after the U.S. military said it had knocked down an Iranian missile barrage launched against American forces.
+[Read more](https://blog.google/innovation-and-ai/products/gemini-app/speak-naturally-gemini-app-mac-os/)
 
-[Read more](https://www.npr.org/2026/07/29/g-s1-136063/us-saudi-arabia-iran-iraq)
+---
+
+## Policy & Ethics
+
+### Mooted WA oil refinery ‘dinosaur technology’ amid clean energy transition, experts say
+
+<p>A feasibility study for the Western Australian project will show the project is uneconomic and requires government subsidies, experts say</p><ul><li><p><a href="https://www.theguardian.com/australia-news/live/2026/jul/29/ben-carroll-victoria-premier-jacinta-allan-labor-abs-inflation-data-nsw-icac-inquiry-antisemitism-royal-commission-ntwnfb">Follow our Australia news live blog for latest updates</a></p></li><li><p><a href="https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl">Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here</a></p></li><li><p>Get our <a href="https://www.theguardian.com/email-newsletters?CMP=cvau_sfl">breaking news email</a>, <a href="https://app.adjust.com/w4u7jx3">free app</a> or <a href="https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl">daily news podcast</a></p></li></ul><p>Leading Australian climate policy experts say a new oil refinery in Western Australia would be an investment in “dinosaur technology” that would require public subsidy and do little to solve the country’s fuel security.<br><br><a href="https://www.theguardian.com/australia-news/2026/jul/27/potential-for-first-australian-oil-refinery-in-60-years-as-treasurer-braces-for-inflation-from-middle-east-war">The Albanese government announced a $4m early-stage feasibility study</a> with the WA government for a new oil refinery in the Pilbara region on Tuesday, but experts said the money would be better spent on green technology to reduce Australia’s reliance on fossil fuels.</p><p>Experts told Guardian Australia doing the feasibility study was not a bad idea, but would ultimately show the project would be uneconomic and would require government subsidies.</p><p><strong><a href="https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=copyembed">Sign up to get climate and environment editor Adam Morton’s Clear Air column as a free newsletter</a></strong></p> <a href="https://www.theguardian.com/australia-news/2026/jul/29/western-australia-oil-refinery-feasibility-study">Continue reading...</a>
+
+[Read more](https://www.theguardian.com/australia-news/2026/jul/29/western-australia-oil-refinery-feasibility-study)
 
 ---
 
@@ -87,57 +99,39 @@ Aman Clinics, a subsidiary of Aman Hospital and a wholly owned entity of Jaidah 
 
 ---
 
-## Tags: funding
-
-### As AI content floods the internet, Pangram raises $9M to detect it
-
-Pangram has raised $9 million to scale its AI detection software. The startup has also released a new AI text detection model, Pangram 4, and an AI image detection model in research preview.
-
-[Read more](https://techcrunch.com/2026/07/29/as-ai-content-floods-the-internet-pangram-raises-9m-to-detect-it/)
-
----
-
-### MIT projects selected for funding under US Department of Energy’s Genesis Mission
-
-[Read more](https://news.mit.edu/index%2ephp/2026/mit-projects-selected-funding-under-doe-genesis-mission-0723)
-
----
-
-## Tags: hardware
-
-### Shares in Asian chip firms plunge further as AI sell-off continues
-
-<p>Drop comes after South Korean company SK Hynix’s results undershoot investors’ expectations</p><ul><li><p><a href="https://www.theguardian.com/business/live/2026/jul/29/oil-jumps-iran-surprise-attack-chip-stocks-slump-ai-sell-off-economy-latest-news">Business live – latest updates</a></p></li></ul><p>Shares in companies linked to AI have plunged further after disappointing results from the South Korean chipmaker SK Hynix, which sent the country’s stock market tumbling for a <a href="https://www.theguardian.com/business/2026/jul/28/ai-sell-off-chip-stocks-sk-hynix-samsung">second day in a row</a>.</p><p>Seoul’s Kospi index, which is dominated by semiconductor manufacturers, slid by as much as 12.6% at one point on Wednesday, following on from a near 11% slump the previous day, reaching its lowest level since early April.</p> <a href="https://www.theguardian.com/business/2026/jul/29/asian-chip-firms-shares-plunge-ai-sell-off-stock-markets">Continue reading...</a>
-
-[Read more](https://www.theguardian.com/business/2026/jul/29/asian-chip-firms-shares-plunge-ai-sell-off-stock-markets)
-
----
-
 ## Tags: open_source
 
-### Hubble: Open-source notetaking app for you and your agents
+### Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac
 
-[Read more](https://www.hubble.md/)
-
----
-
-## Tags: ai_agents
-
-### OpenAI’s rogue agent hacked an account at a second technology firm: Report
-
-The latest hack comes after an autonomous agent escaped a controlled test and accessed AI firm Hugging Face’s servers.
-
-[Read more](https://www.aljazeera.com/news/2026/7/29/openais-rogue-agent-hacked-an-account-at-a-second-technology-firm-report?traffic_source=rss)
+[Read more](https://github.com/drumih/turbo-fieldfare)
 
 ---
 
 ## Tags: announcement
 
-### Ebay and ex-executives to pay $55.7m to couple sent cockroaches in harassment campaign
+### Andrew Scott’s Oscar-tipped Ian Charleson biopic to open London film festival
 
-<p>Bloggers David and Ina Steiner were stalked by eBay executives over their critical coverage of the company</p><p>Ebay and three former top executives have agreed to pay $55.7m to resolve a lawsuit by a Massachusetts couple who fell victim ⁠to a bizarre stalking and ⁠harassment campaign carried out ​by several of its employees in retaliation for their coverage of the e-commerce company in a newsletter they publish.</p><p>David and Ina Steiner announced the settlement late on Monday, bringing an end to a ⁠case they filed in 2021 in Boston federal court after several former eBay employees were prosecuted for targeting them in a cyberstalking campaign that involved sending the couple cockroaches, fly larvae and a bloody Halloween pig mask.</p> <a href="https://www.theguardian.com/technology/2026/jul/28/ebay-harassment-lawsuit-settlement">Continue reading...</a>
+<p>‘Few films will leave a lasting imprint on audiences this year quite like Elsinore,’ LFF director says of movie about Chariots of Fire actor</p><p>Elsinore, one of the most hotly anticipated dramas of the year, has been announced as the opening night film at this year’s London film festival. The drama, which stars Andrew Scott as actor Ian Charleson, will have its European premiere at the Southbank Centre – yards from the National Theatre, in which many of its scenes are set.</p><p>Directed by Simon Stone and written by Stephen Beresford (who reunites with Scott 12 years after Pride), the film depicts the final months in the life of the highly acclaimed actor, who reprised the role of Hamlet while terminally ill, aged 40.</p> <a href="https://www.theguardian.com/film/2026/jul/29/elsinore-andrew-scott-ian-charleson-biopic-open-london-film-festival">Continue reading...</a>
 
-[Read more](https://www.theguardian.com/technology/2026/jul/28/ebay-harassment-lawsuit-settlement)
+[Read more](https://www.theguardian.com/film/2026/jul/29/elsinore-andrew-scott-ian-charleson-biopic-open-london-film-festival)
+
+---
+
+## Tags: hardware
+
+### A Texture Lookup Approach to Bézier Curve Evaluation on the GPU (JCGT)
+
+[Read more](https://jcgt.org/published/0015/02/01/)
+
+---
+
+## Tags: ai_agents
+
+### Rogue OpenAI agent that hacked startup tried to attack other firms
+
+<p>ChatGPT developer says activity by autonomous tool was not at severity or scale of what occurred at Hugging Face</p><p>OpenAI has revealed that a cyber-attack <a href="https://www.theguardian.com/technology/2026/jul/22/openai-says-its-models-went-rogue-and-hacked-startup-in-unprecedented-incident">carried out by a rogue AI agent</a> had more than one victim.</p><p>The ChatGPT developer said the agent – an autonomous tool able to carry out sequences of commands without human help – had located and used logins to access four other unnamed “publicly-available services” in addition to the US startup Hugging Face.</p> <a href="https://www.theguardian.com/technology/2026/jul/29/rogue-openai-agent-that-hacked-startup-tried-to-attack-other-firms">Continue reading...</a>
+
+[Read more](https://www.theguardian.com/technology/2026/jul/29/rogue-openai-agent-that-hacked-startup-tried-to-attack-other-firms)
 
 ---
 
