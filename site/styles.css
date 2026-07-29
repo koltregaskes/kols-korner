@@ -949,6 +949,17 @@ img {
   gap: 1rem;
 }
 
+.digest-content,
+.digest-section,
+.digest-story-card {
+  min-width: 0;
+}
+
+.digest-section,
+.digest-story-card {
+  overflow-wrap: anywhere;
+}
+
 .digest-badge,
 .subscribe-status-badge {
   display: inline-flex;
