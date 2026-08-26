@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Wednesday, 26 August 2026"
 date: 2026-08-26
-tags: ["ai", "news", "digest", "hardware", "product_launch", "announcement", "regulation", "model_release", "industry_move", "ai_agents", "policy"]
+tags: ["ai", "news", "digest", "hardware", "product_launch", "announcement", "regulation", "industry_move", "research_paper", "ai_topic", "event", "model_release", "ai_agents", "policy"]
 summary: "AI and technology news digest for Wednesday, 26 August 2026"
 ---
 
@@ -35,33 +35,29 @@ Companion bots are being regulated over worries they foster ‘emotional depende
 
 ---
 
-## Tags: hardware
-
-### OpenAI’s Jalapeño chip is built for fast inference at scale, benchmarks show
-
-Tested on SemiAnalysis’ InferenceX benchmark, Jalapeño registered both more tokens per user and more throughput per kilowatt than the currently available state-of-the art.
-
-[Read more](https://techcrunch.com/2026/08/25/openais-jalapeno-chip-is-built-for-fast-inference-at-scale-benchmarks-show/)
-
----
-
-### Taiwan charges nine people for smuggling ‘high-end’ AI servers to China
-
-Among those charged are two Super Micro employees and one from Nvidia, marking another flashpoint in US-China AI rivalry Taiwanese prosecutors charged nine people Monday, including one from Nvidia and two from Super Micro, for illegally exporting “high-end AI servers” to mainland China, adding another wave of turbulence in the AI ​​rivalry between China and the United States. Prosecutors said the servers involved were graphics processing units known as “B300,” which have been banned from sale to China. Continue reading...
-
-[Read more](https://www.theguardian.com/technology/2026/aug/25/taiwan-china-ai-smugglers)
-
----
-
-### Dylan Patel – Anthropic & OpenAI will have most of the world’s compute by 2028
-
-"Every force is screeching towards centralization."
-
-[Read more](https://www.dwarkesh.com/p/dylan-patel-3)
-
----
-
 ## Research & Products
+
+### OpenAI unveils chip ⚡, SpaceX $100B spaceport 🚀, knowledge compression 👨‍💻
+
+[Read more](https://tldr.tech/tech/2026-08-26)
+
+---
+
+### AI models flub these intelligence tests. Can you fare any better?
+
+Puzzles and games have been central to AI development since the very beginning. Just as we humans like to test our smarts with crosswords or logic puzzles, developers can test how far models have advanced with a gaming gauntlet. The term “machine learning” was popularized in a 1959 article by the IBM computer scientist Arthur…
+
+[Read more](https://www.technologyreview.com/2026/08/26/1141952/puzzles-ai-models-flub-these-tests/)
+
+---
+
+### Bill Gates says we’ve passed AI’s danger thresholds. Now what?
+
+It’s a glorious day in Kirkland, Washington, an affluent Seattle suburb on the eastern shore of Lake Washington. The temperature is in the mid-80s, and the sky is incapable of being any more blue. The view from the Gates Ventures conference room overlooks the Carillon Point Marina, where a flotilla of expensive boats bob in…
+
+[Read more](https://www.technologyreview.com/2026/08/26/1142946/bill-gates-ai-danger-threshold/)
+
+---
 
 ### Here’s how to use intelligent dictation in Gemini for macOS.
 
@@ -75,37 +71,21 @@ Among those charged are two Super Micro employees and one from Nvidia, marking a
 
 ---
 
-### Quantization-Aware Healing: a compressed, 4-bit model that outperforms its full-precision original
-
-[Read more](https://huggingface.co/blog/MultiverseComputingCAI/quantization-aware-healing)
-
----
-
-### How developers build AI for good with Gemma 4
-
-[Read more](https://blog.google/innovation-and-ai/technology/developers-tools/winning-entries-gemma-4-good-challenge/)
-
----
-
-### OpenAI Launches AI Futures for Global Governance Research
-
-[Read more](https://aimagazine.com/news/openai-introduces-ai-futures-for-the-strategic-futures-team)
-
----
-
 ### Deep learning aging marker from retinal images unveils sex-specific clinical and genetic signatures
 
 [Read more](https://www.nature.com/articles/s41467-026-77102-1)
 
 ---
 
-### Thomson Reuters Launches Its Own Frontier Model
+## Industry
 
-[Read more](https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model)
+### Anthropic Hires Builder of Google’s First Seven TPUs for In-House Silicon Push
+
+The Claude maker is adding deep chip-building experience while retaining a compute mix spanning Nvidia, Google and Amazon hardware.
+
+[Read more](https://superpowerdaily.com/posts/anthropic-hires-google-tpu-builder-amir-salek-for-a-chip-push-alongside-suppliers)
 
 ---
-
-## Industry
 
 ### Australia may face a rush of datacentre construction as AI firms look to avoid upcoming rules, experts say
 
@@ -115,11 +95,39 @@ Regulations will require new sites to avoid pushing up power prices by building 
 
 ---
 
+## Tags: hardware
+
+### OpenAI’s Jalapeño chip is built for fast inference at scale, benchmarks show
+
+Tested on SemiAnalysis’ InferenceX benchmark, Jalapeño registered both more tokens per user and more throughput per kilowatt than the currently available state-of-the art.
+
+[Read more](https://techcrunch.com/2026/08/25/openais-jalapeno-chip-is-built-for-fast-inference-at-scale-benchmarks-show/)
+
+---
+
+### NVIDIA Jetson Orin Nano 2 brings physical AI to drones and robots
+
+NVIDIA has unveiled the Jetson Orin Nano 2, an edge robotics computer aimed at bringing physical AI to drones, robots, and vision systems. The company is positioning the new board as an entry-level option for developers who want generative AI models running directly on a machine instead of inside a data centre. NVIDIA’s argument for […] The post NVIDIA Jetson Orin Nano 2 brings physical AI to drones and robots appeared first on AI News .
+
+[Read more](https://www.artificialintelligence-news.com/news/nvidia-jetson-orin-nano-2-physical-ai-to-drones-and-robots/)
+
+---
+
 ## Tags: ai_agents
 
 ### Apodex 1.1: Scaling Agentic Intelligence for Complex Work
 
 [Read more](https://paperswithcode.com/papers/2608.23283)
+
+---
+
+## Tags: announcement
+
+### OpenAI loses a top data center exec as stream of high-profile departures continues
+
+In a statement to TechCrunch about Malone's departure, OpenAI said it had "recently reorganized" its "infrastructure organization to support the scale and pace of our work."
+
+[Read more](https://techcrunch.com/2026/08/25/openai-loses-a-top-data-center-exec-as-stream-of-high-profile-departures-continues/)
 
 ---
 
