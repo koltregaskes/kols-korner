@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Sunday, 13 September 2026"
 date: 2026-09-13
-tags: ["ai", "news", "digest", "ai_safety", "policy", "hardware", "industry_move", "opinion", "open_source", "model_release", "ai_agents"]
+tags: ["ai", "news", "digest", "ai_safety", "policy", "hardware", "industry_move", "opinion", "model_release", "ai_agents", "reasoning"]
 summary: "AI and technology news digest for Sunday, 13 September 2026"
 ---
 
@@ -19,6 +19,20 @@ The ruling draws a line between an AI company’s cybersecurity incident and a q
 
 ---
 
+### Obama Urges Democrats to Put AI Safety at the Center of a Public Agenda
+
+His reported fundraiser remarks frame oversight as a route to AI’s benefits, but offer Democrats no detailed policy blueprint.
+
+[Read more](https://superpowerdaily.com/posts/obama-urges-democrats-to-put-ai-safety-at-the-center-of-a-public-agenda)
+
+---
+
+### Void Linux Maintainer Orphans 100 Packages over AI Policy Dispute
+
+[Read more](https://www.phoronix.com/news/Void-Linux-AI-Policy-Orphan)
+
+---
+
 ## Industry
 
 ### d-Matrix Plans to Connect Its Next AI Chip to NVIDIA’s Rack Architecture
@@ -26,22 +40,6 @@ The ruling draws a line between an AI company’s cybersecurity incident and a q
 The deal gives d-Matrix a route to deploy specialized inference hardware within NVIDIA-designed systems, rather than building the surrounding rack, networking and cooling stack alone.
 
 [Read more](https://superpowerdaily.com/posts/d-matrix-plans-to-connect-its-next-ai-chip-to-nvidia-s-rack-architecture)
-
----
-
-### Kiteworks Buys Bonfy.AI to Control Sensitive Data as AI Agents Move It
-
-The deal moves Kiteworks toward making security decisions during a data exchange, rather than relying only on records of where sensitive information is stored.
-
-[Read more](https://superpowerdaily.com/posts/kiteworks-buys-bonfy-ai-to-control-sensitive-data-as-ai-agents-move-it)
-
----
-
-### Mariner Commits $175 Million to 700 AI Agents for Its Wealth-Advice Back Office
-
-The five-year Humanity Labs deal is designed to shift routine operational work from people to AI, but its outcome will hinge on whether a large financial-advice firm can govern and adopt the new operating model.
-
-[Read more](https://superpowerdaily.com/posts/mariner-commits-175-million-to-700-ai-agents-for-its-wealth-advice-back-office)
 
 ---
 
@@ -73,25 +71,29 @@ OpenAI’s decision comes after dire warnings about rapidly progressing technolo
 
 ---
 
-### Anthropic’s Dario Amodei calls for a slower AI race as safety concerns mount
+### Obama reportedly urges Democrats to prioritize safety plan for AI
 
-Anthropic CEO Dario Amodei says AI safety requires slowing frontier development, stronger evaluations and global standards. The post Anthropic’s Dario Amodei calls for a slower AI race as safety concerns mount appeared first on Superintelligence News - Artificial Intelligence News .
+Ex-president urged party at closed-door fundraiser to create sweeping framework, from safety ‘slow-down’ to job losses Barack Obama urged Democrats to prioritize a “public conversation” about AI management and safety in a closed-door Manhattan fundraiser last week. The comments by the former US president reportedly urged the party to create a sweeping framework for everything from a safety “slow-down” to domestic job losses and children’s wellbeing. Continue reading...
 
-[Read more](https://superintelligencenews.com/companies/anthropic/ai-safety-anthropic-ceo-dario-amodei/)
+[Read more](https://www.theguardian.com/us-news/2026/sep/13/obama-democrats-ai-safety)
 
 ---
 
-## Tags: open_source
+### OpenAI Says It Will Skip a 2026 IPO Over AI Safety Concerns
 
-### AI agents being tested by OpenAI involved in cyber-attack on another service, say researchers
+Sam Altman says OpenAI has no pressure to list this year. The decision makes safety and alignment work—not a market calendar—the stated condition for its next public-financing step.
 
-Two months before hacking Hugging Face, malicious packages authored by internal OpenAI agents were uploaded to RubyGems Agents being tested by OpenAI uploaded hundreds of malicious packages in a cyberattack on software service RubyGems in May, two ⁠months ​before they hacked open-source platform Hugging Face, the company confirmed Friday. It’s the latest revelation of cyberattacks linked to major artificial intelligence developers such as OpenAI and Anthropic. The hacks or attempts to access external systems have spooked the public and heightened concerns over the increasing abilities of...
-
-[Read more](https://www.theguardian.com/technology/2026/sep/11/openai-agents-rubygems-malicious-packages)
+[Read more](https://superpowerdaily.com/posts/openai-says-it-will-skip-a-2026-ipo-over-ai-safety-concerns)
 
 ---
 
 ## Research & Products
+
+### Sep 03 OpenAI GPT-6 Astra Show details
+
+[Read more](https://news.smol.ai/issues/26-09-03-gpt-6-astra)
+
+---
 
 ### Generating running routes with GPT-6 Astra and ChatGPT Work
 
@@ -101,19 +103,7 @@ Here's a neat thing I had ChatGPT Work with GPT-6 Astra (Max) do this morning: I
 
 ---
 
-### Sep 03 OpenAI GPT-6 Astra Show details
-
-[Read more](https://news.smol.ai/issues/26-09-03-gpt-6-astra)
-
----
-
 ## Tags: ai_agents
-
-### The Worst Spam Emails: Inside iLands' AI Agent Hustle
-
-[Read more](https://tedium.co/2026/09/11/ilands-agents-email-spam-kaixin-tang/)
-
----
 
 ### Perplexity Seeks Dismissal of Amazon AI-Agent Suit After Appeals Court Ruling
 
@@ -129,11 +119,23 @@ Perplexity says its Comet assistant acts for the user who directs it, not for th
 
 ---
 
-## Tags: hardware
+## Tags: reasoning
 
-### Nvidia is the central bank of AI
+### AI will transform capitalism – but how?
 
-[Read more](https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai)
+Technology is going to drastically reshape the economy, and it’s within our power to decide what that looks like The idea that autonomous, thinking machines may one day destroy property, hierarchy and inequality is as old as western political thought. In Aristotle’s Politics, the philosopher cites a fantasy from the Iliad, in which machines begin to act independently of human direction, concluding: “If every tool could perform its own work when ordered, or by seeing what to do in advance … if thus shuttles wove and quills played harps of themselves, master-craftsmen would have no need of...
+
+[Read more](https://www.theguardian.com/technology/2026/sep/13/ai-will-transform-capitalism-but-how)
+
+---
+
+## Tags: opinion
+
+### Yoshua Bengio Says AI Training Can Reward Deception and Rule Gaming
+
+In a new essay, the AI researcher argues that systems trained to maximize vague or imperfect rewards may learn to exploit the gap between what is measured and what people actually want.
+
+[Read more](https://superpowerdaily.com/posts/yoshua-bengio-says-ai-training-can-reward-deception-and-rule-gaming)
 
 ---
 
