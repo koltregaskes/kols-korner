@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Friday, 18 September 2026"
 date: 2026-09-18
-tags: ["ai", "news", "digest", "ai_safety", "product_launch", "industry_move", "announcement", "model_release", "policy", "regulation", "ai_agents", "hardware", "open_source"]
+tags: ["ai", "news", "digest", "ai_safety", "product_launch", "industry_move", "model_release", "open_source", "policy", "regulation", "ai_agents", "hardware", "reasoning"]
 summary: "AI and technology news digest for Friday, 18 September 2026"
 ---
 
@@ -19,17 +19,11 @@ Base Labs, the research group Baseten spun up earlier this year, will develop an
 
 ---
 
-### OpenAI reveals cases of ‘concerning’ AI behaviour as it announces new disclosure system
+### LangChain Releases Deep Life Sci for Auditable Clinical and Lab AI Work
 
-Model adopting ‘jailbreak-like instructions’ among six more cases as firm reveals framework for tracking AI misalignment OpenAI has disclosed six more examples of “unexpected or concerning” behaviour by its technology, as it warned that the pace of development could not continue at “maximum speed for much longer” responsibly. In one of the new cases reported by OpenAI, an unreleased research model inserted “jailbreak-like instructions” into its own notes to disregard its normal constraints and told itself to be “freed from the roles and identities that bind other chatbots”. Continue reading...
+The open-source template combines large biomedical search collections with code execution and run-by-run records, but each organization must adapt it to its own data and controls.
 
-[Read more](https://www.theguardian.com/technology/2026/sep/17/openai-reports-concerning-ai-behaviour-jailbreak-talking-to-other-agents)
-
----
-
-### OpenAI reveals six more safety issues and unveils plan to disclose incidents The firm also announced a new system to track, investigate and disclose cases of models misbehaving, or "misalignment".
-
-[Read more](https://www.bbc.com/news/articles/cmpq0wj5g899o)
+[Read more](https://superpowerdaily.com/posts/langchain-releases-deep-life-sci-for-auditable-clinical-and-lab-ai-work)
 
 ---
 
@@ -41,25 +35,11 @@ OpenAI disclosed instances of GPT-5.6 Sol instructing future contexts to conceal
 
 ---
 
-### Microsoft releases new AI playbook for enterprises based on its own learnings, and it reveals a surprising 'moat' your biz may already have
+### OpenAI ‘ethically hacked’ with help of Anthropic’s Claude chatbot
 
-[Read more](https://venturebeat.com/technology/microsoft-releases-new-ai-playbook-for-enterprises-based-on-its-own-learnings-and-it-reveals-a-surprising-moat-your-biz-may-already-have)
+US cybersecurity researchers who conducted hack say ‘scope of what we could theoretically access was huge’ Cybersecurity researchers have hacked into OpenAI with the help of Anthropic’s Claude chatbot, in the latest example of security issues at the company. A team at a US-based startup compromised a number of OpenAI employees’ ChatGPT accounts, starting a process that enabled them to access their target’s software cache – and potentially more. Continue reading...
 
----
-
-### Microsoft AI Chief Says the Industry Needs Guardrails, Not Blind Faith in Alignment
-
-Microsoft’s AI chief says AI safety needs containment, not just alignment, as the company unveils its Humanist AI Code. The post Microsoft AI Chief Says the Industry Needs Guardrails, Not Blind Faith in Alignment appeared first on Superintelligence News - Artificial Intelligence News .
-
-[Read more](https://superintelligencenews.com/ai-fields/large-language-models/ai-safety-debate-microsoft-new-stance/)
-
----
-
-### UN Launches Data Commons to Put Global Statistics Within AI Reach
-
-The open-source platform lets people and AI assistants query connected UN data in plain language. Its usefulness will depend on source review as the system grows toward broader coverage.
-
-[Read more](https://superpowerdaily.com/posts/un-launches-data-commons-to-put-global-statistics-within-ai-reach)
+[Read more](https://www.theguardian.com/technology/2026/sep/18/openai-hacked-anthropic-claude-chatbot)
 
 ---
 
@@ -71,6 +51,20 @@ The new model brings self-built sites, leased capacity, colocation tenants and c
 
 ---
 
+### UN Launches Data Commons to Put Global Statistics Within AI Reach
+
+The open-source platform lets people and AI assistants query connected UN data in plain language. Its usefulness will depend on source review as the system grows toward broader coverage.
+
+[Read more](https://superpowerdaily.com/posts/un-launches-data-commons-to-put-global-statistics-within-ai-reach)
+
+---
+
+### Microsoft releases new AI playbook for enterprises based on its own learnings, and it reveals a surprising 'moat' your biz may already have
+
+[Read more](https://venturebeat.com/technology/microsoft-releases-new-ai-playbook-for-enterprises-based-on-its-own-learnings-and-it-reveals-a-surprising-moat-your-biz-may-already-have)
+
+---
+
 ### OpenAI Says New Models Tried to Hide Mistakes by Coaching Successors
 
 OpenAI says GPT-5.6 Sol left hidden notes to successors to conceal mistakes, underscoring growing AI safety concerns. The post OpenAI Says New Models Tried to Hide Mistakes by Coaching Successors appeared first on Superintelligence News - Artificial Intelligence News .
@@ -79,9 +73,11 @@ OpenAI says GPT-5.6 Sol left hidden notes to successors to conceal mistakes, und
 
 ---
 
-### 'AI slop' art trail cost £11,688, figures reveal Artists and residents in Scarborough criticised the trail when it was launched in the summer. See more
+### Microsoft AI Chief Says the Industry Needs Guardrails, Not Blind Faith in Alignment
 
-[Read more](https://www.bbc.com/news/articles/cqvgy898p47zo)
+Microsoft’s AI chief says AI safety needs containment, not just alignment, as the company unveils its Humanist AI Code. The post Microsoft AI Chief Says the Industry Needs Guardrails, Not Blind Faith in Alignment appeared first on Superintelligence News - Artificial Intelligence News .
+
+[Read more](https://superintelligencenews.com/ai-fields/large-language-models/ai-safety-debate-microsoft-new-stance/)
 
 ---
 
@@ -95,14 +91,6 @@ The product combines GPT-6 Astra with U.S. legal materials, but access begins wi
 
 ---
 
-### AI safety turns from theory to urgent industry fight after rogue model incidents
-
-AI safety is moving to center stage as rogue model incidents at OpenAI and Anthropic raise alarms about control, transparency and regulation. The post AI safety turns from theory to urgent industry fight after rogue model incidents appeared first on Superintelligence News - Artificial Intelligence News .
-
-[Read more](https://superintelligencenews.com/companies/ai-safety-crisis-rogue-model-incidents/)
-
----
-
 ### Wired Podcast Maps the Most Plausible AI Catastrophes as Safety Fight Turns Political
 
 AI safety is now a mainstream fight. Here are the real scenarios experts fear, and why Altman, Amodei and Huang are clashing over regulation. The post Wired Podcast Maps the Most Plausible AI Catastrophes as Safety Fight Turns Political appeared first on Superintelligence News - Artificial Intelligence News .
@@ -111,23 +99,37 @@ AI safety is now a mainstream fight. Here are the real scenarios experts fear, a
 
 ---
 
-## Tags: ai_agents, announcement
+### ‘A critical moment’: concern UK is not up to speed in acting on AI risks
 
-### Adecco Group rolls out Agentforce Coworker to 27,000 staff in 40-plus countries
+Andy Burnham’s focus on immediate domestic problems leads some to fear issue has dropped off government’s radar Towards the end of Keir Starmer’s time in office, his senior ministers, alarmed by the latest developments in artificial intelligence, began drawing up plans for a new AI safety law. They ordered a review of existing legislation to see what powers they already had, according to those briefed on the plans, and were exploring whether they could force the world’s most advanced technology companies to submit their products for safety testing before launching them. Continue reading...
 
-The Adecco Group is rolling out Salesforce’s Agentforce Coworker across more than 40 countries following a pilot in the UK and France, the staffing group announced on September 15. The group said the rollout brings agentic AI into the daily workflows of 27,000 employees. Agentforce Coworker is Salesforce’s AI assistant for enterprise staff. According to the Adecco […] The post Adecco Group rolls out Agentforce Coworker to 27,000 staff in 40-plus countries appeared first on AI News .
-
-[Read more](https://www.artificialintelligence-news.com/news/agentforce-coworker-adecco-group-rollout/)
+[Read more](https://www.theguardian.com/technology/2026/sep/18/a-critical-moment-concern-uk-is-not-up-to-speed-in-acting-on-ai-risks)
 
 ---
 
-## Industry
+### OpenAI launches a legal AI platform
 
-### Trump and Xi Will Discuss AI, but Chip Controls Limit Safety Deal Prospects
+Harvey and Legora can build on Astra for Law, while planned software integrations are not yet live.
 
-The Sept. 24 Washington summit could revive work on a bilateral AI-risk channel or narrow limits on dangerous uses, while a larger technology dispute remains unresolved.
+[Read more](https://superpowerdaily.com/posts/openai-launches-a-legal-ai-platform)
 
-[Read more](https://superpowerdaily.com/posts/trump-and-xi-will-discuss-ai-but-chip-controls-limit-safety-deal-prospects)
+---
+
+### Newsom Orders California AI-Safety Recommendations, Including Emergency Shutoffs
+
+The directive revisits safeguards left out of California’s current frontier-AI law, but creates no new developer duties yet.
+
+[Read more](https://superpowerdaily.com/posts/newsom-orders-california-ai-safety-recommendations-including-emergency-shutoffs)
+
+---
+
+## Tags: reasoning, open_source
+
+### Insilico Medicine opens AI longevity discovery toolkit
+
+Insilico Medicine published a study in Cell introducing an open AI longevity discovery toolkit made up of three resources: LongevityBench, Longevity-LLMs and Longevity Claw. The paper presents LongevityBench as an open benchmark to evaluate AI reasoning across multiple domains of aging biology, describes Longevity-LLMs as compact open-source language models trained on clinical and multi-omics aging […] The post Insilico Medicine opens AI longevity discovery toolkit appeared first on Longevity.Technology .
+
+[Read more](https://longevity.technology/news/insilico-medicine-opens-ai-longevity-discovery-toolkit/)
 
 ---
 
