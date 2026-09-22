@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Tuesday, 22 September 2026"
 date: 2026-09-22
-tags: ["ai", "news", "digest", "model_release", "ai_agents", "product_launch", "open_source", "announcement", "reasoning", "acquisition", "industry_move", "hardware", "ai_safety", "opinion"]
+tags: ["ai", "news", "digest", "model_release", "product_launch", "acquisition", "industry_move", "ai_agents", "reasoning", "hardware", "open_source", "announcement"]
 summary: "AI and technology news digest for Tuesday, 22 September 2026"
 ---
 
@@ -11,11 +11,35 @@ This dated roundup collects the most interesting AI and technology developments 
 
 ## Research & Products
 
-### Google Releases EnvHarness to Make AI Agent Training Environments Adapt
+### Nutanix Acquires Ryax, Plans AI Workload Scheduling in Future Releases
 
-The open-source framework keeps an environment’s existing grader intact while changing the conditions an agent faces—a design that may save teams from rebuilding trusted simulators, but adds rollout and integration costs.
+The deal gives Nutanix a route to coordinate AI work across several infrastructure types, but the customer-facing integrations remain under development.
 
-[Read more](https://superpowerdaily.com/posts/google-releases-envharness-to-make-ai-agent-training-environments-adapt)
+[Read more](https://superpowerdaily.com/posts/nutanix-acquires-ryax-plans-ai-workload-scheduling-in-future-releases)
+
+---
+
+### Anthropic Releases Claude Opus 5.5, Cutting Prices From Opus 5
+
+The new flagship model is Anthropic’s bet that agentic work will be won as much by lower serving costs and faster output as by benchmark gains.
+
+[Read more](https://superpowerdaily.com/posts/anthropic-releases-claude-opus-5-5-cutting-prices-from-opus-5)
+
+---
+
+### Rabbit Launches OS3, Moving Its AI Agent Beyond the R1
+
+The new system can reach local computers from a browser or messaging app, but its promise of hands-off software work depends on users trusting an agent with meaningful access.
+
+[Read more](https://superpowerdaily.com/posts/rabbit-launches-os3-moving-its-ai-agent-beyond-the-r1)
+
+---
+
+### China Telecom AI Releases 29B Agent Model for Single-GPU Deployment
+
+Xing4.0-29B-A4B uses a sparse design that activates 4 billion parameters at a time. China Telecom AI says that lets developers run long-context, tool-using workflows locally with about 15 GB of GPU memory.
+
+[Read more](https://superpowerdaily.com/posts/china-telecom-ai-releases-29b-agent-model-for-single-gpu-deployment)
 
 ---
 
@@ -35,11 +59,41 @@ The downloadable base model uses only 3 billion parameters per token, comes with
 
 ---
 
-### Aikido Releases Altar, a Local Cybersecurity AI Model Built From GLM-5.3
+### Rabbit Repositions R1 as OS3 Turns Phones and PCs Into AI Agents
 
-The open-weight release is designed to keep sensitive code within customer infrastructure, but its claimed security performance comes from a narrow internal benchmark.
+Rabbit launches an AI agent app called OS3, shifting from the R1 gadget to cross-platform software that runs on your existing devices. The post Rabbit Repositions R1 as OS3 Turns Phones and PCs Into AI Agents appeared first on Superintelligence News - Artificial Intelligence News .
 
-[Read more](https://superpowerdaily.com/posts/aikido-releases-altar-a-local-cybersecurity-ai-model-built-from-glm-5-3)
+[Read more](https://superintelligencenews.com/ai-fields/large-language-models/rabbit-ai-agent-app-os3-reboots-r1/)
+
+---
+
+### Anthropic releases Opus 5.5 with lower prices and Fable-level performance
+
+Anthropic called it "the strongest-performing model we've tested to date."
+
+[Read more](https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/)
+
+---
+
+### AutoScheduler launches warehouse app builder for logistics teams
+
+AutoScheduler has launched its warehouse app builder to let logistics teams build custom tools directly from live facility data. The new software module forms part of the company’s wider Warehouse AI Platform, serving distribution centres that balance inventory, machinery, and labour. Distribution centres routinely depend on rigid enterprise resource planning and warehouse management suites. When […] The post AutoScheduler launches warehouse app builder for logistics teams appeared first on AI News .
+
+[Read more](https://www.artificialintelligence-news.com/news/autoscheduler-warehouse-app-builder-for-logistics-teams/)
+
+---
+
+### Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community
+
+[Read more](https://huggingface.co/blog/omlx)
+
+---
+
+### llm-typesafe 0.1a0
+
+Release: llm-typesafe 0.1a0 I built this new plugin for LLM to add support for TypeSafe AI's new Jev model . Install it like this: llm install llm-typesafe Then set an API key ( get one here , the waitlist seems to move pretty fast): llm keys set typesafe # Paste key And now you can ask yes/no "noul" questions like this: llm -m jev 'Please refund my last payment.' \ -s 'Does this message explicitly request a refund?' Output: {"type": "noul", "noul": 0.99} Or choice questions like this: cat message.txt | llm -m jev \ -s ' Which team should handle this message? If billing and technical...
+
+[Read more](https://simonwillison.net/2026/Sep/22/llm-typesafe/)
 
 ---
 
@@ -59,81 +113,21 @@ Every AI factory needs power and cooling that fit its computing architecture. As
 
 ---
 
-### Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem
+## Tags: hardware, ai_agents, open_source
 
-[Read more](https://huggingface.co/blog/MultiverseComputingCAI/pruning-llms-like-a-physicist-block-removal-as-an)
+### NVIDIA Adds AI Agent Workflows to Its Open-Source Robotics Toolkit
 
----
+Isaac ROS 5.0 packages reusable instructions for coding agents alongside a migration to ROS 2 Lyrical, but developers moving from older interfaces face source-level changes and known hardware-specific limits.
 
-## Industry
-
-### Microchip Completes Hailo Acquisition, Adding Edge AI and Vision Processing
-
-The deal brings Hailo’s accelerators, vision processors and software into Microchip’s portfolio. The price remains undisclosed, while customer and developer continuity becomes the immediate test.
-
-[Read more](https://superpowerdaily.com/posts/microchip-completes-hailo-acquisition-adding-edge-ai-and-vision-processing)
+[Read more](https://superpowerdaily.com/posts/nvidia-adds-ai-agent-workflows-to-its-open-source-robotics-toolkit)
 
 ---
 
-### Ascend Learning Acquires M7 Health to Add AI Scheduling to Workforce Business
+### NVIDIA Isaac ROS 5.0 Advances Agentic, Open Source Robotics Development
 
-The deal brings shift-level staffing software into Ascend’s healthcare portfolio, with a stated aim of linking workforce development, credentials and retention tools to daily schedule management.
+To build and deploy sophisticated robotics applications that can perceive, reason and act in dynamic environments, developers need new physical AI models and tools. The ROS open framework is a project from Open Robotics that helps humans build robots. NVIDIA Isaac ROS 5.0 — a collection of GPU-accelerated packages built on ROS, released today at […]
 
-[Read more](https://superpowerdaily.com/posts/ascend-learning-acquires-m7-health-to-add-ai-scheduling-to-workforce-business)
-
----
-
-## Tags: ai_safety, opinion
-
-### Bank of England’s Breeden Urges Outcome Guardrails for Financial AI Agents
-
-In a newly published Wharton discussion, Sarah Breeden argues that autonomous systems force regulators to focus on accountability, testing and intervention—not every individual decision.
-
-[Read more](https://superpowerdaily.com/posts/bank-of-england-s-breeden-urges-outcome-guardrails-for-financial-ai-agents)
-
----
-
-## Tags: ai_agents
-
-### Multi-agent AI systems are taking over supply chain execution
-
-Multi-agent AI systems are taking over supply chain execution as enterprise networks face diminishing returns from static dashboards, pushing logistics directors towards autonomous execution. Predictive demand models display recommendations, yet human planners still clear every action. Multi-agent systems replace that approval stage across targeted operational boundaries. Instead of waiting for weekly scheduling runs, independent software […] The post Multi-agent AI systems are taking over supply chain execution appeared first on AI News .
-
-[Read more](https://www.artificialintelligence-news.com/news/multi-agent-ai-systems-supply-chain-execution/)
-
----
-
-### Meta’s AI agent has been blocked from using Amazon.com
-
-Amazon has its own cohort of foundation models, along with one of the most popular inference platforms on the internet. As long as they're under no legal obligation to open the doors to Muse, why would they?
-
-[Read more](https://techcrunch.com/2026/09/21/metas-ai-agent-has-been-blocked-from-using-amazon-com/)
-
----
-
-### Oracle Publishes AI Workflow for a 5.1 Million-Record GoldenGate Reload
-
-The lab shows how an AI agent can coordinate a difficult replication reset from a runbook, but missing MCP options still pushed key steps through direct APIs—and the server remains experimental.
-
-[Read more](https://superpowerdaily.com/posts/oracle-publishes-ai-workflow-for-a-5-1-million-record-goldengate-reload)
-
----
-
-## Tags: ai_safety
-
-### US and China discuss AI safety plan ahead of Trump-Xi summit Top US and Chinese officials held talks in New York on Sunday ahead of a Trump-Xi summit this week.
-
-[Read more](https://www.bbc.com/news/articles/c8vgyzn2d31yo)
-
----
-
-## Tags: hardware
-
-### ‘RAMageddon’: tech crunch hikes the price of your next iPhone by £100
-
-Shortage of memory chips and other critical components reverses trend of electronics becoming cheaper Apple’s recent product launch caused headlines around the world as it unveiled its first folding phone. But hidden in the slick technology showcase was a nasty surprise: a £100 increase in the price of all iPhones, including older models. It is blamed on “RAMageddon”, which has reversed a decades-long trend of electronics becoming cheaper. It is the fallout from the AI gold rush hoovering up every memory chip available for vast datacentres. This has led to a severe shortage of the chips,...
-
-[Read more](https://www.theguardian.com/money/2026/sep/21/ramageddon-apple-iphone-price-increase-chip-shortage)
+[Read more](https://blogs.nvidia.com/blog/isaac-ros-5-0-agentic-open-source-robotics/)
 
 ---
 
