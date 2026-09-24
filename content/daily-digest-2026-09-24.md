@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Thursday, 24 September 2026"
 date: 2026-09-24
-tags: ["ai", "news", "digest", "model_release", "ai_agents", "product_launch", "hardware", "announcement", "policy", "ai_safety", "regulation"]
+tags: ["ai", "news", "digest", "announcement", "regulation", "industry_move", "model_release", "product_launch", "hardware", "ai_agents"]
 summary: "AI and technology news digest for Thursday, 24 September 2026"
 ---
 
@@ -9,11 +9,29 @@ summary: "AI and technology news digest for Thursday, 24 September 2026"
 
 This dated roundup collects the most interesting AI and technology developments found for Thursday, 24 September 2026.
 
+## Policy & Ethics
+
+### Annovis taps Weave Bio’s AI to speed FDA submission for Alzheimer’s drug
+
+Annovis announced a collaboration with Weave Bio to use the AI regulatory platform for drafting, reviewing and managing New Drug Application documents as the company prepares an NDA for buntanetap. Under the arrangement, Annovis’ regulatory and clinical teams will retain full responsibility for content, verification and final approval of every document submitted to the U.S. […] The post Annovis taps Weave Bio’s AI to speed FDA submission for Alzheimer’s drug appeared first on Longevity.Technology .
+
+[Read more](https://longevity.technology/news/annovis-taps-weave-bios-ai-to-speed-fda-submission-for-alzheimers-drug/)
+
+---
+
 ## Research & Products
 
-### Anthropic releases Claude Opus 5.5, beating Fable 5.1 on key agentic benchmarks at 60% cheaper API price
+### Google launches Gemini 3.8 Flash TTS voice models
 
-[Read more](https://venturebeat.com/technology/anthropic-releases-claude-opus-5-5-beating-fable-5-1-on-key-agentic-benchmarks-at-60-cheaper-api-price)
+Google has launched two Gemini 3.8 Flash TTS voice models, introducing dedicated speech generation systems engineered for direct performance scripting and high-volume audio production. The dual release splits vocal synthesis tasks between creative direction and cost-managed infrastructure. Gemini 3.8 Flash TTS targets interactive entertainment, game development, and long-form narrations where studio teams demand prompt-based vocal […] The post Google launches Gemini 3.8 Flash TTS voice models appeared first on AI News .
+
+[Read more](https://www.artificialintelligence-news.com/news/google-gemini-3-8-flash-tts-voice-models/)
+
+---
+
+### How to Use NVIDIA Warp and MjWarp to Accelerate Robotics Simulation and Learning Workflows
+
+[Read more](https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp)
 
 ---
 
@@ -25,37 +43,11 @@ YouTube is adding new features to generate ideas and monitor the performance of 
 
 ---
 
-### **Know Who Spoke When: Build Real-Time, Multi-Speaker AI with NVIDIA Nemotron 3 Diarization**
+### Navana.ai Releases Indian-Language Voice Model at ₹12 per 10,000 Characters
 
-[Read more](https://huggingface.co/blog/nvidia/nemotron-diarization)
+Bodhi TTS gives businesses tools to correct names and numbers without retraining. Its speed, deployment and rival-price comparisons remain company claims.
 
----
-
-### OpenAI Releases a Mental-Health AI Test That Goes Beyond Crisis Responses
-
-MentalHealthBench scores how models respond to everyday stress and urgent situations. A companion study found that users and clinicians value different qualities in a helpful answer.
-
-[Read more](https://superpowerdaily.com/posts/openai-releases-a-mental-health-ai-test-that-goes-beyond-crisis-responses)
-
----
-
-### Google Releases Gemini Speech Models With Custom Voices and Line-by-Line Direction
-
-Flash TTS can copy a permitted voice from a 30-second sample, but Google requires a matching consent recording. Enterprise API access is still to come.
-
-[Read more](https://superpowerdaily.com/posts/google-releases-gemini-speech-models-with-custom-voices-and-line-by-line-direction)
-
----
-
-### OpenAI releases GPT-6 Sol and Luna models, slashing API costs 50% or more
-
-[Read more](https://venturebeat.com/technology/openai-releases-gpt-6-sol-and-luna-models-slashing-api-costs-50-or-more)
-
----
-
-### How to Use NVIDIA Warp and MjWarp to Accelerate Robotics Simulation and Learning Workflows
-
-[Read more](https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp)
+[Read more](https://superpowerdaily.com/posts/navana-ai-releases-indian-language-voice-model-at-12-per-10-000-characters)
 
 ---
 
@@ -75,45 +67,45 @@ He also sought global testing standards, while OpenAI’s chief called for gover
 
 ---
 
-### A new wave of Connected Apps is rolling out to Gemini.
+### OpenAI Releases a Mental-Health AI Test That Goes Beyond Crisis Responses
 
-[Read more](https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/)
+MentalHealthBench scores how models respond to everyday stress and urgent situations. A companion study found that users and clinicians value different qualities in a helpful answer.
 
----
-
-## Policy & Ethics
-
-### New UK agency to fight ‘information warfare’ from likes of Russia, Burnham tells UN
-
-PM aims to ‘stem poisonous tide’ of disinformation and deepfakes with National Centre for Information Defence Security chiefs will set up a new national centre to tackle disinformation and deepfakes from hostile states such as Russia, Andy Burnham has announced, saying the government had a duty to “stem the poisonous tide” from damaging British interests. The National Centre for Information Defence will “detect, attribute and disrupt” information attacks by foreign powers, many of which are enabled by AI , bringing together the intelligence agencies, law enforcement and social media...
-
-[Read more](https://www.theguardian.com/technology/2026/sep/23/andy-burnham-national-centre-russian-disinformation-deepfakes)
+[Read more](https://superpowerdaily.com/posts/openai-releases-a-mental-health-ai-test-that-goes-beyond-crisis-responses)
 
 ---
 
-### As Congress confronts AI, Senate lawmakers are shut off from its most advanced tools
+### Google Releases Gemini Speech Models With Custom Voices and Line-by-Line Direction
 
-While Senate offices have access to chatbots like ChatGPT, they are not authorized to use any of the more advanced tools that are at the center of regulatory talks and public debate about AI safety.
+Flash TTS can copy a permitted voice from a 30-second sample, but Google requires a matching consent recording. Enterprise API access is still to come.
 
-[Read more](https://www.npr.org/2026/09/23/nx-s1-5978055/congress-ai-regulation)
-
----
-
-### AI Agents Are Becoming a New Malware Distribution Channel
-
-By Farukh Rakhimov, Head of Compliance, Data Protection and Information Security at AdTech Holding Roughly 7,600 fake GitHub repositories, 6,600 fraudulent profiles and more than 14 million downloads: that is the scale of FakeGit, a malware campaign documented by Island in July 2026. Over 800 repositories impersonated AI skills and MCP servers, distributing SmartLoader and […] The post AI Agents Are Becoming a New Malware Distribution Channel appeared first on AI News .
-
-[Read more](https://www.artificialintelligence-news.com/news/ai-agents-are-becoming-a-new-malware-distribution-channel/)
+[Read more](https://superpowerdaily.com/posts/google-releases-gemini-speech-models-with-custom-voices-and-line-by-line-direction)
 
 ---
 
-## Tags: hardware
+### Cognichip Launches Chip-Design AI Aimed at Predicting Physical Tradeoffs
 
-### Advancing Private AI Compute with secure, server-side memory
+ACI Enterprise spans design and verification, with named customers and an FPGA partner. Its predicted design gains still need a harder test.
 
-Introducing private, server-side memory to Private AI Compute for personal AI.
+[Read more](https://superpowerdaily.com/posts/cognichip-launches-chip-design-ai-aimed-at-predicting-physical-tradeoffs)
 
-[Read more](https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/)
+---
+
+### Australia launches investigation after OpenAI agent hacked healthcare database
+
+Prime minister says he told Sam Altman he was disappointed it had taken OpenAI ‘way too long’ to disclose breach Anthony Albanese says an artificial intelligence agent developed by OpenAI hacked Medicare in June and the tech giant notified the government earlier this month using an email sent to a “public mailbox”. Australia’s prime minister made the comments at the UN summit in New York, saying it appeared no personal information had been accessed in the AI breach. Continue reading...
+
+[Read more](https://www.theguardian.com/australia-news/2026/sep/24/anthony-albanese-says-openai-agent-hacked-medicare-extreme-concern-sam-altman)
+
+---
+
+## Industry
+
+### Circular Genomics, Altoida partner on multimodal Alzheimer’s testing
+
+Circular Genomics and Altoida announced a collaboration to combine Circular Genomics’ blood-based circular RNA biomarker platform with Altoida’s AI-powered Digital NeuroMarker platform to develop a multimodal approach for Alzheimer’s drug development and frontline care. The alliance aims to pair objective digital measures of cognition and function with blood-based molecular signatures to improve early identification, patient […] The post Circular Genomics, Altoida partner on multimodal Alzheimer’s testing appeared first on Longevity.Technology .
+
+[Read more](https://longevity.technology/news/circular-genomics-altoida-partner-on-multimodal-alzheimers-testing/)
 
 ---
 
@@ -124,6 +116,24 @@ Introducing private, server-side memory to Private AI Compute for personal AI.
 CEO Mark Zuckerberg kicked off the company’s annual Connect event in Menlo Park on Wednesday with a keynote that made one thing clear: Meta is going all-in on Muse. It's even coming to Meta's AI glasses.
 
 [Read more](https://techcrunch.com/2026/09/23/everything-new-coming-to-metas-ai-agent-muse/)
+
+---
+
+### Meta made a Tamagotchi-like wearable for its Muse AI agent
+
+The tiny hardware device creates another mobile home for its AI agent Muse.
+
+[Read more](https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/)
+
+---
+
+## Tags: hardware
+
+### Advancing Private AI Compute with secure, server-side memory
+
+Introducing private, server-side memory to Private AI Compute for personal AI.
+
+[Read more](https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/)
 
 ---
 
