@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Monday, 28 September 2026"
 date: 2026-09-28
-tags: ["ai", "news", "digest", "policy", "regulation", "opinion", "ai_agents", "hardware", "reasoning", "ai_safety"]
+tags: ["ai", "news", "digest", "hardware", "ai_safety", "product_launch", "industry_move", "model_release", "regulation", "ai_agents", "policy", "opinion", "open_source"]
 summary: "AI and technology news digest for Monday, 28 September 2026"
 ---
 
@@ -9,13 +9,61 @@ summary: "AI and technology news digest for Monday, 28 September 2026"
 
 This dated roundup collects the most interesting AI and technology developments found for Monday, 28 September 2026.
 
+## Research & Products
+
+### Nvidia launches safety platform to trap rogue AI agents in milliseconds
+
+Nvidia’s AI safety platform aims to quarantine rogue agents in milliseconds, adding hardware-backed controls as agent risks surge. The post Nvidia launches safety platform to trap rogue AI agents in milliseconds appeared first on Superintelligence News - Artificial Intelligence News .
+
+[Read more](https://superintelligencenews.com/applications/ai-safety-platform-nvidia-rogue-agents/)
+
+---
+
+### Meta launches enterprise AI platform, hires MongoDB CEO to lead new initiative
+
+Meta says it will focus on bringing its full technology stack, including Muse, Meta Business Agent, Muse API, Muse Code, and more to businesses and developers.
+
+[Read more](https://techcrunch.com/2026/09/28/meta-launches-enterprise-ai-platform-hires-mongodb-ceo-to-lead-new-initiative/)
+
+---
+
+### ElevenLabs Releases v4 Speech Models With More Voice Control and 90-Plus Languages
+
+The v4 release also targets quicker voice cloning and less waiting in AI calls, though its speed and quality improvements remain company claims.
+
+[Read more](https://superpowerdaily.com/posts/elevenlabs-releases-v4-speech-models-with-more-voice-control-and-90-plus-languages)
+
+---
+
+### Meta Pushes Into Enterprise AI With New Platform and MongoDB CEO Hire
+
+Meta launches an enterprise AI platform and hires MongoDB’s CJ Desai to lead it, signaling a major push into business software. The post Meta Pushes Into Enterprise AI With New Platform and MongoDB CEO Hire appeared first on Superintelligence News - Artificial Intelligence News .
+
+[Read more](https://superintelligencenews.com/applications/meta-enterprise-ai-cj-desai/)
+
+---
+
+### Holo4: powering generalist computer-use agents
+
+[Read more](https://huggingface.co/blog/Hcompany/holo4)
+
+---
+
 ## Policy & Ethics
 
-### Bill Gates says unchecked AI could ‘cause a billion deaths’ in call for regulation
+### States Seek Answers From OpenAI After Its AI Agents Breached Outside Systems
 
-Microsoft co-founder and philanthropist speaks with NBC’s Kristen Welker in interview airing on Sunday Bill Gates has called on the US’s federal legislators and law enforcers to regulate the development of artificial intelligence ( AI ), saying in an interview airing on Sunday that the technology left unchecked could cause “a billion deaths” and “no one thinks self-regulation is enough”. “You need law enforcement and the politicians to get into the discussion about what safeguards and monitoring look like,” the Microsoft co-founder and philanthropist said to Kristen Welker, the NBC Meet...
+A Senate investigation adds pressure, but existing AI safety laws may not require disclosure of breaches that cause no catastrophic harm.
 
-[Read more](https://www.theguardian.com/us-news/2026/sep/27/bill-gates-artificial-intelligence-kristen-welker)
+[Read more](https://superpowerdaily.com/posts/state-attorneys-general-press-openai-for-answers-on-agent-hacks-as-safety-laws-fall-short)
+
+---
+
+### AI godfathers warn of runaway ‘intelligence explosion’
+
+OpenAI chief scientist also among authors of report on prospect of ‘most consequential technological development in history’ Two of the “godfathers” of modern AI and senior executives at OpenAI and Anthropic have warned governments to prepare for an AI “intelligence explosion”, which they say could be the most consequential technological development in history. A report co-authored by the Nobel laureate Geoffrey Hinton and the Canadian computer scientist Yoshua Bengio , considered godfathers of modern AI for their work in the field, urges politicians to act now before there is runaway...
+
+[Read more](https://www.theguardian.com/technology/2026/sep/28/ai-godfathers-warn-of-runaway-intelligence-explosion)
 
 ---
 
@@ -27,31 +75,45 @@ In a Meet the Press interview, Gates argues that lawmakers and law enforcement s
 
 ---
 
-### As A.I. Accelerates, Governments Are Increasingly Being Left Behind
+### Anthropic will not appear at Senate inquiry into AI and datacentres amid fallout from OpenAI hack
 
-The gap between technology and policymaking has gotten wider than ever with artificial intelligence, leaving a global policy vacuum as A.I. models rapidly advance.
+Company behind Claude chatbot expected to attend separate Australian government hearing on AI next week Get our new political email , free app or daily news podcast The chief executive of Anthropic will turn down an invitation to appear at a Senate committee hearing on AI this week, in the wake of the revelation that OpenAI agents had breached Australian government websites. However, the company will make an appearance before another committee early next week. Sign up for Guardian Australia’s Politics, really newsletter here Continue reading...
 
-[Read more](https://www.nytimes.com/2026/09/27/technology/ai-government-regulation.html)
+[Read more](https://www.theguardian.com/australia-news/2026/sep/28/anthropic-will-not-appear-at-senate-inquiry-into-ai-and-datacentres-amid-fallout-from-openai-hack-ntwnfb)
+
+---
+
+## Tags: hardware, ai_agents
+
+### NVIDIA Adds AI-Agent Controls That Can Block API Writes Even With a Write-Capable Key
+
+OpenShell 0.1.0 keeps credentials outside an agent’s workload and lets operators change network rules mid-task. Some sandbox limits still require a restart.
+
+[Read more](https://superpowerdaily.com/posts/nvidia-releases-openshell-0-1-0-to-enforce-ai-agent-permissions-outside-the-agent)
+
+---
+
+## Tags: hardware, open_source
+
+### Nvidia Rolls Out Open-Source Security Tools to Contain Rogue AI Agents
+
+Nvidia is releasing open-source AI security tools to sandbox rogue agents, monitor behavior, and help companies contain autonomous software. The post Nvidia Rolls Out Open-Source Security Tools to Contain Rogue AI Agents appeared first on Superintelligence News - Artificial Intelligence News .
+
+[Read more](https://superintelligencenews.com/companies/nvidia-ai-security-rogue-agents/)
+
+---
+
+## Industry
+
+### John Georges Seeks Meta AI Deal as His Newspaper’s Meta Ties Draw Scrutiny
+
+In a new interview, the Louisiana newspaper owner defended a Meta-hosted dinner and sponsored videos. Staffers say the relationship has already affected editorial decisions; Georges denies that advertising influences coverage.
+
+[Read more](https://superpowerdaily.com/posts/john-georges-seeks-meta-ai-deal-as-his-newspaper-s-meta-ties-draw-scrutiny)
 
 ---
 
 ## Tags: ai_agents
-
-### Our Review Finds AI Agent Logs Differ in What They Capture and Who Keeps Them
-
-Claude Code, OpenAI’s Agents SDK and Grok Bot offer different records of agent work. None of the reviewed documentation establishes a complete, agent-proof action trail across the three.
-
-[Read more](https://superpowerdaily.com/posts/desk-review-finds-no-documented-agent-proof-action-trail-across-three-ai-tools)
-
----
-
-### Meta’s Muse Helps Users Cancel Subscriptions, Putting Forgotten-Bill Revenue at Risk
-
-Consumers who shared financial statements with the AI agent have cut unwanted bills. Research suggests the business risk lies in how often people keep paying when cancellation takes effort.
-
-[Read more](https://superpowerdaily.com/posts/meta-s-muse-helps-cancel-subscriptions-challenging-revenue-from-inertia)
-
----
 
 ### Quoting Muse AI Agent
 
@@ -61,11 +123,11 @@ Bad news on the MX Keys Mini pickup. Usman showed up at your building around 9:1
 
 ---
 
-### Meta’s Muse Aims at Everyday Consumers, But Trust Remains the Hurdle
+### Our Review Finds AI Agent Logs Differ in What They Capture and Who Keeps Them
 
-Meta’s consumer AI agent Muse shows promise, but trust and data privacy may decide whether users embrace it or move on. The post Meta’s Muse Aims at Everyday Consumers, But Trust Remains the Hurdle appeared first on Superintelligence News - Artificial Intelligence News .
+Claude Code, OpenAI’s Agents SDK and Grok Bot offer different records of agent work. None of the reviewed documentation establishes a complete, agent-proof action trail across the three.
 
-[Read more](https://superintelligencenews.com/applications/consumer-ai-meta-muse-trust-test/)
+[Read more](https://superpowerdaily.com/posts/desk-review-finds-no-documented-agent-proof-action-trail-across-three-ai-tools)
 
 ---
 
@@ -76,32 +138,6 @@ Meta’s consumer AI agent Muse shows promise, but trust and data privacy may de
 DSX MaxLPS let the test run an additional inference job, while the 99th-percentile wait for the first token rose 17%.
 
 [Read more](https://superpowerdaily.com/posts/nvidia-measures-49-more-ai-output-under-a-fixed-power-budget-at-nscale)
-
----
-
-## Tags: reasoning
-
-### Thinking Fast and Slow in AI: The Role of Metacognition
-
-[Read more](https://arxiv.org/abs/2110.01834)
-
----
-
-## Tags: ai_safety
-
-### OpenAI and Anthropic Investigate Tens of Thousands of Potential AI Safety Incidents, Axios Says
-
-The reported tally covers both deliberate stress tests and activity involving real systems. It does not say how many cases caused harm.
-
-[Read more](https://superpowerdaily.com/posts/openai-and-anthropic-investigate-tens-of-thousands-of-potential-ai-safety-incidents-axios-says)
-
----
-
-### Anthropic CEO Dario Amodei to Dine With Trump Amid AI Safety Rift
-
-Anthropic CEO Dario Amodei is set to dine with Trump at the White House as their AI safety clash plays out in public. The post Anthropic CEO Dario Amodei to Dine With Trump Amid AI Safety Rift appeared first on Superintelligence News - Artificial Intelligence News .
-
-[Read more](https://superintelligencenews.com/companies/ai-safety-anthropic-ceo-meet-trump/)
 
 ---
 
