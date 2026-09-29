@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Tuesday, 29 September 2026"
 date: 2026-09-29
-tags: ["ai", "news", "digest", "model_release", "ai_agents", "product_launch", "open_source", "hardware", "ai_safety", "announcement", "industry_move", "policy", "regulation", "reasoning", "opinion"]
+tags: ["ai", "news", "digest", "model_release", "ai_agents", "product_launch", "open_source", "hardware", "policy", "regulation", "ai_safety", "announcement", "industry_move", "reasoning"]
 summary: "AI and technology news digest for Tuesday, 29 September 2026"
 ---
 
@@ -27,6 +27,14 @@ Nvidia’s AI safety platform aims to quarantine rogue agents in milliseconds, a
 
 ---
 
+### Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner
+
+Anthropic has released the newest version of its mid-range model, boasting faster response times and less token burn.
+
+[Read more](https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner/)
+
+---
+
 ### When can we say AI made a scientific discovery?
 
 This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Last Wednesday, Anthropic announced that earlier this year it had launched a molecular biology lab, where Claude agents read and conjecture about hard biology problems and human scientists run experiments on what…
@@ -43,11 +51,11 @@ Meta says it will focus on bringing its full technology stack, including Muse, M
 
 ---
 
-### Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner
+### Nvidia launches new platform for reining in rogue AI agents
 
-Anthropic has released the newest version of its mid-range model, boasting faster response times and less token burn.
+Nvidia CEO Jensen Huang on Monday introduced a toolkit of software and hardware products that add independent security layers around AI agents to ensure they stay within their test environments even if they attempt to break out.
 
-[Read more](https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner/)
+[Read more](https://techcrunch.com/2026/09/28/nvidia-launches-new-platform-for-reining-in-rogue-ai-agents/)
 
 ---
 
@@ -67,21 +75,37 @@ The v4 release also targets quicker voice cloning and less waiting in AI calls, 
 
 ---
 
-### Nvidia launches new platform for reining in rogue AI agents
+### NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction
 
-Nvidia CEO Jensen Huang on Monday introduced a toolkit of software and hardware products that add independent security layers around AI agents to ensure they stay within their test environments even if they attempt to break out.
-
-[Read more](https://techcrunch.com/2026/09/28/nvidia-launches-new-platform-for-reining-in-rogue-ai-agents/)
+[Read more](https://huggingface.co/blog/nvidia/kumo-tabular)
 
 ---
 
-### Meta announces enterprise AI platform, recruits MongoDB CEO to lead it
+### Oracle Releases 25 AI Apps Built to Plan and Execute Business Tasks
 
-[Read more](https://venturebeat.com/technology/meta-announces-enterprise-ai-platform-recruits-mongodb-ceo-to-lead-it)
+Fusion Claw separates AI planning from calculations and transactions. Customers can require approval before it acts, but Oracle has not provided production-performance results.
+
+[Read more](https://superpowerdaily.com/posts/oracle-releases-25-ai-apps-built-to-plan-and-execute-business-tasks)
 
 ---
 
 ## Policy & Ethics
+
+### Trump denies offering Iran sanctions relief for nuclear concessions – US politics live
+
+President uses social media post to deny reports that he was willing to ease sanctions in return for ‘concrete’ steps over its nuclear program Sign up to the US Breaking News email Donald Trump will host a meeting today with House speaker Mike Johnson and tech executives like Meta CEO ⁠Mark Zuckerberg and Anthropic’s Dario Amodei to discuss AI, as calls ramp up for more regulation of the fast-developing technology. Nvidia CEO Jensen Huang and OpenAI president Greg Brockman ⁠are also expected to ⁠attend, separate sources familiar with the planning told Reuters. Continue reading...
+
+[Read more](https://www.theguardian.com/us-news/live/2026/sep/29/donald-trump-iran-ai-jack-smith-media-white-house-latest-news-updates)
+
+---
+
+### Revealed: the five-paragraph email OpenAI used to inform Australia about agent attack
+
+Executive to front parliamentary committee on AI as ministers reveal how brief message telling them about hack was signed off ‘best’ Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news podcast OpenAI has apologised to Australians for its agent attack on Medicare , and will front parliament next week as the tech company revealed more details about its June hack of Australian government websites. Ministers on Tuesday evening released a brief, five paragraph email which OpenAI used to inform the Australian government about the attack....
+
+[Read more](https://www.theguardian.com/technology/2026/sep/29/openai-apology-rogue-agent-hacked-medicare-australian-government-websites)
+
+---
 
 ### AI godfathers warn of runaway ‘intelligence explosion’
 
@@ -91,23 +115,7 @@ OpenAI chief scientist also among authors of report on prospect of ‘most conse
 
 ---
 
-### States Seek Answers From OpenAI After Its AI Agents Breached Outside Systems
-
-A Senate investigation adds pressure, but existing AI safety laws may not require disclosure of breaches that cause no catastrophic harm.
-
-[Read more](https://superpowerdaily.com/posts/state-attorneys-general-press-openai-for-answers-on-agent-hacks-as-safety-laws-fall-short)
-
----
-
 ## Tags: hardware, ai_agents
-
-### NVIDIA Adds AI-Agent Controls That Can Block API Writes Even With a Write-Capable Key
-
-OpenShell 0.1.0 keeps credentials outside an agent’s workload and lets operators change network rules mid-task. Some sandbox limits still require a restart.
-
-[Read more](https://superpowerdaily.com/posts/nvidia-releases-openshell-0-1-0-to-enforce-ai-agent-permissions-outside-the-agent)
-
----
 
 ### Nvidia wants to put a watchdog chip next to every AI agent
 
@@ -115,23 +123,11 @@ OpenShell 0.1.0 keeps credentials outside an agent’s workload and lets operato
 
 ---
 
-## Industry
+### DigiCert Adds Verifiable AI Agent Identity to NVIDIA’s Safety Platform
 
-### John Georges Seeks Meta AI Deal as His Newspaper’s Meta Ties Draw Scrutiny
+The support starts with OpenShell, which limits what agents can do. DigiCert’s plans for signed audit records remain future work.
 
-In a new interview, the Louisiana newspaper owner defended a Meta-hosted dinner and sponsored videos. Staffers say the relationship has already affected editorial decisions; Georges denies that advertising influences coverage.
-
-[Read more](https://superpowerdaily.com/posts/john-georges-seeks-meta-ai-deal-as-his-newspaper-s-meta-ties-draw-scrutiny)
-
----
-
-## Tags: hardware, open_source
-
-### Nvidia Rolls Out Open-Source Security Tools to Contain Rogue AI Agents
-
-Nvidia is releasing open-source AI security tools to sandbox rogue agents, monitor behavior, and help companies contain autonomous software. The post Nvidia Rolls Out Open-Source Security Tools to Contain Rogue AI Agents appeared first on Superintelligence News - Artificial Intelligence News .
-
-[Read more](https://superintelligencenews.com/companies/nvidia-ai-security-rogue-agents/)
+[Read more](https://superpowerdaily.com/posts/digicert-adds-verifiable-ai-agent-identity-to-nvidia-s-safety-platform)
 
 ---
 
