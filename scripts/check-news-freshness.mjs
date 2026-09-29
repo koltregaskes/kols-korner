@@ -86,6 +86,14 @@ async function main() {
     throw new Error('No generated news articles found in site/data/news-articles.json');
   }
 
+  const requiredDigestFilename = `${requiredDateKey}-digest.md`;
+  const requiredDateArticles = articles.filter(
+    (article) => article.filename === requiredDigestFilename
+  );
+  if (requiredDateArticles.length === 0) {
+    throw new Error(`News freshness failed: no generated articles found for ${requiredDigestFilename}`);
+  }
+
   const latestDate = articles
     .map((article) => parseIsoDate(article.date))
     .filter(Boolean)
@@ -96,17 +104,6 @@ async function main() {
   }
 
   const latestDateKey = formatDate(latestDate);
-  if (latestDate < requiredDate) {
-    throw new Error(`News freshness failed: latest generated article is ${latestDateKey}, but required date is ${requiredDateKey}`);
-  }
-
-  const requiredDigestFilename = `${requiredDateKey}-digest.md`;
-  const requiredDateArticles = articles.filter(
-    (article) => article.filename === requiredDigestFilename
-  );
-  if (requiredDateArticles.length === 0) {
-    throw new Error(`News freshness failed: no generated articles found for ${requiredDigestFilename}`);
-  }
 
   const contentPath = path.join(repoRoot, 'content', `daily-digest-${requiredDateKey}.md`);
   const digestPaths = [
@@ -125,7 +122,7 @@ async function main() {
     throw new Error(`News freshness failed: missing required-date artefact(s): ${missing.join(', ')}`);
   }
 
-  console.log(`News freshness OK: latest generated article ${latestDateKey}; required digest ${requiredDigestFilename} has ${requiredDateArticles.length} article(s); ${articles.length} generated articles total.`);
+  console.log(`News freshness OK: required digest ${requiredDigestFilename} has ${requiredDateArticles.length} article(s); latest source article date ${latestDateKey}; ${articles.length} generated articles total.`);
 }
 
 main().catch((error) => {
