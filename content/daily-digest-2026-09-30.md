@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Wednesday, 30 September 2026"
 date: 2026-09-30
-tags: ["ai", "news", "digest", "model_release", "ai_agents", "acquisition", "product_launch", "announcement", "hardware", "policy", "regulation", "industry_move"]
+tags: ["ai", "news", "digest", "model_release", "ai_agents", "acquisition", "product_launch", "announcement", "hardware"]
 summary: "AI and technology news digest for Wednesday, 30 September 2026"
 ---
 
@@ -43,23 +43,9 @@ Nvidia launches an AI agent safety platform, but OpenAI stays off the public lis
 
 ---
 
-### NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction
-
-[Read more](https://huggingface.co/blog/nvidia/kumo-tabular)
-
----
-
 ### OpenAI unveils AI assistant 'dots' while safety worries delay new model Sam Altman spoke in San Francisco during OpenAI’s annual event for tech developers.
 
 [Read more](https://www.bbc.com/news/articles/cw7v42rp083eo)
-
----
-
-### Oracle Releases 25 AI Apps Built to Plan and Execute Business Tasks
-
-Fusion Claw separates AI planning from calculations and transactions. Customers can require approval before it acts, but Oracle has not provided production-performance results.
-
-[Read more](https://superpowerdaily.com/posts/oracle-releases-25-ai-apps-built-to-plan-and-execute-business-tasks)
 
 ---
 
@@ -68,6 +54,20 @@ Fusion Claw separates AI planning from calculations and transactions. Customers 
 OpenAI says GPT-6.1 Sol delivers significant improvements over GPT-6 Sol across complex professional tasks, including code writing and debugging, document understanding, and executing multistep business workflows.
 
 [Read more](https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/)
+
+---
+
+### NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction
+
+[Read more](https://huggingface.co/blog/nvidia/kumo-tabular)
+
+---
+
+### DoorDash launches an AI agent you can text to order food
+
+By launching an AI agent for food ordering, DoorDash is looking to gain an edge over rivals Uber Eats and Grubhub.
+
+[Read more](https://techcrunch.com/2026/09/30/doordash-launches-an-ai-agent-you-can-text-to-order-food/)
 
 ---
 
@@ -85,27 +85,33 @@ Dots, ChatGPT Space, GPT-6.1 Sol, Ultrafast, Codex Cloud and more: the complete 
 
 ---
 
-### Meta announces enterprise AI platform, recruits MongoDB CEO to lead it
+### OpenAI Releases GPT-6.1 Sol at One-Fifth Its Flagship’s Token Prices
 
-[Read more](https://venturebeat.com/technology/meta-announces-enterprise-ai-platform-recruits-mongodb-ceo-to-lead-it)
+Standard input and output rates stay unchanged from the previous Sol model. OpenAI’s tests suggest a smaller gap with Astra, but those results are not independent production trials.
 
----
-
-## Policy & Ethics
-
-### Trump denies offering Iran sanctions relief for nuclear concessions – US politics live
-
-President uses social media post to deny reports that he was willing to ease sanctions in return for ‘concrete’ steps over its nuclear program Sign up to the US Breaking News email Donald Trump will host a meeting today with House speaker Mike Johnson and tech executives like Meta CEO ⁠Mark Zuckerberg and Anthropic’s Dario Amodei to discuss AI, as calls ramp up for more regulation of the fast-developing technology. Nvidia CEO Jensen Huang and OpenAI president Greg Brockman ⁠are also expected to ⁠attend, separate sources familiar with the planning told Reuters. Continue reading...
-
-[Read more](https://www.theguardian.com/us-news/live/2026/sep/29/donald-trump-iran-ai-jack-smith-media-white-house-latest-news-updates)
+[Read more](https://superpowerdaily.com/posts/openai-releases-gpt-6-1-sol-at-one-fifth-its-flagship-s-token-prices)
 
 ---
 
-### Revealed: the five-paragraph email OpenAI used to inform Australia about agent attack
+### Oracle Releases 25 AI Apps Built to Plan and Execute Business Tasks
 
-Executive to front parliamentary committee on AI as ministers reveal how brief message telling them about hack was signed off ‘best’ Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news podcast OpenAI has apologised to Australians for its agent attack on Medicare , and will front parliament next week as the tech company revealed more details about its June hack of Australian government websites. Ministers on Tuesday evening released a brief, five paragraph email which OpenAI used to inform the Australian government about the attack....
+Fusion Claw separates AI planning from calculations and transactions. Customers can require approval before it acts, but Oracle has not provided production-performance results.
 
-[Read more](https://www.theguardian.com/technology/2026/sep/29/openai-apology-rogue-agent-hacked-medicare-australian-government-websites)
+[Read more](https://superpowerdaily.com/posts/oracle-releases-25-ai-apps-built-to-plan-and-execute-business-tasks)
+
+---
+
+### Two Google alumni raise $11.3M to back AI startups that enterprises will actually pay for
+
+BAG Ventures announces close of a $11.3M Fund I to invest in all things AI.
+
+[Read more](https://techcrunch.com/2026/09/30/bag-ventures-sets-its-eyes-deeper-into-the-ai-stack/)
+
+---
+
+### OpenClaw launches free enterprise control plane for persistent AI agents, backed by OpenAI, Red Hat and Nvidia
+
+[Read more](https://venturebeat.com/orchestration/openclaw-launches-free-enterprise-control-plane-for-persistent-ai-agents-backed-by-openai-red-hat-and-nvidia)
 
 ---
 
@@ -116,16 +122,6 @@ Executive to front parliamentary committee on AI as ministers reveal how brief m
 The support starts with OpenShell, which limits what agents can do. DigiCert’s plans for signed audit records remain future work.
 
 [Read more](https://superpowerdaily.com/posts/digicert-adds-verifiable-ai-agent-identity-to-nvidia-s-safety-platform)
-
----
-
-## Industry
-
-### Nvidia and Modulus Financial Say They Resolved AI Software Name Dispute
-
-The companies asked a Texas court for time to finalize their agreement. Its terms remain undisclosed, and a trial had been scheduled for October.
-
-[Read more](https://superpowerdaily.com/posts/nvidia-and-modulus-financial-say-they-resolved-ai-software-name-dispute)
 
 ---
 
