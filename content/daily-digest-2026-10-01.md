@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Thursday, 1 October 2026"
 date: 2026-10-01
-tags: ["ai", "news", "digest", "model_release", "ai_safety", "product_launch", "ai_agents", "hardware", "industry_move", "policy", "regulation", "announcement"]
+tags: ["ai", "news", "digest", "model_release", "hardware", "industry_move", "ai_safety", "product_launch", "ai_agents", "open_source", "policy", "regulation", "reasoning", "acquisition"]
 summary: "AI and technology news digest for Thursday, 1 October 2026"
 ---
 
@@ -10,22 +10,6 @@ summary: "AI and technology news digest for Thursday, 1 October 2026"
 This dated roundup collects the most interesting AI and technology developments found for Thursday, 1 October 2026.
 
 ## Research & Products
-
-### Google Releases Gemini 4 Argon First to Trusted Cyber Defenders
-
-Paid API customers and Google AI Ultra subscribers are next in line, but Google has not set a date. Selected defenders will get the model without cyber guardrails.
-
-[Read more](https://superpowerdaily.com/posts/google-releases-gemini-4-argon-first-to-trusted-cyber-defenders)
-
----
-
-### OpenClaw Releases Free AI-Agent Management Software for Internal Enterprise Pilots
-
-Companies can replace the models and execution components while keeping centralized governance. But the foundation recommends internal pilots, with a 1.0 release and security reference architecture still pending.
-
-[Read more](https://superpowerdaily.com/posts/openclaw-releases-free-ai-agent-management-software-for-internal-enterprise-pilots)
-
----
 
 ### OpenAI and Synopsys Sign Deal to Build AI That Operates Chip-Design Tools
 
@@ -43,31 +27,19 @@ For safety reasons, Gemini 4 Argon will initially be available only to some comp
 
 ---
 
-### DoorDash launches an AI agent you can text to order food
+### Google Releases Gemini 4 Argon First to Trusted Cyber Defenders
 
-By launching an AI agent for food ordering, DoorDash is looking to gain an edge over rivals Uber Eats and Grubhub.
+Paid API customers and Google AI Ultra subscribers are next in line, but Google has not set a date. Selected defenders will get the model without cyber guardrails.
 
-[Read more](https://techcrunch.com/2026/09/30/doordash-launches-an-ai-agent-you-can-text-to-order-food/)
-
----
-
-### OpenAI unveils AI assistant 'dots' while safety worries delay new model Sam Altman spoke in San Francisco during OpenAI’s annual event for tech developers.
-
-[Read more](https://www.bbc.com/news/articles/cw7v42rp083eo)
+[Read more](https://superpowerdaily.com/posts/google-releases-gemini-4-argon-first-to-trusted-cyber-defenders)
 
 ---
 
-### Two Google alumni raise $11.3M to back AI startups that enterprises will actually pay for
+### Amazon Launches Strands Decider 2B as Decision Models Gain Momentum
 
-BAG Ventures announces close of a $11.3M Fund I to invest in all things AI.
+Amazon released Strands Decider 2B, an open-source decision model built for fast, low-cost choices in AI agent workflows. The post Amazon Launches Strands Decider 2B as Decision Models Gain Momentum appeared first on Superintelligence News - Artificial Intelligence News .
 
-[Read more](https://techcrunch.com/2026/09/30/bag-ventures-sets-its-eyes-deeper-into-the-ai-stack/)
-
----
-
-### OpenAI launches Dots, always-on AI agent coworkers, and ChatGPT Space where they can collaborate with human teams
-
-[Read more](https://venturebeat.com/technology/openai-launches-dots-always-on-ai-agent-coworkers-and-chatgpt-space-where-they-can-collaborate-with-human-teams)
+[Read more](https://superintelligencenews.com/ai-fields/large-language-models/amazon-decision-model-strands-decider-2b/)
 
 ---
 
@@ -79,15 +51,39 @@ Google has released its latest Gemini model, marketing it as a workhorse for cod
 
 ---
 
-### OpenClaw launches free enterprise control plane for persistent AI agents, backed by OpenAI, Red Hat and Nvidia
+### DoorDash launches an AI agent you can text to order food
 
-[Read more](https://venturebeat.com/orchestration/openclaw-launches-free-enterprise-control-plane-for-persistent-ai-agents-backed-by-openai-red-hat-and-nvidia)
+By launching an AI agent for food ordering, DoorDash is looking to gain an edge over rivals Uber Eats and Grubhub.
+
+[Read more](https://techcrunch.com/2026/09/30/doordash-launches-an-ai-agent-you-can-text-to-order-food/)
 
 ---
 
-### OpenAI's GPT-6.1 Sol offers Astra-like performance at 1/5th price. A new Ultrafast tier clocks at 300 tokens per second.
+### Google rolls out new Gemini AI model but restricts access over safety concerns
 
-[Read more](https://venturebeat.com/technology/openais-gpt-6-1-sol-offers-astra-like-performance-at-1-5th-price-a-new-ultrafast-tier-clocks-at-300-tokens-per-second)
+Tech company releases Gemini 4 Argon only to a vetted group of cybersecurity experts to avoid misuse by hackers Google on Wednesday said it would withhold its most powerful artificial intelligence model from the public for now, releasing Gemini 4 Argon only to a vetted group of cybersecurity experts to avoid misuse by hackers. “Safely releasing frontier capabilities at this level requires a phased approach,” wrote Koray Kavukcuoglu, Google’s chief AI architect, in a blog post announcing the model. Continue reading...
+
+[Read more](https://www.theguardian.com/technology/2026/oct/01/google-releases-gemini-model-restrictions)
+
+---
+
+### Prenuvo launches research network to track disease patterns
+
+Prenuvo launched the Prenuvo Research Network to coordinate real-world studies using whole-body MRI to study disease patterns. The initiative is powered by the Prenuvo Imaging Biobank, which the company claims is the largest standardized collection of whole-body MRI scans; according to the company, the Biobank includes more than 200,000 scans. The Network combines Prenuvo’s AI […] The post Prenuvo launches research network to track disease patterns appeared first on Longevity.Technology .
+
+[Read more](https://longevity.technology/news/prenuvo-launches-research-network-to-track-disease-patterns/)
+
+---
+
+### Oct 1, 2026 Announcements Barclays scales Claude to upgrade operations and improve client experience
+
+[Read more](https://www.anthropic.com/news/barclays-scales-claude)
+
+---
+
+### Google's AI ranks #1 for predicting flu hospitalizations.
+
+[Read more](https://blog.google/innovation-and-ai/models-and-research/google-research/google-science-ai-flu-forecasts/)
 
 ---
 
@@ -101,6 +97,34 @@ Trump’s AI safety accord is a voluntary pledge, not binding regulation, even a
 
 ---
 
+### METR’s Chris Painter Urges Senate to Ground AI Agent Oversight in Public Evidence
+
+The OpenAI–Hugging Face breach supplied a concrete warning. But the independent inquiry did not assess safeguards, the full compromise, or OpenAI’s response.
+
+[Read more](https://superpowerdaily.com/posts/metr-s-chris-painter-urges-senate-to-ground-ai-agent-oversight-in-public-evidence)
+
+---
+
+## Tags: ai_agents, reasoning
+
+### ZoomInfo Adds AI Agent Teams to Run Multi-Step Sales Workflows
+
+Built on DoubleO.ai’s orchestration architecture, Agent Teams is available now. ZoomInfo promises less step-by-step supervision, but its launch release offers no measured reliability results.
+
+[Read more](https://superpowerdaily.com/posts/zoominfo-adds-ai-agent-teams-to-run-multi-step-sales-workflows)
+
+---
+
+## Industry
+
+### Nebius Acquires Inferize to Reduce the Cost of Keeping GPUs Ready for AI Demand
+
+The startup’s technology targets delays that leave GPUs idle while models load. Deal terms remain private; CTech estimates a $100–150 million price.
+
+[Read more](https://superpowerdaily.com/posts/nebius-acquires-inferize-to-reduce-the-cost-of-keeping-gpus-ready-for-ai-demand)
+
+---
+
 ## Tags: ai_agents
 
 ### Meta disputes claim that Muse read a user’s private messages without permission
@@ -108,22 +132,6 @@ Trump’s AI safety accord is a voluntary pledge, not binding regulation, even a
 Meta says its Muse AI agent cannot access a user’s Messages without explicit permission, disputing a journalist’s account that the agent read his private messages while the required Mac setting was turned off.
 
 [Read more](https://techcrunch.com/2026/09/30/meta-disputes-claim-that-muse-read-a-users-private-messages-without-permission/)
-
----
-
-### Raven: The Harness of Harnesses for Composable Agentic Intelligence
-
-[Read more](https://paperswithcode.com/papers/2609.33439)
-
----
-
-## Tags: announcement
-
-### Pledge signed by President Trump and top AI leaders misspells the United States
-
-On Tuesday, President Donald Trump and top AI leaders announced a signed pledge called a “Joint Commitment on Frontier Responsibilities” — a voluntary promise to implement more controls and safety measures as the rapid development of artificial intelligence continues. But there seems to be a catch.
-
-[Read more](https://techcrunch.com/2026/09/30/pledge-signed-by-president-trump-and-top-ai-leaders-misspells-the-united-states/)
 
 ---
 
