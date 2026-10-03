@@ -1,55 +1,13 @@
 ---
 title: "Daily Digest: Saturday, 3 October 2026"
 date: 2026-10-03
-tags: ["ai", "news", "digest", "model_release", "product_launch", "ai_safety", "policy", "opinion", "acquisition", "open_source", "ai_agents", "hardware", "industry_move"]
+tags: ["ai", "news", "digest", "ai_safety", "policy", "model_release", "product_launch", "opinion", "acquisition", "open_source", "ai_agents", "hardware", "industry_move"]
 summary: "AI and technology news digest for Saturday, 3 October 2026"
 ---
 
 # Daily Digest: Saturday, 3 October 2026
 
 This dated roundup collects the most interesting AI and technology developments found for Saturday, 3 October 2026.
-
-## Research & Products
-
-### Ai2 Releases Open AI Training Stack With a Reported 2.7× Speed Gain
-
-Olmo-core 3 keeps model experts on GPUs instead of repeatedly moving their weights. Its speed gain comes from a 47-billion-parameter test; separate trillion-parameter experiments measure system scale, not trained-model quality.
-
-[Read more](https://superpowerdaily.com/posts/ai2-releases-open-ai-training-stack-with-a-reported-2-7-speed-gain)
-
----
-
-### Cloudflare Releases Open Models for AI Decisions Without Text Generation
-
-Clef and Clef-flash return probabilities that software can act on directly. Cloudflare’s tests show faster responses than Jev, but the smaller model’s accuracy varies sharply by task.
-
-[Read more](https://superpowerdaily.com/posts/cloudflare-releases-open-models-for-ai-decisions-without-text-generation)
-
----
-
-### AutoSynthData: Generating Training Data for Enterprise Agents
-
-[Read more](https://huggingface.co/blog/ServiceNow-AI/autosynthdata)
-
----
-
-### Open-sourcing AstaBrief, the fast report-generation model in Asta
-
-[Read more](https://huggingface.co/blog/allenai/astabrief)
-
----
-
-### Our Project Suncatcher prototype satellite is in orbit.
-
-[Read more](https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/)
-
----
-
-### Oct 2, 2026 Announcements Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap
-
-[Read more](https://www.anthropic.com/news/claude-frontier-academy)
-
----
 
 ## Policy & Ethics
 
@@ -69,9 +27,57 @@ The injunction interrupts a law aimed at companies enabling realistic fake nudit
 
 ---
 
-### Healthcare AI Policy
+## Research & Products
 
-[Read more](https://hai.stanford.edu/policy/policy-efforts/healthcare-ai-policy)
+### Cloudflare Releases Open Models for AI Decisions Without Text Generation
+
+Clef and Clef-flash return probabilities that software can act on directly. Cloudflare’s tests show faster responses than Jev, but the smaller model’s accuracy varies sharply by task.
+
+[Read more](https://superpowerdaily.com/posts/cloudflare-releases-open-models-for-ai-decisions-without-text-generation)
+
+---
+
+### Ai2 Releases Open AI Training Stack With a Reported 2.7× Speed Gain
+
+Olmo-core 3 keeps model experts on GPUs instead of repeatedly moving their weights. Its speed gain comes from a 47-billion-parameter test; separate trillion-parameter experiments measure system scale, not trained-model quality.
+
+[Read more](https://superpowerdaily.com/posts/ai2-releases-open-ai-training-stack-with-a-reported-2-7-speed-gain)
+
+---
+
+### Aleph Alpha Releases Kolibri for Self-Hosted German and English AI
+
+The downloadable model targets regulated work, with strong company-reported math results. Its low active parameter count does not mean small hardware requirements.
+
+[Read more](https://superpowerdaily.com/posts/aleph-alpha-releases-kolibri-for-self-hosted-german-and-english-ai)
+
+---
+
+### Oct 2, 2026 Announcements Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap
+
+[Read more](https://www.anthropic.com/news/claude-frontier-academy)
+
+---
+
+### Open-sourcing AstaBrief, the fast report-generation model in Asta
+
+[Read more](https://huggingface.co/blog/allenai/astabrief)
+
+---
+
+### OpenAI Schedules Three GPT-5 API Models for Shutdown on April 1, 2027
+
+The October 1 notice directs developers toward GPT-6 Sol and Luna. Deprecation starts now; loss of API access comes at the scheduled shutdown.
+
+[Read more](https://superpowerdaily.com/posts/openai-schedules-three-gpt-5-api-models-for-shutdown-on-april-1-2027)
+
+---
+
+### OpenClaw Adds GPT-6.1 Sol and Fixes Missing Replies Between AI Agents
+
+Version 2026.9.8 also repairs interrupted updates and startup failures. Some custom workflows need explicit follow-up calls, and older running updaters cannot inherit the fixes.
+
+[Read more](https://superpowerdaily.com/posts/openclaw-adds-gpt-6-1-sol-and-fixes-missing-replies-between-ai-agents)
 
 ---
 
@@ -123,13 +129,13 @@ Clay Co-founder and CEO Kareem Amin joins the AI Stage to discuss the rise of GT
 
 ---
 
-## Tags: ai_safety
+## Tags: ai_agents
 
-### Quinnipiac Poll Finds 86% Support AI Safety Standards Even if Development Slows
+### OpenAI’s Dot agent aims to bring workplace automation to everyday users
 
-Support for safeguards overlaps with concern about competition with China, while opposition to neighborhood AI data centers has risen since March.
+OpenAI’s Dot AI agent can update websites, compile clips and place orders, but early testing shows security checks and limits remain. The post OpenAI’s Dot agent aims to bring workplace automation to everyday users appeared first on Superintelligence News - Artificial Intelligence News .
 
-[Read more](https://superpowerdaily.com/posts/quinnipiac-poll-finds-86-support-ai-safety-standards-even-if-development-slows)
+[Read more](https://superintelligencenews.com/ai-fields/large-language-models/openai-dot-ai-agent-work-tasks/)
 
 ---
 
