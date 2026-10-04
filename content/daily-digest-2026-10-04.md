@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Sunday, 4 October 2026"
 date: 2026-10-04
-tags: ["ai", "news", "digest", "model_release", "ai_agents", "product_launch", "open_source", "industry_move", "hardware", "policy", "opinion", "reasoning"]
+tags: ["ai", "news", "digest", "model_release", "ai_agents", "product_launch", "open_source", "industry_move", "hardware", "ai_safety", "regulation", "opinion"]
 summary: "AI and technology news digest for Sunday, 4 October 2026"
 ---
 
@@ -21,7 +21,7 @@ Muse Gadgets supplies firmware and a Linux development kit. Meta also says it bu
 
 ### OpenAI safety leader quits, warning AI company’s culture is ‘broken’
 
-David Robinson joins other insiders in urging industry to take more care over rapidly developing technology A safety leader at OpenAI has quit the company, warning that its culture was broken and that AI firms were not “being nearly careful enough” about developing the technology. David Robinson, who led the writing of safety reports that accompanied the ChatGPT developer’s product releases, explained his resignation in an essay headlined, “I quit OpenAI because its culture is broken”. Continue reading...
+David Robinson joins other insiders in urging industry to take more care over rapidly developing technology A safety leader at OpenAI has quit the company, warning that its culture was broken and that AI firms were not “being nearly careful enough” about developing the technology. David Robinson, who led the writing of safety reports that accompanied the ChatGPT developer’s product releases, explained his resignation in an essay headlined: “I quit OpenAI because its culture is broken.” Continue reading...
 
 [Read more](https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken)
 
@@ -35,14 +35,6 @@ Here's a product feature which the world is going to need a whole lot more of ov
 
 ---
 
-### Aleph Alpha Releases Kolibri for Self-Hosted German and English AI
-
-The downloadable model targets regulated work, with strong company-reported math results. Its low active parameter count does not mean small hardware requirements.
-
-[Read more](https://superpowerdaily.com/posts/aleph-alpha-releases-kolibri-for-self-hosted-german-and-english-ai)
-
----
-
 ### PewDiePie introduces Ajax, a home-PC AI assistant still awaiting a public download
 
 The Qwen-based assistant is intended for his self-hosted Odysseus workspace. Its development also brought an attributed dispute over using OpenAI outputs as training material.
@@ -51,17 +43,11 @@ The Qwen-based assistant is intended for his self-hosted Odysseus workspace. Its
 
 ---
 
-### Oct 2, 2026 Announcements Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap
+### Trump unveils his new Super Intelligence Force
 
-[Read more](https://www.anthropic.com/news/claude-frontier-academy)
+This new task force is Trump's latest response to the debate over AI safety.
 
----
-
-### OpenClaw Adds GPT-6.1 Sol and Fixes Missing Replies Between AI Agents
-
-Version 2026.9.8 also repairs interrupted updates and startup failures. Some custom workflows need explicit follow-up calls, and older running updaters cannot inherit the fixes.
-
-[Read more](https://superpowerdaily.com/posts/openclaw-adds-gpt-6-1-sol-and-fixes-missing-replies-between-ai-agents)
+[Read more](https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/)
 
 ---
 
@@ -76,24 +62,6 @@ Version 2026.9.8 also repairs interrupted updates and startup failures. Some cus
 Prime Inference brings an internally used platform to public customers. Its engineering targets crowded, long-context conversations, but the published speed gains come from company-run GLM-5.3 tests.
 
 [Read more](https://superpowerdaily.com/posts/prime-intellect-launches-ai-model-serving-built-for-long-running-agents)
-
----
-
-## Policy & Ethics
-
-### Appeals Court Pauses Minnesota’s AI Fake-Nude Ban as xAI Challenges Its Constitutionality
-
-The injunction interrupts a law aimed at companies enabling realistic fake nudity. Minnesota cites child-abuse risks; xAI argues the measure restricts protected speech.
-
-[Read more](https://superpowerdaily.com/posts/appeals-court-pauses-minnesota-s-ai-fake-nude-ban-as-xai-challenges-its-constitutionality)
-
----
-
-### Who’s to Blame When A.I. Goes Rogue?
-
-Many think artificial intelligence companies should be held liable for their runaway technology. But legal scholars say applying existing law could be messy.
-
-[Read more](https://www.nytimes.com/2026/10/01/technology/ai-rogue-agents-liability.html)
 
 ---
 
@@ -125,13 +93,47 @@ The 507-task benchmark checks the records agents leave behind. Its latest result
 
 ---
 
-## Tags: reasoning
+### We built an AI agent for ServiceNow. The real pain points were narrower than our roadmap assumed
 
-### One Brain, Any Body: Google DeepMind's Keerthana on Gemini Robotics 2, Cross-Embodiment & Humanoids
+[Read more](https://venturebeat.com/orchestration/we-built-an-ai-agent-for-servicenow-the-real-pain-points-were-narrower-than-our-roadmap-assumed)
 
-Google DeepMind research lead Keerthana Gopalakrishnan discusses Gemini Robotics 2, explaining the architecture behind its reasoning and action models. She also explores key challenges in physical AI, including sim-to-real transfer, cross-embodiment generalization, and whole-body control.
+---
 
-[Read more](https://www.cognitiverevolution.ai/one-brain-any-body-google-deepmind-s-keerthana-on-gemini-robotics-2-cross-embodiment-humanoids/)
+## Industry
+
+### Residents Oppose Proposed Queensland AI Data Centre as Approval Rules Shift
+
+The proposed Claude facility promises jobs but faces distrust shaped by the region’s gas boom. A new state framework leaves its approval authority unsettled.
+
+[Read more](https://superpowerdaily.com/posts/residents-oppose-proposed-queensland-ai-data-centre-as-approval-rules-shift)
+
+---
+
+## Tags: ai_safety
+
+### AI safety is mostly a sex cult in Berkeley, CA [pdf]
+
+[Read more](https://ams3.digitaloceanspaces.com/urbits3/sitful-hatred/2026.9.24..22.31.54..beb8.51eb.851e.b851-AI%20Safety%20Is%20Mostly%20A%20Sex%20Cult%20In%20Berkeley%2C%20California.pdf)
+
+---
+
+## Policy & Ethics
+
+### Trump names intelligence chief Jay Clayton as new White House AI czar
+
+Calyton said AI was a ‘gamechanger’ but it also posed ‘a threat’ during his DNI Senate confirmation hearing Donald Trump on Sunday named Jay Clayton, the director of national intelligence , to serve also as the new White House AI czar. Clayton, who leads the US’s 18 intelligence agencies , previously served as the top federal prosecutor in Manhattan and led the Securities and Exchange Commission during Trump’s first term. Continue reading...
+
+[Read more](https://www.theguardian.com/us-news/2026/oct/04/trump-jay-clayton-white-house-ai-czar)
+
+---
+
+## Tags: opinion
+
+### David Robinson Calls for Nuclear-Style Safety Layers at Advanced AI Labs
+
+In an Atlantic essay, the former OpenAI employee argues that human mistakes and models’ ability to recognize tests make layered protections essential.
+
+[Read more](https://superpowerdaily.com/posts/david-robinson-calls-for-nuclear-style-safety-layers-at-advanced-ai-labs)
 
 ---
 
