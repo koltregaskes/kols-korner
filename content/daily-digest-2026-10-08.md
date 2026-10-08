@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Thursday, 8 October 2026"
 date: 2026-10-08
-tags: ["ai", "news", "digest", "model_release", "reasoning", "product_launch", "announcement", "industry_move", "hardware", "open_source", "ai_agents", "policy", "regulation"]
+tags: ["ai", "news", "digest", "model_release", "reasoning", "product_launch", "announcement", "industry_move", "hardware", "open_source", "ai_agents"]
 summary: "AI and technology news digest for Thursday, 8 October 2026"
 ---
 
@@ -16,6 +16,14 @@ This dated roundup collects the most interesting AI and technology developments 
 As previously promised , here's Anthropic's new fast, low cost model: Introducing Claude Haiku 5.5 . The previous Haiku, 4.5, was very much showing its age. It came out almost a year ago , and was priced at $1/million input and $5/million output - relatively expensive even back then, and a full 10x the price of OpenAI's GPT-6 Luna , released last month. The new Haiku exactly matches the price of GPT-6 Luna - $0.10/$0.50 - up to 100,000 tokens. Beyond 100,000 tokens the price increases 5x to $0.50/$2.50. Luna itself has a price increase at 272,000 tokens but only to $0.20/$0.75. Haiku 5.5...
 
 [Read more](https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/)
+
+---
+
+### Scale AI releases visual-reasoning benchmark; best model scores 53.6% versus humans’ 93.1%
+
+Humanity’s Sixth Sense tests what images and videos imply, not just what they show. Social understanding was the weakest area for 21 of 25 models, though those scores measure agreement with human interpretations.
+
+[Read more](https://superpowerdaily.com/posts/scale-ai-releases-visual-reasoning-benchmark-best-model-scores-53-6-versus-humans-93-1)
 
 ---
 
@@ -35,23 +43,17 @@ Developer Brandon Thomas credits Claude Opus 5.5 for the Rust apps. His initial 
 
 ---
 
-### Meta’s Muse launches on iPad just a month after its mobile debut
-
-Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations.
-
-[Read more](https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/)
-
----
-
 ### AI chip boom pushes Samsung profits to record $80bn The tech giant is also expected to get a boost from its latest folding devices that were launched in August. See more
 
 [Read more](https://www.bbc.com/news/articles/c687z8127302o)
 
 ---
 
-### MIT announces the MIT for America initiative, to strengthen STEM education across the country
+### Meta’s Muse launches on iPad just a month after its mobile debut
 
-[Read more](https://news.mit.edu/index%2ephp/2026/mit-america-initiative-strengthens-stem-education-across-country-1006)
+Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations.
+
+[Read more](https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/)
 
 ---
 
@@ -61,27 +63,19 @@ Meta’s AI agent Muse is now available on iPad, just a month after its mobile d
 
 ---
 
-### OpenAI releases 722 AI-written math papers
+### Google releases a new local-first Granola competitor
 
-Many include computer-checkable proofs, but verification is uneven and the model itself remains unreleased.
+Google’s new AI Edge Foresight app takes on Granola with an offline meeting note-taker that can transcribe conversations, generate notes, and answer questions using on-device AI.
 
-[Read more](https://superpowerdaily.com/posts/openai-releases-722-ai-written-math-papers)
-
----
-
-### OpenAI announces 722 mathematical discoveries in one go
-
-AI has been growing ever more capable in mathematics, but now OpenAI has released hundreds of papers at the same time – to the astonishment of mathematicians
-
-[Read more](https://www.newscientist.com/article/2592421-openai-announces-722-mathematical-discoveries-in-one-go/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS)
+[Read more](https://techcrunch.com/2026/10/08/google-releases-a-new-local-first-granola-competitor/)
 
 ---
 
-### Microsoft unveils Nvidia-powered AI PCs as Windows 11 gets an agent-ready upgrade
+### Goodfire launches AI agent monitors that check internal signals, not just output
 
-Microsoft unveils new AI PCs with Nvidia chips and a revamped Windows 11 built for local models, agents and developer workflows. The post Microsoft unveils Nvidia-powered AI PCs as Windows 11 gets an agent-ready upgrade appeared first on Superintelligence News - Artificial Intelligence News .
+The system reserves a second AI model’s review for flagged activity. Goodfire’s cost and detection figures come from its own Kimi K3 tests.
 
-[Read more](https://superintelligencenews.com/ai-fields/large-language-models/microsoft-ai-pcs-nvidia-windows-11/)
+[Read more](https://superpowerdaily.com/posts/goodfire-launches-ai-agent-monitors-that-check-internal-signals-not-just-output)
 
 ---
 
@@ -93,29 +87,29 @@ Intelligent UI adds charts, diagrams and tools to ChatGPT, as OpenAI launches GP
 
 ---
 
-### Google’s new SynthID website can identify AI-generated media
+### Google Releases an AI Meeting Note-Taker That Works Offline on Macs
 
-Google on Tuesday launched a new site that lets anyone verify whether a piece of media, be it an image, a video, or an audio clip, is generated using AI.
+Google says the app works completely offline and is optimized for Apple Silicon.
 
-[Read more](https://techcrunch.com/2026/10/07/googles-new-synthid-website-can-identify-ai-generated-media/)
+[Read more](https://superpowerdaily.com/posts/google-releases-an-ai-meeting-note-taker-that-works-offline-on-macs)
+
+---
+
+### Microsoft unveils Nvidia-powered AI PCs as Windows 11 gets an agent-ready upgrade
+
+Microsoft unveils new AI PCs with Nvidia chips and a revamped Windows 11 built for local models, agents and developer workflows. The post Microsoft unveils Nvidia-powered AI PCs as Windows 11 gets an agent-ready upgrade appeared first on Superintelligence News - Artificial Intelligence News .
+
+[Read more](https://superintelligencenews.com/ai-fields/large-language-models/microsoft-ai-pcs-nvidia-windows-11/)
 
 ---
 
 ## Tags: ai_agents, open_source
 
-### Show HN: NanoMuse – An open-source AI agent for your phone and computer
+### Nous Research Raises $90 Million to Bring Its Open-Source AI Agent Into Businesses
 
-[Read more](https://github.com/nano-muse/nanoMuse)
+Hermes for Businesses promises model choice and control over company knowledge. The financing backs a paid business built around an agent whose core software is openly licensed.
 
----
-
-## Policy & Ethics
-
-### Temasek CIO Calls an AI-Trade Reversal Markets’ Biggest Risk
-
-Rohit Sipahimalani points to tighter safety regulation and weak customer returns as possible triggers, while favoring more publicly traded AI investments.
-
-[Read more](https://superpowerdaily.com/posts/temasek-cio-calls-an-ai-sell-off-the-biggest-market-risk-but-not-an-imminent-one)
+[Read more](https://superpowerdaily.com/posts/nous-research-raises-90-million-to-bring-its-open-source-ai-agent-into-businesses)
 
 ---
 
@@ -126,6 +120,16 @@ Rohit Sipahimalani points to tighter safety regulation and weak customer returns
 Apollo and Blackstone are reportedly among prospective lenders. The talks concern a chip collaboration with a multiyear deployment target, not a completed financing.
 
 [Read more](https://superpowerdaily.com/posts/broadcom-seeks-more-than-50-billion-for-openai-chips-wsj-says)
+
+---
+
+## Tags: ai_agents
+
+### Building a safer path to autonomous industrial AI
+
+Industrial AI is entering a new phase. After decades of predictive analytics and other specialized applications, advances in foundation models, physical AI, and agentic AI are making it possible to automate more complex tasks across industrial environments. But unlike AI that operates purely in the digital world, industrial AI can interact directly with physical systems,…
+
+[Read more](https://www.technologyreview.com/2026/10/08/1144020/building-a-safer-path-to-autonomous-industrial-ai/)
 
 ---
 
