@@ -18,7 +18,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
-// Priority: ENV var > local news-digests/ > local news/ > Agent Workspace (for local dev)
+// Priority: ENV var > local news-digests/ > local news/. Do not read Agent Workspace.
 const getNewsSourcePath = () => {
   if (process.env.NEWS_SOURCE_PATH) return process.env.NEWS_SOURCE_PATH;
 
@@ -32,8 +32,7 @@ const getNewsSourcePath = () => {
     return localNews;
   }
 
-  // Fall back to Agent Workspace for local development
-  return 'W:/Agent Workspace/Content/News';
+  throw new Error('No local Kol\'s Korner news source found under news-digests/ or news/.');
 };
 
 const CONFIG = {

@@ -72,11 +72,43 @@ const NAV_ITEMS = [
   { key: 'posts', label: 'Posts', path: 'posts/' },
   { key: 'news', label: 'News', path: 'news/' },
   { key: 'tags', label: 'Tags', path: 'tags/' },
+  { key: 'store', label: 'Store', path: 'store/' },
   { key: 'subscribe', label: 'Newsletter', path: 'subscribe/' },
   { key: 'about', label: 'About', path: 'about/' },
   { key: 'contact', label: 'Contact', path: 'contact/' }
 ];
 const AI_CONTEXT_FILES = ['llms.txt', 'opinions.txt', 'memories.txt'];
+const MUSIC_STORE_DATA_PATH = path.join('data', 'music-store.json');
+
+async function loadMusicStoreData() {
+  const raw = await fs.readFile(MUSIC_STORE_DATA_PATH, 'utf8');
+  const catalogue = JSON.parse(raw);
+
+  if (catalogue.schemaVersion !== 1) {
+    throw new Error(`Unsupported music store schema: ${catalogue.schemaVersion}`);
+  }
+  if (!URL.canParse(catalogue.profileUrl) || !catalogue.profileUrl.startsWith('https://elevenlabs.io/')) {
+    throw new Error('Music store profileUrl must be a valid ElevenLabs URL.');
+  }
+  if (!Array.isArray(catalogue.items) || catalogue.items.length === 0) {
+    throw new Error('Music store catalogue must contain at least one item.');
+  }
+
+  for (const item of catalogue.items) {
+    const requiredText = ['title', 'type', 'duration', 'source', 'description', 'url'];
+    if (requiredText.some((field) => typeof item[field] !== 'string' || item[field].trim() === '')) {
+      throw new Error('Every music store item must include all required text fields.');
+    }
+    if (!URL.canParse(item.url) || !item.url.startsWith('https://elevenlabs.io/')) {
+      throw new Error(`Music store item has an invalid ElevenLabs URL: ${item.title}`);
+    }
+    if (!Array.isArray(item.useCases) || !Array.isArray(item.labels)) {
+      throw new Error(`Music store item must include useCases and labels arrays: ${item.title}`);
+    }
+  }
+
+  return catalogue;
+}
 const CONNECTED_PROJECTS = [
   {
     name: 'AI Resource Hub',
@@ -2628,6 +2660,91 @@ async function writeContactPage() {
   await fs.writeFile("site/contact/index.html", html.replace(/[ \t]+$/gm, ''), "utf8");
 }
 
+async function writeStorePage() {
+  await fs.mkdir("site/store", { recursive: true });
+
+  const catalogue = await loadMusicStoreData();
+
+  const itemCards = catalogue.items.map((item) => `
+        <article class="store-card">
+          <div class="store-card-head">
+            <span class="store-type">${escapeHtml(item.type)}</span>
+            <span class="store-duration">${escapeHtml(item.duration)}</span>
+          </div>
+          <h2>${escapeHtml(item.title)}</h2>
+          <p>${escapeHtml(item.description)}</p>
+          <div class="store-tag-list" aria-label="${escapeHtml(item.title)} labels">
+            ${item.labels.map((label) => `<span>${escapeHtml(label)}</span>`).join('')}
+          </div>
+          <div class="store-use-list">
+            <strong>Good for</strong>
+            <span>${item.useCases.map((useCase) => escapeHtml(useCase)).join(' / ')}</span>
+          </div>
+          <a href="${item.url}" class="button-primary" target="_blank" rel="noopener noreferrer">Open on ElevenLabs</a>
+        </article>`).join('\n');
+
+  const html = `<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  ${getSecurityHeaders()}
+  <title>Store - ${SITE_NAME}</title>
+  <meta name="description" content="Marketplace music, trailer cues, jingles, and creator-ready audio by ${SITE_OWNER}." />
+  ${getCanonicalTag('/store/')}
+  ${getSharedHeadAssets('..')}
+</head>
+<body>
+  ${getHeaderHTML('../', 'store')}
+
+  <main class="content-main store-main" id="main-content">
+    <section class="store-shell">
+      <section class="store-hero fade-in-up">
+        <span class="subscribe-status-badge">Marketplace</span>
+        <h1 class="page-title">Trailer cues, jingles, and creator-ready music.</h1>
+        <p class="store-hero-text">This is the storefront for music and creative products from Kol's Korner. The first catalogue is ElevenLabs Music Marketplace: short cues, trailer beds, and promotional tracks that can be licensed through ElevenLabs.</p>
+        <div class="subscribe-actions">
+          <a href="${catalogue.profileUrl}" class="button-primary" target="_blank" rel="noopener noreferrer">Open ElevenLabs profile</a>
+          <a href="https://axylusion.com/store.html" class="button-secondary" target="_blank" rel="noopener noreferrer">Axy Lusion store</a>
+        </div>
+      </section>
+
+      <section class="about-panel fade-in-up">
+        <div class="home-section-heading">
+          <div>
+            <p class="section-eyebrow">Current catalogue</p>
+            <h2>Music available through ElevenLabs Marketplace.</h2>
+          </div>
+        </div>
+        <div class="store-grid">
+${itemCards}
+        </div>
+      </section>
+
+      <section class="store-info-grid fade-in-up">
+        <article class="about-panel">
+          <h2>How licensing works</h2>
+          <p>Preview and licensing happen on ElevenLabs. Pick the track there, choose the usage type, then ElevenLabs handles the licence, download, and remix flow.</p>
+        </article>
+        <article class="about-panel">
+          <h2>What comes next</h2>
+          <p>This page is deliberately set up as a wider store, not only a music page. It can later hold prompt packs, custom cues, creative services, templates, and other products without changing the route.</p>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  ${getFooterHTML()}
+
+  <script>
+    ${getSiteChromeScript({ animations: true })}
+  </script>
+</body>
+</html>`;
+
+  await fs.writeFile("site/store/index.html", html.replace(/[ \t]+$/gm, ''), "utf8");
+}
+
 // Generate RSS feed
 async function writeRssFeed(items) {
   const articles = items
@@ -2720,6 +2837,7 @@ async function writeSitemap(items) {
     { loc: '/posts/', changefreq: 'daily', priority: '0.8' },
     { loc: '/tags/', changefreq: 'weekly', priority: '0.5' },
     { loc: '/news/', changefreq: 'daily', priority: '0.8' },
+    { loc: '/store/', changefreq: 'weekly', priority: '0.6' },
     { loc: '/subscribe/', changefreq: 'monthly', priority: '0.4' },
     { loc: '/privacy.html', changefreq: 'yearly', priority: '0.2' }
   ];
@@ -2756,6 +2874,7 @@ async function cleanGeneratedOutput() {
     'site/images',
     'site/music',
     'site/posts',
+    'site/store',
     'site/subscribe',
     'site/tags',
     'site/videos',
@@ -2853,6 +2972,7 @@ async function cleanGeneratedOutput() {
   await writePostsPage(items);
   await writeTagsPage(items, newsArticles);
   await writeAboutPage();
+  await writeStorePage();
   await writeSubscribePage();
   await writeContactPage();
   // Write machine-readable data, feed, and crawl files
@@ -2906,6 +3026,7 @@ async function cleanGeneratedOutput() {
   console.log(`[ok] Posts page: site/posts/index.html`);
   console.log(`[ok] Tags page: site/tags/index.html`);
   console.log(`[ok] About page: site/about/index.html`);
+  console.log(`[ok] Store page: site/store/index.html`);
   console.log(`[ok] Newsletter page: site/subscribe/index.html`);
   console.log(`[ok] Contact page: site/contact/index.html`);
   console.log(`[ok] RSS feed: site/feed.xml`);

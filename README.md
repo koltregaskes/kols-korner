@@ -107,6 +107,7 @@ Posts with `publish: false` are excluded from the build.
 - `site/` - Generated output that GitHub Pages deploys
 - `site/data/news-digests.json` - Generated manifest for the news browser
 - `site/data/news-articles.json` - Prebuilt article payload for the news browser
+- `data/music-store.json` - Source catalogue for the generated ElevenLabs Marketplace store
 - `.github/workflows/pages.yml` - Main Pages deploy workflow
 - `.github/workflows/daily-digest.yml` - Manual digest build-check workflow
 
