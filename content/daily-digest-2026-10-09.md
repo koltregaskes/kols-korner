@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Friday, 9 October 2026"
 date: 2026-10-09
-tags: ["ai", "news", "digest", "model_release", "reasoning", "product_launch", "industry_move", "open_source", "hardware", "ai_agents", "policy", "ai_safety", "regulation"]
+tags: ["ai", "news", "digest", "model_release", "reasoning", "product_launch", "industry_move", "open_source", "announcement", "policy", "ai_agents", "hardware", "acquisition", "ai_safety", "regulation"]
 summary: "AI and technology news digest for Friday, 9 October 2026"
 ---
 
@@ -27,17 +27,9 @@ Release: ttok 0.4 ttok is my CLI tool for counting tokens, using OpenAI's open s
 
 ---
 
-### Google releases a new local-first Granola competitor
+### MIT announces the MIT for America initiative, to strengthen STEM education across the country
 
-Google’s new AI Edge Foresight app takes on Granola with an offline meeting note-taker that can transcribe conversations, generate notes, and answer questions using on-device AI.
-
-[Read more](https://techcrunch.com/2026/10/08/google-releases-a-new-local-first-granola-competitor/)
-
----
-
-### AI chip boom pushes Samsung profits to record $80bn The tech giant is also expected to get a boost from its latest folding devices that were launched in August. See more
-
-[Read more](https://www.bbc.com/news/articles/c687z8127302o)
+[Read more](https://news.mit.edu/index%2Ephp/2026/mit-america-initiative-strengthens-stem-education-across-country-1006)
 
 ---
 
@@ -65,9 +57,17 @@ Google says the app works completely offline and is optimized for Apple Silicon.
 
 ---
 
-### Anthropic launches Claude Haiku 5.5 with 90% API price reduction, matching GPT-6 Luna
+### Impactful scheduling for GPU clusters
 
-[Read more](https://venturebeat.com/technology/anthropic-launches-claude-haiku-5-5-with-90-api-price-reduction-matching-gpt-6-luna)
+[Read more](https://huggingface.co/blog/allenai/impactful-scheduling)
+
+---
+
+### Chinese AI developers published safety results for 3.6% of reviewed releases, study finds
+
+The review measures public disclosure, not whether testing happened privately. It also finds that China’s binding rules focus on applications rather than duties triggered by advanced model capabilities.
+
+[Read more](https://superpowerdaily.com/posts/chinese-ai-developers-published-safety-results-for-3-6-of-reviewed-releases-study-finds)
 
 ---
 
@@ -87,24 +87,6 @@ Anthropic’s OSS Scanner offers free AI vulnerability scans for open-source pro
 
 ---
 
-### A startup founder who served time in prison is looking to court an untapped market: ex-cons
-
-Richard Bronson, a former Stratton Oakmont partner who served time in federal prison for securities violations, has launched Commissary Club, a startup that uses AI to help people leaving prison find jobs, housing, community, and even dates.
-
-[Read more](https://techcrunch.com/2026/10/08/a-startup-founder-who-served-time-in-prison-is-looking-to-court-an-untapped-market-ex-cons/)
-
----
-
-## Tags: ai_agents, open_source
-
-### Nous Research Raises $90 Million to Bring Its Open-Source AI Agent Into Businesses
-
-Hermes for Businesses promises model choice and control over company knowledge. The financing backs a paid business built around an agent whose core software is openly licensed.
-
-[Read more](https://superpowerdaily.com/posts/nous-research-raises-90-million-to-bring-its-open-source-ai-agent-into-businesses)
-
----
-
 ## Policy & Ethics
 
 ### Oct 8, 2026 Announcements 2026 Usage Policy update
@@ -121,6 +103,16 @@ Musk midterm spending is targeting key Senate races while effective altruism and
 
 ---
 
+## Tags: announcement, acquisition
+
+### SoftBank seeks up to $100 billion from Gulf investors for AI acquisition fund, FT says
+
+The proposed fund would apply AI and robotics to acquired businesses. Investor discussions remain preliminary, with no financing announced.
+
+[Read more](https://superpowerdaily.com/posts/softbank-seeks-up-to-100-billion-from-gulf-investors-for-ai-acquisition-fund-ft-says)
+
+---
+
 ## Industry
 
 ### DOE funds a SLAC-led project to let AI choose catalyst experiments
@@ -128,6 +120,16 @@ Musk midterm spending is targeting key Senate races while effective altruism and
 The seed-funded collaboration will connect AI reasoning with X-ray measurements and automated experiments. Its first test is whether that loop produces scientific understanding with fewer experiments.
 
 [Read more](https://superpowerdaily.com/posts/doe-funds-a-slac-led-project-to-let-ai-choose-catalyst-experiments)
+
+---
+
+## Tags: ai_safety
+
+### OpenAI fires three safety researchers for "mishandling research information"
+
+Three fired OpenAI safety researchers dispute allegations of mishandling sensitive information, warning in an open letter that their dismissals are creating a chilling effect on the company’s AI safety culture.
+
+[Read more](https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/)
 
 ---
 
