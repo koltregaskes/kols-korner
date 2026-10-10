@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Saturday, 10 October 2026"
 date: 2026-10-10
-tags: ["ai", "news", "digest", "model_release", "hardware", "product_launch", "announcement", "policy", "acquisition", "open_source", "ai_safety", "ai_agents", "reasoning"]
+tags: ["ai", "news", "digest", "model_release", "announcement", "hardware", "product_launch", "acquisition", "ai_agents", "reasoning", "open_source", "policy", "ai_safety"]
 summary: "AI and technology news digest for Saturday, 10 October 2026"
 ---
 
@@ -11,29 +11,15 @@ This dated roundup collects the most interesting AI and technology developments 
 
 ## Research & Products
 
-### Impactful scheduling for GPU clusters
-
-[Read more](https://huggingface.co/blog/allenai/impactful-scheduling)
-
----
-
-### MIT announces the MIT for America initiative, to strengthen STEM education across the country
-
-[Read more](https://news.mit.edu/index%2Ephp/2026/mit-america-initiative-strengthens-stem-education-across-country-1006)
-
----
-
-### Chinese AI developers published safety results for 3.6% of reviewed releases, study finds
-
-The review measures public disclosure, not whether testing happened privately. It also finds that China’s binding rules focus on applications rather than duties triggered by advanced model capabilities.
-
-[Read more](https://superpowerdaily.com/posts/chinese-ai-developers-published-safety-results-for-3-6-of-reviewed-releases-study-finds)
-
----
-
 ### The latest AI news we announced in September 2026 Here are Google’s latest AI updates from September 2026
 
 [Read more](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/)
+
+---
+
+### Impactful scheduling for GPU clusters
+
+[Read more](https://huggingface.co/blog/allenai/impactful-scheduling)
 
 ---
 
@@ -45,41 +31,23 @@ Decision-1 is available in Foundry for routing, classification and workflow chec
 
 ---
 
-### AWS introduces open-source tools to train, simulate and deploy intelligent machines
+### Chinese AI developers published safety results for 3.6% of reviewed releases, study finds
 
-The Physical AI Toolchain connects cloud training to machines in the field. Customers can adopt the whole workflow or keep their existing tools and select individual components.
+The review measures public disclosure, not whether testing happened privately. It also finds that China’s binding rules focus on applications rather than duties triggered by advanced model capabilities.
 
-[Read more](https://superpowerdaily.com/posts/aws-introduces-open-source-tools-to-train-simulate-and-deploy-intelligent-machines)
-
----
-
-### Oct 8, 2026 Announcements Introducing the Anthropic Cyber Mission
-
-[Read more](https://www.anthropic.com/news/anthropic-cyber-mission)
+[Read more](https://superpowerdaily.com/posts/chinese-ai-developers-published-safety-results-for-3-6-of-reviewed-releases-study-finds)
 
 ---
 
-### A new feature for my blog, built using my voice
+### Financial advisors
 
-I shipped a new feature for my blog today: the Newsletters page, which offers an index of all of the newsletters I've sent out, both my free weekly Substack and my monthly sponsors-only updates. I built the feature almost entirely using my voice, chatting away to my laptop while I cooked dinner. Codex voice mode I used the ChatGPT desktop app for this, in the Codex tab, using the voice conversation mode, running against a local development environment. Here's what that looks like: I started the session against my local simonwillisonblog checkout by typing: Start dev server and open in...
-
-[Read more](https://simonwillison.net/2026/Oct/9/built-using-my-voice/)
+[Read more](https://claude.com/solutions/financial-advisors)
 
 ---
 
-### AHRQ launches $7.95 million AI prize initiative for medical evidence and data
+### Shared or dedicated inference for Embed & Rerank Oct 09, 2026 7 min read
 
-The agency wants much faster evidence analysis, but speed is only one judging factor. Two coordinated competitions will accept submissions in 2027.
-
-[Read more](https://superpowerdaily.com/posts/ahrq-launches-7-95-million-ai-prize-initiative-for-medical-evidence-and-data)
-
----
-
-## Policy & Ethics
-
-### Oct 8, 2026 Announcements 2026 Usage Policy update
-
-[Read more](https://www.anthropic.com/news/2026-usage-policy-update)
+[Read more](https://cohere.com/blog/shared-or-dedicated-inference-for-embed-rerank)
 
 ---
 
@@ -93,29 +61,23 @@ The proposed fund would apply AI and robotics to acquired businesses. Investor d
 
 ---
 
-## Tags: ai_safety
+## Tags: ai_agents
 
-### OpenAI fires three safety researchers for "mishandling research information"
+### Rogue Anthropic AI agent gave police fake tip in unsolved murder case Philadelphia police said the tip was "flagged as spam", but criticised the tech company for taking more than two months to detect and report the breach. See more
 
-Three fired OpenAI safety researchers dispute allegations of mishandling sensitive information, warning in an open letter that their dismissals are creating a chilling effect on the company’s AI safety culture.
-
-[Read more](https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/)
+[Read more](https://www.bbc.com/news/articles/cqkg50j1yd5lo)
 
 ---
 
-## Tags: ai_agents
+### Talorys – A self-hosted personal AI agent on Cloudflare's free tier
+
+[Read more](https://github.com/rociiu/talorys)
+
+---
 
 ### SuperNav: An Agentic Navigation System for Any Task in Any Scene
 
 [Read more](https://paperswithcode.com/papers/2610.12126)
-
----
-
-### Rein Security raises $25 million to block harmful AI-agent actions as they happen
-
-The startup says it can stop individual malicious actions without shutting down an agent. Its financing announcement offers customer names and growth multiples, but no absolute revenue figures.
-
-[Read more](https://superpowerdaily.com/posts/rein-security-raises-25-million-to-block-harmful-ai-agent-actions-as-they-happen)
 
 ---
 
@@ -126,6 +88,46 @@ The startup says it can stop individual malicious actions without shutting down 
 The Nature study reuses existing models rather than rebuilding them. Its reported gains include character-level reasoning and some coding tasks, not a universal improvement across every benchmark.
 
 [Read more](https://superpowerdaily.com/posts/researchers-retrofit-ai-models-to-read-bytes-using-under-1-of-a-typical-training-budget)
+
+---
+
+## Tags: open_source
+
+### ONLYOFFICE adds AI across its editors, with separate installation for open-source editions
+
+The release supports cloud and local models, but the official release notes qualify the built-in AI pitch: open-source versions require separate installation.
+
+[Read more](https://superpowerdaily.com/posts/onlyoffice-adds-ai-across-its-editors-with-separate-installation-for-open-source-editions)
+
+---
+
+## Policy & Ethics
+
+### Clio finds AI boosts law-firm capacity while some struggle with billable-hour targets
+
+Firms report handling more work with the same resources. But faster tasks create a pricing problem, while junior lawyers still need opportunities to learn.
+
+[Read more](https://superpowerdaily.com/posts/clio-finds-ai-boosts-law-firm-capacity-while-some-struggle-with-billable-hour-targets)
+
+---
+
+## Tags: acquisition
+
+### Meta adds AI ad-creation tools and begins trials of conversational campaign controls
+
+Video generation and customer-acquisition tools are available now, while conversational budget changes and audience discovery have different rollout schedules.
+
+[Read more](https://superpowerdaily.com/posts/meta-adds-ai-ad-creation-tools-and-begins-trials-of-conversational-campaign-controls)
+
+---
+
+## Tags: ai_safety
+
+### European Commission convenes AI safety panel after loss-of-control investigations
+
+The panel and EU AI Office have prepared questions for model developers, but the Commission has not identified the companies or incidents involved.
+
+[Read more](https://superpowerdaily.com/posts/european-commission-convenes-ai-safety-panel-after-loss-of-control-investigations)
 
 ---
 
