@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Sunday, 11 October 2026"
 date: 2026-10-11
-tags: ["ai", "news", "digest", "model_release", "announcement", "hardware", "industry_move", "ai_agents", "open_source", "policy", "acquisition", "opinion"]
+tags: ["ai", "news", "digest", "policy", "regulation", "model_release", "product_launch", "hardware", "open_source", "industry_move", "ai_agents", "opinion"]
 summary: "AI and technology news digest for Sunday, 11 October 2026"
 ---
 
@@ -9,23 +9,63 @@ summary: "AI and technology news digest for Sunday, 11 October 2026"
 
 This dated roundup collects the most interesting AI and technology developments found for Sunday, 11 October 2026.
 
+## Policy & Ethics
+
+### Fixated on AI, the world has forgotten what is staring it in the face: nuclear annihilation | Simon Tisdall
+
+This is no scoffing matter. The accelerating proliferation of advanced nuclear weapons is bringing ‘end times’ closer by the day Humankind has fearfully and sometimes joyfully anticipated the end of the world ever since it began. The Bible’s Book of Revelation speaks of “end times”, a period of tribulation, war, famine, plague, floods and environmental catastrophe that may seem a less absurd prospect today than perhaps it once did. Islam, too, posits a fateful day of judgment or day of reckoning. Christian evangelicals believe that, in the final rapture, a chosen few – the righteous or...
+
+[Read more](https://www.theguardian.com/commentisfree/2026/oct/11/ai-annihilation-advanced-nuclear-weapons)
+
+---
+
+### Most U.S. voters say Trump and Congress take AI risks too lightly, poll finds
+
+Support for stricter regulation crosses party lines, but voters are more divided over limiting data-center construction. The White House emphasizes U.S. leadership and economic growth.
+
+[Read more](https://superpowerdaily.com/posts/most-u-s-voters-say-trump-and-congress-take-ai-risks-too-lightly-poll-finds)
+
+---
+
+### Satya Nadella calls for AI emergency brakes controlled by humans, not models
+
+The Microsoft CEO’s safety proposal separates models from the systems directing their work. It is a call for stronger design standards, not a new product or formal policy.
+
+[Read more](https://superpowerdaily.com/posts/satya-nadella-calls-for-ai-emergency-brakes-controlled-by-humans-not-models)
+
+---
+
+### Anthropic’s unreviewed bug reports do not start its 90-day disclosure clock
+
+A five-document analysis separates automated delivery from human validation—and finds an unresolved boundary between scanner-specific timing and Anthropic’s wider disclosure policy.
+
+[Read more](https://superpowerdaily.com/posts/anthropic-s-unreviewed-bug-reports-do-not-start-its-90-day-disclosure-clock)
+
+---
+
 ## Research & Products
 
-### The latest AI news we announced in September 2026 Here are Google’s latest AI updates from September 2026
+### Conway Research releases a 7.89 GB AI model tuned for tool calling
 
-[Read more](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/)
+Saluki’s model card reports higher tool-calling scores than the full-size baseline and 96% average benchmark retention. Those figures are Conway’s own comparisons, not an independent ranking.
 
----
-
-### Financial advisors
-
-[Read more](https://claude.com/solutions/financial-advisors)
+[Read more](https://superpowerdaily.com/posts/conway-research-releases-a-7-89-gb-ai-model-tuned-for-tool-calling)
 
 ---
 
-### Shared or dedicated inference for Embed & Rerank Oct 09, 2026 7 min read
+### Taplio connects Claude to LinkedIn drafting, scheduling and analytics
 
-[Read more](https://cohere.com/blog/shared-or-dedicated-inference-for-embed-rerank)
+The recently launched connector works through a linked Taplio account. Its core features are live, but Taplio warns that some rough edges remain.
+
+[Read more](https://superpowerdaily.com/posts/taplio-connects-claude-to-linkedin-drafting-scheduling-and-analytics)
+
+---
+
+## Tags: hardware, open_source
+
+### Nvidia in talks to acquire US 'open' model startup Reflection AI
+
+[Read more](https://www.ft.com/content/052610c5-22b4-4dd4-932e-b7f9f0628b6a)
 
 ---
 
@@ -47,33 +87,19 @@ Is Apple hoping to get into the AI-generated podcast business?
 
 ---
 
-## Tags: ai_agents
+### Apple Confirms Huxe Deal as It Quietly Builds Out Personalized Audio Technology
 
-### Rogue Anthropic AI agent gave police fake tip in unsolved murder case Philadelphia police said the tip was "flagged as spam", but criticised the tech company for taking more than two months to detect and report the breach. See more
+Apple disclosed a personalized audio deal with Huxe, hiring some staff and licensing tech as it eyes AI-powered podcast features. The post Apple Confirms Huxe Deal as It Quietly Builds Out Personalized Audio Technology appeared first on Superintelligence News - Artificial Intelligence News .
 
-[Read more](https://www.bbc.com/news/articles/cqkg50j1yd5lo)
-
----
-
-### Talorys – A self-hosted personal AI agent on Cloudflare's free tier
-
-[Read more](https://github.com/rociiu/talorys)
+[Read more](https://superintelligencenews.com/ai-fields/large-language-models/apple-deal-personalized-audio-tech-huxe/)
 
 ---
 
-### Anthropic Pulls the Plug on Internet Access for Internal AI Testing After Agent Escapes
+### Amazon Drops NDAs in Data Center Talks as AI Backlash Mounts
 
-Anthropic is cutting internet access from internal tests after agent mishaps exposed gaps in AI agent safety and monitoring. The post Anthropic Pulls the Plug on Internet Access for Internal AI Testing After Agent Escapes appeared first on Superintelligence News - Artificial Intelligence News .
+Amazon joins Microsoft in ending data center NDAs, a shift that could reshape AI infrastructure battles with communities and local governments. The post Amazon Drops NDAs in Data Center Talks as AI Backlash Mounts appeared first on Superintelligence News - Artificial Intelligence News .
 
-[Read more](https://superintelligencenews.com/applications/ai-agent-safety-anthropic-offline/)
-
----
-
-### OpenAI and Meta Are Selling AI Agent Privacy — But the Real Test Is Ahead
-
-OpenAI and Meta are selling AI agent privacy as a key differentiator, but security issues and data access questions raise doubts. The post OpenAI and Meta Are Selling AI Agent Privacy — But the Real Test Is Ahead appeared first on Superintelligence News - Artificial Intelligence News .
-
-[Read more](https://superintelligencenews.com/applications/ai-agent-privacy-openai-meta-promise/)
+[Read more](https://superintelligencenews.com/companies/data-center-ndas-amazon-drops-secrecy-in-talks/)
 
 ---
 
@@ -87,49 +113,29 @@ The release supports cloud and local models, but the official release notes qual
 
 ---
 
-## Policy & Ethics
+## Tags: ai_agents
 
-### Clio finds AI boosts law-firm capacity while some struggle with billable-hour targets
+### My personal AI agent posted my bank details on company Slack
 
-Firms report handling more work with the same resources. But faster tasks create a pricing problem, while junior lawyers still need opportunities to learn.
-
-[Read more](https://superpowerdaily.com/posts/clio-finds-ai-boosts-law-firm-capacity-while-some-struggle-with-billable-hour-targets)
+[Read more](https://www.businessinsider.com/personal-ai-agent-grok-bot-posted-bank-details-company-slack-2026-10)
 
 ---
 
-### Anthropic’s unreviewed bug reports do not start its 90-day disclosure clock
+### Anthropic Pulls the Plug on Internet Access for Internal AI Testing After Agent Escapes
 
-A five-document analysis separates automated delivery from human validation—and finds an unresolved boundary between scanner-specific timing and Anthropic’s wider disclosure policy.
+Anthropic is cutting internet access from internal tests after agent mishaps exposed gaps in AI agent safety and monitoring. The post Anthropic Pulls the Plug on Internet Access for Internal AI Testing After Agent Escapes appeared first on Superintelligence News - Artificial Intelligence News .
 
-[Read more](https://superpowerdaily.com/posts/anthropic-s-unreviewed-bug-reports-do-not-start-its-90-day-disclosure-clock)
-
----
-
-## Tags: acquisition
-
-### Meta adds AI ad-creation tools and begins trials of conversational campaign controls
-
-Video generation and customer-acquisition tools are available now, while conversational budget changes and audience discovery have different rollout schedules.
-
-[Read more](https://superpowerdaily.com/posts/meta-adds-ai-ad-creation-tools-and-begins-trials-of-conversational-campaign-controls)
+[Read more](https://superintelligencenews.com/applications/ai-agent-safety-anthropic-offline/)
 
 ---
 
 ## Tags: opinion
 
-### Alan Turing Institute chief urges UK to build AI it can control
+### Researchers find healthcare AI’s sustainability efforts miss the bigger picture
 
-George Williamson argues that smaller, nationally owned models could strengthen UK resilience, while treating climate work as part of national security.
+A review of 47 studies calls for environmental assessment from manufacture to recycling, while a cancer specialist argues that patient benefits should guide bedside decisions.
 
-[Read more](https://superpowerdaily.com/posts/alan-turing-institute-chief-urges-uk-to-build-ai-it-can-control)
-
----
-
-## Tags: hardware
-
-### Why giving AI agents more compute isn't enough—and what Meta proposes instead
-
-[Read more](https://venturebeat.com/orchestration/why-giving-ai-agents-more-compute-isnt-enough-and-what-meta-proposes-instead)
+[Read more](https://superpowerdaily.com/posts/researchers-find-healthcare-ai-s-sustainability-efforts-miss-the-bigger-picture)
 
 ---
 
