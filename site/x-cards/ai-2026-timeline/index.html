@@ -292,7 +292,7 @@
     <header>
       <div class="title">
         <h1>AI in 2026: key model releases</h1>
-        <div class="subtitle">Neutral, factual timeline. Sources are the makers' own announcements.</div>
+        <div class="subtitle">Major releases with dates, makers and primary sources.</div>
       </div>
       <div class="controls" role="group" aria-label="Step controls">
         <button class="btn" id="prevBtn" aria-label="Previous item">Prev</button>
@@ -467,16 +467,13 @@
       updateMonthActive(m);
     }
 
-    function focusIndex(idx, smooth) {
+    function setActiveIndex(idx) {
       if (idx < 0 || idx >= filtered.length) return;
       activeIdx = idx;
       const cards = listEl.querySelectorAll('.card');
       cards.forEach(el => el.classList.remove('active'));
       const el = listEl.querySelector(`.card[data-idx="${idx}"]`);
-      if (el) {
-        el.classList.add('active');
-        el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start', inline: 'nearest' });
-      }
+      if (el) el.classList.add('active');
       posEl.textContent = String(idx + 1);
       const pct = filtered.length ? Math.round((idx) / (filtered.length - 1) * 100) : 0;
       progressFill.style.width = filtered.length === 1 ? '100%' : pct + '%';
@@ -485,6 +482,15 @@
       // Disable/enable buttons on ends
       prevBtn.disabled = (idx <= 0);
       nextBtn.disabled = (idx >= filtered.length - 1);
+    }
+
+    function focusIndex(idx, smooth) {
+      if (idx < 0 || idx >= filtered.length) return;
+      setActiveIndex(idx);
+      const el = listEl.querySelector(`.card[data-idx="${idx}"]`);
+      if (el) {
+        el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start', inline: 'nearest' });
+      }
     }
 
     function step(dir) {
@@ -511,14 +517,21 @@
       if (scrollTimer) cancelAnimationFrame(scrollTimer);
       scrollTimer = requestAnimationFrame(() => {
         const cards = [...listEl.querySelectorAll('.card')];
-        let best = 0, bestTop = Infinity;
-        cards.forEach((c, i) => {
-          const rect = c.getBoundingClientRect();
+        if (!cards.length) return;
+        // If scrolled to (or within 2px of) the bottom, force-select the last entry
+        const nearBottom = Math.ceil(timelineEl.scrollTop + timelineEl.clientHeight) >= (timelineEl.scrollHeight - 2);
+        let best = nearBottom ? (filtered.length - 1) : 0;
+        if (!nearBottom) {
+          let bestTop = Infinity;
           const cont = timelineEl.getBoundingClientRect();
-          const top = Math.abs(rect.top - cont.top - 10);
-          if (top < bestTop) { bestTop = top; best = i; }
-        });
-        focusIndex(best, false);
+          cards.forEach((c, i) => {
+            const rect = c.getBoundingClientRect();
+            const top = Math.abs(rect.top - cont.top - 10);
+            if (top < bestTop) { bestTop = top; best = i; }
+          });
+        }
+        // Only update visual state; do not scroll (prevents scroll snapping/jitter)
+        setActiveIndex(best);
       });
     }, { passive: true });
   </script>
