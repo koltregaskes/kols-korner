@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>AI in 2026: key model releases</title>
+
+  <!-- X card (player) -->
+  <meta name="twitter:card" content="player">
+  <meta name="twitter:site" content="@koltregaskes2">
+  <meta name="twitter:title" content="AI in 2026: key model releases">
+  <meta name="twitter:description" content="An interactive timeline of 20 major AI model releases in 2026, with dates, makers and primary sources.">
+  <meta name="twitter:player" content="https://koltregaskes.com/x-cards/ai-2026-timeline/">
+  <meta name="twitter:player:width" content="640">
+  <meta name="twitter:player:height" content="480">
+  <meta name="twitter:image" content="https://koltregaskes.com/x-cards/ai-2026-timeline/preview.jpg">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI in 2026: key model releases">
+  <meta property="og:description" content="An interactive timeline of 20 major AI model releases in 2026, with dates, makers and primary sources.">
+  <meta property="og:image" content="https://koltregaskes.com/x-cards/ai-2026-timeline/preview.jpg">
+  <meta property="og:url" content="https://koltregaskes.com/x-cards/ai-2026-timeline/">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --bg: #0a0b0f;
+      --panel: #12151d;
+      --ink: #e7e9ef;
+      --ink-dim: #b7bdc9;
+      --muted: #2a3040;
+      --accent: #7dd3fc;
+      --accent-2: #a78bfa;
+      --ok: #34d399;
+      --warn: #f59e0b;
+      --badge: #1e2330;
+      --chip: #131823;
+      --chip-on: #1d2331;
+      --chip-border: #293043;
+      --shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      color-scheme: dark;
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+      /* Avoid double scrollbars inside iframes */
+      overflow: hidden;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .shell {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 10px 14px;
+      background: linear-gradient(180deg, #0d1017, #0a0b0f);
+      border-bottom: 1px solid var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .title {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .title h1 {
+      font-size: 16px;
+      line-height: 1.2;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+    .subtitle {
+      color: var(--ink-dim);
+      font-size: 12px;
+      line-height: 1.2;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn {
+      appearance: none;
+      border: 1px solid var(--chip-border);
+      background: var(--chip);
+      color: var(--ink);
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .btn:hover { background: var(--chip-on); }
+    .btn:active { transform: translateY(1px); }
+    .btn[disabled] { opacity: 0.45; cursor: default; }
+
+    .progress {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      background: var(--panel);
+      border: 1px solid var(--muted);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      margin: 8px 14px 6px;
+    }
+    .progress .bar {
+      position: relative;
+      flex: 1;
+      height: 6px;
+      background: #0f1421;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid var(--muted);
+    }
+    .progress .bar span {
+      position: absolute;
+      top: 0; left: 0;
+      bottom: 0;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transition: width 140ms ease-out;
+    }
+    .progress .count {
+      font-variant-numeric: tabular-nums;
+      font-size: 12px;
+      color: var(--ink-dim);
+      min-width: 64px;
+      text-align: right;
+    }
+
+    .months {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(32px, 1fr));
+      gap: 4px;
+      padding: 0 14px 8px;
+      margin-top: -2px;
+    }
+    .month {
+      font-size: 11px;
+      color: #96a0b2;
+      text-align: center;
+      padding: 6px 0;
+      border-radius: 6px;
+      border: 1px dashed #293043;
+      cursor: pointer;
+      user-select: none;
+    }
+    .month[data-has="1"] {
+      border-style: solid;
+      color: #c6d1e3;
+    }
+    .month.active {
+      background: #141a26;
+      border-color: var(--accent);
+      color: var(--ink);
+    }
+
+    .chips {
+      padding: 6px 14px 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .chip {
+      border: 1px solid var(--chip-border);
+      background: var(--chip);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--ink);
+      cursor: pointer;
+      user-select: none;
+    }
+    .chip.active {
+      background: var(--chip-on);
+      outline: 1px solid var(--accent);
+    }
+
+    .timeline {
+      flex: 1;
+      overflow: auto;
+      padding: 6px 10px 10px 16px;
+      scroll-behavior: smooth;
+      contain: layout paint;
+    }
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--muted);
+      border-left: 4px solid #2b3a55;
+      border-radius: 10px;
+      padding: 10px 12px;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 6px;
+    }
+    .card.active {
+      border-left-color: var(--accent);
+      outline: 1px solid rgba(125, 211, 252, 0.2);
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      color: var(--ink-dim);
+      font-size: 12px;
+    }
+    .date {
+      font-weight: 600;
+      color: #d7dbea;
+    }
+    .badge {
+      font-size: 11px;
+      background: var(--badge);
+      border: 1px solid var(--muted);
+      padding: 3px 8px;
+      border-radius: 999px;
+      color: #c1c9d9;
+    }
+    .maker {
+      font-size: 13px;
+      color: #cbd3e3;
+    }
+    .model {
+      font-size: 15px;
+      font-weight: 700;
+      color: #eef2ff;
+    }
+    .summary {
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .src {
+      font-size: 12px;
+      color: var(--ink-dim);
+    }
+    .src a { color: #9acdfc; text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--muted);
+      padding: 8px 14px 10px;
+      color: var(--ink-dim);
+      font-size: 11px;
+      background: #0b0e15;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+    }
+    footer a { color: var(--ink-dim); text-decoration: underline; }
+
+    /* Small screens */
+    @media (max-width: 430px) {
+      .title h1 { font-size: 14px; }
+      .subtitle { font-size: 11px; }
+      .model { font-size: 14px; }
+      .summary { font-size: 12px; }
+      .chip { font-size: 11px; padding: 5px 9px; }
+      .btn { padding: 5px 8px; font-size: 11px; }
+    }
+
+    /* Motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      .timeline { scroll-behavior: auto; }
+      .progress .bar span { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell" id="app">
+    <header>
+      <div class="title">
+        <h1>AI in 2026: key model releases</h1>
+        <div class="subtitle">Neutral, factual timeline. Sources are the makers' own announcements.</div>
+      </div>
+      <div class="controls" role="group" aria-label="Step controls">
+        <button class="btn" id="prevBtn" aria-label="Previous item">Prev</button>
+        <button class="btn" id="nextBtn" aria-label="Next item">Next</button>
+      </div>
+    </header>
+
+    <div class="progress" aria-live="polite">
+      <div class="bar" aria-hidden="true"><span id="progressFill" style="width:0%"></span></div>
+      <div class="count"><span id="pos">1</span>/<span id="total">20</span></div>
+    </div>
+
+    <div class="months" id="months" role="navigation" aria-label="Months of 2026"></div>
+
+    <div class="chips" id="chips" role="group" aria-label="Filter by type"></div>
+
+    <main class="timeline" id="timeline" tabindex="0" aria-label="Timeline of releases">
+      <ul class="list" id="list" role="list"></ul>
+    </main>
+
+    <footer>
+      <div>Compiled 17 Oct 2026 from makers' own announcements. Dates are first public or general availability.</div>
+      <div><a href="https://koltregaskes.com/" target="_blank" rel="noopener">koltregaskes.com</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // Inline data (exactly as provided; no rewording)
+    const RELEASES = [
+      {"date":"2026-02-05","maker":"Kuaishou (Kling AI)","model":"Kling 3.0 (Video 3.0 and Video 3.0 Omni)","type":"video","summary":"Video models with native multilingual audio and clips up to 15 seconds; early access for Ultra subscribers first.","source_url":"https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be","source_title":"Kling AI Launches 3.0 Model, Ushering in an Era Where Everyone Can Be a Director | Kuaishou Technology"},
+      {"date":"2026-02-16","maker":"Alibaba (Qwen)","model":"Qwen3.5 (Qwen3.5-397B-A17B)","type":"open-weight multimodal","summary":"Open-weight vision-language MoE, 397B total and 17B active parameters, Apache 2.0; smaller sizes followed.","source_url":"https://github.com/QwenLM/Qwen3.5","source_title":"QwenLM GitHub repository (README news log; repo now redirects to QwenLM/Qwen3.8)"},
+      {"date":"2026-02-19","maker":"Google","model":"Gemini 3.1 Pro","type":"multimodal","summary":"Upgraded reasoning model released in preview to developers and in the Gemini app; Google reports 77.1% on ARC-AGI-2.","source_url":"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/","source_title":"Gemini 3.1 Pro: A smarter model for your most complex tasks"},
+      {"date":"2026-02-26","maker":"Google","model":"Nano Banana 2 (Gemini 3.1 Flash Image)","type":"image","summary":"Image generation and editing model at Flash speed, 512px to 4K output; rolled out in Gemini, Search and the API.","source_url":"https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/","source_title":"Nano Banana 2: Combining Pro capabilities with lightning-fast speed"},
+      {"date":"2026-03-16","maker":"Mistral AI","model":"Mistral Small 4","type":"open-weight multimodal","summary":"Apache 2.0 MoE (119B total, 6B active) combining reasoning, image input and agentic coding in one model.","source_url":"https://mistral.ai/news/mistral-small-4/","source_title":"Introducing Mistral Small 4 | Mistral AI"},
+      {"date":"2026-04-08","maker":"Meta (Meta Superintelligence Labs)","model":"Muse Spark","type":"multimodal","summary":"First Muse model: a multimodal reasoning model in meta.ai and the Meta AI app, with a private API preview.","source_url":"https://ai.meta.com/blog/introducing-muse-spark-msl/","source_title":"Introducing Muse Spark: Scaling Towards Personal Superintelligence"},
+      {"date":"2026-04-23","maker":"OpenAI","model":"GPT-5.5","type":"language","summary":"New flagship rolled out in ChatGPT and Codex for paid plans, with GPT-5.5 Pro; API access followed on 24 April.","source_url":"https://openai.com/index/introducing-gpt-5-5/","source_title":"Introducing GPT-5.5 | OpenAI"},
+      {"date":"2026-04-24","maker":"DeepSeek","model":"DeepSeek-V4 Preview (V4-Pro and V4-Flash)","type":"open-weight language","summary":"Open-weight preview: V4-Pro (1.6T total, 49B active) and V4-Flash (284B, 13B active), 1M-token context by default.","source_url":"https://api-docs.deepseek.com/updates","source_title":"Change Log | DeepSeek API Docs"},
+      {"date":"2026-05-19","maker":"Google","model":"Gemini 3.5 Flash","type":"multimodal","summary":"First Gemini 3.5 model, generally available at launch and made the default in the Gemini app and AI Mode in Search.","source_url":"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/","source_title":"Gemini 3.5: frontier intelligence with action"},
+      {"date":"2026-06-09","maker":"Anthropic","model":"Claude Fable 5","type":"language","summary":"Mythos-class model released for general use; access was suspended on 12 June and restored on 1 July.","source_url":"https://www.anthropic.com/news/claude-fable-5-mythos-5","source_title":"Claude Fable 5 and Claude Mythos 5 | Anthropic"},
+      {"date":"2026-07-09","maker":"OpenAI","model":"GPT-5.6 (Sol, Terra, Luna)","type":"language","summary":"Three-tier family made generally available in ChatGPT, Codex and the API after a limited preview from 26 June.","source_url":"https://openai.com/index/gpt-5-6/","source_title":"GPT-5.6: Frontier intelligence that scales with your ambition | OpenAI"},
+      {"date":"2026-07-16","maker":"xAI (SpaceXSI)","model":"Grok 4.5","type":"language","summary":"Model for coding, agents and knowledge work, released to the API and Cursor; Grok consumer apps followed on 23 July.","source_url":"https://x.ai/news/grok-4-5","source_title":"Introducing Grok 4.5 | SpaceXSI"},
+      {"date":"2026-07-16","maker":"Moonshot AI","model":"Kimi K3","type":"open-weight multimodal","summary":"2.8T-parameter MoE with native vision and 1M-token context; API launch first, full weights published on 27 July.","source_url":"https://www.kimi.ai/blog/kimi-k3","source_title":"Kimi K3 Tech Blog: Open Frontier Intelligence"},
+      {"date":"2026-07-24","maker":"Anthropic","model":"Claude Opus 5","type":"language","summary":"New Opus model and default on Claude Max; Anthropic says it comes close to Claude Fable 5 at half the price.","source_url":"https://www.anthropic.com/news/claude-opus-5","source_title":"Introducing Claude Opus 5 | Anthropic"},
+      {"date":"2026-09-03","maker":"OpenAI","model":"GPT-6 Astra","type":"multimodal","summary":"First GPT-6 model, rolled out to limited organisations first, then paid ChatGPT plans and the API over following days.","source_url":"https://openai.com/index/gpt-6-astra/","source_title":"GPT-6 Astra: A new generation of intelligence | OpenAI"},
+      {"date":"2026-09-09","maker":"Suno","model":"Suno v6 (v6, v6-wild, v6-mini)","type":"music","summary":"New music model generation in three variants, developed with partners including Warner Music Group, BMG and Believe.","source_url":"https://www.suno.com/blog/introducing-v6","source_title":"Suno | Introducing v6"},
+      {"date":"2026-09-22","maker":"Anthropic","model":"Claude Opus 5.5","type":"language","summary":"First Claude 5.5 model; priced at $4/$20 per million tokens, 20% below Opus 5, and available on all major clouds.","source_url":"https://www.anthropic.com/claude-opus-5-5","source_title":"Introducing Claude Opus 5.5 | Anthropic"},
+      {"date":"2026-09-28","maker":"ElevenLabs","model":"Eleven v4 and Eleven v4 Turbo","type":"audio","summary":"Text-to-speech models on a new architecture with 90+ languages; Turbo variant targets about 100 ms median latency.","source_url":"https://elevenlabs.io/blog/eleven-v4","source_title":"Eleven v4: Our most expressive text-to-speech AI model yet"},
+      {"date":"2026-10-06","maker":"Mistral AI","model":"Mistral Large 4 (public preview)","type":"open-weight multimodal (weights pending)","summary":"1T-parameter multimodal MoE (52B active) in public preview via API; Mistral says open weights follow by end of October.","source_url":"https://mistral.ai/news/mistral-large-4/","source_title":"Introducing Mistral Large 4 | Mistral"},
+      {"date":"2026-10-13","maker":"Google","model":"Gemini 4 Argon","type":"multimodal","summary":"First Gemini 4 model, made generally available via the API and to paid Gemini app users after a 30 Sept cyber preview.","source_url":"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/","source_title":"Gemini 4 Argon: Built to solve your hardest problems"}
+    ];
+
+    // Derived type chips (from provided 'type' strings)
+    const CHIP_ORDER = ["language","multimodal","open-weight","image","video","audio","music"];
+
+    function normaliseTypes(typeStr) {
+      const s = (typeStr || "").toLowerCase();
+      const tags = new Set();
+      for (const key of CHIP_ORDER) {
+        if (s.includes(key)) tags.add(key);
+      }
+      return Array.from(tags);
+    }
+
+    function formatDate(d) {
+      const dt = (d instanceof Date) ? d : new Date(String(d));
+      return dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+    }
+
+    // Build month rail (Jan..Dec); mark months that have entries
+    function buildMonths(container, entries) {
+      container.innerHTML = '';
+      const monthsWith = new Set(entries.map(e => new Date(e.date).getUTCMonth())); // 0-11
+      const labels = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      labels.forEach((label, i) => {
+        const el = document.createElement('div');
+        el.className = 'month';
+        el.textContent = label;
+        el.dataset.idx = String(i);
+        el.dataset.has = monthsWith.has(i) ? '1' : '0';
+        el.addEventListener('click', () => {
+          // find first entry in that month (chronological order)
+          const idx = entries.findIndex(e => new Date(e.date).getUTCMonth() === i);
+          if (idx >= 0) focusIndex(idx, true);
+          updateMonthActive(i);
+        });
+        container.appendChild(el);
+      });
+      function updateMonthActive(activeMonth) {
+        [...container.children].forEach(ch => ch.classList.toggle('active', Number(ch.dataset.idx) === activeMonth));
+      }
+      return updateMonthActive;
+    }
+
+    // Render chips
+    function buildChips(container, onToggle) {
+      container.innerHTML = '';
+      CHIP_ORDER.forEach(key => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'chip';
+        b.textContent = key;
+        b.dataset.key = key;
+        b.setAttribute('aria-pressed', 'false');
+        b.addEventListener('click', () => onToggle(key, b));
+        container.appendChild(b);
+      });
+    }
+
+    // Render timeline list
+    function buildList(container, entries) {
+      container.innerHTML = entries.map((e, i) => {
+        const tags = normaliseTypes(e.type);
+        const tagBadges = [e.type].map(t => `<span class="badge" title="${e.type}">${t}</span>`).join('');
+        return `
+          <li class="card" data-idx="${i}" data-month="${new Date(e.date).getUTCMonth()}" data-tags="${tags.join(',')}">
+            <div class="meta"><span class="date">${formatDate(e.date)}</span>${tagBadges}</div>
+            <div class="model">${e.model}</div>
+            <div class="maker">${e.maker}</div>
+            <div class="summary">${e.summary}</div>
+            <div class="src">Source: <a href="${e.source_url}" target="_blank" rel="noopener">${e.source_title || 'Link'}</a></div>
+          </li>`;
+      }).join('');
+    }
+
+    // State
+    let all = RELEASES.slice().sort((a,b) => new Date(a.date) - new Date(b.date));
+    let filtered = all.slice();
+    let activeIdx = 0;
+    const activeChips = new Set();
+    const listEl = document.getElementById('list');
+    const monthsEl = document.getElementById('months');
+    const chipsEl = document.getElementById('chips');
+    const timelineEl = document.getElementById('timeline');
+    const posEl = document.getElementById('pos');
+    const totalEl = document.getElementById('total');
+    const progressFill = document.getElementById('progressFill');
+    // Controls (declare early so focusIndex can use them)
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const updateMonthActive = buildMonths(monthsEl, all);
+    buildChips(chipsEl, (key, btn) => {
+      if (activeChips.has(key)) {
+        activeChips.delete(key);
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      } else {
+        activeChips.add(key);
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+      }
+      applyFilters();
+    });
+
+    function applyFilters() {
+      if (activeChips.size === 0) {
+        filtered = all.slice();
+      } else {
+        const need = Array.from(activeChips);
+        filtered = all.filter(e => {
+          const tags = normaliseTypes(e.type);
+          return need.every(x => tags.includes(x));
+        });
+      }
+      // Rebuild list with filtered order (still chronological)
+      buildList(listEl, filtered);
+      totalEl.textContent = String(filtered.length);
+      // Reset index to first visible
+      activeIdx = 0;
+      focusIndex(activeIdx, false);
+      // Highlight month
+      const m = filtered.length ? new Date(filtered[0].date).getUTCMonth() : -1;
+      updateMonthActive(m);
+    }
+
+    function focusIndex(idx, smooth) {
+      if (idx < 0 || idx >= filtered.length) return;
+      activeIdx = idx;
+      const cards = listEl.querySelectorAll('.card');
+      cards.forEach(el => el.classList.remove('active'));
+      const el = listEl.querySelector(`.card[data-idx="${idx}"]`);
+      if (el) {
+        el.classList.add('active');
+        el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start', inline: 'nearest' });
+      }
+      posEl.textContent = String(idx + 1);
+      const pct = filtered.length ? Math.round((idx) / (filtered.length - 1) * 100) : 0;
+      progressFill.style.width = filtered.length === 1 ? '100%' : pct + '%';
+      const month = filtered.length ? new Date(filtered[idx].date).getUTCMonth() : -1;
+      updateMonthActive(month);
+      // Disable/enable buttons on ends
+      prevBtn.disabled = (idx <= 0);
+      nextBtn.disabled = (idx >= filtered.length - 1);
+    }
+
+    function step(dir) {
+      const next = Math.min(Math.max(activeIdx + dir, 0), filtered.length - 1);
+      if (next !== activeIdx) focusIndex(next, true);
+    }
+
+    // Init render
+    buildList(listEl, filtered);
+    totalEl.textContent = String(filtered.length);
+    focusIndex(0, false);
+
+    // Controls
+    prevBtn.addEventListener('click', () => step(-1));
+    nextBtn.addEventListener('click', () => step(1));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') step(1);
+      else if (e.key === 'ArrowLeft') step(-1);
+    });
+
+    // If user scrolls manually, update active index/progress to nearest visible card
+    let scrollTimer = null;
+    timelineEl.addEventListener('scroll', () => {
+      if (scrollTimer) cancelAnimationFrame(scrollTimer);
+      scrollTimer = requestAnimationFrame(() => {
+        const cards = [...listEl.querySelectorAll('.card')];
+        let best = 0, bestTop = Infinity;
+        cards.forEach((c, i) => {
+          const rect = c.getBoundingClientRect();
+          const cont = timelineEl.getBoundingClientRect();
+          const top = Math.abs(rect.top - cont.top - 10);
+          if (top < bestTop) { bestTop = top; best = i; }
+        });
+        focusIndex(best, false);
+      });
+    }, { passive: true });
+  </script>
+</body>
+</html>
+
