@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Monday, 19 October 2026"
 date: 2026-10-19
-tags: ["ai", "news", "digest", "model_release", "reasoning", "product_launch", "acquisition", "industry_move", "ai_safety", "ai_agents", "hardware"]
+tags: ["ai", "news", "digest", "model_release", "ai_agents", "product_launch", "reasoning", "industry_move", "open_source", "acquisition", "hardware", "ai_safety"]
 summary: "AI and technology news digest for Monday, 19 October 2026"
 ---
 
@@ -10,6 +10,14 @@ summary: "AI and technology news digest for Monday, 19 October 2026"
 This dated roundup collects the most interesting AI and technology developments found for Monday, 19 October 2026.
 
 ## Research & Products
+
+### MiniMax releases M3.1 Flash, claiming 70% lower costs for AI agent tasks
+
+The model is available through MiniMax’s API and coding tools. Its speed and benchmark gains remain company-reported, while downloadable weights are promised later.
+
+[Read more](https://superpowerdaily.com/posts/minimax-releases-m3-1-flash-claiming-70-lower-costs-for-ai-agent-tasks)
+
+---
 
 ### llm-echo 0.5
 
@@ -27,21 +35,45 @@ Release: llm-tools-datasette 0.1.1 When I switched LLM over to httpx2 in LLM 0.3
 
 ---
 
+### Nvidia launches new open models to run agents in the enterprise and on PCs
+
+Nvidia is leaning hard into the trend of enterprise companies wanting to run their own open models in their own data centers and also trying to make on-device, private AI agents a thing.
+
+[Read more](https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/)
+
+---
+
+### Nvidia Unveils Open AI Models for Enterprise Agents and Local PCs
+
+Nvidia’s open-weight models aim to power enterprise agents and local AI PCs, giving businesses and users more control over deployment and privacy. The post Nvidia Unveils Open AI Models for Enterprise Agents and Local PCs appeared first on Superintelligence News - Artificial Intelligence News .
+
+[Read more](https://superintelligencenews.com/applications/open-weight-models-nvidia-enterprise-pcs/)
+
+---
+
 ### Oct 18, 2026 Announcements Investing in the public benefit
 
 [Read more](https://www.anthropic.com/news/public-benefit-fund)
 
 ---
 
-### Honeywell launches AI agents to manage building alarms, maintenance and energy
+### Timestral: Mistral release time-series foundation models
 
-Forge Cognition pairs simulations with operational data. Early pilot results come from Honeywell, and customers can now begin scoping deployments.
+State-of-the-art probabilistic forecasting in four sizes (5M–209M params), CPU-efficient, zero-shot ready.
 
-[Read more](https://superpowerdaily.com/posts/honeywell-launches-ai-agents-to-manage-building-alarms-maintenance-and-energy)
+[Read more](https://mistral.ai/news/timestral/)
 
 ---
 
 ## Industry
+
+### HKU and Global Cybersecurity Alliance establish AI security research centre
+
+The partnership will study both the security of AI systems and AI-powered cyber defence, with research findings, benchmarks and open-source tools planned.
+
+[Read more](https://superpowerdaily.com/posts/hku-and-global-cybersecurity-alliance-establish-ai-security-research-centre)
+
+---
 
 ### OpenWorld signs Blocksight merger deal to automate asset-financing workflows
 
@@ -51,19 +83,37 @@ The proposed acquisition would put AI agents inside OpenWorld Enterprise to hand
 
 ---
 
-### Microsoft quits Nscale’s Essex AI data-center deal over power concerns
+## Tags: acquisition
 
-The planned Loughton facility has lost its expected anchor tenant. Nscale says it remains committed and is exploring alternative power sources.
+### Omron agrees to buy OnLogic for reported $675 million to bolster factory AI
 
-[Read more](https://superpowerdaily.com/posts/microsoft-quits-nscale-s-essex-ai-data-center-deal-over-power-concerns)
+A new report puts a price on the proposed acquisition. Omron wants to connect rugged computers with factory controls, while keeping OnLogic operationally independent.
+
+[Read more](https://superpowerdaily.com/posts/omron-agrees-to-buy-onlogic-for-reported-675-million-to-bolster-factory-ai)
 
 ---
 
-### Disney Poaches Most of Character.AI’s Staff in Bankruptcy Deal
+## Tags: reasoning
 
-Disney will hire most of Character.AI’s staff after its bankruptcy filing, in a deal that highlights AI talent, safety risks and court oversight. The post Disney Poaches Most of Character.AI’s Staff in Bankruptcy Deal appeared first on Superintelligence News - Artificial Intelligence News .
+### Gerrit Gong proposes ‘Humanity’s First Exam’ to test AI’s moral reasoning
 
-[Read more](https://superintelligencenews.com/applications/character-ai-bankruptcy-disney-staff-deal/)
+The proposal links trustworthy AI to religious representation and knowing when not to answer personal questions. It is not a completed benchmark or a set of evaluation results.
+
+[Read more](https://superpowerdaily.com/posts/gerrit-gong-proposes-humanity-s-first-exam-to-test-ai-s-moral-reasoning)
+
+---
+
+### Encrypted AI reasoning blocks may be decodable across sessions and models
+
+[Read more](https://www.digg.com/ai/3kmcpm5t)
+
+---
+
+### Training on viral junk weakened four AI models, Texas A&M researchers say
+
+The study found changes in reasoning and ethical responses, with performance difficult to restore. Its four-model experiment does not establish the same effect in larger commercial systems.
+
+[Read more](https://superpowerdaily.com/posts/training-on-viral-junk-weakened-four-ai-models-texas-a-and-m-researchers-say)
 
 ---
 
@@ -75,53 +125,13 @@ Disney will hire most of Character.AI’s staff after its bankruptcy filing, in 
 
 ---
 
-## Tags: ai_agents
-
-### Researchers find complex AI-agent setups offer no edge on ML-engineering benchmarks
-
-Holding the model and time budget constant, the authors point to the underlying AI—not extra orchestration—as the main performance driver in the tested setting.
-
-[Read more](https://superpowerdaily.com/posts/researchers-find-complex-ai-agent-setups-offer-no-edge-on-ml-engineering-benchmarks)
-
----
-
-### Adult Creators Push Back as Meta Lets Its AI Agent Flirt, While Human Accounts Face Stricter Limits
-
-Adult creators are blasting Meta Muse for explicit AI chat while their own accounts face strict moderation and repeated restrictions. The post Adult Creators Push Back as Meta Lets Its AI Agent Flirt, While Human Accounts Face Stricter Limits appeared first on Superintelligence News - Artificial Intelligence News .
-
-[Read more](https://superintelligencenews.com/applications/meta-muse-adult-creators-backlash/)
-
----
-
 ## Tags: hardware
 
-### Musk says SpaceX–Nvidia AI computer will reach volume production in 2027
+### Discovered Materials reportedly raises $9 million to speed AI searches for chip materials
 
-The Star Mind project pairs a new server architecture with orbital ambitions. Manufacturing the computers and deploying a satellite network remain separate milestones.
+The startup uses Anthropic models and physics-based simulations to identify promising compounds. Making and testing them remains essential.
 
-[Read more](https://superpowerdaily.com/posts/musk-says-spacex-nvidia-ai-computer-will-reach-volume-production-in-2027)
-
----
-
-## Tags: reasoning
-
-### Encrypted AI reasoning blocks may be decodable across sessions and models
-
-[Read more](https://www.digg.com/ai/3kmcpm5t)
-
----
-
-### Gerrit Gong proposes ‘Humanity’s First Exam’ to test AI’s moral reasoning
-
-The proposal links trustworthy AI to religious representation and knowing when not to answer personal questions. It is not a completed benchmark or a set of evaluation results.
-
-[Read more](https://superpowerdaily.com/posts/gerrit-gong-proposes-humanity-s-first-exam-to-test-ai-s-moral-reasoning)
-
----
-
-### Hybrid Reasoning Agents: LLM agents that think in latent space, act through text
-
-[Read more](https://arxiv.org/abs/2610.18861)
+[Read more](https://superpowerdaily.com/posts/discovered-materials-reportedly-raises-9-million-to-speed-ai-searches-for-chip-materials)
 
 ---
 
