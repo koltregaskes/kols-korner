@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Tuesday, 20 October 2026"
 date: 2026-10-20
-tags: ["ai", "news", "digest", "model_release", "ai_agents", "product_launch", "hardware", "industry_move", "open_source", "ai_safety", "acquisition", "policy", "opinion", "regulation"]
+tags: ["ai", "news", "digest", "model_release", "reasoning", "product_launch", "hardware", "ai_safety", "acquisition", "industry_move", "ai_agents", "announcement", "policy", "regulation", "opinion"]
 summary: "AI and technology news digest for Tuesday, 20 October 2026"
 ---
 
@@ -11,11 +11,11 @@ This dated roundup collects the most interesting AI and technology developments 
 
 ## Research & Products
 
-### MiniMax releases M3.1 Flash, claiming 70% lower costs for AI agent tasks
+### Sakana AI releases QD-Rec to evolve recommendations and their reasoning
 
-The model is available through MiniMax’s API and coding tools. Its speed and benchmark gains remain company-reported, while downloadable weights are promised later.
+The research system builds varied shortlists by adapting earlier proposals. Sakana reports stronger AI-judged results, but warns that persuasive reasoning can still contain unsupported claims.
 
-[Read more](https://superpowerdaily.com/posts/minimax-releases-m3-1-flash-claiming-70-lower-costs-for-ai-agent-tasks)
+[Read more](https://superpowerdaily.com/posts/sakana-ai-releases-qd-rec-to-evolve-recommendations-and-their-reasoning)
 
 ---
 
@@ -43,14 +43,6 @@ The Black Forest Labs collaboration is available through fal’s API. Its qualit
 
 ---
 
-### OpenAI releases coding benchmark and reports sharp gains in COBOL
-
-The company’s two evaluations separate building new software from translating old programs without changing their behavior. High migration scores still require expert review before production use.
-
-[Read more](https://superpowerdaily.com/posts/openai-releases-coding-benchmark-and-reports-sharp-gains-in-cobol)
-
----
-
 ### Cloudflare releases Clairic to extract data without generating text
 
 The Workers AI preview returns numbers, dates and estimates directly. Cloudflare’s workflow test shows savings, but longer calculations remain a weak spot.
@@ -59,53 +51,33 @@ The Workers AI preview returns numbers, dates and estimates directly. Cloudflare
 
 ---
 
-### Nvidia Unveils Open AI Models for Enterprise Agents and Local PCs
+### OpenAI releases coding benchmark and reports sharp gains in COBOL
 
-Nvidia’s open-weight models aim to power enterprise agents and local AI PCs, giving businesses and users more control over deployment and privacy. The post Nvidia Unveils Open AI Models for Enterprise Agents and Local PCs appeared first on Superintelligence News - Artificial Intelligence News .
+The company’s two evaluations separate building new software from translating old programs without changing their behavior. High migration scores still require expert review before production use.
 
-[Read more](https://superintelligencenews.com/applications/open-weight-models-nvidia-enterprise-pcs/)
-
----
-
-### Amazon Unveils TorchNeuron to Pull PyTorch Apps Off Nvidia’s Orbit
-
-Amazon’s TorchNeuron aims to move PyTorch apps to Trainium and weaken Nvidia’s AI software advantage. The post Amazon Unveils TorchNeuron to Pull PyTorch Apps Off Nvidia’s Orbit appeared first on Superintelligence News - Artificial Intelligence News .
-
-[Read more](https://superintelligencenews.com/ai-fields/large-language-models/torchneuron-amazon-ai-push-nvidia/)
+[Read more](https://superpowerdaily.com/posts/openai-releases-coding-benchmark-and-reports-sharp-gains-in-cobol)
 
 ---
 
-## Industry
+### Project Deal: our Claude-run marketplace experiment
 
-### Tilion raises $500,000 from Y Combinator for AI-agent browser infrastructure
-
-The startup joins YC’s Fall 2026 batch with reported adoption by more than 170 companies. Its competitive pitch rests on browser speed and reliability.
-
-[Read more](https://superpowerdaily.com/posts/tilion-raises-500-000-from-y-combinator-for-ai-agent-browser-infrastructure)
+[Read more](https://www.anthropic.com/features/project-deal)
 
 ---
 
-### HKU and Global Cybersecurity Alliance establish AI security research centre
+### US bans use of China’s DeepSeek AI tools by government agencies
 
-The partnership will study both the security of AI systems and AI-powered cyber defence, with research findings, benchmarks and open-source tools planned.
+Use of tools ‘may result in the transfer of sensitive data’ to China, defense department says The US government on Monday ordered its agencies to stop using artificial intelligence (AI) tools from the Chinese startup DeepSeek , as the countries race for dominance in the fast-moving sector. A notice from the Department of Homeland Security (DHS) announced the ban on products developed by DeepSeek – and tools created using DeepSeek by third parties – saying they must be removed from IT devices. Continue reading...
 
-[Read more](https://superpowerdaily.com/posts/hku-and-global-cybersecurity-alliance-establish-ai-security-research-centre)
-
----
-
-### Nscale and Anthropic are reportedly in talks for yet another $45B compute deal
-
-If the deal goes through, it would be the latest in a long string of giant compute deals Anthropic has struck over the past year.
-
-[Read more](https://techcrunch.com/2026/10/19/nscale-and-anthropic-are-reportedly-in-talks-for-yet-another-45-billion-compute-deal/)
+[Read more](https://www.theguardian.com/us-news/2026/oct/20/us-bans-china-deepseek-ai-tools-government-agencies)
 
 ---
 
-### Anthropic and Nscale May Be Near Another $45 Billion Compute Deal as AI Spending Frenzy Deepens
+### Ai2 releases fairness test showing AI decisions bend unevenly under pressure
 
-Anthropic and Nscale may be nearing another $45 billion compute deal, highlighting the soaring cost of AI infrastructure and investor concerns. The post Anthropic and Nscale May Be Near Another $45 Billion Compute Deal as AI Spending Frenzy Deepens appeared first on Superintelligence News - Artificial Intelligence News .
+FairStress checks more than who gets selected. Its findings also show that changing how questions are asked and scored can reverse the apparent direction of bias.
 
-[Read more](https://superintelligencenews.com/companies/anthropic-nscale-compute-deal-talks/)
+[Read more](https://superpowerdaily.com/posts/ai2-releases-fairness-test-showing-ai-decisions-bend-unevenly-under-pressure)
 
 ---
 
@@ -117,7 +89,33 @@ Anthropic and Nscale may be nearing another $45 billion compute deal, highlighti
 
 ---
 
+## Industry
+
+### Nscale and Anthropic are reportedly in talks for yet another $45B compute deal
+
+If the deal goes through, it would be the latest in a long string of giant compute deals Anthropic has struck over the past year.
+
+[Read more](https://techcrunch.com/2026/10/19/nscale-and-anthropic-are-reportedly-in-talks-for-yet-another-45-billion-compute-deal/)
+
+---
+
+### Tilion raises $500,000 from Y Combinator for AI-agent browser infrastructure
+
+The startup joins YC’s Fall 2026 batch with reported adoption by more than 170 companies. Its competitive pitch rests on browser speed and reliability.
+
+[Read more](https://superpowerdaily.com/posts/tilion-raises-500-000-from-y-combinator-for-ai-agent-browser-infrastructure)
+
+---
+
 ## Policy & Ethics
+
+### BCG moves Japan and South Korea into its top tier for AI readiness
+
+The 2026 assessment covers more than 75 economies and adds measures of computing capacity, domestic models and regulation. Talent and physical infrastructure remain constraints.
+
+[Read more](https://superpowerdaily.com/posts/bcg-moves-japan-and-south-korea-into-its-top-tier-for-ai-readiness)
+
+---
 
 ### Hugging Face’s policy chief warns embedded AI evaluators need clearer standards
 
