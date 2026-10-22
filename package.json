@@ -7,6 +7,8 @@
     "check:news-freshness": "node scripts/check-news-freshness.mjs",
     "news:fetch": "node scripts/fetch-news.mjs",
     "news:digest": "node scripts/generate-daily-digest.mjs",
-    "news:backfill": "node scripts/backfill-digests.mjs"
+    "news:backfill": "node scripts/backfill-digests.mjs",
+    "stories:check": "node scripts/build-stories.mjs --check",
+    "stories:preview": "node scripts/build-stories.mjs --check --preview .story-preview"
   }
 }
