@@ -1,13 +1,31 @@
 ---
 title: "Daily Digest: Friday, 23 October 2026"
 date: 2026-10-23
-tags: ["ai", "news", "digest", "model_release", "hardware", "product_launch", "policy", "regulation", "ai_safety", "announcement", "ai_agents", "industry_move"]
+tags: ["ai", "news", "digest", "hardware", "announcement", "industry_move", "model_release", "product_launch", "policy", "regulation", "ai_safety", "ai_agents"]
 summary: "AI and technology news digest for Friday, 23 October 2026"
 ---
 
 # Daily Digest: Friday, 23 October 2026
 
 This dated roundup collects the most interesting AI and technology developments found for Friday, 23 October 2026.
+
+## Industry
+
+### Apple Watch Ultra 4 review: longer battery life but still awaiting new features
+
+Biggest Apple smartwatch gets better health tracking and new readiness tools with a battery and chip boost in preparation for controversial audio AI As the Ultra enters its fourth year as Apple’s biggest and beefiest smartwatch it gets the best kind of spec upgrade – longer battery life – while waiting for something potentially more transformative. That’s because several of the key features announced as part of Apple’s new smartwatch lineup for 2026 have yet to be enabled, awaiting updates towards the end of this year. That leaves the £749 (€899/$799/A$1,349) Apple Watch Ultra 4 the top...
+
+[Read more](https://www.theguardian.com/technology/2026/oct/23/apple-watch-ultra-4-review-longer-battery-life-health-tracking)
+
+---
+
+### OpenAI donates API standard designed to ease switching between AI providers
+
+Open Responses joins three other projects at the Agentic AI Foundation, covering agent skills and training environments. Its portability benefits depend on APIs following the specification.
+
+[Read more](https://superpowerdaily.com/posts/openai-donates-api-standard-designed-to-ease-switching-between-ai-providers)
+
+---
 
 ## Research & Products
 
@@ -19,6 +37,12 @@ Launched today, NVIDIA Minerva is an AIOps platform built to help teams find pro
 
 ---
 
+### Donating Agent Skills to the Agentic AI Foundation
+
+[Read more](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation)
+
+---
+
 ### Barclays to cut 5,000 jobs as bank’s bosses hail AI productivity advances
 
 Equating to the loss of 5% of its 93,000 global staff, job cuts come as bank announces jump in quarterly profits Barclays is cutting 5,000 jobs as part of wider cost-saving plans that its bosses say are being driven by advances in AI. The job cuts will mean losing about 5% of the bank’s 93,000 global staff, with executives confirming they had already cut 1,000 workers since the start of the year. Continue reading...
@@ -27,45 +51,23 @@ Equating to the loss of 5% of its 93,000 global staff, job cuts come as bank ann
 
 ---
 
-### Hugging Face releases an AI model for asking questions about DNA
+### Meta launches Muse in Japan, taking its AI agent beyond North America
 
-Carbon-X combines genetic sequences with conversational answers and keeps local users’ data on their hardware, its developers say. Its prediction accuracy remains unconfirmed by laboratory experiments.
+Gmail and calendar connections are available, while Japanese service partnerships are in development. Meta says users retain control over access and important actions.
 
-[Read more](https://superpowerdaily.com/posts/hugging-face-releases-an-ai-model-for-asking-questions-about-dna)
-
----
-
-### Donating Agent Skills to the Agentic AI Foundation
-
-[Read more](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation)
+[Read more](https://superpowerdaily.com/posts/meta-launches-muse-in-japan-taking-its-ai-agent-beyond-north-america)
 
 ---
 
-### NVIDIA launches Minerva to trace AI data-center slowdowns to their source
+### 1Password announces sign-in platform for personal AI agents
 
-IREN is already using the platform, while other deployments remain planned. NVIDIA promises earlier fault detection but provides no measured uptime gain.
-
-[Read more](https://superpowerdaily.com/posts/nvidia-launches-minerva-to-trace-ai-data-center-slowdowns-to-their-source)
+[Read more](https://www.digg.com/ai/fbdogvx6)
 
 ---
 
-### Canva launches first in-house image model as it pushes beyond third-party AI
+### Uber announces ChatGPT Work access for more than 30,000 employees
 
-Canva launched its first in-house image model, Craft, on Oct. 22, 2026, with 2K output, 30+ aspect ratios and API access. The post Canva launches first in-house image model as it pushes beyond third-party AI appeared first on Superintelligence News - Artificial Intelligence News .
-
-[Read more](https://superintelligencenews.com/ai-fields/large-language-models/canva-image-model-launch-ai-strategy/)
-
----
-
-### Introducing Confidential Computing on Cohere Model Vault Now in public beta with NVIDIA Confidential Computing with NVIDIA GPUs on Microsoft Azure, bringing hardware-backed protection and verifiable security to sensitive enterprise AI. Oct 22, 2026 4 min read
-
-[Read more](https://cohere.com/blog/introducing-confidential-computing-on-cohere-model-vault)
-
----
-
-### Inside Cohere Model Vault: Building a verifiable confidential AI inference How Model Vault combines confidential CPU and GPU execution, end-to-end encrypted request contents, and remote attestation to protect sensitive AI workloads while they are being processed. Oct 22, 2026 8 min read
-
-[Read more](https://cohere.com/blog/inside-cohere-model-vault-building-verifiable-confidential-ai-inference)
+[Read more](https://www.digg.com/ai/x16ihvfj)
 
 ---
 
@@ -82,14 +84,6 @@ The NVIDIA-powered system is meant to let students build models, not just use co
 Agent Compute Engine keeps long-lived credentials outside agents’ workspaces. Google also promises faster pauses and restarts, alongside new traffic and spending controls.
 
 [Read more](https://superpowerdaily.com/posts/google-introduces-isolated-cloud-computers-for-ai-agents-with-rollout-still-ahead)
-
----
-
-### Hochul announces Queens AI jobs institute aiming to train 40,000 by 2032
-
-Pursuit will power the workforce hub, which also has a startup-support mandate. An earlier plan puts its physical launch in 2027.
-
-[Read more](https://superpowerdaily.com/posts/hochul-announces-queens-ai-jobs-institute-aiming-to-train-40-000-by-2032)
 
 ---
 
@@ -111,23 +105,23 @@ Bill Gates says AI safety now needs government safeguards as competition makes c
 
 ---
 
-## Industry
+### Don't leave AI to tech bros and oligarchs, UK's AI minister says Kanishka Narayan tells the BBC that dealing with the technology requires not only regulation, but "building capability and capacity".
 
-### OpenAI donates API standard designed to ease switching between AI providers
-
-Open Responses joins three other projects at the Agentic AI Foundation, covering agent skills and training environments. Its portability benefits depend on APIs following the specification.
-
-[Read more](https://superpowerdaily.com/posts/openai-donates-api-standard-designed-to-ease-switching-between-ai-providers)
+[Read more](https://www.bbc.com/news/articles/ck7vp8g38y7vo)
 
 ---
 
-## Tags: hardware, ai_agents
+### RSIPO: Recursive Self-Improving Policy Optimization for Agentic Reinforcement Learning via Skill-Policy Co-Evolution
 
-### Meta’s Muse push turns an AI assistant into a bet on commerce, trust and scale
+[Read more](https://paperswithcode.com/papers/2610.15772)
 
-Meta’s AI agent Muse could become a commerce platform, but privacy, compute limits and trust may determine whether it scales. The post Meta’s Muse push turns an AI assistant into a bet on commerce, trust and scale appeared first on Superintelligence News - Artificial Intelligence News .
+---
 
-[Read more](https://superintelligencenews.com/applications/meta-ai-agent-muse-commerce-bet/)
+### UK AI minister calls for stronger state AI capability alongside regulation
+
+Kanishka Narayan cites an AI-assisted security check as evidence of the technology’s potential, but gives no details of the vulnerabilities found.
+
+[Read more](https://superpowerdaily.com/posts/uk-ai-minister-calls-for-stronger-state-ai-capability-alongside-regulation)
 
 ---
 
