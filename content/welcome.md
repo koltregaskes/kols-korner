@@ -37,7 +37,7 @@ AI is genuinely important - but not for the reasons most headlines claim.
 
 ## What's Coming
 
-- **Daily AI news** (currently in beta) - curated updates from credible sources
+- **Daily AI news** - live curated updates from credible sources
 - **Deep dives** on specific AI developments worth understanding
 - **Practical guides** for working with AI tools effectively
 - **Sceptical analysis** when the industry needs a reality check
@@ -45,7 +45,7 @@ AI is genuinely important - but not for the reasons most headlines claim.
 ## Stay Updated
 
 - **Daily archive** - Browse the latest updates on the [News page](/news/)
-- **Newsletter** - Launching soon once the site and archive are fully bedded in
+- **Newsletter** - Not available yet. This site does not collect email addresses.
 - **Social** - Find me on X, Bluesky, and Mastodon (links below)
 
 Thanks for reading. Let's figure out what AI actually means, together.
