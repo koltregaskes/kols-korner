@@ -298,7 +298,7 @@ function normaliseNewsUrl(url = '') {
     const normalisedPath = parsed.pathname.replace(/\/+$/, '') || '/';
     return `${parsed.origin}${normalisedPath}${parsed.search}`;
   } catch {
-    return String(url || '').trim();
+    return '';
   }
 }
 
