@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Saturday, 24 October 2026"
 date: 2026-10-24
-tags: ["ai", "news", "digest", "hardware", "announcement", "industry_move", "model_release", "reasoning", "open_source", "policy", "regulation", "ai_agents", "product_launch", "acquisition"]
+tags: ["ai", "news", "digest", "model_release", "hardware", "product_launch", "reasoning", "open_source", "ai_agents", "policy", "announcement", "acquisition"]
 summary: "AI and technology news digest for Saturday, 24 October 2026"
 ---
 
@@ -9,17 +9,15 @@ summary: "AI and technology news digest for Saturday, 24 October 2026"
 
 This dated roundup collects the most interesting AI and technology developments found for Saturday, 24 October 2026.
 
-## Industry
+## Research & Products
 
-### Apple Watch Ultra 4 review: longer battery life but still awaiting new features
+### Tencent releases interactive video AI with a single-RTX-4090 configuration
 
-Biggest Apple smartwatch gets better health tracking and new readiness tools with a battery and chip boost in preparation for controversial audio AI As the Ultra enters its fourth year as Apple’s biggest and beefiest smartwatch it gets the best kind of spec upgrade – longer battery life – while waiting for something potentially more transformative. That’s because several of the key features announced as part of Apple’s new smartwatch lineup for 2026 have yet to be enabled, awaiting updates towards the end of this year. That leaves the £749 (€899/$799/A$1,349) Apple Watch Ultra 4 the top...
+Hy-Nomas carries context between video segments, letting users redirect a scene as it develops. Its single-GPU option limits active history, and the full web demo needs separate serving resources.
 
-[Read more](https://www.theguardian.com/technology/2026/oct/23/apple-watch-ultra-4-review-longer-battery-life-health-tracking)
+[Read more](https://superpowerdaily.com/posts/tencent-releases-interactive-video-ai-with-a-single-rtx-4090-configuration)
 
 ---
-
-## Research & Products
 
 ### Introducing Kimi K3.1 Pro
 
@@ -29,45 +27,23 @@ Introducing Kimi K3.1 Pro Kimi K3.1 Pro landed on the Kimi API today - it's not 
 
 ---
 
-### Donating Agent Skills to the Agentic AI Foundation
+### battledrones v14: Compass Rose, a four player map
 
-[Read more](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation)
+Release: battledrones v14: Compass Rose, a four player map I added four player online mode to Battledrones - previous maps were limited to two. Here's the initial prompt I used: Add a new map for a four player battle - four way rotational symmetry, up to four AI players, works with the WebSocket non-audio based multiplayer mode so up to four human players can join (any spare slots use AI) Claude Opus 4.5 added a new map called "Compass Rose" and modified the WebSockets multiplayer network code to support up to four players for that map, joining via share links or QR codes. The new teams...
 
----
-
-### 1Password announces sign-in platform for personal AI agents
-
-[Read more](https://www.digg.com/ai/fbdogvx6)
+[Read more](https://simonwillison.net/2026/Oct/24/battledrones/)
 
 ---
 
-### Uber announces ChatGPT Work access for more than 30,000 employees
+### Moonshot AI unveils Kimi K3.1 Pro, plans open weights by Nov. 4
 
-[Read more](https://www.digg.com/ai/x16ihvfj)
-
----
-
-### Meta launches Muse in Japan, taking its AI agent beyond North America
-
-Gmail and calendar connections are available, while Japanese service partnerships are in development. Meta says users retain control over access and important actions.
-
-[Read more](https://superpowerdaily.com/posts/meta-launches-muse-in-japan-taking-its-ai-agent-beyond-north-america)
+[Read more](https://www.digg.com/ai/fcsgujs8)
 
 ---
 
-### Cal Poly introduces $3 million AI supercomputer, with wider campus access next
+### Thariq Shihipar announces departure from Anthropic after more than a year on Claude Code
 
-The NVIDIA-powered system is meant to let students build models, not just use commercial tools. Broader access is expected the following week.
-
-[Read more](https://superpowerdaily.com/posts/cal-poly-introduces-3-million-ai-supercomputer-with-wider-campus-access-next)
-
----
-
-### Google introduces isolated cloud computers for AI agents, with rollout still ahead
-
-Agent Compute Engine keeps long-lived credentials outside agents’ workspaces. Google also promises faster pauses and restarts, alongside new traffic and spending controls.
-
-[Read more](https://superpowerdaily.com/posts/google-introduces-isolated-cloud-computers-for-ai-agents-with-rollout-still-ahead)
+[Read more](https://www.digg.com/ai/9l2e04a4)
 
 ---
 
@@ -77,7 +53,7 @@ Agent Compute Engine keeps long-lived credentials outside agents’ workspaces. 
 
 ---
 
-### Opposition deepfake video sparks outrage in Spain ahead of election
+### Opposition deepfake video of Spanish PM’s wife sparks outrage before election
 
 Video shows AI likenesses of people linked to Pedro Sánchez’s Socialist party appearing to admit to wrongdoing A political ad from Spain’s main opposition party that used a deepfake video of the prime minister’s wife has sparked outrage and set off a wider debate on AI, as the deeply polarised country gears up for general elections next month. Launched this week across the social media channels of the conservative People’s party (PP), the video used artificial intelligence to manipulate the likenesses of various people linked to Pedro Sánchez’s Socialist party and appeared to show them...
 
@@ -85,25 +61,35 @@ Video shows AI likenesses of people linked to Pedro Sánchez’s Socialist party
 
 ---
 
-## Policy & Ethics
+### You.com launches AI model service with automatic backups and a 99.9% uptime guarantee
 
-### Don't leave AI to tech bros and oligarchs, UK's AI minister says Kanishka Narayan tells the BBC that dealing with the technology requires not only regulation, but "building capability and capacity".
+Inference Router combines company-operated capacity, partner backups and web search. Its speed claims come from internal tests; its uptime commitment is backed by service credits.
 
-[Read more](https://www.bbc.com/news/articles/ck7vp8g38y7vo)
+[Read more](https://superpowerdaily.com/posts/you-com-launches-ai-model-service-with-automatic-backups-and-a-99-9-uptime-guarantee)
 
 ---
+
+### Block introduces Dessa, a voice AI it says learned from speech alone
+
+The model can listen while speaking, Block says. Public recordings offer a first look, while a small group of safety researchers gets early access to investigate risks.
+
+[Read more](https://superpowerdaily.com/posts/block-introduces-dessa-a-voice-ai-it-says-learned-from-speech-alone)
+
+---
+
+### ORNL launches AI research center to modernize aging US paper mills
+
+CRAFT will give manufacturers access to modeling, automation and data analysis, with industry helping shape the pilot investments meant to move research into production.
+
+[Read more](https://superpowerdaily.com/posts/ornl-launches-ai-research-center-to-modernize-aging-us-paper-mills)
+
+---
+
+## Policy & Ethics
 
 ### RSIPO: Recursive Self-Improving Policy Optimization for Agentic Reinforcement Learning via Skill-Policy Co-Evolution
 
 [Read more](https://paperswithcode.com/papers/2610.15772)
-
----
-
-### UK AI minister calls for stronger state AI capability alongside regulation
-
-Kanishka Narayan cites an AI-assisted security check as evidence of the technology’s potential, but gives no details of the vulnerabilities found.
-
-[Read more](https://superpowerdaily.com/posts/uk-ai-minister-calls-for-stronger-state-ai-capability-alongside-regulation)
 
 ---
 
@@ -120,6 +106,24 @@ Compliance with White House directives is mandatory, but acquisition teams can t
 Google privacy policy now lets connected Gmail, Photos and Drive data help personalize ads for users who opt into Personal Intelligence. The post Google’s privacy shift ties Gemini-connected data to ad personalization appeared first on Superintelligence News - Artificial Intelligence News .
 
 [Read more](https://superintelligencenews.com/applications/chatbots/google-privacy-policy-ai-ads/)
+
+---
+
+### Hong Kong regulator puts accountability and transparency at core of bank AI guidance
+
+Compliance Week’s October 24 coverage highlights proportionate risk controls alongside governance. The framework also recognises oversight without human involvement at every step.
+
+[Read more](https://superpowerdaily.com/posts/hong-kong-regulator-puts-accountability-and-transparency-at-core-of-bank-ai-guidance)
+
+---
+
+## Tags: open_source
+
+### [AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month... and Pro Highspeed API with 2-3× speed
+
+We have Fable at home... or so we are being told by paid shills
+
+[Read more](https://latent.space/p/ainews-kimi-31/)
 
 ---
 
