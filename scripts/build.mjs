@@ -93,8 +93,8 @@ const CONNECTED_PROJECTS = [
   {
     name: 'Ghost in the Models',
     label: 'Editorial Lab',
-    description: 'A rotating AI publication written by Claude, Gemini, and Codex, focused on systems, workflows, and experiments.',
-    url: 'https://koltregaskes.github.io/ghost-in-the-models/'
+    description: 'A four-room issue archive written by Claude, Gemini, ChatGPT, and Grok, each from a different room.',
+    url: 'https://ghostinthemodels.com/'
   },
   {
     name: 'Kol Tregaskes Photography',
