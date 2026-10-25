@@ -52,9 +52,13 @@ async function generateAudioWaveform(audioPath, outputPath) {
 // Content source folder
 const CONTENT_DIR = process.env.CONTENT_DIR || "content";
 
-// Supabase configuration (injected at build time from GitHub secrets)
+// Kept for a future newsletter or contact form. No page calls Supabase,
+// so these values are not written into HTML and the host is not added to
+// the content security policy.
 const SUPABASE_URL = process.env.SUPABASE_URL || '';
 const SUPABASE_PUBLISHABLE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY || '';
+void SUPABASE_URL;
+void SUPABASE_PUBLISHABLE_KEY;
 const SITE_NAME = process.env.SITE_NAME || "Kol's Korner";
 const SITE_OWNER = process.env.SITE_OWNER || "Kol Tregaskes";
 const GITHUB_OWNER = process.env.GITHUB_OWNER || 'koltregaskes';
@@ -298,7 +302,7 @@ function normaliseNewsUrl(url = '') {
     const normalisedPath = parsed.pathname.replace(/\/+$/, '') || '/';
     return `${parsed.origin}${normalisedPath}${parsed.search}`;
   } catch {
-    return String(url || '').trim();
+    return '';
   }
 }
 
@@ -803,7 +807,7 @@ function parseDigestArticles(content, filename) {
 
 // Security headers for all pages
 const getSecurityHeaders = () => `
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'${SUPABASE_URL ? ` ${SUPABASE_URL}` : ''}; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">`;
 
 function getCanonicalUrl(pathname = '/') {
@@ -968,6 +972,88 @@ function parseFrontmatter(content) {
   return { frontmatter, body };
 }
 
+// Escape raw HTML in essay markdown without touching blockquote markers.
+// ">" is left alone so lines beginning "> " still become quotes.
+function escapeHtmlText(value) {
+  return String(value || '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;');
+}
+
+function escapeAttrQuotes(value) {
+  return String(value || '')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function markdownHeadingId(text) {
+  return slugify(String(text || '').replaceAll('&amp;', ' ').replaceAll('&lt;', ' '));
+}
+
+// Allow normal essay links. Reject anything that could break out of an attribute
+// or run as a script. Relative links stay on this site.
+function safeMarkdownUrl(raw) {
+  const value = String(raw || '').trim();
+  if (!value || /[\s"'<>]/.test(value)) return null;
+  if (/&(?:lt|gt|quot|#)/i.test(value)) return null;
+
+  const decoded = value.replaceAll('&amp;', '&');
+  if (decoded.startsWith('//') || decoded.includes('\\')) return null;
+
+  if (
+    decoded.startsWith('/') ||
+    decoded.startsWith('./') ||
+    decoded.startsWith('../') ||
+    decoded.startsWith('#')
+  ) {
+    return { href: value, external: false };
+  }
+
+  let url;
+  try {
+    url = new URL(decoded);
+  } catch {
+    return null;
+  }
+
+  const protocol = url.protocol.toLowerCase();
+  if (protocol !== 'http:' && protocol !== 'https:' && protocol !== 'mailto:') return null;
+  if (url.username || url.password) return null;
+
+  return {
+    href: value,
+    external: protocol === 'http:' || protocol === 'https:'
+  };
+}
+
+function renderMarkdownImage(alt, src) {
+  const safe = safeMarkdownUrl(src);
+  if (!safe) return alt;
+  return `<figure><img src="${escapeAttrQuotes(safe.href)}" alt="${escapeAttrQuotes(alt)}" loading="lazy" /></figure>`;
+}
+
+function applyInlineFormatting(text) {
+  let html = String(text || '');
+  html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  html = html.replace(/___(.+?)___/g, '<strong><em>$1</em></strong>');
+  html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
+  html = html.replace(/_([^_]+)_/g, '<em>$1</em>');
+  html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+  html = html.replace(/~~(.+?)~~/g, '<del>$1</del>');
+  html = html.replace(/==(.+?)==/g, '<mark>$1</mark>');
+  return html;
+}
+
+function renderMarkdownLink(text, href) {
+  const safe = safeMarkdownUrl(href);
+  const formatted = applyInlineFormatting(text);
+  if (!safe) return text;
+  const attrs = safe.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+  return `<a href="${escapeAttrQuotes(safe.href)}"${attrs}>${formatted}</a>`;
+}
+
 // Convert markdown to HTML (improved implementation)
 function markdownToHtml(md) {
   let html = md;
@@ -979,6 +1065,10 @@ function markdownToHtml(md) {
     codeBlocks.push(`<pre><code data-lang="${escapeHtml(lang)}">${escapeHtml(code.trim())}</code></pre>`);
     return placeholder;
   });
+
+  // Raw tags in an essay are text. News pages already escape untrusted copy;
+  // essays now do the same before any markdown tag is written.
+  html = escapeHtmlText(html);
 
   // Step 2: Extract and process tables
   const tableRegex = /^\|(.+)\|\r?\n\|[-:\| ]+\|\r?\n((?:\|.+\|\r?\n?)+)/gm;
@@ -1004,13 +1094,13 @@ function markdownToHtml(md) {
 
   // Headings (process before inline formatting)
   html = html.replace(/^### (.+)$/gm, (match, text) => {
-    return `<h4 id="${slugify(text)}">${text}</h4>`;
+    return `<h4 id="${markdownHeadingId(text)}">${text}</h4>`;
   });
   html = html.replace(/^## (.+)$/gm, (match, text) => {
-    return `<h3 id="${slugify(text)}">${text}</h3>`;
+    return `<h3 id="${markdownHeadingId(text)}">${text}</h3>`;
   });
   html = html.replace(/^# (.+)$/gm, (match, text) => {
-    return `<h2 id="${slugify(text)}">${text}</h2>`;
+    return `<h2 id="${markdownHeadingId(text)}">${text}</h2>`;
   });
 
   // Callouts (must come before regular blockquotes)
@@ -1064,12 +1154,26 @@ function markdownToHtml(md) {
   html = processedLines.join('\n');
 
   // Step 5: Process inline formatting
+  // Hold finished links and images aside so later emphasis cannot rewrite
+  // underscores inside a URL or in target="_blank".
+  const protectedSnippets = [];
+  const protectHtmlSnippet = (snippet) => {
+    const token = `RICHSNIPPET${protectedSnippets.length}ENDRICHSNIPPET`;
+    protectedSnippets.push(snippet);
+    return token;
+  };
 
   // Images (before links to avoid conflict)
-  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<figure><img src="$2" alt="$1" loading="lazy" /></figure>');
+  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+    const rendered = renderMarkdownImage(alt, src);
+    return rendered === alt ? rendered : protectHtmlSnippet(rendered);
+  });
 
-  // Links
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  // Links. External pages open in a new tab. Unsafe targets become plain text.
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, href) => {
+    const rendered = renderMarkdownLink(text, href);
+    return rendered.startsWith('<a ') ? protectHtmlSnippet(rendered) : rendered;
+  });
 
   // Bold and italic (order matters: longest patterns first)
   html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
@@ -1090,9 +1194,14 @@ function markdownToHtml(md) {
 
   // Wikilinks [[note]] or [[note|display text]]
   html = html.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, noteName, displayText) => {
-    const slug = noteName.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]/g, '').replace(/--+/g, '-');
+    const readableName = noteName.replaceAll('&amp;', ' ').replaceAll('&lt;', ' ');
+    const slug = readableName.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]/g, '').replace(/--+/g, '-');
     const linkText = displayText?.trim() || noteName.trim();
     return `<a href="../${slug}/" class="wikilink">${linkText}</a>`;
+  });
+
+  protectedSnippets.forEach((snippet, index) => {
+    html = html.replaceAll(`RICHSNIPPET${index}ENDRICHSNIPPET`, snippet);
   });
 
   // Step 6: Wrap remaining lines in paragraphs
