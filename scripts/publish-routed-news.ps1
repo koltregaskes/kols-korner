@@ -1,3 +1,6 @@
+# Windows isolated publisher. Validation-only unless -Publish is supplied.
+# GitHub Actions schedules scripts/publish-routed-news.mjs instead; that script
+# publishes an existing routed digest and does not collect news.
 [CmdletBinding()]
 param(
   [string]$TargetDate = '',
