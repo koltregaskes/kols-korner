@@ -19,6 +19,8 @@ Personal website and publishing system for Kol Tregaskes.
 
 The shared news-gathering pipeline runs outside this repo. This repo consumes the generated digest inputs, publishes digest posts, builds the site, and deploys the finished static output.
 
+`.github/workflows/refresh-routed-feed.yml` fetches `config/sources.json` from `koltregaskes/ai-resource-hub` at 05:15 UTC, applies the Kol's Korner filter in `site-filters.json`, and commits `news-digests/news-feed-latest.json` only when items come back. A source that cannot be fetched fails that run by name and leaves the file unchanged. The site build copies the file to `site/data/news-feed-latest.json`, and the news page reads it ahead of the digest archive. The 06:30 UTC freshness check does not fetch articles.
+
 ## Build
 
 ```bash
