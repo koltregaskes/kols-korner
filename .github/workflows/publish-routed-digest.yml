@@ -1,0 +1,97 @@
+name: Publish routed digest
+
+on:
+  schedule:
+    # 06:45 UTC daily. Historical morning publishes landed around 06:55 Europe/London.
+    # In GMT that is the same morning window. In British Summer Time it is 07:45 London.
+    - cron: "45 6 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Digest date YYYY-MM-DD. Defaults to the Europe/London calendar date."
+        required: false
+        type: string
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: publish-routed-digest
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    outputs:
+      result: ${{ steps.publish.outputs.result }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.22.1"
+          package-manager-cache: false
+
+      - name: Publish routed digest
+        id: publish
+        env:
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO: ${{ github.event.repository.name }}
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          DIGEST_DATE: ${{ github.event_name == 'workflow_dispatch' && inputs.date || '' }}
+        run: |
+          set -eu
+          if [ -n "${DIGEST_DATE}" ]; then
+            node scripts/publish-routed-news.mjs --publish --date "${DIGEST_DATE}"
+          else
+            node scripts/publish-routed-news.mjs --publish
+          fi
+
+      - name: Setup Pages
+        if: steps.publish.outputs.result == 'published'
+        uses: actions/configure-pages@v6
+
+      - name: Archive Pages artifact
+        if: steps.publish.outputs.result == 'published'
+        shell: bash
+        run: |
+          tar \
+            --dereference --hard-dereference \
+            --directory site \
+            -cvf "$RUNNER_TEMP/artifact.tar" \
+            --exclude=.git \
+            --exclude=.github \
+            --exclude=.[^/]* \
+            .
+
+      - name: Upload Pages artifact
+        if: steps.publish.outputs.result == 'published'
+        uses: actions/upload-artifact@v6
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
+
+  deploy:
+    needs: publish
+    if: needs.publish.outputs.result == 'published'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -46,6 +46,8 @@ GitHub Actions runs the build on pushes to `main`.
 
 - [`.github/workflows/pages.yml`](/W:/Websites/sites/kols-korner/.github/workflows/pages.yml) builds and deploys the site
 - [`.github/workflows/daily-digest.yml`](/W:/Websites/sites/kols-korner/.github/workflows/daily-digest.yml) is a manual build-check workflow
+- [`.github/workflows/publish-routed-digest.yml`](.github/workflows/publish-routed-digest.yml) runs every day at 06:45 UTC. It publishes the Europe/London date from an existing routed digest, pushes that date to `main`, and deploys Pages. A missing `digest-YYYY-MM-DD.md` / `YYYY-MM-DD-digest.md` fails the run and names the missing Rooms OS classifier output
+- [`scripts/publish-routed-news.mjs`](scripts/publish-routed-news.mjs) is the scheduled publisher. It does not scrape or invent articles
 - [`scripts/publish-routed-news.ps1`](/W:/Websites/sites/kols-korner/scripts/publish-routed-news.ps1) clones current `main` into a temporary directory, normalises one routed `digest-YYYY-MM-DD.md` input into the tracked `YYYY-MM-DD-digest.md` contract, builds, verifies and rejects out-of-scope source changes. It stages only the routed digest and digest post, leaving temporary `site/` build drift out of the commit. It does not commit or push unless `-Publish` is explicitly supplied.
 
 The build can derive its canonical URL from:
