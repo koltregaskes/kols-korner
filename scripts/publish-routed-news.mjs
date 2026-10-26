@@ -6,8 +6,10 @@
  * `scripts/publish-routed-news.ps1` remains the Windows isolated helper.
  *
  * This does not collect news and does not invent articles. It normalises a
- * routed digest that is already on disk, generates the digest post, and, with
- * `--publish`, commits and pushes only that date's source files.
+ * routed digest that is already on disk, generates the digest post from this
+ * repo's news-digests directory, and, with `--publish`, commits and pushes
+ * only that date's source files. A verified `--publish` run still requests
+ * Pages deployment when those files are already on main.
  *
  * Usage:
  *   node scripts/publish-routed-news.mjs [--date YYYY-MM-DD] [--source-dir PATH] [--publish]
@@ -104,6 +106,22 @@ export function scrubSecrets(text) {
     .replace(/github_pat_[A-Za-z0-9_]+/g, 'github_pat_[redacted]');
 }
 
+export const normalisedNewsDigestsDir = path.join(repoRoot, 'news-digests');
+
+export function generatorChildEnv(baseEnv = {}) {
+  return {
+    ...baseEnv,
+    NEWS_SOURCE_PATH: normalisedNewsDigestsDir
+  };
+}
+
+export function publishDecision({ publish, source }) {
+  return {
+    source,
+    deploy: publish ? 'true' : 'false'
+  };
+}
+
 function parseArgs(argv) {
   const args = {
     date: '',
@@ -172,13 +190,13 @@ function git(args, { allowFailure = false } = {}) {
   return result;
 }
 
-function runNode(scriptName, args, label) {
+function runNode(scriptName, args, label, env = process.env) {
   const scriptPath = path.join(repoRoot, 'scripts', scriptName);
   console.log(`>> node scripts/${scriptName} ${args.join(' ')}`);
   const result = spawnSync(process.execPath, [scriptPath, ...args], {
     cwd: repoRoot,
     stdio: 'inherit',
-    env: process.env
+    env
   });
 
   if (result.error) {
@@ -189,9 +207,12 @@ function runNode(scriptName, args, label) {
   }
 }
 
-function writeGitHubOutput(result) {
+function writeGitHubOutput(decision) {
   if (!process.env.GITHUB_OUTPUT) return;
-  fs.appendFileSync(process.env.GITHUB_OUTPUT, `result=${result}\n`);
+  fs.appendFileSync(
+    process.env.GITHUB_OUTPUT,
+    `source=${decision.source}\ndeploy=${decision.deploy}\n`
+  );
 }
 
 function assertCleanWorktree() {
@@ -327,26 +348,36 @@ export function publishRoutedDigest({ date, sourceDir, publish }) {
 
   console.log(`Routed digest: ${found}`);
   normaliseDigest(found, date);
-  runNode('generate-daily-digest.mjs', ['--date', date, '--force'], 'digest generation');
+  runNode(
+    'generate-daily-digest.mjs',
+    ['--date', date, '--force'],
+    'digest generation',
+    generatorChildEnv(process.env)
+  );
   runNode('build.mjs', [], 'site build');
   runNode('check-news-freshness.mjs', ['--required-date', date], 'target-date freshness verification');
 
   const lines = sourceStatusLines(date);
+  let source = 'unchanged';
   if (lines.length === 0) {
-    console.log(`No publishable changes were produced for ${date}.`);
-    return 'unchanged';
+    console.log(`No source changes for ${date}.`);
+  } else {
+    assertSourceScope(lines, date);
+    console.log('Verified source change scope:');
+    for (const line of lines) console.log(`  ${line}`);
+
+    if (publish) {
+      source = commitAndPush(date);
+    } else {
+      console.log('Validation-only run complete. Nothing was committed or pushed.');
+    }
   }
 
-  assertSourceScope(lines, date);
-  console.log('Verified source change scope:');
-  for (const line of lines) console.log(`  ${line}`);
-
-  if (!publish) {
-    console.log('Validation-only run complete. Nothing was committed or pushed.');
-    return 'unchanged';
+  const decision = publishDecision({ publish, source });
+  if (decision.deploy === 'true' && source === 'unchanged') {
+    console.log('Verified digest is unchanged. Pages deployment is tracked separately and will continue.');
   }
-
-  return commitAndPush(date);
+  return decision;
 }
 
 function main() {
@@ -364,9 +395,9 @@ function main() {
   }
 
   try {
-    const result = publishRoutedDigest(args);
-    writeGitHubOutput(result);
-    if (result === 'published') {
+    const decision = publishRoutedDigest(args);
+    writeGitHubOutput(decision);
+    if (decision.source === 'published') {
       console.log(`Published routed digest for ${args.date}.`);
     }
   } catch (error) {

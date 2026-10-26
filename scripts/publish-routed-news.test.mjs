@@ -1,11 +1,19 @@
 import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
 import test from 'node:test';
 
 import {
   assertIsoDate,
+  generatorChildEnv,
   isAllowedSourcePath,
   londonToday,
   missingDigestMessage,
+  normalisedNewsDigestsDir,
+  publishDecision,
+  repoRoot,
   scrubSecrets,
   statusPath
 } from './publish-routed-news.mjs';
@@ -46,6 +54,63 @@ test('source scope allows only the routed digest and its post', () => {
   assert.equal(isAllowedSourcePath('content/welcome.md', '2026-10-25'), false);
   assert.equal(statusPath('R  news-digests/old.md -> news-digests/2026-10-25-digest.md'), 'news-digests/2026-10-25-digest.md');
   assert.equal(statusPath('?? content/daily-digest-2026-10-25.md'), 'content/daily-digest-2026-10-25.md');
+});
+
+test('a verified unchanged digest still deploys', () => {
+  assert.deepEqual(publishDecision({ publish: true, source: 'unchanged' }), {
+    source: 'unchanged',
+    deploy: 'true'
+  });
+  assert.deepEqual(publishDecision({ publish: true, source: 'published' }), {
+    source: 'published',
+    deploy: 'true'
+  });
+  assert.deepEqual(publishDecision({ publish: false, source: 'unchanged' }), {
+    source: 'unchanged',
+    deploy: 'false'
+  });
+});
+
+test('generator env stays pinned to the normalised news-digests directory', () => {
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'kk-source-pin-'));
+  const decoyDir = path.join(temp, 'decoy');
+  const outDir = path.join(temp, 'content');
+  fs.mkdirSync(decoyDir);
+  fs.mkdirSync(outDir);
+  fs.writeFileSync(
+    path.join(decoyDir, '2026-10-24-digest.md'),
+    [
+      '## [Decoy headline](https://example.com/decoy)',
+      '*Decoy* | 24/10/2026 | Score: 0.80',
+      'Tags: product_launch',
+      '',
+      '> This decoy must not be published.',
+      ''
+    ].join('\n')
+  );
+
+  const env = generatorChildEnv({
+    ...process.env,
+    NEWS_SOURCE_PATH: decoyDir,
+    CONTENT_OUTPUT_PATH: outDir
+  });
+  assert.equal(env.NEWS_SOURCE_PATH, normalisedNewsDigestsDir);
+
+  const result = spawnSync(process.execPath, [
+    path.join(repoRoot, 'scripts', 'generate-daily-digest.mjs'),
+    '--date',
+    '2026-10-24',
+    '--force'
+  ], { cwd: repoRoot, env, encoding: 'utf8' });
+
+  try {
+    assert.equal(result.status, 0, result.stderr || result.stdout);
+    const post = fs.readFileSync(path.join(outDir, 'daily-digest-2026-10-24.md'), 'utf8');
+    assert.equal(post.includes('Decoy headline'), false);
+    assert.match(post, /Kimi K3\.1 Pro/);
+  } finally {
+    fs.rmSync(temp, { recursive: true, force: true });
+  }
 });
 
 test('push errors do not keep credential material', () => {

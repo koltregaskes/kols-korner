@@ -28,7 +28,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     outputs:
-      result: ${{ steps.publish.outputs.result }}
+      source: ${{ steps.publish.outputs.source }}
+      deploy: ${{ steps.publish.outputs.deploy }}
     steps:
       - name: Checkout main
         uses: actions/checkout@v6
@@ -59,11 +60,11 @@ jobs:
           fi
 
       - name: Setup Pages
-        if: steps.publish.outputs.result == 'published'
+        if: steps.publish.outputs.deploy == 'true'
         uses: actions/configure-pages@v6
 
       - name: Archive Pages artifact
-        if: steps.publish.outputs.result == 'published'
+        if: steps.publish.outputs.deploy == 'true'
         shell: bash
         run: |
           tar \
@@ -76,7 +77,7 @@ jobs:
             .
 
       - name: Upload Pages artifact
-        if: steps.publish.outputs.result == 'published'
+        if: steps.publish.outputs.deploy == 'true'
         uses: actions/upload-artifact@v6
         with:
           name: github-pages
@@ -86,7 +87,7 @@ jobs:
 
   deploy:
     needs: publish
-    if: needs.publish.outputs.result == 'published'
+    if: needs.publish.outputs.deploy == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
