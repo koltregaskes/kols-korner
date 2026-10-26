@@ -6,10 +6,17 @@
  * `scripts/publish-routed-news.ps1` remains the Windows isolated helper.
  *
  * This does not collect news and does not invent articles. It normalises a
- * routed digest that is already on disk, generates the digest post from this
- * repo's news-digests directory, and, with `--publish`, commits and pushes
- * only that date's source files. A verified `--publish` run still requests
- * Pages deployment when those files are already on main.
+ * routed digest that is already on disk. When both digest filenames are
+ * absent, it copies articles from the committed
+ * `news-digests/news-feed-latest.json` into the tracked digest, then generates
+ * the post from this repo's news-digests directory. With `--publish`, it
+ * commits and pushes only that date's source files. A verified `--publish`
+ * run still requests Pages deployment when those files are already on main.
+ *
+ * A missing feed file, or a feed with no usable articles, exits 0 and reports
+ * that there was nothing to publish. No post is written. An unreadable feed
+ * fails the run. This script does not fetch sources. A failed source fetch
+ * still fails the feed-refresh job and leaves the committed feed unchanged.
  *
  * Usage:
  *   node scripts/publish-routed-news.mjs [--date YYYY-MM-DD] [--source-dir PATH] [--publish]
@@ -17,6 +24,7 @@
  * Source directory: `--source-dir`, else `ROUTED_DIGEST_DIR`, else `news-digests/`.
  * Preferred filename: `digest-YYYY-MM-DD.md` (shared classifier, gitignored).
  * Fallback filename: `YYYY-MM-DD-digest.md` (tracked contract).
+ * Feed fallback: `news-digests/news-feed-latest.json` in this repo.
  */
 
 import { spawnSync } from 'node:child_process';
@@ -115,11 +123,159 @@ export function generatorChildEnv(baseEnv = {}) {
   };
 }
 
-export function publishDecision({ publish, source }) {
+export function publishDecision({ publish, source, deploy }) {
+  if (deploy === undefined) {
+    return {
+      source,
+      deploy: publish ? 'true' : 'false'
+    };
+  }
+
+  const enabled = deploy === true || deploy === 'true';
   return {
     source,
-    deploy: publish ? 'true' : 'false'
+    deploy: enabled ? 'true' : 'false'
   };
+}
+
+export function routedFeedPath(root = repoRoot) {
+  return path.join(root, 'news-digests', 'news-feed-latest.json');
+}
+
+function cleanFeedText(value) {
+  return String(value || '').replace(/[\r\n]+/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function digestTitle(value) {
+  return cleanFeedText(value).replace(/\*/g, '').trim();
+}
+
+function digestUrl(value) {
+  const url = String(value || '').trim();
+  if (!/^https?:\/\//i.test(url) || /\s/.test(url)) return '';
+  return url.replace(/\)/g, '%29');
+}
+
+function digestSource(article) {
+  const source = cleanFeedText(article && article.source).replace(/[*[\]]/g, '').trim();
+  if (source) return source;
+
+  const url = digestUrl(article && article.url);
+  if (!url) return '';
+  try {
+    return new URL(url).hostname;
+  } catch {
+    return '';
+  }
+}
+
+function digestItemDate(article) {
+  const raw = cleanFeedText(article && article.date).replace(/_/g, '');
+  if (!raw || Number.isNaN(new Date(raw).getTime())) return '';
+  return raw;
+}
+
+function digestCategory(article) {
+  const value = cleanFeedText(article && article.category).replace(/#/g, '').trim();
+  return value || 'Routed feed';
+}
+
+export function isUsableFeedArticle(article) {
+  if (!article || typeof article !== 'object') return false;
+  return Boolean(digestTitle(article.title) && digestSource(article) && digestUrl(article.url));
+}
+
+export function readCommittedRoutedFeed(feedPath) {
+  if (!fs.existsSync(feedPath)) {
+    return { status: 'missing', path: feedPath, articles: [], generated: '' };
+  }
+
+  let raw;
+  try {
+    raw = fs.readFileSync(feedPath, 'utf8');
+  } catch (error) {
+    if (error && error.code === 'ENOENT') {
+      return { status: 'missing', path: feedPath, articles: [], generated: '' };
+    }
+    throw new Error(`Routed feed ${feedPath} could not be read: ${error.message}`);
+  }
+
+  let data;
+  try {
+    data = JSON.parse(raw);
+  } catch (error) {
+    throw new Error(`Routed feed ${feedPath} is not valid JSON: ${error.message}`);
+  }
+
+  if (!data || typeof data !== 'object' || Array.isArray(data) || !Array.isArray(data.articles)) {
+    throw new Error(
+      `Routed feed ${feedPath} has no articles array. Refusing to treat an unreadable feed as nothing to publish.`
+    );
+  }
+
+  const articles = data.articles.filter(isUsableFeedArticle);
+  const generated = cleanFeedText(data.generated);
+  if (articles.length === 0) {
+    return { status: 'empty', path: feedPath, articles: [], generated };
+  }
+
+  return { status: 'ready', path: feedPath, articles, generated };
+}
+
+export function renderRoutedFeedDigest({ date, articles, generated }) {
+  const groups = new Map();
+
+  for (const article of articles) {
+    if (!isUsableFeedArticle(article)) continue;
+    const category = digestCategory(article);
+    if (!groups.has(category)) groups.set(category, []);
+    groups.get(category).push({
+      title: digestTitle(article.title),
+      source: digestSource(article),
+      url: digestUrl(article.url),
+      summary: cleanFeedText(article.summary),
+      date: digestItemDate(article)
+    });
+  }
+
+  if (groups.size === 0) {
+    throw new Error(`Refusing to write a digest for ${date} with no articles from the routed feed.`);
+  }
+
+  const lines = [
+    `# Routed feed for ${date}`,
+    '',
+    'Articles below are copied from the committed file news-digests/news-feed-latest.json.',
+    generated ? `Feed generated: ${cleanFeedText(generated)}` : 'Feed generated: not recorded',
+    ''
+  ];
+
+  for (const [category, items] of groups) {
+    lines.push(`## ${category}`, '');
+    for (const item of items) {
+      const stamp = item.date ? ` _${item.date}_` : '';
+      lines.push(`- **${item.title}** ([${item.source}](${item.url}))${stamp}`);
+      if (item.summary) lines.push(`  ${item.summary}`);
+      lines.push('');
+    }
+  }
+
+  return `${lines.join('\n').trim()}\n`;
+}
+
+export function nothingToPublishMessage({ date, feedPath, reason }) {
+  const feedDetail = reason === 'empty'
+    ? `The committed routed feed has no articles: ${feedPath}`
+    : `The committed routed feed is not in the checkout: ${feedPath}`;
+
+  return [
+    `There was nothing to publish for ${date}.`,
+    '',
+    `The Mini PC classifier file news-digests/digest-${date}.md is absent, and news-digests/${date}-digest.md is absent too.`,
+    feedDetail,
+    'No digest post was written.',
+    'This job does not fetch sources. A failed source fetch still fails the feed refresh job and leaves the committed feed unchanged.'
+  ].join('\n');
 }
 
 function parseArgs(argv) {
@@ -168,6 +324,18 @@ function reportBlocker(message) {
     fs.appendFileSync(
       process.env.GITHUB_STEP_SUMMARY,
       `## Routed digest publish blocked\n\n\`\`\`text\n${text}\n\`\`\`\n`
+    );
+  }
+}
+
+function reportNothingToPublish(message) {
+  const text = scrubSecrets(message).trim();
+  console.log(text);
+
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    fs.appendFileSync(
+      process.env.GITHUB_STEP_SUMMARY,
+      `## Nothing to publish\n\nThere was nothing to publish.\n\n\`\`\`text\n${text}\n\`\`\`\n`
     );
   }
 }
@@ -322,32 +490,7 @@ function commitAndPush(date) {
   return 'published';
 }
 
-export function publishRoutedDigest({ date, sourceDir, publish }) {
-  assertIsoDate(date);
-
-  const resolvedSourceDir = path.resolve(sourceDir || path.join(repoRoot, 'news-digests'));
-  if (!fs.existsSync(resolvedSourceDir) || !fs.statSync(resolvedSourceDir).isDirectory()) {
-    throw new Error(
-      [
-        'Routed digest publish blocked.',
-        '',
-        `Missing piece: source digest directory does not exist: ${resolvedSourceDir}`,
-        'Set ROUTED_DIGEST_DIR, or pass --source-dir, to the directory that contains the routed digest.'
-      ].join('\n')
-    );
-  }
-
-  const candidates = digestCandidates(resolvedSourceDir, date);
-  const found = candidates.find((file) => fs.existsSync(file) && fs.statSync(file).isFile());
-  if (!found) {
-    throw new Error(missingDigestMessage({ date, sourceDir: resolvedSourceDir, candidates }));
-  }
-
-  assertCleanWorktree();
-  if (publish) assertPublishBase();
-
-  console.log(`Routed digest: ${found}`);
-  normaliseDigest(found, date);
+function publishTrackedDigest({ date, publish }) {
   runNode(
     'generate-daily-digest.mjs',
     ['--date', date, '--force'],
@@ -380,6 +523,61 @@ export function publishRoutedDigest({ date, sourceDir, publish }) {
   return decision;
 }
 
+export function publishRoutedDigest({ date, sourceDir, publish, feedPath }) {
+  assertIsoDate(date);
+
+  const resolvedSourceDir = path.resolve(sourceDir || path.join(repoRoot, 'news-digests'));
+  if (!fs.existsSync(resolvedSourceDir) || !fs.statSync(resolvedSourceDir).isDirectory()) {
+    throw new Error(
+      [
+        'Routed digest publish blocked.',
+        '',
+        `Missing piece: source digest directory does not exist: ${resolvedSourceDir}`,
+        'Set ROUTED_DIGEST_DIR, or pass --source-dir, to the directory that contains the routed digest.'
+      ].join('\n')
+    );
+  }
+
+  const candidates = digestCandidates(resolvedSourceDir, date);
+  const found = candidates.find((file) => fs.existsSync(file) && fs.statSync(file).isFile());
+  if (!found) {
+    const resolvedFeedPath = feedPath || routedFeedPath();
+    const feed = readCommittedRoutedFeed(resolvedFeedPath);
+    if (feed.status === 'missing' || feed.status === 'empty') {
+      return {
+        ...publishDecision({ publish, source: 'unchanged', deploy: false }),
+        nothing: true,
+        message: nothingToPublishMessage({
+          date,
+          feedPath: feed.path,
+          reason: feed.status
+        })
+      };
+    }
+
+    assertCleanWorktree();
+    if (publish) assertPublishBase();
+
+    const markdown = renderRoutedFeedDigest({
+      date,
+      articles: feed.articles,
+      generated: feed.generated
+    });
+    const destination = trackedDigestPath(date);
+    fs.mkdirSync(path.dirname(destination), { recursive: true });
+    fs.writeFileSync(destination, markdown);
+    console.log(`Built ${path.relative(repoRoot, destination)} from ${feed.path} (${feed.articles.length} articles).`);
+    return publishTrackedDigest({ date, publish });
+  }
+
+  assertCleanWorktree();
+  if (publish) assertPublishBase();
+
+  console.log(`Routed digest: ${found}`);
+  normaliseDigest(found, date);
+  return publishTrackedDigest({ date, publish });
+}
+
 function main() {
   let args;
   try {
@@ -397,6 +595,10 @@ function main() {
   try {
     const decision = publishRoutedDigest(args);
     writeGitHubOutput(decision);
+    if (decision.nothing) {
+      reportNothingToPublish(decision.message);
+      return;
+    }
     if (decision.source === 'published') {
       console.log(`Published routed digest for ${args.date}.`);
     }

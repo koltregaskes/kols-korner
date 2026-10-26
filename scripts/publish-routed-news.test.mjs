@@ -12,7 +12,11 @@ import {
   londonToday,
   missingDigestMessage,
   normalisedNewsDigestsDir,
+  nothingToPublishMessage,
   publishDecision,
+  publishRoutedDigest,
+  readCommittedRoutedFeed,
+  renderRoutedFeedDigest,
   repoRoot,
   scrubSecrets,
   statusPath
@@ -69,6 +73,10 @@ test('a verified unchanged digest still deploys', () => {
     source: 'unchanged',
     deploy: 'false'
   });
+  assert.deepEqual(publishDecision({ publish: true, source: 'unchanged', deploy: false }), {
+    source: 'unchanged',
+    deploy: 'false'
+  });
 });
 
 test('generator env stays pinned to the normalised news-digests directory', () => {
@@ -118,4 +126,168 @@ test('push errors do not keep credential material', () => {
   assert.equal(scrubbed.includes('secret-token'), false);
   assert.equal(scrubbed.includes('ghp_abcdefghijklmnopqrstuvwxyz0123456789'), false);
   assert.match(scrubbed, /x-access-token:\[redacted\]/);
+});
+
+const routedFeedArticle = {
+  title: 'Research agenda proposes seven open problems for multi-agent AI swarms',
+  url: 'https://www.digg.com/ai/r76rcah4',
+  source: 'Digg AI',
+  tags: [
+    'announcement',
+    'model_release',
+    'open_source',
+    'ai_agents',
+    'research_paper',
+    'industry_move'
+  ],
+  matching_tags: [
+    'announcement',
+    'industry_move',
+    'open_source',
+    'model_release',
+    'ai_agents'
+  ],
+  importance: 0.45,
+  date: '2026-10-25T23:40:03.518Z',
+  summary: 'A JinesisLab researcher says each problem is scored for its importance to AI alignment.',
+  category: 'industry-media'
+};
+
+function absentDigestDate() {
+  return '2099-12-31';
+}
+
+test('a missing or empty committed feed is nothing to publish', () => {
+  const date = absentDigestDate();
+  const missingPath = path.join(os.tmpdir(), 'kk-routed-feed-missing.json');
+  const missing = readCommittedRoutedFeed(missingPath);
+  assert.equal(missing.status, 'missing');
+  assert.deepEqual(missing.articles, []);
+
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'kk-empty-feed-'));
+  const emptyPath = path.join(temp, 'news-feed-latest.json');
+  fs.writeFileSync(emptyPath, JSON.stringify({
+    generated: '2026-10-26T01:22:30.410Z',
+    site: "Kol's Korner",
+    article_count: 0,
+    articles: [{ title: ' ', url: 'not-a-url' }]
+  }));
+  const empty = readCommittedRoutedFeed(emptyPath);
+  assert.equal(empty.status, 'empty');
+
+  const message = nothingToPublishMessage({ date, feedPath: emptyPath, reason: 'empty' });
+  assert.match(message, /There was nothing to publish/);
+  assert.match(message, /digest-2099-12-31\.md/);
+  assert.match(message, /no articles/);
+  assert.match(message, /No digest post was written/);
+
+  const digest = path.join(repoRoot, 'news-digests', `${date}-digest.md`);
+  const post = path.join(repoRoot, 'content', `daily-digest-${date}.md`);
+  assert.equal(fs.existsSync(digest), false);
+  const decision = publishRoutedDigest({
+    date,
+    publish: true,
+    feedPath: missingPath
+  });
+  assert.equal(decision.nothing, true);
+  assert.equal(decision.source, 'unchanged');
+  assert.equal(decision.deploy, 'false');
+  assert.match(decision.message, /nothing to publish/i);
+  assert.equal(fs.existsSync(digest), false);
+  assert.equal(fs.existsSync(post), false);
+
+  const emptyDecision = publishRoutedDigest({
+    date,
+    publish: false,
+    feedPath: emptyPath
+  });
+  assert.equal(emptyDecision.nothing, true);
+  assert.equal(emptyDecision.deploy, 'false');
+  assert.equal(fs.existsSync(digest), false);
+  fs.rmSync(temp, { recursive: true, force: true });
+});
+
+test('an unreadable committed feed fails instead of publishing nothing', () => {
+  const date = absentDigestDate();
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'kk-bad-feed-'));
+  const feedPath = path.join(temp, 'news-feed-latest.json');
+  const digest = path.join(repoRoot, 'news-digests', `${date}-digest.md`);
+  fs.writeFileSync(feedPath, '{');
+
+  try {
+    assert.throws(() => readCommittedRoutedFeed(feedPath), /not valid JSON/);
+    assert.throws(
+      () => publishRoutedDigest({ date, publish: false, feedPath }),
+      /not valid JSON/
+    );
+    fs.writeFileSync(feedPath, JSON.stringify({ generated: '2026-10-26T01:22:30.410Z' }));
+    assert.throws(() => readCommittedRoutedFeed(feedPath), /no articles array/);
+    assert.equal(fs.existsSync(digest), false);
+  } finally {
+    fs.rmSync(temp, { recursive: true, force: true });
+  }
+});
+
+test('real routed-feed articles pass through the existing generator', () => {
+  const date = '2099-11-30';
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'kk-feed-render-'));
+  const sourceDir = path.join(temp, 'news-digests');
+  const outDir = path.join(temp, 'content');
+  fs.mkdirSync(sourceDir);
+  fs.mkdirSync(outDir);
+
+  const feedPath = path.join(temp, 'news-feed-latest.json');
+  fs.writeFileSync(feedPath, JSON.stringify({
+    generated: '2026-10-26T01:22:30.410Z',
+    site: "Kol's Korner",
+    article_count: 1,
+    articles: [routedFeedArticle, { title: 'Skipped', url: '' }]
+  }));
+  const feed = readCommittedRoutedFeed(feedPath);
+  assert.equal(feed.status, 'ready');
+  assert.equal(feed.articles.length, 1);
+  assert.equal(feed.articles[0].title, routedFeedArticle.title);
+
+  const rendered = renderRoutedFeedDigest({
+    date,
+    articles: feed.articles,
+    generated: feed.generated
+  });
+  assert.match(rendered, /Research agenda proposes seven open problems for multi-agent AI swarms/);
+  assert.match(rendered, /https:\/\/www\.digg\.com\/ai\/r76rcah4/);
+  assert.match(rendered, /Digg AI/);
+  assert.match(rendered, /JinesisLab researcher/);
+  assert.equal(rendered.includes('No matching source items'), false);
+  assert.equal(rendered.includes('No news digest available'), false);
+  assert.equal(rendered.includes('Decoy headline'), false);
+  fs.writeFileSync(path.join(sourceDir, `${date}-digest.md`), rendered);
+
+  const result = spawnSync(process.execPath, [
+    path.join(repoRoot, 'scripts', 'generate-daily-digest.mjs'),
+    '--date',
+    date,
+    '--force'
+  ], {
+    cwd: repoRoot,
+    encoding: 'utf8',
+    env: {
+      ...process.env,
+      NEWS_SOURCE_PATH: sourceDir,
+      CONTENT_OUTPUT_PATH: outDir
+    }
+  });
+
+  try {
+    assert.equal(result.status, 0, result.stderr || result.stdout);
+    const post = fs.readFileSync(path.join(outDir, `daily-digest-${date}.md`), 'utf8');
+    assert.match(post, /Research agenda proposes seven open problems for multi-agent AI swarms/);
+    assert.match(post, /https:\/\/www\.digg\.com\/ai\/r76rcah4/);
+    assert.match(post, /JinesisLab researcher/);
+    assert.equal(post.includes('Decoy headline'), false);
+    assert.equal(post.includes('No news digest available'), false);
+    assert.equal(fs.existsSync(path.join(repoRoot, 'content', `daily-digest-${date}.md`)), false);
+    assert.equal(fs.existsSync(path.join(repoRoot, 'news-digests', `${date}-digest.md`)), false);
+  } finally {
+    fs.rmSync(temp, { recursive: true, force: true });
+  }
 });

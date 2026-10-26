@@ -41,7 +41,7 @@ jobs:
         run: |
           echo "## Daily Digest Workflow" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Scheduled publishing is \`.github/workflows/publish-routed-digest.yml\`. It publishes an existing routed digest and fails the run when that file is missing." >> $GITHUB_STEP_SUMMARY
+          echo "Scheduled publishing is \`.github/workflows/publish-routed-digest.yml\`. When the Mini PC classifier file is absent, it publishes articles already in the committed routed feed. A missing or empty feed exits 0 and says there was nothing to publish. That workflow does not fetch sources." >> $GITHUB_STEP_SUMMARY
           echo "This manual workflow only verifies that the site still builds from the content already committed to the repository." >> $GITHUB_STEP_SUMMARY
           if [ -n "${{ inputs.note }}" ]; then
             echo "" >> $GITHUB_STEP_SUMMARY

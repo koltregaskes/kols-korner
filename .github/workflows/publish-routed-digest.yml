@@ -4,6 +4,10 @@ on:
   schedule:
     # 06:45 UTC daily. Historical morning publishes landed around 06:55 Europe/London.
     # In GMT that is the same morning window. In British Summer Time it is 07:45 London.
+    # This workflow does not fetch sources. When the Mini PC classifier file is
+    # absent, the publisher uses articles already in news-digests/news-feed-latest.json.
+    # A missing or empty feed exits 0 and records that there was nothing to publish.
+    # A failed source fetch still fails the feed refresh job.
     - cron: "45 6 * * *"
   workflow_dispatch:
     inputs:
