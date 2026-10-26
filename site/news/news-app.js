@@ -159,9 +159,7 @@ class NewsApp {
                                 timeZone: 'UTC'
                             }),
                         filename: 'news-feed-latest.json',
-                        tags: Array.isArray(article.matching_tags) && article.matching_tags.length
-                            ? article.matching_tags
-                            : (article.tags || []),
+                        tags: this.uiTagsForRoutedArticle(article),
                         time: article.date,
                         imageUrl: null,
                         isNoNews: false
@@ -236,6 +234,11 @@ class NewsApp {
         }
 
         return null;
+    }
+
+    uiTagsForRoutedArticle(article) {
+        const derived = this.generateTags(`${article.title || ''} ${article.summary || ''}`);
+        return derived.filter((tag) => NEWS_TAG_ORDER.includes(tag));
     }
 
     hydrateArticle(article) {
