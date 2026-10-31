@@ -79,14 +79,14 @@
   --muted: #66686e;
   --line: #15171c;
   --line-soft: #c2c0b8;
-  --red: #d72b2b;
+  --red: #c62828;
   --red-hover: #b41f1f;
   --red-soft: rgba(215, 43, 43, 0.1);
   --image-a: #dcdbd3;
   --image-b: #cdccc3;
   --shadow: 0 16px 40px -30px rgba(0, 0, 0, 0.26);
-  --color-red-500-rgb: 215, 43, 43;
-  --color-red-400-rgb: 215, 43, 43;
+  --color-red-500-rgb: 198, 40, 40;
+  --color-red-400-rgb: 198, 40, 40;
   --color-slate-500-rgb: 102, 104, 110;
   --color-gray-400-rgb: 118, 120, 126;
   --color-gray-300-rgb: 58, 61, 68;
@@ -1315,7 +1315,7 @@ img {
 
 .posts-stream-item:hover .posts-stream-cta,
 .posts-stream-item:focus-within .posts-stream-cta {
-  background: var(--red);
+  background: var(--red-fill);
   color: #fff;
 }
 
