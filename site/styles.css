@@ -5,12 +5,14 @@
   --surface-2: #1d2026;
   --ink: #f1efe9;
   --ink-soft: #c9c6bf;
-  --muted: #7c7e85;
+  --muted: #8a8c93;
   --line: #2a2d33;
   --line-soft: #363941;
   --red: #ef4444;
   --red-hover: #f76b6b;
   --red-soft: rgba(239, 68, 68, 0.16);
+  /* Filled red behind white text: #d72b2b keeps white text at 4.9:1 (the brand #ef4444 is 3.8:1). */
+  --red-fill: #d72b2b;
   --image-a: #22252b;
   --image-b: #2c2f36;
   --shadow: 0 18px 48px -28px rgba(0, 0, 0, 0.7);
@@ -25,7 +27,7 @@
   --color-secondary: var(--surface-2);
   --color-red-500-rgb: 239, 68, 68;
   --color-red-400-rgb: 248, 113, 113;
-  --color-slate-500-rgb: 124, 126, 133;
+  --color-slate-500-rgb: 138, 140, 147;
   --color-gray-400-rgb: 119, 124, 124;
   --color-gray-300-rgb: 167, 169, 169;
   --font-sans: "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -74,18 +76,18 @@
   --surface-2: #ecebe5;
   --ink: #15171c;
   --ink-soft: #3a3d44;
-  --muted: #76787e;
+  --muted: #66686e;
   --line: #15171c;
   --line-soft: #c2c0b8;
-  --red: #d72b2b;
+  --red: #c62828;
   --red-hover: #b41f1f;
   --red-soft: rgba(215, 43, 43, 0.1);
   --image-a: #dcdbd3;
   --image-b: #cdccc3;
   --shadow: 0 16px 40px -30px rgba(0, 0, 0, 0.26);
-  --color-red-500-rgb: 215, 43, 43;
-  --color-red-400-rgb: 215, 43, 43;
-  --color-slate-500-rgb: 118, 120, 126;
+  --color-red-500-rgb: 198, 40, 40;
+  --color-red-400-rgb: 198, 40, 40;
+  --color-slate-500-rgb: 102, 104, 110;
   --color-gray-400-rgb: 118, 120, 126;
   --color-gray-300-rgb: 58, 61, 68;
 }
@@ -167,13 +169,25 @@ img {
   z-index: 1000;
   padding: 0.7rem 0.9rem;
   border-radius: 999px;
-  background: var(--red);
+  background: var(--red-fill);
   color: #fff;
   transform: translateY(-140%);
 }
 
 .skip-link:focus {
   transform: translateY(0.8rem);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .hash {
@@ -1175,6 +1189,11 @@ img {
   outline: none;
 }
 
+.posts-search input:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
+
 .posts-count {
   justify-self: end;
   white-space: nowrap;
@@ -1296,7 +1315,7 @@ img {
 
 .posts-stream-item:hover .posts-stream-cta,
 .posts-stream-item:focus-within .posts-stream-cta {
-  background: var(--red);
+  background: var(--red-fill);
   color: #fff;
 }
 
@@ -1412,8 +1431,8 @@ img {
 .button-primary,
 .news-primary-link,
 .quick-btn.active {
-  border-color: var(--red);
-  background: var(--red);
+  border-color: var(--red-fill);
+  background: var(--red-fill);
   color: #fff;
 }
 
@@ -1539,8 +1558,8 @@ img {
 }
 
 .footer-social a:hover {
-  border-color: var(--red);
-  background: var(--red);
+  border-color: var(--red-fill);
+  background: var(--red-fill);
   color: #fff;
 }
 
