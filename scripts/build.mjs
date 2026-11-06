@@ -2972,6 +2972,16 @@ async function cleanGeneratedOutput() {
       'utf8'
     );
 
+    const routedFeedSource = path.join(newsDigestsDir, 'news-feed-latest.json');
+    try {
+      await fs.copyFile(
+        routedFeedSource,
+        path.join(process.cwd(), 'site', 'data', 'news-feed-latest.json')
+      );
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error;
+    }
+
     console.log(`[ok] Copied ${digestFiles.length} news digests`);
   } catch (err) {
     console.warn('[warn] Could not copy news-digests:', err.message);
