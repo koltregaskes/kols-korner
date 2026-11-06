@@ -815,6 +815,63 @@ function getCanonicalTag(pathname = '/') {
   return `<link rel="canonical" href="${getCanonicalUrl(pathname)}" />`;
 }
 
+// Default social image: the existing 180x180 site icon (a "summary" card). Pages with
+// their own image (article thumbnails) use it with a "summary_large_image" card.
+const DEFAULT_SOCIAL_IMAGE = { path: '/apple-touch-icon.png', width: 180, height: 180 };
+
+function toJsonLdScript(data) {
+  return `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', ...data }).replace(/</g, '\\u003c')}</script>`;
+}
+
+function getAuthorLd() {
+  return { '@type': 'Person', name: SITE_OWNER, url: getCanonicalUrl('/about/') };
+}
+
+function getPublisherLd() {
+  return { '@type': 'Organization', name: SITE_NAME, url: getCanonicalUrl('/') };
+}
+
+function getWebPageLd(type, name) {
+  return { '@type': type, name, isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: getCanonicalUrl('/') } };
+}
+
+function isSocialImagePath(image = '') {
+  return /\.(jpg|jpeg|png|gif|webp)$/i.test(image || '');
+}
+
+function getAbsoluteAssetUrl(image = '') {
+  return /^https?:/i.test(image) ? image : getCanonicalUrl(`/${image.replace(/^\.?\//, '')}`);
+}
+
+// Open Graph, Twitter and JSON-LD tags for one page. `title` and `description` must
+// already be HTML-escaped. `image` is a site-relative path such as "./media/x.png".
+function getSocialMetaTags({ title, description, pathname, type = 'website', image = '', imageWidth, imageHeight, imageAlt = '', jsonLd = null }) {
+  const url = getCanonicalUrl(pathname);
+  const ownImage = isSocialImagePath(image);
+  const imageUrl = ownImage ? getAbsoluteAssetUrl(image) : getCanonicalUrl(DEFAULT_SOCIAL_IMAGE.path);
+  const width = ownImage ? imageWidth : DEFAULT_SOCIAL_IMAGE.width;
+  const height = ownImage ? imageHeight : DEFAULT_SOCIAL_IMAGE.height;
+  const alt = ownImage && imageAlt ? imageAlt : `${SITE_NAME} logo`;
+  return [
+    `<meta property="og:site_name" content="${SITE_NAME}" />`,
+    `<meta property="og:title" content="${title}" />`,
+    `<meta property="og:description" content="${description}" />`,
+    `<meta property="og:type" content="${type}" />`,
+    `<meta property="og:url" content="${url}" />`,
+    `<meta property="og:image" content="${imageUrl}" />`,
+    width && height ? `<meta property="og:image:width" content="${width}" />` : '',
+    width && height ? `<meta property="og:image:height" content="${height}" />` : '',
+    `<meta property="og:image:alt" content="${alt}" />`,
+    `<meta name="twitter:card" content="${ownImage ? 'summary_large_image' : 'summary'}" />`,
+    `<meta name="twitter:creator" content="@koltregaskes" />`,
+    `<meta name="twitter:title" content="${title}" />`,
+    `<meta name="twitter:description" content="${description}" />`,
+    `<meta name="twitter:image" content="${imageUrl}" />`,
+    `<meta name="twitter:image:alt" content="${alt}" />`,
+    jsonLd ? toJsonLdScript({ url, ...jsonLd }) : ''
+  ].filter(Boolean).join('\n  ');
+}
+
 function getSharedHeadAssets(basePath) {
   return `
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1135,18 +1192,40 @@ function markdownToHtml(md) {
 // Extract headings for TOC
 function extractHeadings(html) {
   const headings = [];
-  const regex = /<h([234]) id="([^"]+)">(.+?)<\/h\1>/g;
+  const regex = /<h([234]) id="([^"]+)"(?: data-md-level="(\d)")?>(.+?)<\/h\1>/g;
   let match;
 
   while ((match = regex.exec(html)) !== null) {
     headings.push({
-      level: parseInt(match[1]),
+      // TOC indent follows the markdown level, so renumbering (below) does not move entries.
+      level: parseInt(match[3] || match[1]),
       id: match[2],
-      text: match[3].replace(/<[^>]+>/g, '')
+      text: match[4].replace(/<[^>]+>/g, '')
     });
   }
 
   return headings;
+}
+
+// markdownToHtml renders `#` as h2, `##` as h3 and `###` as h4, and an article's leading
+// `# Title` is stripped because the page already has the title as its h1. So most articles
+// start at h3, which skips a level under the h1. Renumber the content headings so the first
+// level used becomes h2 and no heading is more than one level deeper than the one before.
+// The markdown level is kept in data-md-level, so the styling and TOC indent stay the same.
+function normalizeContentHeadings(html = '', topLevel = 2) {
+  const headingRegex = /<h([2-6])((?:\s[^>]*)?)>([\s\S]*?)<\/h\1>/g;
+  const levels = [...String(html || '').matchAll(headingRegex)].map((m) => Number(m[1]));
+  if (levels.length === 0) return html;
+
+  const shift = Math.max(0, Math.min(...levels) - topLevel);
+  let previous = topLevel - 1;
+  return html.replace(headingRegex, (whole, sourceLevel, attrs, inner) => {
+    const source = Number(sourceLevel);
+    const level = Math.max(topLevel, Math.min(source - shift, previous + 1));
+    previous = level;
+    if (level === source) return whole;
+    return `<h${level}${attrs} data-md-level="${source}">${inner}</h${level}>`;
+  });
 }
 
 function generateTOC(headings) {
@@ -1539,6 +1618,7 @@ async function readContentFiles() {
       if (kind === 'article' || isDigest) {
         contentHtml = markdownToHtml(body);
         contentHtml = stripLeadingArticleHeading(contentHtml, title);
+        contentHtml = normalizeContentHeadings(contentHtml);
         headings = extractHeadings(contentHtml);
 
         // Calculate reading time
@@ -1671,11 +1751,27 @@ async function writeArticlePage({
   <title>${escapeHtml(title)} - ${SITE_NAME}</title>
   <meta name="description" content="${description}${description.length >= 160 ? '…' : ''}" />
   <meta name="author" content="${SITE_OWNER}" />
-  <meta property="og:title" content="${escapeHtml(title)}" />
-  <meta property="og:description" content="${description}${description.length >= 160 ? '…' : ''}" />
-  <meta property="og:type" content="article" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:creator" content="@koltregaskes" />
+  ${getSocialMetaTags({
+    title: escapeHtml(title),
+    description: `${description}${description.length >= 160 ? '…' : ''}`,
+    pathname: `/posts/${slug}/`,
+    type: 'article',
+    image: thumbnailUrl,
+    imageWidth: thumbnailWidth,
+    imageHeight: thumbnailHeight,
+    imageAlt: escapeHtml(title),
+    jsonLd: {
+      '@type': 'BlogPosting',
+      headline: title,
+      description: summary || contentHtml.replace(/<[^>]*>/g, '').slice(0, 160),
+      ...(date ? { datePublished: new Date(date).toISOString() } : {}),
+      author: getAuthorLd(),
+      publisher: getPublisherLd(),
+      mainEntityOfPage: getCanonicalUrl(`/posts/${slug}/`),
+      ...(isSocialImagePath(thumbnailUrl) ? { image: getAbsoluteAssetUrl(thumbnailUrl) } : {}),
+      ...(tags.length ? { keywords: tags.join(', ') } : {})
+    }
+  })}
   ${getCanonicalTag(`/posts/${slug}/`)}
   ${getSharedHeadAssets('../../')}
 </head>
@@ -1822,11 +1918,21 @@ async function writeDigestPage({ title, slug, bodyMarkdown, tags, date, readingT
   <title>${escapeHtml(title)} - ${SITE_NAME}</title>
   <meta name="description" content="AI and technology news digest for ${displayDate}" />
   <meta name="author" content="${SITE_OWNER}" />
-  <meta property="og:title" content="${escapeHtml(title)}" />
-  <meta property="og:description" content="AI and technology news digest for ${displayDate}" />
-  <meta property="og:type" content="article" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:creator" content="@koltregaskes" />
+  ${getSocialMetaTags({
+    title: escapeHtml(title),
+    description: `AI and technology news digest for ${displayDate}`,
+    pathname: `/posts/${slug}/`,
+    type: 'article',
+    jsonLd: {
+      '@type': 'BlogPosting',
+      headline: title,
+      description: `AI and technology news digest for ${displayDate}`,
+      ...(date ? { datePublished: new Date(date).toISOString() } : {}),
+      author: getAuthorLd(),
+      publisher: getPublisherLd(),
+      mainEntityOfPage: getCanonicalUrl(`/posts/${slug}/`)
+    }
+  })}
   ${getCanonicalTag(`/posts/${slug}/`)}
   ${getSharedHeadAssets('../../')}
 </head>
@@ -2000,11 +2106,7 @@ async function writeHomePage(items, newsArticles = []) {
   <title>${SITE_NAME} - Tech, AI, Development & More</title>
   <meta name="description" content="Hi. My name is ${SITE_OWNER}. I'm a software developer and AI enthusiast based in the UK. Writing about AI agents, creative tools, and technology." />
   <meta name="author" content="${SITE_OWNER}" />
-  <meta property="og:title" content="${SITE_NAME}" />
-  <meta property="og:description" content="Tech, AI, Development & More" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:creator" content="@koltregaskes" />
+  ${getSocialMetaTags({ title: SITE_NAME, description: 'Tech, AI, Development &amp; More', pathname: '/' })}
   ${getCanonicalTag('/')}
   ${getSharedHeadAssets('.')}
 </head>
@@ -2213,6 +2315,7 @@ async function writePostsPage(items) {
   <title>Posts - ${SITE_NAME}</title>
   <meta name="description" content="Browse all posts by ${SITE_OWNER} - Tech, Software Development & More" />
   <meta name="author" content="${SITE_OWNER}" />
+  ${getSocialMetaTags({ title: `Posts - ${SITE_NAME}`, description: `Browse all posts by ${SITE_OWNER} - Tech, Software Development &amp; More`, pathname: '/posts/', jsonLd: getWebPageLd('CollectionPage', `Posts - ${SITE_NAME}`) })}
   ${getCanonicalTag('/posts/')}
   ${getSharedHeadAssets('..')}
 </head>
@@ -2247,7 +2350,8 @@ async function writePostsPage(items) {
       </div>
 
       ${editorialPosts.length ? `
-      <section class="posts-stream" aria-label="Latest posts">
+      <section class="posts-stream" aria-labelledby="posts-stream-heading">
+        <h2 class="visually-hidden" id="posts-stream-heading">Latest posts</h2>
         ${editorialPosts.map((item, index) => {
           const title = escapeHtml(item.title);
           const summary = escapeHtml(item.summary || '');
@@ -2352,6 +2456,7 @@ async function writeTagsPage(items, newsArticles = []) {
   ${getSecurityHeaders()}
   <title>Tags - ${SITE_NAME}</title>
   <meta name="description" content="Browse posts by tag - Tech, Software Development & More" />
+  ${getSocialMetaTags({ title: `Tags - ${SITE_NAME}`, description: 'Browse posts by tag - Tech, Software Development &amp; More', pathname: '/tags/', jsonLd: getWebPageLd('CollectionPage', `Tags - ${SITE_NAME}`) })}
   ${getCanonicalTag('/tags/')}
   ${getSharedHeadAssets('..')}
 </head>
@@ -2484,6 +2589,7 @@ async function writeStaticPage(slug, fallbackTitle, fallbackBody) {
   ${getSecurityHeaders()}
   <title>${escapeHtml(title)} - ${SITE_NAME}</title>
   <meta name="description" content="${escapeHtml(title)} - ${SITE_OWNER}" />
+  ${getSocialMetaTags({ title: `${escapeHtml(title)} - ${SITE_NAME}`, description: `${escapeHtml(title)} - ${SITE_OWNER}`, pathname: `/${slug}/`, jsonLd: getWebPageLd('WebPage', `${title} - ${SITE_NAME}`) })}
   ${getCanonicalTag(`/${slug}/`)}
   ${getSharedHeadAssets('..')}
 </head>
@@ -2520,6 +2626,7 @@ async function writeAboutPage() {
   ${getSecurityHeaders()}
   <title>About - ${SITE_NAME}</title>
   <meta name="description" content="About ${SITE_OWNER} - news curator, AI artist, AI musician, content maker, and lover of technology" />
+  ${getSocialMetaTags({ title: `About - ${SITE_NAME}`, description: `About ${SITE_OWNER} - news curator, AI artist, AI musician, content maker, and lover of technology`, pathname: '/about/', jsonLd: getWebPageLd('AboutPage', `About - ${SITE_NAME}`) })}
   ${getCanonicalTag('/about/')}
   ${getSharedHeadAssets('..')}
 </head>
@@ -2613,6 +2720,7 @@ async function writeSubscribePage() {
   ${getSecurityHeaders()}
   <title>Newsletter - ${SITE_NAME}</title>
   <meta name="description" content="Newsletter updates for ${SITE_NAME}. The email edition has not launched yet, but the live news archive and published posts are already available on-site." />
+  ${getSocialMetaTags({ title: `Newsletter - ${SITE_NAME}`, description: `Newsletter updates for ${SITE_NAME}. The email edition has not launched yet, but the live news archive and published posts are already available on-site.`, pathname: '/subscribe/', jsonLd: getWebPageLd('WebPage', `Newsletter - ${SITE_NAME}`) })}
   ${getCanonicalTag('/subscribe/')}
   ${getSharedHeadAssets('..')}
 </head>
@@ -2657,6 +2765,7 @@ async function writeContactPage() {
   ${getSecurityHeaders()}
   <title>Contact - ${SITE_NAME}</title>
   <meta name="description" content="Contact and social links for ${SITE_OWNER}." />
+  ${getSocialMetaTags({ title: `Contact - ${SITE_NAME}`, description: `Contact and social links for ${SITE_OWNER}.`, pathname: '/contact/', jsonLd: getWebPageLd('ContactPage', `Contact - ${SITE_NAME}`) })}
   ${getCanonicalTag('/contact/')}
   ${getSharedHeadAssets('..')}
 </head>
