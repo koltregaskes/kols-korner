@@ -33,3 +33,15 @@ jobs:
 
       - name: Verify fixed-date news artefacts
         run: node scripts/check-news-freshness.mjs --required-date 2026-06-03
+
+      - name: Check story wiki pages (drafts render to a preview only)
+        run: node scripts/build-stories.mjs --check --preview "$RUNNER_TEMP/story-preview"
+
+      - name: Upload story wiki draft preview
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v6
+        with:
+          name: story-wiki-preview
+          path: ${{ runner.temp }}/story-preview
+          retention-days: 7
+          if-no-files-found: ignore
