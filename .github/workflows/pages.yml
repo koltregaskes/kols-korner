@@ -45,13 +45,14 @@ jobs:
       - name: Archive Pages artifact
         shell: bash
         run: |
+          # Keep .well-known. A blanket dotfile exclude also drops
+          # site/.well-known/security.txt, so the live security contact 404s.
           tar \
             --dereference --hard-dereference \
             --directory site \
             -cvf "$RUNNER_TEMP/artifact.tar" \
             --exclude=.git \
             --exclude=.github \
-            --exclude=.[^/]* \
             .
 
       - name: Upload Pages artifact
