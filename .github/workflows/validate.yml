@@ -33,3 +33,6 @@ jobs:
 
       - name: Verify fixed-date news artefacts
         run: node scripts/check-news-freshness.mjs --required-date 2026-06-03
+
+      - name: Test routed digest publisher
+        run: node --test scripts/publish-routed-news.test.mjs

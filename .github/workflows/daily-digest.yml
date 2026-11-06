@@ -41,7 +41,7 @@ jobs:
         run: |
           echo "## Daily Digest Workflow" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "The shared Rooms OS news cycle creates routed source digests. The isolated \`scripts/publish-routed-news.ps1\` helper validates one date and remains non-publishing unless its explicit live gate is supplied." >> $GITHUB_STEP_SUMMARY
+          echo "Scheduled publishing is \`.github/workflows/publish-routed-digest.yml\`. When the Mini PC classifier file is absent, it publishes articles already in the committed routed feed. A missing or empty feed exits 0 and says there was nothing to publish. That workflow does not fetch sources." >> $GITHUB_STEP_SUMMARY
           echo "This manual workflow only verifies that the site still builds from the content already committed to the repository." >> $GITHUB_STEP_SUMMARY
           if [ -n "${{ inputs.note }}" ]; then
             echo "" >> $GITHUB_STEP_SUMMARY

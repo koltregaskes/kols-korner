@@ -41,10 +41,12 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/publish-routed-n
 - `scripts/backfill-digests.mjs` publishes any raw digests that do not yet have a matching post
 - The shared Rooms OS website-news cycle and routing classifier own source ingestion and per-site digest generation
 - `scripts/publish-routed-news.ps1` validates one routed date in a fresh temporary clone, normalises the shared local-only `digest-YYYY-MM-DD.md` filename into the tracked `YYYY-MM-DD-digest.md` contract, and prevents unrelated worktree changes leaking into a news commit
-- The publisher stages only the routed digest and generated digest post. GitHub Pages rebuilds the deployment from those committed sources, so unrelated historical `site/` drift cannot leak into the news commit
-- The publisher is validation-only by default. `-Publish` is an explicit live gate that commits and fast-forward pushes the verified date to `main`
-- The retired dirty-checkout task must stay disabled until its replacement schedule is approved and proven
-- `.github/workflows/daily-digest.yml` is a manual build-check workflow only
+- `scripts/publish-routed-news.mjs` is the cross-platform publisher. It publishes a routed digest that already exists, or articles already in the committed `news-digests/news-feed-latest.json`. It does not scrape or invent articles
+- The publishers stage only the routed digest and generated digest post. GitHub Pages rebuilds the deployment from those committed sources, so unrelated historical `site/` drift cannot leak into the news commit
+- The Windows publisher is validation-only by default. `-Publish` is an explicit live gate that commits and fast-forward pushes the verified date to `main`
+- `.github/workflows/publish-routed-digest.yml` runs the cross-platform publisher every day at 06:45 UTC for the Europe/London date. A new digest is pushed to `main`. A verified digest still deploys Pages when those source files are already on `main`, so a failed Pages upload can be rerun. The generator is pinned to this repo's `news-digests/` directory. When `digest-YYYY-MM-DD.md` and `YYYY-MM-DD-digest.md` are both missing, the run builds that day's digest from articles already in the committed `news-digests/news-feed-latest.json` and passes them through the existing generator. If that feed file is missing or has no articles, the run exits 0, writes no post, and the workflow summary says there was nothing to publish. This workflow does not fetch sources. A failed source fetch still fails the feed refresh job. An unreadable feed fails this run
+- `.github/workflows/daily-digest.yml` remains a manual build-check workflow
+- The retired dirty-checkout task (`scripts/run-daily-news.ps1`) stays disabled. The scheduled publisher is the replacement path
 - `site/data/news-articles.json` is generated during build so the news page can load from one prebuilt payload instead of fetching every raw digest separately
 
 Optional environment variables:
@@ -108,13 +110,15 @@ Posts with `publish: false` are excluded from the build.
 
 - `scripts/build.mjs` - Main build script
 - `scripts/run-daily-news.ps1` - Retired dirty-checkout runner retained for history and manual diagnosis
-- `scripts/publish-routed-news.ps1` - Isolated, one-date shared-news publisher; validation-only unless `-Publish` is supplied
+- `scripts/publish-routed-news.ps1` - Isolated Windows publisher; validation-only unless `-Publish` is supplied
+- `scripts/publish-routed-news.mjs` - Scheduled publisher for an existing routed digest
 - `content/` - Source articles and static page markdown
 - `news-digests/` - Raw digest markdown used by the news section
 - `site/` - Generated output that GitHub Pages deploys
 - `site/data/news-digests.json` - Generated manifest for the news browser
 - `site/data/news-articles.json` - Prebuilt article payload for the news browser
 - `.github/workflows/pages.yml` - Main Pages deploy workflow
+- `.github/workflows/publish-routed-digest.yml` - Daily routed-digest publish
 - `.github/workflows/daily-digest.yml` - Manual digest build-check workflow
 
 ## Notes
