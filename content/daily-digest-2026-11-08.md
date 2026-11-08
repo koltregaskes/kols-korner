@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Sunday, 8 November 2026"
 date: 2026-11-08
-tags: ["ai", "news", "digest", "product_launch", "announcement", "ai_safety", "reasoning", "regulation", "industry_move", "policy", "hardware"]
+tags: ["ai", "news", "digest", "product_launch", "announcement", "ai_safety", "industry_move", "regulation", "hardware"]
 summary: "AI and technology news digest for Sunday, 8 November 2026"
 ---
 
@@ -23,6 +23,12 @@ This dated roundup collects the most interesting AI and technology developments 
 
 ---
 
+### John Langford announces Microsoft exit and declares AI Frontiers over
+
+[Read more](https://www.digg.com/ai/knmglebe)
+
+---
+
 ### Goodfire introduces mechanistic shaping to train AI through its internal concepts
 
 [Read more](https://www.digg.com/ai/ejsya8lb)
@@ -41,23 +47,51 @@ This dated roundup collects the most interesting AI and technology developments 
 
 ---
 
-## Tags: ai_safety, reasoning
+### Muir introduces a fixed-state approach to long-context AI
 
-### [AINews] Anthropic IPO: Whither Now?
-
-November 6, 2026 — ARC Prize tests Inkling 2 Small, and Thinking Machines explains how it caught early checkpoints bypassing guardrails.
-
-[Read more](https://latent.space/p/ainews-anthropic-ipo-whither-now/)
+[Read more](https://www.digg.com/ai/c39aub2i)
 
 ---
 
 ## Tags: ai_safety
 
-### Frontier Model Forum publishes shared framework to rate AI jailbreak risks
+### US AI safety staff were asked to report informally to White House, AP says
 
-The preliminary method weighs what a safeguard bypass unlocks and how readily it can be used. Testing will examine whether different assessors reach consistent, meaningful ratings.
+The Commerce Department center has no permanent director and has stopped publishing research. Critics fear political interference; others see a chance for greater influence.
 
-[Read more](https://superpowerdaily.com/posts/frontier-model-forum-publishes-shared-framework-to-rate-ai-jailbreak-risks)
+[Read more](https://superpowerdaily.com/posts/us-ai-safety-staff-were-asked-to-report-informally-to-white-house-ap-says)
+
+---
+
+## Industry
+
+### ‘AI clog’: UK public bodies battle onslaught of chatbot-generated complaints
+
+MPs, local authorities, lawyers, schools and more are receiving floods of grievances, requests and legal challenges, often complex to read and respond to “It started as a trickle in 2024 and now it’s an onslaught.” Hollie Wickens, a senior caseworker in a Labour MP’s office, is explaining the daily reality of dealing with surging volumes of artificial intelligence-generated correspondence. “Half the emails we receive are some form of AI,” she says, adding that this has made requests and complaints much more complex and time-consuming to read and deal with, despite her decade of experience...
+
+[Read more](https://www.theguardian.com/technology/2026/nov/08/ai-clog-public-bodies-local-authorities-onslaught-chatbot-generated-correspondence)
+
+---
+
+### Anthropic strikes $3.4B deal to generate gas-fired power for data centres
+
+[Read more](https://www.ft.com/content/41bf5c6a-9735-4f1a-a8e3-2bcccad58ba0)
+
+---
+
+### Dave Wehner leaves Meta to become Fireworks’ CFO and help scale its operations
+
+The former Meta finance chief joins an AI platform that said its annualized revenue run rate had passed $1 billion in July.
+
+[Read more](https://superpowerdaily.com/posts/dave-wehner-leaves-meta-to-become-fireworks-cfo-and-help-scale-its-operations)
+
+---
+
+### Anthropic reportedly strikes $3.4 billion deal for gas-fired data-center power
+
+The reported OnePWR Solutions agreement includes installation capabilities without a supplier takeover. Neither company responded to Reuters’ requests for comment.
+
+[Read more](https://superpowerdaily.com/posts/anthropic-reportedly-strikes-3-4-billion-deal-for-gas-fired-data-center-power)
 
 ---
 
@@ -69,53 +103,21 @@ The preliminary method weighs what a safeguard bypass unlocks and how readily it
 
 ---
 
-### IMF chief urges central banks to prepare for weaker AI-led growth
-
-Georgieva’s November 6 remarks put the policy dilemma in focus. An earlier IMF downside scenario estimates a global output shortfall—not an annual contraction.
-
-[Read more](https://superpowerdaily.com/posts/imf-chief-urges-central-banks-to-prepare-for-weaker-ai-led-growth)
-
----
-
-### LA Council orders privacy-policy recommendations for AI and city technology
-
-The unanimous vote asks departments to recommend safeguards for sensitive data, permitted uses and public oversight. It does not adopt a final privacy policy.
-
-[Read more](https://superpowerdaily.com/posts/la-council-orders-privacy-policy-recommendations-for-ai-and-city-technology)
-
----
-
-## Industry
-
-### Crusoe sells troubled Wyoming data center project to Google
-
-The deal highlights the challenges of developing massive AI data centers.
-
-[Read more](https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/)
-
----
-
-### DataVita switches 500MW Scottish AI datacentre plan to fully grid-served power
-
-The company says a renewable power purchase agreement will cover its electricity supply. Direct wind and solar connections are now a future possibility.
-
-[Read more](https://superpowerdaily.com/posts/datavita-switches-500mw-scottish-ai-datacentre-plan-to-fully-grid-served-power)
-
----
-
-### Microsoft Declined a Tens-of-Billions Option to Double Its Texas Nscale AI Deal Ahead of the IPO
-
-[Read more](https://techpresso.co/blog/microsoft-rejects-nscale-texas-expansion-option-tens-of-billions-ipo)
-
----
-
 ## Tags: hardware
 
-### Musk promises 2027 details on SpaceX’s Nvidia-based orbital AI computers
+### AI:AM: Is THIS the AI We Want? Alarming Acceleration, AI Election Bets, GPU Trading & AI-Native VC
 
-StarMind’s reported launch schedules differ, while its cost ambitions face unresolved cooling, radiation and servicing challenges.
+This week on AI in the AM: the reports of acceleration keep coming. Is recursive self-improvement already underway, and is dramatic acceleration imminent? Friday morning, the day after METR published its report on how much AI is already speeding up AI research inside Anthropic. Prakash Narayanan, my co-host.
 
-[Read more](https://superpowerdaily.com/posts/musk-promises-2027-details-on-spacex-s-nvidia-based-orbital-ai-computers)
+[Read more](https://www.cognitiverevolution.ai/ai-am-is-this-the-ai-we-want-alarming-acceleration-ai-election-bets-gpu-trading-ai-native-vc-newsletter/)
+
+---
+
+### NVIDIA explains how factory AI agents investigate defects and coordinate rework
+
+The early-access FOX design links inspection images, production records and machine readings. Plants must supply equipment connections and decide when operators approve actions.
+
+[Read more](https://superpowerdaily.com/posts/nvidia-explains-how-factory-ai-agents-investigate-defects-and-coordinate-rework)
 
 ---
 
