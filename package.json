@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "check:seo": "python scripts/check-seo.py",
     "check:news-freshness": "node scripts/check-news-freshness.mjs",
     "news:fetch": "node scripts/fetch-news.mjs",
     "news:digest": "node scripts/generate-daily-digest.mjs",

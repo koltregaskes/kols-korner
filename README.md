@@ -23,9 +23,25 @@ The shared news-gathering pipeline runs outside this repo. This repo consumes th
 
 ```bash
 node scripts/build.mjs
+python scripts/check-seo.py
 ```
 
 ## Daily News
+
+The build applies canonical URLs, Open Graph and Twitter cards, feed discovery
+and page-specific JSON-LD to every indexable HTML page, including the preserved
+broadsheet homepage, news archive and privacy page. Article and digest pages use
+BlogPosting metadata with source publication dates. Social previews use the
+checked-in 1200x630 PNG at `site/media/social-default.png`.
+
+The sitemap discovers real public HTML rather than a hand-kept page list, omits
+redirects and noindex pages, and escapes XML values. The standalone sitemap
+script uses the same discovery and `CNAME` handling. RSS retains its stable GUIDs
+and publication dates and links to the generated canonical post paths.
+
+The offline Python gate checks every canonical and social image, parses JSON-LD,
+parses sitemap and RSS XML, checks exact sitemap coverage, and verifies local
+feed targets. Both validation and Pages builds run it before deployment.
 
 ```bash
 node scripts/fetch-news.mjs --date YYYY-MM-DD
