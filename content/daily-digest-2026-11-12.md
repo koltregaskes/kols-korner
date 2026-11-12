@@ -1,7 +1,7 @@
 ---
 title: "Daily Digest: Thursday, 12 November 2026"
 date: 2026-11-12
-tags: ["ai", "news", "digest", "ai_agents", "ai_safety", "industry_move", "open_source", "model_release", "product_launch", "announcement", "hardware", "regulation"]
+tags: ["ai", "news", "digest", "model_release", "hardware", "reasoning", "product_launch", "announcement", "industry_move", "regulation", "ai_agents"]
 summary: "AI and technology news digest for Thursday, 12 November 2026"
 ---
 
@@ -9,29 +9,13 @@ summary: "AI and technology news digest for Thursday, 12 November 2026"
 
 This dated roundup collects the most interesting AI and technology developments found for Thursday, 12 November 2026.
 
-## Industry
-
-### Agents That Think Together: Cisco's Vijoy Pandey on Semantic Alignment, Scope, Accord & Concord
-
-Vijoy Pandey, SVP and GM of Outshift by Cisco, discusses the challenges of multi-agent AI systems and explains how open-source protocols like Scope, Accord, and Concord enable effective collaboration, intent negotiation, and semantic alignment across autonomous workflows.
-
-[Read more](https://www.cognitiverevolution.ai/agents-that-think-together-cisco-s-vijoy-pandey-on-semantic-alignment-scope-accord-concord/)
-
----
-
-### Russia, China and U.S. discuss AI limits on nuclear systems, report says
-
-Negotiators are reportedly focusing on nuclear command systems as other disputes fall off the summit agenda. No agreement has been announced.
-
-[Read more](https://superpowerdaily.com/posts/russia-china-and-u-s-discuss-ai-limits-on-nuclear-systems-report-says)
-
----
-
 ## Research & Products
 
-### BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model
+### AMD adds AI chip option, claims up to 30% throughput lead in DeepSeek-R1 test
 
-[Read more](https://huggingface.co/blog/qvac/botpsy)
+The MI450X offers less memory headroom without cutting core compute capabilities, AMD says. Its separate MI455X performance claim compares an internal test with Nvidia’s published benchmark result.
+
+[Read more](https://superpowerdaily.com/posts/amd-adds-ai-chip-option-claims-up-to-30-throughput-lead-in-deepseek-r1-test)
 
 ---
 
@@ -59,29 +43,27 @@ Anthropic's IPO roadshow video Anthropic kicked off their IPO roadshow yesterday
 
 ---
 
-### Google Releases Gemini 4 Carbon at $2 per Million Tokens, Then Doubles the Price After November 30
+### Welcoming Jaya Baloo as Cohere's First CISO The cybersecurity leader and AISLE co-founder joins Cohere to help build the world's most trusted platform for sovereign AI Nov 12, 2026 3 min read
 
-[Read more](https://techpresso.co/blog/google-gemini-4-carbon-2-dollars-per-million-tokens-price-doubles-november-30)
-
----
-
-### Tether introduces an 800-million-parameter AI assistant built for on-device tasks
-
-BotPsy learns from demonstrations, specialist teachers and rule-based rewards. Tether reports strong tool-use gains, but warns against high-stakes use.
-
-[Read more](https://superpowerdaily.com/posts/tether-introduces-an-800-million-parameter-ai-assistant-built-for-on-device-tasks)
+[Read more](https://cohere.com/blog/cohere-welcomes-jaya-baloo-as-first-ciso)
 
 ---
 
-### Hedra puts AI on model-training duty with its new Model Factory
+### Gemini Decisions API
 
-[Read more](https://www.digg.com/ai/12uzcg69)
+Gemini Decisions API Google join Jev and OpenAI in the decision model category with "Gemini Decision 1". This new model API is almost identical to Jev: it supports the same three types of questions (yes/no, choice, and rubric-scoring) and even reuses Jev's term "Noul" for a yes/no question. It's priced the same as the GPT-6 Luna decision model: 10 cents per million input tokens, and output is free. Jev remains the cheapest of the three, at 4.2 cents per million. Jev is text (and JSON) only. OpenAI can handle text and images. Gemini Decision 1 is fully multi-model: it covers text, images,...
+
+[Read more](https://simonwillison.net/2026/Nov/11/gemini-decisions-api/)
 
 ---
 
-### Google launches Gemini 4 Carbon for big jobs. Tell it when to stop.
+## Industry
 
-[Read more](https://www.digg.com/ai/af1ph6xk)
+### Russia, China and U.S. discuss AI limits on nuclear systems, report says
+
+Negotiators are reportedly focusing on nuclear command systems as other disputes fall off the summit agenda. No agreement has been announced.
+
+[Read more](https://superpowerdaily.com/posts/russia-china-and-u-s-discuss-ai-limits-on-nuclear-systems-report-says)
 
 ---
 
@@ -97,11 +79,37 @@ The Nvidia board is reportedly weighing Jensen Huang’s future after new affair
 
 ## Tags: ai_agents
 
+### n8n Labs’ Nod is pitched as an AI agent to inherit your browser chores
+
+[Read more](https://www.digg.com/ai/9jfr96yx)
+
+---
+
+### Plurai Simulation’s pitch: don’t take an AI agent’s word for it
+
+[Read more](https://www.digg.com/ai/j4zwm7dc)
+
+---
+
+### United’s AI-agent crackdown starts before the checkout button
+
+[Read more](https://www.digg.com/ai/xjp43qoo)
+
+---
+
 ### Databricks’ new AI agent tells CEO Ali Ghodsi the unvarnished truth
 
 With Databricks at 12,000 employees, AI Ghodsi is the first to admit that he can't know everyone and that they are unlikely to confess the things that go wrong to him. But he doesn't need them to. He uses Databricks' newly revised Genie agent for that.
 
 [Read more](https://techcrunch.com/2026/11/11/databricks-new-ai-agent-tells-ceo-ali-ghodsi-the-unvarnished-truth/)
+
+---
+
+### KPMG extends Copilot to a 276,000-plus workforce and adds AI agent oversight
+
+The expanded Microsoft relationship pairs employee access with agent management. KPMG says experience from its own deployment will help it advise Thai clients.
+
+[Read more](https://superpowerdaily.com/posts/kpmg-extends-copilot-to-a-276-000-plus-workforce-and-adds-ai-agent-oversight)
 
 ---
 
@@ -113,17 +121,13 @@ aws-emulator Finally, an official emulator from AWS to run tests against a local
 
 ---
 
-### OpenAI lets you claim your business in ChatGPT and set up a custom agentic AI customer sales rep
+## Tags: hardware
 
-[Read more](https://venturebeat.com/technology/openai-lets-you-claim-your-business-in-chatgpt-and-set-up-a-custom-agentic-ai-customer-sales-rep)
+### Supermicro ships AMD-powered H15 servers, claiming up to 1.8× AI token throughput
 
----
+The new portfolio pairs higher core counts and memory bandwidth with multiple server designs. Its headline performance claim concerns frontier-model host nodes, not every workload.
 
-## Tags: ai_safety
-
-### SWAM: Scaling World Action Models with Cross-Modal Alignment
-
-[Read more](https://paperswithcode.com/papers/2611.12870)
+[Read more](https://superpowerdaily.com/posts/supermicro-ships-amd-powered-h15-servers-claiming-up-to-1-8-ai-token-throughput)
 
 ---
 
