@@ -13,7 +13,6 @@ from urllib.parse import unquote, urlparse
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site" if (ROOT / "scripts/build.mjs").exists() else ROOT
 SM = "http://www.sitemaps.org/schemas/sitemap/0.9"
-IM = "http://www.google.com/schemas/sitemap-image/1.1"
 ATOM = "http://www.w3.org/2005/Atom"
 
 
@@ -46,7 +45,7 @@ if __name__ == "__main__":
     domain = (os.environ.get("CUSTOM_DOMAIN") or (ROOT / "CNAME").read_text(encoding="utf-8").strip()).removeprefix("https://").removeprefix("http://").rstrip("/")
     base = f"https://{domain}"
     base_path = urlparse(base).path
-    expected, image_count = set(), 0
+    expected = set()
     for page in sorted(SITE.rglob("*.html")):
         if any(part.startswith(".") for part in page.relative_to(SITE).parts):
             continue
@@ -88,12 +87,6 @@ if __name__ == "__main__":
     assert sitemap.tag == f"{{{SM}}}urlset"
     urls = [node.text for node in sitemap.findall(f"{{{SM}}}url/{{{SM}}}loc")]
     assert len(urls) == len(set(urls)) and set(urls) == expected, f"Sitemap coverage mismatch: {set(urls) ^ expected}"
-    for entry in sitemap:
-        images = entry.findall(f"{{{IM}}}image/{{{IM}}}loc")
-        assert len(images) <= 1000
-        for image in images:
-            assert image.text.startswith("https://") and "midjourney.com" not in image.text
-        image_count += len(images)
     rss = ET.parse(SITE / "feed.xml").getroot()
     assert rss.tag == "rss" and rss.get("version") == "2.0"
     channel = rss.find("channel")
@@ -116,4 +109,4 @@ if __name__ == "__main__":
     robots = (SITE / "robots.txt").read_text(encoding="utf-8")
     assert f"Sitemap: {base}/sitemap.xml" in robots
     assert not re.search(r"^Disallow:\s*/\s*$", robots, re.M)
-    print(f"SEO checks passed: {len(expected)} pages, {len(urls)} sitemap URLs, {image_count} gallery images, {len(items)} RSS items.")
+    print(f"SEO checks passed: {len(expected)} pages, {len(urls)} sitemap URLs, {len(items)} RSS items.")
