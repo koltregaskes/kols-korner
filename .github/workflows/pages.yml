@@ -39,6 +39,9 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
 
+      - name: Preserve all committed digest downloads
+        run: node scripts/check-digest-preservation.mjs
+
       - name: Setup Python for XML and SEO validation
         uses: actions/setup-python@v5
         with:
