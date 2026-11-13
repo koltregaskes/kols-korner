@@ -46,6 +46,8 @@ jobs:
 
       - name: Validate metadata, sitemap and RSS before deployment
         run: python scripts/check-seo.py
+        env:
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v6

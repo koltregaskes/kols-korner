@@ -41,3 +41,5 @@ jobs:
 
       - name: Validate metadata, sitemap and RSS
         run: python scripts/check-seo.py
+        env:
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
