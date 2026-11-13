@@ -90,6 +90,8 @@
 
     <div class="news-layout">
       <section class="news-sidebar news-filter-row" aria-label="News controls">
+        <p id="newsAvailability" class="news-availability" role="status">Current feed availability has not been checked in this browser. Archive entries retain their original publication dates.</p>
+        <noscript><p>Use <a href="../posts/">dated posts</a> or <a href="../feed.xml">RSS</a> without JavaScript.</p></noscript>
         <details class="news-filter-panel" id="newsControls" open>
           <summary>
             <span class="news-filter-summary-copy">
@@ -303,6 +305,7 @@
   </footer>
 
   <script src="../site.js" defer></script>
+  <script src="news-state.js" defer></script>
   <script src="news-app.js?v=20260517a" defer></script>
 </body>
 </html>
