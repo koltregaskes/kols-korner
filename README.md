@@ -140,3 +140,13 @@ Posts with `publish: false` are excluded from the build.
 - No Notion content pipeline in the current architecture
 - `site/` is intentionally committed
 - Internal agent files such as `AGENTS.md`, `CLAUDE.md`, and local Claude settings are ignored and not part of the published project
+
+## Verify public deployment bytes
+
+Download the github-pages artifact from the successful deployment run for the expected main commit, extract artifact.tar into an ignored local directory, then run:
+
+```text
+node scripts/check-live.mjs <extracted-directory> <https-site-base-url/>
+```
+
+Record the run URL and its head SHA alongside the result. This compares every public artifact file with the live HTTPS response, including downloads and discovery files. Mismatches, missing files, blocked responses, network errors and the four-minute crawl deadline prevent a passing result. It prints paths and counts, never response bodies. A passing crawl proves those deployed bytes at the time checked, not freshness, source truth or launch acceptance.
