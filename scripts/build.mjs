@@ -1,3 +1,4 @@
+import { repairArchivedLinks } from './repair-archived-links.mjs';
 // scripts/build.mjs
 // Builds static site from Obsidian markdown files
 import fsSync from "node:fs";
@@ -3115,5 +3116,6 @@ async function cleanGeneratedOutput() {
   console.log(`[ok] Security contact: site/.well-known/security.txt`);
   console.log(`[ok] News data: site/data/news-articles.json`);
   console.log(`[ok] AI context files: ${AI_CONTEXT_FILES.map((file) => `site/${file}`).join(', ')}`);
+  await repairArchivedLinks();
   console.log('\nBuild complete!');
 })();
