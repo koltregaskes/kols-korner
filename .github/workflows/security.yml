@@ -21,7 +21,7 @@ jobs:
       - name: Scan history with redacted output only
         shell: bash
         run: |
-          docker run --rm -v "$PWD:/repo:ro" zricethezav/gitleaks:v8.30.0 git /repo --redact=100 --exit-code 2 --no-banner --log-opts="--all -- . :(exclude)**/.env :(exclude)**/.env.* :(exclude).env :(exclude).env.*" > "$RUNNER_TEMP/secret-scan.log" 2>&1 && result=0 || result=$?
+          docker run --rm -v "$PWD:/repo:ro" zricethezav/gitleaks:v8.30.0 git /repo --gitleaks-ignore-path /repo/.gitleaksignore --redact=100 --exit-code 2 --no-banner --log-opts="--all -- . :(exclude)**/.env :(exclude)**/.env.* :(exclude).env :(exclude).env.*" > "$RUNNER_TEMP/secret-scan.log" 2>&1 && result=0 || result=$?
           if [ "$result" -eq 0 ]; then echo 'Secret scan: passed (redacted summary only)'; elif [ "$result" -eq 2 ]; then echo 'Secret scan: findings detected; values withheld'; exit 2; else echo "Secret scan: scanner failed, exit $result; details withheld"; exit "$result"; fi
   external-links:
     runs-on: ubuntu-latest

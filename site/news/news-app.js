@@ -146,6 +146,7 @@ class NewsApp {
                         title: article.title,
                         source: article.source,
                         url: article.url,
+                        sourceUnavailable: article.sourceUnavailable,
                         summary: article.summary,
                         category: article.category || '',
                         date: article.date,
@@ -1048,13 +1049,13 @@ class NewsApp {
             ? `<div class="tag-list">${article.tags.map(t => `<span class="tag">${escapeHtml(NEWS_TAG_LABELS[t] || t)}</span>`).join('')}</div>`
             : '';
 
-        const safeUrl = safeExternalUrl(article.url);
+        const safeUrl = article.sourceUnavailable ? null : safeExternalUrl(article.url);
         const titleHtml = escapeHtml(article.title);
         const titleLinkHtml = safeUrl
             ? `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer">
                         ${titleHtml}
                     </a>`
-            : titleHtml;
+            : `${titleHtml}${article.sourceUnavailable ? " (source no longer available)" : ""}`;
 
         card.innerHTML = `
             <div class="card-content">

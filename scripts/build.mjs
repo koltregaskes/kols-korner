@@ -1,6 +1,6 @@
-import { repairArchivedLinks } from './repair-archived-links.mjs';
 // scripts/build.mjs
 // Builds static site from Obsidian markdown files
+import { repairArchivedLinks } from './repair-archived-links.mjs';
 import fsSync from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";

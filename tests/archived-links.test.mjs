@@ -15,3 +15,13 @@ test('repair archived sources in HTML and runtime JSON while retaining unrelated
  assert.ok(html.includes(`href="${archived}"`));assert.ok(html.includes('Original story title'));assert.ok(html.includes('href="https://example.com/"'));
  assert.deepEqual(JSON.parse(await fs.readFile(path.join(root,'news.json'),'utf8')),{url:archived,title:'Original story title'});
 });
+
+test('unavailable sources stay readable with original citations preserved in runtime data',async()=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'kk-unavailable-'));
+ const url='https://www.digg.com/ai/2draqjir';
+ await fs.writeFile(path.join(root,'index.html'),`<a href="${url}">Original story</a>`);
+ await fs.writeFile(path.join(root,'news.json'),JSON.stringify({articles:[{url,title:'Original story'}]}));
+ await repairArchivedLinks(root);
+ const html=await fs.readFile(path.join(root,'index.html'),'utf8');assert.ok(html.includes('Original story'));assert.ok(html.includes('source no longer available'));assert.ok(!html.includes('<a '));
+ const item=JSON.parse(await fs.readFile(path.join(root,'news.json'),'utf8')).articles[0];assert.equal(item.url,url);assert.equal(item.sourceUnavailable,true);
+});
