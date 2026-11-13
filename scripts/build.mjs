@@ -10,6 +10,8 @@ import { promisify } from "node:util";
 import { writeSeo, writeSitemap as generateSitemap } from './seo.mjs';
 
 const execAsync = promisify(exec);
+const { contactEmail: SITE_CONTACT_EMAIL } = JSON.parse(fsSync.readFileSync(new URL('../site-config.json', import.meta.url), 'utf8'));
+
 
 // ffmpeg path (full path for Windows compatibility)
 const FFMPEG_PATH = process.env.FFMPEG_PATH ||
@@ -1505,6 +1507,7 @@ function getFooterHTML() {
       </nav>
       <nav class="footer-col" aria-label="Footer contact">
         <h2>Contact</h2>
+        <a href="mailto:${SITE_CONTACT_EMAIL}">Email ${SITE_CONTACT_EMAIL}</a>
         <a href="https://koltregaskes.com/contact/">Contact</a>
         <a href="https://koltregaskes.com/subscribe/">Newsletter</a>
         <a href="https://koltregaskes.com/feed.xml">RSS feed</a>
@@ -3116,6 +3119,14 @@ async function cleanGeneratedOutput() {
   console.log(`[ok] Security contact: site/.well-known/security.txt`);
   console.log(`[ok] News data: site/data/news-articles.json`);
   console.log(`[ok] AI context files: ${AI_CONTEXT_FILES.map((file) => `site/${file}`).join(', ')}`);
+  // These two preserved pages share the same contact setting as generated pages.
+  for (const file of ['site/index.html', 'site/news/index.html']) {
+    const html = await fs.readFile(file, 'utf8');
+    const updated = html.replace(/<a\b[^>]*data-site-contact[^>]*>[\s\S]*?<\/a>/gi, anchor =>
+      anchor.replace(/href=["']mailto:[^"']+["']/i, `href="mailto:${SITE_CONTACT_EMAIL}"`)
+        .replace(/(?:hello|contact)@koltregaskes\.com/g, SITE_CONTACT_EMAIL));
+    await fs.writeFile(file, updated);
+  }
   await repairArchivedLinks();
   console.log('\nBuild complete!');
 })();
