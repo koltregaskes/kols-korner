@@ -4,8 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     # 06:30 UTC every day. Fails once news-digests/news-feed-latest.json or its newest
-    # item is 1 day old. No public feed URL exists, so this job does not
-    # download or invent articles.
+    # item is 1 day old. Read back the existing public feed without generating articles.
     - cron: '30 6 * * *'
 
 permissions:
@@ -18,5 +17,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24.22.1'
+          package-manager-cache: false
+
       - name: Warn when the routed feed was not replaced
         run: node scripts/check-routed-feed-freshness.mjs
+
+      - name: Record exact public feed freshness readback
+        if: always()
+        run: node scripts/check-public-feed-proof.mjs proof/public-feed-proof.json
+
+      - name: Retain daily readback evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: public-feed-proof
+          path: proof/public-feed-proof.json
+          if-no-files-found: error
+          retention-days: 30
