@@ -13,7 +13,8 @@ const types = {'.html':'text/html','.css':'text/css','.js':'text/javascript','.j
 for (const file of await pages(root)) {
  const relative = path.relative(root,file).replaceAll('\\','/');
  const html = await fs.readFile(file,'utf8');
- for (const width of [320,1280]) test(`${relative} at ${width}px`, async ({page}) => {
+ for (const width of [320,390,1280]) test(`${relative} at ${width}px`, async ({page}) => {
+  const errors=[]; page.on('pageerror',error=>errors.push(error.message));
   await page.setViewportSize({width,height:900});
   await page.route('**/*', async route => {
    const url = new URL(route.request().url());
@@ -30,6 +31,13 @@ for (const file of await pages(root)) {
   if (redirect) await page.waitForURL(new URL(redirect[1], new URL(relative, origin+'/')).href);
   await page.waitForLoadState('networkidle');
   await expect(page.locator('body')).toBeVisible();
+  await page.evaluate(()=>document.fonts.ready.then(()=>true));
+  await expect(page.locator('main')).toHaveCount(1);
+  await expect(page.locator('h1')).toHaveCount(1);
+  await page.keyboard.press('Tab');
+  const focused=page.locator(':focus'); await expect(focused).toBeVisible();
+  expect(await focused.evaluate(el=>el !== document.body && el !== document.documentElement)).toBe(true);
+  expect(errors).toEqual([]);
   const overflow = await page.evaluate(() => [...document.querySelectorAll('body *')].filter(e => e.getBoundingClientRect().right > innerWidth + 1).map(e => ({tag:e.tagName,classes:e.className,width:e.getBoundingClientRect().width,right:e.getBoundingClientRect().right})).slice(0,10));
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), JSON.stringify(overflow)).toBe(true);
   const result = await new AxeBuilder({page}).analyze();

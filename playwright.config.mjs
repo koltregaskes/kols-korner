@@ -1,3 +1,3 @@
 import { defineConfig } from '@playwright/test';
-export default defineConfig({testDir:'tests',testMatch:'launch.spec.mjs',globalTimeout:280000,fullyParallel:true,workers:8,retries:0,timeout:60000,use:{browserName:'chromium',serviceWorkers:'block'},reporter:'list'});
+export default defineConfig({testDir:'tests',testMatch:'launch.spec.mjs',globalTimeout:1200000,fullyParallel:true,workers:Number(process.env.PLAYWRIGHT_WORKERS || (process.env.CI ? 4 : 2)),retries:0,timeout:60000,use:{browserName:'chromium',channel:process.env.PLAYWRIGHT_CHANNEL || 'msedge',serviceWorkers:'block'},reporter:'list'});
 
