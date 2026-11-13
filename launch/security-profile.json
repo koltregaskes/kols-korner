@@ -1,0 +1,39 @@
+{
+  "host": {
+    "provider": "github-pages",
+    "origin": "https://koltregaskes.com",
+    "repositoryCanSetResponseHeaders": false,
+    "responseHeaders": [
+      "Content-Security-Policy",
+      "Strict-Transport-Security",
+      "X-Frame-Options",
+      "X-Content-Type-Options",
+      "Referrer-Policy"
+    ],
+    "decisionOwner": "Claude launch owner / hosting move #1413",
+    "approvedMitigation": null
+  },
+  "interfaces": {
+    "forms": "absent",
+    "workerApi": "absent",
+    "newsletterSending": "absent",
+    "paymentProcessing": "absent",
+    "analyticsCollector": "absent"
+  },
+  "contact": {
+    "config": "site-config.json",
+    "routingOwner": "Kol",
+    "keepWorkingAddressUntilRoutingConfirmed": true
+  },
+  "browserStorage": {
+    "purpose": "reader favourites and flags",
+    "scope": "local browser; no server submission"
+  },
+  "pending": {
+    "metaCoverage": "Existing PR #34; do not duplicate or infer response headers from HTML metadata",
+    "analytics": "Collector contract held by #367 / #1498; do not invent a second collector",
+    "newsletter": "No email collection/sending in this build. Explicit launch not-required decision remains with #1495/#1496 owner",
+    "monetisation": "Defer payment or donation integration until an approved umbrella support journey exists under #1502"
+  },
+  "source": "https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https"
+}

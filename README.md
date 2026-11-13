@@ -158,3 +158,9 @@ node scripts/check-live.mjs <extracted-directory> <https-site-base-url/>
 ```
 
 Record the run URL and its head SHA alongside the result. This compares every public artifact file with the live HTTPS response, including downloads and discovery files. Mismatches, missing files, blocked responses, network errors and the four-minute crawl deadline prevent a passing result. It prints paths and counts, never response bodies. A passing crawl proves those deployed bytes at the time checked, not freshness, source truth or launch acceptance.
+
+## Launch security boundary
+
+launch/security-profile.json records the current static Pages boundary. CI inventories the built output and fails if a form, collection/auth field, external script, mutation API or telemetry appears without a deliberate review. The current contact journey is mailto using site-config.json; no newsletter sending, payment processing, application Worker/API or analytics collector is implemented. This is a verified code inventory, not an owner decision that those launch checklist items are accepted. The existing owners retain newsletter/monetisation decisions and the analytics contract.
+
+Repository HTML can supply CSP/referrer metadata; it cannot configure Pages response headers. HSTS, framing, MIME policy and a response CSP require the hosting owner. PR #34 tracks full meta coverage; frame-ancestors and X-Frame-Options are never claimed from meta tags. The current header mitigation remains unapproved in the contract until the existing owner records a decision. Check final HTTPS/redirect/header behaviour after the hosting move using the existing live verifier and GitHub Pages HTTPS guidance linked in the profile. No DNS or account change is made by these checks.
