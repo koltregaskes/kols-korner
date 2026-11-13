@@ -39,6 +39,16 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
 
+      - name: Setup Python for XML and SEO validation
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate metadata, sitemap and RSS before deployment
+        run: python scripts/check-seo.py
+        env:
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
 

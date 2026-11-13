@@ -1,223 +1,403 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kol's Korner</title>
+    <title>Kol&#039;s Korner</title>
     <link>https://koltregaskes.com</link>
     <description>Tech, AI, Development &amp; More by Kol Tregaskes</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 04 Jun 2026 02:35:49 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 08:23:51 GMT</lastBuildDate>
     <atom:link href="https://koltregaskes.com/feed.xml" rel="self" type="application/rss+xml"/>
     
     <item>
-      <title>Daily Digest: Wednesday, 3 June 2026</title>
-      <link>https://koltregaskes.com/posts/2026-06-03/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-06-03/</guid>
-      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Wednesday, 3 June 2026</description>
+      <title>Daily Digest: Thursday, 12 November 2026</title>
+      <link>https://koltregaskes.com/posts/2026-11-12/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-11-12/</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Thursday, 12 November 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
+      <category>ai_agents</category>
+      <category>ai_safety</category>
+      <category>industry_move</category>
+      <category>open_source</category>
+      <category>model_release</category>
+      <category>product_launch</category>
+      <category>announcement</category>
+      <category>hardware</category>
+      <category>regulation</category>
     </item>
     <item>
-      <title>Daily Digest: Tuesday, 2 June 2026</title>
-      <link>https://koltregaskes.com/posts/2026-06-02/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-06-02/</guid>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Tuesday, 2 June 2026</description>
+      <title>Daily Digest: Wednesday, 11 November 2026</title>
+      <link>https://koltregaskes.com/posts/2026-11-11/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-11-11/</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Wednesday, 11 November 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
+      <category>model_release</category>
+      <category>reasoning</category>
+      <category>product_launch</category>
+      <category>announcement</category>
+      <category>ai_agents</category>
+      <category>ai_safety</category>
+      <category>industry_move</category>
+      <category>open_source</category>
+      <category>policy</category>
+      <category>hardware</category>
+      <category>acquisition</category>
+      <category>regulation</category>
     </item>
     <item>
-      <title>Daily Digest: Monday, 1 June 2026</title>
-      <link>https://koltregaskes.com/posts/2026-06-01/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-06-01/</guid>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Monday, 1 June 2026</description>
+      <title>Daily Digest: Tuesday, 10 November 2026</title>
+      <link>https://koltregaskes.com/posts/2026-11-10/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-11-10/</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Tuesday, 10 November 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
+      <category>ai_agents</category>
+      <category>announcement</category>
+      <category>industry_move</category>
+      <category>open_source</category>
+      <category>product_launch</category>
+      <category>model_release</category>
+      <category>reasoning</category>
+      <category>policy</category>
+      <category>regulation</category>
+      <category>ai_safety</category>
+      <category>hardware</category>
     </item>
     <item>
-      <title>Daily Digest: Sunday, 31 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-31/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-31/</guid>
-      <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Sunday, 31 May 2026</description>
+      <title>Daily Digest: Monday, 9 November 2026</title>
+      <link>https://koltregaskes.com/posts/2026-11-09/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-11-09/</guid>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Monday, 9 November 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
+      <category>ai_agents</category>
+      <category>announcement</category>
+      <category>industry_move</category>
+      <category>open_source</category>
+      <category>model_release</category>
+      <category>hardware</category>
+      <category>product_launch</category>
+      <category>policy</category>
+      <category>acquisition</category>
     </item>
     <item>
-      <title>Daily Digest: Saturday, 30 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-30/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-30/</guid>
-      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Saturday, 30 May 2026</description>
+      <title>Daily Digest: Sunday, 8 November 2026</title>
+      <link>https://koltregaskes.com/posts/2026-11-08/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-11-08/</guid>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Sunday, 8 November 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
+      <category>product_launch</category>
+      <category>announcement</category>
+      <category>ai_safety</category>
+      <category>industry_move</category>
+      <category>regulation</category>
+      <category>hardware</category>
     </item>
     <item>
-      <title>Daily Digest: Friday, 29 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-29/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-29/</guid>
-      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Friday, 29 May 2026</description>
+      <title>Daily Digest: Saturday, 7 November 2026</title>
+      <link>https://koltregaskes.com/posts/2026-11-07/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-11-07/</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Saturday, 7 November 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
+      <category>product_launch</category>
+      <category>announcement</category>
+      <category>hardware</category>
+      <category>regulation</category>
+      <category>ai_safety</category>
+      <category>reasoning</category>
+      <category>model_release</category>
+      <category>open_source</category>
+      <category>ai_agents</category>
+      <category>industry_move</category>
     </item>
     <item>
-      <title>Daily Digest: Thursday, 28 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-28/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-28/</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Thursday, 28 May 2026</description>
+      <title>Daily Digest: Friday, 6 November 2026</title>
+      <link>https://koltregaskes.com/posts/2026-11-06/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-11-06/</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Friday, 6 November 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
+      <category>announcement</category>
+      <category>policy</category>
+      <category>regulation</category>
+      <category>product_launch</category>
+      <category>acquisition</category>
+      <category>model_release</category>
+      <category>industry_move</category>
+      <category>hardware</category>
+      <category>ai_agents</category>
+      <category>reasoning</category>
+      <category>open_source</category>
     </item>
     <item>
-      <title>Daily Digest: Wednesday, 27 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-27/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-27/</guid>
-      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Wednesday, 27 May 2026</description>
+      <title>Daily Digest: Thursday, 5 November 2026</title>
+      <link>https://koltregaskes.com/posts/2026-11-05/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-11-05/</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Thursday, 5 November 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
+      <category>product_launch</category>
+      <category>acquisition</category>
+      <category>regulation</category>
+      <category>ai_safety</category>
+      <category>policy</category>
+      <category>model_release</category>
+      <category>industry_move</category>
+      <category>open_source</category>
+      <category>announcement</category>
+      <category>hardware</category>
+      <category>ai_agents</category>
+      <category>reasoning</category>
     </item>
     <item>
-      <title>Daily Digest: Tuesday, 26 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-26/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-26/</guid>
-      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Tuesday, 26 May 2026</description>
+      <title>Daily Digest: Tuesday, 3 November 2026</title>
+      <link>https://koltregaskes.com/posts/2026-11-03/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-11-03/</guid>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Tuesday, 3 November 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
+      <category>model_release</category>
+      <category>hardware</category>
+      <category>reasoning</category>
+      <category>policy</category>
+      <category>opinion</category>
+      <category>regulation</category>
+      <category>industry_move</category>
+      <category>product_launch</category>
+      <category>open_source</category>
+      <category>acquisition</category>
+      <category>announcement</category>
+      <category>ai_agents</category>
     </item>
     <item>
-      <title>Daily Digest: Monday, 25 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-25/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-25/</guid>
-      <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Monday, 25 May 2026</description>
-      <category>ai</category>
-      <category>news</category>
-      <category>digest</category>
-    </item>
-    <item>
-      <title>Daily Digest: Sunday, 24 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-24/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-24/</guid>
-      <pubDate>Sun, 24 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Sunday, 24 May 2026</description>
-      <category>ai</category>
-      <category>news</category>
-      <category>digest</category>
-    </item>
-    <item>
-      <title>Daily Digest: Saturday, 23 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-23/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-23/</guid>
-      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Saturday, 23 May 2026</description>
-      <category>ai</category>
-      <category>news</category>
-      <category>digest</category>
-    </item>
-    <item>
-      <title>Daily Digest: Friday, 22 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-22/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-22/</guid>
-      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Friday, 22 May 2026</description>
-      <category>ai</category>
-      <category>news</category>
-      <category>digest</category>
-    </item>
-    <item>
-      <title>Daily Digest: Thursday, 21 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-21/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-21/</guid>
-      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Thursday, 21 May 2026</description>
-      <category>ai</category>
-      <category>news</category>
-      <category>digest</category>
-    </item>
-    <item>
-      <title>Daily Digest: Wednesday, 20 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-20/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-20/</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Wednesday, 20 May 2026</description>
+      <title>Daily Digest: Friday, 30 October 2026</title>
+      <link>https://koltregaskes.com/posts/2026-10-30/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-10-30/</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Friday, 30 October 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
       <category>model_release</category>
       <category>ai_agents</category>
       <category>reasoning</category>
-      <category>product_launch</category>
-      <category>hardware</category>
+      <category>policy</category>
+      <category>industry_move</category>
+      <category>opinion</category>
       <category>open_source</category>
+      <category>hardware</category>
+      <category>product_launch</category>
+      <category>announcement</category>
+    </item>
+    <item>
+      <title>Daily Digest: Thursday, 29 October 2026</title>
+      <link>https://koltregaskes.com/posts/2026-10-29/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-10-29/</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Thursday, 29 October 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+      <category>model_release</category>
+      <category>hardware</category>
+      <category>product_launch</category>
+      <category>ai_agents</category>
+      <category>regulation</category>
+    </item>
+    <item>
+      <title>Daily Digest: Wednesday, 28 October 2026</title>
+      <link>https://koltregaskes.com/posts/2026-10-28/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-10-28/</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Wednesday, 28 October 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+      <category>model_release</category>
+      <category>hardware</category>
+      <category>product_launch</category>
+      <category>industry_move</category>
+      <category>announcement</category>
+      <category>policy</category>
+      <category>acquisition</category>
+      <category>regulation</category>
+      <category>reasoning</category>
+    </item>
+    <item>
+      <title>Daily Digest: Tuesday, 27 October 2026</title>
+      <link>https://koltregaskes.com/posts/2026-10-27/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-10-27/</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Tuesday, 27 October 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+      <category>hardware</category>
+      <category>ai_agents</category>
+      <category>industry_move</category>
+      <category>model_release</category>
+      <category>product_launch</category>
+      <category>reasoning</category>
+      <category>announcement</category>
+      <category>ai_safety</category>
+      <category>policy</category>
+    </item>
+    <item>
+      <title>Daily Digest: Sunday, 25 October 2026</title>
+      <link>https://koltregaskes.com/posts/2026-10-25/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-10-25/</guid>
+      <pubDate>Sun, 25 Oct 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Sunday, 25 October 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+      <category>open_source</category>
+      <category>industry_move</category>
+      <category>hardware</category>
+      <category>opinion</category>
+      <category>policy</category>
+    </item>
+    <item>
+      <title>Daily Digest: Saturday, 24 October 2026</title>
+      <link>https://koltregaskes.com/posts/2026-10-24/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-10-24/</guid>
+      <pubDate>Sat, 24 Oct 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Saturday, 24 October 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+      <category>model_release</category>
+      <category>hardware</category>
+      <category>product_launch</category>
+      <category>reasoning</category>
+      <category>open_source</category>
+      <category>ai_agents</category>
+      <category>policy</category>
+      <category>announcement</category>
+      <category>acquisition</category>
+    </item>
+    <item>
+      <title>Daily Digest: Friday, 23 October 2026</title>
+      <link>https://koltregaskes.com/posts/2026-10-23/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-10-23/</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Friday, 23 October 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+      <category>hardware</category>
       <category>announcement</category>
       <category>industry_move</category>
+      <category>model_release</category>
+      <category>product_launch</category>
       <category>policy</category>
+      <category>regulation</category>
+      <category>ai_safety</category>
+      <category>ai_agents</category>
+    </item>
+    <item>
+      <title>Daily Digest: Thursday, 22 October 2026</title>
+      <link>https://koltregaskes.com/posts/2026-10-22/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-10-22/</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Thursday, 22 October 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+      <category>model_release</category>
+      <category>hardware</category>
+      <category>product_launch</category>
+      <category>open_source</category>
+      <category>policy</category>
+      <category>regulation</category>
+      <category>ai_safety</category>
+      <category>announcement</category>
+      <category>acquisition</category>
+      <category>industry_move</category>
+      <category>ai_agents</category>
+    </item>
+    <item>
+      <title>Daily Digest: Wednesday, 21 October 2026</title>
+      <link>https://koltregaskes.com/posts/2026-10-21/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-10-21/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Wednesday, 21 October 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+      <category>model_release</category>
+      <category>product_launch</category>
+      <category>industry_move</category>
+      <category>open_source</category>
+      <category>reasoning</category>
+      <category>policy</category>
+      <category>regulation</category>
+      <category>ai_safety</category>
+      <category>hardware</category>
+      <category>ai_agents</category>
+      <category>announcement</category>
+    </item>
+    <item>
+      <title>Daily Digest: Tuesday, 20 October 2026</title>
+      <link>https://koltregaskes.com/posts/2026-10-20/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-10-20/</guid>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Tuesday, 20 October 2026</description>
+      <category>ai</category>
+      <category>news</category>
+      <category>digest</category>
+      <category>model_release</category>
+      <category>reasoning</category>
+      <category>product_launch</category>
+      <category>hardware</category>
+      <category>ai_safety</category>
+      <category>acquisition</category>
+      <category>industry_move</category>
+      <category>ai_agents</category>
+      <category>announcement</category>
+      <category>policy</category>
+      <category>regulation</category>
       <category>opinion</category>
-      <category>funding</category>
     </item>
     <item>
-      <title>Daily Digest: Tuesday, 19 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-19/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-19/</guid>
-      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Tuesday, 19 May 2026</description>
+      <title>Daily Digest: Monday, 19 October 2026</title>
+      <link>https://koltregaskes.com/posts/2026-10-19/</link>
+      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-10-19/</guid>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 GMT</pubDate>
+      <description>AI and technology news digest for Monday, 19 October 2026</description>
       <category>ai</category>
       <category>news</category>
       <category>digest</category>
-    </item>
-    <item>
-      <title>Daily Digest: Monday, 18 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-18/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-18/</guid>
-      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Monday, 18 May 2026</description>
-      <category>ai</category>
-      <category>news</category>
-      <category>digest</category>
-    </item>
-    <item>
-      <title>Daily Digest: Sunday, 17 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-17/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-17/</guid>
-      <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Sunday, 17 May 2026</description>
-      <category>ai</category>
-      <category>news</category>
-      <category>digest</category>
-    </item>
-    <item>
-      <title>Daily Digest: Saturday, 16 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-16/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-16/</guid>
-      <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Saturday, 16 May 2026</description>
-      <category>ai</category>
-      <category>news</category>
-      <category>digest</category>
-    </item>
-    <item>
-      <title>Daily Digest: Friday, 15 May 2026</title>
-      <link>https://koltregaskes.com/posts/2026-05-15/</link>
-      <guid isPermaLink="true">https://koltregaskes.com/posts/2026-05-15/</guid>
-      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
-      <description>AI and technology news digest for Friday, 15 May 2026</description>
-      <category>ai</category>
-      <category>news</category>
-      <category>digest</category>
+      <category>model_release</category>
+      <category>ai_agents</category>
+      <category>product_launch</category>
+      <category>reasoning</category>
+      <category>industry_move</category>
+      <category>open_source</category>
+      <category>acquisition</category>
+      <category>hardware</category>
+      <category>ai_safety</category>
     </item>
   </channel>
 </rss>

@@ -1,60 +1,9 @@
-// Generates sitemap.xml for Kol's Korner from the site directory.
-// Run: node scripts/generate-sitemap.mjs
-// Output: site/sitemap.xml
-
-import { readdirSync, writeFileSync, statSync } from 'fs';
-import path from 'path';
-
-const SITE_DIR = path.join(process.cwd(), 'site');
-const GITHUB_OWNER = process.env.GITHUB_OWNER || 'koltregaskes';
-const REPO_NAME = process.env.GITHUB_REPO || process.env.REPO_NAME || 'kols-korner';
-const CUSTOM_DOMAIN = (process.env.CUSTOM_DOMAIN || '').trim().replace(/^https?:\/\//, '').replace(/\/+$/, '');
-const DOMAIN = CUSTOM_DOMAIN
-  ? `https://${CUSTOM_DOMAIN}`
-  : `https://${GITHUB_OWNER}.github.io/${REPO_NAME}`;
-const OUTPUT = path.join(SITE_DIR, 'sitemap.xml');
-
-const urls = [];
-
-// Main pages
-urls.push({ loc: '/', changefreq: 'daily', priority: '1.0' });
-urls.push({ loc: '/about/', changefreq: 'monthly', priority: '0.6' });
-urls.push({ loc: '/posts/', changefreq: 'daily', priority: '0.8' });
-urls.push({ loc: '/tags/', changefreq: 'weekly', priority: '0.5' });
-urls.push({ loc: '/news/', changefreq: 'daily', priority: '0.8' });
-urls.push({ loc: '/subscribe/', changefreq: 'monthly', priority: '0.4' });
-urls.push({ loc: '/privacy.html', changefreq: 'yearly', priority: '0.2' });
-
-// All posts
-const postsDir = path.join(SITE_DIR, 'posts');
-try {
-  const posts = readdirSync(postsDir).filter(f => {
-    const fullPath = path.join(postsDir, f);
-    return statSync(fullPath).isDirectory() && !f.startsWith('.');
-  });
-
-  for (const slug of posts) {
-    const isDigest = slug.startsWith('daily-digest-');
-    urls.push({
-      loc: `/posts/${slug}/`,
-      changefreq: 'monthly',
-      priority: isDigest ? '0.4' : '0.7',
-    });
-  }
-} catch (e) {
-  console.error('Could not read posts directory:', e.message);
-}
-
-// Build XML
-const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url>
-    <loc>${DOMAIN}${u.loc}</loc>
-    <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority}</priority>
-  </url>`).join('\n')}
-</urlset>
-`;
-
-writeFileSync(OUTPUT, xml, 'utf8');
-console.log(`Generated sitemap with ${urls.length} URLs at ${OUTPUT}`);
+// Standalone refresh shares page discovery and domain handling with the build.
+import fs from 'node:fs/promises';
+import { writeSitemap } from './seo.mjs';
+const owner = process.env.GITHUB_OWNER || 'koltregaskes';
+const repo = process.env.GITHUB_REPO || process.env.REPO_NAME || 'kols-korner';
+const cname = (await fs.readFile('CNAME', 'utf8').catch(() => '')).trim();
+const domain = (process.env.CUSTOM_DOMAIN || cname).trim().replace(/^https?:\/\//, '').replace(/\/+$/, '');
+await writeSitemap(domain ? `https://${domain}` : `https://${owner}.github.io/${repo}`);
+console.log('Generated sitemap from indexable public pages.');

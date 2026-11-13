@@ -6,6 +6,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
+import { writeSeo, writeSitemap as generateSitemap } from './seo.mjs';
 
 const execAsync = promisify(exec);
 
@@ -2822,7 +2823,7 @@ async function writeRssFeed(items) {
 
   const rssItems = articles.map(item => {
     const pubDate = new Date(item.date).toUTCString();
-    const link = `${SITE_URL}/posts/${item.slug}/`;
+    const link = escapeHtml(`${SITE_URL}${item.localPath || `/posts/${item.slug}/`}`);
 
     return `
     <item>
@@ -2838,12 +2839,12 @@ async function writeRssFeed(items) {
   const rssTemplate = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${SITE_NAME}</title>
-    <link>${SITE_URL}</link>
-    <description>Tech, AI, Development &amp; More by ${SITE_OWNER}</description>
+    <title>${escapeHtml(SITE_NAME)}</title>
+    <link>${escapeHtml(SITE_URL)}</link>
+    <description>Tech, AI, Development &amp; More by ${escapeHtml(SITE_OWNER)}</description>
     <language>en-gb</language>
     <lastBuildDate>${RSS_LAST_BUILD_DATE_PLACEHOLDER}</lastBuildDate>
-    <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="${escapeHtml(SITE_URL)}/feed.xml" rel="self" type="application/rss+xml"/>
     ${rssItems}
   </channel>
 </rss>`;
@@ -2899,27 +2900,7 @@ async function writeSecurityTxt() {
 }
 
 async function writeSitemap(items) {
-  const urls = [
-    { loc: '/', changefreq: 'daily', priority: '1.0' },
-    { loc: '/about/', changefreq: 'monthly', priority: '0.6' },
-    { loc: '/posts/', changefreq: 'daily', priority: '0.8' },
-    { loc: '/tags/', changefreq: 'weekly', priority: '0.5' },
-    { loc: '/news/', changefreq: 'daily', priority: '0.8' },
-    { loc: '/subscribe/', changefreq: 'monthly', priority: '0.4' },
-    { loc: '/privacy.html', changefreq: 'yearly', priority: '0.2' }
-  ];
-
-  for (const item of items.filter((entry) => (entry.kind === 'article' || isDigestPost(entry)) && entry.localPath)) {
-    urls.push({
-      loc: item.localPath,
-      changefreq: isDigestPost(item) ? 'daily' : 'monthly',
-      priority: isDigestPost(item) ? '0.4' : '0.7',
-      lastmod: item.updatedTime || item.date || ''
-    });
-  }
-
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((url) => `  <url>\n    <loc>${SITE_URL}${url.loc}</loc>\n    ${url.lastmod ? `<lastmod>${url.lastmod}</lastmod>\n    ` : ''}<changefreq>${url.changefreq}</changefreq>\n    <priority>${url.priority}</priority>\n  </url>`).join('\n')}\n</urlset>\n`;
-  await fs.writeFile('site/sitemap.xml', xml, 'utf8');
+  await generateSitemap(SITE_URL, items);
 }
 
 async function removeWithRetries(targetPath, options = {}) {
@@ -3040,6 +3021,7 @@ async function cleanGeneratedOutput() {
   await writeAboutPage();
   await writeSubscribePage();
   await writeContactPage();
+  await writeSeo({ siteUrl: SITE_URL, siteName: SITE_NAME, siteOwner: SITE_OWNER, items });
   // Write machine-readable data, feed, and crawl files
   await fs.mkdir("site/data", { recursive: true });
   await writeRssFeed(items);
