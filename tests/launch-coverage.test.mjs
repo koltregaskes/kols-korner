@@ -12,7 +12,7 @@ test('the launch browser uses the installed Edge channel without downloads',()=>
 });
 
 test('actual Playwright discovery covers every built HTML route at 320, 390 and desktop',()=>{
- const result=spawnSync(process.execPath,[path.resolve('node_modules/@playwright/test/cli.js'),'test','--list','--reporter=json'],{encoding:'utf8',timeout:30000});
+ const result=spawnSync(process.execPath,[path.resolve('node_modules/@playwright/test/cli.js'),'test','launch.spec.mjs','--list','--reporter=json'],{encoding:'utf8',timeout:30000});
  assert.equal(result.status,0,result.stderr);
  const report=JSON.parse(result.stdout);const titles=[];
  function walk(suites){for(const suite of suites||[]){for(const spec of suite.specs||[])titles.push(spec.title);walk(suite.suites)}}walk(report.suites);
