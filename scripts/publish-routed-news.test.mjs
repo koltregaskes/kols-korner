@@ -167,7 +167,7 @@ test('a missing or empty committed feed is nothing to publish', () => {
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'kk-empty-feed-'));
   const emptyPath = path.join(temp, 'news-feed-latest.json');
   fs.writeFileSync(emptyPath, JSON.stringify({
-    generated: '2026-10-26T01:22:30.410Z',
+    generated: new Date().toISOString(),
     site: "Kol's Korner",
     article_count: 0,
     articles: [{ title: ' ', url: 'not-a-url' }]
@@ -220,7 +220,7 @@ test('an unreadable committed feed fails instead of publishing nothing', () => {
       () => publishRoutedDigest({ date, publish: false, feedPath }),
       /not valid JSON/
     );
-    fs.writeFileSync(feedPath, JSON.stringify({ generated: '2026-10-26T01:22:30.410Z' }));
+    fs.writeFileSync(feedPath, JSON.stringify({ generated: new Date().toISOString() }));
     assert.throws(() => readCommittedRoutedFeed(feedPath), /no articles array/);
     assert.equal(fs.existsSync(digest), false);
   } finally {
@@ -238,7 +238,7 @@ test('real routed-feed articles pass through the existing generator', () => {
 
   const feedPath = path.join(temp, 'news-feed-latest.json');
   fs.writeFileSync(feedPath, JSON.stringify({
-    generated: '2026-10-26T01:22:30.410Z',
+    generated: new Date().toISOString(),
     site: "Kol's Korner",
     article_count: 1,
     articles: [routedFeedArticle, { title: 'Skipped', url: '' }]
@@ -290,4 +290,22 @@ test('real routed-feed articles pass through the existing generator', () => {
   } finally {
     fs.rmSync(temp, { recursive: true, force: true });
   }
+});
+
+test('stale fallback feed skips publication and deployment without writing source files', () => {
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kk-stale-feed-'));
+ const feedPath=path.join(temp,'news-feed-latest.json');
+ const now=new Date('2026-11-13T12:00:00Z');
+ const feed={generated:'2026-11-12T11:59:59Z',articles:[routedFeedArticle]};
+ fs.writeFileSync(feedPath,JSON.stringify(feed));
+ assert.equal(readCommittedRoutedFeed(feedPath,now).status,'stale');
+ feed.generated='2026-11-12T12:00:01Z';fs.writeFileSync(feedPath,JSON.stringify(feed));
+ assert.equal(readCommittedRoutedFeed(feedPath,now).status,'ready');
+ for(const generated of ['', 'invalid', '2099-01-01T00:00:00Z',new Date(Date.now()-25*3600000).toISOString()]) {
+  fs.writeFileSync(feedPath,JSON.stringify({...feed,generated}));
+  const decision=publishRoutedDigest({date:absentDigestDate(),publish:true,feedPath});
+  assert.equal(decision.nothing,true);assert.equal(decision.deploy,'false');
+  assert.match(decision.message,/older than 24 hours or has an invalid/);
+  assert.equal(fs.existsSync(path.join(repoRoot,'content',`daily-digest-${absentDigestDate()}.md`)),false);
+ }
 });

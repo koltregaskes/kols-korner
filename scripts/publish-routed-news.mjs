@@ -185,7 +185,7 @@ export function isUsableFeedArticle(article) {
   return Boolean(digestTitle(article.title) && digestSource(article) && digestUrl(article.url));
 }
 
-export function readCommittedRoutedFeed(feedPath) {
+export function readCommittedRoutedFeed(feedPath, now = new Date()) {
   if (!fs.existsSync(feedPath)) {
     return { status: 'missing', path: feedPath, articles: [], generated: '' };
   }
@@ -219,6 +219,11 @@ export function readCommittedRoutedFeed(feedPath) {
     return { status: 'empty', path: feedPath, articles: [], generated };
   }
 
+  const generatedMs = new Date(generated).getTime();
+  const age = new Date(now).getTime() - generatedMs;
+  if (!Number.isFinite(generatedMs) || !Number.isFinite(age) || age > 24 * 60 * 60 * 1000 || age < -5 * 60 * 1000) {
+    return { status: 'stale', path: feedPath, articles: [], generated };
+  }
   return { status: 'ready', path: feedPath, articles, generated };
 }
 
@@ -264,7 +269,9 @@ export function renderRoutedFeedDigest({ date, articles, generated }) {
 }
 
 export function nothingToPublishMessage({ date, feedPath, reason }) {
-  const feedDetail = reason === 'empty'
+  const feedDetail = reason === 'stale'
+    ? `The committed routed feed is older than 24 hours or has an invalid generated timestamp: ${feedPath}`
+    : reason === 'empty'
     ? `The committed routed feed has no articles: ${feedPath}`
     : `The committed routed feed is not in the checkout: ${feedPath}`;
 
@@ -274,7 +281,7 @@ export function nothingToPublishMessage({ date, feedPath, reason }) {
     `The Mini PC classifier file news-digests/digest-${date}.md is absent, and news-digests/${date}-digest.md is absent too.`,
     feedDetail,
     'No digest post was written.',
-    'This job does not fetch sources. A failed source fetch still fails the feed refresh job and leaves the committed feed unchanged.'
+    'This job does not fetch sources. A minority source failure is reported while successful sources are retained; a majority failure preserves the previous feed.'
   ].join('\n');
 }
 
@@ -554,7 +561,7 @@ export function publishRoutedDigest({ date, sourceDir, publish, feedPath }) {
   if (!found) {
     const resolvedFeedPath = feedPath || routedFeedPath();
     const feed = readCommittedRoutedFeed(resolvedFeedPath);
-    if (feed.status === 'missing' || feed.status === 'empty') {
+    if (['missing', 'empty', 'stale'].includes(feed.status)) {
       return {
         ...publishDecision({ publish, source: 'unchanged', deploy: false }),
         nothing: true,

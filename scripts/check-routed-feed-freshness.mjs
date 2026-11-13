@@ -13,7 +13,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 const FEED_PATH = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'news-digests', 'news-feed-latest.json')
 const WARN_AFTER_DAYS = 1
 const HARD_MAX_DAYS = 3
-const MISSING_SOURCE = "The 05:15 UTC refresh fetches every source in the shared news sources.json and commits this file after a successful fetch, including an empty article list when nothing matches. A source that cannot be fetched fails that run by name and leaves the file unchanged. This check means the committed feed was not replaced. Shared routing lists Kol's Korner as a destination (sites/kols-korner/news-digests)."
+const MISSING_SOURCE = "The 05:15 UTC refresh fetches every source in the shared news sources.json and commits this file after a successful fetch, including an empty article list when nothing matches. A minority of failed sources is reported while successful sources are committed. A failure of half or more sources fails the refresh and preserves the previous file. This check means the committed feed was not replaced. Shared routing lists Kol's Korner as a destination (sites/kols-korner/news-digests)."
 
 export function assessRoutedFeedFreshness(feed, now = new Date()) {
   if (!feed || typeof feed !== 'object' || !Array.isArray(feed.articles)) {
