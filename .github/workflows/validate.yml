@@ -11,6 +11,10 @@ env:
 
 jobs:
   build:
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -43,3 +47,14 @@ jobs:
         run: python scripts/check-seo.py
         env:
           CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
+
+      - name: Verify routed feed and digest recovery
+        run: node --test tests/*.test.mjs scripts/publish-routed-news.test.mjs
+      - name: Install launch test dependencies
+        run: npm ci
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Check every route at phone and desktop widths
+        run: npm run test:launch -- --shard=${{ matrix.shard }}/4
+      - name: Check AI discovery file
+        run: test -s site/llms.txt

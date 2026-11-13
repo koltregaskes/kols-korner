@@ -1,13 +1,18 @@
 {
-  "name": "kols-korner",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "node scripts/build.mjs",
-    "check:seo": "python scripts/check-seo.py",
-    "check:news-freshness": "node scripts/check-news-freshness.mjs",
-    "news:fetch": "node scripts/fetch-news.mjs",
-    "news:digest": "node scripts/generate-daily-digest.mjs",
-    "news:backfill": "node scripts/backfill-digests.mjs"
-  }
+    "name":  "kols-korner",
+    "private":  true,
+    "type":  "module",
+    "scripts":  {
+                    "build":  "node scripts/build.mjs",
+                    "check:seo":  "python scripts/check-seo.py",
+                    "check:news-freshness":  "node scripts/check-news-freshness.mjs",
+                    "news:fetch":  "node scripts/fetch-news.mjs",
+                    "news:digest":  "node scripts/generate-daily-digest.mjs",
+                    "news:backfill":  "node scripts/backfill-digests.mjs",
+                    "test:launch":  "playwright test"
+                },
+    "devDependencies":  {
+                            "@axe-core/playwright":  "4.14.0",
+                            "@playwright/test":  "1.65.0"
+                        }
 }
