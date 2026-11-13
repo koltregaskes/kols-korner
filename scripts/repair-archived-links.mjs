@@ -6,7 +6,8 @@ export async function repairArchivedLinks(root='site') {
  const replacements=JSON.parse(await fs.readFile(mappingPath,'utf8'));
  for(const [original,target] of Object.entries(replacements)) {
   const archived=new URL(target);
-  if(new URL(original).hostname!=='www.digg.com' || archived.protocol!=='https:' || archived.hostname!=='web.archive.org' || !archived.pathname.includes(new URL(original).pathname)) throw new Error('Invalid archived-source mapping');
+  const primaryHosts=new Set(['a16z.com','blog.google','ideogram.ai','ramp.com','finch-static.agibot.com']);
+  if(new URL(original).hostname!=='www.digg.com' || archived.protocol!=='https:' || (!primaryHosts.has(archived.hostname) && (archived.hostname!=='web.archive.org' || !archived.pathname.includes(new URL(original).pathname)))) throw new Error('Invalid archived-source mapping');
  }
  let repaired=0;
  async function walk(dir){for(const entry of await fs.readdir(dir,{withFileTypes:true})){
@@ -19,5 +20,5 @@ export async function repairArchivedLinks(root='site') {
   });
   if(after!==before)await fs.writeFile(file,after);
  }}
- await walk(root); console.log(`[ok] Repaired ${repaired} historic source links using exact archive snapshots`);
+ await walk(root); console.log(`[ok] Repaired ${repaired} historic source links using exact archive snapshots or verified primary sources`);
 }
