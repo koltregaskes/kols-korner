@@ -1,0 +1,10 @@
+# Claude-reviewed 39 false-positive matches (seven unique fingerprints):
+# historical signed GitHub image URLs, sb_publishable_ public keys and
+# a YOUR_ documentation placeholder. New fingerprints remain blocking.
+2f5588d84f0c781a2e7099981f6aa76bc3fb4ff8:site/subscribe/index.html:generic-api-key:159
+33c5ec5f2539d62e188dfce73299a0e53a7a27fb:TROUBLESHOOTING.md:curl-auth-header:310
+7d1d957c009ccabc66be287c69f802b36dc0e4ad:site/data/news-articles.json:aws-access-token:436
+7d1d957c009ccabc66be287c69f802b36dc0e4ad:site/data/news-articles.json:jwt:436
+7d1d957c009ccabc66be287c69f802b36dc0e4ad:site/news-digests/2026-07-19-digest.md:aws-access-token:26
+7d1d957c009ccabc66be287c69f802b36dc0e4ad:site/news-digests/2026-07-19-digest.md:jwt:26
+f9a53f79ca2e34e7589fc109ab74c64356a749b3:site/subscribe/index.html:generic-api-key:148
