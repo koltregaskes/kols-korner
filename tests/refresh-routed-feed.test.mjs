@@ -257,8 +257,20 @@ test('the refresh workflow fetches the shared config and commits only the feed',
   assert.match(workflow, /node scripts\/refresh-routed-feed\.mjs --pipeline/)
   assert.match(workflow, /git add -- news-digests\/news-feed-latest.json/)
   assert.doesNotMatch(workflow, /git add -A|git add \./)
-  assert.match(workflow, /actions\/deploy-pages@/)
-  assert.match(workflow, /pages: write/)
-  assert.match(workflow, /id-token: write/)
+  assert.match(workflow, /gh workflow run pages\.yml --ref main/)
+  assert.match(workflow, /actions: write/)
+  assert.doesNotMatch(workflow, /actions\/deploy-pages@|Archive Pages artifact/)
   assert.doesNotMatch(workflow, /secrets\.[A-Z0-9_]*(?:PAT|TOKEN)/)
 })
+
+test('one failed source does not discard two successful feeds', async () => {
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'kk-partial-'));
+ pipeline(dir,['one','two','bad'].map(id=>({id,name:id,url:`https://example.com/${id}`,adapter:'rss',tags:['product_launch']})));
+ const result=await refreshRoutedFeed({pipelineDir:dir,write:false,now:new Date('2026-10-26'),retries:1,fetchImpl:async url=>{
+  if(url.endsWith('/bad')) throw new Error('offline');
+  return {ok:true,text:async()=>`<rss><channel><item><title>Launch</title><link>${url}/story</link><pubDate>Sun, 25 Oct 2026 21:31:16 GMT</pubDate></item></channel></rss>`};
+ }});
+ assert.equal(result.feed.article_count,2);
+ assert.equal(result.feed.failed_sources.length,1);
+ assert.equal(result.feed.source_count,3);
+});

@@ -130,50 +130,90 @@ class NewsApp {
         window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
     }
 
+    async loadRoutedFeed() {
+        try {
+            const response = await fetch('../data/news-feed-latest.json', { cache: 'no-store' });
+            if (!response.ok) return [];
+            const payload = await response.json();
+            if (!payload || payload.site !== "Kol's Korner" || !Array.isArray(payload.articles) || payload.articles.length === 0) {
+                return [];
+            }
+
+            return payload.articles
+                .map((article) => {
+                    const parsed = new Date(article.date);
+                    return this.hydrateArticle({
+                        title: article.title,
+                        source: article.source,
+                        url: article.url,
+                        summary: article.summary,
+                        category: article.category || '',
+                        date: article.date,
+                        dateString: Number.isNaN(parsed.getTime())
+                            ? ''
+                            : parsed.toLocaleDateString('en-GB', {
+                                weekday: 'long',
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric',
+                                timeZone: 'UTC'
+                            }),
+                        filename: 'news-feed-latest.json',
+                        tags: this.uiTagsForRoutedArticle(article),
+                        time: article.date,
+                        imageUrl: null,
+                        isNoNews: false
+                    });
+                })
+                .filter((article) => article.date instanceof Date && !Number.isNaN(article.date.getTime()) && this.shouldDisplayArticle(article));
+        } catch (error) {
+            console.warn('Routed news feed unavailable, using the digest archive.', error);
+            return [];
+        }
+    }
+
     async loadArticles() {
+        const routedArticles = await this.loadRoutedFeed();
         const prebuiltArticles = await this.loadPrebuiltArticles();
+        let archive = [];
+
         if (prebuiltArticles) {
-            this.articles = prebuiltArticles
+            archive = prebuiltArticles
                 .map((article) => this.hydrateArticle(article))
                 .filter((article) => this.shouldDisplayArticle(article));
-            this.refreshDerivedCollections();
-            this.filteredArticles = [...this.articles];
-            this.populateFilters();
-
-            const loading = document.getElementById('loading');
-            if (loading) loading.style.display = 'none';
-            return;
+        } else {
+            const fileList = await this.getDigestFileList();
+            const loadPromises = fileList.map(async (filename) => {
+                try {
+                    const response = await fetch(`../news-digests/${filename}`);
+                    if (response.ok) {
+                        const content = await response.text();
+                        return this.parseDigest(content, filename);
+                    }
+                } catch (error) {
+                    // File doesn't exist, skip silently
+                }
+                return [];
+            });
+            const results = await Promise.all(loadPromises);
+            results.forEach((articles) => archive.push(...articles));
+            archive = archive.filter((article) => this.shouldDisplayArticle(article));
         }
 
-        const fileList = await this.getDigestFileList();
+        const seen = new Set();
+        this.articles = [];
+        for (const article of [...routedArticles, ...archive]) {
+            const key = article.url || `${article.title}|${article.date}`;
+            if (seen.has(key)) continue;
+            seen.add(key);
+            this.articles.push(article);
+        }
 
-        // Load files in parallel for much faster performance
-        const loadPromises = fileList.map(async (filename) => {
-            try {
-                const response = await fetch(`../news-digests/${filename}`);
-                if (response.ok) {
-                    const content = await response.text();
-                    return this.parseDigest(content, filename);
-                }
-            } catch (error) {
-                // File doesn't exist, skip silently
-            }
-            return [];
-        });
-
-        // Wait for all files to load in parallel
-        const results = await Promise.all(loadPromises);
-        results.forEach(articles => this.articles.push(...articles));
-
-        // Sort articles by date (newest first)
-        this.articles = this.articles
-            .filter((article) => this.shouldDisplayArticle(article))
-            .sort((a, b) => new Date(b.date) - new Date(a.date));
+        this.articles.sort((a, b) => new Date(b.date) - new Date(a.date));
         this.refreshDerivedCollections();
         this.filteredArticles = [...this.articles];
         this.populateFilters();
 
-        // Hide loading
         const loading = document.getElementById('loading');
         if (loading) loading.style.display = 'none';
     }
@@ -194,6 +234,11 @@ class NewsApp {
         }
 
         return null;
+    }
+
+    uiTagsForRoutedArticle(article) {
+        const derived = this.generateTags(`${article.title || ''} ${article.summary || ''}`);
+        return derived.filter((tag) => NEWS_TAG_ORDER.includes(tag));
     }
 
     hydrateArticle(article) {
