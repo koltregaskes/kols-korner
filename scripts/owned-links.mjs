@@ -9,7 +9,7 @@ export function renderLinksPage(template, { contactEmail }, projects = []) {
   return template.replace(/<main\b[^>]*>[\s\S]*?<\/main>/i, main)
     .replace(/<title>[\s\S]*?<\/title>/, "<title>Links - Kol's Korner</title>")
     .replace(/(<meta name="description" content=")[^"]*/, '$1Writing, news, connected projects and contact links from Kol\'s Korner')
-    .replace(/https:\/\/koltregaskes.com\/about\//g, 'https://koltregaskes.com/links/');
+    .replace(/(<link\b[^>]*rel="canonical"[^>]*href=")https:\/\/koltregaskes.com\/about\//, '$1https://koltregaskes.com/links/');
 }
 export async function writeLinksPage(projects) {
   const template = await fs.readFile('site/about/index.html', 'utf8');
