@@ -1,0 +1,69 @@
+name: Publish routed digest
+
+on:
+  schedule:
+    # 06:45 UTC daily. Historical morning publishes landed around 06:55 Europe/London.
+    # In GMT that is the same morning window. In British Summer Time it is 07:45 London.
+    # This workflow does not fetch sources. When the Mini PC classifier file is
+    # absent, the publisher uses articles already in news-digests/news-feed-latest.json.
+    # A missing or empty feed exits 0 and records that there was nothing to publish.
+    # A failed source fetch still fails the feed refresh job.
+    - cron: "45 6 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Digest date YYYY-MM-DD. Defaults to the Europe/London calendar date."
+        required: false
+        type: string
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: publish-routed-digest
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    outputs:
+      source: ${{ steps.publish.outputs.source }}
+      deploy: ${{ steps.publish.outputs.deploy }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.22.1"
+          package-manager-cache: false
+
+      - name: Publish routed digest
+        id: publish
+        env:
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO: ${{ github.event.repository.name }}
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          DIGEST_DATE: ${{ github.event_name == 'workflow_dispatch' && inputs.date || '' }}
+        run: |
+          set -eu
+          if [ -n "${DIGEST_DATE}" ]; then
+            node scripts/publish-routed-news.mjs --publish --date "${DIGEST_DATE}"
+          else
+            node scripts/publish-routed-news.mjs --publish
+          fi
+
+      - name: Deploy through the single Pages workflow
+        if: steps.publish.outputs.deploy == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main
