@@ -2,6 +2,14 @@
 
 Personal website and publishing system for Kol Tregaskes.
 
+## Deployment and rollback rehearsal
+
+Record the current known-good commit, successful deployment run and rehearsal evidence on the [launch issue](https://github.com/koltregaskes/rooms-os-hub/issues/1505), rather than keeping a dated baseline in this README.
+
+This site deploys through the existing Actions Pages workflow. For a live rollback, rerun the known-good Pages deployment through that pipeline, then verify every public artifact file over HTTPS. Restore the latest reviewed release through its deployment run and repeat the byte readback. Do not force-push main, alter hosting/DNS, restart a legacy writer, or treat a green job as destination proof. If the historical run cannot be rerun, prepare a narrowly scoped revert PR, obtain review and green checks, then use the normal pipeline.
+
+Keep fresh news data and source timestamps under the existing writer; reverting the site is not permission to roll back data blindly. Record run URLs, exact commits, observed public hashes, failures and recovery on the launch issue. Confirm the named operational owner and distinguish an offline artifact-restoration exercise from an actual production rollback or data-recovery test.
+
 ## Deployment State
 
 - Live production site: https://koltregaskes.com/ (custom domain on GitHub Pages)
