@@ -1,4 +1,6 @@
 import '../site/news/news-state.js';
+import { writeLinksPage } from './owned-links.mjs';
+import { repairTagTargets } from "./check-internal-links.mjs";
 // scripts/build.mjs
 // Builds static site from Obsidian markdown files
 import { repairArchivedLinks } from './repair-archived-links.mjs';
@@ -83,7 +85,8 @@ const NAV_ITEMS = [
   { key: 'tags', label: 'Tags', path: 'tags/' },
   { key: 'subscribe', label: 'Newsletter', path: 'subscribe/' },
   { key: 'about', label: 'About', path: 'about/' },
-  { key: 'contact', label: 'Contact', path: 'contact/' }
+  { key: 'contact', label: 'Contact', path: 'contact/' },
+  { key: 'links', label: 'Links', path: 'links/' }
 ];
 const AI_CONTEXT_FILES = ['opinions.txt', 'memories.txt', 'writing-style.txt'];
 const CONNECTED_PROJECTS = [
@@ -3049,9 +3052,11 @@ async function cleanGeneratedOutput() {
   await writeHomePage(items, newsArticles);
   await writePostsPage(items);
   await writeTagsPage(items, newsArticles);
+  await repairTagTargets("site", new URL(SITE_URL).origin);
   await writeAboutPage();
   await writeSubscribePage();
   await writeContactPage();
+  await writeLinksPage(CONNECTED_PROJECTS);
   await writeSeo({ siteUrl: SITE_URL, siteName: SITE_NAME, siteOwner: SITE_OWNER, items });
   // Write machine-readable data, feed, and crawl files
   await fs.mkdir("site/data", { recursive: true });
