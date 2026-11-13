@@ -8,6 +8,7 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  PLAYWRIGHT_CHANNEL: msedge
 
 jobs:
   build:
@@ -55,8 +56,8 @@ jobs:
         run: node --test tests/*.test.mjs scripts/publish-routed-news.test.mjs
       - name: Install launch test dependencies
         run: npm ci
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
+      - name: Verify runner-installed Edge (no browser downloads)
+        run: microsoft-edge --version
       - name: Check every route at phone and desktop widths
         run: npm run test:launch -- --shard=${{ matrix.shard }}/4
       - name: Check AI discovery file

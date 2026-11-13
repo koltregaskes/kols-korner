@@ -158,3 +158,11 @@ node scripts/check-live.mjs <extracted-directory> <https-site-base-url/>
 ```
 
 Record the run URL and its head SHA alongside the result. This compares every public artifact file with the live HTTPS response, including downloads and discovery files. Mismatches, missing files, blocked responses, network errors and the four-minute crawl deadline prevent a passing result. It prints paths and counts, never response bodies. A passing crawl proves those deployed bytes at the time checked, not freshness, source truth or launch acceptance.
+
+### Daily freshness evidence
+
+The existing Routed feed freshness workflow keeps its 06:30 UTC schedule and failed-run notification route. In addition to checking the committed generation/source age, it fetches the existing HTTPS public feed and requires an exact SHA-256 payload match. Future timestamps (over five minutes ahead), feeds at least 24 hours old, redirects, HTTP/network failures and mismatched payloads cannot produce a passing readback. A fresh empty feed is labelled empty with no invented source date.
+
+Each run retains a public-feed-proof artifact for 30 days, including the run/head, destination, check time, generation time and newest source-declared date. The source dates are feed metadata, not independently authenticated publication evidence. Run locally with node scripts/check-public-feed-proof.mjs, or dispatch the existing workflow for a bounded readback. The script reads only the public feed and never generates or publishes articles.
+
+For launch acceptance, link each day's actual run and artifact on rooms-os-hub#1505 during the planned seven-day window. The code does not prove seven consecutive days, failure-notification recipient delivery, production recovery or post-launch-owner acceptance. Those require separate readbacks with the existing owners.
