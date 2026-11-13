@@ -2954,7 +2954,9 @@ async function cleanGeneratedOutput() {
     'site/tags',
     'site/videos',
     'site/.well-known',
-    'site/news-digests'
+    // Preserve committed historical digest downloads, including those whose
+    // canonical source is no longer in news-digests/. Current sources overwrite
+    // their matching downloads below; older published URLs remain available.
   ];
   const generatedFiles = [
     'site/admin.html',
