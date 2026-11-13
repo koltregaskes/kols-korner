@@ -26,8 +26,12 @@ for (const file of await pages(root)) {
    } catch { await route.fulfill({status:404,body:'Not found'}); }
   });
   await page.goto(new URL(relative,origin+'/').href);
+  const redirect = html.match(/http-equiv=["']refresh["'][^>]*content=["']0;\s*url=([^"']+)/i);
+  if (redirect) await page.waitForURL(new URL(redirect[1], new URL(relative, origin+'/')).href);
+  await page.waitForLoadState('networkidle');
   await expect(page.locator('body')).toBeVisible();
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  const overflow = await page.evaluate(() => [...document.querySelectorAll('body *')].filter(e => e.getBoundingClientRect().right > innerWidth + 1).map(e => ({tag:e.tagName,classes:e.className,width:e.getBoundingClientRect().width,right:e.getBoundingClientRect().right})).slice(0,10));
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), JSON.stringify(overflow)).toBe(true);
   const result = await new AxeBuilder({page}).analyze();
   expect(result.violations.filter(v => ['serious','critical'].includes(v.impact)).map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))).toEqual([]);
   const links = await page.locator('[href], [src]').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('href')||n.getAttribute('src')).filter(Boolean));
