@@ -4,12 +4,11 @@ Personal website and publishing system for Kol Tregaskes.
 
 ## Deployment and rollback rehearsal
 
-The existing successful main deployment [run 43395737288](https://github.com/koltregaskes/kols-korner/actions/runs/43395737288) at e6d1796 is the baseline. Its github-pages artifact was restored into a new isolated candidate directory. A deliberate homepage-byte change was detected, then re-extracting the retained artifact restored all 633 file hashes. This is an offline artifact-restoration rehearsal, not a production rollback or a data-recovery claim.
+Record the current known-good commit, successful deployment run and rehearsal evidence on the [launch issue](https://github.com/koltregaskes/rooms-os-hub/issues/1505), rather than keeping a dated baseline in this README.
 
-For a live rehearsal, record a known-good successful main deployment run and immutable commit before deploying the reviewed release. If rollback is needed, rerun that known-good Pages deployment through the existing pipeline, then verify every public artifact file over HTTPS. Restore the latest reviewed release through its deployment run and repeat the byte readback. Do not force-push main, alter hosting/DNS, restart a legacy writer, or treat a green job as destination proof. If the historical run cannot be rerun, prepare a narrowly scoped revert PR, obtain review and green checks, then use the normal pipeline.
+This site deploys through the existing Actions Pages workflow. For a live rollback, rerun the known-good Pages deployment through that pipeline, then verify every public artifact file over HTTPS. Restore the latest reviewed release through its deployment run and repeat the byte readback. Do not force-push main, alter hosting/DNS, restart a legacy writer, or treat a green job as destination proof. If the historical run cannot be rerun, prepare a narrowly scoped revert PR, obtain review and green checks, then use the normal pipeline.
 
-Keep dynamic news/calendar data and source timestamps under the existing writer: reverting the site is not permission to roll back fresh data blindly. Record the run URLs, exact commits, observed public hashes, failures and recovery on the owning launch issue. The source maintainer retains post-launch follow-through; a named operational owner and actual live rollback/failure-alert acceptance remain required.
-
+Keep fresh news data and source timestamps under the existing writer; reverting the site is not permission to roll back data blindly. Record run URLs, exact commits, observed public hashes, failures and recovery on the launch issue. Confirm the named operational owner and distinguish an offline artifact-restoration exercise from an actual production rollback or data-recovery test.
 
 ## Deployment State
 
