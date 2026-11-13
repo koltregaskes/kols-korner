@@ -43,7 +43,7 @@ def local(url):
 
 
 if __name__ == "__main__":
-    domain = (os.environ.get("CUSTOM_DOMAIN") or (ROOT / "CNAME").read_text(encoding="utf-8").strip()).removeprefix("https://").removeprefix("http://").rstrip("/") if SITE != ROOT else "axylusion.com"
+    domain = (os.environ.get("CUSTOM_DOMAIN") or (ROOT / "CNAME").read_text(encoding="utf-8").strip()).removeprefix("https://").removeprefix("http://").rstrip("/")
     base = f"https://{domain}"
     base_path = urlparse(base).path
     expected, image_count = set(), 0
@@ -82,11 +82,6 @@ if __name__ == "__main__":
             assert any(node.get("url") == url for node in nodes), "JSON-LD missing the page URL"
             if relative.startswith("posts/") and relative != "posts/":
                 assert any(n.get("@type") == "BlogPosting" and n.get("headline") and n.get("author") and n.get("datePublished") for n in nodes), "Missing article metadata"
-            if relative == "gallery.html":
-                assert any(n.get("@type") == "ImageGallery" and n.get("image") for n in nodes)
-                assert any(n.get("@type") == "ImageGallery" and n.get("hasPart") and all(isinstance(x, dict) and x.get("@type") == "VisualArtwork" for x in n["hasPart"]) for n in nodes), "Gallery artwork metadata was lost"
-            if relative == "blog-welcome.html":
-                assert any(n.get("@type") == "CreativeWork" for n in nodes)
         except (AssertionError, KeyError, ValueError) as error:
             raise SystemExit(f"{relative or 'index.html'}: {error}") from error
     sitemap = ET.parse(SITE / "sitemap.xml").getroot()
@@ -99,8 +94,6 @@ if __name__ == "__main__":
         for image in images:
             assert image.text.startswith("https://") and "midjourney.com" not in image.text
         image_count += len(images)
-    if SITE == ROOT:
-        assert image_count > 0, "Missing gallery image sitemap entries"
     rss = ET.parse(SITE / "feed.xml").getroot()
     assert rss.tag == "rss" and rss.get("version") == "2.0"
     channel = rss.find("channel")

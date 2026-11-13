@@ -67,7 +67,7 @@ export async function writeSeo({ siteUrl, siteName, siteOwner, items }) {
     const tags = [`<link rel="canonical" href="${escape(url)}" />`,
       `<link rel="alternate" type="application/rss+xml" title="${escape(siteName)}" href="${escape(siteUrl)}/feed.xml" />`,
       ...Object.entries(values).map(([name, value]) => `<meta ${name.startsWith('twitter:') ? 'name' : 'property'}="${name}" content="${escape(value)}" />`),
-      `<script type="application/ld+json" nonce="kk-jsonld">${json(schema)}</script>`];
+      `<script type="application/ld+json">${json(schema)}</script>`];
     if (!meta.some(a => a.name === 'description')) tags.unshift(`<meta name="description" content="${escape(description)}" />`);
     html = html.replace(/<\/head>/i, `\n  <!-- SEO:start -->\n  ${tags.join('\n  ')}\n  <!-- SEO:end -->\n</head>`);
     await fs.writeFile(page.file, html.replace(/\r\n?/g, '\n').replace(/[ \t]+$/gm, ''), 'utf8');
