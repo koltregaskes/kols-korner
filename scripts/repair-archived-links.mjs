@@ -6,7 +6,7 @@ export async function repairArchivedLinks(root='site') {
  const replacements=JSON.parse(await fs.readFile(mappingPath,'utf8'));
  for(const [original,target] of Object.entries(replacements)) {
   const archived=new URL(target);
-  const primaryHosts=new Set(['a16z.com','blog.google','ideogram.ai','ramp.com','finch-static.agibot.com']);
+  const primaryHosts=new Set(['a16z.com','blog.google','ideogram.ai','ramp.com','finch-static.agibot.com','www.ycombinator.com','www.itiger.com']);
   if(new URL(original).hostname!=='www.digg.com' || archived.protocol!=='https:' || (!primaryHosts.has(archived.hostname) && (archived.hostname!=='web.archive.org' || !archived.pathname.includes(new URL(original).pathname)))) throw new Error('Invalid archived-source mapping');
  }
  let repaired=0;
