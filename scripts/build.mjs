@@ -1245,18 +1245,40 @@ function markdownToHtml(md) {
 // Extract headings for TOC
 function extractHeadings(html) {
   const headings = [];
-  const regex = /<h([234]) id="([^"]+)">(.+?)<\/h\1>/g;
+  const regex = /<h([234]) id="([^"]+)"(?: data-md-level="(\d)")?>(.+?)<\/h\1>/g;
   let match;
 
   while ((match = regex.exec(html)) !== null) {
     headings.push({
-      level: parseInt(match[1]),
+      // TOC indent follows the markdown level, so renumbering (below) does not move entries.
+      level: parseInt(match[3] || match[1]),
       id: match[2],
-      text: match[3].replace(/<[^>]+>/g, '')
+      text: match[4].replace(/<[^>]+>/g, '')
     });
   }
 
   return headings;
+}
+
+// markdownToHtml renders `#` as h2, `##` as h3 and `###` as h4, and an article's leading
+// `# Title` is stripped because the page already has the title as its h1. So most articles
+// start at h3, which skips a level under the h1. Renumber the content headings so the first
+// level used becomes h2 and no heading is more than one level deeper than the one before.
+// The markdown level is kept in data-md-level, so the styling and TOC indent stay the same.
+function normalizeContentHeadings(html = '', topLevel = 2) {
+  const headingRegex = /<h([2-6])((?:\s[^>]*)?)>([\s\S]*?)<\/h\1>/g;
+  const levels = [...String(html || '').matchAll(headingRegex)].map((m) => Number(m[1]));
+  if (levels.length === 0) return html;
+
+  const shift = Math.max(0, Math.min(...levels) - topLevel);
+  let previous = topLevel - 1;
+  return html.replace(headingRegex, (whole, sourceLevel, attrs, inner) => {
+    const source = Number(sourceLevel);
+    const level = Math.max(topLevel, Math.min(source - shift, previous + 1));
+    previous = level;
+    if (level === source) return whole;
+    return `<h${level}${attrs} data-md-level="${source}">${inner}</h${level}>`;
+  });
 }
 
 function generateTOC(headings) {
@@ -1649,6 +1671,7 @@ async function readContentFiles() {
       if (kind === 'article' || isDigest) {
         contentHtml = markdownToHtml(body);
         contentHtml = stripLeadingArticleHeading(contentHtml, title);
+        contentHtml = normalizeContentHeadings(contentHtml);
         headings = extractHeadings(contentHtml);
 
         // Calculate reading time
@@ -2357,7 +2380,8 @@ async function writePostsPage(items) {
       </div>
 
       ${editorialPosts.length ? `
-      <section class="posts-stream" aria-label="Latest posts">
+      <section class="posts-stream" aria-labelledby="posts-stream-heading">
+        <h2 class="visually-hidden" id="posts-stream-heading">Latest posts</h2>
         ${editorialPosts.map((item, index) => {
           const title = escapeHtml(item.title);
           const summary = escapeHtml(item.summary || '');

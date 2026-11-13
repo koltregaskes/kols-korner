@@ -930,8 +930,8 @@ body.news-page::before {
 
 .tag-filter-btn.active,
 .quick-btn.active {
-  background: var(--red);
-  border-color: var(--red);
+  background: var(--red-fill);
+  border-color: var(--red-fill);
   color: #ffffff;
 }
 
@@ -1076,4 +1076,14 @@ body.news-page::before {
   .news-filter-panel summary {
     align-items: flex-start;
   }
+}
+
+/* Keyboard focus must stay visible (WCAG 2.4.7); mouse focus keeps the soft ring. */
+.search-input:focus-visible,
+.archive-select:focus-visible,
+.group-select:focus-visible,
+.date-input:focus-visible,
+.dialog-content input:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
 }
