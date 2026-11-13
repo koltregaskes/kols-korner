@@ -11,6 +11,10 @@ env:
 
 jobs:
   build:
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -51,6 +55,6 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
       - name: Check every route at phone and desktop widths
-        run: npm run test:launch
+        run: npm run test:launch -- --shard=${{ matrix.shard }}/4
       - name: Check AI discovery file
         run: test -s site/llms.txt
