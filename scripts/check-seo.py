@@ -4,11 +4,13 @@ import json
 import os
 import re
 import struct
+import zlib
+from urllib.robotparser import RobotFileParser
 import xml.etree.ElementTree as ET
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import unquote, urlparse
+from urllib.parse import unquote, urlparse, urljoin
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site" if (ROOT / "scripts/build.mjs").exists() else ROOT
@@ -41,11 +43,32 @@ def local(url):
     return path / "index.html" if path.is_dir() else path
 
 
+def validate_png(raw):
+    assert raw[:8] == b"\x89PNG\r\n\x1a\n", "Invalid PNG signature"
+    offset, compressed, ended = 8, bytearray(), False
+    while offset + 12 <= len(raw):
+        length = struct.unpack(">I", raw[offset:offset + 4])[0]
+        kind = raw[offset + 4:offset + 8]
+        end = offset + 12 + length
+        assert end <= len(raw), "Truncated PNG chunk"
+        data = raw[offset + 8:offset + 8 + length]
+        checksum = struct.unpack(">I", raw[end - 4:end])[0]
+        assert zlib.crc32(kind + data) & 0xffffffff == checksum, "PNG CRC mismatch"
+        if kind == b"IDAT":
+            compressed.extend(data)
+        offset = end
+        if kind == b"IEND":
+            ended = True
+            break
+    assert ended and offset == len(raw) and compressed, "Incomplete PNG image"
+    assert zlib.decompress(compressed), "Empty PNG pixel data"
+
+
 if __name__ == "__main__":
     domain = (os.environ.get("CUSTOM_DOMAIN") or (ROOT / "CNAME").read_text(encoding="utf-8").strip()).removeprefix("https://").removeprefix("http://").rstrip("/")
     base = f"https://{domain}"
     base_path = urlparse(base).path
-    expected = set()
+    expected, checked_images = set(), set()
     for page in sorted(SITE.rglob("*.html")):
         if any(part.startswith(".") for part in page.relative_to(SITE).parts):
             continue
@@ -70,7 +93,11 @@ if __name__ == "__main__":
             assert head.one("twitter:card") == "summary_large_image"
             image = head.one("og:image")
             assert image == head.one("twitter:image") and image.startswith(base + "/") and image.endswith(".png")
-            raw = local(image).read_bytes()
+            image_path = local(image)
+            raw = image_path.read_bytes()
+            if image_path not in checked_images:
+                validate_png(raw)
+                checked_images.add(image_path)
             assert raw[:8] == b"\x89PNG\r\n\x1a\n" and struct.unpack(">II", raw[16:24]) == (1200, 630), "Social image must be a 1200x630 PNG"
             assert head.one("og:image:width") == "1200" and head.one("og:image:height") == "630"
             assert head.one("og:image:type") == "image/png"
@@ -78,10 +105,12 @@ if __name__ == "__main__":
             schemas = [json.loads(m) for m in re.findall(r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', text, re.S)]
             assert schemas, "Missing JSON-LD"
             nodes = [node for schema in schemas for node in schema.get("@graph", [schema])]
+            identities = [node["@id"] for node in nodes if node.get("@id")]
+            assert len(identities) == len(set(identities)), "Duplicate JSON-LD identities"
             assert any(node.get("url") == url for node in nodes), "JSON-LD missing the page URL"
             if relative.startswith("posts/") and relative != "posts/":
                 assert any(n.get("@type") == "BlogPosting" and n.get("headline") and n.get("author") and n.get("datePublished") for n in nodes), "Missing article metadata"
-        except (AssertionError, KeyError, ValueError) as error:
+        except (AssertionError, KeyError, ValueError, zlib.error) as error:
             raise SystemExit(f"{relative or 'index.html'}: {error}") from error
     sitemap = ET.parse(SITE / "sitemap.xml").getroot()
     assert sitemap.tag == f"{{{SM}}}urlset"
@@ -108,5 +137,18 @@ if __name__ == "__main__":
     assert dates == sorted(dates, reverse=True), "RSS dates are not newest first"
     robots = (SITE / "robots.txt").read_text(encoding="utf-8")
     assert f"Sitemap: {base}/sitemap.xml" in robots
+    assert re.search(r"^User-agent:\s*\*\s*$", robots, re.M | re.I), "robots.txt missing wildcard user agent"
+    policy = RobotFileParser()
+    policy.parse(robots.splitlines())
+    for url in expected:
+        assert policy.can_fetch("launch-check", url), f"robots.txt blocked sitemap URL: {url}"
+    llms = (SITE / "llms.txt").read_text(encoding="utf-8")
+    assert llms.strip().startswith("# "), "llms.txt missing its readable title/content"
+    discovery_links = re.findall(r"\[[^\]]+\]\(([^)]+)\)", llms)
+    assert discovery_links, "llms.txt has no discovery links"
+    for target in discovery_links:
+        url = urljoin(base + "/llms.txt", target)
+        if urlparse(url).netloc == urlparse(base).netloc:
+            assert url.startswith(base + "/") and local(url).exists(), f"llms.txt has a broken internal target: {target}"
     assert not re.search(r"^Disallow:\s*/\s*$", robots, re.M)
     print(f"SEO checks passed: {len(expected)} pages, {len(urls)} sitemap URLs, {len(items)} RSS items.")
