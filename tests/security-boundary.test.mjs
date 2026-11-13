@@ -14,3 +14,12 @@ test('new collection, payment-style mutations and telemetry fail the declared ab
  assert.deepEqual(inspectHtml('<a href="mailto:hello@koltregaskes.com">Email</a>'),[]);
 });
 test('actual built public interface inventory matches the launch boundary',async()=>{const r=await checkBoundary();assert.ok(r.html>100);assert.deepEqual(r.errors,[])});
+
+import os from 'node:os';import path from 'node:path';
+for(const [name,html] of [
+ ['inline telemetry','<script>navigator.sendBeacon("https://clarity.ms/collect", data)</script>'],
+ ['inline mutation','<script>fetch("/api",{method:"POST"})</script>'],
+ ['unquoted collection field','<input type=email>'],
+ ['inline XHR mutation','<script>const xhr=new XMLHttpRequest();xhr.open("POST","/api");</script>']
+])test('planted public boundary rejects '+name,()=>assert.ok(inspectHtml(html).length>0));
+test('planted mjs module cannot bypass the public boundary inventory',async()=>{const dir=fs.mkdtempSync(path.join(os.tmpdir(),'kk-boundary-'));fs.writeFileSync(path.join(dir,'collect.mjs'),'const x=new XMLHttpRequest();x.open("POST","/api");');const r=await checkBoundary(dir);assert.equal(r.js,1);assert.ok(r.errors.length>0);});

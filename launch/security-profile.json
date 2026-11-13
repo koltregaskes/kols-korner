@@ -35,5 +35,10 @@
     "newsletter": "No email collection/sending in this build. Explicit launch not-required decision remains with #1495/#1496 owner",
     "monetisation": "Defer payment or donation integration until an approved umbrella support journey exists under #1502"
   },
-  "source": "https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https"
+  "source": "https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https",
+  "inventoryLimits": {
+    "thirdPartyIframes": "not inventoried by this bounded guard; require separate review",
+    "trackingPixels": "not inventoried by this bounded guard; require separate review",
+    "staticSignatures": "not a JavaScript parser or comprehensive data-flow analysis"
+  }
 }
