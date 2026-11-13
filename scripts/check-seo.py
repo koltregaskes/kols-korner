@@ -5,7 +5,6 @@ import os
 import re
 import struct
 import zlib
-from urllib.robotparser import RobotFileParser
 import xml.etree.ElementTree as ET
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
@@ -41,6 +40,39 @@ def local(url):
     relative = unquote(urlparse(url).path).removeprefix(base_path).lstrip("/")
     path = SITE / relative
     return path / "index.html" if path.is_dir() else path
+
+
+def robots_allows(text, url, agent):
+    # RFC 9309: longest matching agent/rule; Allow wins equal specificity.
+    groups, agents, rules = [], [], []
+    for raw in text.splitlines() + [""]:
+        line = raw.split("#", 1)[0].strip()
+        if not line:
+            continue
+        key, sep, value = line.partition(":")
+        key, value = key.strip().lower(), value.strip()
+        if key == "user-agent":
+            if rules:
+                groups.append((agents, rules))
+                agents, rules = [], []
+            agents.append(value.lower())
+        elif key in ("allow", "disallow") and value:
+            rules.append((key == "allow", value))
+    if agents:
+        groups.append((agents, rules))
+    matches = [(max((len(a) for a in names if a != "*" and a in agent.lower()), default=0), names, rules) for names, rules in groups]
+    specificity = max((m[0] for m in matches), default=0)
+    selected = [rules for score, names, rules in matches if score == specificity and (score > 0 or "*" in names)]
+    target = unquote(urlparse(url).path)
+    hits = []
+    for rules in selected:
+        for allow, pattern in rules:
+            anchored = pattern.endswith("$")
+            pattern = unquote(pattern.rstrip("$"))
+            regex = re.escape(pattern).replace(r"\*", ".*") + ("$" if anchored else "")
+            if re.match(regex, target):
+                hits.append((len(pattern.replace("*", "")), allow))
+    return max(hits, default=(0, True))[1]
 
 
 def validate_png(raw):
@@ -138,10 +170,9 @@ if __name__ == "__main__":
     robots = (SITE / "robots.txt").read_text(encoding="utf-8")
     assert f"Sitemap: {base}/sitemap.xml" in robots
     assert re.search(r"^User-agent:\s*\*\s*$", robots, re.M | re.I), "robots.txt missing wildcard user agent"
-    policy = RobotFileParser()
-    policy.parse(robots.splitlines())
     for url in expected:
-        assert policy.can_fetch("launch-check", url), f"robots.txt blocked sitemap URL: {url}"
+        for agent in ("launch-check", "googlebot", "bingbot"):
+            assert robots_allows(robots, url, agent), f"robots.txt blocked sitemap URL: {url} ({agent})"
     llms = (SITE / "llms.txt").read_text(encoding="utf-8")
     assert llms.strip().startswith("# "), "llms.txt missing its readable title/content"
     discovery_links = re.findall(r"\[[^\]]+\]\(([^)]+)\)", llms)
