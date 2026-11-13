@@ -77,9 +77,10 @@ class NewsApp {
         this.tags = new Set();
         this.activeTags = new Set();
         this.groupBy = 'date';
-        this.favorites = new Set(JSON.parse(localStorage.getItem('news-favorites') || '[]'));
-        this.flags = JSON.parse(localStorage.getItem('news-flags') || '{}');
+        this.favorites = new Set(KolsNewsState.readStorage('news-favorites', [], value=>Array.isArray(value)&&value.every(x=>typeof x==='string')));
+        this.flags = KolsNewsState.readStorage('news-flags', {}, value=>value!==null&&typeof value==='object'&&!Array.isArray(value));
         this.latestArticleDate = null;
+        this.feedAssessment = KolsNewsState.assessFeed(null);
 
         this.init();
     }
@@ -133,13 +134,14 @@ class NewsApp {
     async loadRoutedFeed() {
         try {
             const response = await fetch('../data/news-feed-latest.json', { cache: 'no-store' });
-            if (!response.ok) return [];
+            if (!response.ok) throw new Error("Routed feed unavailable");
             const payload = await response.json();
-            if (!payload || payload.site !== "Kol's Korner" || !Array.isArray(payload.articles) || payload.articles.length === 0) {
+            this.feedAssessment = KolsNewsState.assessFeed(payload);
+            if (["unavailable", "invalid"].includes(this.feedAssessment.kind) || payload.articles.length === 0) {
                 return [];
             }
 
-            return payload.articles
+            const articles = payload.articles
                 .map((article) => {
                     const parsed = new Date(article.date);
                     return this.hydrateArticle({
@@ -167,8 +169,11 @@ class NewsApp {
                     });
                 })
                 .filter((article) => article.date instanceof Date && !Number.isNaN(article.date.getTime()) && this.shouldDisplayArticle(article));
+            this.feedAssessment = KolsNewsState.assessFeed({...payload,articles});
+            return articles;
         } catch (error) {
-            console.warn('Routed news feed unavailable, using the digest archive.', error);
+            this.feedAssessment = KolsNewsState.assessFeed(null);
+            console.warn('Routed news feed unavailable; dated archive fallback is labelled.');
             return [];
         }
     }
@@ -215,6 +220,8 @@ class NewsApp {
         this.filteredArticles = [...this.articles];
         this.populateFilters();
 
+        const status = document.getElementById('newsAvailability');
+        if (status) { status.textContent = this.feedAssessment.message; status.dataset.state = this.feedAssessment.kind; }
         const loading = document.getElementById('loading');
         if (loading) loading.style.display = 'none';
     }
@@ -1106,7 +1113,7 @@ class NewsApp {
         } else {
             this.favorites.add(article.title);
         }
-        localStorage.setItem('news-favorites', JSON.stringify(Array.from(this.favorites)));
+        KolsNewsState.saveStorage('news-favorites', Array.from(this.favorites));
         this.displayArticles();
     }
 
@@ -1123,7 +1130,7 @@ class NewsApp {
         this.flags[article.title] = this.flags[article.title] || [];
         if (!this.flags[article.title].includes(reason)) {
             this.flags[article.title].push(reason);
-            localStorage.setItem('news-flags', JSON.stringify(this.flags));
+            KolsNewsState.saveStorage('news-flags', this.flags);
         }
         alert(`Reported "${article.title}" as ${reason}`);
         this.filterArticles();

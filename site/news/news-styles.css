@@ -1087,3 +1087,5 @@ body.news-page::before {
   outline: 3px solid var(--red);
   outline-offset: 2px;
 }
+
+.news-availability { overflow-wrap: anywhere; padding: .8rem; border: 1px solid currentColor; line-height: 1.6; }
