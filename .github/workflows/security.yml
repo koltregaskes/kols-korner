@@ -31,4 +31,6 @@ jobs:
         with:
           node-version: '24.22.1'
       - run: npm run build
+      - name: Verify public forms/API/telemetry boundary
+        run: node scripts/check-public-boundary.mjs
       - run: node scripts/check-external-links.mjs
