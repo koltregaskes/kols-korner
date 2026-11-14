@@ -1,3 +1,4 @@
+import { externalizeInlineScripts } from './externalize-inline-scripts.mjs';
 import '../site/news/news-state.js';
 import { writeLinksPage } from './owned-links.mjs';
 import { repairTagTargets } from "./check-internal-links.mjs";
@@ -815,7 +816,7 @@ function parseDigestArticles(content, filename) {
 
 // Security headers for all pages
 const getSecurityHeaders = () => `
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">`;
 
 function getCanonicalUrl(pathname = '/') {
@@ -3144,5 +3145,6 @@ async function cleanGeneratedOutput() {
   home=home.replace('News desk</p>', 'News desk</p><p id="homeNewsAvailability" role="status">'+escapeHtml(availability.message)+'</p>');
   await fs.writeFile(homePath,home);
   await repairArchivedLinks();
+  console.log('Inline script hardening:', await externalizeInlineScripts());
   console.log('\nBuild complete!');
 })();

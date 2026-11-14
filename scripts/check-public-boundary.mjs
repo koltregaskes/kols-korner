@@ -7,6 +7,19 @@ export function inspectHtml(html){
  if(/<script\b[^>]*src=["'](?:https?:)?\/\//i.test(markup))errors.push('External script requires an approved public boundary');
  if(/<meta\b[^>]*http-equiv=["'](?:strict-transport-security|x-frame-options|x-content-type-options)["']/i.test(markup))errors.push('Response-only security header cannot be supplied by HTML metadata');
  if(/<meta\b[^>]*http-equiv=["']Content-Security-Policy["'][^>]*frame-ancestors/i.test(markup))errors.push('frame-ancestors requires a response header');
+
+ // Scan actual tag attributes, not text or quoted strings in script bodies.
+ for(const tag of markup.matchAll(/<[a-z][^"'<>]*(?:"[^"]*"[^"'<>]*|'[^']*'[^"'<>]*)*>/gi)){
+  for(const attribute of tag[0].matchAll(/\s+([^\s"'<>/=]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>\x60]+))/g)){
+   const name=attribute[1].toLowerCase();
+   const value=(attribute[2]??attribute[3]??attribute[4]).replace(/&(?:#(x[0-9a-f]+|\d+)|quot|apos|amp|colon|tab|newline);/gi,(entity,number)=>{
+    if(number){const code=number[0].toLowerCase()==='x'?parseInt(number.slice(1),16):Number(number);return code>0&&code<=0x10ffff&&!(code>=0xd800&&code<=0xdfff)?String.fromCodePoint(code):'\ufffd';}
+    return ({'&quot;':'"','&apos;':"'",'&amp;':'&','&colon;':':','&tab;':'\t','&newline;':'\n'})[entity.toLowerCase()]??entity;
+   });
+   if(/^on[a-z]+$/.test(name)){errors.push('Inline event handler requires script/privacy review');errors.push(...inspectScript(value));}
+   if(name==='href'&&/^javascript:/i.test(value.replace(/[\u0000-\u0020]/g,''))){errors.push('JavaScript URL requires script/privacy review');errors.push(...inspectScript(value));}
+  }
+ }
  return errors;
 }
 export function inspectScript(script){const errors=[];

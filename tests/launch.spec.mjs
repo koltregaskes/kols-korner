@@ -16,6 +16,7 @@ for (const file of await pages(root)) {
  const html = await fs.readFile(file,'utf8');
  for (const width of [320,390,1280]) test(`${relative} at ${width}px`, async ({page}) => {
   const errors=[]; page.on('pageerror',error=>errors.push(error.message));
+  await page.addInitScript(()=>{globalThis.__cspViolations=[];document.addEventListener('securitypolicyviolation',event=>globalThis.__cspViolations.push({directive:event.effectiveDirective,blocked:event.blockedURI}));});
   await page.setViewportSize({width,height:900});
   await page.route('**/*', async route => {
    const url = new URL(route.request().url());
@@ -39,6 +40,7 @@ for (const file of await pages(root)) {
   const focused=page.locator(':focus'); await expect(focused).toBeVisible();
   expect(await focused.evaluate(el=>el !== document.body && el !== document.documentElement)).toBe(true);
   expect(errors).toEqual([]);
+  expect(await page.evaluate(()=>globalThis.__cspViolations)).toEqual([]);
   const overflow=await page.evaluate(findHorizontalOverflow);
   expect(overflow,JSON.stringify(overflow.slice(0,10))).toEqual([]);
   const result = await new AxeBuilder({page}).analyze();
