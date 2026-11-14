@@ -17,13 +17,14 @@ export function inspectHtml(html){
     return ({'&quot;':'"','&apos;':"'",'&amp;':'&','&colon;':':','&tab;':'\t','&newline;':'\n'})[entity.toLowerCase()]??entity;
    });
    if(/^on[a-z]+$/.test(name)){errors.push('Inline event handler requires script/privacy review');errors.push(...inspectScript(value));}
-   if(name==='href'&&/^javascript:/i.test(value.replace(/[\u0000-\u0020]/g,''))){errors.push('JavaScript URL requires script/privacy review');errors.push(...inspectScript(value));}
+   if(/^(?:href|formaction|src|action|xlink:href)$/.test(name)&&/^javascript:/i.test(value.replace(/[\u0000-\u0020]/g,''))){errors.push('JavaScript URL requires script/privacy review');errors.push(...inspectScript(value));}
   }
  }
  return errors;
 }
 export function inspectScript(script){const errors=[];
- if(/navigator\s*(?:\.\s*sendBeacon|\[\s*["'`]sendBeacon["'`]\s*\])|document\s*(?:\.\s*cookie|\[\s*["'`]cookie["'`]\s*\])|googletagmanager|google-analytics|clarity\.ms/i.test(script))errors.push('New telemetry/cookie behaviour requires collector/privacy review');
+ if(/\bfetch\s*\?\.\s*\(/i.test(script))errors.push('Optional browser request requires interface review');
+ if(/navigator\s*(?:\??\.\s*sendBeacon|(?:\?\.\s*)?\[\s*["'`]sendBeacon["'`]\s*\])|document\s*(?:\??\.\s*cookie|(?:\?\.\s*)?\[\s*["'`]cookie["'`]\s*\])|googletagmanager|google-analytics|clarity\.ms/i.test(script))errors.push('New telemetry/cookie behaviour requires collector/privacy review');
  if(/(?:(?:["'`]?method["'`]?|\[\s*["'`]method["'`]\s*\])\s*:\s*["'`](?:POST|PUT|PATCH|DELETE)["'`]|(?:\.\s*open|\[\s*["'`]open["'`]\s*\])\s*\(\s*["'`](?:POST|PUT|PATCH|DELETE)["'`])/i.test(script))errors.push('New browser mutation API requires interface review');
  if(/<form\b/i.test(script))errors.push('Dynamic form requires interface review');return errors;
 }
