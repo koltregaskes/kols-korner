@@ -1,3 +1,4 @@
+import { repairTagTargets } from "./check-internal-links.mjs";
 // scripts/build.mjs
 // Builds static site from Obsidian markdown files
 import { repairArchivedLinks } from './repair-archived-links.mjs';
@@ -3048,6 +3049,7 @@ async function cleanGeneratedOutput() {
   await writeHomePage(items, newsArticles);
   await writePostsPage(items);
   await writeTagsPage(items, newsArticles);
+  await repairTagTargets("site", new URL(SITE_URL).origin);
   await writeAboutPage();
   await writeSubscribePage();
   await writeContactPage();
