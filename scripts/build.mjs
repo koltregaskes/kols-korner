@@ -1805,7 +1805,7 @@ async function writeArticlePage({
     : '';
 
   const html = `<!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en-GB" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -1956,7 +1956,7 @@ async function writeDigestPage({ title, slug, bodyMarkdown, tags, date, readingT
         </section>`).join('');
 
   const html = `<!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en-GB" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -2020,7 +2020,7 @@ async function writeLegacyRedirectPage(fromSlug, toSlug) {
 
   const targetPath = `../${toSlug}/`;
   const html = `<!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="refresh" content="0; url=${targetPath}" />
@@ -2134,7 +2134,7 @@ async function writeHomePage(items, newsArticles = []) {
     : 'today';
 
   const html = `<!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en-GB" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -2347,7 +2347,7 @@ async function writePostsPage(items) {
   await fs.mkdir("site/posts", { recursive: true });
 
   const html = `<!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en-GB" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -2488,7 +2488,7 @@ async function writeTagsPage(items, newsArticles = []) {
   await fs.mkdir("site/tags", { recursive: true });
 
   const html = `<!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en-GB" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -2620,7 +2620,7 @@ async function writeStaticPage(slug, fallbackTitle, fallbackBody) {
   }
 
   const html = `<!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en-GB" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -2656,7 +2656,7 @@ async function writeAboutPage() {
   await fs.mkdir("site/about", { recursive: true });
 
   const html = `<!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en-GB" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -2749,7 +2749,7 @@ async function writeSubscribePage() {
   await fs.mkdir("site/subscribe", { recursive: true });
 
   const html = `<!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en-GB" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -2793,7 +2793,7 @@ async function writeContactPage() {
   await fs.mkdir("site/contact", { recursive: true });
 
   const html = `<!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en-GB" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
