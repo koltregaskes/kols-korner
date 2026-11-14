@@ -10,3 +10,12 @@ test('ordinary URLs and unrelated optional access stay accepted',()=>{
  assert.deepEqual(inspectHtml('<p>action="javascript:collect()" is text</p>'),[]);
  for(const code of ['object?.value','fetch(url,{method:"GET"})'])assert.deepEqual(inspectScript(code),[]);
 });
+
+for(const name of ['href','formaction','src','action','xlink:href'])
+ test('reject numeric reference without semicolon in '+name,()=>assert.ok(inspectHtml('<a '+name+'="&#106avascript:collect()">Run</a>').some(e=>e.includes('JavaScript URL'))));
+test('reject object data javascript URL',()=>{
+ assert.ok(inspectHtml('<object data="&#106avascript:collect()"></object>').some(e=>e.includes('JavaScript URL')));
+ assert.deepEqual(inspectHtml('<object data="/safe.svg"></object>'),[]);
+ assert.deepEqual(inspectHtml('<div data="javascript:inert"></div>'),[]);
+});
+// Computed-parent access and bracketed fetch calls remain outside this bounded signature guard.

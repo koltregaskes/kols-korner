@@ -12,12 +12,12 @@ export function inspectHtml(html){
  for(const tag of markup.matchAll(/<[a-z][^"'<>]*(?:"[^"]*"[^"'<>]*|'[^']*'[^"'<>]*)*>/gi)){
   for(const attribute of tag[0].matchAll(/\s+([^\s"'<>/=]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>\x60]+))/g)){
    const name=attribute[1].toLowerCase();
-   const value=(attribute[2]??attribute[3]??attribute[4]).replace(/&(?:#(x[0-9a-f]+|\d+)|quot|apos|amp|colon|tab|newline);/gi,(entity,number)=>{
+   const value=(attribute[2]??attribute[3]??attribute[4]).replace(/&#(x[0-9a-f]+|\d+);?|&(?:quot|apos|amp|colon|tab|newline);/gi,(entity,number)=>{
     if(number){const code=number[0].toLowerCase()==='x'?parseInt(number.slice(1),16):Number(number);return code>0&&code<=0x10ffff&&!(code>=0xd800&&code<=0xdfff)?String.fromCodePoint(code):'\ufffd';}
     return ({'&quot;':'"','&apos;':"'",'&amp;':'&','&colon;':':','&tab;':'\t','&newline;':'\n'})[entity.toLowerCase()]??entity;
    });
    if(/^on[a-z]+$/.test(name)){errors.push('Inline event handler requires script/privacy review');errors.push(...inspectScript(value));}
-   if(/^(?:href|formaction|src|action|xlink:href)$/.test(name)&&/^javascript:/i.test(value.replace(/[\u0000-\u0020]/g,''))){errors.push('JavaScript URL requires script/privacy review');errors.push(...inspectScript(value));}
+   if((/^(?:href|formaction|src|action|xlink:href)$/.test(name)||(name==='data'&&/^<object\b/i.test(tag[0])))&&/^javascript:/i.test(value.replace(/[\u0000-\u0020]/g,''))){errors.push('JavaScript URL requires script/privacy review');errors.push(...inspectScript(value));}
   }
  }
  return errors;
