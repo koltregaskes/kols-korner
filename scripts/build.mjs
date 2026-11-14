@@ -1,3 +1,4 @@
+import '../site/news/news-state.js';
 import { writeLinksPage } from './owned-links.mjs';
 import { repairTagTargets } from "./check-internal-links.mjs";
 // scripts/build.mjs
@@ -3134,6 +3135,14 @@ async function cleanGeneratedOutput() {
         .replace(/(?:hello|contact)@koltregaskes\.com/g, SITE_CONTACT_EMAIL));
     await fs.writeFile(file, updated);
   }
+  let availability;
+  try { availability = globalThis.KolsNewsState.assessFeed(JSON.parse(await fs.readFile('news-digests/news-feed-latest.json','utf8'))); }
+  catch { availability = globalThis.KolsNewsState.assessFeed(null); }
+  const homePath='site/index.html';
+  let home=await fs.readFile(homePath,'utf8');
+  home=home.replace(/\s*<p\b[^>]*id="homeNewsAvailability"[^>]*>[\s\S]*?<\/p>/g,'');
+  home=home.replace('News desk</p>', 'News desk</p><p id="homeNewsAvailability" role="status">'+escapeHtml(availability.message)+'</p>');
+  await fs.writeFile(homePath,home);
   await repairArchivedLinks();
   console.log('\nBuild complete!');
 })();
