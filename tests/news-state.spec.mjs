@@ -1,3 +1,4 @@
+import {findHorizontalOverflow} from './overflow-check.mjs';
 import {test,expect} from '@playwright/test';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -16,5 +17,5 @@ for(const width of [320,390])for(const state of ['fresh','stale','empty','unavai
  await page.goto(origin+'/news/');const status=page.locator('#newsAvailability');await expect(status).not.toHaveText(/Checking current/);
  const expected=['corrupt-storage','denied-storage'].includes(state)?'fresh':state;await expect(status).toHaveAttribute('data-state',expected);
  if(state==='empty')await expect(status).toContainText('No matching stories');if(state==='unavailable')await expect(status).toContainText('unavailable');
- expect(errors).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ expect(errors).toEqual([]);await page.evaluate(()=>document.fonts.ready);expect(await page.evaluate(findHorizontalOverflow)).toEqual([]);
 });

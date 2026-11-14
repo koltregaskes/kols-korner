@@ -55,10 +55,10 @@ jobs:
       - name: Verify owned links destination
         run: node scripts/owned-links.mjs
 
-      - name: Verify routed feed and digest recovery
-        run: node --test tests/*.test.mjs scripts/publish-routed-news.test.mjs
       - name: Install launch test dependencies
         run: npm ci
+      - name: Verify routed feed and digest recovery
+        run: node --test tests/*.test.mjs scripts/publish-routed-news.test.mjs
       - name: Verify runner-installed Edge (no browser downloads)
         run: microsoft-edge --version
       - name: Check every route at phone and desktop widths
