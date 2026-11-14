@@ -10,8 +10,8 @@ export function inspectHtml(html){
  return errors;
 }
 export function inspectScript(script){const errors=[];
- if(/navigator\.sendBeacon|document\.cookie|googletagmanager|google-analytics|clarity\.ms/i.test(script))errors.push('New telemetry/cookie behaviour requires collector/privacy review');
- if(/(?:["']?method["']?\s*:\s*["'](?:POST|PUT|PATCH|DELETE)["']|\.open\s*\(\s*["'](?:POST|PUT|PATCH|DELETE)["'])/i.test(script))errors.push('New browser mutation API requires interface review');
+ if(/navigator\s*(?:\.\s*sendBeacon|\[\s*["'`]sendBeacon["'`]\s*\])|document\s*(?:\.\s*cookie|\[\s*["'`]cookie["'`]\s*\])|googletagmanager|google-analytics|clarity\.ms/i.test(script))errors.push('New telemetry/cookie behaviour requires collector/privacy review');
+ if(/(?:(?:["'`]?method["'`]?|\[\s*["'`]method["'`]\s*\])\s*:\s*["'`](?:POST|PUT|PATCH|DELETE)["'`]|(?:\.\s*open|\[\s*["'`]open["'`]\s*\])\s*\(\s*["'`](?:POST|PUT|PATCH|DELETE)["'`])/i.test(script))errors.push('New browser mutation API requires interface review');
  if(/<form\b/i.test(script))errors.push('Dynamic form requires interface review');return errors;
 }
 export async function checkBoundary(directory='site'){
