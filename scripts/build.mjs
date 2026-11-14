@@ -1,3 +1,4 @@
+import { externalizeInlineScripts } from './externalize-inline-scripts.mjs';
 import '../site/news/news-state.js';
 import { writeLinksPage } from './owned-links.mjs';
 import { repairTagTargets } from "./check-internal-links.mjs";
@@ -3144,5 +3145,6 @@ async function cleanGeneratedOutput() {
   home=home.replace('News desk</p>', 'News desk</p><p id="homeNewsAvailability" role="status">'+escapeHtml(availability.message)+'</p>');
   await fs.writeFile(homePath,home);
   await repairArchivedLinks();
+  console.log('Inline script hardening:', await externalizeInlineScripts());
   console.log('\nBuild complete!');
 })();
