@@ -2022,6 +2022,7 @@ async function writeLegacyRedirectPage(fromSlug, toSlug) {
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  ${getSecurityHeaders()}
   <meta http-equiv="refresh" content="0; url=${targetPath}" />
   <link rel="canonical" href="${SITE_URL}/posts/${toSlug}/" />
   <title>Redirecting…</title>
@@ -3144,5 +3145,21 @@ async function cleanGeneratedOutput() {
   home=home.replace('News desk</p>', 'News desk</p><p id="homeNewsAvailability" role="status">'+escapeHtml(availability.message)+'</p>');
   await fs.writeFile(homePath,home);
   await repairArchivedLinks();
+  // GitHub Pages cannot set repository response headers. Cover preserved and
+  // non-indexable HTML too, including error pages and legacy redirects.
+  async function secureHtml(dir) {
+    for (const entry of await fs.readdir(dir, { withFileTypes: true })) {
+      const file = path.join(dir, entry.name);
+      if (entry.isDirectory()) await secureHtml(file);
+      else if (entry.name.endsWith('.html')) {
+        let html = await fs.readFile(file, 'utf8');
+        const before = html;
+        if (!/http-equiv=["']Content-Security-Policy["']/i.test(html)) html = html.replace(/<head\b[^>]*>/i, h => h + getSecurityHeaders());
+        else if (!/name=["']referrer["']/i.test(html)) html = html.replace(/<head\b[^>]*>/i, h => h + '\n<meta name="referrer" content="strict-origin-when-cross-origin">');
+        if (html !== before) await fs.writeFile(file, html);
+      }
+    }
+  }
+  await secureHtml(path.join(process.cwd(), 'site'));
   console.log('\nBuild complete!');
 })();
