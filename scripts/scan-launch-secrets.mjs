@@ -81,7 +81,10 @@ function matchedValue(match, group = 0) {
 
 function assignmentContext(match) {
   const named = match[2]?.match(/^\$\{[A-Za-z_$][A-Za-z0-9_$]*\}$/);
-  return { quoted: Boolean(match[1]), namedInterpolation: Boolean(match[1]) && named?.[0] === match[2] };
+  const marker = match[2]?.match(/^([A-Z_]*)\$\{[A-Za-z_$][A-Za-z0-9_$]*(?:\.[A-Za-z_$][A-Za-z0-9_$]*)*\}([A-Z_]*)$/);
+  const placeholderMarker = match[1] === '`' && marker?.[0] === match[2] &&
+    marker[1].length + marker[2].length > 0 && !/(?:AKIA|ASIA|AIDA|AROA)/.test(marker[1]);
+  return { quoted: Boolean(match[1]), namedInterpolation: Boolean(match[1]) && named?.[0] === match[2], placeholderMarker };
 }
 
 function isCandidate(type, value, match) {
@@ -92,10 +95,10 @@ function isCandidate(type, value, match) {
 }
 
 function classify(type, value, line, p, context = {}) {
-  // Owner-reviewed structure only. Never exempt a prefix, suffix, member access,
-  // default, escaped expression or several interpolations, even in backticks.
+  // Owner-reviewed structures only; no general template-expression exemption.
   if (type === 'credential-assignment' && context.quoted && value.includes('${')) {
     if (context.namedInterpolation) return ['false positive', 'Template interpolation of a named variable, not a literal.'];
+    if (context.placeholderMarker) return ['false positive', 'Low-entropy placeholder marker.'];
     return ['real', 'Potential real credential; validity unverified. Stop and obtain private owner review without revealing the value.'];
   }
   const syntheticBody = value.replace(/^(?:gh[pousr]_|github_pat_|sk-(?:proj-|svcacct-)?)/, '');
@@ -163,26 +166,38 @@ function inspect(text, p, location, emit) {
         seen.add(matchId);
         const context = type === 'credential-assignment' ? assignmentContext(match) : {};
         const [classification, reason] = classify(type, value, line, p, context);
-        emit({ ...location, file: p, line: i + 1, pattern: type, classification, reason });
+        emit({ ...location, file: p, line: i + 1, pattern: type, classification, reason }, match.index);
       }
     }
   }
 }
 
-function recorder(result) {
+function recorder(result, collectUnknown = false) {
   const seen = new Set();
-  return row => {
+  return (row, occurrence = 0) => {
     // Deduplicate with the internal path before redaction so masked names do
     // not collapse distinct findings. Raw paths never cross the output gate.
-    const entryId = [row.scope, row.file, row.line, row.commit, row.pattern].join(':');
+    const entryId = [row.scope, row.file, row.line, row.commit, row.pattern, occurrence].join(':');
     if (seen.has(entryId)) return;
     seen.add(entryId);
     result.candidates.push(row);
-    if (row.classification === 'real') {
+    if (row.classification === 'real' && !collectUnknown) {
       result.stopped = true;
       throw new Error('CANDIDATE_STOP');
     }
   };
+}
+
+function finishResult(result, scopes) {
+  for (const state of Object.values(result.scopes)) delete state.hashes;
+  result.counts = { candidates: result.candidates.length, real: 0, test: 0, 'false positive': 0 };
+  for (const row of result.candidates) result.counts[row.classification]++;
+  result.unresolved = result.candidates.filter(r => r.classification === 'real').map(({ scope, file, line, commit, pattern }) => ({ scope, file, line, commit, pattern }));
+  result.complete = !result.failure && !result.stopped && result.completedScopes.length === scopes.length;
+  if (!result.complete && !result.stopped && !result.failure) result.failure = 'Requested scope coverage is incomplete; no clean result.';
+  result.status = result.failure ? 'FAILED' : result.stopped ? 'STOP: potential real credential' :
+    result.unresolved.length ? 'completed; unresolved candidates require owner review' : 'completed; no potential real credentials detected';
+  return result.failure ? 1 : result.unresolved.length ? 2 : 0;
 }
 
 function collectVersion(mode, kind, blob, p, commit, state, blobs) {
@@ -283,6 +298,36 @@ function selfTest() {
     }
     for (const body of notNamedVariables) if (probe(literal(body, quote)).exit !== 2) throw new Error('Named-interpolation negative regression');
   }
+  const markers = ['ABC${x}DEF', 'PREFIX_${items.length}_SUFFIX', '__MARK${a.b.c}ER__',
+    'ABC${x}', '${x}DEF', '_${x}_', 'ABC${$counter}DEF', 'ABC${a.$b_2}DEF'];
+  const notMarkers = [['sk', 'live', '${x}'].join('_'), 'ABC${x}def', 'ABC${a.b()}DEF', 'ABC${x}DEF${y}',
+    'AKIA${x}', 'AKIA_${x}_SUFFIX', 'PREFIX_ASIA${x}DEF', 'ABC1${x}DEF', 'ABC-${x}DEF', 'ABC ${x}DEF',
+    'ABC${a[0]}DEF', 'ABC${x || fallback}DEF', 'ABC${ x }DEF', 'ABC${1x}DEF',
+    'ABC${x}DEF' + String.fromCharCode(0x2028), 'ABC\\${x}DEF'];
+  for (const body of markers) {
+    const r = probe(literal(body, '`'));
+    if (r.exit !== 0 || r.result.candidates.length !== 1 || r.result.candidates[0].reason !== 'Low-entropy placeholder marker.') throw new Error('Placeholder-marker positive regression');
+    for (const quote of ["'", '"']) if (probe(literal(body, quote)).exit !== 2) throw new Error('Non-template marker regression');
+  }
+  for (const body of notMarkers) if (probe(literal(body, '`')).exit !== 2) throw new Error('Placeholder-marker negative regression');
+  const diagnostic = { scopes: {}, candidates: [], stopped: false, completedScopes: [], mode: 'collect-unknown' };
+  const requested = ['working-tree', 'history', 'site'];
+  for (const scope of requested) {
+    inspect(unknown + '\n' + 'gh' + 'p_' + (sample + sample).slice(0, 36), `folder/${unknown}.txt`, { scope, commit: null }, recorder(diagnostic, true));
+    diagnostic.completedScopes.push(scope);
+  }
+  if (finishResult(diagnostic, requested) !== 2 || !diagnostic.complete || diagnostic.stopped || diagnostic.unresolved.length !== 6 ||
+      JSON.stringify(safeMetadata(diagnostic)).includes(sample) || diagnostic.unresolved.some(r => Object.keys(r).sort().join(',') !== 'commit,file,line,pattern,scope')) throw new Error('Collect-unknown continuation/redaction regression');
+  if (probe(unknown + '\n' + unknown, 'fixture.txt').result.candidates.length !== 1) throw new Error('Normal first-stop regression');
+  const clean = { scopes: {}, candidates: [], stopped: false, completedScopes: [...requested] };
+  if (finishResult(clean, requested) !== 0 || !clean.complete) throw new Error('Clean diagnostic regression');
+  diagnostic.failure = 'Synthetic operation failure';
+  if (finishResult(diagnostic, requested) !== 1 || diagnostic.complete || diagnostic.status !== 'FAILED') throw new Error('Diagnostic failure precedence regression');
+  const mixedLine = ['sk', 'hynix', 'memory', 'chip', 'news'].join('-') + ' ' + unknown;
+  const mixed = { scopes: {}, candidates: [], stopped: false, completedScopes: [...requested] };
+  inspect(mixedLine, 'fixture.txt', { scope: 'working-tree', commit: null }, recorder(mixed, true));
+  if (finishResult(mixed, requested) !== 2 || mixed.unresolved.length !== 1 || mixed.counts['false positive'] !== 1 ||
+      probe(mixedLine).exit !== 2) throw new Error('Same-line unknown masking regression');
   // P1: inject only directory/tree metadata. No credential file is created,
   // opened or copied; any attempted protected read fails the control first.
   const protectedPaths = [
@@ -327,6 +372,8 @@ function selfTest() {
   return { detectionCases: tests.length, exclusionCases: 7, classificationCases: 3, redactionCases: 1,
     regressions: { metadataRedaction: 4, companyContext: 6, quotedLiterals: literalCases.length, realExpressions: 1,
       namedInterpolationPositive: namedVariables.length * 3, namedInterpolationNegative: notNamedVariables.length * 3,
+      placeholderMarkerPositive: markers.length, placeholderMarkerNegative: notMarkers.length + markers.length * 2,
+      collectionModeCases: 5,
       workingTreePreReadExclusions: protectedPaths.length, historyPreReadExclusions: protectedPaths.length }, result: 'passed' };
 }
 
@@ -362,11 +409,13 @@ function main() {
     return;
   }
   const scopeArg = args.find(a => a.startsWith('--scope='));
+  const collectUnknown = args.includes('--collect-unknown');
+  if (collectUnknown && scopeArg) throw new Error('Collection requires all scopes');
   const scopes = scopeArg ? scopeArg.slice(8).split(',') : ['working-tree', 'history', 'site'];
   if (scopes.some(s => !['working-tree', 'history', 'site'].includes(s))) throw new Error('Invalid scope');
   const head = git('rev-parse', 'HEAD').trim();
-  const result = { head, controls, scopes: {}, candidates: [], stopped: false, historyComplete: false };
-  const emit = recorder(result);
+  const result = { head, controls, mode: collectUnknown ? 'collect-unknown' : 'normal', scopes: {}, candidates: [], stopped: false, historyComplete: false, completedScopes: [] };
+  const emit = recorder(result, collectUnknown);
   try {
     for (const scope of scopes) {
       const state = { files: 0, bytes: 0, excluded: [], links: [], hashes: [] };
@@ -430,18 +479,15 @@ function main() {
         state.manifestSha256 = crypto.createHash('sha256').update(JSON.stringify(state.hashes.sort((a, b) => a[0].localeCompare(b[0])))).digest('hex');
       }
       delete state.hashes;
+      result.completedScopes.push(scope);
     }
   } catch (error) {
     if (error.message !== 'CANDIDATE_STOP') {
       // Never include child-process stderr, source text, candidate or error values.
       result.failure = 'Scanner operation failed; no clean result. Check file permissions, Git availability and scope completeness.';
-      process.exitCode = 1;
-    } else process.exitCode = 2;
+    }
   }
-  for (const state of Object.values(result.scopes)) delete state.hashes;
-  result.counts = { candidates: result.candidates.length, real: 0, test: 0, 'false positive': 0 };
-  for (const row of result.candidates) result.counts[row.classification]++;
-  result.status = result.stopped ? 'STOP: potential real credential' : result.failure ? 'FAILED' : 'completed; no potential real credentials detected';
+  process.exitCode = finishResult(result, scopes);
   console.log(JSON.stringify(safeMetadata(result), null, 2));
 }
 
