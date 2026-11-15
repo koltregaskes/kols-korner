@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-// Missing-policy routes remain owned by #34; this checks declared policies.
+// Full meta coverage is checked separately by security-pages.test.mjs.
 test('declared CSP disallows unsafe-inline and required scripts are externalised',async()=>{
  let count=0,unsafe=[],inline=[];
  async function walk(dir){for(const entry of await fs.readdir(dir,{withFileTypes:true})){

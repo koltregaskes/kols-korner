@@ -1,4 +1,5 @@
 import { externalizeInlineScripts } from './externalize-inline-scripts.mjs';
+import { getSecurityHeaders, secureHtml } from './meta-security.mjs';
 import '../site/news/news-state.js';
 import { writeLinksPage } from './owned-links.mjs';
 import { repairTagTargets } from "./check-internal-links.mjs";
@@ -813,11 +814,6 @@ function parseDigestArticles(content, filename) {
 
   return articles;
 }
-
-// Security headers for all pages
-const getSecurityHeaders = () => `
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
-  <meta name="referrer" content="strict-origin-when-cross-origin">`;
 
 function getCanonicalUrl(pathname = '/') {
   const cleanPath = `/${String(pathname || '/').replace(/^\/+/, '')}`;
@@ -2023,6 +2019,7 @@ async function writeLegacyRedirectPage(fromSlug, toSlug) {
 <html lang="en-GB">
 <head>
   <meta charset="utf-8" />
+  ${getSecurityHeaders()}
   <meta http-equiv="refresh" content="0; url=${targetPath}" />
   <link rel="canonical" href="${SITE_URL}/posts/${toSlug}/" />
   <title>Redirecting…</title>
@@ -3146,5 +3143,6 @@ async function cleanGeneratedOutput() {
   await fs.writeFile(homePath,home);
   await repairArchivedLinks();
   console.log('Inline script hardening:', await externalizeInlineScripts());
+  console.log('Meta security coverage:', await secureHtml());
   console.log('\nBuild complete!');
 })();

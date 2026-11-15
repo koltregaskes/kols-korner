@@ -52,6 +52,9 @@ jobs:
         env:
           CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
 
+      - name: Verify every HTML meta policy and the unapplied header proposal
+        run: python scripts/check-meta-security.py
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
 

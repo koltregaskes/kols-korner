@@ -31,6 +31,11 @@ jobs:
         with:
           node-version: '24.22.1'
       - run: npm run build
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify every HTML meta policy and the unapplied header proposal
+        run: python scripts/check-meta-security.py
       - name: Check internal fragments, downloads and redirect safety
         run: node scripts/check-internal-links.mjs
       - name: Verify public forms/API/telemetry boundary
