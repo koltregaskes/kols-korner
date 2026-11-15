@@ -8,10 +8,65 @@
       "Strict-Transport-Security",
       "X-Frame-Options",
       "X-Content-Type-Options",
-      "Referrer-Policy"
+      "Referrer-Policy",
+      "Permissions-Policy"
     ],
     "decisionOwner": "Claude launch owner / hosting move #1413",
-    "approvedMitigation": null
+    "approvedMitigation": null,
+    "currentPolicy": {
+      "basis": "Supplied live observation checked 15 November 2026; not independently reproduced in this offline task",
+      "server": "GitHub.com",
+      "cloudflareProxy": false,
+      "securityResponseHeadersObserved": [],
+      "protection": "HTML meta CSP and referrer policy only; GitHub Pages cannot set repository response headers"
+    },
+    "proposedChange": {
+      "status": "not applied; requires Kol's explicit approval",
+      "proxySwitch": {
+        "hostnames": [
+          "koltregaskes.com",
+          "www.koltregaskes.com"
+        ],
+        "from": "DNS only (grey cloud)",
+        "to": "Proxied (orange cloud)",
+        "preserve": "Existing Pages address/CNAME targets and all mail records; do not proxy MX or mail hosts"
+      },
+      "phase": "http_response_headers_transform",
+      "rule": {
+        "description": "Kol's Korner security headers (PROPOSED ONLY)",
+        "expression": "(http.host eq \"koltregaskes.com\" or http.host eq \"www.koltregaskes.com\")",
+        "action": "rewrite",
+        "action_parameters": {
+          "headers": {
+            "X-Content-Type-Options": {
+              "operation": "set",
+              "value": "nosniff"
+            },
+            "X-Frame-Options": {
+              "operation": "set",
+              "value": "DENY"
+            },
+            "Referrer-Policy": {
+              "operation": "set",
+              "value": "strict-origin-when-cross-origin"
+            },
+            "Strict-Transport-Security": {
+              "operation": "set",
+              "value": "max-age=31536000"
+            },
+            "Permissions-Policy": {
+              "operation": "set",
+              "value": "accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+            },
+            "Content-Security-Policy": {
+              "operation": "set",
+              "value": "default-src 'self'; script-src 'self' 'nonce-kk-jsonld'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none';"
+            }
+          }
+        },
+        "enabled": true
+      }
+    }
   },
   "interfaces": {
     "forms": "absent",
@@ -30,7 +85,7 @@
     "scope": "local browser; no server submission"
   },
   "pending": {
-    "metaCoverage": "Existing PR #34; do not duplicate or infer response headers from HTML metadata",
+    "metaCoverage": "PR #34 intent carried onto current main; check-meta-security.py verifies every built HTML file including privacy, 404 and redirects. Deployment not verified.",
     "analytics": "Collector contract held by #367 / #1498; do not invent a second collector",
     "newsletter": "No email collection/sending in this build. Explicit launch not-required decision remains with #1495/#1496 owner",
     "monetisation": "Defer payment or donation integration until an approved umbrella support journey exists under #1502"
@@ -40,5 +95,13 @@
     "thirdPartyIframes": "not inventoried by this bounded guard; require separate review",
     "trackingPixels": "not inventoried by this bounded guard; require separate review",
     "staticSignatures": "not a JavaScript parser or comprehensive data-flow analysis"
+  },
+  "browserMeta": {
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self';",
+    "referrer": "strict-origin-when-cross-origin",
+    "overrides": {
+      "index.html": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:;",
+      "news/index.html": "default-src 'self'; script-src 'self' 'nonce-kk-jsonld'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self' https: blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:;"
+    }
   }
 }
