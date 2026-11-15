@@ -56,6 +56,21 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    /* Shared skip-link pattern, kept local to preserve the standalone card's design. */
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      z-index: 1000;
+      padding: 0.7rem 0.9rem;
+      border-radius: 999px;
+      background: #d72b2b;
+      color: #fff;
+      transform: translateY(-140%);
+    }
+    .skip-link:focus { transform: translateY(0.8rem); }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
     .shell {
       height: 100vh;
       display: flex;
@@ -152,6 +167,9 @@
       .months { grid-template-columns: repeat(6, minmax(0, 1fr)); }
     }
     .month {
+      appearance: none;
+      background: transparent;
+      font-family: inherit;
       font-size: 11px;
       color: #96a0b2;
       text-align: center;
@@ -291,6 +309,7 @@
   </style>
 </head>
 <body>
+  <a href="#timeline" class="skip-link">Skip to main content</a>
   <div class="shell" id="app">
     <header>
       <div class="title">
@@ -370,7 +389,8 @@
       const monthsWith = new Set(entries.map(e => new Date(e.date).getUTCMonth())); // 0-11
       const labels = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
       labels.forEach((label, i) => {
-        const el = document.createElement('div');
+        const el = document.createElement('button');
+        el.type = 'button';
         el.className = 'month';
         el.textContent = label;
         el.dataset.idx = String(i);
