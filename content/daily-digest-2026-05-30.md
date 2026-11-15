@@ -95,7 +95,7 @@ While AI is helping coders produce code faster, it may not be producing better c
 
 The rise of AI has brought an avalanche of new terms and slang. Here is a glossary with definitions of some of the most important words and phrases you might encounter.
 
-[Read more](https://techcrunch.com/2026/05/29/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/)
+[Read more](https://web.archive.org/web/20260621160627/https://techcrunch.com/2026/05/29/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/)
 
 ---
 
