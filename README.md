@@ -4,6 +4,8 @@ Personal website and publishing system for Kol Tregaskes.
 
 ## Deployment and rollback rehearsal
 
+Follow the [operations runbook](launch/OPERATIONS.md) for deployment, rollback commands, backup/recovery, failure visibility, the post-launch owner and the unperformed pre-launch rehearsal checklist. Check its repository references offline with `node scripts/check-operations.mjs`.
+
 Record the current known-good commit, successful deployment run and rehearsal evidence on the [launch issue](https://github.com/koltregaskes/rooms-os-hub/issues/1505), rather than keeping a dated baseline in this README.
 
 This site deploys through the existing Actions Pages workflow. For a live rollback, rerun the known-good Pages deployment through that pipeline, then verify every public artifact file over HTTPS. Restore the latest reviewed release through its deployment run and repeat the byte readback. Do not force-push main, alter hosting/DNS, restart a legacy writer, or treat a green job as destination proof. If the historical run cannot be rerun, prepare a narrowly scoped revert PR, obtain review and green checks, then use the normal pipeline.
@@ -97,7 +99,7 @@ Push to `main`. GitHub Actions will:
 2. Upload `site/`
 3. Deploy to GitHub Pages
 
-The repo already includes a root `CNAME` file for `koltregaskes.com`, but the build only switches canonical URLs to the custom domain when `CUSTOM_DOMAIN` is set in the environment. Until then, the generated feed, sitemap, and robots file stay aligned with the working GitHub Pages URL.
+The root `CNAME` file selects `koltregaskes.com` for canonical URLs, feeds, sitemap and robots when no build override is supplied. Recheck the actual deployed destination after any approved hosting change.
 
 ## Content Model
 
