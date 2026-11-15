@@ -81,7 +81,7 @@ These layoffs could help Facebook's parent company offset its aggressive spendin
 
 Learn how to use Spotify, Canva, Figma, Expedia, and other apps directly in ChatGPT.
 
-[Read more](https://techcrunch.com/2026/03/14/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others/)
+[Read more](https://web.archive.org/web/20260325152504/https://techcrunch.com/2026/03/14/how-to-use-the-new-chatgpt-app-integrations-including-doordash-spotify-uber-and-others/)
 
 ---
 
