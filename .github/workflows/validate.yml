@@ -55,6 +55,9 @@ jobs:
       - name: Verify owned links destination
         run: node scripts/owned-links.mjs
 
+      - name: Verify operations runbook references
+        run: node scripts/check-operations.mjs
+
       - name: Install launch test dependencies
         run: npm ci
       - name: Verify routed feed and digest recovery
