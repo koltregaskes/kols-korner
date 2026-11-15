@@ -13,9 +13,9 @@
  * commits and pushes only that date's source files. A verified `--publish`
  * run still requests Pages deployment when those files are already on main.
  *
- * A missing feed file, or a feed with no usable articles, exits 0 and reports
- * that there was nothing to publish. No post is written. An unreadable feed
- * fails the run. This script does not fetch sources. A failed source fetch
+ * A fresh feed with no usable articles exits 0 and explicitly reports no
+ * matching items. Missing, stale and unreadable feeds fail the run through
+ * the existing Actions error and summary route. This script does not fetch sources. A failed source fetch
  * still fails the feed-refresh job and leaves the committed feed unchanged.
  *
  * Usage:
@@ -215,16 +215,27 @@ export function readCommittedRoutedFeed(feedPath, now = new Date()) {
 
   const articles = data.articles.filter(isUsableFeedArticle);
   const generated = cleanFeedText(data.generated);
+  const generatedMs = new Date(generated).getTime();
+  const age = new Date(now).getTime() - generatedMs;
+  if (!Number.isFinite(generatedMs) || !Number.isFinite(age) || age >= 24 * 60 * 60 * 1000 || age < -5 * 60 * 1000) {
+    return { status: 'stale', path: feedPath, articles: [], generated, ageMs: age };
+  }
   if (articles.length === 0) {
     return { status: 'empty', path: feedPath, articles: [], generated };
   }
-
-  const generatedMs = new Date(generated).getTime();
-  const age = new Date(now).getTime() - generatedMs;
-  if (!Number.isFinite(generatedMs) || !Number.isFinite(age) || age > 24 * 60 * 60 * 1000 || age < -5 * 60 * 1000) {
-    return { status: 'stale', path: feedPath, articles: [], generated };
-  }
   return { status: 'ready', path: feedPath, articles, generated };
+}
+
+export function failedFeedMessage(feed) {
+  const age = Number.isFinite(feed.ageMs)
+    ? `${(feed.ageMs / 3600000).toFixed(3)} hours`
+    : 'unknown (feed missing or generated timestamp invalid)';
+  return [
+    `Routed digest publish blocked: ${feed.status} feed at ${feed.path}.`,
+    `Feed age: ${age}; generated: ${feed.generated || 'not recorded'}.`,
+    'Freshness threshold: less than 24 hours old, with at most 5 minutes of future clock skew.',
+    'Refresh the committed routed feed before retrying. No digest post was written.'
+  ].join('\n');
 }
 
 export function renderRoutedFeedDigest({ date, articles, generated }) {
@@ -268,18 +279,12 @@ export function renderRoutedFeedDigest({ date, articles, generated }) {
   return `${lines.join('\n').trim()}\n`;
 }
 
-export function nothingToPublishMessage({ date, feedPath, reason }) {
-  const feedDetail = reason === 'stale'
-    ? `The committed routed feed is older than 24 hours or has an invalid generated timestamp: ${feedPath}`
-    : reason === 'empty'
-    ? `The committed routed feed has no articles: ${feedPath}`
-    : `The committed routed feed is not in the checkout: ${feedPath}`;
-
+export function nothingToPublishMessage({ date, feedPath }) {
   return [
-    `There was nothing to publish for ${date}.`,
+    `No matching items today for ${date}.`,
     '',
     `The Mini PC classifier file news-digests/digest-${date}.md is absent, and news-digests/${date}-digest.md is absent too.`,
-    feedDetail,
+    `The committed routed feed is fresh but has no usable matching articles: ${feedPath}`,
     'No digest post was written.',
     'This job does not fetch sources. A minority source failure is reported while successful sources are retained; a majority failure preserves the previous feed.'
   ].join('\n');
@@ -561,14 +566,16 @@ export function publishRoutedDigest({ date, sourceDir, publish, feedPath }) {
   if (!found) {
     const resolvedFeedPath = feedPath || routedFeedPath();
     const feed = readCommittedRoutedFeed(resolvedFeedPath);
-    if (['missing', 'empty', 'stale'].includes(feed.status)) {
+    if (['missing', 'stale'].includes(feed.status)) {
+      throw new Error(failedFeedMessage(feed));
+    }
+    if (feed.status === 'empty') {
       return {
         ...publishDecision({ publish, source: 'unchanged', deploy: false }),
         nothing: true,
         message: nothingToPublishMessage({
           date,
-          feedPath: feed.path,
-          reason: feed.status
+          feedPath: feed.path
         })
       };
     }
