@@ -157,7 +157,7 @@ function absentDigestDate() {
   return '2099-12-31';
 }
 
-test('a missing or empty committed feed is nothing to publish', () => {
+test('a missing feed fails while a fresh empty feed explicitly succeeds', () => {
   const date = absentDigestDate();
   const missingPath = path.join(os.tmpdir(), 'kk-routed-feed-missing.json');
   const missing = readCommittedRoutedFeed(missingPath);
@@ -176,23 +176,19 @@ test('a missing or empty committed feed is nothing to publish', () => {
   assert.equal(empty.status, 'empty');
 
   const message = nothingToPublishMessage({ date, feedPath: emptyPath, reason: 'empty' });
-  assert.match(message, /There was nothing to publish/);
+  assert.match(message, /No matching items today/);
   assert.match(message, /digest-2099-12-31\.md/);
-  assert.match(message, /no articles/);
+  assert.match(message, /no usable matching articles/);
   assert.match(message, /No digest post was written/);
 
   const digest = path.join(repoRoot, 'news-digests', `${date}-digest.md`);
   const post = path.join(repoRoot, 'content', `daily-digest-${date}.md`);
   assert.equal(fs.existsSync(digest), false);
-  const decision = publishRoutedDigest({
-    date,
-    publish: true,
-    feedPath: missingPath
-  });
-  assert.equal(decision.nothing, true);
-  assert.equal(decision.source, 'unchanged');
-  assert.equal(decision.deploy, 'false');
-  assert.match(decision.message, /nothing to publish/i);
+  assert.throws(
+    () => publishRoutedDigest({ date, publish: true, feedPath: missingPath }),
+    error => /missing feed/.test(error.message) && error.message.includes(missingPath)
+      && /Feed age: unknown/.test(error.message) && /less than 24 hours/.test(error.message)
+  );
   assert.equal(fs.existsSync(digest), false);
   assert.equal(fs.existsSync(post), false);
 
@@ -202,7 +198,9 @@ test('a missing or empty committed feed is nothing to publish', () => {
     feedPath: emptyPath
   });
   assert.equal(emptyDecision.nothing, true);
+  assert.equal(emptyDecision.source, 'unchanged');
   assert.equal(emptyDecision.deploy, 'false');
+  assert.match(emptyDecision.message, /No matching items today/);
   assert.equal(fs.existsSync(digest), false);
   fs.rmSync(temp, { recursive: true, force: true });
 });
@@ -292,20 +290,56 @@ test('real routed-feed articles pass through the existing generator', () => {
   }
 });
 
-test('stale fallback feed skips publication and deployment without writing source files', () => {
+test('stale fallback feed fails without writing source files, even when empty', () => {
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kk-stale-feed-'));
  const feedPath=path.join(temp,'news-feed-latest.json');
  const now=new Date('2026-11-13T12:00:00Z');
  const feed={generated:'2026-11-12T11:59:59Z',articles:[routedFeedArticle]};
  fs.writeFileSync(feedPath,JSON.stringify(feed));
  assert.equal(readCommittedRoutedFeed(feedPath,now).status,'stale');
+ feed.generated='2026-11-12T12:00:00Z';fs.writeFileSync(feedPath,JSON.stringify(feed));
+ assert.equal(readCommittedRoutedFeed(feedPath,now).status,'stale');
  feed.generated='2026-11-12T12:00:01Z';fs.writeFileSync(feedPath,JSON.stringify(feed));
  assert.equal(readCommittedRoutedFeed(feedPath,now).status,'ready');
  for(const generated of ['', 'invalid', '2099-01-01T00:00:00Z',new Date(Date.now()-25*3600000).toISOString()]) {
-  fs.writeFileSync(feedPath,JSON.stringify({...feed,generated}));
-  const decision=publishRoutedDigest({date:absentDigestDate(),publish:true,feedPath});
-  assert.equal(decision.nothing,true);assert.equal(decision.deploy,'false');
-  assert.match(decision.message,/older than 24 hours or has an invalid/);
+  for (const articles of [[routedFeedArticle], []]) {
+   fs.writeFileSync(feedPath,JSON.stringify({...feed,generated,articles}));
+   assert.throws(
+    () => publishRoutedDigest({date:absentDigestDate(),publish:true,feedPath}),
+    error => /stale feed/.test(error.message) && error.message.includes(feedPath)
+      && /Feed age:/.test(error.message) && /less than 24 hours/.test(error.message)
+   );
+  }
   assert.equal(fs.existsSync(path.join(repoRoot,'content',`daily-digest-${absentDigestDate()}.md`)),false);
  }
+});
+
+test('CLI returns failure for missing/stale feeds and success for fresh no-match feeds', () => {
+ const temp = fs.mkdtempSync(path.join(repoRoot, '..', 'publisher-cli-'));
+ fs.mkdirSync(path.join(temp, 'scripts'));
+ fs.mkdirSync(path.join(temp, 'news-digests'));
+ const script = path.join(temp, 'scripts', 'publish-routed-news.mjs');
+ const feedPath = path.join(temp, 'news-digests', 'news-feed-latest.json');
+ fs.copyFileSync(path.join(repoRoot, 'scripts', 'publish-routed-news.mjs'), script);
+ const run = () => spawnSync(process.execPath, [script, '--date', absentDigestDate()], {
+  cwd: temp, encoding: 'utf8'
+ });
+ const missing = run();
+ assert.equal(missing.status, 1, missing.stderr);
+ assert.match(missing.stderr, /missing feed/);
+ assert.ok(missing.stderr.includes(feedPath));
+ for (const articles of [[routedFeedArticle], []]) {
+  fs.writeFileSync(feedPath, JSON.stringify({generated:new Date(Date.now()-25*3600000).toISOString(),articles}));
+  const stale = run();
+  assert.equal(stale.status, 1, stale.stderr);
+  assert.match(stale.stderr, /stale feed/);
+  assert.match(stale.stderr, /Feed age: 25\.\d+ hours/);
+  assert.match(stale.stderr, /less than 24 hours/);
+ }
+ fs.writeFileSync(feedPath, JSON.stringify({generated:new Date().toISOString(),articles:[]}));
+ const empty = run();
+ assert.equal(empty.status, 0, empty.stderr);
+ assert.match(empty.stdout, /No matching items today/);
+ assert.equal(fs.existsSync(path.join(temp,'news-digests',`${absentDigestDate()}-digest.md`)),false);
+ assert.equal(fs.existsSync(path.join(temp,'content',`daily-digest-${absentDigestDate()}.md`)),false);
 });
