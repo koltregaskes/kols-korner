@@ -79,12 +79,36 @@ function matchedValue(match, group = 0) {
   return typeof group === 'function' ? group(match) : match[group];
 }
 
+function punctuationJoined(body) {
+  if (typeof body !== 'string') return false;
+  const literalOnly = segment => {
+    if (segment.includes('${')) return false;
+    for (let i = 0; i < segment.length; i++) {
+      const c = segment.charCodeAt(i);
+      // ASCII punctuation and ordinary spaces only. Backslashes would make
+      // an apparent interpolation escaped; backticks would be nested syntax.
+      if (c === 0x5c || !((c >= 0x20 && c <= 0x2f) || (c >= 0x3a && c <= 0x40) ||
+          (c >= 0x5b && c <= 0x5f) || (c >= 0x7b && c <= 0x7e))) return false;
+    }
+    return true;
+  };
+  let end = 0;
+  let expressions = 0;
+  for (const match of body.matchAll(/\$\{[A-Za-z_$][A-Za-z0-9_$]*(?:\.[A-Za-z_$][A-Za-z0-9_$]*)*\}/g)) {
+    if (!literalOnly(body.slice(end, match.index))) return false;
+    expressions++;
+    end = match.index + match[0].length;
+  }
+  return expressions > 0 && literalOnly(body.slice(end));
+}
+
 function assignmentContext(match) {
   const named = match[2]?.match(/^\$\{[A-Za-z_$][A-Za-z0-9_$]*\}$/);
   const marker = match[2]?.match(/^([A-Z_]*)\$\{[A-Za-z_$][A-Za-z0-9_$]*(?:\.[A-Za-z_$][A-Za-z0-9_$]*)*\}([A-Z_]*)$/);
   const placeholderMarker = match[1] === '`' && marker?.[0] === match[2] &&
     marker[1].length + marker[2].length > 0 && !/(?:AKIA|ASIA|AIDA|AROA)/.test(marker[1]);
-  return { quoted: Boolean(match[1]), namedInterpolation: Boolean(match[1]) && named?.[0] === match[2], placeholderMarker };
+  return { quoted: Boolean(match[1]), namedInterpolation: Boolean(match[1]) && named?.[0] === match[2], placeholderMarker,
+    punctuationJoined: match[1] === '`' && punctuationJoined(match[2]) };
 }
 
 function isCandidate(type, value, match) {
@@ -99,6 +123,7 @@ function classify(type, value, line, p, context = {}) {
   if (type === 'credential-assignment' && context.quoted && value.includes('${')) {
     if (context.namedInterpolation) return ['false positive', 'Template interpolation of a named variable, not a literal.'];
     if (context.placeholderMarker) return ['false positive', 'Low-entropy placeholder marker.'];
+    if (context.punctuationJoined) return ['false positive', 'Punctuation-joined interpolation.'];
     return ['real', 'Potential real credential; validity unverified. Stop and obtain private owner review without revealing the value.'];
   }
   const syntheticBody = value.replace(/^(?:gh[pousr]_|github_pat_|sk-(?:proj-|svcacct-)?)/, '');
@@ -290,13 +315,21 @@ function selfTest() {
   const notNamedVariables = ['${X}abc', 'abc${X}', '${a.b}', '${ X }', '${X || fallback}',
     '${f()}', '${X[0]}', '${X}${Y}', '${1X}', '${}', sample + '${X}', 'fake_' + sample + '${X}',
     'public-${generatedTopic}-suffix', '\\${X}', '${X} ', '${X}' + String.fromCharCode(0x2028)];
+  // These three prior backtick negatives now have no literal secret material
+  // under the newly authorised rule; single/double-quoted forms still stop.
+  const newlyCovered = new Set(['${a.b}', '${X}${Y}', '${X} ']);
   for (const quote of ["'", '"', '`']) {
     for (const identifier of namedVariables) {
       const r = probe(literal('${' + identifier + '}', quote));
       if (r.exit !== 0 || r.result.candidates.length !== 1 || r.result.candidates[0].classification !== 'false positive' ||
           r.result.candidates[0].reason !== 'Template interpolation of a named variable, not a literal.') throw new Error('Named-interpolation positive regression');
     }
-    for (const body of notNamedVariables) if (probe(literal(body, quote)).exit !== 2) throw new Error('Named-interpolation negative regression');
+    for (const body of notNamedVariables) {
+      const r = probe(literal(body, quote));
+      if (quote === '`' && newlyCovered.has(body)) {
+        if (r.exit !== 0 || r.result.candidates[0]?.reason !== 'Punctuation-joined interpolation.') throw new Error('Newly authorised interpolation regression');
+      } else if (r.exit !== 2) throw new Error('Named-interpolation negative regression');
+    }
   }
   const markers = ['ABC${x}DEF', 'PREFIX_${items.length}_SUFFIX', '__MARK${a.b.c}ER__',
     'ABC${x}', '${x}DEF', '_${x}_', 'ABC${$counter}DEF', 'ABC${a.$b_2}DEF'];
@@ -310,6 +343,20 @@ function selfTest() {
     for (const quote of ["'", '"']) if (probe(literal(body, quote)).exit !== 2) throw new Error('Non-template marker regression');
   }
   for (const body of notMarkers) if (probe(literal(body, '`')).exit !== 2) throw new Error('Placeholder-marker negative regression');
+  const punctuationPositives = ['${a}:${b}', '${x.y}/${z}', '${a}-${b}-${c}', '${a}|${b}',
+    ' ${a} / ${b} ', '(${x.y})', '${a}_${b}.${c}', '/${x.y}', '${a.b}', '${a}${b}', '${a} ', '${a}:$'];
+  const punctuationNegatives = ['${a}:abc', ['sk', '${a}'].join('_'), '${a}:${b()}', '${a}:${b[0]}', 'AKIA${a}', '${a}:1',
+    '${a}:${b || c}', '${a}:${ b}', '${a}:${}', '${a}:${[]}', '${a}:${' + '`' + '${b}' + '`' + '}',
+    '\\${a}:${b}', '${a}:' + String.fromCharCode(0x2028), '${a}:\u03b2', '${a}:\u0661', '${a}:https://', '${a}:${1b}', '${a}:${b..c}'];
+  for (const body of punctuationPositives) {
+    const r = probe(literal(body, '`'));
+    if (r.exit !== 0 || r.result.candidates.length !== 1 || r.result.candidates[0].reason !== 'Punctuation-joined interpolation.') throw new Error('Punctuation-joined positive regression');
+    for (const quote of ["'", '"']) if (probe(literal(body, quote)).exit !== 2) throw new Error('Punctuation-joined non-template regression');
+  }
+  for (const body of punctuationNegatives) {
+    if (punctuationJoined(body) || probe(literal(body, '`')).exit !== 2) throw new Error('Punctuation-joined negative regression');
+  }
+  if (punctuationJoined('ABC${x}DEF')) throw new Error('Punctuation rule must not absorb the separate marker rule');
   const diagnostic = { scopes: {}, candidates: [], stopped: false, completedScopes: [], mode: 'collect-unknown' };
   const requested = ['working-tree', 'history', 'site'];
   for (const scope of requested) {
@@ -371,8 +418,11 @@ function selfTest() {
   if (publicReads !== 1 || batch.length !== 1 || batch[0].p !== 'public.txt' || state.excluded.length !== protectedPaths.length) throw new Error('Protected history read regression');
   return { detectionCases: tests.length, exclusionCases: 7, classificationCases: 3, redactionCases: 1,
     regressions: { metadataRedaction: 4, companyContext: 6, quotedLiterals: literalCases.length, realExpressions: 1,
-      namedInterpolationPositive: namedVariables.length * 3, namedInterpolationNegative: notNamedVariables.length * 3,
+      namedInterpolationPositive: namedVariables.length * 3, namedInterpolationNegative: notNamedVariables.length * 3 - newlyCovered.size,
+      newlyCoveredPunctuationCases: newlyCovered.size,
       placeholderMarkerPositive: markers.length, placeholderMarkerNegative: notMarkers.length + markers.length * 2,
+      punctuationJoinedPositive: punctuationPositives.length,
+      punctuationJoinedNegative: punctuationNegatives.length + punctuationPositives.length * 2,
       collectionModeCases: 5,
       workingTreePreReadExclusions: protectedPaths.length, historyPreReadExclusions: protectedPaths.length }, result: 'passed' };
 }

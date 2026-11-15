@@ -1,9 +1,9 @@
 {
   "scannedHead": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
-  "recordedAtUtc": "2026-11-15 20:07:46 UTC",
-  "mode": "collect-unknown",
-  "status": "completed; unresolved candidates require owner review",
-  "exitCode": 2,
+  "recordedAtUtc": "2026-11-15 20:29:12 UTC",
+  "mode": "normal",
+  "status": "completed; no potential real credentials detected",
+  "exitCode": 0,
   "complete": true,
   "completedScopes": [
     "working-tree",
@@ -11,9 +11,9 @@
     "site"
   ],
   "historyComplete": true,
-  "exportBase": "dbb1c19da0d0603a31ab33e351d6287f57afdd9d",
-  "scannerUnchangedFromRoundFour": true,
-  "scannerSha256": "ada828c5e29bc4b53a3927af4e103fcbb7c1fe1e6075778f5fc3c2fd97ba0e5c",
+  "unresolved": [],
+  "exportBase": "d13aa4da6dba5edfdd249ff86b7fc58594c0f6a4",
+  "scannerSha256": "719cdb376e440a37b3911ac28eaf8327618159fe2d9373009ffd49ef33393215",
   "lockfileSha256": "d98b4454b8101fd1f592e2c53d77b00c35fe90da51752bbecb5bcdde7bce4293",
   "manifestSha256": "bf75bfae4a68e99b611156518c5f0f133e34e2923242347dd614bee52ce12347",
   "historyScope": {
@@ -261,31 +261,21 @@
     "reachableCommits": 502,
     "excludedLocalValidationCommit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
     "localValidationCommitReachable": false,
+    "sameRefsAsRoundFive": true,
     "refSetSha256": "551816f08f91f3248d3d826ebbf3ae5f47eee7439def8951f1925100f15d9e21"
   },
   "normalRun": {
-    "exitCode": 2,
-    "complete": false,
-    "counts": {
-      "candidates": 69,
-      "real": 1,
-      "test": 8,
-      "false positive": 60
-    },
-    "unresolved": [
-      {
-        "scope": "history",
-        "file": "scripts/scan-launch-secrets.mjs",
-        "line": 116,
-        "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
-        "pattern": "credential-assignment"
-      }
+    "exitCode": 0,
+    "complete": true,
+    "completedScopes": [
+      "working-tree",
+      "history",
+      "site"
     ]
   },
   "diagnosticRun": {
-    "performed": true,
-    "exitCode": 2,
-    "complete": true
+    "performed": false,
+    "reason": "Normal mode completed with exit 0 and no unresolved candidates."
   },
   "ownerReviewedFindings": [
     {
@@ -296,7 +286,7 @@
       "pattern": "credential-assignment",
       "reason": "Template interpolation of a named variable, not a literal.",
       "provenance": "owner review by Claude (Samsung Book session), masked structure only, no value seen",
-      "maskedStructure": "The entire quoted body is one upper-case identifier interpolation, length 24. A single declaration at line 57 uses the same-named process.env reference with an empty fallback.",
+      "maskedStructure": "The complete quoted body is one upper-case identifier interpolation, length 24. A single declaration at line 57 reads the same-named process.env reference with an empty fallback.",
       "commitInFinalCoverage": true
     },
     {
@@ -307,50 +297,59 @@
       "pattern": "credential-assignment",
       "reason": "Low-entropy placeholder marker.",
       "provenance": "owner review by Claude (Samsung Book session), masked structure only, no value seen",
-      "maskedStructure": "An internal rich-snippet substitution placeholder. Fixed upper-case/underscore literal segments surround one identifier or dotted-member interpolation in a backtick template.",
+      "maskedStructure": "An internal rich-snippet substitution marker. Fixed upper-case/underscore literal segments surround one identifier or dotted-member interpolation in backticks.",
       "commitInFinalCoverage": true
     },
     {
       "file": "scripts/scan-launch-secrets.mjs",
       "line": 116,
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
       "classification": "false positive",
       "pattern": "credential-assignment",
-      "reason": "Owner-reviewed scanner-internal deduplication map key, not credentials.",
+      "reason": "Punctuation-joined interpolation.",
       "provenance": "owner review by Claude (Samsung Book session), masked structure only, no value seen",
-      "maskedStructure": "Assigned to a variable named key: a backtick template consisting of exactly two identifier interpolations joined by a colon.",
-      "scannerRuleAdded": false,
-      "commitInFinalCoverage": false
+      "maskedStructure": "Scanner-internal deduplication map key assigned to key: two identifier/member interpolations joined by a colon; no literal secret material.",
+      "relatedReviewedLocations": [
+        {
+          "file": "scripts/scan-launch-secrets.mjs",
+          "line": 116,
+          "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+          "classification": "false positive",
+          "provenance": "owner review by Claude (Samsung Book session), masked structure only, no value seen",
+          "commitInFinalCoverage": false
+        }
+      ],
+      "commitInFinalCoverage": true
     },
     {
       "file": "scripts/scan-launch-secrets.mjs",
       "line": 246,
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
       "classification": "false positive",
       "pattern": "credential-assignment",
-      "reason": "Owner-reviewed scanner-internal deduplication map key, not credentials.",
+      "reason": "Punctuation-joined interpolation.",
       "provenance": "owner review by Claude (Samsung Book session), masked structure only, no value seen",
-      "maskedStructure": "Assigned to a variable named key: a backtick template consisting of exactly two identifier interpolations joined by a colon.",
-      "scannerRuleAdded": false,
-      "commitInFinalCoverage": false
+      "maskedStructure": "Scanner-internal deduplication map key assigned to key: two identifier/member interpolations joined by a colon; no literal secret material.",
+      "relatedReviewedLocations": [
+        {
+          "file": "scripts/scan-launch-secrets.mjs",
+          "line": 246,
+          "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+          "classification": "false positive",
+          "provenance": "owner review by Claude (Samsung Book session), masked structure only, no value seen",
+          "commitInFinalCoverage": false
+        }
+      ],
+      "commitInFinalCoverage": true
     }
   ],
-  "wholeFileIdentity": {
-    "file": "scripts/scan-launch-secrets.mjs",
-    "reviewedLocalCommit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
-    "coveredPrCommit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
-    "reviewedGitBlob": "145d4615e1e53dd8c4ee9432306e1bd0482bc489",
-    "coveredGitBlob": "145d4615e1e53dd8c4ee9432306e1bd0482bc489",
-    "identical": true,
-    "method": "Git object-name lookup only; no source body was displayed or inspected. This evidence does not change the scanner result."
-  },
   "coverage": {
     "working-tree": {
       "files": 1181,
-      "bytes": 129596300,
+      "bytes": 129599380,
       "excluded": [],
       "links": [],
-      "manifestSha256": "f134f53c33cb204053a644b5607fe340dbae94ef1a7ba4d6a79a25eef08d1bee"
+      "manifestSha256": "13450d894ffd3e19a98c19362d6a90268d60e0261b39769591e3e4479c2f5112"
     },
     "history": {
       "files": 4354,
@@ -364,10 +363,10 @@
     },
     "site": {
       "files": 650,
-      "bytes": 81167975,
+      "bytes": 81167976,
       "excluded": [],
       "links": [],
-      "manifestSha256": "e210bb2c8375ea71a2028039f0ceb8519ebca458c98001f2caa69227c092b4af"
+      "manifestSha256": "7768ffe9337b9822ff7d66fcf0b262780daaeefb3490a7ea4ae55ac546bf6afb"
     }
   },
   "controls": {
@@ -381,9 +380,12 @@
       "quotedLiterals": 6,
       "realExpressions": 1,
       "namedInterpolationPositive": 12,
-      "namedInterpolationNegative": 48,
+      "namedInterpolationNegative": 45,
+      "newlyCoveredPunctuationCases": 3,
       "placeholderMarkerPositive": 8,
       "placeholderMarkerNegative": 32,
+      "punctuationJoinedPositive": 12,
+      "punctuationJoinedNegative": 42,
       "collectionModeCases": 5,
       "workingTreePreReadExclusions": 48,
       "historyPreReadExclusions": 48
@@ -392,27 +394,11 @@
   },
   "counts": {
     "candidates": 947,
-    "real": 2,
+    "real": 0,
     "test": 16,
-    "false positive": 929
+    "false positive": 931
   },
-  "unresolved": [
-    {
-      "scope": "history",
-      "file": "scripts/scan-launch-secrets.mjs",
-      "line": 116,
-      "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
-      "pattern": "credential-assignment"
-    },
-    {
-      "scope": "history",
-      "file": "scripts/scan-launch-secrets.mjs",
-      "line": 246,
-      "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
-      "pattern": "credential-assignment"
-    }
-  ],
-  "note": "Fresh supplied-input clone, fetched from the existing GitHub origin. The exact ref set and detached HEAD are recorded. No local validation refs were imported. Raw scanner classifications are preserved; no extra rule or new classification was added. Whole-file Git identity is metadata, not a candidate-value fingerprint.",
+  "note": "Complete normal scan on the same fresh input clone and exact 47-ref snapshot as round five. Four logical owner-reviewed findings retain six reviewed commit locations, including two local-only cf7 aliases outside final coverage. Candidate values and source excerpts are not retained.",
   "candidates": [
     {
       "scope": "working-tree",
@@ -562,7 +548,7 @@
       "scope": "working-tree",
       "commit": null,
       "file": "scripts/scan-launch-secrets.mjs",
-      "line": 285,
+      "line": 310,
       "pattern": "credential-assignment",
       "classification": "false positive",
       "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
@@ -1032,8 +1018,8 @@
       "file": "scripts/scan-launch-secrets.mjs",
       "line": 116,
       "pattern": "credential-assignment",
-      "classification": "real",
-      "reason": "Potential real credential; validity unverified. Stop and obtain private owner review without revealing the value."
+      "classification": "false positive",
+      "reason": "Punctuation-joined interpolation."
     },
     {
       "scope": "history",
@@ -1041,8 +1027,8 @@
       "file": "scripts/scan-launch-secrets.mjs",
       "line": 246,
       "pattern": "credential-assignment",
-      "classification": "real",
-      "reason": "Potential real credential; validity unverified. Stop and obtain private owner review without revealing the value."
+      "classification": "false positive",
+      "reason": "Punctuation-joined interpolation."
     },
     {
       "scope": "history",

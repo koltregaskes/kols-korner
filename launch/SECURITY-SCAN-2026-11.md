@@ -1,22 +1,68 @@
 # Kol's Korner launch security scan, 15 November 2026
 
-**Fresh-repository normal run returned exit 2.** Diagnostic collection then completed all three scopes and retained 2 scanner-unresolved historical entries. The working tree and built site have no unresolved candidates. No clean normal run is claimed.
+**Complete normal run, exit 0.** Working-tree, full recorded history and built-site scopes completed on `7c6322cadf53c9b92b41b642f38b45f14daed31b` using the reviewed round-six scanner. All 947 matches are classified: 931 false positives, 16 synthetic test matches and **zero unresolved candidates**. No diagnostic fallback was needed.
 
-## Fresh clone and unchanged scanner
+## Source identity and normal-run evidence
 
-The final input was a fresh clone of the supplied repository, with hardlinks disabled. It was not cloned from any validation or delivery checkout. After the initial local-input fetch, this copy's origin was set to the existing `https://github.com/koltregaskes/kols-korner.git` repository and `git fetch origin` succeeded. HEAD remained detached at `7c6322cadf53c9b92b41b642f38b45f14daed31b`.
+The run used the same fresh clone of the supplied input repository as round five, after its authorised origin fetch. HEAD stayed detached at `7c6322cadf53c9b92b41b642f38b45f14daed31b`. The exact 47 refs and their tips were required to match the previous snapshot before running and were verified unchanged afterwards. No export or local validation checkout supplied the history.
 
-The round-four scanner was copied into the working tree only. Its bytes were checked against round four before execution; no rule, exception or code change was added for the deduplication templates. No scan commit or local validation branch was created in the fresh input copy. The ref set was verified unchanged after both runs.
+Only the round-six scanner was copied into that source working tree; no scan commit or validation branch was created there. The application source head remained pinned. The scanner's delivered and executed bytes match.
 
-- Checked clock: **2026-11-15 20:07:46 UTC**. UK time is the same on this date.
-- Scanner SHA-256: `ada828c5e29bc4b53a3927af4e103fcbb7c1fe1e6075778f5fc3c2fd97ba0e5c`.
+- Checked clock: **2026-11-15 20:29:12 UTC**. UK time is the same on this date.
+- Scanner SHA-256: `719cdb376e440a37b3911ac28eaf8327618159fe2d9373009ffd49ef33393215`.
 - Lockfile SHA-256: `d98b4454b8101fd1f592e2c53d77b00c35fe90da51752bbecb5bcdde7bce4293`. Package manifest SHA-256: `bf75bfae4a68e99b611156518c5f0f133e34e2923242347dd614bee52ce12347`. Both are unchanged.
-- Runtime: Node.js v26.12.1. CI Node.js 24.22.1 execution remains unverified.
-- Export base: `dbb1c19da0d0603a31ab33e351d6287f57afdd9d`. This delivery changes only the report and ledger.
+- Runtime used: Node.js v26.12.1. CI execution was not performed in this local exercise.
+- Export base: `d13aa4da6dba5edfdd249ff86b7fc58594c0f6a4`. The patch changes only the scanner, report and ledger.
 
-## Exact history roots
+| Completed normal scope | Files/versions | Bytes read | Matches | Test | False positive | Unresolved |
+|---|---:|---:|---:|---:|---:|---:|
+| working-tree | 1,181 | 129,599,380 | 33 | 4 | 29 | 0 |
+| history | 4,354 | 249,945,715 | 898 | 12 | 886 | 0 |
+| site | 650 | 81,167,976 | 16 | 0 | 16 | 0 |
 
-History used `git rev-list --all` in the fresh clone. The exact 47 refs below were present for the run, together with detached HEAD `7c6322cadf53c9b92b41b642f38b45f14daed31b`. Symbolic aliases are shown explicitly. The reachable set contained 502 commits; `cf7abee7ab87d2455be9c8b168a86b54a616d8f4` was not reachable. No refs were filtered out or deleted to obtain that result.
+History checked all 502 reachable commit messages and 502 commit trees, 300,109 tree entries and 4,354 unique path/blob versions. The source clone is not shallow. Scope counts overlap between source/build inputs and different historical versions.
+
+Built-site manifest SHA-256: `7768ffe9337b9822ff7d66fcf0b262780daaeefb3490a7ea4ae55ac546bf6afb`. It hashes a path-sorted JSON array of [relative path, file SHA-256] pairs. Public data/downloads, scripts and ASCII credential bytes in binary assets were included. Media payloads were not decoded. No protected paths or symbolic links were encountered in the actual inputs.
+
+## One new value-safe classification
+
+The new reason is **Punctuation-joined interpolation.** It applies only to a backtick template with one or more interpolations, each exactly an identifier or dotted member access. Literal segments may contain ASCII punctuation and ordinary spaces, with no letters or digits. Calls, indexing, defaults, nested templates, escapes and malformed additional interpolations fail the rule. No expression is evaluated.
+
+The parser rejects unmatched interpolation starts and disallows backslashes/backticks in literal segments. The earlier approved named-variable and upper-case placeholder-marker rules remain separate. This new exception does not absorb alphanumeric marker literals. Provider-format detection still runs independently.
+
+The required positives `${a}:${b}`, `${x.y}/${z}` and `${a}-${b}-${c}` pass. The required negatives `${a}:abc`, `sk_${a}`, `${a}:${b()}`, `${a}:${b[0]}`, `AKIA${a}` and `${a}:1` stop with exit 2.
+
+| Control group | Result |
+|---|---|
+| New punctuation-only positives / negatives | 12 / 42 passed |
+| Original provider / protected-path / classification / redaction | 17 / 7 / 3 / 1 passed |
+| Prior metadata / company / quoted-literal / reference regressions | 4 / 6 / 6 / 1 passed |
+| Named interpolation positives / retained negatives | 12 / 45 passed |
+| Earlier backtick cases newly covered by the authorised rule | 3 passed |
+| Upper-case marker positives / negatives | 8 / 32 passed |
+| Collection-mode controls | 5 passed |
+| Working-tree / history pre-read credential-store probes | 48 / 48 passed |
+
+Three earlier backtick negatives now meet the new no-literal-material grammar: a bare member interpolation, adjacent identifier interpolations and an identifier followed by a space. Their single/double-quoted forms remain negative. This change is explicit in the regression matrix; all remaining earlier negative cases still stop. Synthetic fixtures are created in memory. No credential-store file is created or opened for the probes.
+
+## Owner-reviewed findings and provenance
+
+**Provenance for all reviewed locations:** owner review by Claude (Samsung Book session), masked structure only, no value seen.
+
+| Covered location | Reviewed commit | Owner classification | Implemented reason |
+|---|---|---|---|
+| `scripts/build.mjs:1320` | `2a6c1aa06bf213dbaa92316ae03487f2250a4aa6` | false positive | Template interpolation of a named variable, not a literal. |
+| `scripts/build.mjs:1166` | `7c6322cadf53c9b92b41b642f38b45f14daed31b` | false positive | Low-entropy placeholder marker. |
+| `scripts/scan-launch-secrets.mjs:116` | `b1fd774fd1196b5fad98cd9cc5f99536a809d559` | false positive | Punctuation-joined interpolation. |
+| `scripts/scan-launch-secrets.mjs:246` | `b1fd774fd1196b5fad98cd9cc5f99536a809d559` | false positive | Punctuation-joined interpolation. |
+
+The first review established a complete upper-case identifier interpolation, length 24, with one environment-reference declaration and empty fallback. The second established a fixed upper-case/underscore rich-snippet placeholder. The two scanner-key reviews established internal deduplication keys joined by a colon, with no literal credential material. No original value or actual identifier was seen by this agent.
+
+The two scanner-key findings also retain their earlier owner-reviewed aliases at `cf7abee7ab87d2455be9c8b168a86b54a616d8f4`, lines 116 and 246. That local-only validation commit remains outside final coverage; it is not a ref or reachable commit in the fresh input copy. The actual PR locations at `b1fd774fd1196b5fad98cd9cc5f99536a809d559` are within coverage and now receive the approved punctuation-joined classification automatically. The ledger preserves all four logical reviews and all six reviewed commit locations.
+
+## Exact 47-ref history snapshot
+
+History used `git rev-list --all` with the following exact refs, plus detached HEAD `7c6322cadf53c9b92b41b642f38b45f14daed31b`. Symbolic aliases are explicit. The snapshot is identical to round five; there was no new fetch, ref pruning or root substitution this round.
 
 | Ref | Resolved commit | Ref kind / symbolic target |
 |---|---|---|
@@ -68,40 +114,11 @@ History used `git rev-list --all` in the fresh clone. The exact 47 refs below we
 | `refs/remotes/origin/preserve/local-main-20261009` | `7d1d957c009ccabc66be287c69f802b36dc0e4ad` | direct ref |
 | `refs/remotes/origin/sec/cve-2026-111497-node-patched` | `712463b1c011ef53a33255b57860b4ce7512a823` | direct ref |
 
-Ref-set manifest SHA-256: `551816f08f91f3248d3d826ebbf3ae5f47eee7439def8951f1925100f15d9e21`. This is the SHA-256 of the JSON-encoded head/detached/ref snapshot retained with the evidence. Unreachable objects, reflogs, unfetched refs and remote changes after the fetch are outside this coverage claim.
+Ref-set manifest SHA-256: `551816f08f91f3248d3d826ebbf3ae5f47eee7439def8951f1925100f15d9e21`. The manifest hashes the JSON-encoded head/detached/ref snapshot retained with the evidence. Unreachable objects, reflogs, unfetched refs and later remote changes are outside this coverage claim.
 
-## Four owner-reviewed classifications
+## Complete findings ledger
 
-**Provenance for all four:** owner review by Claude (Samsung Book session), masked structure only, no value seen.
-
-| Location | Reviewed commit | Owner classification | Reviewed commit in final coverage? | Reason |
-|---|---|---|---|---|
-| `scripts/build.mjs:1320` | `2a6c1aa06bf213dbaa92316ae03487f2250a4aa6` | false positive | yes | Template interpolation of a named variable, not a literal. |
-| `scripts/build.mjs:1166` | `7c6322cadf53c9b92b41b642f38b45f14daed31b` | false positive | yes | Low-entropy placeholder marker. |
-| `scripts/scan-launch-secrets.mjs:116` | `cf7abee7ab87d2455be9c8b168a86b54a616d8f4` | false positive | no | Owner-reviewed scanner-internal deduplication map key, not credentials. |
-| `scripts/scan-launch-secrets.mjs:246` | `cf7abee7ab87d2455be9c8b168a86b54a616d8f4` | false positive | no | Owner-reviewed scanner-internal deduplication map key, not credentials. |
-
-The line-1320 review established one complete identifier interpolation and one same-named environment-reference declaration with an empty fallback. The line-1166 review established an upper-case/underscore placeholder around one identifier/member-access interpolation. The two scanner-line reviews established internal deduplication map keys with exactly two identifier interpolations separated by a colon, assigned to a variable named key. No actual identifier, marker text or value was seen by this agent.
-
-The two `cf7abee7` rows came from a local-only validation rebase commit. They were owner-reviewed as false positives and that commit is outside the fresh clone's final coverage. No scanner rule was added for them.
-
-A separate metadata-only Git object lookup explains why the fresh scan can still flag the corresponding PR version: the scanner file at real PR head `b1fd774fd1196b5fad98cd9cc5f99536a809d559` and at reviewed local commit `cf7abee7ab87d2455be9c8b168a86b54a616d8f4` has the identical whole-file Git blob ID `145d4615e1e53dd8c4ee9432306e1bd0482bc489`. No source body was displayed or inspected for this comparison. This identity evidence is recorded separately and was not used to suppress or relabel scanner findings.
-
-## Results and final counts
-
-`--self-test` returned exit 0 and the build returned exit 0. Normal mode was run first, as requested. Its exit was 2 and completed-scope status was `false`. It stopped in history; the diagnostic fallback returned exit 2 with all three scopes complete.
-
-| Complete diagnostic scope | Files/versions | Bytes read | Matches | Test | False positive | Scanner-unresolved |
-|---|---:|---:|---:|---:|---:|---:|
-| working-tree | 1,181 | 129,596,300 | 33 | 4 | 29 | 0 |
-| history | 4,354 | 249,945,715 | 898 | 12 | 884 | 2 |
-| site | 650 | 81,167,975 | 16 | 0 | 16 | 0 |
-
-History completed 502 commit messages and 502 commit trees, 300,109 tree entries and 4,354 unique path/blob versions. The clone was verified non-shallow. Counts overlap across working-tree/site scopes and historical versions.
-
-Built-site manifest SHA-256: `e210bb2c8375ea71a2028039f0ceb8519ebca458c98001f2caa69227c092b4af`. It hashes a path-sorted JSON array of [relative path, file SHA-256] pairs. All public data/downloads and ASCII token bytes in binary assets were covered; media payloads were not decoded. No protected paths or symbolic links were encountered.
-
-| Pattern | Matches | Raw scanner classification | Reason |
+| Pattern | Matches | Classification | Reason |
 |---|---:|---|---|
 | openai-token | 785 | false positive | Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt. |
 | credential-assignment | 106 | false positive | Unquoted source expression or configuration reference, not a quoted credential literal. |
@@ -109,42 +126,28 @@ Built-site manifest SHA-256: `e210bb2c8375ea71a2028039f0ceb8519ebca458c98001f2ca
 | github-token | 8 | test | Entire credential body is a deterministic repeated alphabet/digit sequence used as synthetic test data. |
 | credential-url | 4 | test | Synthetic English-label password in the publisher credential-redaction test; paired with a deterministic fake GitHub token. |
 | credential-assignment | 4 | test | Synthetic English-label password in the publisher credential-redaction test; paired with a deterministic fake GitHub token. |
-| credential-assignment | 2 | real | Potential real credential; validity unverified. Stop and obtain private owner review without revealing the value. |
+| credential-assignment | 2 | false positive | Punctuation-joined interpolation. |
 | jwt | 12 | false positive | GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential. |
 | credential-assignment | 3 | false positive | Template interpolation of a named variable, not a literal. |
 | credential-assignment | 1 | false positive | JavaScript method-call expression computing a value, not a literal credential. |
 | credential-assignment | 2 | false positive | Supabase explicitly publishable browser key, not a secret service-role key. |
 
-The [regenerated ledger](security-scan-findings.json) retains all 947 matches, the four owner reviews, exact refs, raw normal-run status and final diagnostic coverage. Its raw label "real" means scanner-unresolved potential credential, not confirmed provider validity. Owner review provenance is recorded separately from the automated result.
+All 947 records are in the [updated metadata-only ledger](security-scan-findings.json). Its primary status is the complete **normal** run, exit 0, and its unresolved list is empty. Previous diagnostic flags are not carried forward as current unresolved findings. Candidate values, source excerpts and direct candidate fingerprints are absent. Matching path segments and unexpected matching metadata remain redacted.
 
-## Remaining scanner metadata
-
-This is the complete fallback list. No new classification was made for these entries. Historical commits identify representative versions, not necessarily introducing commits.
-
-| # | Scope | File | Line | Commit | Pattern |
-|---:|---|---|---:|---|---|
-| 1 | history | `scripts/scan-launch-secrets.mjs` | 116 | `b1fd774fd1196b5fad98cd9cc5f99536a809d559` | credential-assignment |
-| 2 | history | `scripts/scan-launch-secrets.mjs` | 246 | `b1fd774fd1196b5fad98cd9cc5f99536a809d559` | credential-assignment |
-
-These entries are now in the real `chore/launch-security-scan` PR branch at `b1fd774`, which is explicitly present in the fresh ref set. Removing the local-only `cf7abee7` commit did not remove the identical historical file from that real branch. The scanner remains unchanged, and its non-zero result is preserved for owner reconciliation.
-
-## Commands, checks and boundaries
+## Commands and acceptance boundary
 
 ```powershell
-git clone --no-hardlinks <supplied-input-repository> <fresh-scan-copy>
-git -C <fresh-scan-copy> remote set-url origin https://github.com/koltregaskes/kols-korner.git
-git -C <fresh-scan-copy> fetch origin
-git -C <fresh-scan-copy> switch --detach 7c6322cadf53c9b92b41b642f38b45f14daed31b
-git -C <fresh-scan-copy> for-each-ref --format="%(refname) %(objectname) %(symref)"
-Copy-Item <round-four-scanner> <fresh-scan-copy>/scripts/scan-launch-secrets.mjs
+git rev-parse HEAD
+git for-each-ref --format="%(refname) %(objectname) %(symref)"
 node scripts/scan-launch-secrets.mjs --self-test
 node scripts/build.mjs
 node scripts/scan-launch-secrets.mjs
-node scripts/scan-launch-secrets.mjs --collect-unknown
 ```
 
-Node commands were run from the fresh scan-copy root, with output saved in a sibling evidence folder. Source head, refs, scalar statuses and scope counts were checked rather than inferred from a command finishing. The scanner's provider, redaction, named-interpolation, placeholder-marker, collection and protected-store controls all passed unchanged.
+Commands ran in the same fresh scan-copy root with the new scanner copied into its working tree. Self-test, build and normal scan each returned exit 0. Completion was verified through the JSON mode, complete/completedScopes/historyComplete fields, non-empty per-scope counts, zero unresolved candidates and unchanged ref tips. No collection fallback was required.
 
-**Dependency advisory evidence remains historical:** registry requests were prohibited in this round. Earlier full and production-only audits returned zero advisories against the identical five-package development-only graph. No fresh registry result or Gitleaks run is claimed.
+This verifies the authorised pattern scan for this exact application head, reviewed scanner and local built artifact. It does not certify a future 11 December freeze commit or live deployed bytes. Gitleaks and provider credential-validity checks were not run.
 
-No pushes, posts, installs, environment-variable changes, credential-file reads, new scanner exceptions, provider credential checks, source remediation, credential rotations or deployments were performed. Network use was limited to the authorised git fetch. Writes stayed inside the working folder. The unrelated global ignore permission warning was left alone. A future freeze head and any owner acceptance remain separate from these exact results.
+**Dependency advisories were not queried this round.** Registry requests remain prohibited. Earlier full and production-only audits returned zero advisories on the unchanged five-package development-only graph and lockfile hash. That historical evidence remains available; no fresh registry result is claimed.
+
+No pushes, posts, installs, environment-variable changes, credential-file reads, provider checks, application-source remediation, credential rotations or deployments were performed. No network request was made this round. Writes stayed within the working folder, and the unrelated global Git ignore warning was left alone.
