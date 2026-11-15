@@ -1,6 +1,6 @@
 {
   "scannedHead": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
-  "recordedAtUtc": "2026-11-15 19:46:54 UTC",
+  "recordedAtUtc": "2026-11-15 20:07:46 UTC",
   "mode": "collect-unknown",
   "status": "completed; unresolved candidates require owner review",
   "exitCode": 2,
@@ -11,71 +11,363 @@
     "site"
   ],
   "historyComplete": true,
-  "exportBase": "42739dbb048775078bf9818c572c306c7cf84823",
+  "exportBase": "dbb1c19da0d0603a31ab33e351d6287f57afdd9d",
+  "scannerUnchangedFromRoundFour": true,
   "scannerSha256": "ada828c5e29bc4b53a3927af4e103fcbb7c1fe1e6075778f5fc3c2fd97ba0e5c",
   "lockfileSha256": "d98b4454b8101fd1f592e2c53d77b00c35fe90da51752bbecb5bcdde7bce4293",
   "manifestSha256": "bf75bfae4a68e99b611156518c5f0f133e34e2923242347dd614bee52ce12347",
-  "collection": {
-    "exitCode": 2,
-    "complete": true,
-    "completedScopes": [
-      "working-tree",
-      "history",
-      "site"
+  "historyScope": {
+    "head": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
+    "detached": true,
+    "refs": [
+      {
+        "name": "refs/heads/chore/launch-security-scan",
+        "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/agent/kols-korner-isolated-news-publisher",
+        "commit": "4cee1870dc56d9d3f211521cf8ad0dc175196c3b",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/alerts/workflow-failure-alert",
+        "commit": "a6b320db292baf0ce25a13defafcb53049d7aaef",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/backup/nas-local-2026-08-19",
+        "commit": "8b9487c02ab49e510e5d4e718baf187b3f51d2f5",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/chore/launch-security-scan",
+        "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/claude/gitattributes-lf",
+        "commit": "bf23cdc593978f224a2ed22fbe899476d46ccbdd",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/claude/kk-a11y-seo",
+        "commit": "1379c111cd762555aa350c9dbd599f100ce24857",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/claude/links-page",
+        "commit": "c026c1d391015b7904eb6ab7a4281b831850318c",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/1613-humanise-agent-trust",
+        "commit": "916459df4167c254348f2684e725eca1731197d0",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/digest-preservation",
+        "commit": "75176bc19bd37e1fe6814ee00d8ad5564c3a94fb",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/kk-egress-signatures",
+        "commit": "01f41ed272474d438342a530d0b725fdcfe7c5d2",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/kk-handler-guard",
+        "commit": "b44af3f98a72d4a2f1100834ef0b1af678e2ef96",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/kk-html-case",
+        "commit": "b380b211ced16fc0cddc1f64f1e1a3bbb99ff914",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/kk-launch-discovery",
+        "commit": "203a7cccc443e9fe58985c24ded1ac155843eb75",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/kk-launch-freshness-proof",
+        "commit": "315e38e13f3bd5d688ce4afc9a2bab7f168633f2",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/kk-launch-links",
+        "commit": "bacabb078936415da663c2332c843d24ff17881d",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/kk-launch-news-honesty",
+        "commit": "cd90ab9a80ede1186ae81b0eb86ac4aaad149a96",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/kk-launch-owned-links",
+        "commit": "963d54ac76f9938bfaeea1c61aace0617a9e4915",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/kk-launch-phone",
+        "commit": "be0b6e9ad4d279c7911287738e47e4335137d12a",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/kk-launch-security-boundary",
+        "commit": "a52d152591dd099d3833a62f305ef8ea2ec642ed",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/kk-optional-url-guard",
+        "commit": "c21c0dd1928b9c5069ae3445a6159fa600ada039",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/launch-cleanup",
+        "commit": "8f4fd622eb3c0beffef73f8c7d9430aa3ad4d139",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/launch-contact",
+        "commit": "2cd5dc817b56d1a185c1545867132e0998454891",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/launch-kk-remaining",
+        "commit": "4733fc7ffa0469c184bda351e5fb734680bf67b3",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/launch-kk-rollback",
+        "commit": "55919bcdd7712f5ee3c212e262de447d206be1e4",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/launch-kk-security",
+        "commit": "75a54f2c2dd055337065f3ee998b50ceb2c7f252",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/launch-language-navigation",
+        "commit": "54051006a2eb2a48498919bf4118fac5092e63ef",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/launch-security",
+        "commit": "edbf8fbdeb1523a0c02484d92fb7102f1808d6a5",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/launch-tests",
+        "commit": "2b6d9eee87a48f4f5d5604e44f6269b3d2ef09e5",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/codex/seo-build-output",
+        "commit": "a66990d5613f1f3c2033cb92b69dac06690db45d",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/cursor/kols-korner-routed-feed-6fc8",
+        "commit": "dcd70c99903d434304e3af17ca363ce65ae340fa",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/cursor/publish-security-txt-402e",
+        "commit": "f0beb58960d6872ecdd0b2fc8bdf89394179ba80",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/cursor/schedule-digest-publish-4f8b",
+        "commit": "b3a04cea5d7d59d2ffa7baa46c46571fec486cc4",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/cursor/workflow-failure-alerts-e617",
+        "commit": "09a560abbd739e318e7b26492de466164ccd937e",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/cursor/x-cards-ai-2026-timeline-402e",
+        "commit": "2f3bc2e62afde341a929418e9d5846fbf1f06051",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/docs/launch-operations-runbook",
+        "commit": "8ee06e0c71391b0b2dd3386ed5df72f0340a3e61",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/fix/archive-dead-techcrunch-links",
+        "commit": "2b999b2c99bacca671bc04bd0a224c51b5ef9eef",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/fix/launch-accessibility",
+        "commit": "fd420e60966c0f5a029761512d46245e73513942",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/fix/launch-meta-security",
+        "commit": "a7ac7606cb03d2bd2836f56c9cadaff20cc35114",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/fix/news-freshness-by-digest-date-kol-3800",
+        "commit": "983ebe23033198e188379ed5e014673a273e0227",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/fix/remove-mockup-image-labels",
+        "commit": "a79b195c55881cfae8871e3960594c34f5f82e4b",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/fix/stale-feed-fails-loudly",
+        "commit": "007e78738f4034785656fbd6ec496195724ed38d",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/grok/story-wiki-prototype",
+        "commit": "dadd58c0f2cc34f4c0b2a84d7769b73f62e7b81c",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/HEAD",
+        "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
+        "symbolicTarget": "refs/remotes/origin/chore/launch-security-scan"
+      },
+      {
+        "name": "refs/remotes/origin/main",
+        "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/preserve/local-main-20261009",
+        "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+        "symbolicTarget": null
+      },
+      {
+        "name": "refs/remotes/origin/sec/cve-2026-111497-node-patched",
+        "commit": "712463b1c011ef53a33255b57860b4ce7512a823",
+        "symbolicTarget": null
+      }
     ],
-    "unresolvedCount": 2
+    "historyCommand": "git rev-list --all",
+    "includesDetachedHead": true,
+    "reachableCommits": 502,
+    "excludedLocalValidationCommit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+    "localValidationCommitReachable": false,
+    "refSetSha256": "551816f08f91f3248d3d826ebbf3ae5f47eee7439def8951f1925100f15d9e21"
   },
   "normalRun": {
-    "performed": false,
-    "exitCode": null,
-    "reason": "Collection has unresolved candidates; normal run was not requested by the conditional workflow."
+    "exitCode": 2,
+    "complete": false,
+    "counts": {
+      "candidates": 69,
+      "real": 1,
+      "test": 8,
+      "false positive": 60
+    },
+    "unresolved": [
+      {
+        "scope": "history",
+        "file": "scripts/scan-launch-secrets.mjs",
+        "line": 116,
+        "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
+        "pattern": "credential-assignment"
+      }
+    ]
+  },
+  "diagnosticRun": {
+    "performed": true,
+    "exitCode": 2,
+    "complete": true
   },
   "ownerReviewedFindings": [
     {
       "file": "scripts/build.mjs",
       "line": 1320,
       "commit": "2a6c1aa06bf213dbaa92316ae03487f2250a4aa6",
-      "pattern": "credential-assignment",
       "classification": "false positive",
+      "pattern": "credential-assignment",
       "reason": "Template interpolation of a named variable, not a literal.",
       "provenance": "owner review by Claude (Samsung Book session), masked structure only, no value seen",
-      "maskedStructure": "The complete quoted body is exactly one identifier interpolation. The upper-case identifier has 24 characters and one declaration at line 57 from the same-named process.env reference with an empty fallback."
+      "maskedStructure": "The entire quoted body is one upper-case identifier interpolation, length 24. A single declaration at line 57 uses the same-named process.env reference with an empty fallback.",
+      "commitInFinalCoverage": true
     },
     {
       "file": "scripts/build.mjs",
       "line": 1166,
       "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
-      "pattern": "credential-assignment",
       "classification": "false positive",
+      "pattern": "credential-assignment",
       "reason": "Low-entropy placeholder marker.",
       "provenance": "owner review by Claude (Samsung Book session), masked structure only, no value seen",
-      "maskedStructure": "An internal rich-snippet substitution marker. A backtick template has only fixed upper-case/underscore literal segments around exactly one identifier or dotted-member interpolation. No value or actual marker text was seen."
+      "maskedStructure": "An internal rich-snippet substitution placeholder. Fixed upper-case/underscore literal segments surround one identifier or dotted-member interpolation in a backtick template.",
+      "commitInFinalCoverage": true
+    },
+    {
+      "file": "scripts/scan-launch-secrets.mjs",
+      "line": 116,
+      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "classification": "false positive",
+      "pattern": "credential-assignment",
+      "reason": "Owner-reviewed scanner-internal deduplication map key, not credentials.",
+      "provenance": "owner review by Claude (Samsung Book session), masked structure only, no value seen",
+      "maskedStructure": "Assigned to a variable named key: a backtick template consisting of exactly two identifier interpolations joined by a colon.",
+      "scannerRuleAdded": false,
+      "commitInFinalCoverage": false
+    },
+    {
+      "file": "scripts/scan-launch-secrets.mjs",
+      "line": 246,
+      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "classification": "false positive",
+      "pattern": "credential-assignment",
+      "reason": "Owner-reviewed scanner-internal deduplication map key, not credentials.",
+      "provenance": "owner review by Claude (Samsung Book session), masked structure only, no value seen",
+      "maskedStructure": "Assigned to a variable named key: a backtick template consisting of exactly two identifier interpolations joined by a colon.",
+      "scannerRuleAdded": false,
+      "commitInFinalCoverage": false
     }
   ],
+  "wholeFileIdentity": {
+    "file": "scripts/scan-launch-secrets.mjs",
+    "reviewedLocalCommit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+    "coveredPrCommit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
+    "reviewedGitBlob": "145d4615e1e53dd8c4ee9432306e1bd0482bc489",
+    "coveredGitBlob": "145d4615e1e53dd8c4ee9432306e1bd0482bc489",
+    "identical": true,
+    "method": "Git object-name lookup only; no source body was displayed or inspected. This evidence does not change the scanner result."
+  },
   "coverage": {
     "working-tree": {
       "files": 1181,
-      "bytes": 129596303,
+      "bytes": 129596300,
       "excluded": [],
       "links": [],
-      "manifestSha256": "825be92625d3a415f69ec04ec90a22141646618514ce3316cd5d3d014b26185d"
+      "manifestSha256": "f134f53c33cb204053a644b5607fe340dbae94ef1a7ba4d6a79a25eef08d1bee"
     },
     "history": {
-      "files": 4150,
-      "bytes": 242371331,
+      "files": 4354,
+      "bytes": 249945715,
       "excluded": [],
       "links": [],
-      "commits": 475,
-      "treeEntries": 275845,
-      "commitObjectsScanned": 475,
-      "uniqueVersions": 4150
+      "commits": 502,
+      "treeEntries": 300109,
+      "commitObjectsScanned": 502,
+      "uniqueVersions": 4354
     },
     "site": {
       "files": 650,
-      "bytes": 81167978,
+      "bytes": 81167975,
       "excluded": [],
       "links": [],
-      "manifestSha256": "a6fedace8a4a792b759bf5a7741102e4c807cbed73ad873f2f233345f7edd62f"
+      "manifestSha256": "e210bb2c8375ea71a2028039f0ceb8519ebca458c98001f2caa69227c092b4af"
     }
   },
   "controls": {
@@ -99,28 +391,28 @@
     "result": "passed"
   },
   "counts": {
-    "candidates": 907,
+    "candidates": 947,
     "real": 2,
     "test": 16,
-    "false positive": 889
+    "false positive": 929
   },
   "unresolved": [
     {
       "scope": "history",
       "file": "scripts/scan-launch-secrets.mjs",
       "line": 116,
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
       "pattern": "credential-assignment"
     },
     {
       "scope": "history",
       "file": "scripts/scan-launch-secrets.mjs",
       "line": 246,
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
       "pattern": "credential-assignment"
     }
   ],
-  "note": "Complete scope coverage is not a clean credential verdict when unresolved metadata remain. No candidate values or source excerpts are retained. History deduplicates path/blob versions and gives a representative commit; repeated metadata rows can represent distinct matches on one line.",
+  "note": "Fresh supplied-input clone, fetched from the existing GitHub origin. The exact ref set and detached HEAD are recorded. No local validation refs were imported. Raw scanner classifications are preserved; no extra rule or new classification was added. Whole-file Git identity is metadata, not a candidate-value fingerprint.",
   "candidates": [
     {
       "scope": "working-tree",
@@ -421,7 +713,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "content/daily-digest-2026-03-03.md",
       "line": 134,
       "pattern": "openai-token",
@@ -430,7 +722,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "content/daily-digest-2026-03-04.md",
       "line": 182,
       "pattern": "openai-token",
@@ -439,7 +731,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "content/daily-digest-2026-03-05.md",
       "line": 198,
       "pattern": "openai-token",
@@ -448,7 +740,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "content/daily-digest-2026-03-28.md",
       "line": 18,
       "pattern": "openai-token",
@@ -457,7 +749,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "news-digests/2026-03-03-digest.md",
       "line": 53,
       "pattern": "openai-token",
@@ -466,7 +758,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "news-digests/2026-03-04-digest.md",
       "line": 71,
       "pattern": "openai-token",
@@ -475,7 +767,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "news-digests/2026-03-05-digest.md",
       "line": 77,
       "pattern": "openai-token",
@@ -484,7 +776,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "news-digests/2026-03-28-digest.md",
       "line": 7,
       "pattern": "openai-token",
@@ -493,7 +785,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "scripts/build.mjs",
       "line": 68,
       "pattern": "credential-assignment",
@@ -502,7 +794,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "scripts/build.mjs",
       "line": 361,
       "pattern": "credential-assignment",
@@ -511,7 +803,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "scripts/build.mjs",
       "line": 1166,
       "pattern": "credential-assignment",
@@ -520,7 +812,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "scripts/fetch-news.mjs",
       "line": 16,
       "pattern": "credential-assignment",
@@ -529,7 +821,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "scripts/publish-routed-news.test.mjs",
       "line": 125,
       "pattern": "github-token",
@@ -538,7 +830,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "scripts/publish-routed-news.test.mjs",
       "line": 125,
       "pattern": "credential-url",
@@ -547,7 +839,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "scripts/publish-routed-news.test.mjs",
       "line": 125,
       "pattern": "credential-assignment",
@@ -556,7 +848,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "scripts/publish-routed-news.test.mjs",
       "line": 127,
       "pattern": "github-token",
@@ -565,25 +857,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
-      "file": "scripts/scan-launch-secrets.mjs",
-      "line": 116,
-      "pattern": "credential-assignment",
-      "classification": "real",
-      "reason": "Potential real credential; validity unverified. Stop and obtain private owner review without revealing the value."
-    },
-    {
-      "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
-      "file": "scripts/scan-launch-secrets.mjs",
-      "line": 246,
-      "pattern": "credential-assignment",
-      "classification": "real",
-      "reason": "Potential real credential; validity unverified. Stop and obtain private owner review without revealing the value."
-    },
-    {
-      "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/data/news-articles.json",
       "line": 29526,
       "pattern": "openai-token",
@@ -592,7 +866,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/data/news-articles.json",
       "line": 40261,
       "pattern": "openai-token",
@@ -601,7 +875,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/data/news-articles.json",
       "line": 40381,
       "pattern": "openai-token",
@@ -610,7 +884,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/data/news-articles.json",
       "line": 40501,
       "pattern": "openai-token",
@@ -619,7 +893,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/news-digests/2026-03-03-digest.md",
       "line": 53,
       "pattern": "openai-token",
@@ -628,7 +902,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/news-digests/2026-03-04-digest.md",
       "line": 71,
       "pattern": "openai-token",
@@ -637,7 +911,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/news-digests/2026-03-05-digest.md",
       "line": 77,
       "pattern": "openai-token",
@@ -646,7 +920,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/news-digests/2026-03-28-digest.md",
       "line": 7,
       "pattern": "openai-token",
@@ -655,7 +929,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/posts/2026-03-03/index.html",
       "line": 233,
       "pattern": "openai-token",
@@ -664,7 +938,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/posts/2026-03-03/index.html",
       "line": 235,
       "pattern": "openai-token",
@@ -673,7 +947,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/posts/2026-03-04/index.html",
       "line": 281,
       "pattern": "openai-token",
@@ -682,7 +956,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/posts/2026-03-04/index.html",
       "line": 283,
       "pattern": "openai-token",
@@ -691,7 +965,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/posts/2026-03-05/index.html",
       "line": 297,
       "pattern": "openai-token",
@@ -700,7 +974,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/posts/2026-03-05/index.html",
       "line": 299,
       "pattern": "openai-token",
@@ -709,7 +983,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/posts/2026-03-28/index.html",
       "line": 101,
       "pattern": "openai-token",
@@ -718,7 +992,7 @@
     },
     {
       "scope": "history",
-      "commit": "cf7abee7ab87d2455be9c8b168a86b54a616d8f4",
+      "commit": "7c6322cadf53c9b92b41b642f38b45f14daed31b",
       "file": "site/posts/2026-03-28/index.html",
       "line": 103,
       "pattern": "openai-token",
@@ -751,6 +1025,24 @@
       "pattern": "credential-assignment",
       "classification": "false positive",
       "reason": "Low-entropy placeholder marker."
+    },
+    {
+      "scope": "history",
+      "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
+      "file": "scripts/scan-launch-secrets.mjs",
+      "line": 116,
+      "pattern": "credential-assignment",
+      "classification": "real",
+      "reason": "Potential real credential; validity unverified. Stop and obtain private owner review without revealing the value."
+    },
+    {
+      "scope": "history",
+      "commit": "b1fd774fd1196b5fad98cd9cc5f99536a809d559",
+      "file": "scripts/scan-launch-secrets.mjs",
+      "line": 246,
+      "pattern": "credential-assignment",
+      "classification": "real",
+      "reason": "Potential real credential; validity unverified. Stop and obtain private owner review without revealing the value."
     },
     {
       "scope": "history",
@@ -925,7 +1217,7 @@
     },
     {
       "scope": "history",
-      "commit": "1ee43ca15e117b56d708655d133fafd4e500ca3b",
+      "commit": "c026c1d391015b7904eb6ab7a4281b831850318c",
       "file": "scripts/build.mjs",
       "line": 67,
       "pattern": "credential-assignment",
@@ -934,7 +1226,7 @@
     },
     {
       "scope": "history",
-      "commit": "1ee43ca15e117b56d708655d133fafd4e500ca3b",
+      "commit": "c026c1d391015b7904eb6ab7a4281b831850318c",
       "file": "scripts/build.mjs",
       "line": 360,
       "pattern": "credential-assignment",
@@ -943,7 +1235,7 @@
     },
     {
       "scope": "history",
-      "commit": "1ee43ca15e117b56d708655d133fafd4e500ca3b",
+      "commit": "c026c1d391015b7904eb6ab7a4281b831850318c",
       "file": "scripts/build.mjs",
       "line": 1170,
       "pattern": "credential-assignment",
@@ -1135,6 +1427,33 @@
       "commit": "564c35d9c77183670ce9516212f725cfa5e7a367",
       "file": "scripts/build.mjs",
       "line": 1166,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Low-entropy placeholder marker."
+    },
+    {
+      "scope": "history",
+      "commit": "75a54f2c2dd055337065f3ee998b50ceb2c7f252",
+      "file": "scripts/build.mjs",
+      "line": 63,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "75a54f2c2dd055337065f3ee998b50ceb2c7f252",
+      "file": "scripts/build.mjs",
+      "line": 355,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "75a54f2c2dd055337065f3ee998b50ceb2c7f252",
+      "file": "scripts/build.mjs",
+      "line": 1165,
       "pattern": "credential-assignment",
       "classification": "false positive",
       "reason": "Low-entropy placeholder marker."
@@ -1438,7 +1757,7 @@
     },
     {
       "scope": "history",
-      "commit": "8403e11a5e59efdb00d76888d149503b0b155816",
+      "commit": "dadd58c0f2cc34f4c0b2a84d7769b73f62e7b81c",
       "file": "scripts/build.mjs",
       "line": 57,
       "pattern": "credential-assignment",
@@ -1447,9 +1766,36 @@
     },
     {
       "scope": "history",
-      "commit": "8403e11a5e59efdb00d76888d149503b0b155816",
+      "commit": "dadd58c0f2cc34f4c0b2a84d7769b73f62e7b81c",
       "file": "scripts/build.mjs",
       "line": 347,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "5c62c451179a586ce6e885cfb4a7e89f968d3f94",
+      "file": "scripts/build.mjs",
+      "line": 57,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "5c62c451179a586ce6e885cfb4a7e89f968d3f94",
+      "file": "scripts/build.mjs",
+      "line": 347,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "09a560abbd739e318e7b26492de466164ccd937e",
+      "file": ".github/scripts/record-workflow-alert.mjs",
+      "line": 34,
       "pattern": "credential-assignment",
       "classification": "false positive",
       "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
@@ -1474,6 +1820,258 @@
     },
     {
       "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "scripts/build.mjs",
+      "line": 57,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "scripts/build.mjs",
+      "line": 375,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/data/news-articles.json",
+      "line": 436,
+      "pattern": "jwt",
+      "classification": "false positive",
+      "reason": "GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/data/news-articles.json",
+      "line": 436,
+      "pattern": "jwt",
+      "classification": "false positive",
+      "reason": "GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/data/news-articles.json",
+      "line": 436,
+      "pattern": "jwt",
+      "classification": "false positive",
+      "reason": "GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/data/news-articles.json",
+      "line": 436,
+      "pattern": "jwt",
+      "classification": "false positive",
+      "reason": "GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/data/news-articles.json",
+      "line": 436,
+      "pattern": "jwt",
+      "classification": "false positive",
+      "reason": "GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/data/news-articles.json",
+      "line": 436,
+      "pattern": "jwt",
+      "classification": "false positive",
+      "reason": "GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/data/news-articles.json",
+      "line": 17400,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/data/news-articles.json",
+      "line": 28195,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/data/news-articles.json",
+      "line": 28315,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/data/news-articles.json",
+      "line": 28435,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/news-digests/2026-06-29-digest.md",
+      "line": 46,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/news-digests/2026-06-29-digest.md",
+      "line": 86,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/news-digests/2026-07-19-digest.md",
+      "line": 26,
+      "pattern": "jwt",
+      "classification": "false positive",
+      "reason": "GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/news-digests/2026-07-19-digest.md",
+      "line": 26,
+      "pattern": "jwt",
+      "classification": "false positive",
+      "reason": "GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/news-digests/2026-07-19-digest.md",
+      "line": 26,
+      "pattern": "jwt",
+      "classification": "false positive",
+      "reason": "GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/news-digests/2026-07-19-digest.md",
+      "line": 26,
+      "pattern": "jwt",
+      "classification": "false positive",
+      "reason": "GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/news-digests/2026-07-19-digest.md",
+      "line": 26,
+      "pattern": "jwt",
+      "classification": "false positive",
+      "reason": "GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/news-digests/2026-07-19-digest.md",
+      "line": 26,
+      "pattern": "jwt",
+      "classification": "false positive",
+      "reason": "GitHub public-image signed URL; JWT issuer/audience bind it to raw image delivery, not an account API credential."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/posts/2026-03-03/index.html",
+      "line": 215,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/posts/2026-03-03/index.html",
+      "line": 217,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/posts/2026-03-04/index.html",
+      "line": 263,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/posts/2026-03-04/index.html",
+      "line": 265,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/posts/2026-03-05/index.html",
+      "line": 279,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/posts/2026-03-05/index.html",
+      "line": 281,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/posts/2026-03-28/index.html",
+      "line": 83,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
+      "commit": "7d1d957c009ccabc66be287c69f802b36dc0e4ad",
+      "file": "site/posts/2026-03-28/index.html",
+      "line": 85,
+      "pattern": "openai-token",
+      "classification": "false positive",
+      "reason": "Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt."
+    },
+    {
+      "scope": "history",
       "commit": "24073b12df53d816b95741dcad1cd4702f411119",
       "file": "scripts/build.mjs",
       "line": 57,
@@ -1492,7 +2090,7 @@
     },
     {
       "scope": "history",
-      "commit": "2c2d4351bfdbb5dfdd33a623c6a97bd4a9b620ed",
+      "commit": "5a3a4e2ed610a86e0b562e6a61bfce6b4f7c68a5",
       "file": "scripts/build.mjs",
       "line": 57,
       "pattern": "credential-assignment",
@@ -1501,7 +2099,61 @@
     },
     {
       "scope": "history",
-      "commit": "2c2d4351bfdbb5dfdd33a623c6a97bd4a9b620ed",
+      "commit": "5a3a4e2ed610a86e0b562e6a61bfce6b4f7c68a5",
+      "file": "scripts/build.mjs",
+      "line": 346,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "ecd2bbf1f592ac53f3c910a1877be6210354f691",
+      "file": "scripts/build.mjs",
+      "line": 57,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "ecd2bbf1f592ac53f3c910a1877be6210354f691",
+      "file": "scripts/build.mjs",
+      "line": 343,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "a617090f2986e9ccb2c9243dd1cc42260c9bd30f",
+      "file": "scripts/build.mjs",
+      "line": 57,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "a617090f2986e9ccb2c9243dd1cc42260c9bd30f",
+      "file": "scripts/build.mjs",
+      "line": 343,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "8b9487c02ab49e510e5d4e718baf187b3f51d2f5",
+      "file": "scripts/build.mjs",
+      "line": 57,
+      "pattern": "credential-assignment",
+      "classification": "false positive",
+      "reason": "Unquoted source expression or configuration reference, not a quoted credential literal."
+    },
+    {
+      "scope": "history",
+      "commit": "8b9487c02ab49e510e5d4e718baf187b3f51d2f5",
       "file": "scripts/build.mjs",
       "line": 343,
       "pattern": "credential-assignment",
