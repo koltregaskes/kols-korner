@@ -99,7 +99,7 @@ Push to `main`. GitHub Actions will:
 2. Upload `site/`
 3. Deploy to GitHub Pages
 
-The root `CNAME` file selects `koltregaskes.com` for canonical URLs, feeds, sitemap and robots when no build override is supplied. Recheck the actual deployed destination after any approved hosting change.
+The root `CNAME` selects `koltregaskes.com` for canonical URLs, feed, sitemap and robots without environment variables. An existing `CUSTOM_DOMAIN` override takes precedence; with neither value the build uses the GitHub Pages project URL. Recheck the actual deployed destination after any approved hosting change.
 
 ## Content Model
 
@@ -173,4 +173,4 @@ For launch acceptance, link each day's actual run and artifact on rooms-os-hub#1
 
 launch/security-profile.json records the current static Pages boundary. CI inventories the built output and fails if a form, collection/auth field, external script, mutation API or telemetry appears without a deliberate review. The current contact journey is mailto using site-config.json; no newsletter sending, payment processing, application Worker/API or analytics collector is implemented. This is a verified code inventory, not an owner decision that those launch checklist items are accepted. The existing owners retain newsletter/monetisation decisions and the analytics contract.
 
-Repository HTML can supply CSP/referrer metadata; it cannot configure Pages response headers. HSTS, framing, MIME policy and a response CSP require the hosting owner. PR #34 tracks full meta coverage; frame-ancestors and X-Frame-Options are never claimed from meta tags. The current header mitigation remains unapproved in the contract until the existing owner records a decision. Check final HTTPS/redirect/header behaviour after the hosting move using the existing live verifier and GitHub Pages HTTPS guidance linked in the profile. No DNS or account change is made by these checks.
+The build now carries PR #34's meta coverage across all HTML, including privacy, preserved pages, 404 and redirects. Run `python scripts/check-meta-security.py` after building to check early placement, exact policies and agreement between the profile and [hosting proposal](docs/HOSTING-SECURITY.md). GitHub Pages cannot configure response headers from this repository. The supplied hosting observation reports no security response headers and no Cloudflare proxy; this task's HEAD recheck failed with no output. The exact proposed proxy switch and six response-header operations remain unapplied and require Kol's yes. `approvedMitigation` stays null. HSTS, framing, MIME and permissions protection are never claimed from metadata. The runbook supplies readback and rollback guidance; no DNS or account change is made by these checks.
