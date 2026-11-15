@@ -769,11 +769,12 @@ img {
   border-left: 1px solid var(--line-soft);
 }
 
-.toc h4 {
+.toc-label {
   margin: 0 0 0.75rem;
   color: var(--red);
   font-family: var(--font-mono);
   font-size: 0.7rem;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }

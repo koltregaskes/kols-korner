@@ -1293,8 +1293,8 @@ function generateTOC(headings) {
   if (headings.length === 0) return "";
 
   return `
-    <nav class="toc">
-      <h4>Contents</h4>
+    <nav class="toc" aria-label="Contents">
+      <p class="toc-label">Contents</p>
       <ul>
         ${headings.map(h => `<li class="toc-${h.level}"><a href="#${h.id}">${escapeHtml(h.text)}</a></li>`).join("")}
       </ul>
