@@ -15,8 +15,10 @@ const slash = p => p.replaceAll('\\', '/');
 const excluded = p => {
   const parts = slash(p).split('/');
   const name = parts.at(-1);
-  return parts.some(s => /^(?:\.git|node_modules|\.ssh|\.aws|\.azure|\.gnupg|\.vercel|secrets?|credentials)$/i.test(s)) ||
-    /^(?:\.env(?:\..*)?|\.envrc|.*\.env(?:\..*)?|\.npmrc|\.netrc|\.git-credentials|credentials(?:\..*)?|secrets?(?:\..*)?|id_(?:rsa|dsa|ecdsa|ed25519)(?:\..*)?)$/i.test(name) ||
+  return parts.some(s => /^(?:\.git|node_modules|\.ssh|\.aws|\.azure|\.gnupg|\.vercel|\.docker|\.kube|secrets?|credentials)$/i.test(s)) ||
+    /(?:^|\/)\.config\/(?:gcloud|gh|hub)(?:\/|$)/i.test(slash(p)) ||
+    /(?:^|\/)(?:\.gem\/credentials|\.cargo\/credentials(?:\.toml)?|\.m2\/settings\.xml|\.gradle\/gradle\.properties|\.nuget\/NuGet\.Config)$/i.test(slash(p)) ||
+    /^(?:\.env(?:\..*)?|\.envrc|.*\.env(?:\..*)?|\.npmrc|\.yarnrc(?:\.yml)?|\.pypirc|pip\.conf|\.netrc|_netrc|\.git-credentials|\.htpasswd|\.pgpass|\.my\.cnf|\.s3cfg|\.boto|\.vault-token|\.terraformrc|terraform\.rc|credentials(?:\..*)?|secrets?(?:\..*)?|id_[\w.-]+)$/i.test(name) ||
     /^(?:keys?|.*(?:private[-_]?key|service[-_]?account|api[-_]?keys?|keyfile).*)\.json$/i.test(name) ||
     /\.(?:pem|key|p8|p12|pfx|jks|keystore|kdbx|der|crt|cer)$/i.test(name);
 };
@@ -35,7 +37,7 @@ const patterns = [
   ['private-key', /-----BEGIN (?:(?:[A-Z0-9]+ )?PRIVATE KEY|PGP PRIVATE KEY BLOCK)-----/g],
   ['jwt', /\beyJ[A-Za-z0-9_-]+\.eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]{8,}\b/g],
   ['credential-url', /\b[a-z][a-z0-9+.-]*:\/\/[^\s/:@]+:([^\s/@]{8,})@/gi, 1],
-  ['credential-assignment', /["'`]?\b(?:[A-Za-z_][\w.-]*(?:key|secret|token|password|passwd|pwd)[\w.-]*|key|secret|token|password|passwd|pwd)["'`]?\s*[:=]\s*["'`]?([^\s"'`<>;,}\])]{16,})/gi, 1],
+  ['credential-assignment', /["'`]?\b(?:[A-Za-z_][\w.-]*(?:key|secret|token|password|passwd|pwd)[\w.-]*|key|secret|token|password|passwd|pwd)["'`]?\s*[:=]\s*(["'`]?)([^\s"'`<>;,}\])]{16,})/gi, 2],
   ['credential-query', /[?&](?:api[_-]?key|access[_-]?token|secret|token|password)=([^\s&"'<>]{16,})/gi, 1],
 ];
 
@@ -45,7 +47,44 @@ function entropy(value) {
   return [...counts.values()].reduce((h, n) => h - n / value.length * Math.log2(n / value.length), 0);
 }
 
-function classify(type, value, line, p) {
+function hasPattern(text) {
+  return patterns.some(([type, regex, group = 0]) => {
+    regex.lastIndex = 0;
+    return [...text.matchAll(regex)].some(m => !['credential-assignment', 'credential-query'].includes(type) || entropy(m[group]) >= 3.5);
+  });
+}
+
+function decoded(text) {
+  try { return decodeURIComponent(decodeURIComponent(text)); } catch { return text; }
+}
+
+function safePath(p) {
+  const parts = slash(p).split('/');
+  const masked = parts.map(s => hasPattern(decoded(s)) ? '[redacted-segment]' : s);
+  if (masked.some((s, i) => s !== parts[i])) return masked.join('/');
+  return hasPattern(decoded(p)) ? '[redacted-path]' : p;
+}
+
+// All output, including exclusions and link metadata, crosses this boundary.
+// Commit messages and child-process errors are never emitted as source text.
+function safeMetadata(value, key = '') {
+  if (Array.isArray(value)) return value.map(v => safeMetadata(v));
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, safeMetadata(v, k)]));
+  if (typeof value !== 'string') return value;
+  if (['file', 'path', 'directory'].includes(key)) return safePath(value);
+  return hasPattern(decoded(value)) ? '[redacted-metadata]' : value;
+}
+
+function assignmentContext(match, line) {
+  const quote = match[1];
+  const start = match.index + match[0].length - match[2].length;
+  let end = start;
+  while (end < line.length && (line[end] !== quote || line[end - 1] === '\\')) end++;
+  const interpolation = quote === '`' && /(?<!\\)\$\{[^}]+\}/.test(line.slice(start, end));
+  return { quoted: Boolean(quote), interpolation };
+}
+
+function classify(type, value, line, p, context = {}) {
   const syntheticBody = value.replace(/^(?:gh[pousr]_|github_pat_|sk-(?:proj-|svcacct-)?)/, '');
   const sequences = ['0123456789', '1234567890', '0123456789abcdef',
     '0123456789abcdefghijklmnopqrstuvwxyz', '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -59,14 +98,10 @@ function classify(type, value, line, p) {
       /^(?:(?:top|very|super|not|a|real|some|my|hidden|secret|token|redacted|credential|value|sensitive)[-_!.*]*){1,8}$/i.test(value.split('@')[0])) {
     return ['test', 'Synthetic English-label password in the publisher credential-redaction test; paired with a deterministic fake GitHub token.'];
   }
-  if (type === 'openai-token' && /^sk-(?:hynix|telecom)-(?:[a-z0-9]+-)*[a-z0-9]+$/i.test(value)) {
-    return ['false positive', 'SK Hynix or SK Telecom company-name news slug; the generic legacy OpenAI prefix overlaps that name.'];
-  }
-  // A URL path containing a model/news slug is not an API credential.
-  if (type === 'openai-token' && /https?:\/\//i.test(line) &&
-      /(?:^|[-/])sk-[a-z]+(?:-[a-z]+){2,}/.test(value) &&
-      value === value.toLowerCase()) {
-    return ['false positive', 'Lower-case hyphenated news/model URL slug, not a credential format.'];
+  // A company prefix alone never justifies suppression. Require a recognisable
+  // lower-case news slug with several bounded words, not a mixed-case key body.
+  if (type === 'openai-token' && /^sk-(?:hynix|telecom)-(?:[a-z][a-z0-9]{1,23}|\d{1,4})(?:-(?:[a-z][a-z0-9]{1,23}|\d{1,4})){1,}$/.test(value)) {
+    return ['false positive', 'Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt.'];
   }
   if (/^(?:YOUR[_-]|your[_-]|example[_-]|placeholder[_-]|dummy[_-]|fake[_-])/i.test(value) ||
       /^(?:sk-|ghp_|xoxb-)?(?:[xX0]{16,}|test(?:[_-]?test){4,})$/.test(value)) {
@@ -88,14 +123,14 @@ function classify(type, value, line, p) {
   if (type === 'credential-assignment' && /^sb_publishable_[A-Za-z0-9_-]+$/.test(value)) {
     return ['false positive', 'Supabase explicitly publishable browser key, not a secret service-role key.'];
   }
-  if (type === 'credential-assignment' && value.includes('${')) {
+  if (type === 'credential-assignment' && context.interpolation) {
     return ['false positive', 'JavaScript template expression constructing a value, not a literal credential.'];
   }
-  if (type === 'credential-assignment' && /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*)+\(/.test(value)) {
+  if (type === 'credential-assignment' && !context.quoted && /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*)+\(/.test(value)) {
     return ['false positive', 'JavaScript method-call expression computing a value, not a literal credential.'];
   }
-  if (type === 'credential-assignment' && /^(?:https?:\/\/|process\.|import\.|\$\{|\$\(|secrets\.|vars\.|[A-Za-z_][\w]*\()/.test(value)) {
-    return ['false positive', 'URL, source expression or configuration reference rather than a literal credential.'];
+  if (type === 'credential-assignment' && !context.quoted && /^(?:process\.|import\.|\$\{|\$\(|secrets\.|vars\.|[A-Za-z_][\w]*\()/.test(value)) {
+    return ['false positive', 'Unquoted source expression or configuration reference, not a quoted credential literal.'];
   }
   if (type === 'aws-access-key' && /https:\/\/(?:[\w.-]+\.)?githubusercontent\.com\//.test(line) && /[?&](?:X-Amz-Credential|AWSAccessKeyId)=/i.test(line)) {
     return ['false positive', 'Access identifier in a signed public-image URL; no AWS secret access key is supplied.'];
@@ -116,11 +151,43 @@ function inspect(text, p, location, emit) {
         const key = `${type}:${match.index}`;
         if (seen.has(key)) continue;
         seen.add(key);
-        const [classification, reason] = classify(type, value, line, p);
+        const context = type === 'credential-assignment' ? assignmentContext(match, line) : {};
+        const [classification, reason] = classify(type, value, line, p, context);
         emit({ ...location, file: p, line: i + 1, pattern: type, classification, reason });
       }
     }
   }
+}
+
+function recorder(result) {
+  const seen = new Set();
+  return row => {
+    // Deduplicate with the internal path before redaction so masked names do
+    // not collapse distinct findings. Raw paths never cross the output gate.
+    const key = [row.scope, row.file, row.line, row.commit, row.pattern].join(':');
+    if (seen.has(key)) return;
+    seen.add(key);
+    result.candidates.push(row);
+    if (row.classification === 'real') {
+      result.stopped = true;
+      throw new Error('CANDIDATE_STOP');
+    }
+  };
+}
+
+function collectVersion(mode, kind, blob, p, commit, state, blobs) {
+  // This is the sole route into the batch reader, shared by the exclusion
+  // regressions. Decide using metadata before any content-read is possible.
+  if (excluded(p)) {
+    if (!state.excluded.some(x => x.file === p)) state.excluded.push({ scope: 'history', file: p, commit, reason: 'Environment, key or credential-store path; blob never opened.' });
+    return;
+  }
+  if (mode === '120000' || kind !== 'blob') {
+    if (!state.links.some(x => x.file === p)) state.links.push({ scope: 'history', file: p, commit, reason: 'Symbolic link or submodule not followed.' });
+    return;
+  }
+  const key = `${blob}:${p}`;
+  if (!blobs.has(key)) blobs.set(key, { blob, p, commit });
 }
 
 function selfTest() {
@@ -155,13 +222,93 @@ function selfTest() {
   const rows = [];
   inspect('gh' + 'p_' + (sample + sample).slice(0, 36), 'synthetic.txt', { scope: 'self-test', commit: null }, r => rows.push(r));
   if (rows.length !== 1 || rows[0].classification !== 'real' || JSON.stringify(rows).includes(sample)) throw new Error('Redaction or stop classification failed');
-  if (classify('credential-assignment', '${generatedTopic}', '', 'sample.mjs')[0] !== 'false positive') throw new Error('Template classification failed');
+  if (classify('credential-assignment', '${generatedTopic}', '', 'sample.mjs', { quoted: true, interpolation: true })[0] !== 'false positive') throw new Error('Template classification failed');
   if (classify('github-token', 'gh' + 'p_' + '0123456789'.repeat(4), '', 'sample.test.mjs')[0] !== 'test') throw new Error('Synthetic classification failed');
-  return { detectionCases: tests.length, exclusionCases: 7, classificationCases: 3, redactionCases: 1, result: 'passed' };
+  const unknown = 'sk' + '-proj-' + sample;
+  function probe(text, p = 'fixture.txt') {
+    const result = { candidates: [], stopped: false };
+    let exit = 0;
+    try { inspect(text, p, { scope: 'self-test', commit: null }, recorder(result)); }
+    catch (error) { if (error.message !== 'CANDIDATE_STOP') throw error; exit = 2; }
+    return { exit, result: safeMetadata(result) };
+  }
+  // P1: filename/path, exclusion, link and commit-message output cannot repeat
+  // a candidate. Synthetic values are assembled in memory and never printed.
+  const filename = probe(unknown, `folder/${unknown}.txt`);
+  const metadata = safeMetadata({ excluded: [{ file: `nested/${unknown}/.pypirc` }], links: [{ file: `safe/${unknown}.link` }], unexpected: unknown });
+  const message = probe('message ' + unknown, '(commit message)');
+  if (filename.exit !== 2 || !filename.result.candidates[0].file.includes('[redacted-segment]') ||
+      JSON.stringify([filename, metadata, message]).includes(sample) || message.exit !== 2 ||
+      safePath(`safe/${unknown.replaceAll('-', '%2D')}.txt`).includes('%2D')) throw new Error('Metadata redaction regression');
+  // P1: both company prefixes with unfamiliar high-entropy bodies must stop.
+  for (const company of ['hynix', 'telecom']) {
+    if (probe(['sk', company, sample].join('-')).exit !== 2 ||
+        probe(['sk', company, sample.toLowerCase()].join('-')).exit !== 2) throw new Error('Company-prefix regression');
+    if (probe(['sk', company, 'memory', 'chip', 'news'].join('-')).exit !== 0) throw new Error('News-slug regression');
+  }
+  // P1: quotes are syntax, not evidence of an environment or URL reference.
+  const literal = (body, quote = '"') => ['api', 'key'].join('_') + ' = ' + quote + body + quote;
+  const literalCases = [
+    literal('process.' + sample),
+    literal('https://example.invalid/' + sample),
+    literal('client.compute(' + sample + ')'),
+    literal('process.' + sample, '`'),
+    literal('https://example.invalid/' + ['sk', 'hynix', sample].join('-')),
+    literal('https://example.invalid/' + ['sk', 'telecom', 'memory', 'chip', 'news'].join('-')),
+  ];
+  for (const text of literalCases) if (probe(text).exit !== 2) throw new Error('Quoted-literal regression');
+  for (const text of ['api_key = process.env.ACCESS_TOKEN_NAME', 'cache_key = `public-${generatedTopic}-suffix`']) {
+    const r = probe(text);
+    if (r.exit !== 0 || !r.result.candidates.length) throw new Error('Real-expression regression');
+  }
+  // P1: inject only directory/tree metadata. No credential file is created,
+  // opened or copied; any attempted protected read fails the control first.
+  const protectedPaths = [
+    '.env', '.env.local', '.envrc', '.npmrc', '.netrc', '_netrc', '.git-credentials',
+    '.pypirc', 'nested/.pypirc', '.docker/config.json', '.aws/credentials', '.aws/config',
+    '.azure/accessTokens.json', '.kube/config', '.ssh/id_rsa', 'id_ed25519', 'id_custom',
+    'store.p12', 'store.pfx', 'store.keystore', 'store.jks', 'store.kdbx',
+    '.htpasswd', 'nested/.htpasswd', '.pgpass', '.my.cnf', '.s3cfg', '.boto', '.vault-token',
+    '.terraformrc', 'terraform.rc', '.yarnrc.yml', 'pip.conf',
+    '.config/gcloud/application_default_credentials.json', '.config/gh/hosts.yml',
+    '.gem/credentials', '.cargo/credentials.toml', '.m2/settings.xml', '.gradle/gradle.properties',
+    '.nuget/NuGet.Config', 'certificate.pem', 'private.key', 'private.p8',
+    'certificate.crt', 'certificate.cer', 'credentials.json', 'service-account.json', 'api-key.json',
+  ];
+  const directories = new Map();
+  for (const p of [...protectedPaths, 'public.txt']) {
+    const pieces = p.split('/');
+    for (let i = 0; i < pieces.length; i++) {
+      const dir = path.join('virtual', ...pieces.slice(0, i));
+      if (!directories.has(dir)) directories.set(dir, new Map());
+      const directory = i < pieces.length - 1;
+      directories.get(dir).set(pieces[i], { name: pieces[i], isDirectory: () => directory, isFile: () => !directory, isSymbolicLink: () => false });
+    }
+  }
+  let publicReads = 0;
+  const fakeIO = {
+    readdirSync: dir => [...directories.get(dir).values()],
+    readFileSync: p => {
+      if (slash(path.relative('virtual', p)) !== 'public.txt') throw new Error('Protected working-tree read attempted');
+      publicReads++;
+      return Buffer.from('Public control');
+    },
+  };
+  walk('virtual', '', 'working-tree', { files: 0, bytes: 0, excluded: [], links: [], hashes: [] }, () => {}, fakeIO);
+  const selected = new Map();
+  const state = { excluded: [], links: [] };
+  const commit = 'a'.repeat(40);
+  protectedPaths.forEach((p, i) => collectVersion('100644', 'blob', (i + 1).toString(16).padStart(40, '0'), p, commit, state, selected));
+  collectVersion('100644', 'blob', 'f'.repeat(40), 'public.txt', commit, state, selected);
+  const batch = [...selected.values()];
+  if (publicReads !== 1 || batch.length !== 1 || batch[0].p !== 'public.txt' || state.excluded.length !== protectedPaths.length) throw new Error('Protected history read regression');
+  return { detectionCases: tests.length, exclusionCases: 7, classificationCases: 3, redactionCases: 1,
+    regressions: { metadataRedaction: 4, companyContext: 6, quotedLiterals: literalCases.length, realExpressions: 2,
+      workingTreePreReadExclusions: protectedPaths.length, historyPreReadExclusions: protectedPaths.length }, result: 'passed' };
 }
 
-function walk(dir, relative, scope, state, emit) {
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+function walk(dir, relative, scope, state, emit, io = fs) {
+  for (const entry of io.readdirSync(dir, { withFileTypes: true })) {
     const p = slash(path.join(relative, entry.name));
     if (excluded(p)) {
       if (!entry.isDirectory()) state.excluded.push({ scope, file: p, reason: 'Environment, key or credential-store path; never opened.' });
@@ -172,9 +319,9 @@ function walk(dir, relative, scope, state, emit) {
       continue;
     }
     const absolute = path.join(dir, entry.name);
-    if (entry.isDirectory()) walk(absolute, p, scope, state, emit);
+    if (entry.isDirectory()) walk(absolute, p, scope, state, emit, io);
     else if (entry.isFile()) {
-      const data = fs.readFileSync(absolute);
+      const data = io.readFileSync(absolute);
       state.files++;
       state.bytes += data.length;
       state.hashes.push([p, crypto.createHash('sha256').update(data).digest('hex')]);
@@ -196,17 +343,7 @@ function main() {
   if (scopes.some(s => !['working-tree', 'history', 'site'].includes(s))) throw new Error('Invalid scope');
   const head = git('rev-parse', 'HEAD').trim();
   const result = { head, controls, scopes: {}, candidates: [], stopped: false, historyComplete: false };
-  const seen = new Set();
-  const emit = row => {
-    const key = [row.scope, row.file, row.line, row.commit, row.pattern].join(':');
-    if (seen.has(key)) return;
-    seen.add(key);
-    result.candidates.push(row);
-    if (row.classification === 'real') {
-      result.stopped = true;
-      throw new Error('CANDIDATE_STOP');
-    }
-  };
+  const emit = recorder(result);
   try {
     for (const scope of scopes) {
       const state = { files: 0, bytes: 0, excluded: [], links: [], hashes: [] };
@@ -234,17 +371,7 @@ function main() {
             if (!match) throw new Error('Invalid tree record');
             const [, mode, kind, blob, p] = match;
             state.treeEntries++;
-            if (excluded(p)) {
-              if (!state.excluded.some(x => x.file === p)) state.excluded.push({ scope, file: p, commit, reason: 'Environment, key or credential-store path; blob never opened.' });
-              continue;
-            }
-            if (mode === '120000' || kind !== 'blob') {
-              if (!state.links.some(x => x.file === p)) state.links.push({ scope, file: p, commit, reason: 'Symbolic link or submodule not followed.' });
-              continue;
-            }
-            // Deduplicate identical file versions. Every commit tree is still enumerated.
-            const key = `${blob}:${p}`;
-            if (!blobs.has(key)) blobs.set(key, { blob, p, commit });
+            collectVersion(mode, kind, blob, p, commit, state, blobs);
           }
         }
         const versions = [...blobs.values()];
@@ -292,7 +419,7 @@ function main() {
   result.counts = { candidates: result.candidates.length, real: 0, test: 0, 'false positive': 0 };
   for (const row of result.candidates) result.counts[row.classification]++;
   result.status = result.stopped ? 'STOP: potential real credential' : result.failure ? 'FAILED' : 'completed; no potential real credentials detected';
-  console.log(JSON.stringify(result, null, 2));
+  console.log(JSON.stringify(safeMetadata(result), null, 2));
 }
 
 try { main(); } catch {

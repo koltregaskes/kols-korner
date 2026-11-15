@@ -1,110 +1,89 @@
 # Kol's Korner launch security scan, 15 November 2026
 
-**Verified for the supplied source snapshot:** both npm dependency audits returned zero advisories. The authorised pattern scan completed on the working tree, all reachable supplied Git history and the rebuilt public site, with zero unresolved potential real credentials. All matches are classified below and individually in [the redacted findings ledger](security-scan-findings.json).
+**STOP: unresolved potential credential. Rank 9 is not ready for acceptance.** The corrected scanner stopped with exit 2 on a historical credential assignment. No value was displayed or retained in the findings ledger.
 
-**Freeze acceptance remains unverified:** the actual 11 December freeze head has not been selected or scanned here. Re-run the commands below on that exact head and its rebuilt artifact. This local result does not certify a future head or the live deployment.
+| Blocking finding | Metadata |
+|---|---|
+| File | `scripts/build.mjs` |
+| Line | 1320 |
+| Historical commit | `2a6c1aa06bf213dbaa92316ae03487f2250a4aa6` |
+| Pattern | `credential-assignment` |
+| Classification | Potential real credential, unverified. No provider validity check was attempted. |
 
-## Recheck on the PR base
+Syntax-only triage establishes a quoted assignment beginning with interpolation syntax. It does not establish that this is an actual template expression rather than a literal. The finding remains unresolved; no exception was added to suppress it. No value, excerpt or candidate-derived fingerprint is included here. No removal or rotation was attempted.
 
-Before this PR was opened, `main` had moved to `d55d4a4e209d66a202a60233fd4dad881c58e2a6` (the launch operations runbook, #54). The same scanner was re-run there on 15 November 2026: `--self-test` passed (17 detection, 7 exclusion, 3 classification, 1 redaction case), `--scope=working-tree` found 32 candidates (4 test, 28 false positive, 0 potential real) and `--scope=history` completed with full history coverage and 693 candidates (12 test, 681 false positive, 0 potential real). The ledger below still describes the original `34d51b7` snapshot; the extra history matches come from the newer commits. All but two fall into the existing classified categories; the two new `jwt` matches (historical `site/data/news-articles.json` and `site/news-digests/2026-07-19-digest.md` at `7d1d957`) are the scanner's built-in false-positive class for a GitHub public-image signed URL copied from a news item: a short-lived image-delivery token, not an account or API credential. The freeze-head rerun below is still required.
+**Smallest unblocker:** private owner review of that exact historical assignment. If it is proven to be source interpolation, add a narrowly justified classification and regression. If it is a credential, Kol handles remediation. Resume a fresh full scan only after the finding is resolved. The built-site scan did not start after this stop.
 
-## Identity and evidence
+## Current source and evidence
 
-- Recorded from a checked clock: **2026-11-15 18:08:49 UTC**. UK time is the same on this date.
-- Source head: `34d51b7dd73fc3a46aa7db7001816615dca2eab9`, supplied `origin/main` (`34d51b7`). Local branch: `chore/launch-security-scan`.
-- Lockfile: `package-lock.json`, lockfile version 3; SHA-256 `d98b4454b8101fd1f592e2c53d77b00c35fe90da51752bbecb5bcdde7bce4293`.
-- Package manifest SHA-256: `bf75bfae4a68e99b611156518c5f0f133e34e2923242347dd614bee52ce12347`.
-- Scanner SHA-256: `0df07e73d1a46369a7b989a3b628a736a4587bfe35a3a0f433780d0bedf7d257`.
-- Runtime used: Node.js 26.12.1, npm 11.20.0. The existing security workflow specifies Node.js 24.22.1; execution on that CI runtime was not performed.
-- The script and this report are additions to the source head. No application source, dependency manifest, lockfile or workflow was changed by the patch.
-- Rebuilt `site/`: **650 files, 81,094,408 bytes**, including 370 HTML, 10 JS, three JSON and 220 Markdown files, plus XML, CSS, images, audio and video. Artifact manifest SHA-256: `cdb08186932f8d4241d99bb802f3bbaffc673b3fa99f18ce2c164972632e6809`. The manifest hashes the JSON-encoded, path-sorted array of [relative path, file SHA-256] pairs.
+- Checked clock: **2026-11-15 19:00:35 UTC**. UK time is the same on this date.
+- Current source head: `7c6322cadf53c9b92b41b642f38b45f14daed31b` (`origin/main`), fetched successfully from the existing repository during this round.
+- The scan ran with HEAD exactly at that main commit, plus the corrected scanner copied into the working tree. It did not use the old `34d51b7` snapshot or treat the PR head as current main.
+- PR under review: [Kol's Korner #56](https://github.com/koltregaskes/kols-korner/pull/56), original head `b1fd774fd1196b5fad98cd9cc5f99536a809d559`.
+- A separate validation branch was rebased onto current main, producing `cf7abee7ab87d2455be9c8b168a86b54a616d8f4`. The scope run used the exact main head above rather than that rebased PR commit.
+- Lockfile SHA-256: `d98b4454b8101fd1f592e2c53d77b00c35fe90da51752bbecb5bcdde7bce4293`. Manifest SHA-256: `bf75bfae4a68e99b611156518c5f0f133e34e2923242347dd614bee52ce12347`. Both match the earlier dependency graph.
+- Corrected scanner SHA-256: `d7056d4abd82a701cb0753ae60b392fb109d07c7b719d00e2c7433224faead9e`. Runtime: Node.js 26.12.1. Execution on the CI Node.js 24.22.1 runtime remains unverified.
 
-## Dependency audit
+## Four review fixes and regression evidence
 
-The existing `.github/workflows/security.yml` runs `npm ci`, `npm audit --audit-level=low` and a redacted Gitleaks history scan. This authorised local exercise used only the existing lockfile and no installation.
+| Finding | Change | Verification |
+|---|---|---|
+| Candidate-bearing filenames | Every output object crosses one redaction boundary. Matching path segments become `[redacted-segment]`; spanning matches become `[redacted-path]`. This includes finding, exclusion and link paths; unexpected matching metadata is withheld. Commit-message contents and child-process errors are never emitted. Internal deduplication uses the original path before redaction. | Four built-in metadata regressions, plus filename CLI controls in working-tree and history modes, passed without candidate values in either output stream. |
+| Broad SK company-prefix exception | Require a lower-case, multi-word company news slug with bounded word segments. Mixed-case or unsegmented high-entropy bodies are blocking candidates. An unrelated URL elsewhere on the line does not justify suppression. | Six built-in company controls passed; both company prefixes also stopped with exit 2 in working-tree and history CLI fixtures. |
+| Quoted literals treated as expressions | Preserve quote context. Only unquoted configuration/method expressions or actual backtick interpolation receive expression classification. Quoted `process.` and `https://` prefixes are insufficient. | Six quoted-literal controls, including combined URL/SK cases, and two genuine-expression controls passed. Quoted process, URL and combined URL/company CLI fixtures stopped with exit 2 in both scopes. |
+| Credential stores read before exclusion | Expanded protected paths include `.pypirc`, npm/netrc/Git stores, Docker, AWS, Azure, Kubernetes, SSH `id_*` keys, PKCS/key stores, `.htpasswd`, database client files and common cloud/package-manager stores. Tree selection uses the same exclusion function before selecting any blob for cat-file. | 48 working-tree and 48 history metadata-only pre-read controls passed. No protected file was created or opened for these probes. |
 
-| Audit | Exit | Info | Low | Moderate | High | Critical | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| All locked dependencies | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| Production only, omit dev | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+The original 17 detection, seven path, three classification and one redaction controls also passed. Additional CLI evidence covers six synthetic cases across two scopes, 12 runs total. Every expected stop was exit 2, with no synthetic candidate value in stdout or stderr. All fixtures were deliberately synthetic and isolated from the current-main checkout.
 
-The full audit returned an empty `vulnerabilities` object and five development packages. There are **zero external production dependencies**; npm's `prod: 1` metadata includes the root project. The static build imports Node built-ins and local modules. The locked packages support browser/accessibility tests and are not bundled into the shipped static site.
+## Current scan counts and ledger
 
-| Package | Locked version | Exposure | Returned advisories | Fix |
-|---|---|---|---:|---|
-| @axe-core/playwright | 4.14.0 | Development/test tooling only | 0 | No change proposed by the returned audit. |
-| @playwright/test | 1.65.0 | Development/test tooling only | 0 | No change proposed by the returned audit. |
-| axe-core | 4.14.0 | Development/test tooling only | 0 | No change proposed by the returned audit. |
-| playwright | 1.65.0 | Development/test tooling only | 0 | No change proposed by the returned audit. |
-| playwright-core | 1.65.0 | Development/test tooling only | 0 | No change proposed by the returned audit. |
+The [redacted findings ledger](security-scan-findings.json) has been regenerated for current main. Its status is stopped and its coverage is partial. The previous snapshot ledger and the old PR-base recheck section have been replaced.
 
-There are no returned advisories to list by severity or remediate. No patch/minor update is justified by these results. Both package files retain their original hashes. This result covers npm advisories for the locked package graph, not Docker images, Actions dependencies, browser binaries or unknown vulnerabilities.
+| Scope | State | Files/versions read | Bytes read | Matches | Test | False positive | Potential real |
+|---|---|---:|---:|---:|---:|---:|---:|
+| working-tree | completed | 1,181 | 129,590,275 | 33 | 4 | 29 | 0 |
+| history | STOPPED, partial | 3,354 | 202,067,428 | 395 | 12 | 382 | 1 |
+| site | NOT STARTED after stop | unknown | unknown | unknown | unknown | unknown | unknown |
 
-The first two full audit attempts in the restricted network sandbox failed to obtain an advisory payload. They were not counted as clean scans. The same explicitly authorised registry-only audit then succeeded with approved network access. No alternate service, login or token was used.
+Before reading blobs, history metadata enumerated 475 reachable commits, 275,845 tree entries and 4,150 unique path/blob versions. All 475 commit messages were checked. Only 3,354 file versions were read before exit 2. The clone is not shallow. These figures describe this local reference set; they do not establish that omitted upstream references, unreachable objects or reflogs were scanned.
 
-## Secret scan coverage and findings
+Working-tree counts describe current main after a successful build, with the corrected scanner, before the regenerated report and ledger were added. Scope counts overlap. Historical rows identify a representative commit containing that version, not necessarily the introducing commit. Masked paths may be indistinguishable in output; internal counting does not collapse them.
 
-The offline scanner checks AWS identifiers and high-entropy secret assignments, Azure storage keys, GitHub tokens, Slack tokens/webhooks, Stripe secret/restricted keys, OpenAI and Anthropic keys, Google API/OAuth tokens, private-key blocks, JWTs, credential-bearing URLs and high-entropy assignments/queries named key, secret, token or password.
-
-| Scope | Files/file versions | Bytes examined | Matches | Test | False positive | Potential real |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| working-tree | 1,174 | 129,460,717 | 32 | 4 | 28 | 0 |
-| history | 3,684 | 233,448,611 | 648 | 12 | 636 | 0 |
-| site | 650 | 81,094,408 | 16 | 0 | 16 | 0 |
-
-History coverage is **469 reachable commits**, **269,002 enumerated tree entries**, **3,684 unique path/blob versions** and all 469 commit messages. The clone is not shallow. Every branch/tag reachable through the supplied local refs is included by `git rev-list --all`. Deleted historical files are included via their commit trees. Unreachable objects, reflogs, omitted upstream refs and remote changes after the snapshot are outside that claim.
-
-Working-tree counts describe the post-build source and scanner before this report and its ledger were written. Counts are per scope: the site overlaps the working tree, and history counts different immutable file versions. The 696 matches therefore do not represent 696 distinct credentials. Each ledger row supplies file, line, scope, representative commit where applicable, pattern, classification and reason; no candidate value, source excerpt or credential-derived fingerprint is retained.
-
-| Pattern | Matches | Classification | Reason |
+| Pattern | Matches so far | Classification | Reason |
 |---|---:|---|---|
-| openai-token | 566 | false positive | SK Hynix or SK Telecom company-name news slug; the generic legacy OpenAI prefix overlaps that name. |
-| credential-assignment | 90 | false positive | URL, source expression or configuration reference rather than a literal credential. |
-| credential-assignment | 21 | false positive | JavaScript template expression constructing a value, not a literal credential. |
+| openai-token | 314 | false positive | Lower-case, multi-word SK Hynix or SK Telecom news slug; mixed-case or unsegmented high-entropy bodies are not exempt. |
+| credential-assignment | 78 | false positive | Unquoted source expression or configuration reference, not a quoted credential literal. |
+| credential-assignment | 19 | false positive | JavaScript template expression constructing a value, not a literal credential. |
 | github-token | 8 | test | Entire credential body is a deterministic repeated alphabet/digit sequence used as synthetic test data. |
 | credential-url | 4 | test | Synthetic English-label password in the publisher credential-redaction test; paired with a deterministic fake GitHub token. |
 | credential-assignment | 4 | test | Synthetic English-label password in the publisher credential-redaction test; paired with a deterministic fake GitHub token. |
-| credential-assignment | 1 | false positive | JavaScript method-call expression computing a value, not a literal credential. |
-| credential-assignment | 2 | false positive | Supabase explicitly publishable browser key, not a secret service-role key. |
+| credential-assignment | 1 | real | Potential real credential; validity unverified. Stop and obtain private owner review without revealing the value. |
 
-No finding required removal, rotation or dependency remediation. An unfamiliar candidate stops scanning immediately with exit 2 and metadata only; it must receive private owner review before continuing. No credentials were tested against a service.
+No protected files or symbolic links were encountered among the enumerated scan inputs before the stop. Environment/key/store exclusions remain mandatory for all future runs, including history. UTF-8 text and ASCII bytes in binary files are screened; media content is not decoded. Gitleaks was not run. A stopped or failed run never constitutes a zero finding.
 
-The scanner enumerates paths before opening blobs and skips environment files, key/certificate files and credential stores, including historical versions. No protected file paths or symbolic links were encountered among the enumerated scan inputs. Operational directories such as `.git` and `node_modules` are not walked; Git history is read through Git object commands instead. Exclusions appear in the JSON output if encountered. The existing `.gitleaksignore` does not suppress this scanner's findings.
+## Build and dependency status
 
-Controls passed: **17 positive detection cases, seven protected-path cases, three classification cases and one output-redaction case**. An invalid-scope control returned explicit failure JSON and exit 1. The working-tree scan also examined the scanner itself. Unknown candidates are conservatively labelled potentially real; provider validity is deliberately unverified. Binary assets receive UTF-8 and ASCII-byte pattern checks, without decoding image/audio/video content. Gitleaks was not run locally.
+`node scripts/build.mjs` completed with exit 0 on current main. That establishes a successful local build. It does not establish a completed secret scan of that output: the scanner stopped in history before reaching the site scope. No built-artifact secret-scan manifest is claimed for this round.
 
-## Commands and freeze rerun
+**Current dependency advisory status: not rechecked.** This round permits network access only for git fetch, so no npm audit request was made. The previous full and production-only audits on `34d51b7` returned zero advisories on 15 November, against the identical lockfile hash recorded above. That is historical evidence for an unchanged graph, not a newly queried advisory result.
 
-Local preparation was `git clone --no-hardlinks <supplied-local-repository> ./kk`, then `git switch -c chore/launch-security-scan origin/main`. Hardlinks were disabled to isolate the copy. Source head and non-shallow status were checked with `git rev-parse`; history uses `git rev-list --all`, `git log --all`, `git ls-tree -rz` and `git cat-file --batch` internally. Raw blob output stays inside the scanner process.
+The unchanged lockfile contains five development/test packages: @axe-core/playwright 4.14.0, @playwright/test 1.65.0, axe-core 4.14.0, playwright 1.65.0 and playwright-core 1.65.0. There are no external production dependencies in that graph. No install, dependency bump or lockfile edit was performed. A fresh advisory query still needs an authorised registry request before freeze acceptance.
 
-Run from the reviewed checkout in PowerShell. Keep outputs/cache in a sibling evidence folder so they cannot become scan inputs:
+## Commands, exit states and resumption
+
+This round used a local isolated copy, `git fetch origin main chore/launch-security-scan`, and `git rebase origin/main` for validation. The exact-main copy was checked out at `7c6322cadf53c9b92b41b642f38b45f14daed31b`. Commands run there were:
 
 ```powershell
-New-Item -ItemType Directory -Force ../kk-security-evidence | Out-Null
-git rev-parse HEAD
-Get-FileHash -Algorithm SHA256 package-lock.json
-npm.cmd audit --json --registry=https://registry.npmjs.org --cache=../kk-security-evidence/npm-cache --logs-max=0 --update-notifier=false --fetch-retries=0 --fetch-timeout=30000 > ../kk-security-evidence/npm-all.json
-$allAuditExit = $LASTEXITCODE
-npm.cmd audit --omit=dev --json --registry=https://registry.npmjs.org --cache=../kk-security-evidence/npm-cache --logs-max=0 --update-notifier=false --fetch-retries=0 --fetch-timeout=30000 > ../kk-security-evidence/npm-production.json
-$productionAuditExit = $LASTEXITCODE
 node --check scripts/scan-launch-secrets.mjs
-if ($LASTEXITCODE -ne 0) { throw 'Scanner syntax check failed' }
 node scripts/scan-launch-secrets.mjs --self-test
-if ($LASTEXITCODE -ne 0) { throw 'Scanner controls failed' }
 node scripts/build.mjs
-if ($LASTEXITCODE -ne 0) { throw 'Build failed; do not certify site scan' }
-node scripts/scan-launch-secrets.mjs > ../kk-security-evidence/secrets.json
-$secretScanExit = $LASTEXITCODE
-if ($secretScanExit -ne 0) { throw 'Secret scan stopped or failed; review metadata only' }
-if ($allAuditExit -ne 0 -or $productionAuditExit -ne 0) { throw 'Dependency audit needs review; inspect JSON and distinguish findings from request failure' }
+node scripts/scan-launch-secrets.mjs
 ```
 
-Inspect all three JSON payloads, scope counts and hashes; a zero shell exit alone is not acceptance. Scanner exit 0 means all requested scopes completed without an unresolved candidate; exit 1 means an operation/control failed; exit 2 means stop for private review. Scope-specific diagnosis is available via `--scope=working-tree`, `--scope=history` or `--scope=site`; acceptance uses all three after a successful build. The audit request needs npm-registry access, and a failed/empty request must remain failed or unverified.
+The last command requests working-tree, history and site in that order. It returned exit 2 and stopped before site. No separate site scan was run after discovering the unresolved candidate. Controls and build returned exit 0. CLI regressions were run separately using synthetic ordinary files and metadata-only protected-path probes.
 
-## Delivery boundary
+After private classification/remediation, fetch the required refs, check out the exact intended freeze head, rebuild, and rerun all three scopes with the reviewed scanner. Keep JSON and logs in a sibling evidence folder. Inspect status, exit code, completed scopes, exclusions, counts and every finding; do not rely on process completion alone. Exit 0 means requested scopes completed without an unresolved finding, exit 1 means setup/operation/control failure, and exit 2 means stop for private review. Do not resume this run or append its partial totals as if it completed.
 
-The patch adds the scanner, this report and the redacted findings ledger. The local build changed 369 tracked generated site files and created 77 further generated files; these are retained in the working copy for inspection and are **excluded from the security patch**. Their output is the rebuilt artifact scanned above. This is not a site regeneration release.
+The current-main source changes and build output are retained in the isolated working folder. Delivery contains only the scanner, this report and its metadata ledger. No application source, dependency manifest, lockfile or workflow was changed by the security correction. No values, raw source excerpts or direct candidate hashes are published in the ledger.
 
-Local raw npm JSON, build logs and complete scanner output remain in the working folder's sibling `evidence/` directory. Git repeatedly warned that the local user's global Git ignore file could not be read (permission denied); that unrelated file was left alone and no workaround was used. Git operations and the scan of supplied reachable history completed successfully.
-
-No installs, lockfile changes, environment-variable changes, credential-file reads, pushes, posts, deployments, credential rotations or live-site requests were performed. Network use was limited to the authorised npm registry audits. Re-run this assessment for the final freeze head/artifact or any intervening source/dependency change before claiming Rank 9 accepted.
+No pushes, posts, installs, environment-variable changes, provider credential checks, rotations or deployments were performed. Network use was limited to the authorised git fetch. The unrelated global Git ignore permission warning was left alone. The F: drive was unavailable on this round; the rules read earlier in the same session remained available. Freeze acceptance remains blocked by the unresolved finding, incomplete scope coverage and the unrefreshed dependency advisory check.
