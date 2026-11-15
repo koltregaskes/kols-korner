@@ -37,7 +37,7 @@ const patterns = [
   ['private-key', /-----BEGIN (?:(?:[A-Z0-9]+ )?PRIVATE KEY|PGP PRIVATE KEY BLOCK)-----/g],
   ['jwt', /\beyJ[A-Za-z0-9_-]+\.eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]{8,}\b/g],
   ['credential-url', /\b[a-z][a-z0-9+.-]*:\/\/[^\s/:@]+:([^\s/@]{8,})@/gi, 1],
-  ['credential-assignment', /["'`]?\b(?:[A-Za-z_][\w.-]*(?:key|secret|token|password|passwd|pwd)[\w.-]*|key|secret|token|password|passwd|pwd)["'`]?\s*[:=]\s*(["'`]?)([^\s"'`<>;,}\])]{16,})/gi, 2],
+  ['credential-assignment', /["'`]?\b(?:[A-Za-z_][\w.-]*(?:key|secret|token|password|passwd|pwd)[\w.-]*|key|secret|token|password|passwd|pwd)["'`]?\s*[:=]\s*(?:(["'`])((?:\\.|(?!\1)[^\\\r\n])*)\1|()([^\s"'`<>;,}\])]{16,}))/gi, m => m[1] ? m[2] : m[4]],
   ['credential-query', /[?&](?:api[_-]?key|access[_-]?token|secret|token|password)=([^\s&"'<>]{16,})/gi, 1],
 ];
 
@@ -50,7 +50,7 @@ function entropy(value) {
 function hasPattern(text) {
   return patterns.some(([type, regex, group = 0]) => {
     regex.lastIndex = 0;
-    return [...text.matchAll(regex)].some(m => !['credential-assignment', 'credential-query'].includes(type) || entropy(m[group]) >= 3.5);
+    return [...text.matchAll(regex)].some(m => isCandidate(type, matchedValue(m, group), m));
   });
 }
 
@@ -75,16 +75,29 @@ function safeMetadata(value, key = '') {
   return hasPattern(decoded(value)) ? '[redacted-metadata]' : value;
 }
 
-function assignmentContext(match, line) {
-  const quote = match[1];
-  const start = match.index + match[0].length - match[2].length;
-  let end = start;
-  while (end < line.length && (line[end] !== quote || line[end - 1] === '\\')) end++;
-  const interpolation = quote === '`' && /(?<!\\)\$\{[^}]+\}/.test(line.slice(start, end));
-  return { quoted: Boolean(quote), interpolation };
+function matchedValue(match, group = 0) {
+  return typeof group === 'function' ? group(match) : match[group];
+}
+
+function assignmentContext(match) {
+  const named = match[2]?.match(/^\$\{[A-Za-z_$][A-Za-z0-9_$]*\}$/);
+  return { quoted: Boolean(match[1]), namedInterpolation: Boolean(match[1]) && named?.[0] === match[2] };
+}
+
+function isCandidate(type, value, match) {
+  // Short interpolation-shaped assignments must reach classification too:
+  // entropy/length alone would miss a member access or a suffixed expression.
+  if (type === 'credential-assignment') return (Boolean(match[1]) && value.includes('${')) || (value.length >= 16 && entropy(value) >= 3.5);
+  return type !== 'credential-query' || entropy(value) >= 3.5;
 }
 
 function classify(type, value, line, p, context = {}) {
+  // Owner-reviewed structure only. Never exempt a prefix, suffix, member access,
+  // default, escaped expression or several interpolations, even in backticks.
+  if (type === 'credential-assignment' && context.quoted && value.includes('${')) {
+    if (context.namedInterpolation) return ['false positive', 'Template interpolation of a named variable, not a literal.'];
+    return ['real', 'Potential real credential; validity unverified. Stop and obtain private owner review without revealing the value.'];
+  }
   const syntheticBody = value.replace(/^(?:gh[pousr]_|github_pat_|sk-(?:proj-|svcacct-)?)/, '');
   const sequences = ['0123456789', '1234567890', '0123456789abcdef',
     '0123456789abcdefghijklmnopqrstuvwxyz', '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -123,9 +136,6 @@ function classify(type, value, line, p, context = {}) {
   if (type === 'credential-assignment' && /^sb_publishable_[A-Za-z0-9_-]+$/.test(value)) {
     return ['false positive', 'Supabase explicitly publishable browser key, not a secret service-role key.'];
   }
-  if (type === 'credential-assignment' && context.interpolation) {
-    return ['false positive', 'JavaScript template expression constructing a value, not a literal credential.'];
-  }
   if (type === 'credential-assignment' && !context.quoted && /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*)+\(/.test(value)) {
     return ['false positive', 'JavaScript method-call expression computing a value, not a literal credential.'];
   }
@@ -146,12 +156,12 @@ function inspect(text, p, location, emit) {
     for (const [type, regex, group = 0] of patterns) {
       regex.lastIndex = 0;
       for (const match of line.matchAll(regex)) {
-        const value = match[group];
-        if ((type === 'credential-assignment' || type === 'credential-query') && entropy(value) < 3.5) continue;
-        const key = `${type}:${match.index}`;
-        if (seen.has(key)) continue;
-        seen.add(key);
-        const context = type === 'credential-assignment' ? assignmentContext(match, line) : {};
+        const value = matchedValue(match, group);
+        if (!isCandidate(type, value, match)) continue;
+        const matchId = `${type}:${match.index}`;
+        if (seen.has(matchId)) continue;
+        seen.add(matchId);
+        const context = type === 'credential-assignment' ? assignmentContext(match) : {};
         const [classification, reason] = classify(type, value, line, p, context);
         emit({ ...location, file: p, line: i + 1, pattern: type, classification, reason });
       }
@@ -164,9 +174,9 @@ function recorder(result) {
   return row => {
     // Deduplicate with the internal path before redaction so masked names do
     // not collapse distinct findings. Raw paths never cross the output gate.
-    const key = [row.scope, row.file, row.line, row.commit, row.pattern].join(':');
-    if (seen.has(key)) return;
-    seen.add(key);
+    const entryId = [row.scope, row.file, row.line, row.commit, row.pattern].join(':');
+    if (seen.has(entryId)) return;
+    seen.add(entryId);
     result.candidates.push(row);
     if (row.classification === 'real') {
       result.stopped = true;
@@ -186,12 +196,13 @@ function collectVersion(mode, kind, blob, p, commit, state, blobs) {
     if (!state.links.some(x => x.file === p)) state.links.push({ scope: 'history', file: p, commit, reason: 'Symbolic link or submodule not followed.' });
     return;
   }
-  const key = `${blob}:${p}`;
-  if (!blobs.has(key)) blobs.set(key, { blob, p, commit });
+  const versionId = `${blob}:${p}`;
+  if (!blobs.has(versionId)) blobs.set(versionId, { blob, p, commit });
 }
 
 function selfTest() {
   const sample = 'Ab9qR7mN2vX4zH6jK8pL1cD3eF5gT0sW';
+  const literal = (body, quote = '"') => ['api', 'key'].join('_') + ' = ' + quote + body + quote;
   const tests = [
     ['aws-access-key', 'AK' + 'IA' + sample.toUpperCase().slice(0, 16)],
     ['github-token', 'gh' + 'p_' + (sample + sample).slice(0, 36)],
@@ -207,7 +218,7 @@ function selfTest() {
     ['azure-storage-key', 'Account' + 'Key=' + sample + sample],
     ['private-key', '-----BEGIN ' + 'RSA PRIVATE KEY-----'],
     ['jwt', 'ey' + 'JhbGciOiJIUzI1NiJ9.' + 'ey' + 'JzdWIiOiJzY2FubmVyLXRlc3QifQ.' + sample],
-    ['credential-assignment', 'access_' + 'token = "' + sample + '"'],
+    ['credential-assignment', literal(sample)],
     ['credential-query', 'https://example.invalid/?access_' + 'token=' + sample],
     ['credential-url', 'postgres://user:' + sample + '@example.invalid/db'],
   ];
@@ -222,7 +233,7 @@ function selfTest() {
   const rows = [];
   inspect('gh' + 'p_' + (sample + sample).slice(0, 36), 'synthetic.txt', { scope: 'self-test', commit: null }, r => rows.push(r));
   if (rows.length !== 1 || rows[0].classification !== 'real' || JSON.stringify(rows).includes(sample)) throw new Error('Redaction or stop classification failed');
-  if (classify('credential-assignment', '${generatedTopic}', '', 'sample.mjs', { quoted: true, interpolation: true })[0] !== 'false positive') throw new Error('Template classification failed');
+  if (classify('credential-assignment', '${generatedTopic}', '', 'sample.mjs', { quoted: true, namedInterpolation: true })[0] !== 'false positive') throw new Error('Template classification failed');
   if (classify('github-token', 'gh' + 'p_' + '0123456789'.repeat(4), '', 'sample.test.mjs')[0] !== 'test') throw new Error('Synthetic classification failed');
   const unknown = 'sk' + '-proj-' + sample;
   function probe(text, p = 'fixture.txt') {
@@ -247,7 +258,6 @@ function selfTest() {
     if (probe(['sk', company, 'memory', 'chip', 'news'].join('-')).exit !== 0) throw new Error('News-slug regression');
   }
   // P1: quotes are syntax, not evidence of an environment or URL reference.
-  const literal = (body, quote = '"') => ['api', 'key'].join('_') + ' = ' + quote + body + quote;
   const literalCases = [
     literal('process.' + sample),
     literal('https://example.invalid/' + sample),
@@ -257,9 +267,21 @@ function selfTest() {
     literal('https://example.invalid/' + ['sk', 'telecom', 'memory', 'chip', 'news'].join('-')),
   ];
   for (const text of literalCases) if (probe(text).exit !== 2) throw new Error('Quoted-literal regression');
-  for (const text of ['api_key = process.env.ACCESS_TOKEN_NAME', 'cache_key = `public-${generatedTopic}-suffix`']) {
+  for (const text of ['api_key = process.env.ACCESS_TOKEN_NAME']) {
     const r = probe(text);
     if (r.exit !== 0 || !r.result.candidates.length) throw new Error('Real-expression regression');
+  }
+  const namedVariables = ['X', '$', 'var_name$42', 'SYNTHETIC_VARIABLE_VALUE'];
+  const notNamedVariables = ['${X}abc', 'abc${X}', '${a.b}', '${ X }', '${X || fallback}',
+    '${f()}', '${X[0]}', '${X}${Y}', '${1X}', '${}', sample + '${X}', 'fake_' + sample + '${X}',
+    'public-${generatedTopic}-suffix', '\\${X}', '${X} ', '${X}' + String.fromCharCode(0x2028)];
+  for (const quote of ["'", '"', '`']) {
+    for (const identifier of namedVariables) {
+      const r = probe(literal('${' + identifier + '}', quote));
+      if (r.exit !== 0 || r.result.candidates.length !== 1 || r.result.candidates[0].classification !== 'false positive' ||
+          r.result.candidates[0].reason !== 'Template interpolation of a named variable, not a literal.') throw new Error('Named-interpolation positive regression');
+    }
+    for (const body of notNamedVariables) if (probe(literal(body, quote)).exit !== 2) throw new Error('Named-interpolation negative regression');
   }
   // P1: inject only directory/tree metadata. No credential file is created,
   // opened or copied; any attempted protected read fails the control first.
@@ -303,7 +325,8 @@ function selfTest() {
   const batch = [...selected.values()];
   if (publicReads !== 1 || batch.length !== 1 || batch[0].p !== 'public.txt' || state.excluded.length !== protectedPaths.length) throw new Error('Protected history read regression');
   return { detectionCases: tests.length, exclusionCases: 7, classificationCases: 3, redactionCases: 1,
-    regressions: { metadataRedaction: 4, companyContext: 6, quotedLiterals: literalCases.length, realExpressions: 2,
+    regressions: { metadataRedaction: 4, companyContext: 6, quotedLiterals: literalCases.length, realExpressions: 1,
+      namedInterpolationPositive: namedVariables.length * 3, namedInterpolationNegative: notNamedVariables.length * 3,
       workingTreePreReadExclusions: protectedPaths.length, historyPreReadExclusions: protectedPaths.length }, result: 'passed' };
 }
 
