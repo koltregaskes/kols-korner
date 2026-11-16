@@ -24,6 +24,7 @@ export async function verifyRestore(directory, entries, algorithm = 'sha1') {
   const mismatches = [];
   let bytes = 0;
   for (const {name, oid} of entries) {
+    parseTree(Buffer.from(`100644 blob ${oid}\t${name}\0`));
     let body;
     try {
       const file = path.join(directory, name);
