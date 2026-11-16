@@ -1774,6 +1774,8 @@ async function writeArticlePage({
   await fs.mkdir(outDir, { recursive: true });
 
   const toc = generateTOC(headings);
+  const dateAttribute = date && Number.isFinite(Date.parse(date))
+    ? ` datetime="${new Date(date).toISOString()}"` : '';
   const tagsHtml = tags.length ? `<div class="post-tags">${tags.map(t => `<a href="../../tags/#${slugify(t)}" class="tag" data-color="${tagColorIndex(t)}">${escapeHtml(t)}</a>`).join("")}</div>` : "";
   const description = escapeHtml(summary || contentHtml.replace(/<[^>]*>/g, '').slice(0, 160));
   const heroImage = thumbnailUrl && thumbnailUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i)
@@ -1834,7 +1836,7 @@ async function writeArticlePage({
           <div class="post-meta">
           <span class="post-author">${SITE_OWNER}</span>
             <span class="meta-sep">&bull;</span>
-            <time class="post-date">${date ? new Date(date).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" }) : ""}</time>
+            <time class="post-date"${dateAttribute}>${date ? new Date(date).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" }) : ""}</time>
             <span class="meta-sep">&bull;</span>
             <span class="reading-time">${readingTime} min read</span>
           </div>
