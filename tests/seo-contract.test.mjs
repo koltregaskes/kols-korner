@@ -17,3 +17,20 @@ test('SEO rejects empty llms discovery content',()=>mutate('llms.txt',()=>'',/ll
 test('SEO rejects robots rules that block sitemap pages',()=>mutate('robots.txt',b=>b.toString()+'\nDisallow: /posts/\n',/robots|blocked/i));
 test('SEO rejects corrupt PNG data even with an intact signature and dimensions',()=>mutate('media/social-default.png',b=>{const copy=Buffer.from(b);copy[45]^=1;return copy},/PNG|CRC/i));
 test('SEO rejects duplicate structured-data identities',()=>mutate('index.html',b=>{const s=b.toString(),script=s.match(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/)[0];return s.replace('</head>',script+'</head>')},/duplicate|JSON-LD/i));
+
+for (const [name, title] of [['missing', ''], ['empty', '<title>  </title>'], ['duplicate', '<title>One</title><title>Two</title>']]) {
+ test(`SEO rejects ${name} HTML titles`,()=>mutate('index.html',b=>b.toString().replace(/<title>[\s\S]*?<\/title>/i,title),/HTML title/i));
+}
+
+const alias='posts/ai-news-digest-2026-02-08/index.html';
+function redirectTo(html, target, canonical=target) {
+ return html.toString().replace(/content="0; url=[^"]+"/,`content="0; url=${target}"`)
+  .replace(/(<link rel="canonical" href=")[^"]+/,`$1${canonical}`);
+}
+test('SEO rejects a redirect with a missing destination',()=>mutate(alias,b=>redirectTo(b,'https://koltregaskes.com/not-a-real-route/'),/destination is missing/i));
+test('SEO rejects an off-site redirect',()=>mutate(alias,b=>redirectTo(b,'https://example.org/'),/canonical site/i));
+test('SEO rejects redirect canonical disagreement',()=>mutate(alias,b=>redirectTo(b,'../2026-02-08/','https://koltregaskes.com/posts/2026-02-09/'),/canonical must match/i));
+test('SEO rejects a self-loop even when its canonical agrees',()=>mutate(alias,b=>redirectTo(b,'https://koltregaskes.com/posts/ai-news-digest-2026-02-08/'),/no chains\/loops/i));
+test('SEO rejects a redirect chain',()=>mutate(alias,b=>redirectTo(b,'https://koltregaskes.com/posts/ai-news-digest-2026-02-09/'),/no chains\/loops/i));
+test('SEO rejects delayed redirects',()=>mutate(alias,b=>b.toString().replace('0; url=','5; url='),/immediate/i));
+test('SEO rejects redirects to a noindex target',()=>mutate('posts/2026-02-08/index.html',b=>b.toString().replace('</head>','<meta name="robots" content="noindex"></head>'),/no chains\/loops/i));
