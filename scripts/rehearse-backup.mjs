@@ -6,7 +6,8 @@ import {pathToFileURL} from 'node:url';
 
 // Explicit release inputs only. No .git, local instructions, credentials or env.
 const inputs = ['content', 'news-digests', 'site', 'scripts', 'tests', '.github', 'launch', 'docs',
-  'package.json', 'package-lock.json', 'site-config.json', 'CNAME'];
+  'package.json', 'package-lock.json', 'site-config.json', 'CNAME',
+  'opinions.txt', 'memories.txt', 'writing-style.txt', 'llms.txt'];
 export function parseTree(buffer) {
   return buffer.toString('utf8').split('\0').filter(Boolean).map(line => {
     const [metadata, name] = line.split('\t');
@@ -45,6 +46,7 @@ async function rehearse() {
   const destination = await fs.mkdtemp(path.resolve('.local/backup-rehearsal-'));
   const archive = path.join(destination, 'source.tar'), restored = path.join(destination, 'restored');
   await fs.mkdir(restored);
+  await fs.writeFile(path.join(destination, 'manifest.json'), JSON.stringify(entries, null, 2));
   git(['archive', '--format=tar', `--output=${archive}`, head, '--', ...inputs]);
   execFileSync('tar', ['-xf', archive, '-C', restored]);
   const algorithm = git(['rev-parse', '--show-object-format']).toString().trim();
