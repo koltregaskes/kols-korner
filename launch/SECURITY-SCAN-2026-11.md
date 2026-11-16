@@ -1,0 +1,40 @@
+# Kol's Korner launch security evidence (audit rank 9), 15 November 2026
+
+**Result for main `7c6322cadf53c9b92b41b642f38b45f14daed31b`:** no known-vulnerable dependencies and no secrets detected in the repository's full Git history, which includes the committed built site under `site/`. **Still required:** the same checks on the actual 11 December freeze commit, recorded below before launch.
+
+## Evidence
+
+Both checks run in the existing **Security launch checks** workflow (`.github/workflows/security.yml`, job `audit`) on every push to `main`.
+
+| Check | How it runs | Result on `7c6322ca` |
+|---|---|---|
+| Dependency audit | `npm ci`, then `npm audit --audit-level=low` (Node 24.22.1) | **0 vulnerabilities** at any severity |
+| Secret scan | Gitleaks v8.30.0 (`zricethezav/gitleaks:v8.30.0`), `git` mode over `--all` refs with `fetch-depth: 0`, `--redact=100`, `.env` and `.env.*` paths excluded, existing `.gitleaksignore` applied | **Passed** (no findings) |
+
+- Run: [Security launch checks #43747051039](https://github.com/koltregaskes/kols-korner/actions/runs/43747051039), 15 Nov 2026 18:29 UTC.
+- Lockfile `package-lock.json` SHA-256: `d98b4454b8101fd1f592e2c53d77b00c35fe90da51752bbecb5bcdde7bce4293`.
+- All five locked packages (`@playwright/test`, `playwright`, `playwright-core`, `@axe-core/playwright`, `axe-core`) are development and test tooling. The static site ships no external production dependency.
+- `.gitleaksignore` suppresses 7 historical findings, added in `edbf8fb` (13 Nov) as reviewed false positives. They are a Supabase *publishable* browser key in two old versions of `site/subscribe/index.html`; a short-lived GitHub signed image URL copied into one news item (matched as `aws-access-token` and `jwt` in two files); and one `curl` authorisation-header example in a Markdown file. The first two match categories the supplementary scan's classifier assigned on its own ("Supabase explicitly publishable browser key" and "GitHub public-image signed URL"; see the archived scanner patches). Any new suppression must be reviewed the same way before launch.
+- The scan output is redacted by design. No secret value is printed, stored or reproduced here. Environment files were never opened.
+
+## Supplementary one-off review (15 November 2026)
+
+Before relying on the CI scan, a separate offline pattern scan of the working tree, every reachable historical file version and the rebuilt site was run as a cross-check. It produced 947 matches, all classified as false positives (for example news slugs mentioning SK Hynix or SK Telecom that resemble a legacy key prefix, and configuration or template expressions) or synthetic test fixtures. **No real credential was found.** Four locations were classified by owner review from masked structure only, with no value seen:
+- a template reference to a variable read from `process.env`;
+- a rich-snippet placeholder marker;
+- two internal de-duplication keys.
+
+That bespoke scanner was not adopted: independent review showed pattern scanners of this kind need continual tuning, and Gitleaks above is the maintained, authorised tool. Its code, results and reviews are archived outside the repository.
+
+## Freeze acceptance (11 December 2026)
+
+1. Identify the freeze commit on `main`.
+2. Confirm **Security launch checks** ran on that exact commit and passed, or re-run it with **Run workflow** on `main` once the freeze commit is the head.
+3. Record below: the commit SHA, the run URL, the npm audit totals and the Gitleaks result line, plus the lockfile SHA-256 if it changed.
+4. If either check fails, do not launch. Review the finding privately (values are withheld in the log), fix, rotate any real credential, and re-run.
+
+| Freeze commit | Run | npm audit | Gitleaks | Recorded by |
+|---|---|---|---|---|
+| _pending_ | | | | |
+
+This evidence covers what Gitleaks' `git` mode scans: the committed changes reachable from the refs fetched in CI (`--all`, full depth), including the committed build under `site/`. It does not cover uncommitted or untracked working-tree files, the `.env` and `.env.*` paths it excludes, the live deployed bytes or response headers, the hosting account, or credentials stored outside Git.
