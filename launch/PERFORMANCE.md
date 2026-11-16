@@ -1,0 +1,7 @@
+# Mobile performance evidence
+
+Run `npx playwright test --config playwright.performance.config.mjs` after building the frozen launch artifact. The five representative routes cover home, news, links, privacy and an essay. Each runs at 390×844 with 4× CPU slowdown, a fresh context, and a fixed two-second observation after fonts settle. JSON attachments record LCP, maximum CLS session window, decoded resource and image sizes, blocked origins and every served resource. LCP must be present and at most 2500ms; CLS must be at most 0.1. Theme interaction and page exceptions are checked.
+
+This is a local regression gate. Requests are intercepted from disk and external fonts are blocked. Decoded bytes are not compressed transfer bytes. These timings do not establish mobile field performance, real font layout, network speed, hosting latency or final launch acceptance. On the approved final host, collect cold-cache mobile runs including Google Fonts, actual compressed transfer/image bytes, longer interaction/scroll observations and the artifact head. Retain the reports on hub #1907; do not tick performance from this local gate alone.
+
+16 November 2026 local baseline: 5/5 passed using installed Edge and the pinned dependencies. Home requested 36,493,065 image bytes; the essay requested 7,102,576. This exposes oversized PNG delivery despite fast disk timings. Optimised responsive derivatives are the next performance fix; preserve the originals. Network transfer and final-host LCP remain unverified.
