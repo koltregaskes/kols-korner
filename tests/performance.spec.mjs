@@ -54,7 +54,10 @@ for (const routePath of routes) test(`mobile performance ${routePath}`, async ({
     imageBytes: resources.filter(r => r.image).reduce((sum, r) => sum + r.bytes, 0),
     transferBytes: null, transferNote: 'Interception cannot measure compressed HTTP transfer',
     blockedOrigins: [...blockedOrigins], resources};
-  await info.attach('mobile-performance.json', {body: JSON.stringify(report, null, 2), contentType: 'application/json'});
+  const reportPath = info.outputPath('mobile-performance.json');
+  await fs.mkdir(path.dirname(reportPath), {recursive: true});
+  await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
+  await info.attach('mobile-performance.json', {path: reportPath, contentType: 'application/json'});
   console.log(JSON.stringify({...report, resources: undefined}));
   expect(metrics.lcp).not.toBeNull();
   expect(metrics.lcp).toBeLessThanOrEqual(2500);
