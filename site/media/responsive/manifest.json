@@ -1,0 +1,582 @@
+{
+  "version": 1,
+  "format": "webp",
+  "quality": 82,
+  "images": [
+    {
+      "source": "media/ai-can-now-predict-diseases-from-how-you-sleep.png",
+      "bytes": 7102576,
+      "sha256": "9e3f1e5c907d6c94eb49b403881f270a1a8659ed12b0dba3579d75aaaa52a6db",
+      "variants": [
+        {
+          "path": "media/responsive/ai-can-now-predict-diseases-from-how-you-sleep-9e3f1e5c907d-480.webp",
+          "width": 480,
+          "bytes": 5958,
+          "sha256": "dffad4d7a7d05e43c588b7b36842dfd15f2264ac5fc67fbb95006ba83b693cb9"
+        },
+        {
+          "path": "media/responsive/ai-can-now-predict-diseases-from-how-you-sleep-9e3f1e5c907d-960.webp",
+          "width": 960,
+          "bytes": 20324,
+          "sha256": "749b5fd629f512838082dcd7bb3610c41b51b7b599ecbfb27fa264df1545714f"
+        },
+        {
+          "path": "media/responsive/ai-can-now-predict-diseases-from-how-you-sleep-9e3f1e5c907d-1600.webp",
+          "width": 1600,
+          "bytes": 75124,
+          "sha256": "9c038b71feaf19c9c29496dc0088276ceb5ed8270925330778d3f0c22c14c595"
+        }
+      ]
+    },
+    {
+      "source": "media/ai-news-digest-2026-02-08.png",
+      "bytes": 760476,
+      "sha256": "0563b4902c29c6f1ae186a535e604669715259b9d560c9b3b0cc0d2ed32cdd1b",
+      "variants": [
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-08-0563b4902c29-480.webp",
+          "width": 480,
+          "bytes": 20412,
+          "sha256": "0aebce2ea996fdf4383bb26426eee805a97ef468055001c6da176fdb4cd868db"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-08-0563b4902c29-960.webp",
+          "width": 960,
+          "bytes": 61644,
+          "sha256": "53a20e28ea7f05c3dd7de7e47f9334f1d47ca21ec57cecf8062c91f984698f01"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-08-0563b4902c29-1600.webp",
+          "width": 1600,
+          "bytes": 113396,
+          "sha256": "551374d6a3f87c165f7424ce6175def9d58b73cd5166ca346af9ed03fd249b72"
+        }
+      ]
+    },
+    {
+      "source": "media/ai-news-digest-2026-02-09.png",
+      "bytes": 833130,
+      "sha256": "476335aecdcedf32f214fb32f2af1ced48c234db2be2e82e9cfcdd3761800160",
+      "variants": [
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-09-476335aecdce-480.webp",
+          "width": 480,
+          "bytes": 27944,
+          "sha256": "d71e33a8ce3e5f15f6382412745baafd0ad5ed3eec11d757105db1895424114b"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-09-476335aecdce-960.webp",
+          "width": 960,
+          "bytes": 84356,
+          "sha256": "ffe566f18ff5ce8f097ef5a65257fc9fa214859d8b30806087391e9ab5bdbae7"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-09-476335aecdce-1600.webp",
+          "width": 1600,
+          "bytes": 159406,
+          "sha256": "f3dadcdbf0e1fc67097c1f77122e7ed7c23c7ab84cff2d8cd4cb860525b5e648"
+        }
+      ]
+    },
+    {
+      "source": "media/ai-news-digest-2026-02-10.png",
+      "bytes": 804233,
+      "sha256": "cee16e9ae6aea89e0a931f0baf9c54548a69f5c22629c2eb8899d13c97771cf0",
+      "variants": [
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-10-cee16e9ae6ae-480.webp",
+          "width": 480,
+          "bytes": 24108,
+          "sha256": "65027ff024c0f33763025200cea2a9b70439d6b37a7da4fc504d6c6e70abe06d"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-10-cee16e9ae6ae-960.webp",
+          "width": 960,
+          "bytes": 71608,
+          "sha256": "6f4dee4509385b9049049e3b98ad6ac188fdf098b2b9bcac713a46d6b6f7d419"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-10-cee16e9ae6ae-1600.webp",
+          "width": 1600,
+          "bytes": 132246,
+          "sha256": "95386abeea56f44e23db888b39ef4b021226cd6f6c0dfa6c438445577e0acc9f"
+        }
+      ]
+    },
+    {
+      "source": "media/ai-news-digest-2026-02-11.png",
+      "bytes": 803991,
+      "sha256": "3060c7d25e5bc1c25a94d23e6cf0712df53574f2fdad9613b08b32163950d313",
+      "variants": [
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-11-3060c7d25e5b-480.webp",
+          "width": 480,
+          "bytes": 19108,
+          "sha256": "02e21ea1dfea5585c01fa2bc96740a27db5fac25c44ba26de9573e22770102ff"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-11-3060c7d25e5b-960.webp",
+          "width": 960,
+          "bytes": 73572,
+          "sha256": "6d94ed92681d2bd4dfa93258db91df5c2b38a36593bb4ce1cade8983804ed0bc"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-11-3060c7d25e5b-1600.webp",
+          "width": 1600,
+          "bytes": 152222,
+          "sha256": "d2783282e0d6c7baf6708589ddbbbcd14696766c610466a9cca775e293f4a5d6"
+        }
+      ]
+    },
+    {
+      "source": "media/ai-news-digest-2026-02-12.png",
+      "bytes": 887131,
+      "sha256": "127b6008de5f7706fc6de613999ce5121c3018ec2a6e9bb33f81a425b34c57fb",
+      "variants": [
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-12-127b6008de5f-480.webp",
+          "width": 480,
+          "bytes": 27724,
+          "sha256": "6ceacab017b82a8b988c49a71df70aa0d8dab5d2e1a150fee5c8b420bbce6eb0"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-12-127b6008de5f-960.webp",
+          "width": 960,
+          "bytes": 88770,
+          "sha256": "8fd36c18d3a864d8204e6ce166a79c0424a7643939adae2d6de188e124427081"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-12-127b6008de5f-1600.webp",
+          "width": 1600,
+          "bytes": 172304,
+          "sha256": "5fd827ece216b41b524e7381278453beff02dae6c1f4476a6f7e702cb1080d6a"
+        }
+      ]
+    },
+    {
+      "source": "media/ai-news-digest-2026-02-13.png",
+      "bytes": 759235,
+      "sha256": "39510c71cf5d759bae8373753d0dd79579565a60377cc1d086ea399000b93376",
+      "variants": [
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-13-39510c71cf5d-480.webp",
+          "width": 480,
+          "bytes": 17254,
+          "sha256": "6c9fd964b1eb9e4c741282a21096b5e028eaeae9c1647acff2d2d857b322e6fc"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-13-39510c71cf5d-960.webp",
+          "width": 960,
+          "bytes": 57456,
+          "sha256": "039ba34d7c0db820b8ace41796b7b235f56c0b263965fccd873a1ab9fa27a162"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-13-39510c71cf5d-1600.webp",
+          "width": 1600,
+          "bytes": 114844,
+          "sha256": "e2bb02e9398a61a5871b7cc6c3885f7fc5b56b9164a49541d67aae52fd3db572"
+        }
+      ]
+    },
+    {
+      "source": "media/ai-news-digest-2026-02-14.png",
+      "bytes": 969058,
+      "sha256": "92b347d2b93c72f997164652964f00b20ef275300e0a21cdf62349cbac0da30e",
+      "variants": [
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-14-92b347d2b93c-480.webp",
+          "width": 480,
+          "bytes": 28952,
+          "sha256": "229b1514404fd37f420060f5c22b59a6fcf57aab618aa5c6d4d5660e969db038"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-14-92b347d2b93c-960.webp",
+          "width": 960,
+          "bytes": 106136,
+          "sha256": "ef6ba3e8b9bd5bd3277dd293f0f6d707a3ba8d7ebb12be5aa01390b1789f6a41"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-14-92b347d2b93c-1600.webp",
+          "width": 1600,
+          "bytes": 223014,
+          "sha256": "bddfdaa214a3f855712c0da4a55f326f5fda4d85d87d9e60394743504756144d"
+        }
+      ]
+    },
+    {
+      "source": "media/ai-news-digest-2026-02-15.png",
+      "bytes": 787357,
+      "sha256": "ed541a360127778c210cb211526f72c5dd27bdab7131e797c550cd6d5a454efa",
+      "variants": [
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-15-ed541a360127-480.webp",
+          "width": 480,
+          "bytes": 19822,
+          "sha256": "3ce44a4a79f6193990f2b5a8f20e60f5b76c3a73b482d126a959c8c090e70e5c"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-15-ed541a360127-960.webp",
+          "width": 960,
+          "bytes": 68828,
+          "sha256": "cdad00ee6ccb0f7cceb6fac4c504fc8c992e7ce6785d1046661e82589da6a850"
+        },
+        {
+          "path": "media/responsive/ai-news-digest-2026-02-15-ed541a360127-1600.webp",
+          "width": 1600,
+          "bytes": 138330,
+          "sha256": "8736b7770e165040718ef4074203c97398b8ad49cc9984c4b6f6f392794e5f51"
+        }
+      ]
+    },
+    {
+      "source": "media/ais-efficiency-promise-has-a-catch-you.png",
+      "bytes": 1020462,
+      "sha256": "ec66ab734ac9c74aa2a13ed08d32f2eb17e92de299292ea63fdfe47a9c1ed01b",
+      "variants": [
+        {
+          "path": "media/responsive/ais-efficiency-promise-has-a-catch-you-ec66ab734ac9-480.webp",
+          "width": 480,
+          "bytes": 8516,
+          "sha256": "58400fd565f8265734690c88772ccc8b43703c02b737ed834478b3953ba8a996"
+        },
+        {
+          "path": "media/responsive/ais-efficiency-promise-has-a-catch-you-ec66ab734ac9-960.webp",
+          "width": 960,
+          "bytes": 20530,
+          "sha256": "579d17f247cc02565ff34893126a4420f38fbd38fdcdcf7ce033afaabfef8e08"
+        },
+        {
+          "path": "media/responsive/ais-efficiency-promise-has-a-catch-you-ec66ab734ac9-1600.webp",
+          "width": 1600,
+          "bytes": 38710,
+          "sha256": "de254e6da295faa6d4406bdcfec3a14958efc58bca1bf5188ae609f075ffb5ef"
+        }
+      ]
+    },
+    {
+      "source": "media/california-just-told-grok-to-stop-making-deepfake-porn.png",
+      "bytes": 7327428,
+      "sha256": "c8bd406b725d0905c0b6c01eba1d8619e612ee1e6b0737017084d3aed8aa24ef",
+      "variants": [
+        {
+          "path": "media/responsive/california-just-told-grok-to-stop-making-deepfake-porn-c8bd406b725d-480.webp",
+          "width": 480,
+          "bytes": 10536,
+          "sha256": "7a80393f43b6d70e52ab9adac341e2a02920272670d65a15f0d74006fd861a40"
+        },
+        {
+          "path": "media/responsive/california-just-told-grok-to-stop-making-deepfake-porn-c8bd406b725d-960.webp",
+          "width": 960,
+          "bytes": 32530,
+          "sha256": "bd385ef2f5107ead43284c581079227f535edf9fd98589308b461af29eab5592"
+        },
+        {
+          "path": "media/responsive/california-just-told-grok-to-stop-making-deepfake-porn-c8bd406b725d-1600.webp",
+          "width": 1600,
+          "bytes": 86104,
+          "sha256": "fa6470edefca18da13f6d414e4311ad82d590dcbac1796e3773d1d999e1a6d43"
+        }
+      ]
+    },
+    {
+      "source": "media/daily-ai-news-feb08.png",
+      "bytes": 760476,
+      "sha256": "0563b4902c29c6f1ae186a535e604669715259b9d560c9b3b0cc0d2ed32cdd1b",
+      "variants": [
+        {
+          "path": "media/responsive/daily-ai-news-feb08-0563b4902c29-480.webp",
+          "width": 480,
+          "bytes": 20412,
+          "sha256": "0aebce2ea996fdf4383bb26426eee805a97ef468055001c6da176fdb4cd868db"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb08-0563b4902c29-960.webp",
+          "width": 960,
+          "bytes": 61644,
+          "sha256": "53a20e28ea7f05c3dd7de7e47f9334f1d47ca21ec57cecf8062c91f984698f01"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb08-0563b4902c29-1600.webp",
+          "width": 1600,
+          "bytes": 113396,
+          "sha256": "551374d6a3f87c165f7424ce6175def9d58b73cd5166ca346af9ed03fd249b72"
+        }
+      ]
+    },
+    {
+      "source": "media/daily-ai-news-feb09.png",
+      "bytes": 833130,
+      "sha256": "476335aecdcedf32f214fb32f2af1ced48c234db2be2e82e9cfcdd3761800160",
+      "variants": [
+        {
+          "path": "media/responsive/daily-ai-news-feb09-476335aecdce-480.webp",
+          "width": 480,
+          "bytes": 27944,
+          "sha256": "d71e33a8ce3e5f15f6382412745baafd0ad5ed3eec11d757105db1895424114b"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb09-476335aecdce-960.webp",
+          "width": 960,
+          "bytes": 84356,
+          "sha256": "ffe566f18ff5ce8f097ef5a65257fc9fa214859d8b30806087391e9ab5bdbae7"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb09-476335aecdce-1600.webp",
+          "width": 1600,
+          "bytes": 159406,
+          "sha256": "f3dadcdbf0e1fc67097c1f77122e7ed7c23c7ab84cff2d8cd4cb860525b5e648"
+        }
+      ]
+    },
+    {
+      "source": "media/daily-ai-news-feb10.png",
+      "bytes": 804233,
+      "sha256": "cee16e9ae6aea89e0a931f0baf9c54548a69f5c22629c2eb8899d13c97771cf0",
+      "variants": [
+        {
+          "path": "media/responsive/daily-ai-news-feb10-cee16e9ae6ae-480.webp",
+          "width": 480,
+          "bytes": 24108,
+          "sha256": "65027ff024c0f33763025200cea2a9b70439d6b37a7da4fc504d6c6e70abe06d"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb10-cee16e9ae6ae-960.webp",
+          "width": 960,
+          "bytes": 71608,
+          "sha256": "6f4dee4509385b9049049e3b98ad6ac188fdf098b2b9bcac713a46d6b6f7d419"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb10-cee16e9ae6ae-1600.webp",
+          "width": 1600,
+          "bytes": 132246,
+          "sha256": "95386abeea56f44e23db888b39ef4b021226cd6f6c0dfa6c438445577e0acc9f"
+        }
+      ]
+    },
+    {
+      "source": "media/daily-ai-news-feb11.png",
+      "bytes": 803991,
+      "sha256": "3060c7d25e5bc1c25a94d23e6cf0712df53574f2fdad9613b08b32163950d313",
+      "variants": [
+        {
+          "path": "media/responsive/daily-ai-news-feb11-3060c7d25e5b-480.webp",
+          "width": 480,
+          "bytes": 19108,
+          "sha256": "02e21ea1dfea5585c01fa2bc96740a27db5fac25c44ba26de9573e22770102ff"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb11-3060c7d25e5b-960.webp",
+          "width": 960,
+          "bytes": 73572,
+          "sha256": "6d94ed92681d2bd4dfa93258db91df5c2b38a36593bb4ce1cade8983804ed0bc"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb11-3060c7d25e5b-1600.webp",
+          "width": 1600,
+          "bytes": 152222,
+          "sha256": "d2783282e0d6c7baf6708589ddbbbcd14696766c610466a9cca775e293f4a5d6"
+        }
+      ]
+    },
+    {
+      "source": "media/daily-ai-news-feb12.png",
+      "bytes": 887131,
+      "sha256": "127b6008de5f7706fc6de613999ce5121c3018ec2a6e9bb33f81a425b34c57fb",
+      "variants": [
+        {
+          "path": "media/responsive/daily-ai-news-feb12-127b6008de5f-480.webp",
+          "width": 480,
+          "bytes": 27724,
+          "sha256": "6ceacab017b82a8b988c49a71df70aa0d8dab5d2e1a150fee5c8b420bbce6eb0"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb12-127b6008de5f-960.webp",
+          "width": 960,
+          "bytes": 88770,
+          "sha256": "8fd36c18d3a864d8204e6ce166a79c0424a7643939adae2d6de188e124427081"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb12-127b6008de5f-1600.webp",
+          "width": 1600,
+          "bytes": 172304,
+          "sha256": "5fd827ece216b41b524e7381278453beff02dae6c1f4476a6f7e702cb1080d6a"
+        }
+      ]
+    },
+    {
+      "source": "media/daily-ai-news-feb13.png",
+      "bytes": 759235,
+      "sha256": "39510c71cf5d759bae8373753d0dd79579565a60377cc1d086ea399000b93376",
+      "variants": [
+        {
+          "path": "media/responsive/daily-ai-news-feb13-39510c71cf5d-480.webp",
+          "width": 480,
+          "bytes": 17254,
+          "sha256": "6c9fd964b1eb9e4c741282a21096b5e028eaeae9c1647acff2d2d857b322e6fc"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb13-39510c71cf5d-960.webp",
+          "width": 960,
+          "bytes": 57456,
+          "sha256": "039ba34d7c0db820b8ace41796b7b235f56c0b263965fccd873a1ab9fa27a162"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb13-39510c71cf5d-1600.webp",
+          "width": 1600,
+          "bytes": 114844,
+          "sha256": "e2bb02e9398a61a5871b7cc6c3885f7fc5b56b9164a49541d67aae52fd3db572"
+        }
+      ]
+    },
+    {
+      "source": "media/daily-ai-news-feb14.png",
+      "bytes": 969058,
+      "sha256": "92b347d2b93c72f997164652964f00b20ef275300e0a21cdf62349cbac0da30e",
+      "variants": [
+        {
+          "path": "media/responsive/daily-ai-news-feb14-92b347d2b93c-480.webp",
+          "width": 480,
+          "bytes": 28952,
+          "sha256": "229b1514404fd37f420060f5c22b59a6fcf57aab618aa5c6d4d5660e969db038"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb14-92b347d2b93c-960.webp",
+          "width": 960,
+          "bytes": 106136,
+          "sha256": "ef6ba3e8b9bd5bd3277dd293f0f6d707a3ba8d7ebb12be5aa01390b1789f6a41"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb14-92b347d2b93c-1600.webp",
+          "width": 1600,
+          "bytes": 223014,
+          "sha256": "bddfdaa214a3f855712c0da4a55f326f5fda4d85d87d9e60394743504756144d"
+        }
+      ]
+    },
+    {
+      "source": "media/daily-ai-news-feb15.png",
+      "bytes": 787357,
+      "sha256": "ed541a360127778c210cb211526f72c5dd27bdab7131e797c550cd6d5a454efa",
+      "variants": [
+        {
+          "path": "media/responsive/daily-ai-news-feb15-ed541a360127-480.webp",
+          "width": 480,
+          "bytes": 19822,
+          "sha256": "3ce44a4a79f6193990f2b5a8f20e60f5b76c3a73b482d126a959c8c090e70e5c"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb15-ed541a360127-960.webp",
+          "width": 960,
+          "bytes": 68828,
+          "sha256": "cdad00ee6ccb0f7cceb6fac4c504fc8c992e7ce6785d1046661e82589da6a850"
+        },
+        {
+          "path": "media/responsive/daily-ai-news-feb15-ed541a360127-1600.webp",
+          "width": 1600,
+          "bytes": 138330,
+          "sha256": "8736b7770e165040718ef4074203c97398b8ad49cc9984c4b6f6f392794e5f51"
+        }
+      ]
+    },
+    {
+      "source": "media/elon-musk-merges-spacex-and-xai-because-of-course-he-does.png",
+      "bytes": 7307462,
+      "sha256": "2e4784c584b1d911558cdffa42b389542600aa5fb25a31a4c1b4c138929e573f",
+      "variants": [
+        {
+          "path": "media/responsive/elon-musk-merges-spacex-and-xai-because-of-course-he-does-2e4784c584b1-480.webp",
+          "width": 480,
+          "bytes": 10438,
+          "sha256": "8a33b80c0b2e89767b273e20c2d2ea2730d5e0d5e3296978b89fc39041bda275"
+        },
+        {
+          "path": "media/responsive/elon-musk-merges-spacex-and-xai-because-of-course-he-does-2e4784c584b1-960.webp",
+          "width": 960,
+          "bytes": 33962,
+          "sha256": "8aa5d47e57cbbdb9a2591e0641cf741a8b54de02789bb5c7e0533be64dbb4339"
+        },
+        {
+          "path": "media/responsive/elon-musk-merges-spacex-and-xai-because-of-course-he-does-2e4784c584b1-1600.webp",
+          "width": 1600,
+          "bytes": 93656,
+          "sha256": "e87b12b152f0f17624213ec12ecc0c58a77670e3e30be3270a8b1ae815241669"
+        }
+      ]
+    },
+    {
+      "source": "media/jpmorgan-drops-30-billion-on-ai-infrastructure.png",
+      "bytes": 6443100,
+      "sha256": "d84d60e01b5b719139e6544dad493bde4c12298341a5000463cf58149910765c",
+      "variants": [
+        {
+          "path": "media/responsive/jpmorgan-drops-30-billion-on-ai-infrastructure-d84d60e01b5b-480.webp",
+          "width": 480,
+          "bytes": 13004,
+          "sha256": "e1c397ed40bb7ce50954a3182f7c758e730e929e1be3bf748b057d2a0af0135b"
+        },
+        {
+          "path": "media/responsive/jpmorgan-drops-30-billion-on-ai-infrastructure-d84d60e01b5b-960.webp",
+          "width": 960,
+          "bytes": 41048,
+          "sha256": "6cba4af765e7b98a141d94b836ded5b6d8f6239b55f869c9841580da419ec5f1"
+        },
+        {
+          "path": "media/responsive/jpmorgan-drops-30-billion-on-ai-infrastructure-d84d60e01b5b-1600.webp",
+          "width": 1600,
+          "bytes": 104238,
+          "sha256": "b8c10e71f328158fb8f78d3b309f14101c40a523d7a0c10d9ece025f06cebbb9"
+        }
+      ]
+    },
+    {
+      "source": "media/nano-banana.png",
+      "bytes": 1909664,
+      "sha256": "9d932d8d7f213b8eef9c44e45f8d373cedce9fc0b1533702d7389dc332087627",
+      "variants": [
+        {
+          "path": "media/responsive/nano-banana-9d932d8d7f21-480.webp",
+          "width": 480,
+          "bytes": 45460,
+          "sha256": "8c444ab71da5b76a8448ad424f85adf06bba71242be40281ea652853133a838f"
+        },
+        {
+          "path": "media/responsive/nano-banana-9d932d8d7f21-960.webp",
+          "width": 960,
+          "bytes": 139892,
+          "sha256": "8ffd0f476384474a6ecc8da790043861a04f56f7a5c73708194492885edb7c7a"
+        },
+        {
+          "path": "media/responsive/nano-banana-9d932d8d7f21-1024.webp",
+          "width": 1024,
+          "bytes": 164134,
+          "sha256": "4b405a72f03db792f69fa8db8076b3d788c08bfdf19592782f9aa18ee5c1e1bf"
+        }
+      ]
+    },
+    {
+      "source": "media/nasas-mars-rover-just-got-smarter-than-its-engineers.png",
+      "bytes": 8312499,
+      "sha256": "20a076c23fd605a821c03834094636468f78d0f6349723ab1a474251af9bbd70",
+      "variants": [
+        {
+          "path": "media/responsive/nasas-mars-rover-just-got-smarter-than-its-engineers-20a076c23fd6-480.webp",
+          "width": 480,
+          "bytes": 11562,
+          "sha256": "aceacd2a389b3169436fedb8f52932c1e1a86c7c0bf38f5d0fedb641e11c9b41"
+        },
+        {
+          "path": "media/responsive/nasas-mars-rover-just-got-smarter-than-its-engineers-20a076c23fd6-960.webp",
+          "width": 960,
+          "bytes": 37926,
+          "sha256": "cbb7474b133c4af8e2781fce130a3139bfb783b996221c01f034ae659d87a603"
+        },
+        {
+          "path": "media/responsive/nasas-mars-rover-just-got-smarter-than-its-engineers-20a076c23fd6-1600.webp",
+          "width": 1600,
+          "bytes": 106264,
+          "sha256": "581af793a2da2a651d88e9fb4efcb2f0a3a6a143f59a4c624d5ead43cc5dc8bc"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "checkedAt": "2026-11-17T13:49:24.859Z",
+  "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+  "viewport": "390x844",
+  "cpuSlowdown": 4,
+  "network": {
+    "downloadMbps": 9,
+    "uploadMbps": 3,
+    "latencyMs": 40,
+    "cache": "disabled"
+  },
+  "before": [
+    {
+      "route": "/posts/ai-can-now-predict-diseases-from-how-you-sleep/",
+      "imageBytes": 7102576,
+      "transferBytes": null
+    },
+    {
+      "route": "/",
+      "imageBytes": 36493065,
+      "transferBytes": null
+    },
+    {
+      "route": "/links/",
+      "imageBytes": 0,
+      "transferBytes": null
+    },
+    {
+      "route": "/news/",
+      "imageBytes": 0,
+      "transferBytes": null
+    },
+    {
+      "route": "/privacy.html",
+      "imageBytes": 0,
+      "transferBytes": null
+    }
+  ],
+  "runs": [
+    {
+      "route": "/posts/ai-can-now-predict-diseases-from-how-you-sleep/",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 1,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 344,
+      "cls": 0,
+      "decodedResourceBytes": 111200,
+      "imageBytes": 20324,
+      "transferBytes": 42046,
+      "imageTransferBytes": 20624,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/posts/ai-can-now-predict-diseases-from-how-you-sleep/",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 2,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 308,
+      "cls": 0,
+      "decodedResourceBytes": 111200,
+      "imageBytes": 20324,
+      "transferBytes": 42046,
+      "imageTransferBytes": 20624,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/posts/ai-can-now-predict-diseases-from-how-you-sleep/",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 3,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 328,
+      "cls": 0,
+      "decodedResourceBytes": 111200,
+      "imageBytes": 20324,
+      "transferBytes": 42046,
+      "imageTransferBytes": 20624,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 1,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 788,
+      "cls": 0,
+      "decodedResourceBytes": 237362,
+      "imageBytes": 165790,
+      "transferBytes": 182736,
+      "imageTransferBytes": 167290,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 2,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 824,
+      "cls": 0,
+      "decodedResourceBytes": 237362,
+      "imageBytes": 165790,
+      "transferBytes": 182736,
+      "imageTransferBytes": 167290,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 3,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 828,
+      "cls": 0,
+      "decodedResourceBytes": 237362,
+      "imageBytes": 165790,
+      "transferBytes": 182736,
+      "imageTransferBytes": 167290,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/links/",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 1,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 356,
+      "cls": 0,
+      "decodedResourceBytes": 49495,
+      "imageBytes": 0,
+      "transferBytes": 11576,
+      "imageTransferBytes": 0,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/links/",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 2,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 300,
+      "cls": 0,
+      "decodedResourceBytes": 49495,
+      "imageBytes": 0,
+      "transferBytes": 11576,
+      "imageTransferBytes": 0,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/links/",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 3,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 308,
+      "cls": 0,
+      "decodedResourceBytes": 49495,
+      "imageBytes": 0,
+      "transferBytes": 11576,
+      "imageTransferBytes": 0,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/news/",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 1,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 856,
+      "cls": 0.008979686336439328,
+      "decodedResourceBytes": 2478601,
+      "imageBytes": 0,
+      "transferBytes": 262154,
+      "imageTransferBytes": 0,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/news/",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 2,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 480,
+      "cls": 0.008979686336439328,
+      "decodedResourceBytes": 2478601,
+      "imageBytes": 0,
+      "transferBytes": 262154,
+      "imageTransferBytes": 0,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/news/",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 3,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 476,
+      "cls": 0.008979686336439328,
+      "decodedResourceBytes": 2478601,
+      "imageBytes": 0,
+      "transferBytes": 262154,
+      "imageTransferBytes": 0,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/privacy.html",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 1,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 276,
+      "cls": 0,
+      "decodedResourceBytes": 41441,
+      "imageBytes": 0,
+      "transferBytes": 9027,
+      "imageTransferBytes": 0,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/privacy.html",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 2,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 264,
+      "cls": 0,
+      "decodedResourceBytes": 41441,
+      "imageBytes": 0,
+      "transferBytes": 9027,
+      "imageTransferBytes": 0,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    },
+    {
+      "route": "/privacy.html",
+      "viewport": "390x844",
+      "cpuSlowdown": 4,
+      "run": 3,
+      "network": {
+        "downloadMbps": 9,
+        "uploadMbps": 3,
+        "latencyMs": 40,
+        "cache": "disabled"
+      },
+      "scope": "Loopback HTTP with Brotli text, real Resource Timing transfer sizes; external fonts blocked; not final-host or field evidence",
+      "observationMs": 2000,
+      "lcp": 296,
+      "cls": 0,
+      "decodedResourceBytes": 41441,
+      "imageBytes": 0,
+      "transferBytes": 9027,
+      "imageTransferBytes": 0,
+      "blockedOrigins": [
+        "https://fonts.googleapis.com"
+      ]
+    }
+  ]
+}

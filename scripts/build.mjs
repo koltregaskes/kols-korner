@@ -1,4 +1,5 @@
 import { externalizeInlineScripts } from './externalize-inline-scripts.mjs';
+import { applyResponsiveImages } from './responsive-images.mjs';
 import { getSecurityHeaders, secureHtml } from './meta-security.mjs';
 import '../site/news/news-state.js';
 import { writeLinksPage } from './owned-links.mjs';
@@ -3146,5 +3147,6 @@ async function cleanGeneratedOutput() {
   await repairArchivedLinks();
   console.log('Inline script hardening:', await externalizeInlineScripts());
   console.log('Meta security coverage:', await secureHtml());
+  console.log('Responsive image delivery:', await applyResponsiveImages());
   console.log('\nBuild complete!');
 })();
