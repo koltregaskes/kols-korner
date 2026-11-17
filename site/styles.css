@@ -1649,6 +1649,7 @@ img {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
     border-top: 0;
     transition: max-height 220ms var(--ease), opacity 160ms var(--ease);
@@ -1657,6 +1658,7 @@ img {
   .site-header[data-nav-open="true"] .site-nav {
     max-height: 420px;
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
     padding: 0.8rem 0 1rem;
     border-top: 1px solid var(--line-soft);
