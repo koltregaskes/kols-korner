@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 const root=path.resolve('site'),origin='https://koltregaskes.com';
 const routes=['/','/posts/','/news/','/links/','/about/','/404.html','/privacy.html','/posts/ais-efficiency-promise-has-a-catch-you/'];
-const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.svg':'image/svg+xml'};
+const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.webp':'image/webp','.svg':'image/svg+xml'};
 for(const width of [320,390,1280]) for(const routePath of routes) test(`keyboard traversal ${routePath} at ${width}px`,async({page})=>{
  await page.setViewportSize({width,height:900});
  await page.route('**/*',async route=>{

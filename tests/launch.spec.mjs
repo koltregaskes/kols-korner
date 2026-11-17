@@ -10,7 +10,7 @@ async function pages(dir) {
   const entries = await fs.readdir(dir, { withFileTypes: true });
   return (await Promise.all(entries.map(e => e.isDirectory() ? pages(path.join(dir,e.name)) : e.name.endsWith('.html') ? [path.join(dir,e.name)] : []))).flat();
 }
-const types = {'.html':'text/html','.css':'text/css','.js':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.xml':'application/xml'};
+const types = {'.html':'text/html','.css':'text/css','.js':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.xml':'application/xml'};
 for (const file of await pages(root)) {
  const relative = path.relative(root,file).replaceAll('\\','/');
  const html = await fs.readFile(file,'utf8');
@@ -47,6 +47,7 @@ for (const file of await pages(root)) {
   // Audit resting layout after its separately tested keyboard interaction.
   await focused.evaluate(el=>el.blur());
   await expect(page.locator('.skip-link')).not.toBeInViewport();
+  await expect.poll(()=>page.locator('.fade-in-up').evaluateAll(nodes=>nodes.every(el=>getComputedStyle(el).opacity==='1'))).toBe(true);
   const result = await new AxeBuilder({page})
     .withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']).analyze();
   expect(result.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary}))}))).toEqual([]);
