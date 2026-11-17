@@ -21,14 +21,32 @@ class Head(HTMLParser):
     def __init__(self, text):
         super().__init__()
         self.meta, self.links = {}, []
-        self.feed(text.split("</head>", 1)[0])
+        self.refreshes, self.titles = [], []
+        self.in_title = False
+        self.feed(re.split(r"</head\s*>", text, maxsplit=1, flags=re.I)[0])
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if tag == "meta":
             self.meta.setdefault(a.get("name", a.get("property", "")), []).append(a.get("content", ""))
+            if a.get("http-equiv", "").lower() == "refresh":
+                self.refreshes.append(a.get("content", ""))
         elif tag == "link":
             self.links.append(a)
+        elif tag == "title":
+            self.titles.append("")
+            self.in_title = True
+
+    def handle_data(self, data):
+        if self.in_title:
+            self.titles[-1] += data
+
+    def handle_endtag(self, tag):
+        if tag == "title":
+            self.in_title = False
+
+    def check_title(self):
+        assert len(self.titles) == 1 and self.titles[0].strip(), "Missing, empty or duplicate HTML title"
 
     def one(self, name):
         values = self.meta.get(name, [])
@@ -100,14 +118,12 @@ if __name__ == "__main__":
     domain = (os.environ.get("CUSTOM_DOMAIN") or (ROOT / "CNAME").read_text(encoding="utf-8").strip()).removeprefix("https://").removeprefix("http://").rstrip("/")
     base = f"https://{domain}"
     base_path = urlparse(base).path
-    expected, checked_images = set(), set()
+    expected, checked_images, redirects = set(), set(), {}
     for page in sorted(SITE.rglob("*.html")):
         if any(part.startswith(".") for part in page.relative_to(SITE).parts):
             continue
         text = page.read_text(encoding="utf-8")
         head = Head(text)
-        if any("noindex" in value for value in head.meta.get("robots", [])) or re.search(r'http-equiv=["\']refresh', text, re.I):
-            continue
         relative = page.relative_to(SITE).as_posix()
         if relative == "index.html":
             relative = ""
@@ -115,6 +131,20 @@ if __name__ == "__main__":
             relative = relative[:-10]
         url = base + "/" + relative
         try:
+            if head.refreshes:
+                assert len(head.refreshes) == 1, "Duplicate redirect instructions"
+                match = re.fullmatch(r"\s*0\s*;\s*url\s*=\s*(.+?)\s*", head.refreshes[0], re.I)
+                assert match, "Redirect must have an immediate, nonempty destination"
+                target = urljoin(url, match[1].strip("\"'"))
+                assert target.startswith(base + "/") and not urlparse(target).fragment and not urlparse(target).query, "Redirect must stay on the canonical site without query or fragment"
+                canonical = [a["href"] for a in head.links if a.get("rel") == "canonical"]
+                assert canonical == [target], "Redirect canonical must match its destination"
+                assert local(target).is_file(), "Redirect destination is missing"
+                redirects[url] = target
+                continue
+            if any("noindex" in value.lower() for value in head.meta.get("robots", [])):
+                continue
+            head.check_title()
             canonical = [a["href"] for a in head.links if a.get("rel") == "canonical"]
             assert canonical == [url], f"Wrong canonical: {canonical}"
             assert url not in expected, "Duplicate canonical"
@@ -144,6 +174,8 @@ if __name__ == "__main__":
                 assert any(n.get("@type") == "BlogPosting" and n.get("headline") and n.get("author") and n.get("datePublished") for n in nodes), "Missing article metadata"
         except (AssertionError, KeyError, ValueError, zlib.error) as error:
             raise SystemExit(f"{relative or 'index.html'}: {error}") from error
+    for source, target in redirects.items():
+        assert target in expected, f"Redirect must land directly on an indexable canonical page (no chains/loops): {source} -> {target}"
     sitemap = ET.parse(SITE / "sitemap.xml").getroot()
     assert sitemap.tag == f"{{{SM}}}urlset"
     urls = [node.text for node in sitemap.findall(f"{{{SM}}}url/{{{SM}}}loc")]
@@ -182,4 +214,4 @@ if __name__ == "__main__":
         if urlparse(url).netloc == urlparse(base).netloc:
             assert url.startswith(base + "/") and local(url).exists(), f"llms.txt has a broken internal target: {target}"
     assert not re.search(r"^Disallow:\s*/\s*$", robots, re.M)
-    print(f"SEO checks passed: {len(expected)} pages, {len(urls)} sitemap URLs, {len(items)} RSS items.")
+    print(f"SEO checks passed: {len(expected)} pages, {len(urls)} sitemap URLs, {len(items)} RSS items, {len(redirects)} redirects.")
