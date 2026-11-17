@@ -140,7 +140,7 @@ Do not assume a failed run reached a person. Before acceptance, use the existing
 
 ## Pre-launch rehearsal
 
-**Not run. All results below are unverified.** Run once before the **11 December 2026 freeze**, aiming for evidence before the **9 December slip decision**. Launch is planned for **14 December**, subject to Kol's separate approval through Claude. Use the existing owner and approved publication route; no checklist tick grants that approval.
+**Production rehearsal not run. All results below are unverified.** The current calendar on [checklist #1907](https://github.com/koltregaskes/rooms-os-hub/issues/1907) supersedes the former 14 December launch and 11 December freeze. Kol's Korner is first in the **21–23 December 2026 window**, with its exact day D still unassigned. Complete readiness by **D minus 14**, collect seven consecutive proof days **D minus 20 through D minus 14**, then BAU only through launch. Warn the existing owner at **D minus 19** if readiness is at risk. For D = 21/22/23 December, readiness is 7/8/9 December respectively; do not invent a slot. Use the existing owner and approved publication route; no checklist tick grants that approval.
 
 - [ ] Claude accepts post-launch duties and records the daily reviewer, escalation route and any coverage gaps on the launch issue.
 - [ ] Record current main, known-good run/attempt, artifact hashes/count and exact HTTPS readback. Confirm no overlapping Pages deployment or scheduled writer will invalidate the rehearsal.
@@ -162,5 +162,11 @@ Do not assume a failed run reached a person. Before acceptance, use the existing
 | Failure delivery / recovery | To fill | To fill | To fill | Unverified |
 
 ## Offline runbook check
+
+### Retained local release restore
+
+Run `node scripts/rehearse-backup.mjs` in this gaming laptop checkout (or another authorised clone). It creates a new, unique directory under `.local`, retains a release-input tar, extracts into a separate empty directory, and compares every restored file against its committed Git blob ID. A SHA-256 archive receipt records the exact head, counts and mismatches. Unsafe env/key paths and symlinks are refused using tree metadata before archiving; no credential contents are read. It never overwrites a prior receipt or deletes anything. Run `node --test tests/backup-restore.test.mjs` for corruption/refusal coverage.
+
+From the receipt's restored directory, run the build, internal-link, public-boundary and operations checks, then SEO. For digest preservation without Git metadata, run `node scripts/check-digest-preservation.mjs --manifest ../manifest.json`; this checks exact digest blob hashes as well as non-empty files. The ordinary Git-backed check remains the default in a checkout. Preserve the archive, manifest and receipt before rebuilding generated output. This snapshot covers code/workflows, content, news, media and non-secret deployment configuration; it does not contain Git history, external shared routing configuration or provider settings. It remains on the same machine: an independently retained off-site copy, retention/location decision, named operator acceptance and production rollback are still open. No unattended laptop task is introduced. Use the existing owner to select an approved independent backup destination; no upload or new service is implied.
 
 Run `node scripts/check-operations.mjs` and `node --test tests/operations.test.mjs` from the repo root. The guard checks required sections and repository references, including commands; it does not execute them, contact a service, prove command availability/permissions or establish operational acceptance. Local receipt directories in examples are runtime outputs and are excluded from repository-reference checks.
