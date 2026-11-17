@@ -8,6 +8,8 @@ test('missing, failed, stale, future and stalled runs fail; recovery succeeds',(
   assert.match(assessRuns([{...good,conclusion:'failure'}],now,26),/failed/);
   assert.match(assessRuns([{...good,created_at:'2026-11-15T00:00:00Z'}],now,26),/missed/);
   assert.match(assessRuns([{...good,created_at:'2026-11-18T00:00:00Z'}],now,26),/invalid/);
+  assert.match(assessRuns([{...good,status:'in_progress',created_at:'2026-11-17T09:00:00Z'}],now,26),/stalled/);
+  assert.match(assessRuns([{...good,status:'in_progress'}],now,26),/unverified/);
   assert.equal(assessRuns([good],now,26),null);
 });
 test('network failures create named private alert payload; healthy recovery clears failures',async()=>{
@@ -16,4 +18,6 @@ test('network failures create named private alert payload; healthy recovery clea
  assert.equal(failed.state,'failed');assert.equal(failed.operator,'Claude');assert.equal(failed.alert.destination,'private hub');
  const healthy=await monitor(c,async url=>new Response(JSON.stringify(String(url).includes('api.github')?{workflow_runs:[good]}:{generated:new Date(now).toISOString(),articles:[]})),now);
  assert.equal(healthy.state,'verified');
+ const partial=await monitor(c,async url=>new Response(JSON.stringify(String(url).includes('api.github')?{workflow_runs:[good]}:{generated:new Date(now).toISOString(),articles:[],failed_sources:['source unavailable']})),now);
+ assert.equal(partial.state,'failed');assert.equal(partial.checks.find(x=>x.name==='freshness').reason,'partial sources');
 });

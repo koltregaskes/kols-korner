@@ -1,0 +1,11 @@
+{
+  "scope": "isolated restored build from backup.json, following rollback drill",
+  "internalLinks": {"html": 372, "downloadsAndManifests": 180, "maxRedirectHops": 1, "failures": 0},
+  "publicBoundary": {"html": 372, "javascript": 10, "unexpectedInterfaces": 0},
+  "operations": {"repositoryReferences": 27, "failures": 0},
+  "digestPreservation": {"exactCommittedDownloads": 220, "state": "passed"},
+  "seo": {"pages": 193, "sitemapUrls": 193, "rssItems": 20, "redirects": 177, "state": "passed"},
+  "cloudflareStaging": {"publicFiles": 649, "securityHeaders": 6, "uploaded": false},
+  "limits": ["no first deployment", "no production rollback", "no off-site backup acceptance", "no operator receipt", "no seven-day proof"],
+  "signature": "Codex, Gaming-Laptop, via T3 Code Chief of Staff"
+}
