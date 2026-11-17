@@ -119,6 +119,7 @@ if __name__ == "__main__":
     base = f"https://{domain}"
     base_path = urlparse(base).path
     expected, checked_images, redirects = set(), set(), {}
+    metadata_owners = {"HTML title": {}, "description": {}}
     for page in sorted(SITE.rglob("*.html")):
         if any(part.startswith(".") for part in page.relative_to(SITE).parts):
             continue
@@ -145,6 +146,14 @@ if __name__ == "__main__":
             if any("noindex" in value.lower() for value in head.meta.get("robots", [])):
                 continue
             head.check_title()
+            # HTMLParser decodes entities; collapse whitespace before comparing
+            # so formatting alone cannot disguise copied page metadata.
+            for label, value in (("HTML title", head.titles[0]), ("description", head.one("description"))):
+                normalized = " ".join(value.split()).casefold()
+                assert normalized, f"Empty {label}"
+                owners = metadata_owners[label]
+                assert normalized not in owners, f"Duplicate {label} across indexable pages: {owners.get(normalized)} and {url}"
+                owners[normalized] = url
             canonical = [a["href"] for a in head.links if a.get("rel") == "canonical"]
             assert canonical == [url], f"Wrong canonical: {canonical}"
             assert url not in expected, "Duplicate canonical"
