@@ -18,10 +18,11 @@ export function classifyDisposition(code) {
  if(code===404||code===410)return 'broken-http-not-found';
  if(code==='too-many-redirects')return 'broken-too-many-redirects';
  if(code==='redirect-loop')return 'broken-redirect-loop';
+ if(code==='empty-download')return 'broken-empty-download';
  return `unverified-http-${code}`;
 }
 
-export async function checkExternalUrl(url,{fetchImpl=fetch,retry=false,deadline=Date.now()+20000,maxHops=8}={}) {
+export async function checkExternalUrl(url,{fetchImpl=fetch,retry=false,deadline=Date.now()+20000,maxHops=8,verifyDownload=false}={}) {
  for(let attempt=0;attempt<(retry?2:1);attempt++) {
   let current=url,hops=0;
   const visited=new Set([current]),chain=[current];
@@ -30,7 +31,12 @@ export async function checkExternalUrl(url,{fetchImpl=fetch,retry=false,deadline
     const remaining=deadline-Date.now();
     if(remaining<=0)return {status:'unverified',code:'deadline',disposition:classifyDisposition('deadline'),hops,finalUrl:current,chain};
     const response=await fetchImpl(current,{signal:AbortSignal.timeout(Math.max(1,Math.min(6000,remaining))),redirect:'manual',headers:{'user-agent':'KolsKornerLinkCheck/1.0'}});
-    await response.body?.cancel();
+    if(response.ok&&verifyDownload){
+     const reader=response.body?.getReader();let nonempty=false;
+     try{for(let chunk=0;reader&&chunk<32;chunk++){const {value,done}=await reader.read();if(value?.byteLength){nonempty=true;break;}if(done)break;}}
+     finally{await reader?.cancel();}
+     if(!nonempty)return {status:'broken',code:'empty-download',disposition:classifyDisposition('empty-download'),hops,finalUrl:current,chain};
+    }else await response.body?.cancel();
     if(REDIRECT_STATUSES.has(response.status)) {
      const location=response.headers?.get?.('location');
      if(!location)return {status:'unverified',code:'missing-redirect-location',disposition:classifyDisposition('missing-redirect-location'),hops,finalUrl:current,chain};
@@ -47,7 +53,7 @@ export async function checkExternalUrl(url,{fetchImpl=fetch,retry=false,deadline
     const resolvedUrl=response.url||current;
     if(new URL(current).protocol==='https:'&&new URL(resolvedUrl).protocol!=='https:')return {status:'unsafe',code:'https-downgrade',disposition:classifyDisposition('https-downgrade'),hops,finalUrl:resolvedUrl,chain};
     if([404,410].includes(response.status))return {status:'broken',code:response.status,disposition:classifyDisposition(response.status),hops,finalUrl:resolvedUrl,chain};
-    if(response.ok)return {status:'ok',code:response.status,hops,finalUrl:resolvedUrl,chain};
+    if(response.ok)return {status:'ok',code:response.status,disposition:classifyDisposition(response.status),...(verifyDownload?{downloadBodyVerified:true}:{}),hops,finalUrl:resolvedUrl,chain};
     if(attempt===0&&retry&&[429,500,502,503,504].includes(response.status)&&Date.now()<deadline)break;
     return {status:'unverified',code:response.status,disposition:classifyDisposition(response.status),hops,finalUrl:resolvedUrl,chain};
    }
@@ -128,7 +134,7 @@ async function main(){
      results.push({...entry,status:'unverified',code:'deadline',disposition,hops:0,finalUrl:entry.url});
      continue;
     }
-    const result=await checkExternalUrl(entry.url,{retry,deadline});
+    const result=await checkExternalUrl(entry.url,{retry,deadline,verifyDownload:entry.download});
     checked++;
     if(result.hops>0)redirected++;
     if(result.hops>maxHops)maxHops=result.hops;
@@ -142,7 +148,7 @@ async function main(){
  }
  await Promise.all([workers(archive,3,true),workers(other,10,false)]);
  const dispositions=[...hosts.values()].map(d=>({...d,sources:[...d.sources].sort()})).sort((a,b)=>b.count-a.count||a.host.localeCompare(b.host));
- const summary={checked,ok,broken:failed,unsafe,unverified:unknown,redirected,maxHops,downloads:entries.filter(e=>e.download).length,total:entries.length};
+ const summary={checked,ok,broken:failed,unsafe,unverified:unknown,redirected,maxHops,downloads:entries.filter(e=>e.download).length,total:entries.length,acceptance:failed||unsafe?'failed':unknown?'incomplete':'passed'};
  console.log(JSON.stringify(summary));
  if(reportPath) {
   await fs.mkdir(path.dirname(reportPath),{recursive:true});
@@ -150,6 +156,6 @@ async function main(){
  }
  if(process.env.GITHUB_STEP_SUMMARY)await fs.appendFile(process.env.GITHUB_STEP_SUMMARY,`## External link crawl\n\n${checked}/${entries.length} checked (${ok} ok, ${redirected} redirected, max ${maxHops} hops); ${failed} broken (404/410/redirect-error); ${unsafe} unsafe redirects; ${unknown} unverified (not counted as working).\n\n${dispositions.map(d=>`- Disposition \`${d.disposition}\` (${d.code}): ${d.host} — ${d.count} unverified`).join('\n')}\n`);
  if(unknown)console.log('::warning::Some external hosts blocked or limited verification; explicit dispositions recorded.');
- if(failed || unsafe)process.exitCode=1;
+ if(failed || unsafe || (args.includes('--strict')&&unknown))process.exitCode=1;
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)await main();
