@@ -2737,7 +2737,7 @@ async function writeAboutPage() {
   ${getFooterHTML()}
 
   <script>
-    ${getSiteChromeScript()}
+    ${getSiteChromeScript({ animations: true })}
   </script>
 </body>
 </html>`;

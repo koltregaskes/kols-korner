@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-11-17T14:03:21.333Z",
+  "registry": "https://registry.npmjs.org",
+  "lockfileSha256": "d98b4454b8101fd1f592e2c53d77b00c35fe90da51752bbecb5bcdde7bce4293",
+  "vulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "error": null
+}

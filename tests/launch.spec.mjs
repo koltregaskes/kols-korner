@@ -47,7 +47,12 @@ for (const file of await pages(root)) {
   // Audit resting layout after its separately tested keyboard interaction.
   await focused.evaluate(el=>el.blur());
   await expect(page.locator('.skip-link')).not.toBeInViewport();
-  await expect.poll(()=>page.locator('.fade-in-up').evaluateAll(nodes=>nodes.every(el=>getComputedStyle(el).opacity==='1'))).toBe(true);
+  // Some templates reveal only on intersection, without the homepage fallback.
+  // Exercise their real scroll/reveal behaviour before auditing all content.
+  for(const reveal of await page.locator('.fade-in-up').all()){
+    await reveal.scrollIntoViewIfNeeded();
+    await expect(reveal).toHaveCSS('opacity','1');
+  }
   const result = await new AxeBuilder({page})
     .withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']).analyze();
   expect(result.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary}))}))).toEqual([]);
