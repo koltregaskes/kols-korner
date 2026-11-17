@@ -16,6 +16,19 @@ test('empty or wrong artifact directories cannot pass',()=>{
  assert.throws(()=>assertArtifactFiles(['package.json'],'.'),/Artifact/);
  assertArtifactFiles(['index.html'],'.');
 });
+
+test('matching bytes served by another origin cannot establish host parity',async()=>{
+ const response=new Response(await fs.readFile(file));
+ Object.defineProperty(response,'url',{value:'https://other.example/robots.txt'});
+ const result=await compareLive(file,'https://example.org/robots.txt',async()=>response);
+ assert.equal(result.status,'unverified');assert.equal(result.reason,'Unexpected origin');
+});
+
+test('matching bytes retain independently inspectable SHA-256 evidence',async()=>{
+ const result=await compareLive(file,'https://example.org/robots.txt',async()=>new Response(await fs.readFile(file)));
+ assert.equal(result.status,'match');assert.match(result.expectedSha256,/^[a-f0-9]{64}$/);
+ assert.equal(result.actualSha256,result.expectedSha256);
+});
 test('requests finishing after the crawl deadline remain unverified',async()=>{
  let now=0,called=false;const body=await fs.readFile(file);
  const result=await compareLive(file,'https://example.org/',async()=>{called=true;now=11;return new Response(body);},{deadline:10,clock:()=>now});
