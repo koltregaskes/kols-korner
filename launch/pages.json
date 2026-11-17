@@ -1,0 +1,24 @@
+{
+  "siteName": "Kol's Korner",
+  "owner": "Kol Tregaskes",
+  "siteUrl": "https://koltregaskes.com",
+  "reviewDate": "2026-11-17",
+  "contactEmail": "contact@koltregaskes.com",
+  "fallbackEmail": "hello@koltregaskes.com",
+  "hosting": "GitHub Pages",
+  "fontService": "Google Fonts",
+  "fontOrigins": ["https://fonts.googleapis.com", "https://fonts.gstatic.com"],
+  "analyticsStatus": "No analytics collector is enabled in this build. The planned cookieless counter is still being reviewed. It is not counting visits here.",
+  "storage": [
+    {"key": "kk-theme", "purpose": "Your light or dark theme"},
+    {"key": "news-favorites", "purpose": "Articles you save on this device"},
+    {"key": "news-flags", "purpose": "Articles you flag on this device"}
+  ],
+  "confirm": {
+    "privacy": ["Owner and contact details", "Final host, provider logging, retention and international transfers", "Email provider, lawful basis and message retention", "Analytics state, collector fields, bot filtering, retention and any Cloudflare comparison"],
+    "terms": ["Content ownership and permissions for third-party material", "Reuse permission and any licence", "Any jurisdiction or liability wording needed before publication"],
+    "cookies": ["Cookies and storage on the final host, including HttpOnly cookies", "Whether consent is needed for each storage purpose", "Any analytics or embedded services added before launch"],
+    "accessibility": ["Manual keyboard and screen-reader results", "Contrast and all-route checks on the final artifact", "Known barriers, fixes and a realistic response process"],
+    "contact": ["contact@ forwarding and an authorised outside receipt", "Keep hello@ until replacement delivery is confirmed", "Support scope and response expectations", "Newsletter and financial support decisions under #1495/#1502"]
+  }
+}

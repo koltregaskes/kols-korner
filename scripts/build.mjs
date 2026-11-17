@@ -2,6 +2,7 @@ import { externalizeInlineScripts } from './externalize-inline-scripts.mjs';
 import { getSecurityHeaders, secureHtml } from './meta-security.mjs';
 import '../site/news/news-state.js';
 import { writeLinksPage } from './owned-links.mjs';
+import { writeLaunchPages } from './launch-pages.mjs';
 import { repairTagTargets } from "./check-internal-links.mjs";
 // scripts/build.mjs
 // Builds static site from Obsidian markdown files
@@ -1809,10 +1810,10 @@ async function writeArticlePage({
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${getSecurityHeaders()}
   <title>${escapeHtml(title)} - ${SITE_NAME}</title>
-  <meta name="description" content="${description}${description.length >= 160 ? '…' : ''}" />
+  <meta name="description" content="${description}${description.length >= 160 ? 'â€¦' : ''}" />
   <meta name="author" content="${SITE_OWNER}" />
   <meta property="og:title" content="${escapeHtml(title)}" />
-  <meta property="og:description" content="${description}${description.length >= 160 ? '…' : ''}" />
+  <meta property="og:description" content="${description}${description.length >= 160 ? 'â€¦' : ''}" />
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@koltregaskes" />
@@ -2024,7 +2025,7 @@ async function writeLegacyRedirectPage(fromSlug, toSlug) {
   ${getSecurityHeaders()}
   <meta http-equiv="refresh" content="0; url=${targetPath}" />
   <link rel="canonical" href="${SITE_URL}/posts/${toSlug}/" />
-  <title>Redirecting…</title>
+  <title>Redirectingâ€¦</title>
 </head>
 <body>
   <p>Redirecting to <a href="${targetPath}">${targetPath}</a>.</p>
@@ -2102,7 +2103,7 @@ ${newsCards}
 }
 
 async function writeHomePage(items, newsArticles = []) {
-  // 2026-05-20 — broadsheet preservation guard.
+  // 2026-05-20 â€” broadsheet preservation guard.
   // The committed site/index.html is the Hi-Fi broadsheet design (DESIGN.md). The
   // legacy template below regenerates the old "home-feature-grid" chrome on every
   // CI deploy, which is why koltregaskes.com kept reverting to the pre-redesign
@@ -2788,64 +2789,6 @@ async function writeSubscribePage() {
   await fs.writeFile("site/subscribe/index.html", html.replace(/[ \t]+$/gm, ''), "utf8");
 }
 
-async function writeContactPage() {
-  await fs.mkdir("site/contact", { recursive: true });
-
-  const html = `<!doctype html>
-<html lang="en-GB" data-theme="dark">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  ${getSecurityHeaders()}
-  <title>Contact - ${SITE_NAME}</title>
-  <meta name="description" content="Contact and social links for ${SITE_OWNER}." />
-  ${getCanonicalTag('/contact/')}
-  ${getSharedHeadAssets('..')}
-</head>
-<body>
-  ${getHeaderHTML('../', 'contact')}
-
-  <main class="content-main contact-main" id="main-content">
-    <section class="contact-shell">
-      <section class="subscribe-launch-note fade-in-up">
-        <span class="subscribe-status-badge">Contact</span>
-        <h1 class="page-title">A protected contact form is still being set up.</h1>
-        <p class="subscribe-hero-text">The long-term plan is a proper form with spam protection and human checks. Until that is wired in, the safest route is to reach me through the channels below.</p>
-        <div class="subscribe-actions">
-          <a href="../news/" class="button-primary">Open AI news</a>
-          <a href="../about/" class="button-secondary">About Kol</a>
-        </div>
-      </section>
-
-      <section class="about-panel fade-in-up">
-        <div class="home-section-heading">
-          <div>
-            <p class="section-eyebrow">Reach out</p>
-            <h2>Pick the channel that fits what you need.</h2>
-          </div>
-        </div>
-        <div class="about-connect-grid">
-          ${PROFILE_LINKS.map((link) => `
-          <a href="${link.url}" class="about-connect-card" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">${link.icon}</svg>
-            <span>${link.name}</span>
-          </a>`).join('')}
-        </div>
-      </section>
-    </section>
-  </main>
-
-  ${getFooterHTML()}
-
-  <script>
-    ${getSiteChromeScript({ animations: true })}
-  </script>
-</body>
-</html>`;
-
-  await fs.writeFile("site/contact/index.html", html.replace(/[ \t]+$/gm, ''), "utf8");
-}
-
 // Generate RSS feed
 async function writeRssFeed(items) {
   const articles = items
@@ -2968,7 +2911,7 @@ async function cleanGeneratedOutput() {
     'site/CNAME',
     // RSS is rewritten by writeRssFeed(); keep the previous copy available so
     // unchanged feed content can preserve its existing lastBuildDate.
-    // 2026-05-20 — site/index.html intentionally NOT cleaned: it holds the
+    // 2026-05-20 â€” site/index.html intentionally NOT cleaned: it holds the
     // hand-committed Hi-Fi broadsheet design (DESIGN.md). The old generator
     // template doesn't match the design, so we keep the committed file and
     // let the writeHomePage guard skip regeneration. Re-add this entry once
@@ -3046,7 +2989,7 @@ async function cleanGeneratedOutput() {
   }
 
   // Write all pages
-  // 2026-05-20 — writeHomePage call restored now that cleanGeneratedOutput
+  // 2026-05-20 â€” writeHomePage call restored now that cleanGeneratedOutput
   // no longer deletes site/index.html. The internal guard sees the broadsheet
   // markers and skips, leaving the committed broadsheet file untouched.
   await writeHomePage(items, newsArticles);
@@ -3055,7 +2998,7 @@ async function cleanGeneratedOutput() {
   await repairTagTargets("site", new URL(SITE_URL).origin);
   await writeAboutPage();
   await writeSubscribePage();
-  await writeContactPage();
+  await writeLaunchPages({head:getSharedHeadAssets, header:getHeaderHTML, footer:getFooterHTML, siteUrl:SITE_URL, siteName:SITE_NAME, owner:SITE_OWNER});
   await writeLinksPage(CONNECTED_PROJECTS);
   await writeSeo({ siteUrl: SITE_URL, siteName: SITE_NAME, siteOwner: SITE_OWNER, items });
   // Write machine-readable data, feed, and crawl files
