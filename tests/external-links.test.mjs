@@ -18,6 +18,13 @@ test('archive transient failures retry once and then report real success',async(
  let calls=0; const result=await checkExternalUrl('https://web.archive.org/',{retry:true,fetchImpl:async()=>({status:++calls===1?429:200,ok:calls===2,url:'https://web.archive.org/'})});assert.equal(calls,2);assert.equal(result.status,'ok');
 });
 
+test('external downloads must deliver nonempty bytes, not only a 200 response',async()=>{
+ const empty=await checkExternalUrl('https://example.test/paper.pdf',{verifyDownload:true,fetchImpl:async()=>new Response('')});
+ assert.equal(empty.status,'broken');assert.equal(empty.disposition,'broken-empty-download');
+ const body=await checkExternalUrl('https://example.test/paper.pdf',{verifyDownload:true,fetchImpl:async()=>new Response('%PDF-example')});
+ assert.equal(body.status,'ok');assert.equal(body.downloadBodyVerified,true);assert.equal(body.disposition,'verified-http-ok');
+});
+
 test('manual redirect chains count hops and reject loops or excessive hops',async()=>{
  const hopsMap=new Map([
   ['https://example.com/start',{status:301,headers:new Headers({location:'https://example.com/mid'})}],

@@ -1,0 +1,385 @@
+{
+  "generatedAt": "2026-11-17T13:54:12.578Z",
+  "summary": {
+    "checked": 2459,
+    "ok": 2418,
+    "broken": 0,
+    "unsafe": 0,
+    "unverified": 41,
+    "redirected": 997,
+    "maxHops": 3,
+    "downloads": 3,
+    "total": 2459,
+    "acceptance": "incomplete"
+  },
+  "dispositions": [
+    {
+      "host": "venturebeat.com",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "count": 14,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "www.reuters.com",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "count": 10,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "www.marktechpost.com",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "count": 3,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "aimagazine.com",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "count": 2,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "www.ft.com",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "count": 2,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "www.marketwatch.com",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "count": 2,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "ams3.digitaloceanspaces.com",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "count": 1,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "apnews.com",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "count": 1,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "decrypt.co",
+      "code": "network/redirect",
+      "disposition": "network-timeout-or-tls-unverified",
+      "count": 1,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "investors.micron.com",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "count": 1,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "medium.com",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "count": 1,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "openai.com",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "count": 1,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "www.gartner.com",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "count": 1,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    },
+    {
+      "host": "www.phoronix.com",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "count": 1,
+      "action": "Not counted as working; existing editorial owner must verify or replace, no bypass attempted"
+    }
+  ],
+  "unverifiedItems": [
+    {
+      "url": "https://aimagazine.com/news/how-aws-and-nvidia-are-powering-agentic-and-physical-ai",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://aimagazine.com/news/huawei-cloud-announces-global-ai-cluster-service-launch",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://ams3.digitaloceanspaces.com/urbits3/sitful-hatred/2026.9.24..22.31.54..beb8.51eb.851e.b851-AI%20Safety%20Is%20Mostly%20A%20Sex%20Cult%20In%20Berkeley%2C%20California.pdf",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://apnews.com/article/antitrust-lawsuit-ai-slowdown-anthropic-openai-spacexai-google-960af4308161eaf4ed13c383b0ce1c1b",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Unveils-Micron-Research-Labs-a-U-S--Based-Long-Horizon-Innovation-Hub-to-Shape-the-Future-of-Memory-and-AI/default.aspx",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://decrypt.co/364758/elizabeth-warren-accuses-sec-chair-paul-atkins-lying-congress",
+      "code": "network/redirect",
+      "disposition": "network-timeout-or-tls-unverified",
+      "hops": 0
+    },
+    {
+      "url": "https://medium.com/@thomasunise/this-open-source-cybersecurity-platform-uses-ai-agents-to-detect-threats-and-protect-businesses-762e65392b42",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://openai.com/index/us-department-of-energy-collaboration",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/infrastructure/perplexity-partners-with-nvidia-to-launch-portable-computer-a-fully-local-ai-agent-with-zero-token-costs",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/orchestration/a-new-framework-teaches-ai-models-to-audit-and-repair-each-others-reasoning-improving-accuracy",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/orchestration/openclaw-launches-free-enterprise-control-plane-for-persistent-ai-agents-backed-by-openai-red-hat-and-nvidia",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/technology/anthropic-launches-claude-haiku-5-5-with-90-api-price-reduction-matching-gpt-6-luna",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/technology/anthropic-releases-claude-fable-5-2-and-mythos-5-2-pairing-new-record-high-benchmarks-with-20-api-cost-reduction",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/technology/anthropic-releases-claude-opus-5-5-beating-fable-5-1-on-key-agentic-benchmarks-at-60-cheaper-api-price",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/orchestration/we-built-an-ai-agent-for-servicenow-the-real-pain-points-were-narrower-than-our-roadmap-assumed",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/technology/aws-launches-agentic-ai-kiro-bots-with-memory-and-support-for-recurring-development-jobs",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/technology/meituan-releases-the-open-weights-of-its-longcat-2-5-llm-with-vision-under-a-permissive-mit-license",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/technology/microsoft-releases-new-ai-playbook-for-enterprises-based-on-its-own-learnings-and-it-reveals-a-surprising-moat-your-biz-may-already-have",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/technology/nvidias-new-open-nemotron-3-5-super-vl-with-post-training-beats-claude-opus-5-gpt-6-1-sol-on-specialized-task-benchmarks",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/technology/openai-launches-gpt-6-cyber-with-stronger-exploit-research-and-higher-api-price-than-anthropic-and-google",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://venturebeat.com/technology/openai-launches-dots-always-on-ai-agent-coworkers-and-chatgpt-space-where-they-can-collaborate-with-human-teams",
+      "code": 429,
+      "disposition": "rate-limited-upstream",
+      "hops": 0
+    },
+    {
+      "url": "https://www.ft.com/content/052610c5-22b4-4dd4-932e-b7f9f0628b6a",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://www.ft.com/content/41bf5c6a-9735-4f1a-a8e3-2bcccad58ba0",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://www.marketwatch.com/story/coreweaves-stock-rises-as-investors-cheer-unique-financing-deal-e2d44c4e",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "hops": 0
+    },
+    {
+      "url": "https://www.marktechpost.com/2026/08/22/the-developers-guide-to-nemo-guardrails-for-enterprise-ai-safety",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://www.marketwatch.com/story/marvells-stock-soars-whats-behind-the-new-nvidia-investment-and-partnership-b4c5e6aa",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "hops": 0
+    },
+    {
+      "url": "https://www.marktechpost.com/2026/08/23/vercel-introduces-is-agentic-a-free-agent-readiness-scoring-tool-that-audits-public-websites-using-oras-100-checks",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://www.marktechpost.com/2026/08/24/fastino-releases-gliner2-5-a-boundary-prediction-architecture-that-removes-span-enumeration-from-information-extraction",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://www.phoronix.com/news/Void-Linux-AI-Policy-Orphan",
+      "code": 403,
+      "disposition": "blocked-bot-challenge",
+      "hops": 0
+    },
+    {
+      "url": "https://www.reuters.com/business/finance/palmer-luckey-backed-erebor-receives-us-national-banking-charter-wsj-reports-2026-02-06/",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "hops": 0
+    },
+    {
+      "url": "https://www.reuters.com/technology/",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "hops": 0
+    },
+    {
+      "url": "https://www.reuters.com/commentary/",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "hops": 0
+    },
+    {
+      "url": "https://www.reuters.com/sustainability/boards-policy-regulation/us-judge-signals-musks-xai-may-lose-lawsuit-accusing-altmans-openai-of-stealing-2026-01-31/",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "hops": 0
+    },
+    {
+      "url": "https://www.reuters.com/business/media-telecom/alibaba-spend-431-million-lunar-new-year-ai-push-chatbot-war-heats-up-2026-02-02/",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "hops": 0
+    },
+    {
+      "url": "https://www.reuters.com/technology/open-source-ai-models-vulnerable-criminal-misuse-researchers-warn-2026-01-29/",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "hops": 0
+    },
+    {
+      "url": "https://www.reuters.com/world/china/intel-amd-notify-customers-china-lengthy-waits-cpus-2026-02-06/",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "hops": 0
+    },
+    {
+      "url": "https://www.reuters.com/world/china/peoples-dad-jensen-huang-praises-pushes-nvidia-suppliers-mobbed-taiwan-visit-2026-02-01/",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "hops": 0
+    },
+    {
+      "url": "https://www.reuters.com/world/india/indian-tech-stocks-slump-anthropics-ai-tool-raises-global-staffing-concerns-2026-02-04/",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "hops": 0
+    },
+    {
+      "url": "https://www.reuters.com/world/china/taiwan-must-look-democracies-not-china-trade-cooperation-president-says-2026-02-03/",
+      "code": 401,
+      "disposition": "blocked-auth-or-paywall",
+      "hops": 0
+    }
+  ],
+  "downloads": [
+    {
+      "url": "https://ams3.digitaloceanspaces.com/urbits3/sitful-hatred/2026.9.24..22.31.54..beb8.51eb.851e.b851-AI%20Safety%20Is%20Mostly%20A%20Sex%20Cult%20In%20Berkeley%2C%20California.pdf",
+      "status": "unverified",
+      "code": 403,
+      "hops": 0
+    },
+    {
+      "url": "https://clawfight.ai/agents.md",
+      "status": "ok",
+      "code": 200,
+      "hops": 0,
+      "downloadBodyVerified": true
+    },
+    {
+      "url": "https://finch-static.agibot.com/VAM/blog/tau_0_wm.pdf",
+      "status": "ok",
+      "code": 200,
+      "hops": 0,
+      "downloadBodyVerified": true
+    }
+  ]
+}
