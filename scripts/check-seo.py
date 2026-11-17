@@ -12,7 +12,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlparse, urljoin
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE = ROOT / "site" if (ROOT / "scripts/build.mjs").exists() else ROOT
+SITE = Path(os.environ["SEO_SITE_DIR"]).resolve() if os.environ.get("SEO_SITE_DIR") else (ROOT / "site" if (ROOT / "scripts/build.mjs").exists() else ROOT)
 SM = "http://www.sitemaps.org/schemas/sitemap/0.9"
 ATOM = "http://www.w3.org/2005/Atom"
 
