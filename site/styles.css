@@ -163,6 +163,11 @@ input[type="date"]:focus-within {
   outline-offset: 3px;
 }
 
+/* Sequential keyboard focus must not race an unfinished smooth scroll. */
+html:has(:focus-visible) {
+  scroll-behavior: auto;
+}
+
 .skip-link {
   position: absolute;
   left: 1rem;
