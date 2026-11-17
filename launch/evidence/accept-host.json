@@ -1,0 +1,110 @@
+{
+  "time": "2026-11-17T13:25:37.917Z",
+  "base": "https://koltregaskes.com/",
+  "canonicalOrigin": "https://koltregaskes.com",
+  "scope": [
+    "/",
+    "/about/",
+    "/news/",
+    "/links/",
+    "/404.html"
+  ],
+  "results": [
+    {
+      "name": "status and HTTPS",
+      "state": "verified",
+      "detail": {
+        "status": 200,
+        "final": "https://koltregaskes.com/"
+      }
+    },
+    {
+      "name": "headers /",
+      "state": "failed",
+      "reason": "Missing/incorrect: x-content-type-options, x-frame-options, referrer-policy, strict-transport-security, content-security-policy, permissions-policy"
+    },
+    {
+      "name": "headers /about/",
+      "state": "failed",
+      "reason": "Missing/incorrect: x-content-type-options, x-frame-options, referrer-policy, strict-transport-security, content-security-policy, permissions-policy"
+    },
+    {
+      "name": "headers /news/",
+      "state": "failed",
+      "reason": "Missing/incorrect: x-content-type-options, x-frame-options, referrer-policy, strict-transport-security, content-security-policy, permissions-policy"
+    },
+    {
+      "name": "headers /links/",
+      "state": "failed",
+      "reason": "Missing/incorrect: x-content-type-options, x-frame-options, referrer-policy, strict-transport-security, content-security-policy, permissions-policy"
+    },
+    {
+      "name": "headers /404.html",
+      "state": "failed",
+      "reason": "Missing/incorrect: x-content-type-options, x-frame-options, referrer-policy, strict-transport-security, content-security-policy, permissions-policy"
+    },
+    {
+      "name": "page /",
+      "state": "verified",
+      "detail": {
+        "canonical": "https://koltregaskes.com/",
+        "jsonld": 2,
+        "og": "https://koltregaskes.com/media/social-default.png",
+        "width": 320
+      }
+    },
+    {
+      "name": "page /about/",
+      "state": "verified",
+      "detail": {
+        "canonical": "https://koltregaskes.com/about/",
+        "jsonld": 1,
+        "og": "https://koltregaskes.com/media/social-default.png",
+        "width": 320
+      }
+    },
+    {
+      "name": "page /news/",
+      "state": "verified",
+      "detail": {
+        "canonical": "https://koltregaskes.com/news/",
+        "jsonld": 2,
+        "og": "https://koltregaskes.com/media/social-default.png",
+        "width": 320
+      }
+    },
+    {
+      "name": "page /links/",
+      "state": "verified",
+      "detail": {
+        "canonical": "https://koltregaskes.com/links/",
+        "jsonld": 1,
+        "og": "https://koltregaskes.com/media/social-default.png",
+        "width": 320
+      }
+    },
+    {
+      "name": "page /404.html",
+      "state": "verified",
+      "detail": {
+        "canonical": "https://koltregaskes.com/404.html",
+        "jsonld": 0,
+        "width": 320
+      }
+    },
+    {
+      "name": "sitemap, robots and RSS",
+      "state": "verified",
+      "detail": {
+        "sitemapUrls": 193,
+        "rssItems": 20
+      }
+    },
+    {
+      "name": "real 404 response",
+      "state": "failed",
+      "reason": "404 headers missing: x-content-type-options, x-frame-options, referrer-policy, strict-transport-security, content-security-policy, permissions-policy"
+    }
+  ],
+  "state": "failed"
+}
