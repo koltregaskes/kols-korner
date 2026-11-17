@@ -80,7 +80,11 @@ export async function collectExternalUrls(directory='site',{includeJson=true}={}
    const href=attrs.match(/\bhref=["'](https?:\/\/[^"']+)["']/i)?.[1];
    if(href)add(href,'html-link');
   }
-  for(const m of html.matchAll(/<(?:img|script|video|audio|source)\b[^>]*\b(?:src|poster)=["'](https?:\/\/[^"']+)["']/gi))add(m[1],'html-media');
+  for(const tag of html.matchAll(/<(?:img|script|video|audio|source)\b([^>]*)>/gi)){
+   for(const attribute of tag[1].matchAll(/([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g)){
+    if(['src','poster'].includes(attribute[1].toLowerCase()))add(attribute[2]??attribute[3]??attribute[4],'html-media');
+   }
+  }
  }
  for(const rel of ['llms.txt','.well-known/security.txt']) {
   try {

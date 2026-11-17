@@ -12,6 +12,17 @@ test('an HTTPS downgrade is unsafe rather than a passing or merely unverified de
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {inspectSite,repairTagMarkup} from '../scripts/check-internal-links.mjs';
+
+test('valid srcset data URLs retain embedded commas while local candidates are checked',async()=>{
+ await fs.mkdir('review-local',{recursive:true});
+ const root=await fs.mkdtemp(path.resolve('review-local/srcset-'));
+ const image='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+ await fs.writeFile(path.join(root,'image.png'),'image fixture');
+ await fs.writeFile(path.join(root,'index.html'),`<img srcset="${image} 1x, image.png 2x">`);
+ assert.deepEqual((await inspectSite(root)).errors,[]);
+ await fs.writeFile(path.join(root,'index.html'),`<img srcset="${image} 1x, missing.png 2x">`);
+ assert.ok((await inspectSite(root)).errors.some(error=>error.includes('missing.png')));
+});
 test('missing tag destinations become labels; real targets and escaped text are preserved',()=>{
  const html='<a href="../tags/#missing" class="tag">&lt;safe&gt;</a><a href="../tags/#ai">AI</a>';
  assert.equal(repairTagMarkup(html,new Set(['ai']),'https://koltregaskes.com/posts/'),'<span class="tag">&lt;safe&gt;</span><a href="../tags/#ai">AI</a>');

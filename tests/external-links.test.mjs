@@ -61,3 +61,15 @@ test('collectExternalUrls scans HTML, non-preconnect links, news JSON, llms/secu
  assert.ok(urls.has('https://x.com/koltregaskes'));
  assert.ok(urls.has('https://news.example.test/live'));
 });
+
+test('external media collection checks both source and poster regardless of attribute order',async()=>{
+ await fs.mkdir('review-local',{recursive:true});
+ const root=await fs.mkdtemp(path.resolve('review-local/ext-media-'));
+ await fs.writeFile(path.join(root,'index.html'),'<video src="https://media.example.test/first.mp4" poster="https://media.example.test/first.jpg"></video><video poster="https://media.example.test/second.jpg" src="https://media.example.test/second.mp4"></video>');
+ const entries=await collectExternalUrls(root);
+ assert.deepEqual(entries.map(entry=>entry.url).sort(),[
+  'https://media.example.test/first.jpg','https://media.example.test/first.mp4',
+  'https://media.example.test/second.jpg','https://media.example.test/second.mp4',
+ ]);
+ assert.equal(entries.filter(entry=>entry.download).length,2);
+});

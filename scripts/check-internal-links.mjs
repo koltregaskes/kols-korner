@@ -3,6 +3,28 @@ import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 const decode = value => String(value).replace(/&(?:amp|quot|apos|lt|gt);/g,x=>({'&amp;':'&','&quot;':'"','&apos;':"'",'&lt;':'<','&gt;':'>'}[x])).replace(/&#(x[0-9a-f]+|[0-9]+);/gi,(all,code)=>{const n=code[0].toLowerCase()==='x'?parseInt(code.slice(1),16):Number(code);return Number.isInteger(n)&&n>=0&&n<=0x10ffff&&!(n>=0xd800&&n<=0xdfff)?String.fromCodePoint(n):all});
 const attrs = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g)].map(m=>[m[1].toLowerCase(),decode(m[2]??m[3]??m[4])]));
+// A candidate URL ends at whitespace, not at an embedded comma (data URLs
+// and ordinary URL paths may contain commas). Commas then delimit descriptors.
+function srcsetUrls(value) {
+ const urls=[];let position=0;
+ while(position<value.length){
+  while(position<value.length&&/[\s,]/.test(value[position]))position++;
+  const start=position;
+  while(position<value.length&&!/\s/.test(value[position]))position++;
+  const url=value.slice(start,position);
+  if(!url)break;
+  urls.push(url.replace(/,+$/,''));
+  if(url.endsWith(','))continue;
+  let parentheses=0;
+  while(position<value.length){
+   const character=value[position++];
+   if(character==='(')parentheses++;
+   else if(character===')'&&parentheses)parentheses--;
+   else if(character===','&&!parentheses)break;
+  }
+ }
+ return urls;
+}
 export async function inspectSite(directory='site',origin='https://koltregaskes.com') {
  const root=path.resolve(directory),files=[],documents=new Map(),errors=[],checkedDownloads=new Set();
  const canonicalUrl=new URL(origin),canonicalHost=canonicalUrl.hostname;
@@ -11,7 +33,7 @@ export async function inspectSite(directory='site',origin='https://koltregaskes.
  for(const file of files){const html=await fs.readFile(file,'utf8'),ids=new Set(),refs=[];let redirect=null;
   for(const match of html.replace(/<!--[\s\S]*?-->/g,'').replace(/(<(?:script|style)\b[^>]*>)[\s\S]*?<\/(?:script|style)>/gi,'$1</script>').matchAll(/<([a-z][\w:-]*)\b[^>]*>/gi)){const tag=match[1].toLowerCase(),a=attrs(match[0]);if(a.id)ids.add(a.id);if(tag==='a'&&a.name)ids.add(a.name);
    for(const key of ['href','src','poster','action'])if(a[key])refs.push({value:a[key],allowData:key==='src' && ['img','source','video','audio'].includes(tag)});
-   if(a.srcset)for(const candidate of a.srcset.split(',')){const urlToken=candidate.trim().split(/\s+/)[0];if(urlToken)refs.push({value:urlToken,allowData:['img','source'].includes(tag)});}
+   if(a.srcset)for(const value of srcsetUrls(a.srcset))refs.push({value,allowData:['img','source'].includes(tag)});
    if(a['http-equiv']?.toLowerCase()==='refresh'){const m=a.content?.match(/^\s*\d+(?:\.\d+)?\s*;\s*url\s*=\s*(.+?)\s*$/i);if(!m)errors.push(path.relative(root,file)+': invalid redirect');else redirect=m[1].replace(/^['"]|['"]$/g,'');}
   }documents.set(file,{ids,refs,redirect});
  }
