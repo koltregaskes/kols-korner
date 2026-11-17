@@ -1,0 +1,9 @@
+{
+  "time": "2026-11-17T13:23:09.583Z",
+  "scope": "isolated built homepage rollback; not production",
+  "baseline": "e360a1620d5fc04c35439a89ba622b7b8fc4810368132404f754995d75453bb2",
+  "changed": "6bbc0a6df85694e78961f00a83b181d0659fbe4265e2b2a71a123264b9d6d0e9",
+  "restored": "e360a1620d5fc04c35439a89ba622b7b8fc4810368132404f754995d75453bb2",
+  "changedDetected": true,
+  "rollbackVerified": true
+}
