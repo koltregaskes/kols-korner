@@ -1,0 +1,70 @@
+{
+  "checkedAt": "2026-11-17T14:00:58.403Z",
+  "ownerIssue": 1859,
+  "repository": "koltregaskes/website-tools",
+  "sourceCommit": "d27e5c5adac9aa8402e8df8f35021e0d1b2e37cd",
+  "sourceHashes": {
+    "worker.mjs": "262ddc6cf51e95382c8704c24088f4cb6efa1d30d29b20716c8e6e9b19516b4c",
+    "client.mjs": "bd5b4b2e75e324fd7562c7dea661a41fda534ebe6e06b55ae0216cf5ed5dc795",
+    "policy.mjs": "52ea7e63d8f42403fd0c33377df47ecc1bf06435dd212d2ab97791148da124c2",
+    "memory-adapter.mjs": "573f7ae7109e09d9118fe46ede5c1d4a0d3d1bd5a0ca4f670b3418eed12dc7ea"
+  },
+  "scope": "Browser-generated test event reaches the actual owned handler through local route bridging and synthetic memory storage. No workerd, durable SQL, hosted collector or public site activation.",
+  "checks": {
+    "browserEvent": {
+      "status": "passed",
+      "collectorPosts": 1,
+      "storedAggregateTotal": 1
+    },
+    "cookieless": {
+      "status": "passed",
+      "cookieOrStorageAccess": "throws in fixture",
+      "cookieSent": false,
+      "referrerSent": false,
+      "cookiesCreated": 0
+    },
+    "clientPrivacySignals": {
+      "status": "passed",
+      "browserNavigatorSignals": true,
+      "extraPosts": 0,
+      "extraWrites": 0
+    },
+    "serverPrivacySignals": {
+      "status": "passed",
+      "extraWrites": 0
+    },
+    "productionDisabled": {
+      "status": "passed"
+    },
+    "botFiltering": {
+      "status": "failed",
+      "probes": [
+        {
+          "syntheticAgent": "Googlebot",
+          "http": 204,
+          "counted": 1
+        },
+        {
+          "syntheticAgent": "GPTBot",
+          "http": 204,
+          "counted": 1
+        },
+        {
+          "syntheticAgent": "HeadlessChrome",
+          "http": 204,
+          "counted": 1
+        }
+      ]
+    }
+  },
+  "aggregateReadback": [
+    {
+      "day": "2026-11-17",
+      "site": "demo",
+      "page": "home",
+      "event": "page_view",
+      "total": 4
+    }
+  ],
+  "acceptance": "blocked"
+}
