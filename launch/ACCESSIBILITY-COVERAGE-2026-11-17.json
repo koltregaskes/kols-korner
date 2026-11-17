@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-11-17T13:40:04.057Z",
+  "routes": 372,
+  "widths": [
+    320,
+    390,
+    1280
+  ],
+  "uniquePassed": 1116,
+  "missing": [],
+  "scope": "Local Edge, intercepted artifact; external fonts blocked; not manual screen-reader or final-host acceptance",
+  "logs": [
+    {
+      "name": "wcag-targeted.log",
+      "sha256": "3a6795b1a860b3a25eb3f96130a6d159fc770c3dfbd5460f30cf59e45a3a06c8"
+    },
+    {
+      "name": "accessibility-wide.log",
+      "sha256": "04036231aab18141a3b4b50da28e237b0f7b8ce9ca0c8e5c8af9882c073a5fd1"
+    },
+    {
+      "name": "accessibility-extra.log",
+      "sha256": "5b5ba59e636d1edf0708960938d9914597fb56c9de8754fd04d207e5b6076f17"
+    },
+    {
+      "name": "accessibility-logo.log",
+      "sha256": "1bbed976fba8c9e6dd6a2b0b8b8b4c7042d0073e44a138b91dd101522da4ef98"
+    }
+  ]
+}

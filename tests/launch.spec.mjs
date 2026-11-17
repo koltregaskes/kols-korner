@@ -43,8 +43,13 @@ for (const file of await pages(root)) {
   expect(await page.evaluate(()=>globalThis.__cspViolations)).toEqual([]);
   const overflow=await page.evaluate(findHorizontalOverflow);
   expect(overflow,JSON.stringify(overflow.slice(0,10))).toEqual([]);
-  const result = await new AxeBuilder({page}).analyze();
-  expect(result.violations.filter(v => ['serious','critical'].includes(v.impact)).map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))).toEqual([]);
+  // The focused skip-link intentionally overlays the header temporarily.
+  // Audit resting layout after its separately tested keyboard interaction.
+  await focused.evaluate(el=>el.blur());
+  await expect(page.locator('.skip-link')).not.toBeInViewport();
+  const result = await new AxeBuilder({page})
+    .withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']).analyze();
+  expect(result.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary}))}))).toEqual([]);
   const links = await page.locator('[href], [src]').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('href')||n.getAttribute('src')).filter(Boolean));
   for(const link of links) {
    const url=new URL(link,page.url());

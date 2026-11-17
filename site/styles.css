@@ -157,7 +157,8 @@ img {
   color: #fff;
 }
 
-:focus-visible {
+:focus-visible,
+input[type="date"]:focus-within {
   outline: 3px solid var(--red);
   outline-offset: 3px;
 }
@@ -1495,6 +1496,9 @@ img {
 }
 
 .footer-col a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   color: var(--ink-soft);
   font-family: var(--font-mono);
   font-size: 0.78rem;
