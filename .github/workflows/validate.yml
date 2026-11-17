@@ -68,3 +68,14 @@ jobs:
         run: npm run test:launch -- --shard=${{ matrix.shard }}/4
       - name: Check AI discovery file
         run: test -s site/llms.txt
+
+      - name: Measure representative mobile pages (local artifact only)
+        if: matrix.shard == 1
+        run: npx playwright test --config playwright.performance.config.mjs
+      - name: Retain mobile performance measurements
+        if: always() && matrix.shard == 1
+        uses: actions/upload-artifact@v4
+        with:
+          name: mobile-performance
+          path: test-results/**/mobile-performance.json
+          if-no-files-found: error
