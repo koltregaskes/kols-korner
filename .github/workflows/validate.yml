@@ -77,5 +77,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mobile-performance
-          path: test-results/**/attachments/*.json
+          path: test-results/**/mobile-performance.json
           if-no-files-found: error
