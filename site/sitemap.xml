@@ -2,7 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://koltregaskes.com/</loc></url>
   <url><loc>https://koltregaskes.com/about/</loc></url>
+  <url><loc>https://koltregaskes.com/accessibility/</loc></url>
   <url><loc>https://koltregaskes.com/contact/</loc></url>
+  <url><loc>https://koltregaskes.com/cookies/</loc></url>
   <url><loc>https://koltregaskes.com/links/</loc></url>
   <url><loc>https://koltregaskes.com/news/</loc></url>
   <url><loc>https://koltregaskes.com/posts/</loc></url>
@@ -192,4 +194,5 @@
   <url><loc>https://koltregaskes.com/privacy.html</loc></url>
   <url><loc>https://koltregaskes.com/subscribe/</loc></url>
   <url><loc>https://koltregaskes.com/tags/</loc></url>
+  <url><loc>https://koltregaskes.com/terms/</loc></url>
 </urlset>

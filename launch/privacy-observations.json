@@ -1,0 +1,23 @@
+{
+  "reviewDate": "2026-11-17",
+  "reviewer": "Codex, Gaming-Laptop, via T3 Code Chief of Staff",
+  "liveBrowser": {
+    "profile": "fresh incognito T3 preview",
+    "routes": ["https://koltregaskes.com/privacy.html", "https://koltregaskes.com/news/"],
+    "observedOrigins": ["https://koltregaskes.com", "https://fonts.googleapis.com", "https://fonts.gstatic.com"],
+    "newsFetchPaths": ["/data/news-feed-latest.json", "/data/news-articles.json"],
+    "collectorRequestObserved": false,
+    "initialLocalStorageKeys": [],
+    "afterThemeAndSaveKeys": ["kk-theme", "news-favorites"],
+    "sessionStorageKeys": [],
+    "javascriptVisibleCookieCount": 0,
+    "limitations": ["Resource Timing records destinations, not all HTTP headers or methods", "HttpOnly cookies and hosting logs not visible", "No claim about provider retention, final Cloudflare host or all routes", "Report action not exercised live", "Preview snapshot failed because browser was not producing screenshot frames; DOM evaluation succeeded"]
+  },
+  "repository": {
+    "hosting": "GitHub Pages workflow; Cloudflare is planned, not enabled by these templates",
+    "analytics": "No enabled collector found in built pages or scripts; #1498/#367 retain ownership",
+    "storageKeys": ["kk-theme", "news-favorites", "news-flags"],
+    "newsletter": "No signup or email delivery journey enabled",
+    "contact": "hello@ retained; contact@ forwarding and receipt unverified"
+  }
+}

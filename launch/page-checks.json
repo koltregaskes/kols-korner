@@ -1,0 +1,146 @@
+﻿{
+    "reviewer":  "Codex, Gaming-Laptop, via T3 Code Chief of Staff",
+    "reviewDate":  "2026-11-17",
+    "build":  "passed",
+    "artifactScope":  "Page-only artifact after unrelated build output was archived and original news artifacts restored",
+    "seo":  {
+                "pages":  195,
+                "redirects":  176,
+                "rssItems":  20,
+                "sitemapUrls":  195
+            },
+    "internalLinks":  {
+                          "pages":  373,
+                          "downloads":  179,
+                          "maxRedirectHops":  1,
+                          "failures":  0
+                      },
+    "playwright":  {
+                       "passed":  22,
+                       "widths":  [
+                                      320,
+                                      390,
+                                      1280
+                                  ],
+                       "pageViewportChecks":  15,
+                       "newsActions":  [
+                                           "theme",
+                                           "save",
+                                           "report"
+                                       ],
+                       "privacyBoundaryChecks":  7,
+                       "cookieCount":  0,
+                       "externalRequests":  "recorded then blocked"
+                   },
+    "existingContracts":  {
+                              "passed":  36,
+                              "failed":  0
+                          },
+    "visual":  "390px privacy screenshot inspected",
+    "externalLinks":  {
+                          "checked":  2446,
+                          "ok":  2403,
+                          "broken":  0,
+                          "unsafe":  0,
+                          "unverified":  43,
+                          "redirected":  989,
+                          "maxHops":  3,
+                          "downloads":  3,
+                          "total":  2446
+                      },
+    "unverifiedHosts":  [
+                            {
+                                "host":  "venturebeat.com",
+                                "count":  14,
+                                "code":  429,
+                                "disposition":  "rate-limited-upstream"
+                            },
+                            {
+                                "host":  "www.reuters.com",
+                                "count":  10,
+                                "code":  401,
+                                "disposition":  "blocked-auth-or-paywall"
+                            },
+                            {
+                                "host":  "www.marktechpost.com",
+                                "count":  3,
+                                "code":  403,
+                                "disposition":  "blocked-bot-challenge"
+                            },
+                            {
+                                "host":  "www.theguardian.com",
+                                "count":  3,
+                                "code":  429,
+                                "disposition":  "rate-limited-upstream"
+                            },
+                            {
+                                "host":  "aimagazine.com",
+                                "count":  2,
+                                "code":  403,
+                                "disposition":  "blocked-bot-challenge"
+                            },
+                            {
+                                "host":  "www.ft.com",
+                                "count":  2,
+                                "code":  403,
+                                "disposition":  "blocked-bot-challenge"
+                            },
+                            {
+                                "host":  "www.marketwatch.com",
+                                "count":  2,
+                                "code":  401,
+                                "disposition":  "blocked-auth-or-paywall"
+                            },
+                            {
+                                "host":  "ams3.digitaloceanspaces.com",
+                                "count":  1,
+                                "code":  403,
+                                "disposition":  "blocked-bot-challenge"
+                            },
+                            {
+                                "host":  "apnews.com",
+                                "count":  1,
+                                "code":  403,
+                                "disposition":  "blocked-bot-challenge"
+                            },
+                            {
+                                "host":  "investors.micron.com",
+                                "count":  1,
+                                "code":  403,
+                                "disposition":  "blocked-bot-challenge"
+                            },
+                            {
+                                "host":  "medium.com",
+                                "count":  1,
+                                "code":  403,
+                                "disposition":  "blocked-bot-challenge"
+                            },
+                            {
+                                "host":  "openai.com",
+                                "count":  1,
+                                "code":  403,
+                                "disposition":  "blocked-bot-challenge"
+                            },
+                            {
+                                "host":  "www.gartner.com",
+                                "count":  1,
+                                "code":  403,
+                                "disposition":  "blocked-bot-challenge"
+                            },
+                            {
+                                "host":  "www.phoronix.com",
+                                "count":  1,
+                                "code":  403,
+                                "disposition":  "blocked-bot-challenge"
+                            }
+                        ],
+    "pending":  [
+                    "Kol confirmation fields in launch/pages.json",
+                    "manual screen reader and full final-host accessibility",
+                    "final-host cookies including HttpOnly",
+                    "provider logs and retention",
+                    "contact@ forwarding and authorised receipt",
+                    "newsletter/support decisions",
+                    "analytics collector acceptance under hub #1498/#367"
+                ]
+}
