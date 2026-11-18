@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.join(__dirname, '..');
 
-const sharedRoot = process.env.SHARED_WEBSITE_TOOLS_ROOT || 'W:/Websites/shared/website-tools';
+const sharedRoot = process.env.SHARED_WEBSITE_TOOLS_ROOT || path.resolve(repoRoot, '..', 'website-tools');
 const collectorPath = process.env.NEWS_COLLECTOR_PATH || path.join(sharedRoot, 'pipelines', 'news', 'src', 'cli.mjs');
 const configPath = process.env.NEWS_CONFIG_PATH || path.join(sharedRoot, 'pipelines', 'news', 'config', 'sources.json');
 const outputDir = process.env.NEWS_OUT || path.join(repoRoot, 'news-digests');
@@ -44,7 +44,7 @@ Usage:
   node scripts/fetch-news.mjs [--date YYYY-MM-DD] [--no-json]
 
 Environment overrides:
-  SHARED_WEBSITE_TOOLS_ROOT
+  SHARED_WEBSITE_TOOLS_ROOT (default: a website-tools checkout next to this repo)
   NEWS_COLLECTOR_PATH
   NEWS_CONFIG_PATH
   NEWS_OUT

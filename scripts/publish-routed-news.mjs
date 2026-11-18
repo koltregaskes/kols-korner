@@ -83,7 +83,7 @@ export function missingDigestMessage({ date, sourceDir, candidates }) {
     'Resolved paths:',
     resolved,
     '',
-    'The classifier is not in this repository. scripts/fetch-news.mjs only starts W:/Websites/shared/website-tools/pipelines/news/src/cli.mjs, and that collector is not in git. GitHub Actions cannot see the Windows checkout where the ignored digest file is written.',
+    'The classifier is not in this repository. scripts/fetch-news.mjs only starts the shared website-tools news collector (pipelines/news/src/cli.mjs under SHARED_WEBSITE_TOOLS_ROOT), and that collector is not in this repository. GitHub Actions cannot see the local checkout where the ignored digest file is written.',
     '',
     `Until digest-${date}.md or ${date}-digest.md is in the checkout, this scheduled run fails on purpose so the missed day stays visible.`
   ].join('\n');

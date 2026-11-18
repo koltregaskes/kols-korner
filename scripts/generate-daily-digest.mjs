@@ -18,7 +18,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
-// Priority: ENV var > local news-digests/ > local news/ > Agent Workspace (for local dev)
+// Priority: ENV var > local news-digests/ > local news/ (set NEWS_SOURCE_PATH for any other location)
 const getNewsSourcePath = () => {
   if (process.env.NEWS_SOURCE_PATH) return process.env.NEWS_SOURCE_PATH;
 
@@ -32,8 +32,8 @@ const getNewsSourcePath = () => {
     return localNews;
   }
 
-  // Fall back to Agent Workspace for local development
-  return 'W:/Agent Workspace/Content/News';
+  // Nothing local yet: default to news-digests/ so the missing-input error names a repo path
+  return localDigests;
 };
 
 const CONFIG = {
