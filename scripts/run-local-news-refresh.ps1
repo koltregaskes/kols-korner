@@ -72,6 +72,12 @@ try {
   Invoke-NativeStep -FilePath 'git' -ArgumentList @('worktree', 'add', '--detach', $worktreePath, 'HEAD') -FailureLabel 'git worktree add'
   $worktreeCreated = $true
 
+  # fetch-news.mjs defaults to a website-tools checkout next to the repo. The temporary
+  # worktree has no such sibling, so resolve it from the original checkout and pass it on.
+  if ([string]::IsNullOrWhiteSpace($env:SHARED_WEBSITE_TOOLS_ROOT)) {
+    $env:SHARED_WEBSITE_TOOLS_ROOT = Join-Path (Split-Path -Parent $repoRoot) 'website-tools'
+  }
+
   Pop-Location
   $pushedLocation = $false
   Push-Location $worktreePath
