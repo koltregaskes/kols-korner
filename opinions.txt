@@ -504,8 +504,8 @@ SOURCE WEIGHTING
 GLOBAL DATE ANCHORS FROM NOVA EXPORT
 - March 2023: earliest retrieved values/social context, especially climate, inequality, justice, peace and dystopia avoidance.
 - November 2023: crypto/financial freedom context.
-- April 2024: general identity, interests, privacy, simplicity, Kody, work context.
-- March 2025: AI dystopia/climate/inequality/Kody/personality-flavoured context.
+- April 2024: general identity, interests, privacy, simplicity, work context.
+- March 2025: AI dystopia/climate/inequality/personality-flavoured context.
 - November 2025: creative AI, art, video, music and worldbuilding context.
 - January 2026: strongest explicit AI opinions before this project, including AI optimism, grounded takes, AGI in slices, short timelines, actionable safety, open-source/transparency, jobs/inequality/UBI.
 - May 2026: AI news curation, AGI definition, agentic computing, personal AI, source quality and work automation/data stack.

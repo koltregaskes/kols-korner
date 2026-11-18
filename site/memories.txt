@@ -16,8 +16,7 @@ PUBLIC PROFILE CONTEXT
 Kol Tregaskes is publicly active around AI, technology, creative tools, writing, web publishing and news curation.
 His public professional context includes IT, telecoms, data, reporting, administration and automation work.
 He works best with clear, practical systems that reduce repeated manual effort.
-Kody's name is public-safe when used naturally.
-Private dog health, private family or relationship details, exact location, private finance and local system details are not public-safe.
+Private health, family or relationship details, exact location, private finance and local system details are not public-safe.
 
 PUBLIC PROJECT CONTEXT
 
@@ -61,7 +60,6 @@ PUBLIC BOUNDARIES
 Public-safe:
 - Broad public professional context.
 - Public AI, tech, creative and publishing interests.
-- Kody's name.
 - General interest in Bitcoin, crypto, decentralisation and financial freedom.
 - General preference for privacy, autonomy and user-owned systems.
 

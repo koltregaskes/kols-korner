@@ -3131,7 +3131,7 @@ async function cleanGeneratedOutput() {
     const html = await fs.readFile(file, 'utf8');
     const updated = html.replace(/<a\b[^>]*data-site-contact[^>]*>[\s\S]*?<\/a>/gi, anchor =>
       anchor.replace(/href=["']mailto:[^"']+["']/i, `href="mailto:${SITE_CONTACT_EMAIL}"`)
-        .replace(/(?:hello|contact)@koltregaskes\.com/g, SITE_CONTACT_EMAIL));
+        .replace(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g, SITE_CONTACT_EMAIL));
     await fs.writeFile(file, updated);
   }
   let availability;

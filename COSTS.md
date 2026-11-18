@@ -7,15 +7,15 @@ This document outlines all costs associated with running your Notion-powered sta
 
 ---
 
-## 💰 Current Costs (v2.1.0)
+## 💰 Baseline Costs (v2.1.0)
 
-### **Total: $0.00/month** ✅
+### **Baseline: free-tier services only**
 
-Your site currently runs entirely on free tiers with zero costs!
+The baseline build is designed to run on free-tier services. Optional features below add costs at each provider's published prices.
 
 ---
 
-## 🆓 Free Services (Currently Used)
+## 🆓 Free Services (Baseline)
 
 ### 1. **GitHub**
 - **Service:** GitHub Pages hosting + GitHub Actions CI/CD
@@ -24,7 +24,7 @@ Your site currently runs entirely on free tiers with zero costs!
   - 1 GB storage for Pages site
   - 100 GB bandwidth/month
   - 2,000 GitHub Actions minutes/month (free tier)
-- **Current Usage:**
+- **Estimated Usage:**
   - ~1 build/hour = 24 builds/day = ~720 builds/month
   - ~2 minutes per build = ~1,440 minutes/month
   - **Status:** Well within free tier ✅
@@ -37,7 +37,7 @@ Your site currently runs entirely on free tiers with zero costs!
 - **Limits:**
   - API rate limit: 3 requests/second (enforced as average over 1 minute)
   - No monthly request limit on free plan
-- **Current Usage:**
+- **Estimated Usage:**
   - 1 database query per build
   - ~720 API calls/month
   - **Status:** Well within limits ✅
@@ -194,13 +194,13 @@ const response = await fetch('https://api.anthropic.com/v1/messages', {
 
 ## 📊 Total Cost Scenarios
 
-### **Current (v2.1.0)**
+### **Baseline (v2.1.0)**
 ```
 GitHub Pages:        $0.00
 Notion API:          $0.00
 Node.js:             $0.00
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
-TOTAL:               $0.00/month ✅
+TOTAL:               free-tier baseline
 ```
 
 ### **With AI Summaries (Medium Usage)**
@@ -279,14 +279,14 @@ TOTAL:               $143.00/month
 - ✅ Only build when Notion content changes (webhook trigger)
 - ✅ Use self-hosted runners for free builds (requires always-on computer)
 
-**Savings:** Stay within free tier forever (currently using ~1,440/2,000 minutes)
+**Savings:** Stay within the free tier (an hourly build estimates ~1,440 of 2,000 minutes)
 
 ---
 
 ## 📈 Cost Growth Projections
 
 ### Year 1 (Months 1-12)
-- **Months 1-3:** $0/month (current features only)
+- **Months 1-3:** free-tier baseline (baseline features only)
 - **Months 4-6:** $0.10/month (add AI summaries, light usage)
 - **Months 7-9:** $9/month (upgrade Buttondown, 100+ subscribers)
 - **Months 10-12:** $10/month (heavier AI usage)
@@ -333,12 +333,12 @@ TOTAL:               $143.00/month
 ### **Notion API**
 - **Rate Limit:** 3 requests/second (average over 1 minute)
 - **Max Burst:** ~50 requests in 10 seconds
-- **Current Usage:** 1 request/hour (720/month)
+- **Estimated Usage:** 1 request/hour (720/month)
 - **Headroom:** 99.9% under limit ✅
 
 ### **Claude API (Haiku)**
 - **Rate Limit:** 50 requests/minute (free tier)
-- **Current Plan:** Pay-as-you-go (no monthly minimum)
+- **Billing model:** usage-based (see the provider's pricing page)
 - **Overage:** Just pay for what you use
 - **Monitoring:** Dashboard at console.anthropic.com
 
@@ -350,7 +350,7 @@ TOTAL:               $143.00/month
 
 ### **GitHub Actions**
 - **Free Tier:** 2,000 minutes/month
-- **Current Usage:** ~1,440 minutes/month
+- **Estimated Usage:** ~1,440 minutes/month at hourly builds
 - **Overage:** $0.008/minute (Linux runners)
 - **Monitoring:** Settings → Billing → Actions
 
@@ -368,7 +368,7 @@ TOTAL:               $143.00/month
 
 ## 💰 Bottom Line
 
-**Today:** $0.00/month - Your site is completely free! ✅
+**Baseline:** free-tier services only ✅
 
 **Near Future (AI summaries):** $0.10-1.00/month - Essentially free ✅
 
