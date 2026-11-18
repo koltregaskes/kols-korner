@@ -51,7 +51,7 @@ Only needed if you want the newsletter form to post to Supabase.
 
 ### 3. Configure the Domain
 
-This repo now includes a committed [`CNAME`](/W:/Websites/sites/koltregaskesdotcom/CNAME) file for `koltregaskes.com`.
+This repo now includes a committed [`CNAME`](CNAME) file for `koltregaskes.com`.
 
 If you prefer variables-driven configuration, you can also set:
 
