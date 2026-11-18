@@ -2926,7 +2926,7 @@ async function writeSecurityTxt() {
   const securityDir = path.join('site', '.well-known');
   await fs.mkdir(securityDir, { recursive: true });
 
-  const security = `Contact: https://x.com/koltregaskes\nPreferred-Languages: en-GB\nCanonical: ${SITE_URL}/.well-known/security.txt\n`;
+  const security = `Contact: mailto:${SITE_CONTACT_EMAIL}\nPreferred-Languages: en-GB\nCanonical: ${SITE_URL}/.well-known/security.txt\n`;
   await fs.writeFile(path.join(securityDir, 'security.txt'), security, 'utf8');
 }
 

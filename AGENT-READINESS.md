@@ -129,7 +129,7 @@ Single `Person` block (the same one as home, with the @id reference) plus an `Ab
   "mainEntity": {
     "@type": "Person",
     "@id": "https://koltregaskes.com/#person-kol",
-    "email": "kol@koltregaskes.com"
+    "email": "contact@elusionworks.com"
   }
 }
 ```
