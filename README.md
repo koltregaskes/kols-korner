@@ -59,7 +59,7 @@ node scripts/generate-daily-digest.mjs --date YYYY-MM-DD --allow-empty --force
 node scripts/backfill-digests.mjs
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/publish-routed-news.ps1 `
   -TargetDate YYYY-MM-DD `
-  -SourceDigestDirectory W:\websites\sites\kols-korner\news-digests
+  -SourceDigestDirectory <path-to-your-checkout>\news-digests
 ```
 
 - Raw digest files live in `news-digests/`

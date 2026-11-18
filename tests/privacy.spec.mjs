@@ -36,6 +36,6 @@ for (const routePath of ['/', '/news/', '/privacy.html', '/contact/']) test(`pri
   if (routePath === '/privacy.html') {
     await expect(page.locator('main')).toContainText('does not run analytics');
     await expect(page.locator('main')).toContainText('Google Fonts');
-    await expect(page.locator('a[href="mailto:hello@koltregaskes.com"]')).toHaveCount(1);
+    await expect(page.locator('a[href="mailto:contact@elusionworks.com"]')).toHaveCount(1);
   }
 });

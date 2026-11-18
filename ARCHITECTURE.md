@@ -30,7 +30,7 @@ The news-gatherer itself is separate infrastructure. The shared Rooms OS website
 
 ## Build Pipeline
 
-[`scripts/build.mjs`](/W:/Websites/sites/kols-korner/scripts/build.mjs) is responsible for:
+[`scripts/build.mjs`](scripts/build.mjs) is responsible for:
 
 1. Reading markdown content from `content/`
 2. Parsing frontmatter and skipping unpublished posts
@@ -44,16 +44,16 @@ The news-gatherer itself is separate infrastructure. The shared Rooms OS website
 
 GitHub Actions runs the build on pushes to `main`.
 
-- [`.github/workflows/pages.yml`](/W:/Websites/sites/kols-korner/.github/workflows/pages.yml) builds and deploys the site
-- [`.github/workflows/daily-digest.yml`](/W:/Websites/sites/kols-korner/.github/workflows/daily-digest.yml) is a manual build-check workflow
-- [`scripts/publish-routed-news.ps1`](/W:/Websites/sites/kols-korner/scripts/publish-routed-news.ps1) clones current `main` into a temporary directory, normalises one routed `digest-YYYY-MM-DD.md` input into the tracked `YYYY-MM-DD-digest.md` contract, builds, verifies and rejects out-of-scope source changes. It stages only the routed digest and digest post, leaving temporary `site/` build drift out of the commit. It does not commit or push unless `-Publish` is explicitly supplied.
+- [`.github/workflows/pages.yml`](.github/workflows/pages.yml) builds and deploys the site
+- [`.github/workflows/daily-digest.yml`](.github/workflows/daily-digest.yml) is a manual build-check workflow
+- [`scripts/publish-routed-news.ps1`](scripts/publish-routed-news.ps1) clones current `main` into a temporary directory, normalises one routed `digest-YYYY-MM-DD.md` input into the tracked `YYYY-MM-DD-digest.md` contract, builds, verifies and rejects out-of-scope source changes. It stages only the routed digest and digest post, leaving temporary `site/` build drift out of the commit. It does not commit or push unless `-Publish` is explicitly supplied.
 
 The build can derive its canonical URL from:
 
 - `CUSTOM_DOMAIN`
 - or the current GitHub owner/repo in Actions
 
-The committed [`CNAME`](/W:/Websites/sites/kols-korner/CNAME) file is copied into the published output, but canonical URLs only switch to the custom domain when `CUSTOM_DOMAIN` is set in the environment.
+The committed [`CNAME`](CNAME) file is copied into the published output, but canonical URLs only switch to the custom domain when `CUSTOM_DOMAIN` is set in the environment.
 
 ## Generated Output
 

@@ -11,7 +11,7 @@ test('new collection, payment-style mutations and telemetry fail the declared ab
  assert.ok(inspectScript('fetch(url,{method:"POST"})').length>0);
  assert.ok(inspectScript('navigator.sendBeacon(url,data)').length>0);
  assert.ok(inspectHtml('<meta http-equiv="X-Frame-Options" content="DENY">').length>0);
- assert.deepEqual(inspectHtml('<a href="mailto:hello@koltregaskes.com">Email</a>'),[]);
+ assert.deepEqual(inspectHtml('<a href="mailto:contact@elusionworks.com">Email</a>'),[]);
 });
 test('actual built public interface inventory matches the launch boundary',async()=>{const r=await checkBoundary();assert.ok(r.html>100);assert.deepEqual(r.errors,[])});
 

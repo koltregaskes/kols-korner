@@ -18,9 +18,8 @@ const execAsync = promisify(exec);
 const { contactEmail: SITE_CONTACT_EMAIL } = JSON.parse(fsSync.readFileSync(new URL('../site-config.json', import.meta.url), 'utf8'));
 
 
-// ffmpeg path (full path for Windows compatibility)
-const FFMPEG_PATH = process.env.FFMPEG_PATH ||
-  "C:\\Users\\kolin\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.0.1-full_build\\bin\\ffmpeg.exe";
+// ffmpeg path: set FFMPEG_PATH to a full path if ffmpeg is not on PATH
+const FFMPEG_PATH = process.env.FFMPEG_PATH || "ffmpeg";
 
 // Generate video thumbnail using ffmpeg
 async function generateVideoThumbnail(videoPath, outputPath) {
@@ -2927,7 +2926,7 @@ async function writeSecurityTxt() {
   const securityDir = path.join('site', '.well-known');
   await fs.mkdir(securityDir, { recursive: true });
 
-  const security = `Contact: https://x.com/koltregaskes\nPreferred-Languages: en-GB\nCanonical: ${SITE_URL}/.well-known/security.txt\n`;
+  const security = `Contact: mailto:${SITE_CONTACT_EMAIL}\nPreferred-Languages: en-GB\nCanonical: ${SITE_URL}/.well-known/security.txt\n`;
   await fs.writeFile(path.join(securityDir, 'security.txt'), security, 'utf8');
 }
 
