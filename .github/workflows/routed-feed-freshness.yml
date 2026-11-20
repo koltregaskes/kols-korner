@@ -38,3 +38,16 @@ jobs:
           path: proof/public-feed-proof.json
           if-no-files-found: error
           retention-days: 30
+
+      - name: Check uptime, source freshness and failed or missed workflows
+        if: always()
+        run: node scripts/monitor-launch.mjs launch/launch-pack.json proof/launch-monitor.json
+
+      - name: Retain named operator alert handoff for the existing Chief
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: launch-monitor
+          path: proof/launch-monitor.json
+          if-no-files-found: error
+          retention-days: 30

@@ -1,0 +1,21 @@
+// No listener or public mutation: use the existing retained restore as the build root.
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+const root=path.resolve(process.argv[2]||'');
+const local=path.resolve('.local')+path.sep;
+if(!root.startsWith(local)||path.basename(root)!=='restored')throw Error('Use a fresh .local backup-rehearsal-*/restored directory');
+execFileSync(process.execPath,['scripts/build.mjs'],{cwd:root,stdio:'inherit'});
+const file=path.join(root,'site/index.html'),good=await fs.readFile(file);
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const baseline=sha(good);
+await fs.writeFile(path.join(root,'../known-good-index.html'),good,{flag:'wx'});
+await fs.writeFile(file,Buffer.concat([good,Buffer.from('\n<!-- local rollback drill marker -->')]));
+const changed=sha(await fs.readFile(file));if(changed===baseline)throw Error('Drill failed to introduce change');
+await fs.copyFile(file,path.join(root,'../changed-index.html'),fs.constants.COPYFILE_EXCL);
+await fs.writeFile(file,good);
+const restored=sha(await fs.readFile(file));if(restored!==baseline)throw Error('Rollback mismatch');
+const receipt={time:new Date().toISOString(),scope:'isolated built homepage rollback; not production',baseline,changed,restored,changedDetected:changed!==baseline,rollbackVerified:restored===baseline};
+await fs.writeFile(path.join(root,'../rollback-receipt.json'),JSON.stringify(receipt,null,2),{flag:'wx'});
+console.log(JSON.stringify(receipt,null,2));

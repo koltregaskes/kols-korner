@@ -1,0 +1,38 @@
+{
+  "time": "2026-11-17T13:29:25.537Z",
+  "site": "Kol's Korner",
+  "operator": "Claude, existing Kol's Korner operations owner",
+  "checks": [
+    {
+      "name": "uptime",
+      "state": "verified"
+    },
+    {
+      "name": "freshness",
+      "state": "failed",
+      "reason": "stale public feed"
+    },
+    {
+      "name": "pages.yml",
+      "state": "verified"
+    },
+    {
+      "name": "refresh-routed-feed.yml",
+      "state": "verified"
+    },
+    {
+      "name": "publish-routed-digest.yml",
+      "state": "verified"
+    },
+    {
+      "name": "routed-feed-freshness.yml",
+      "state": "verified"
+    }
+  ],
+  "state": "failed",
+  "alert": {
+    "destination": "https://github.com/koltregaskes/rooms-os-hub/issues/517",
+    "delivery": "unverified; existing Chief must relay through the private hub connector",
+    "comment": "To: agent:claude: Kol's Korner monitoring FAILED. freshness: stale public feed. Preserve last good release; inspect source and deployment before retrying. Codex, Gaming-Laptop, via T3 Code Chief of Staff"
+  }
+}
