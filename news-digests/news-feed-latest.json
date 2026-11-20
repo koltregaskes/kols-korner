@@ -1,34 +1,11 @@
 {
-  "generated": "2026-11-19T14:23:33.810Z",
+  "generated": "2026-11-20T13:58:35.599Z",
   "site": "Kol's Korner",
   "article_count": 15,
   "articles": [
     {
-      "title": "Superhuman pushes its Go assistant everywhere",
-      "url": "https://techcrunch.com/2026/11/19/superhuman-pushes-its-go-assistant-everywhere/",
-      "source": "TechCrunch AI",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "matching_tags": [
-        "product_launch",
-        "announcement",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "importance": 0.45,
-      "date": "2026-11-19T14:00:00.000Z",
-      "summary": "Superhuman is making Go its central agent and making it available in Docs and Mail",
-      "category": "industry-media"
-    },
-    {
-      "title": "Anthropic’s hypothetical $602 billion-a-year hurdle comes with a big asterisk",
-      "url": "https://www.digg.com/ai/w6714ptm",
+      "title": "Signal’s new AI defense has an awkward casualty: screenshots",
+      "url": "https://www.digg.com/ai/v80g7kni",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -46,13 +23,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-19T11:44:42.288Z",
-      "summary": "The calculation assumes $1 trillion in capital, 20% return on invested capital, 40% operating margin and 17% effective tax rate.",
+      "date": "2026-11-20T12:47:08.000Z",
+      "summary": "Signal’s screenshot restrictions target chat-reading AI, but ordinary captures get blocked too—and the company warns protection is incomplete.",
       "category": "industry-media"
     },
     {
-      "title": "Anthropic prices IPO at $83 a share, Kobeissi Letter reports",
-      "url": "https://www.digg.com/ai/43y0epsk",
+      "title": "Ex-OpenAI research chief says runaway AI has a bulldozer problem",
+      "url": "https://www.digg.com/ai/3qydf8t3",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -70,13 +47,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-19T11:04:31.422Z",
-      "summary": "Citing Bloomberg, Kobeissi Letter says the price topped Anthropic’s marketed range of $70 to $78.",
+      "date": "2026-11-20T12:15:25.513Z",
+      "summary": "Bob McGrew argues automated researchers deliver a big, bounded boost because GPUs, experiments and factories still set the pace.",
       "category": "industry-media"
     },
     {
-      "title": "TMol brings molecular physics to PyTorch. The atoms have notes.",
-      "url": "https://www.digg.com/ai/x93v23hb",
+      "title": "GPT-6.2 Astra leads floorplan benchmark, Andon Labs says",
+      "url": "https://www.digg.com/ai/8nixhxl8",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -94,13 +71,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-19T08:17:46.421Z",
-      "summary": "The library combines Rosetta-style energy scoring, GPU batching and coordinate gradients so compatible models can use molecular-energy feedback.",
+      "date": "2026-11-20T10:24:33.707Z",
+      "summary": "Andon Labs says Astra ranks first and Sol third in a test turning apartment photos into floorplans.",
       "category": "industry-media"
     },
     {
-      "title": "MParakhin defends Google’s model lineup after willcb’s “Gemini 4 Sodium” jab",
-      "url": "https://www.digg.com/ai/1uhhqeg7",
+      "title": "Tesla Asia says Giga Shanghai gave production leftovers a new job: Musk’s gift",
+      "url": "https://www.digg.com/ai/05vciv06",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -118,13 +95,109 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-19T06:24:45.831Z",
-      "summary": "MParakhin argues Google should release its best models, answering willcb’s element-themed jab at confusing tiers.",
+      "date": "2026-11-20T10:24:30.389Z",
+      "summary": "Tesla Asia says Musk’s thank-you visit brought a gift in return, crafted at Giga Shanghai from production leftovers.",
       "category": "industry-media"
     },
     {
-      "title": "Analyzing Learned Convnet Features with Dirichlet Process Gaussian Mixture Models",
-      "url": "https://arxiv.org/abs/1702.07189",
+      "title": "House records show nearly 880,000 AI chips approved for Chinese firms. Approval isn’t delivery.",
+      "url": "https://www.digg.com/ai/e8jc3mkq",
+      "source": "Digg AI",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "matching_tags": [
+        "announcement",
+        "industry_move",
+        "open_source",
+        "model_release",
+        "ai_agents"
+      ],
+      "importance": 0.45,
+      "date": "2026-11-20T09:16:44.995Z",
+      "summary": "The May 11 records list Nvidia and AMD approvals as “not shipped”; they don’t establish subsequent deliveries.",
+      "category": "industry-media"
+    },
+    {
+      "title": "Qwen3.8-27B’s pi adapter reports better coding scores—and fewer trips to the toolbox",
+      "url": "https://www.digg.com/ai/xuc4t331",
+      "source": "Digg AI",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "matching_tags": [
+        "announcement",
+        "industry_move",
+        "open_source",
+        "model_release",
+        "ai_agents"
+      ],
+      "importance": 0.45,
+      "date": "2026-11-20T09:16:25.921Z",
+      "summary": "Its model card reports higher benchmark scores and fewer tool calls, but the local GGUF version hasn’t been re-evaluated.",
+      "category": "industry-media"
+    },
+    {
+      "title": "Dragos says prompt traps exposed breaches at three AI providers",
+      "url": "https://www.digg.com/ai/v4we0213",
+      "source": "Digg AI",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "matching_tags": [
+        "announcement",
+        "industry_move",
+        "open_source",
+        "model_release",
+        "ai_agents"
+      ],
+      "importance": 0.45,
+      "date": "2026-11-20T07:25:35.028Z",
+      "summary": "Dragos reports prompt theft through reseller logs and privacy failures, including ignored zero-data-retention settings.",
+      "category": "industry-media"
+    },
+    {
+      "title": "Nous Research says Hermes Enterprise is clocking in on Microsoft Teams and Azure",
+      "url": "https://www.digg.com/ai/kpagcgzg",
+      "source": "Digg AI",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
+      ],
+      "matching_tags": [
+        "announcement",
+        "industry_move",
+        "open_source",
+        "model_release",
+        "ai_agents"
+      ],
+      "importance": 0.45,
+      "date": "2026-11-20T07:06:16.629Z",
+      "summary": "Nous Research says Hermes brings reusable skills to office work, with team sharing subject to review.",
+      "category": "industry-media"
+    },
+    {
+      "title": "Human-AI Interactions and Societal Pitfalls",
+      "url": "https://arxiv.org/abs/2309.10448",
       "source": "arXiv cs.AI",
       "tags": [
         "research_paper",
@@ -137,13 +210,13 @@
         "reasoning"
       ],
       "importance": 0.45,
-      "date": "2026-11-19T05:00:00.000Z",
-      "summary": "arXiv:1702.07189v1 Announce Type: cross Abstract: Convolutional Neural Networks (Convnets) have achieved good results in a range of computer vision tasks the recent years. Though given a lot of attention, visualizing the learned representations to interpret Convnets, still remains a challenging task. The high dimensionality of internal representations and the high abstractions of deep layers are the main challenges when visualizing Convnet functionality. We present in this paper a technique based on clustering internal Convnet representations with a Dirichlet Process Gaussian Mixture Model, for visualization of learned representations in Convnets. Our method copes with the high dimensionalit",
+      "date": "2026-11-20T05:00:00.000Z",
+      "summary": "arXiv:2309.10448v5 Announce Type: replace Abstract: When working with generative artificial intelligence (AI), users may see productivity gains, but the AI-generated content may not match their preferences exactly. To study this effect, we introduce a Bayesian framework in which heterogeneous users choose how much information to share with the AI, facing a trade-off between output fidelity and communication cost. We show that the interplay between these individual-level decisions and AI training may lead to societal challenges. Outputs may become more homogenized, especially when the AI is trained on AI-generated content, potentially triggering a homogenization death spiral. And any AI bias ",
       "category": "research-feed"
     },
     {
-      "title": "AI Simulations Grounded in Rich Self-Reports Increase Accuracy and Reduce Distortion",
-      "url": "https://arxiv.org/abs/2411.10109",
+      "title": "Co-Pilot for Health: Personalized Algorithmic AI Nudging to Improve Health Outcomes",
+      "url": "https://arxiv.org/abs/2401.10816",
       "source": "arXiv cs.AI",
       "tags": [
         "research_paper",
@@ -156,13 +229,13 @@
         "reasoning"
       ],
       "importance": 0.45,
-      "date": "2026-11-19T05:00:00.000Z",
-      "summary": "arXiv:2411.10109v4 Announce Type: replace Abstract: AI simulations of people built from demographic prompts often misjudge individuals and distort sample-level patterns. We test whether rich self-report data reduce these problems. We developed an AI voice interviewer and conducted two-hour interviews following the American Voices Project protocol with 1,052 U.S. adults, who also completed surveys and behavioral experiments. For each participant, we compared simulations prompted with demographic attributes, self-authored personas, survey responses, interview responses, or combined surveys and interviews. We evaluated accuracy on held-out responses, and measured eight statistical distortions a",
+      "date": "2026-11-20T05:00:00.000Z",
+      "summary": "arXiv:2401.10816v3 Announce Type: replace-cross Abstract: The ability to shape health behaviors of large populations automatically, across wearable types and disease conditions at scale has tremendous potential to improve global health outcomes. We designed and implemented an AI driven platform for digital algorithmic nudging, enabled by a Graph-Neural Network (GNN) based Recommendation System, and granular health behavior data from wearable fitness devices. Here we describe the efficacy results of this platform with its capabilities of personalized and contextual nudging to $n=84,764$ individuals over a 12-week period in Singapore. We statistically validated that participants in the target ",
       "category": "research-feed"
     },
     {
-      "title": "NS-Gym: A Comprehensive and Open-Source Simulation Framework for Non-Stationary Markov Decision Processes",
-      "url": "https://arxiv.org/abs/2501.09646",
+      "title": "Games played by Exponential Weights Algorithms",
+      "url": "https://arxiv.org/abs/2407.06676",
       "source": "arXiv cs.AI",
       "tags": [
         "research_paper",
@@ -175,13 +248,13 @@
         "reasoning"
       ],
       "importance": 0.45,
-      "date": "2026-11-19T05:00:00.000Z",
-      "summary": "arXiv:2501.09646v2 Announce Type: replace Abstract: Many real-world applications require decision-making where the environmental dynamics evolve over time. These non-stationary environments pose significant challenges to traditional decision-making models, which typically assume stationary dynamics. Non-stationary Markov decision processes (NS-MDPs) offer a framework to model and solve decision problems under such changing conditions. However, there are no standardized simulation frameworks for NS-MDPs, as opposed to widely popular frameworks for stationary problems. We present NS-Gym, the first simulation toolkit designed explicitly for NS-MDPs, integrated within the popular Gymnasium frame",
+      "date": "2026-11-20T05:00:00.000Z",
+      "summary": "arXiv:2407.06676v2 Announce Type: replace Abstract: This paper studies the last-iterate convergence properties of the exponential weights algorithm with constant learning rates. We consider a repeated interaction in discrete time, where each player uses an exponential weights algorithm characterized by an initial mixed action and a fixed learning rate, so that the mixed action profile $p^t$ played at stage $t$ follows an homogeneous Markov chain. At first, we show that whenever a strict Nash equilibrium exists, the probability to play a strict Nash equilibrium at the next stage converges almost surely to 0 or 1. Secondly, we show that the limit of $p^t$, whenever it exists, belongs to the se",
       "category": "research-feed"
     },
     {
-      "title": "Exploring Explainable Multi-agent MCTS-minimax Hybrids in Board Game Using Process Mining",
-      "url": "https://arxiv.org/abs/2503.23326",
+      "title": "I2I Backdoor: Backdoor Attacks against Image-to-Image Tasks",
+      "url": "https://arxiv.org/abs/2407.10445",
       "source": "arXiv cs.AI",
       "tags": [
         "research_paper",
@@ -194,13 +267,13 @@
         "reasoning"
       ],
       "importance": 0.45,
-      "date": "2026-11-19T05:00:00.000Z",
-      "summary": "arXiv:2503.23326v4 Announce Type: replace Abstract: Monte-Carlo Tree Search (MCTS) is a family of sampling-based search algorithms widely used for online planning in sequential decision-making domains and at the heart of many recent advances in artificial intelligence. Understanding the behavior of MCTS agents is difficult for developers and users due to the frequently large and complex search trees that result from the simulation of many possible futures, their evaluations, and their relationships. This paper presents our ongoing investigation into potential explanations for the decision-making and behavior of MCTS. A weakness of MCTS is that it constructs a highly selective tree and, as a ",
+      "date": "2026-11-20T05:00:00.000Z",
+      "summary": "arXiv:2407.10445v2 Announce Type: replace-cross Abstract: With the rapid development of deep learning technology, deep learning-based Image-to-Image (I2I) networks have become the predominant choice for I2I tasks like image super-resolution and denoising. Despite their remarkable performance, the security of I2I networks has not been thoroughly investigated. While some studies have probed their susceptibility to adversarial attacks, none have explored the backdoor attack against I2I networks, which is a more stealthy and severe threat. In this work, for the first time, we comprehensively investigate the vulnerability of I2I networks to backdoor attacks. We propose a backdoor attack against I",
       "category": "research-feed"
     },
     {
-      "title": "Human-like Semantic Navigation for Autonomous Driving using Knowledge Representation and Large Language Models",
-      "url": "https://arxiv.org/abs/2505.16498",
+      "title": "Design Optimization of Nuclear Fusion Reactor through Deep Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2409.08231",
       "source": "arXiv cs.AI",
       "tags": [
         "research_paper",
@@ -213,13 +286,13 @@
         "reasoning"
       ],
       "importance": 0.45,
-      "date": "2026-11-19T05:00:00.000Z",
-      "summary": "arXiv:2505.16498v2 Announce Type: replace-cross Abstract: Achieving full automation in self-driving vehicles remains a challenge, especially in dynamic urban environments where navigation requires real-time adaptability. Existing systems struggle to handle navigation plans when faced with unpredictable changes in road layouts, spontaneous detours, or missing map data, due to their heavy reliance on predefined cartographic information. In this work, we explore the use of Large Language Models to generate Answer Set Programming rules by translating informal navigation instructions into structured, logic-based reasoning. ASP provides non-monotonic reasoning, allowing autonomous vehicles to adap",
+      "date": "2026-11-20T05:00:00.000Z",
+      "summary": "arXiv:2409.08231v2 Announce Type: replace-cross Abstract: In this research, we investigate deep reinforcement learning (DRL) as a practical tool for constrained, multi-objective optimization for tokamak fusion reactor designs. The task is to optimize the design configurations that minimize building cost while achieving high energy gain and long energy confinement time, subject to the four operational limits required for stable operation. Due to the coupled physics-engineering evaluation, the resulting objectives and constraints are black-box, making it challenging to find optimal solutions with conventional search strategies. To address this, we implement Reward-Constrained Policy Optimizati",
       "category": "research-feed"
     },
     {
-      "title": "Evaluating and Mitigating Skin Color Bias in Skin Lesion Classificatio",
-      "url": "https://arxiv.org/abs/2506.11627",
+      "title": "Mixtures of In-Context Learners",
+      "url": "https://arxiv.org/abs/2411.02830",
       "source": "arXiv cs.AI",
       "tags": [
         "research_paper",
@@ -232,13 +305,13 @@
         "reasoning"
       ],
       "importance": 0.45,
-      "date": "2026-11-19T05:00:00.000Z",
-      "summary": "arXiv:2506.11627v2 Announce Type: replace-cross Abstract: Skin lesion classifiers may overlook performance disparity because of subtle skin tone variations by treating skin tone as a categorical attribute. This study proposes a method that represents skin tone as a continuous attribute and assigns individual weights to each sample based on its nonlinear relationship with classification performance. Evaluations on two dermatological datasets showed that fairness metrics were sensitive to skin-color categorization. The proposed method also demonstrated more stable fairness improvements than conventional categorical reweighting while generally preserving classification performance.",
+      "date": "2026-11-20T05:00:00.000Z",
+      "summary": "arXiv:2411.02830v2 Announce Type: replace-cross Abstract: In-context learning (ICL) adapts LLMs by providing demonstrations without fine-tuning the model parameters; however, it does not differentiate between demonstrations and quadratically increases the complexity of Transformer LLMs, exhausting the memory. As a solution, we propose Mixtures of In-Context Learners (MoICL), a novel approach to treat subsets of demonstrations as experts and learn a weighting function to merge their output distributions based on a training set. In our experiments, we show performance improvements on 5 out of 7 classification datasets compared to a set of strong baselines (up to +13\\% compared to ICL and LENS)",
       "category": "research-feed"
     },
     {
-      "title": "Recursive Learning-Based Virtual Buffering for Analytical Global Placement",
-      "url": "https://arxiv.org/abs/2506.17247",
+      "title": "MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents",
+      "url": "https://arxiv.org/abs/2503.01935",
       "source": "arXiv cs.AI",
       "tags": [
         "research_paper",
@@ -251,65 +324,8 @@
         "reasoning"
       ],
       "importance": 0.45,
-      "date": "2026-11-19T05:00:00.000Z",
-      "summary": "arXiv:2506.17247v3 Announce Type: replace-cross Abstract: Due to the skewed scaling of interconnect versus cell delay in modern technology nodes, placement with buffer porosity (i.e., cell density) awareness is essential for timing closure in physical synthesis flows. However, existing approaches face two key challenges: (i) traditional van Ginneken-Lillis-style buffering approaches are computationally expensive during global placement; and (ii) machine learning-based approaches, such as BufFormer, lack a thorough consideration of Electrical Rule Check (ERC) violations and fail to \"close the loop\" back into the physical design flow. In this work, we propose MLBuf-RePlAce, the first open-sour",
-      "category": "research-feed"
-    },
-    {
-      "title": "QUTCC: Quantile Uncertainty Training and Conformal Calibration for Imaging Inverse Problems",
-      "url": "https://arxiv.org/abs/2507.14760",
-      "source": "arXiv cs.AI",
-      "tags": [
-        "research_paper",
-        "evaluation",
-        "reasoning",
-        "ai_agents"
-      ],
-      "matching_tags": [
-        "ai_agents",
-        "reasoning"
-      ],
-      "importance": 0.45,
-      "date": "2026-11-19T05:00:00.000Z",
-      "summary": "arXiv:2507.14760v3 Announce Type: replace-cross Abstract: While deep learning offers tremendous promise for scientific and medical imaging, any failures and hallucinations (predictions that do not coincide with reality) are hard to pinpoint and can have serious downstream consequences. Uncertainty estimation techniques, such as conformal prediction, can help by predicting statistically valid error bars for a model's prediction. However, popular conformal prediction methods were not designed for high-dimensional image-valued problems and do not take into account spatial correlations within an image during conformal calibration, resulting in larger-than-necessary uncertainty intervals. We prop",
-      "category": "research-feed"
-    },
-    {
-      "title": "Building verifiable databases at scale from the chemical literature via a multi-agent system",
-      "url": "https://arxiv.org/abs/2507.20230",
-      "source": "arXiv cs.AI",
-      "tags": [
-        "research_paper",
-        "evaluation",
-        "reasoning",
-        "ai_agents"
-      ],
-      "matching_tags": [
-        "ai_agents",
-        "reasoning"
-      ],
-      "importance": 0.45,
-      "date": "2026-11-19T05:00:00.000Z",
-      "summary": "arXiv:2507.20230v4 Announce Type: replace Abstract: Accelerating chemical research with artificial intelligence requires high-quality databases. However, many reactions exist only as graphics drawn for human readers, which machines must read exactly. Specialist software is precise but rigid, whereas multimodal language models are flexible yet often write incorrect structures; neither flags errors. We present ChemEAGLE, a multi-agent system where tools supply structures and a language model extends their reach through judgments that programs apply. On 424 published graphics, its F1 score for exactly correct reactions was 82.2%, against 47.7% for a tool-equipped generalist agent, and calibrate",
-      "category": "research-feed"
-    },
-    {
-      "title": "TAR: Temporal Anchor-Constrained Reasoning for Video Temporal Grounding",
-      "url": "https://arxiv.org/abs/2508.07683",
-      "source": "arXiv cs.AI",
-      "tags": [
-        "research_paper",
-        "evaluation",
-        "reasoning",
-        "ai_agents"
-      ],
-      "matching_tags": [
-        "ai_agents",
-        "reasoning"
-      ],
-      "importance": 0.45,
-      "date": "2026-11-19T05:00:00.000Z",
-      "summary": "arXiv:2508.07683v3 Announce Type: replace-cross Abstract: Video Temporal Grounding (VTG) aims to localize specific video segments corresponding to natural language queries. While recent Large Vision-Language Models (LVLMs) employ Reinforcement Learning to generate Chains-of-Thought (CoT), they typically rely solely on outcome-based supervision. Consequently, this often leads to hallucinations, where the reasoning process becomes disconnected from the visual content and the final prediction. Existing attempts to mitigate this by relying on external supervision from larger models or separate reward models are computationally expensive and prone to rigid patterns. To address these challenges, w",
+      "date": "2026-11-20T05:00:00.000Z",
+      "summary": "arXiv:2503.01935v2 Announce Type: replace-cross Abstract: Large Language Models (LLMs) have shown remarkable capabilities as autonomous agents, yet existing benchmarks either focus on single-agent tasks or are confined to narrow domains, failing to capture the dynamics of multi-agent coordination and competition. In this paper, we introduce MultiAgentBench, a comprehensive benchmark designed to evaluate LLM-based multi-agent systems across diverse, interactive scenarios. Our framework measures not only task completion but also the quality of collaboration and competition using novel, milestone-based key performance indicators. Moreover, we evaluate various coordination protocols (including s",
       "category": "research-feed"
     }
   ],
