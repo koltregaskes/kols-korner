@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-20T13:58:35.599Z",
+  "generated": "2026-11-21T13:26:25.422Z",
   "site": "Kol's Korner",
   "article_count": 15,
   "articles": [
     {
-      "title": "Signal’s new AI defense has an awkward casualty: screenshots",
-      "url": "https://www.digg.com/ai/v80g7kni",
+      "title": "OpenAI says its model beat square grids in Erdős’s unit-distance problem",
+      "url": "https://www.digg.com/ai/i9z9e1cr",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -23,13 +23,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T12:47:08.000Z",
-      "summary": "Signal’s screenshot restrictions target chat-reading AI, but ordinary captures get blocked too—and the company warns protection is incomplete.",
+      "date": "2026-11-21T13:15:14.614Z",
+      "summary": "OpenAI calls the result the first autonomous AI solution to a prominent open problem in mathematics.",
       "category": "industry-media"
     },
     {
-      "title": "Ex-OpenAI research chief says runaway AI has a bulldozer problem",
-      "url": "https://www.digg.com/ai/3qydf8t3",
+      "title": "OVHcloud launches Olala mini, says the GPU is optional",
+      "url": "https://www.digg.com/ai/xr9zvhmf",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -47,13 +47,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T12:15:25.513Z",
-      "summary": "Bob McGrew argues automated researchers deliver a big, bounded boost because GPUs, experiments and factories still set the pace.",
+      "date": "2026-11-21T12:06:05.543Z",
+      "summary": "The seven-billion-parameter model has downloadable weights, though familiar local AI apps reportedly weren't ready for its architecture.",
       "category": "industry-media"
     },
     {
-      "title": "GPT-6.2 Astra leads floorplan benchmark, Andon Labs says",
-      "url": "https://www.digg.com/ai/8nixhxl8",
+      "title": "LeCun and coauthors propose an AI hindsight shortcut—with physics in the fine print",
+      "url": "https://www.digg.com/ai/e7dx3zcw",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -71,13 +71,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T10:24:33.707Z",
-      "summary": "Andon Labs says Astra ranks first and Sol third in a test turning apartment photos into floorplans.",
+      "date": "2026-11-21T11:05:33.424Z",
+      "summary": "Their preprint reports counterfactual R² rising from 38–46% to 86–96% across four simulators, using the same predictors.",
       "category": "industry-media"
     },
     {
-      "title": "Tesla Asia says Giga Shanghai gave production leftovers a new job: Musk’s gift",
-      "url": "https://www.digg.com/ai/05vciv06",
+      "title": "Sam Bankman-Fried puts AI extinction risk around 25%—and stays bullish on Anthropic",
+      "url": "https://www.digg.com/ai/8bv6hu4u",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -95,13 +95,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T10:24:30.389Z",
-      "summary": "Tesla Asia says Musk’s thank-you visit brought a gift in return, crafted at Giga Shanghai from production leftovers.",
+      "date": "2026-11-21T10:45:04.806Z",
+      "summary": "The former Anthropic investor gave a teen podcaster his speculative AI doom estimate, with some very large caveats.",
       "category": "industry-media"
     },
     {
-      "title": "House records show nearly 880,000 AI chips approved for Chinese firms. Approval isn’t delivery.",
-      "url": "https://www.digg.com/ai/e8jc3mkq",
+      "title": "_mohansolo says Antigravity’s Gemini quotas are reset",
+      "url": "https://www.digg.com/ai/do6njmen",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -119,13 +119,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T09:16:44.995Z",
-      "summary": "The May 11 records list Nvidia and AMD approvals as “not shipped”; they don’t establish subsequent deliveries.",
+      "date": "2026-11-21T09:42:44.596Z",
+      "summary": "_mohansolo says caching improvements let users get 22% more done within their quota on Antigravity.",
       "category": "industry-media"
     },
     {
-      "title": "Qwen3.8-27B’s pi adapter reports better coding scores—and fewer trips to the toolbox",
-      "url": "https://www.digg.com/ai/xuc4t331",
+      "title": "Jensen Huang reportedly mocked Mistral chief Arthur Mensch’s French accent at GTC",
+      "url": "https://www.digg.com/ai/trmm4t4p",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -143,13 +143,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T09:16:25.921Z",
-      "summary": "Its model card reports higher benchmark scores and fewer tool calls, but the local GGUF version hasn’t been re-evaluated.",
+      "date": "2026-11-21T08:24:55.814Z",
+      "summary": "Footage of a March panel has reportedly resurfaced amid allegations that Huang humiliated and threatened employees.",
       "category": "industry-media"
     },
     {
-      "title": "Dragos says prompt traps exposed breaches at three AI providers",
-      "url": "https://www.digg.com/ai/v4we0213",
+      "title": "Heave-Ho’s robot moving crew takes its orders out loud",
+      "url": "https://www.digg.com/ai/zc7tsis8",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -167,13 +167,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T07:25:35.028Z",
-      "summary": "Dragos reports prompt theft through reseller logs and privacy failures, including ignored zero-data-retention settings.",
+      "date": "2026-11-21T08:15:55.599Z",
+      "summary": "Researchers say humanoids can synchronize carrying tasks through spoken commands, without exchanging network messages between robots.",
       "category": "industry-media"
     },
     {
-      "title": "Nous Research says Hermes Enterprise is clocking in on Microsoft Teams and Azure",
-      "url": "https://www.digg.com/ai/kpagcgzg",
+      "title": "A decade later, tszzl salutes Lee Sedol’s grace in defeat",
+      "url": "https://www.digg.com/ai/5t128ejf",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -191,142 +191,164 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T07:06:16.629Z",
-      "summary": "Nous Research says Hermes brings reusable skills to office work, with team sharing subject to review.",
+      "date": "2026-11-21T07:45:12.078Z",
+      "summary": "In a response to tszzl’s tribute, lishali88 shares a passage on why one win against AlphaGo mattered.",
       "category": "industry-media"
     },
     {
-      "title": "Human-AI Interactions and Societal Pitfalls",
-      "url": "https://arxiv.org/abs/2309.10448",
-      "source": "arXiv cs.AI",
+      "title": "Google rolls out new search homepage with AI chat history and no search button",
+      "url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/",
+      "source": "Ars Technica AI",
       "tags": [
         "research_paper",
-        "evaluation",
-        "reasoning",
-        "ai_agents"
+        "open_source",
+        "hardware",
+        "policy"
       ],
       "matching_tags": [
-        "ai_agents",
-        "reasoning"
+        "policy",
+        "open_source",
+        "hardware"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T05:00:00.000Z",
-      "summary": "arXiv:2309.10448v5 Announce Type: replace Abstract: When working with generative artificial intelligence (AI), users may see productivity gains, but the AI-generated content may not match their preferences exactly. To study this effect, we introduce a Bayesian framework in which heterogeneous users choose how much information to share with the AI, facing a trade-off between output fidelity and communication cost. We show that the interplay between these individual-level decisions and AI training may lead to societal challenges. Outputs may become more homogenized, especially when the AI is trained on AI-generated content, potentially triggering a homogenization death spiral. And any AI bias ",
-      "category": "research-feed"
+      "date": "2026-11-20T21:58:29.000Z",
+      "summary": "Google search is making it even easier to access AI tools on the search page.",
+      "category": "industry-media"
     },
     {
-      "title": "Co-Pilot for Health: Personalized Algorithmic AI Nudging to Improve Health Outcomes",
-      "url": "https://arxiv.org/abs/2401.10816",
-      "source": "arXiv cs.AI",
+      "title": "Daniel Ek backs AI researcher’s fusion power startup. Here’s what they’re building.",
+      "url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building/",
+      "source": "TechCrunch AI",
       "tags": [
-        "research_paper",
-        "evaluation",
-        "reasoning",
-        "ai_agents"
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
       ],
       "matching_tags": [
-        "ai_agents",
-        "reasoning"
+        "product_launch",
+        "announcement",
+        "funding",
+        "acquisition",
+        "industry_move"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T05:00:00.000Z",
-      "summary": "arXiv:2401.10816v3 Announce Type: replace-cross Abstract: The ability to shape health behaviors of large populations automatically, across wearable types and disease conditions at scale has tremendous potential to improve global health outcomes. We designed and implemented an AI driven platform for digital algorithmic nudging, enabled by a Graph-Neural Network (GNN) based Recommendation System, and granular health behavior data from wearable fitness devices. Here we describe the efficacy results of this platform with its capabilities of personalized and contextual nudging to $n=84,764$ individuals over a 12-week period in Singapore. We statistically validated that participants in the target ",
-      "category": "research-feed"
+      "date": "2026-11-20T19:53:41.000Z",
+      "summary": "Spotify founder Daniel Ek is backing Europa Fusion, a fusion power startup founded by an AI researcher. Here's what the startup is building.",
+      "category": "industry-media"
     },
     {
-      "title": "Games played by Exponential Weights Algorithms",
-      "url": "https://arxiv.org/abs/2407.06676",
-      "source": "arXiv cs.AI",
+      "title": "AI claimed a solution to the 167-year-old Riemann hypothesis — and a human did, too",
+      "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+      "source": "TechCrunch AI",
       "tags": [
-        "research_paper",
-        "evaluation",
-        "reasoning",
-        "ai_agents"
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
       ],
       "matching_tags": [
-        "ai_agents",
-        "reasoning"
+        "product_launch",
+        "announcement",
+        "funding",
+        "acquisition",
+        "industry_move"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T05:00:00.000Z",
-      "summary": "arXiv:2407.06676v2 Announce Type: replace Abstract: This paper studies the last-iterate convergence properties of the exponential weights algorithm with constant learning rates. We consider a repeated interaction in discrete time, where each player uses an exponential weights algorithm characterized by an initial mixed action and a fixed learning rate, so that the mixed action profile $p^t$ played at stage $t$ follows an homogeneous Markov chain. At first, we show that whenever a strict Nash equilibrium exists, the probability to play a strict Nash equilibrium at the next stage converges almost surely to 0 or 1. Secondly, we show that the limit of $p^t$, whenever it exists, belongs to the se",
-      "category": "research-feed"
+      "date": "2026-11-20T19:32:08.000Z",
+      "summary": "Mathematicians are having their minds blown by the latest AI-driven result — and there's a competing human solution, too.",
+      "category": "industry-media"
     },
     {
-      "title": "I2I Backdoor: Backdoor Attacks against Image-to-Image Tasks",
-      "url": "https://arxiv.org/abs/2407.10445",
-      "source": "arXiv cs.AI",
+      "title": "The most misunderstood graph in AI just got a major update",
+      "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/",
+      "source": "MIT Technology Review AI",
       "tags": [
+        "policy",
         "research_paper",
-        "evaluation",
-        "reasoning",
-        "ai_agents"
+        "industry_move",
+        "ai_safety"
       ],
       "matching_tags": [
-        "ai_agents",
-        "reasoning"
+        "policy",
+        "industry_move",
+        "ai_safety"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T05:00:00.000Z",
-      "summary": "arXiv:2407.10445v2 Announce Type: replace-cross Abstract: With the rapid development of deep learning technology, deep learning-based Image-to-Image (I2I) networks have become the predominant choice for I2I tasks like image super-resolution and denoising. Despite their remarkable performance, the security of I2I networks has not been thoroughly investigated. While some studies have probed their susceptibility to adversarial attacks, none have explored the backdoor attack against I2I networks, which is a more stealthy and severe threat. In this work, for the first time, we comprehensively investigate the vulnerability of I2I networks to backdoor attacks. We propose a backdoor attack against I",
-      "category": "research-feed"
+      "date": "2026-11-20T18:15:15.000Z",
+      "summary": "A new report from the AI evaluation nonprofit METR finds that some AI capabilities are continuing to improve along an exponential trajectory—but it also indicates that models aren’t quite as good at tasks that require judgment as they are at coding. The report is an update to the organization’s time horizon plot, which was widely…",
+      "category": "industry-media"
     },
     {
-      "title": "Design Optimization of Nuclear Fusion Reactor through Deep Reinforcement Learning",
-      "url": "https://arxiv.org/abs/2409.08231",
-      "source": "arXiv cs.AI",
+      "title": "Chips can survive the space environment — can their financing?",
+      "url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing/",
+      "source": "TechCrunch AI",
       "tags": [
-        "research_paper",
-        "evaluation",
-        "reasoning",
-        "ai_agents"
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
       ],
       "matching_tags": [
-        "ai_agents",
-        "reasoning"
+        "product_launch",
+        "announcement",
+        "funding",
+        "acquisition",
+        "industry_move"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T05:00:00.000Z",
-      "summary": "arXiv:2409.08231v2 Announce Type: replace-cross Abstract: In this research, we investigate deep reinforcement learning (DRL) as a practical tool for constrained, multi-objective optimization for tokamak fusion reactor designs. The task is to optimize the design configurations that minimize building cost while achieving high energy gain and long energy confinement time, subject to the four operational limits required for stable operation. Due to the coupled physics-engineering evaluation, the resulting objectives and constraints are black-box, making it challenging to find optimal solutions with conventional search strategies. To address this, we implement Reward-Constrained Policy Optimizati",
-      "category": "research-feed"
+      "date": "2026-11-20T17:40:01.000Z",
+      "summary": "Lenders don't want SpaceX shooting their collateral into orbit. What does that mean for space data centers writ large?",
+      "category": "industry-media"
     },
     {
-      "title": "Mixtures of In-Context Learners",
-      "url": "https://arxiv.org/abs/2411.02830",
-      "source": "arXiv cs.AI",
+      "title": "The fallout from Nvidia’s Jensen Huang scandal continues",
+      "url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues/",
+      "source": "TechCrunch AI",
       "tags": [
-        "research_paper",
-        "evaluation",
-        "reasoning",
-        "ai_agents"
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
       ],
       "matching_tags": [
-        "ai_agents",
-        "reasoning"
+        "product_launch",
+        "announcement",
+        "funding",
+        "acquisition",
+        "industry_move"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T05:00:00.000Z",
-      "summary": "arXiv:2411.02830v2 Announce Type: replace-cross Abstract: In-context learning (ICL) adapts LLMs by providing demonstrations without fine-tuning the model parameters; however, it does not differentiate between demonstrations and quadratically increases the complexity of Transformer LLMs, exhausting the memory. As a solution, we propose Mixtures of In-Context Learners (MoICL), a novel approach to treat subsets of demonstrations as experts and learn a weighting function to merge their output distributions based on a training set. In our experiments, we show performance improvements on 5 out of 7 classification datasets compared to a set of strong baselines (up to +13\\% compared to ICL and LENS)",
-      "category": "research-feed"
+      "date": "2026-11-20T14:55:44.000Z",
+      "summary": "In the midst of dealing with the fallout from its ouster of CEO Jensen Huang, Nvidia delivered its latest earnings report this week, with healthy growth and promises that the good times will continue. At the same time, the chipmaker said it will stop selling its H200 chips in China, and it dismissed calls to […]",
+      "category": "industry-media"
     },
     {
-      "title": "MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents",
-      "url": "https://arxiv.org/abs/2503.01935",
-      "source": "arXiv cs.AI",
+      "title": "Six AI-powered gadgets that could make your home office smarter",
+      "url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter/",
+      "source": "TechCrunch AI",
       "tags": [
-        "research_paper",
-        "evaluation",
-        "reasoning",
-        "ai_agents"
+        "announcement",
+        "product_launch",
+        "funding",
+        "acquisition",
+        "industry_move"
       ],
       "matching_tags": [
-        "ai_agents",
-        "reasoning"
+        "product_launch",
+        "announcement",
+        "funding",
+        "acquisition",
+        "industry_move"
       ],
       "importance": 0.45,
-      "date": "2026-11-20T05:00:00.000Z",
-      "summary": "arXiv:2503.01935v2 Announce Type: replace-cross Abstract: Large Language Models (LLMs) have shown remarkable capabilities as autonomous agents, yet existing benchmarks either focus on single-agent tasks or are confined to narrow domains, failing to capture the dynamics of multi-agent coordination and competition. In this paper, we introduce MultiAgentBench, a comprehensive benchmark designed to evaluate LLM-based multi-agent systems across diverse, interactive scenarios. Our framework measures not only task completion but also the quality of collaboration and competition using novel, milestone-based key performance indicators. Moreover, we evaluate various coordination protocols (including s",
-      "category": "research-feed"
+      "date": "2026-11-20T14:00:00.000Z",
+      "summary": "From notetakers to webcams, here are six AI-powered gadgets to upgrade your workspace.",
+      "category": "industry-media"
     }
   ],
   "failed_sources": [],
