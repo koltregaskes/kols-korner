@@ -1,0 +1,12 @@
+{
+  "site": "Kol's Korner",
+  "repository": "koltregaskes/kols-korner",
+  "origin": "https://koltregaskes.com/",
+  "feed": "data/news-feed-latest.json",
+  "maxAgeHours": 24,
+  "operator": "Claude, existing Kol's Korner operations owner",
+  "alertIssue": "https://github.com/koltregaskes/rooms-os-hub/issues/517",
+  "workflows": ["pages.yml", "refresh-routed-feed.yml", "publish-routed-digest.yml", "routed-feed-freshness.yml"],
+  "routes": ["/", "/about/", "/news/", "/links/", "/404.html"],
+  "canonicalOrigin": "https://koltregaskes.com"
+}

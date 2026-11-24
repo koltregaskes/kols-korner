@@ -1,0 +1,14 @@
+{
+  "status": "prepared only; Kol signs in and approves first deployment and DNS",
+  "projectName": "kols-korner",
+  "projectHostname": "kols-korner.pages.dev",
+  "hostnameStatus": "proposed; confirm availability in Kol's existing account before DNS",
+  "productionBranch": "main",
+  "frameworkPreset": "None",
+  "rootDirectory": ".",
+  "buildCommand": "node scripts/build.mjs && node scripts/check-public-boundary.mjs && python scripts/check-seo.py && python scripts/check-meta-security.py && node scripts/prepare-cloudflare.mjs",
+  "outputDirectory": ".local/cloudflare-site",
+  "environment": {"NODE_VERSION": "24.22.1", "PYTHON_VERSION": "3.12", "CUSTOM_DOMAIN": "koltregaskes.com"},
+  "functions": false,
+  "database": false
+}

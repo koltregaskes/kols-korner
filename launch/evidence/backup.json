@@ -1,0 +1,27 @@
+{
+  "time": "2026-11-17T13:21:16.801Z",
+  "head": "5428e53fc87a67a80c848c51dfeae009479604b2",
+  "inputs": [
+    "content",
+    "news-digests",
+    "site",
+    "scripts",
+    "tests",
+    ".github",
+    "launch",
+    "docs",
+    "package.json",
+    "package-lock.json",
+    "site-config.json",
+    "CNAME",
+    "opinions.txt",
+    "memories.txt",
+    "writing-style.txt",
+    "llms.txt"
+  ],
+  "files": 1177,
+  "bytes": 129543587,
+  "mismatches": [],
+  "archiveSha256": "2bf994b7f5ac7dde8193b3b1aa6d027637801004a661462f070ca24ccfbbc1e6",
+  "scope": "Retained local release snapshot and isolated extraction; not history, off-site backup, provider settings or production rollback"
+}
