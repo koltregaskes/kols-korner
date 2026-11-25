@@ -13,6 +13,26 @@ fs.cpSync('site',path.join(root,'site'),{recursive:true,filter:p=>!/^\.env(?:\.|
 function check(){const r=spawnSync(process.env.PYTHON_EXE || 'python',[path.join(root,'scripts/check-seo.py')],{cwd:root,encoding:'utf8',timeout:30000});assert.ok(!r.error,r.error?.message);return r;}
 function mutate(file,change,pattern){const p=path.join(root,'site',file),original=fs.readFileSync(p);try{fs.writeFileSync(p,change(original));const r=check();assert.notEqual(r.status,0,'corruption passed SEO: '+file);assert.match(r.stdout+r.stderr,pattern);}finally{fs.writeFileSync(p,original)}}
 test('built-output SEO baseline passes',()=>{const r=check();assert.equal(r.status,0,r.stdout+r.stderr)});
+
+const about=fs.readFileSync(path.join(root,'site/about/index.html'),'utf8');
+const aboutTitle=about.match(/<title>([\s\S]*?)<\/title>/i)[1];
+const aboutDescription=about.match(/<meta name="description" content="([^"]*)"/i)[1];
+for (const [label, pattern, value] of [
+ ['HTML title', /(<title>)[\s\S]*?(<\/title>)/i, aboutTitle],
+ ['description', /(<meta name="description" content=")[^"]*(")/i, aboutDescription],
+]) {
+ for (const [variation, transform] of [
+  ['exact', value=>value],
+  ['case and whitespace', value=>'  '+value.toUpperCase().replace(/ /g,'  ')+'  '],
+  ['entity encoded', value=>value.replace(/[A-Za-z]/g,c=>`&#${c.charCodeAt(0)};`)],
+ ]) {
+  test(`SEO rejects ${variation} duplicate ${label} across pages`,()=>mutate('index.html',
+   b=>b.toString().replace(pattern,(_,start,end)=>start+transform(value)+end),
+   new RegExp(`Duplicate ${label} across indexable pages:.*about/`)));
+ }
+}
+test('SEO rejects whitespace-only descriptions',()=>mutate('index.html',
+ b=>b.toString().replace(/(<meta name="description" content=")[^"]*(")/i,'$1   $2'),/Empty description/));
 test('SEO rejects empty llms discovery content',()=>mutate('llms.txt',()=>'',/llms/i));
 test('SEO rejects robots rules that block sitemap pages',()=>mutate('robots.txt',b=>b.toString()+'\nDisallow: /posts/\n',/robots|blocked/i));
 test('SEO rejects corrupt PNG data even with an intact signature and dimensions',()=>mutate('media/social-default.png',b=>{const copy=Buffer.from(b);copy[45]^=1;return copy},/PNG|CRC/i));
