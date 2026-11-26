@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-25T15:33:25.796Z",
+  "generated": "2026-11-26T15:07:57.550Z",
   "site": "Kol's Korner",
   "article_count": 15,
   "articles": [
     {
-      "title": "Andrew Curran repeats rumors of an RSA-breaking advance at OpenAI and Anthropic",
-      "url": "https://www.digg.com/ai/un1k7lhp",
+      "title": "Antigravity users get 28% more Neon tasks within quota, @_mohansolo says",
+      "url": "https://www.digg.com/ai/bojboo76",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -23,13 +23,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-25T15:08:30.187Z",
-      "summary": "Curran says the unconfirmed rumors concern both AI labs and have circulated for about ten days.",
+      "date": "2026-11-26T14:55:35.971Z",
+      "summary": "Caching and harness improvements boosted effective Neon subscription usage nearly 75% in five days, @_mohansolo says.",
       "category": "industry-media"
     },
     {
-      "title": "@ladyxtel claims OpenHuman agents used a Riemann Hypothesis proof to derive 17 results",
-      "url": "https://www.digg.com/ai/wotexdu9",
+      "title": "KimChiSpicey claims Anthropic-linked ties to 178 House members and 68 senators",
+      "url": "https://www.digg.com/ai/1sm4pn1k",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -47,13 +47,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-25T14:18:13.069Z",
-      "summary": "@ladyxtel says six named conjectures were among 17 results, with Lean checking every proof.",
+      "date": "2026-11-26T14:35:47.211Z",
+      "summary": "KimChiSpicey says revised counts include incoming lawmakers, putting its Senate tally at 68 of 98 seats.",
       "category": "industry-media"
     },
     {
-      "title": "Schumer urges bipartisan bills to curb AI-chip exports to China",
-      "url": "https://www.digg.com/ai/8fcn6z7d",
+      "title": "Tim Sweeney shares claim Nvidia just open-sourced Megatron-LM",
+      "url": "https://www.digg.com/ai/60ln56jt",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -71,59 +71,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-25T14:15:15.374Z",
-      "summary": "Rania Khalek challenges lawmakers’ national-security focus, arguing healthcare should take priority over China chip-sales concerns.",
+      "date": "2026-11-26T14:16:17.909Z",
+      "summary": "CrazyShyyt says Nvidia’s Megatron-LM is free and open-source, built to train trillion-parameter language models.",
       "category": "industry-media"
     },
     {
-      "title": "Amazon and Meta reportedly in talks to lift blockade on AI agent Muse",
-      "url": "https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/",
-      "source": "TechCrunch AI",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "matching_tags": [
-        "product_launch",
-        "announcement",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "importance": 0.45,
-      "date": "2026-11-25T14:10:18.000Z",
-      "summary": "Amazon and Meta are discussing a potential deal that would end a two-month-long blockade of Muse.",
-      "category": "industry-media"
-    },
-    {
-      "title": "The questions Jensen Huang and Nvidia will still have to answer about Megaspeed",
-      "url": "https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/",
-      "source": "TechCrunch AI",
-      "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "matching_tags": [
-        "product_launch",
-        "announcement",
-        "funding",
-        "acquisition",
-        "industry_move"
-      ],
-      "importance": 0.45,
-      "date": "2026-11-25T13:00:00.000Z",
-      "summary": "Huang still faces questions from Congress and his own board about his romantic relationship with an alleged chip smuggler.",
-      "category": "industry-media"
-    },
-    {
-      "title": "Mantic says its AI forecaster roughly matches Fable 5.2 (medium) at one-fifteenth the cost per forecast",
-      "url": "https://www.digg.com/ai/5aehzn6t",
+      "title": "ChrisCroy describes a Pangram dispute: ‘100% AI’ dissertation claim, ‘100% human’ excerpts",
+      "url": "https://www.digg.com/ai/ks32u6mi",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -141,13 +95,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-25T12:45:42.107Z",
-      "summary": "The team’s 100,000-forecast S&P 500 demo is a giant what-if exercise, not a sneak peek at 2027.",
+      "date": "2026-11-26T14:05:55.423Z",
+      "summary": "According to ChrisCroy, other users submitted dissertation excerpts to Pangram and received “100% human” results.",
       "category": "industry-media"
     },
     {
-      "title": "RumiFold gives Qwen a protein-folding job before letting it talk",
-      "url": "https://www.digg.com/ai/nriqau60",
+      "title": "Atlassian’s AI chief says one all-builder team needed direction, not more code",
+      "url": "https://www.digg.com/ai/9762moxr",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -165,13 +119,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-25T12:44:58.523Z",
-      "summary": "Northeastern researchers say their adapted chat model predicts protein backbones internally, improving function predictions but weakening general language performance.",
+      "date": "2026-11-26T13:56:35.056Z",
+      "summary": "One product manager reported a return to traditional duties after about a month in Atlassian’s AI-builder experiment, Sherif Mansour says.",
       "category": "industry-media"
     },
     {
-      "title": "Google Research repo says Cogentic generated six new math papers",
-      "url": "https://www.digg.com/ai/0bufqau6",
+      "title": "Creator says they asked AI to give bicycle pelicans the Anthropic launch treatment",
+      "url": "https://www.digg.com/ai/zrzdmjc2",
       "source": "Digg AI",
       "tags": [
         "announcement",
@@ -189,61 +143,13 @@
         "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-25T12:25:45.374Z",
-      "summary": "The GitHub commit promises Lean 4 formalizations of all six proofs in a later companion submission.",
+      "date": "2026-11-26T13:25:10.133Z",
+      "summary": "Claude Pelican 1 is fictional, and its imaginary specialty is wonderfully specific: generating SVG pelicans on bicycles.",
       "category": "industry-media"
     },
     {
-      "title": "Avalon-M1 gives AI agents a CEO and a deadline",
-      "url": "https://www.digg.com/ai/wruc363o",
-      "source": "Digg AI",
-      "tags": [
-        "announcement",
-        "model_release",
-        "open_source",
-        "ai_agents",
-        "research_paper",
-        "industry_move"
-      ],
-      "matching_tags": [
-        "announcement",
-        "industry_move",
-        "open_source",
-        "model_release",
-        "ai_agents"
-      ],
-      "importance": 0.45,
-      "date": "2026-11-25T12:16:06.702Z",
-      "summary": "Researchers report similar average scores at roughly one-third the derived latency of token-matched solo execution, with mixed oversight results.",
-      "category": "industry-media"
-    },
-    {
-      "title": "Calling Slotbound ‘vibe-coded’ skips the work, Gergely Orosz argues",
-      "url": "https://www.digg.com/ai/i62byv73",
-      "source": "Digg AI",
-      "tags": [
-        "announcement",
-        "model_release",
-        "open_source",
-        "ai_agents",
-        "research_paper",
-        "industry_move"
-      ],
-      "matching_tags": [
-        "announcement",
-        "industry_move",
-        "open_source",
-        "model_release",
-        "ai_agents"
-      ],
-      "importance": 0.45,
-      "date": "2026-11-25T11:57:17.453Z",
-      "summary": "Orosz challenged a post touting Slotbound’s claimed $1.33 million week, arguing that AI assistance doesn’t erase its creator’s work.",
-      "category": "industry-media"
-    },
-    {
-      "title": "An Indic Voice Agent with CUGA",
-      "url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+      "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+      "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
       "source": "Hugging Face Blog",
       "tags": [
         "open_source",
@@ -256,98 +162,171 @@
         "model_release"
       ],
       "importance": 0.45,
-      "date": "2026-11-25T10:22:09.000Z",
-      "summary": "An Indic Voice Agent with CUGA",
+      "date": "2026-11-26T11:37:17.000Z",
+      "summary": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
       "category": "platform-blog"
     },
     {
-      "title": "AI is straining America’s open records systems",
-      "url": "https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/",
-      "source": "MIT Technology Review AI",
+      "title": "Torvalds accepts huge AI-assisted ext4 update, delivers the warning in all caps",
+      "url": "https://www.digg.com/ai/sm55cimn",
+      "source": "Digg AI",
       "tags": [
-        "policy",
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
         "research_paper",
+        "industry_move"
+      ],
+      "matching_tags": [
+        "announcement",
         "industry_move",
-        "ai_safety"
+        "open_source",
+        "model_release",
+        "ai_agents"
+      ],
+      "importance": 0.45,
+      "date": "2026-11-26T11:06:12.634Z",
+      "summary": "Torvalds accepted the 41,197-insertion submission for Linux 7.4-rc5, but warned against another oversized, late-cycle update.",
+      "category": "industry-media"
+    },
+    {
+      "title": "GLM-5.5 could slip into 2027—and chips aren’t the only headache",
+      "url": "https://www.digg.com/ai/wm9bthho",
+      "source": "Digg AI",
+      "tags": [
+        "announcement",
+        "model_release",
+        "open_source",
+        "ai_agents",
+        "research_paper",
+        "industry_move"
       ],
       "matching_tags": [
-        "policy",
+        "announcement",
         "industry_move",
-        "ai_safety"
+        "open_source",
+        "model_release",
+        "ai_agents"
       ],
       "importance": 0.45,
-      "date": "2026-11-25T10:00:00.000Z",
-      "summary": "In Panton, Vermont, population 660, town clerk Kyle Rowe did it all. He crafted budgets, paid vendors, handled property tax disputes, and served as the town’s zoning supervisor and presiding elections officer. During morning office hours at the town hall—a wood-frame structure built as a church in 1858—he also fielded public records requests. Recently, he…",
+      "date": "2026-11-26T10:45:42.727Z",
+      "summary": "Anti-distillation safeguards have reportedly slowed Zhipu’s flagship, while new U.S. computing rules threaten to make the wait longer.",
       "category": "industry-media"
     },
     {
-      "title": "Yale’s Sonnenfeld: Nvidia is a ‘detriment’ to US industrial might — not a champion",
-      "url": "https://techcrunch.com/2026/11/24/yales-sonnenfeld-nvidia-is-a-detriment-to-u-s-industrial-might-not-a-champion/",
-      "source": "TechCrunch AI",
+      "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+      "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+      "source": "Hugging Face Blog",
       "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
+        "open_source",
+        "model_release",
+        "tool_use",
+        "agentic_framework"
       ],
       "matching_tags": [
-        "product_launch",
-        "announcement",
-        "funding",
-        "acquisition",
-        "industry_move"
+        "open_source",
+        "model_release"
       ],
       "importance": 0.45,
-      "date": "2026-11-25T00:12:02.000Z",
-      "summary": "Yale's Jeffrey Sonnenfeld warns that what the market cheered Monday, Jensen Huang's White House–backed return as Nvidia's CEO and board member, could prove a giant mistake, exposing the directors to \"historic\" personal liability from a growing pile of lawsuits and raising the question of whether the country is celebrating a company that has helped put advanced chips in its adversaries' hands.",
-      "category": "industry-media"
+      "date": "2026-11-26T05:05:36.000Z",
+      "summary": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+      "category": "platform-blog"
     },
     {
-      "title": "Jensen Huang still thinks a succession plan creates unnecessary hierarchy",
-      "url": "https://techcrunch.com/2026/11/24/jensen-huang-still-thinks-a-succession-plan-creates-unnecessary-hierarchy/",
-      "source": "TechCrunch AI",
+      "title": "HindSight: A Graph-Based Vision Model Architecture For Representing Part-Whole Hierarchies",
+      "url": "https://arxiv.org/abs/2104.03722",
+      "source": "arXiv cs.AI",
       "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
+        "research_paper",
+        "evaluation",
+        "reasoning",
+        "ai_agents"
       ],
       "matching_tags": [
-        "product_launch",
-        "announcement",
-        "funding",
-        "acquisition",
-        "industry_move"
+        "ai_agents",
+        "reasoning"
       ],
       "importance": 0.45,
-      "date": "2026-11-24T22:27:52.000Z",
-      "summary": "It's a remarkable stance for a company that spent the last two weeks finding out what happens without its founder.",
-      "category": "industry-media"
+      "date": "2026-11-26T05:00:00.000Z",
+      "summary": "arXiv:2104.03722v2 Announce Type: replace-cross Abstract: This paper presents a model architecture for encoding the representations of part-whole hierarchies in images in form of a graph. The idea is to divide the image into patches of different levels and then treat all of these patches as nodes for a fully connected graph. A dynamic feature extraction module is used to extract feature representations from these patches in each graph iteration. This enables us to learn a rich graph representation of the image that encompasses the inherent part-whole hierarchical information. Utilizing proper self-supervised training techniques, such a model can be trained as a general purpose vision encoder",
+      "category": "research-feed"
     },
     {
-      "title": "In all-hands meeting, Jensen Huang thanks White House and says he’s in therapy",
-      "url": "https://techcrunch.com/2026/11/24/in-all-hands-meeting-jensen-huang-thanks-white-house-and-says-hes-in-therapy/",
-      "source": "TechCrunch AI",
+      "title": "The necessity of depth for artificial neural networks to approximate certain classes of smooth and bounded functions without the curse of dimensionality",
+      "url": "https://arxiv.org/abs/2301.08284",
+      "source": "arXiv cs.AI",
       "tags": [
-        "announcement",
-        "product_launch",
-        "funding",
-        "acquisition",
-        "industry_move"
+        "research_paper",
+        "evaluation",
+        "reasoning",
+        "ai_agents"
       ],
       "matching_tags": [
-        "product_launch",
-        "announcement",
-        "funding",
-        "acquisition",
-        "industry_move"
+        "ai_agents",
+        "reasoning"
       ],
       "importance": 0.45,
-      "date": "2026-11-24T21:48:27.000Z",
-      "summary": "The Nvidia founder apologized to his staff on Tuesday and said he was grateful for a second chance to lead the company.",
-      "category": "industry-media"
+      "date": "2026-11-26T05:00:00.000Z",
+      "summary": "arXiv:2301.08284v2 Announce Type: replace-cross Abstract: In this article we study high-dimensional approximation capacities of shallow and deep artificial neural networks (ANNs) with the rectified linear unit (ReLU) activation. In particular, it is a key contribution of this work to reveal that for all $a\\in\\mathbb{R}$, $b\\in(a,\\infty)$ with $\\max\\{\\lvert a\\rvert,\\lvert b\\rvert\\}>1$ we have that the functions $[a,b]^d\\ni x=(x_1,\\ldots,x_d)\\mapsto\\prod_{i=1}^d x_i\\in\\mathbb{R}$ for $d\\in\\mathbb{N}=\\{1,2,3,\\ldots\\}$ as well as the functions $[a,b]^d\\ni x=(x_1,\\ldots,x_d)\\mapsto\\sin(\\prod_{i=1}^d x_i)\\in\\mathbb{R}$ for $d\\in\\mathbb{N}$ can neither be approximated without the curse of dimension",
+      "category": "research-feed"
+    },
+    {
+      "title": "Randomized Forward Mode of Automatic Differentiation For Optimization Algorithms",
+      "url": "https://arxiv.org/abs/2310.14168",
+      "source": "arXiv cs.AI",
+      "tags": [
+        "research_paper",
+        "evaluation",
+        "reasoning",
+        "ai_agents"
+      ],
+      "matching_tags": [
+        "ai_agents",
+        "reasoning"
+      ],
+      "importance": 0.45,
+      "date": "2026-11-26T05:00:00.000Z",
+      "summary": "arXiv:2310.14168v4 Announce Type: replace-cross Abstract: Reverse mode automatic differentiation (AD) computes a gradient in a single sweep, but at a memory cost that grows with the length of the computational graph. That cost becomes the binding constraint when the graph is long, as in parameter identification governed by differential equations or in training on memory-limited hardware. We study a randomized forward mode gradient (RFG) as an alternative to backpropagation in precisely this regime. RFG is a random gradient estimator built from the directional derivative along a random vector, a quantity that forward mode AD computes without storing a tape. Replacing the gradient with RFG yie",
+      "category": "research-feed"
+    },
+    {
+      "title": "MMGenBench: An Automated Pipeline for Evaluating LMMs from a Text-to-Image Generation Perspective",
+      "url": "https://arxiv.org/abs/2411.14062",
+      "source": "arXiv cs.AI",
+      "tags": [
+        "research_paper",
+        "evaluation",
+        "reasoning",
+        "ai_agents"
+      ],
+      "matching_tags": [
+        "ai_agents",
+        "reasoning"
+      ],
+      "importance": 0.45,
+      "date": "2026-11-26T05:00:00.000Z",
+      "summary": "arXiv:2411.14062v3 Announce Type: replace-cross Abstract: Existing benchmarks often rely on predefined questions or reference captions, limiting their flexibility for evaluating detailed descriptions on new image collections. We present MMGenBench, an automated benchmark framework for evaluating Large Multimodal Models (LMMs) from raw images without per-image questions or reference captions. The pipeline generates descriptions, reconstructs images with a frozen text-to-image model, and compares the original and reconstructed images using a frozen image encoder. It produces reusable per-image scores and inspectable reconstructions, supporting both model comparison and diagnosis of reconstruct",
+      "category": "research-feed"
+    },
+    {
+      "title": "On the Efficiency of Structured Pruning in Small Language Model Pretraining",
+      "url": "https://arxiv.org/abs/2503.05920",
+      "source": "arXiv cs.AI",
+      "tags": [
+        "research_paper",
+        "evaluation",
+        "reasoning",
+        "ai_agents"
+      ],
+      "matching_tags": [
+        "ai_agents",
+        "reasoning"
+      ],
+      "importance": 0.45,
+      "date": "2026-11-26T05:00:00.000Z",
+      "summary": "arXiv:2503.05920v2 Announce Type: replace-cross Abstract: Companies that deploy generative language models on edge devices often need to train small models from scratch due to legal, data-governance, or product-customization requirements. An alternative approach is to train an enlarged model and compress it to the target size via structured pruning, but this advantage becomes unclear once the cost of pretraining the enlarged model is included. We introduce the enlarge-and-prune framework to study this question under full-cost accounting, and show that conventional enlarge-and-prune pipelines -- which train the enlarged model, prune it, and recover in separate stages -- do not consistently ou",
+      "category": "research-feed"
     }
   ],
   "failed_sources": [],
